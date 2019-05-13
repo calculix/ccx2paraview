@@ -115,12 +115,15 @@ class VTUWriter:
     # Write data
     def write_data(self, b, f):
         
-        # Calculate maount of components and define their names
+        # Calculate amount of components and define their names
         # TODO FRDParser: b.ncomps != len(b.entities)
         component_names = ''
         for i in range(b.ncomps):
             ent = b.entities[i]
-            component_names += 'ComponentName{}="{}" '.format(i, ent.name)
+            if 'SDV' in ent.name:
+                component_names += 'ComponentName{}="{}" '.format(i, i)
+            else:
+                component_names += 'ComponentName{}="{}" '.format(i, ent.name)
 
         # Write data
         f.write('\t\t\t\t<DataArray type="Float32" Name="{}" NumberOfComponents="{}" {}format="ascii">\n\t\t\t\t\t'.format(b.name, b.ncomps, component_names))
