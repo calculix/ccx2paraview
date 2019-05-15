@@ -1,9 +1,15 @@
 © Ihor Mirzov, UJV Rez, May 2019
 
+<br/><br/>
+
+
 
 # frd2vtk.py
 
 Converts CalculiX .frd-file to legacy ASCII .vtk format to view and postprocess calculation results in [Paraview](https://www.paraview.org/).
+
+<br/><br/>
+
 
 
 # frd2vtu.py
@@ -12,12 +18,18 @@ Converts CalculiX .frd-file to modern XML .vtu format to view and postprocess ca
 For each time step generates separate .vtu file - it makes possible to animate time history.  
 Tested for: NDTEMP, STRESS, DISP, PE, SDV.
 
+<br/><br/>
+
+
 
 # FRDParser.py
 
 © Lukas Bante, 2018, https://gitlab.lrz.de/snippets/238
 
-© Ihor Mirzov, UJV Rez, May 2019 (only bugfix for SDV) 
+Bugfix for SDV by Ihor Mirzov, UJV Rez, May 2019.
+
+<br/><br/>
+
 
 
 # How to run
@@ -36,6 +48,9 @@ If you'd like to leave CacluliX ERROR fields, run commands with '-skip 0' argume
 
     python3 frd2vtk.py -frd jobname -skip 0
     python3 frd2vtu.py -frd jobname -skip 0
+
+<br/><br/>
+
 
 
 # Known bug

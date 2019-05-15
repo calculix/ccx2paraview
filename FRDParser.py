@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # © Lukas Bante, 2018, https://gitlab.lrz.de/snippets/238
-# © Ihor Mirzov, UJV Rez, May 2019 (only bugfix for SDV) 
+# Bugfix for SDV by Ihor Mirzov, UJV Rez, May 2019.
 
 """
 This module contains a python class for parsing and analyzing .frd files.
