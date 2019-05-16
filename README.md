@@ -1,5 +1,19 @@
 © Ihor Mirzov, UJV Rez, May 2019
 
+Tested for:
+
+- element types:
+    - CPE3
+- output variables:
+    - NDTEMP
+    - STRESS
+    - DISP
+    - PE
+    - SDV
+- analysis type:
+    - coupled-temperature displacement
+    - visco
+
 <br/><br/>
 
 
@@ -16,7 +30,6 @@ Converts CalculiX .frd-file to legacy ASCII .vtk format to view and postprocess 
 
 Converts CalculiX .frd-file to modern XML .vtu format to view and postprocess calculation results in [Paraview](https://www.paraview.org/).  
 For each time step generates separate .vtu file - it makes possible to animate time history.  
-Tested for: NDTEMP, STRESS, DISP, PE, SDV.
 
 <br/><br/>
 
@@ -61,3 +74,13 @@ For field output in your Calculix .inp-file always use NSET parameter. In this c
         NT, U
     *EL FILE, NSET=ALL
         S, PEEQ, SDV
+
+<br/><br/>
+
+
+
+# TODO
+
+- Generate invariants, principal min/max and equivalents for stresses and strains.
+- Test C3D20 elements.
+- Test modal analysis.
