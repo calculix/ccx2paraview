@@ -2,15 +2,14 @@
 # © Ihor Mirzov, UJV Rez, April 2019
 
 """
-    Converts CalculiX .frd resutls file to XML .vtu format
-    Run with commands:
-        python3 frd2vtu.py -frd jobname
-        python3 frd2vtu.py -frd jobname -skip 1
-        python3 frd2vtu.py -frd jobname -skip 0
+    Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format
+    Run with command:
+        python3 ccx2paraview.py -frd 'jobname' -fmt 'format' -skip 's'
 """
 
 import sys, argparse, os
 from FRDParser import *
+from VTKWriter import *
 from VTUWriter import *
 
 if __name__ == '__main__':
@@ -19,7 +18,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--frd", "-frd",
                         help="FRD-file name",
-                        type=str, default='job')
+                        type=str, default='model')
+    parser.add_argument("--fmt", "-fmt",
+                        help="Output format: vtk or vtu",
+                        type=str, default='vtu')
     parser.add_argument("--skip", "-skip",
                         help="Skip ERROR field: 0 or 1",
                         type=int, default=1)
@@ -34,14 +36,14 @@ if __name__ == '__main__':
     if not len(steps):
         steps = ['1']
 
-    # TODO Exclude step number if there is only one
-    # For each time step generate separate .vtu file
+    # For each time step generate separate .vt* file
     for s in steps:
-        VTUWriter(p, args.skip, s)
-    
+        if 'vtk' == args.fmt:
+            VTUWriter(p, args.skip, s)
+        else:
+            VTKWriter(p, args.skip, s)
+
     # Delete cached files
     os.system('py3clean .')
 
 print('END')
-
-# TODO Doesn't write mesh if there is no field results

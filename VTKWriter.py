@@ -96,7 +96,8 @@ class VTKWriter:
     def write_SDV_data(self, f, b):
         width = len(str(b.ncomps)) # max length of string designating SDV number
         for SDV in range(b.ncomps):
-            f.write('SCALARS {}_{}_SDV{:0{width}} double\n'.format(b.numstep, b.value, SDV, width=width))
+            # f.write('SCALARS {}_{}_SDV{:0{width}} double\n'.format(b.numstep, b.value, SDV, width=width))
+            f.write('SCALARS SDV{:0{width}} double\n'.format(SDV, width=width))
             f.write('LOOKUP_TABLE default\n')
             for node in sorted(b.results.keys()):
                 data = b.results[node]
@@ -105,7 +106,8 @@ class VTKWriter:
 
     # Write scalar data
     def write_scalar_data(self, f, b):
-        f.write('SCALARS {}_{}_{} double\n'.format(b.numstep, b.value, b.name))
+        # f.write('SCALARS {}_{}_{} double\n'.format(b.numstep, b.value, b.name))
+        f.write('SCALARS {} double\n'.format(b.name))
         f.write('LOOKUP_TABLE default\n')
         for node in sorted(b.results.keys()):
             data = b.results[node]
@@ -114,7 +116,8 @@ class VTKWriter:
 
     # Write vector data
     def write_vector_data(self, f, b):
-        f.write('VECTORS {}_{}_{} double\n'.format(b.numstep, b.value, b.name))
+        # f.write('VECTORS {}_{}_{} double\n'.format(b.numstep, b.value, b.name))
+        f.write('VECTORS {} double\n'.format(b.name))
         for node in sorted(b.results.keys()):
             for data in b.results[node]:
                 f.write('\t{:> .8E}'.format(data))
@@ -123,7 +126,8 @@ class VTKWriter:
 
     # Write tensor data
     def write_tensor_data(self, f, b):
-        f.write('TENSORS {}_{}_{} double\n'.format(b.numstep, b.value, b.name))
+        # f.write('TENSORS {}_{}_{} double\n'.format(b.numstep, b.value, b.name))
+        f.write('TENSORS {} double\n'.format(b.name))
         for node in sorted(b.results.keys()):
             data = b.results[node]
             Sxx = data[0]; Syy = data[1]; Szz = data[2]
@@ -134,10 +138,11 @@ class VTKWriter:
             f.write('\n')
 
 
-    def __init__(self, p, skip_error_field): # p is FRDParser object
+    def __init__(self, p, skip_error_field, step): # p is FRDParser object
 
         # Output file name will be the same as input
-        vtk_filename = p.file_name.replace('.frd', '.vtk')
+        vtk_filename = p.file_name.replace('.frd', '.{}.vtk'.format(step))
+        print(vtk_filename)
         with open(vtk_filename, 'w') as f:
 
             # Header
@@ -193,22 +198,23 @@ class VTKWriter:
             for b in p.result_blocks: # iterate over FRDResultBlocks
                 if skip_error_field and 'ERROR' in b.name:
                     continue
-                print(('Step {}, time {}, {}, {} values'.format(b.numstep, b.value, b.name, b.ncomps)))
+                if b.numstep == int(step): # write results for one time step only
+                    print(('Step {}, time {}, {}, {} values'.format(b.numstep, b.value, b.name, b.ncomps)))
 
-                if len(b.results) and len(b.components):
-                    if 'SDV' in b.name: # SDV results
-                        self.write_SDV_data(f, b)
-                    else:
-                        if b.ncomps == 1: # scalar results
-                            self.write_scalar_data(f, b)
-                        elif b.ncomps == 3: # vector results
-                            self.write_vector_data(f, b)
-                        elif b.ncomps == 6:  # symmetric tensor results
-                            self.write_tensor_data(f, b)
+                    if len(b.results) and len(b.components):
+                        if 'SDV' in b.name: # SDV results
+                            self.write_SDV_data(f, b)
                         else:
-                            print('Wrong amount of components: ' + str(b.ncomps))
-                else:
-                    print('No data for this step')
+                            if b.ncomps == 1: # scalar results
+                                self.write_scalar_data(f, b)
+                            elif b.ncomps == 3: # vector results
+                                self.write_vector_data(f, b)
+                            elif b.ncomps == 6:  # symmetric tensor results
+                                self.write_tensor_data(f, b)
+                            else:
+                                print('Wrong amount of components: ' + str(b.ncomps))
+                    else:
+                        print('No data for this step')
 
 
 """

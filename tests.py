@@ -20,7 +20,7 @@ class Clean:
     # Cleaup trash files in startFolder and all subfolders
     @staticmethod
     def files(startFolder):
-        extensions = ('.12d', '.cvg', '.dat', '.out', '.sta', '.log')
+        extensions = ('.12d', '.cvg', '.dat', 'vwf', '.out', '.sta', '.log')
         for f in os.listdir(startFolder):
             f = os.path.abspath(startFolder + '/' + f)
             if os.path.isdir(f): # if folder

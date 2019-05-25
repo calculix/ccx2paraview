@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">
+	<UnstructuredGrid>
+		<Piece NumberOfPoints="8" NumberOfCells="1">
+			<Points>
+				<DataArray type="Float64" NumberOfComponents="3" format="ascii">
+					0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 1.000000 1.000000 0.000000 0.000000 1.000000 0.000000 0.500000 0.000000 0.000000 1.000000 0.500000 0.000000 0.500000 1.000000 0.000000 0.000000 0.500000 0.000000 
+				</DataArray>
+			</Points>
+			<Cells>
+				<DataArray type="Int32" Name="connectivity" format="ascii">
+					0 1 2 3 4 5 6 7 
+				</DataArray>
+				<DataArray type="Int32" Name="offsets" format="ascii">
+					8 
+				</DataArray>
+				<DataArray type="UInt8" Name="types" format="ascii">
+					23 
+				</DataArray>
+			</Cells>
+			<PointData>
+				<DataArray type="Float32" Name="DISP" NumberOfComponents="3" ComponentName0="D1" ComponentName1="D2" ComponentName2="D3" ComponentName3="ALL" format="ascii">
+					0.000000 0.000000 0.000000 -0.000002 0.000000 0.000000 -0.000002 0.000004 0.000000 0.000000 0.000004 0.000000 -0.000001 0.000000 0.000000 -0.000002 0.000002 0.000000 -0.000001 0.000004 0.000000 0.000000 0.000002 0.000000 
+				</DataArray>
+				<DataArray type="Float32" Name="STRESS" NumberOfComponents="10" ComponentName0="SXX" ComponentName1="SYY" ComponentName2="SZZ" ComponentName3="SXY" ComponentName4="SYZ" ComponentName5="SZX" ComponentName6="Mises" ComponentName7="PS1" ComponentName8="PS2" ComponentName9="PS3" format="ascii">
+					-0.000000 1.000020 0.300006 -0.000000 -0.000000 -0.000000 0.888837 -0.000000 1.000020 0.300006 -0.000000 1.000020 0.300006 0.000000 0.000000 -0.000000 0.888837 -0.000000 1.000020 0.300006 0.000000 1.000020 0.300006 0.000000 0.000000 0.000000 0.888837 0.000000 1.000020 0.300006 -0.000000 1.000020 0.300006 0.000000 -0.000000 0.000000 0.888837 -0.000000 1.000020 0.300006 -0.000000 1.000050 0.300015 0.000000 -0.000000 -0.000000 0.888864 -0.000000 1.000050 0.300015 0.000000 1.000050 0.300015 -0.000000 -0.000000 -0.000000 0.888864 0.000000 1.000050 0.300015 0.000000 1.000050 0.300015 0.000000 0.000000 -0.000000 0.888864 0.000000 1.000050 0.300015 -0.000000 1.000050 0.300015 0.000000 0.000000 0.000000 0.888864 -0.000000 1.000050 0.300015 
+				</DataArray>
+				<DataArray type="Float32" Name="FORC" NumberOfComponents="3" ComponentName0="F1" ComponentName1="F2" ComponentName2="F3" ComponentName3="ALL" format="ascii">
+					0.000000 -0.166667 -0.000000 -0.000000 -0.166667 0.000000 0.000000 0.166667 0.000000 0.000000 0.166667 0.000000 -0.000000 -0.666667 0.000000 0.000000 -0.000000 -0.000000 -0.000000 0.666667 0.000000 0.000000 -0.000000 0.000000 
+				</DataArray>
+			</PointData>
+		</Piece>
+	</UnstructuredGrid>
+</VTKFile>
