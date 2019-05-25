@@ -254,9 +254,9 @@ class NodalResultsBlock(object):
             if self.fmt < 2:
                 in_file.readline() # last record for ascii only
 
-        # if 'STRESS' in self.name:
-        #     self.AppendMisesStress()
-        #     self.AppendPrincipalStresses()
+        if 'STRESS' in self.name:
+            self.AppendMisesStress()
+            self.AppendPrincipalStresses()
 
     # Append Mises stress to nodes results
     def AppendMisesStress(self):

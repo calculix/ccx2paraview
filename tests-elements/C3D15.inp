@@ -16,17 +16,10 @@
     15, -1.64693933E+002, 1.26666616E+002, -3.06502626E+000
 *Element, Type=C3D15, Elset=ALL
     1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-*Material, Name=STEEL
-    *Density
-        7.85E-09
-    *Elastic
-        210000, 0.3
+*MATERIAL, NAME=STEEL
+	*ELASTIC
+		2e+5, 0.3
 *Solid section, Elset=ALL, Material=STEEL
-*Step, Perturbation
-    *Frequency
-        1
-    *Node file
-        RF, U
-    *El file
-        E, S
+*STEP
+	*NO ANALYSIS
 *End step

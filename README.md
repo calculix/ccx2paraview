@@ -3,7 +3,9 @@
 Tested for:
 
 - element types:
-    - S3, S4, CPE3, C3D15, C3D20
+    - S3, S6, S4, S8
+    - CPE3, CPE4, CPS3, CPS4
+    - C3D15, C3D20
 - output variables:
     - NDTEMP
     - STRESS
@@ -83,8 +85,19 @@ For field output in your Calculix .inp-file always use NSET parameter. In this c
 
 
 
+# Tests
+
+Folders *tests-elements* and *tests-examples* contain .inp-tasks + .frd-calculation + .vtk and .vtu convertion results. Needed for the development process. Some of the *tests-examples* are taken directly from [Calculix examples](http://www.dhondt.de/ccx_2.15.test.tar.bz2).
+
+Run all tests with command:
+
+    python3 tests.py
+
+<br/><br/>
+
+
+
 # TODO
 
 - Generate invariants, principal min/max and equivalents for stresses and strains.
-- Test S6 and S8 elements.
 - Windows Line endings.
