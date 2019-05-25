@@ -3,16 +3,20 @@
 Tested for:
 
 - element types:
-    - CPE3
+    - S3, S4, CPE3, C3D15, C3D20
 - output variables:
     - NDTEMP
     - STRESS
     - DISP
+    - FORC
     - PE
     - SDV
+    - TOSTRAIN
 - analysis type:
+    - static
     - coupled-temperature displacement
     - visco
+    - frequency
 
 <br/><br/>
 
@@ -37,9 +41,9 @@ For each time step generates separate .vtu file - it makes possible to animate t
 
 # FRDParser.py
 
-© Lukas Bante, 2018, https://gitlab.lrz.de/snippets/238
+© Lukas Bante, LRZ,     Sep 2017 - original code https://gitlab.lrz.de/snippets/238
 
-Bugfix for SDV by Ihor Mirzov, UJV Rez, May 2019.
+© Ihor Mirzov, UJV Rez, May 2019 - refactoring and bugfix
 
 <br/><br/>
 
@@ -82,5 +86,5 @@ For field output in your Calculix .inp-file always use NSET parameter. In this c
 # TODO
 
 - Generate invariants, principal min/max and equivalents for stresses and strains.
-- Test C3D20 elements.
-- Test modal analysis.
+- Test S6 and S8 elements.
+- Windows Line endings.

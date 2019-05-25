@@ -9,7 +9,7 @@
         python3 frd2vtu.py -frd jobname -skip 0
 """
 
-import sys, argparse
+import sys, argparse, os
 from FRDParser import *
 from VTUWriter import *
 
@@ -28,12 +28,20 @@ if __name__ == '__main__':
     p = FRDParser(args.frd + '.frd')
 
     # Create list of time steps
-    steps = sorted(set([b.numstep for b in p.frd.result_blocks]))
-    width = int(len(steps) / 10) + 1 # max length of string designating step number
+    steps = sorted(set([b.numstep for b in p.result_blocks]))
+    width = len(str(len(steps))) # max length of string designating step number
     steps = ['{:0{width}}'.format(s, width=width) for s in steps] # pad with zero
+    if not len(steps):
+        steps = ['1']
 
+    # TODO Exclude step number if there is only one
     # For each time step generate separate .vtu file
     for s in steps:
         VTUWriter(p, args.skip, s)
+    
+    # Delete cached files
+    os.system('py3clean .')
 
 print('END')
+
+# TODO Doesn't write mesh if there is no field results

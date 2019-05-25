@@ -9,7 +9,7 @@
         python3 frd2vtk.py -frd jobname -skip 0
 """
 
-import sys, argparse
+import sys, argparse, os
 from FRDParser import *
 from VTKWriter import *
 
@@ -27,5 +27,8 @@ if __name__ == '__main__':
 
     p = FRDParser(args.frd + '.frd')
     VTKWriter(p, args.skip)
+
+    # Delete cached files
+    os.system('py3clean .')
 
 print('END')
