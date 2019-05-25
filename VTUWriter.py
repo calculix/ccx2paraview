@@ -139,9 +139,13 @@ class VTUWriter:
     def __init__(self, p, skip_error_field, step): # p is FRDParser object
 
         # Output file name will be the same as input
-        vtu_filename = p.file_name.replace('.frd', '.{}.vtu'.format(step))
-        print(vtu_filename)
-        with open(vtu_filename, 'w') as f:
+        steps = set([b.numstep for b in p.result_blocks])
+        if len(steps) > 1:
+            file_name = p.file_name.replace('.frd', '.{}.vtu'.format(step))
+        else:
+            file_name = p.file_name.replace('.frd', '.vtu')
+        print(file_name)
+        with open(file_name, 'w') as f:
             f.write('<?xml version="1.0"?>\n')
             f.write('<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">\n')
             f.write('\t<UnstructuredGrid>\n')

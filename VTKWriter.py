@@ -141,9 +141,13 @@ class VTKWriter:
     def __init__(self, p, skip_error_field, step): # p is FRDParser object
 
         # Output file name will be the same as input
-        vtk_filename = p.file_name.replace('.frd', '.{}.vtk'.format(step))
-        print(vtk_filename)
-        with open(vtk_filename, 'w') as f:
+        steps = set([b.numstep for b in p.result_blocks])
+        if len(steps) > 1:
+            file_name = p.file_name.replace('.frd', '.{}.vtk'.format(step))
+        else:
+            file_name = p.file_name.replace('.frd', '.vtk')
+        print(file_name)
+        with open(file_name, 'w') as f:
 
             # Header
             f.write('# vtk DataFile Version 3.0\n\n')

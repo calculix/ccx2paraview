@@ -38,10 +38,10 @@ if __name__ == '__main__':
 
     # For each time step generate separate .vt* file
     for s in steps:
-        if 'vtk' == args.fmt:
-            VTUWriter(p, args.skip, s)
-        else:
+        if args.fmt == 'vtk':
             VTKWriter(p, args.skip, s)
+        else:
+            VTUWriter(p, args.skip, s)
 
     # Delete cached files
     os.system('py3clean .')

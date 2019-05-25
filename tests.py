@@ -60,10 +60,10 @@ if (__name__ == '__main__'):
         subprocess.run('ccx -i ' + modelname, shell=True)
 
         # Convert calculation results to VTK format
-        subprocess.run('python3 frd2vtk.py -frd ' + modelname, shell=True)
+        subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtk', shell=True)
 
         # Convert calculation results to VTU format
-        subprocess.run('python3 frd2vtu.py -frd ' + modelname, shell=True)
+        subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtu', shell=True)
 
     Clean.cache()
     Clean.files('.')
