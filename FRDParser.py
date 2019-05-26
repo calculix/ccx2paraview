@@ -14,7 +14,7 @@
 """
 
 
-import datetime, struct, numpy
+import struct, numpy
 from math import sqrt, ceil
 
 
@@ -145,7 +145,7 @@ class Component(object):
                     # 4   matrix
                     # 12  vector with 3 amplitudes and 3 phase-angles
                     # 14  tensor with 6 amplitudes and 6 phase-angles
-    key = -5        # component Key (Always -5)
+    key = -5        # component key (always -5)
     name = None     # component name to be used in the cgx menu
     menu = 1        # always 1
     icind1 = None   # sub-component index or row number
@@ -211,20 +211,21 @@ class NodalResultsBlock(object):
                 c.key = int(in_file.read(2))
                 in_file.read(2) # pad bytes
                 c.name = in_file.read(8).decode().strip()
+                self.components[c.name] = c
                 c.menu = int(in_file.read(5))
-                c.ictype = int(in_file.read(5))
+                c.ictype = int(in_file.read(5)) # component type
                 c.icind1 = int(in_file.read(5))
                 if c.ictype == 4:
                     c.icind2 = int(in_file.read(5))
-                elif c.ictype == 2 and i == 3:
+                elif c.ictype == 2 and i == 3: # remove 'ALL' component for DISP
                     c.icind2 = int(in_file.read(5))
                     c.iexist = int(in_file.read(5))
                     c.icname = in_file.read(3).decode().strip()
                     self.ncomps -= 1
+                    del self.components[c.name]
                 else:
                     c.iexist = int(in_file.read(5))
                 in_file.read(1) # eol
-                self.components[c.name] = c
 
             # Iterate over nodes
             for i in range(self.numnod):
@@ -301,6 +302,7 @@ class NodalResultsBlock(object):
             for ps in w.tolist():
                 self.results[node].append(ps)
 
+
 # Main class
 class FRDParser(object):
 
@@ -343,5 +345,3 @@ class FRDParser(object):
                     elif key == 9999:
                         eof = True
                     eof = (eof or (in_file.read(1) == b''))
-
-# TODO: add some logging during parsing process

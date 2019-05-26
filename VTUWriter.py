@@ -118,7 +118,6 @@ class VTUWriter:
     def write_data(self, f, b):
         
         # Calculate amount of components and define their names
-        # TODO FRDParser: b.ncomps != len(b.components)
         component_names = ''
         i = 0 # counter
         for c in b.components.keys():
@@ -147,8 +146,6 @@ class VTUWriter:
             f.write('<?xml version="1.0"?>\n')
             f.write('<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">\n')
             f.write('\t<UnstructuredGrid>\n')
-
-            # TODO is it possible that NumberOfCells > NumberOfPoints?
             f.write('\t\t<Piece NumberOfPoints="{}" NumberOfCells="{}">\n'.format(nn, ne))
 
             # POINTS section - coordinates of all nodes
