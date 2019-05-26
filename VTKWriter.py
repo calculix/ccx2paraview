@@ -92,49 +92,16 @@ class VTKWriter:
         f.write('\t' + line + '\n')
 
 
-    # Write SDV data
-    def write_SDV_data(self, f, b):
-        width = len(str(b.ncomps)) # max length of string designating SDV number
-        for SDV in range(b.ncomps):
-            # f.write('SCALARS {}_{}_SDV{:0{width}} double\n'.format(b.numstep, b.value, SDV, width=width))
-            f.write('SCALARS SDV{:0{width}} double\n'.format(SDV, width=width))
-            f.write('LOOKUP_TABLE default\n')
-            for node in sorted(b.results.keys()):
-                data = b.results[node]
-                f.write('\t{:> .8E}\n'.format(data[SDV]))
-
-
-    # Write scalar data
-    def write_scalar_data(self, f, b):
-        # f.write('SCALARS {}_{}_{} double\n'.format(b.numstep, b.value, b.name))
-        f.write('SCALARS {} double\n'.format(b.name))
-        f.write('LOOKUP_TABLE default\n')
+    # Write field data
+    def write_data(self, f, b):
+        nn = len(b.results) # amount of nodes with results
+        f.write('FIELD {} 1\n'.format(b.name))
+        f.write('\t{} {} {} double\n'.format(b.name, b.ncomps, nn))
         for node in sorted(b.results.keys()):
             data = b.results[node]
-            f.write('\t{:> .8E}\n'.format(data[0]))
-
-
-    # Write vector data
-    def write_vector_data(self, f, b):
-        # f.write('VECTORS {}_{}_{} double\n'.format(b.numstep, b.value, b.name))
-        f.write('VECTORS {} double\n'.format(b.name))
-        for node in sorted(b.results.keys()):
-            for data in b.results[node]:
-                f.write('\t{:> .8E}'.format(data))
-            f.write('\n')
-
-
-    # Write tensor data
-    def write_tensor_data(self, f, b):
-        # f.write('TENSORS {}_{}_{} double\n'.format(b.numstep, b.value, b.name))
-        f.write('TENSORS {} double\n'.format(b.name))
-        for node in sorted(b.results.keys()):
-            data = b.results[node]
-            Sxx = data[0]; Syy = data[1]; Szz = data[2]
-            Sxy = data[3]; Syz = data[4]; Szx = data[5]
-            f.write('\t{:> .8E}\t{:> .8E}\t{:> .8E}\n'.format(Sxx, Sxy, Szx))
-            f.write('\t{:> .8E}\t{:> .8E}\t{:> .8E}\n'.format(Sxy, Syy, Syz))
-            f.write('\t{:> .8E}\t{:> .8E}\t{:> .8E}\n'.format(Szx, Syz, Szz))
+            f.write('\t\t')
+            for i in range(b.ncomps):
+                f.write('{:> .8E} '.format(data[i]))
             f.write('\n')
 
 
@@ -206,17 +173,7 @@ class VTKWriter:
                     print(('Step {}, time {}, {}, {} values'.format(b.numstep, b.value, b.name, b.ncomps)))
 
                     if len(b.results) and len(b.components):
-                        if 'SDV' in b.name: # SDV results
-                            self.write_SDV_data(f, b)
-                        else:
-                            if b.ncomps == 1: # scalar results
-                                self.write_scalar_data(f, b)
-                            elif b.ncomps == 3: # vector results
-                                self.write_vector_data(f, b)
-                            elif b.ncomps == 6:  # symmetric tensor results
-                                self.write_tensor_data(f, b)
-                            else:
-                                print('Wrong amount of components: ' + str(b.ncomps))
+                        self.write_data(f, b)
                     else:
                         print('No data for this step')
 
