@@ -6,13 +6,13 @@
 
 # ccx2paraview.py
 
-Converts CalculiX .frd-file to view and postprocess calculation results in [Paraview](https://www.paraview.org/). For each time step generates separate file - it makes possible to animate time history.  
+It's the main script. Together with *VTKWriter.py*, *VTUWriter.py* and *FRDParser.py* it converts CalculiX .frd-file to view and postprocess calculation results in [Paraview](https://www.paraview.org/). For each time step generates separate file - it makes possible to animate time history.  
 
-To convert to legacy ASCII .vtk-format, run command:
+To convert .frd to legacy ASCII .vtk-format, use command:
 
     python3 ccx2paraview.py -frd jobname -fmt vtk
 
-To convert to modern XML .vtu-format, run command:
+To convert .frd to modern XML .vtu-format, use command:
 
     python3 ccx2paraview.py -frd jobname -fmt vtu
 

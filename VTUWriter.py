@@ -41,15 +41,15 @@ class VTUWriter:
         """
         # frd_elem_type : vtk_elem_type
         dic = {
-                 1: 12,
-                 2: 13,
-                 3: 10,
-                 4: 25,
-                 5: 13,
-                 6: 24,
-                 7:  5,
-                 8: 22,
-                 9:  9,
+                    1: 12,
+                    2: 13,
+                    3: 10,
+                    4: 25,
+                    5: 13,
+                    6: 24,
+                    7:  5,
+                    8: 22,
+                    9:  9,
                 10: 23,
                 11:  3,
                 12: 21,
@@ -60,7 +60,7 @@ class VTUWriter:
             return 0
 
 
-    # Renumber nodes and write element connectivity
+    # Write element connectivity with renumbered nodes
     def write_element_connectivity(self, renumbered_nodes, e, f):
         element_string = ''
 
@@ -88,7 +88,8 @@ class VTUWriter:
 
         # All other elements
         else:
-            for i in range(len(e.nodes)):
+            n = len(e.nodes)
+            for i in range(n):
                 node = renumbered_nodes[e.nodes[i]] # node after renumbering
                 element_string += '{:d} '.format(node)
 
@@ -114,7 +115,7 @@ class VTUWriter:
 
 
     # Write data
-    def write_data(self, b, f):
+    def write_data(self, f, b):
         
         # Calculate amount of components and define their names
         # TODO FRDParser: b.ncomps != len(b.components)
@@ -128,55 +129,45 @@ class VTUWriter:
             i += 1
 
         # Write data
-        f.write('\t\t\t\t<DataArray type="Float32" Name="{}" NumberOfComponents="{}" {}format="ascii">\n\t\t\t\t\t'.format(b.name, b.ncomps, component_names))
+        f.write('\t\t\t\t<DataArray type="Float32" Name="{}" NumberOfComponents="{}" {}format="ascii">\n'.format(b.name, b.ncomps, component_names))
         for node in sorted(b.results.keys()):
             data = b.results[node]
+            f.write('\t\t\t\t')
             for d in data:
-                f.write('{:.6f} '.format(d))
-        f.write('\n\t\t\t\t</DataArray>\n')
+                f.write('\t{:> .8E}'.format(d))
+            f.write('\n')
+        f.write('\t\t\t\t</DataArray>\n')
 
 
-    def __init__(self, p, skip_error_field, step): # p is FRDParser object
+    # Main function
+    def __init__(self, p, skip_error_field, file_name, step, nn, ne): # p is FRDParser object
 
-        # Output file name will be the same as input
-        steps = set([b.numstep for b in p.result_blocks])
-        if len(steps) > 1:
-            file_name = p.file_name.replace('.frd', '.{}.vtu'.format(step))
-        else:
-            file_name = p.file_name.replace('.frd', '.vtu')
-        print(file_name)
         with open(file_name, 'w') as f:
+            # Header
             f.write('<?xml version="1.0"?>\n')
             f.write('<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">\n')
             f.write('\t<UnstructuredGrid>\n')
 
-            # nn = p.node_block.numnod # TODO Wrong amount of nodes - has 18 zero nodes more
-            try:
-                nn = max([len(b.results) for b in p.result_blocks]) # total number of nodes
-            except:
-                nn = p.node_block.numnod
-            ne = p.elem_block.numelem # total number of elements
-            # TODO Do not repeat it every step:
-            print('{} nodes total'.format(nn))
-            print('{} cells total'.format(ne))
-
             # TODO is it possible that NumberOfCells > NumberOfPoints?
             f.write('\t\t<Piece NumberOfPoints="{}" NumberOfCells="{}">\n'.format(nn, ne))
 
-            # Coordinates of all nodes
+            # POINTS section - coordinates of all nodes
             f.write('\t\t\t<Points>\n')
             f.write('\t\t\t\t<DataArray type="Float64" NumberOfComponents="3" format="ascii">\n')
-            f.write('\t\t\t\t\t')
             new_node_number = 0 # node numbers should start from 0
             renumbered_nodes = {} # old_number : new_number
             for n in p.node_block.nodes.keys():
+
                 # Write nodes coordinates
-                coordinates = ''.join('{:.6f} '.format(coord) for coord in p.node_block.nodes[n])
-                f.write(coordinates)
+                coordinates = ''.join('\t{:> .8E}'.format(coord) for coord in p.node_block.nodes[n])
+                f.write('\t\t\t\t' + coordinates + '\n')
 
                 # For vtk nodes should be renumbered starting from 0
                 renumbered_nodes[n] = new_node_number
                 new_node_number += 1
+
+                if new_node_number == nn: 
+                    break
 
             f.write('\n\t\t\t\t</DataArray>\n')
             f.write('\t\t\t</Points>\n')
@@ -184,7 +175,7 @@ class VTUWriter:
 
             f.write('\t\t\t<Cells>\n')
 
-            # Elements connectyvity
+            # CELLS section - elements connectyvity
             f.write('\t\t\t\t<DataArray type="Int32" Name="connectivity" format="ascii">\n')
             f.write('\t\t\t\t\t')
             for e in p.elem_block.elements:
@@ -219,7 +210,7 @@ class VTUWriter:
                 if b.numstep == int(step): # write results for one time step only
                     print(('Step {}, time {}, {}, {} components, {} values'.format(b.numstep, b.value, b.name, b.ncomps, len(b.results))))
                     if len(b.results) and len(b.components):
-                        self.write_data(b, f)
+                        self.write_data(f, b)
                     else:
                         print('No data for this step')
             f.write("\t\t\t</PointData>"+'\n')
@@ -237,5 +228,4 @@ class VTUWriter:
     https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/marching.py
     https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/BuildUGrid.py
     https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestXMLUnstructuredGridIO.py
-
 """
