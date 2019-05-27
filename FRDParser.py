@@ -284,71 +284,71 @@ class NodalResultsBlock(object):
 
     # Append principal stresses to nodes results
     def AppendPrincipalStresses(self):
-        for i in range(3):
-            c = Component()
-            c.ictype = 1; c.name = 'Principal'+str(i+1)
-            self.components[c.name] = c
-            self.ncomps += 1
+        # Check if numpy is installed
+        try:
+            import numpy
 
-        # Iterate over nodes
-        for node in self.results.keys():
-            data = self.results[node] # list with results for current node
-            Sxx = data[0]; Syy = data[1]; Szz = data[2]
-            Sxy = data[3]; Syz = data[4]; Szx = data[5]
-            stessTensor = numpy.array([[Sxx, Sxy, Szx], [Sxy, Syy, Syz], [Szx, Syz, Szz]])
+            for i in range(3):
+                c = Component()
+                c.ictype = 1; c.name = 'Principal'+str(i+1)
+                self.components[c.name] = c
+                self.ncomps += 1
 
-            # Calculate principal stresses for current node
-            w, v = numpy.linalg.eig(stessTensor)
-            for ps in w.tolist():
-                self.results[node].append(ps)
+            # Iterate over nodes
+            for node in self.results.keys():
+                data = self.results[node] # list with results for current node
+                Sxx = data[0]; Syy = data[1]; Szz = data[2]
+                Sxy = data[3]; Syz = data[4]; Szx = data[5]
+                stessTensor = numpy.array([[Sxx, Sxy, Szx], [Sxy, Syy, Syz], [Szx, Syz, Szz]])
 
+                # Calculate principal stresses for current node
+                w, v = numpy.linalg.eig(stessTensor)
+                for ps in w.tolist():
+                    self.results[node].append(ps)
+
+        except ImportError:
+            print('Numpy is not installed.')
+            print('Principal stresses will not be calculated.')
 
 # Main class
 class FRDParser(object):
 
     # Read contents of the .frd file
     def __init__(self, file_name=None):
-        # Check if numpy is installed
-        try:
-            import numpy
+        self.file_name = None       # path to the .frd-file to be read
+        self.node_block = None      # node block
+        self.elem_block = None      # elements block
+        self.result_blocks = []     # all result blocks in order of appearance
+        if file_name:
+            self.file_name = file_name
+            print('Reading .frd-file...')
+            with open(file_name, 'rb') as in_file:
+                eof = (in_file.read(1) == b'')
+                while not eof:
+                    key = int(in_file.read(4))
+                    code = in_file.read(1).decode()
+                    block = None
 
-            self.file_name = None       # path to the .frd-file to be read
-            self.node_block = None      # node block
-            self.elem_block = None      # elements block
-            self.result_blocks = []     # all result blocks in order of appearance
-            if file_name:
-                self.file_name = file_name
-                print('Reading .frd-file...')
-                with open(file_name, 'rb') as in_file:
-                    eof = (in_file.read(1) == b'')
-                    while not eof:
-                        key = int(in_file.read(4))
-                        code = in_file.read(1).decode()
-                        block = None
+                    # Header
+                    if key == 1:
+                        in_file.readline().decode().strip()
 
-                        # Header
-                        if key == 1:
-                            in_file.readline().decode().strip()
+                    # Nodes
+                    elif key == 2:
+                        block = NodalPointCoordinateBlock(in_file)
+                        self.node_block = block
 
-                        # Nodes
-                        elif key == 2:
-                            block = NodalPointCoordinateBlock(in_file)
-                            self.node_block = block
+                    # Elements
+                    elif key == 3:
+                        block = ElementDefinitionBlock(in_file)
+                        self.elem_block = block
 
-                        # Elements
-                        elif key == 3:
-                            block = ElementDefinitionBlock(in_file)
-                            self.elem_block = block
+                    # Results
+                    elif key == 100:
+                        block = NodalResultsBlock(in_file)
+                        self.result_blocks.append(block)
 
-                        # Results
-                        elif key == 100:
-                            block = NodalResultsBlock(in_file)
-                            self.result_blocks.append(block)
-
-                        # End
-                        elif key == 9999:
-                            eof = True
-                        eof = (eof or (in_file.read(1) == b''))
-
-        except ImportError:
-            print('Numpy is not installed')
+                    # End
+                    elif key == 9999:
+                        eof = True
+                    eof = (eof or (in_file.read(1) == b''))
