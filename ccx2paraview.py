@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # © Ihor Mirzov, UJV Rez, April 2019
 
 """
-    Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format
+    Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format.
 
     Run with command:
         python3 ccx2paraview.py -frd 'jobname' -fmt vtk
@@ -10,13 +11,14 @@
         python3 ccx2paraview.py -frd 'jobname' -fmt vtu
 """
 
+
 import sys, argparse, os
 from FRDParser import *
 from VTKWriter import *
 from VTUWriter import *
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     # Command line parameters
     parser = argparse.ArgumentParser()
     parser.add_argument("--frd", "-frd",

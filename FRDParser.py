@@ -14,7 +14,7 @@
 """
 
 
-import struct, numpy
+import struct
 from math import sqrt, ceil
 
 
@@ -308,40 +308,47 @@ class FRDParser(object):
 
     # Read contents of the .frd file
     def __init__(self, file_name=None):
-        self.file_name = None       # path to the .frd-file to be read
-        self.node_block = None      # node block
-        self.elem_block = None      # elements block
-        self.result_blocks = []     # all result blocks in order of appearance
-        if file_name:
-            self.file_name = file_name
-            print('Reading .frd-file...')
-            with open(file_name, 'rb') as in_file:
-                eof = (in_file.read(1) == b'')
-                while not eof:
-                    key = int(in_file.read(4))
-                    code = in_file.read(1).decode()
-                    block = None
+        # Check if numpy is installed
+        try:
+            import numpy
 
-                    # Header
-                    if key == 1:
-                        in_file.readline().decode().strip()
+            self.file_name = None       # path to the .frd-file to be read
+            self.node_block = None      # node block
+            self.elem_block = None      # elements block
+            self.result_blocks = []     # all result blocks in order of appearance
+            if file_name:
+                self.file_name = file_name
+                print('Reading .frd-file...')
+                with open(file_name, 'rb') as in_file:
+                    eof = (in_file.read(1) == b'')
+                    while not eof:
+                        key = int(in_file.read(4))
+                        code = in_file.read(1).decode()
+                        block = None
 
-                    # Nodes
-                    elif key == 2:
-                        block = NodalPointCoordinateBlock(in_file)
-                        self.node_block = block
+                        # Header
+                        if key == 1:
+                            in_file.readline().decode().strip()
 
-                    # Elements
-                    elif key == 3:
-                        block = ElementDefinitionBlock(in_file)
-                        self.elem_block = block
+                        # Nodes
+                        elif key == 2:
+                            block = NodalPointCoordinateBlock(in_file)
+                            self.node_block = block
 
-                    # Results
-                    elif key == 100:
-                        block = NodalResultsBlock(in_file)
-                        self.result_blocks.append(block)
+                        # Elements
+                        elif key == 3:
+                            block = ElementDefinitionBlock(in_file)
+                            self.elem_block = block
 
-                    # End
-                    elif key == 9999:
-                        eof = True
-                    eof = (eof or (in_file.read(1) == b''))
+                        # Results
+                        elif key == 100:
+                            block = NodalResultsBlock(in_file)
+                            self.result_blocks.append(block)
+
+                        # End
+                        elif key == 9999:
+                            eof = True
+                        eof = (eof or (in_file.read(1) == b''))
+
+        except ImportError:
+            print('Numpy is not installed')
