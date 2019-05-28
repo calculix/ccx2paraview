@@ -13,3 +13,11 @@ Needed for the development process.  *tests-examples* are taken directly from [C
 Run all tests with command:
 
     python3 tests.py
+
+<br/><br/>
+
+
+
+# FRDParser_original.py
+
+[Original code](https://gitlab.lrz.de/snippets/238) of the FRD parser, written by Lukas Bante, LRZ, in Sep 2017.

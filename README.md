@@ -62,8 +62,17 @@ Folder with tests and development version of the converter. You may not need it.
 
 
 
-# TODO
+# Your help
 
-- Generate invariants, principal min/max and equivalent for strains.
+Please,
+
+    - simply use this converter
+    - ask questions
+    - post issues here, on the GitHub
+    - attach your models and screenshots
+    - follow discussion on the [CalculiX Group](https://groups.yahoo.com/neo/groups/CALCULIX/conversations/topics/13712)
+
+Current TODO-list:
+
+- Generate equivalent and principal min/max for strain tensor.
 - Test converter for all the Calculix examples.
-- Windows Line endings.
