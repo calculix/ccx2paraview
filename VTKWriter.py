@@ -100,7 +100,7 @@ class VTKWriter:
     def write_data(self, f, b):
         nn = len(b.results) # amount of nodes with results
         f.write('FIELD {} 1\n'.format(b.name))
-        f.write('\t{} {} {} double\n'.format(b.name, b.ncomps, nn))
+        f.write('\t{} {} {} double\n'.format(b.name, len(b.components), nn))
         for node in sorted(b.results.keys()):
             data = b.results[node]
             f.write('\t')
@@ -158,12 +158,13 @@ class VTKWriter:
             for b in p.result_blocks: # iterate over FRDResultBlocks
                 if skip_error_field and 'ERROR' in b.name:
                     continue
-                if b.numstep == int(step): # write results for one time step only
-                    print(('Step {}, time {}, {}, {} components, {} values'.format(b.numstep, b.value, b.name, b.ncomps, len(b.results))))
-                    if len(b.results) and len(b.components):
-                        self.write_data(f, b)
-                    else:
-                        print('No data for this step')
+                if b.numstep != int(step): # write results for one time step only
+                    continue
+                if len(b.results) and len(b.components):
+                    print('Step {}, time {}, {}, {} components, {} values'.format(b.numstep, b.value, b.name, len(b.components), len(b.results)))
+                    self.write_data(f, b)
+                else:
+                    print(b.name, '- no data for this step')
 
 
 """
