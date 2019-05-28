@@ -310,6 +310,7 @@ class NodalResultsBlock(object):
             print('Numpy is not installed.')
             print('Principal stresses will not be calculated.')
 
+
 # Main class
 class FRDParser(object):
 
