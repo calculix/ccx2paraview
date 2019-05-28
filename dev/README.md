@@ -1,10 +1,3 @@
-© Ihor Mirzov, UJV Rez, May 2019.  
-Distributed under GNU General Public License, version 2.
-
-<br/><br/>
-
-
-
 # Tests
 
 Folders *tests-elements*, *tests-examples* and *tests-users* contain .inp-tasks + .frd-calculation + .vtk and .vtu convertion results. They are needed for the development process.
