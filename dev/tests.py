@@ -41,7 +41,7 @@ def listAllInputFiles(startFolder):
         if os.path.isdir(f): # if folder
             for inputFile in listAllInputFiles(f):
                 allInputFiles.append(inputFile)
-        elif '.inp' in f:
+        elif f[-4:] == '.inp':
             allInputFiles.append(f[:-4])
     return allInputFiles
 

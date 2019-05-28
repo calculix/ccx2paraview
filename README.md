@@ -43,12 +43,14 @@ Tested in ccx_2.15 and Paraview 5.6.0 for:
 - output variables: NDTEMP, STRESS, DISP, FORC, PE, SDV, TOSTRAIN
 - analysis type: static, coupled temperature-displacement, visco, frequency
 
+<!--
 Known bug: for field output always use NSET parameter in your Calculix .inp-file. In this case conversion goes well. For example:
 
     *NODE FILE, NSET=ALL
         NT, U
     *EL FILE, NSET=ALL
         S, PEEQ, SDV
+-->
 
 <br/><br/>
 
