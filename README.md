@@ -68,6 +68,7 @@ Please, you may:
 
 Current TODO-list:
 
+- Test if principal stresses are calculated correctrly.
 - Generate equivalent and principal min/max for strain tensor.
 - Test converter for all the Calculix examples.
 
@@ -77,4 +78,4 @@ Current TODO-list:
 
 # dev
 
-Folder with tests and development version of the converter. You may not need it.
+Folder with tests and development version of the converter. Users may not need it.
