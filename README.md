@@ -54,25 +54,25 @@ Known bug: for field output always use NSET parameter in your Calculix .inp-file
 
 
 
-# dev
-
-Folder with tests and development version of the converter. You may not need it.
-
-<br/><br/>
-
-
-
 # Your help
 
-Please,
+Please, you may:
 
-    - simply use this converter
-    - ask questions
-    - post issues here, on the GitHub
-    - attach your models and screenshots
-    - follow discussion on the [CalculiX Group](https://groups.yahoo.com/neo/groups/CALCULIX/conversations/topics/13712)
+- simply use this converter
+- ask questions
+- post issues here, on the GitHub
+- attach your models and screenshots
+- follow discussion in the [Yahoo CalculiX Group](https://groups.yahoo.com/neo/groups/CALCULIX/conversations/topics/13712)
 
 Current TODO-list:
 
 - Generate equivalent and principal min/max for strain tensor.
 - Test converter for all the Calculix examples.
+
+<br/><br/>
+
+
+
+# dev
+
+Folder with tests and development version of the converter. You may not need it.
