@@ -115,7 +115,7 @@ class VTUWriter:
 
 
     # Write data
-    def write_data(self, f, b):
+    def write_data(self, f, b, nn):
         
         # Calculate amount of components and define their names
         component_names = ''
@@ -129,7 +129,9 @@ class VTUWriter:
 
         # Write data
         f.write('\t\t\t\t<DataArray type="Float32" Name="{}" NumberOfComponents="{}" {}format="ascii">\n'.format(b.name, len(b.components), component_names))
-        for node in sorted(b.results.keys()):
+        nodes = sorted(b.results.keys())
+        for n in range(nn): # iterate over nodes
+            node = nodes[n] 
             data = b.results[node]
             f.write('\t\t\t\t')
             for d in data:
@@ -207,8 +209,8 @@ class VTUWriter:
                 if b.numstep != int(step): # write results for one time step only
                     continue
                 if len(b.results) and len(b.components):
-                    print('Step {}, time {}, {}, {} components, {} values'.format(b.numstep, b.value, b.name, len(b.components), len(b.results)))
-                    self.write_data(f, b)
+                    print('Step {}, time {}, {}, {} components, {}->{} values'.format(b.numstep, b.value, b.name, len(b.components), len(b.results), nn))
+                    self.write_data(f, b, nn)
                 else:
                     print(b.name, '- no data for this step')
             f.write("\t\t\t</PointData>"+'\n')

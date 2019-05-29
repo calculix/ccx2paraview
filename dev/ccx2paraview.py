@@ -36,10 +36,8 @@ if __name__ == '__main__':
     p = FRDParser(args.frd + '.frd')
 
     # Calculate amounts of nodes and elements
-    try:
-        nn = max([len(b.results) for b in p.result_blocks]) # total number of nodes
-    except:
-        nn = p.node_block.numnod # TODO Wrong amount of nodes - has 18 zero nodes more
+    nn = min([len(b.results) for b in p.result_blocks]) # min will exclude zero nodes added by ccx due to *TRANSFORM
+    # nn = p.node_block.numnod
     ne = p.elem_block.numelem # total number of elements
     print(nn, 'nodes total')
     print(ne, 'cells total')
