@@ -162,7 +162,15 @@ class VTKWriter:
                 if b.numstep != int(step): # write results for one time step only
                     continue
                 if len(b.results) and len(b.components):
-                    print('Step {}, time {}, {}, {} components, {}->{} values'.format(b.numstep, b.value, b.name, len(b.components), len(b.results), nn))
+                    log = 'Step {}, '.format(b.numstep) +\
+                          'time {}, '.format(b.value) +\
+                          '{}, '.format(b.name) +\
+                          '{} components, '.format(len(b.components))
+                    if len(b.results) != nn:
+                          log += '{}->{} values'.format(len(b.results), nn)
+                    else:
+                        log += '{} values'.format(nn)
+                    print(log)
                     self.write_data(f, b, nn)
                 else:
                     print(b.name, '- no data for this step')
