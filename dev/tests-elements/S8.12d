@@ -1,0 +1,6 @@
+ ELEMENT            1 with label "S8      " and with nodes:
+          1          2          3          4          5          6          7          8
+  is expanded into a "C3D20 L " element with topology:
+          9         12         15         18         11         14         17         20         21         24
+         27         30         23         26         29         32         10         13         16         19
+

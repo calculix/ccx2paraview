@@ -1,0 +1,1350 @@
+ ELEMENT            1 with label "S8      " and with nodes:
+          1          3        203        201          2        103        202        101
+  is expanded into a "C3D20 L " element with topology:
+      10009      10015      10156      10150      10011      10017      10158      10152      10012      10105
+      10153      10102      10014      10107      10155      10104      10010      10016      10157      10151
+
+ ELEMENT            2 with label "S8      " and with nodes:
+          3          5        205        203          4        105        204        103
+  is expanded into a "C3D20 L " element with topology:
+      10015      10021      10162      10156      10017      10023      10164      10158      10018      10108
+      10159      10105      10020      10110      10161      10107      10016      10022      10163      10157
+
+ ELEMENT            3 with label "S8      " and with nodes:
+          5          7        207        205          6        107        206        105
+  is expanded into a "C3D20 L " element with topology:
+      10021      10027      10168      10162      10023      10029      10170      10164      10024      10111
+      10165      10108      10026      10113      10167      10110      10022      10028      10169      10163
+
+ ELEMENT            4 with label "S8      " and with nodes:
+          7          9        209        207          8        109        208        107
+  is expanded into a "C3D20 L " element with topology:
+      10027      10033      10174      10168      10029      10035      10176      10170      10030      10114
+      10171      10111      10032      10116      10173      10113      10028      10034      10175      10169
+
+ ELEMENT            5 with label "S8      " and with nodes:
+          9         11        211        209         10        111        210        109
+  is expanded into a "C3D20 L " element with topology:
+      10033      10039      10180      10174      10035      10041      10182      10176      10036      10117
+      10177      10114      10038      10119      10179      10116      10034      10040      10181      10175
+
+ ELEMENT            6 with label "S8      " and with nodes:
+         11         13        213        211         12        113        212        111
+  is expanded into a "C3D20 L " element with topology:
+      10039      10045      10186      10180      10041      10047      10188      10182      10042      10120
+      10183      10117      10044      10122      10185      10119      10040      10046      10187      10181
+
+ ELEMENT            7 with label "S8      " and with nodes:
+         13         15        215        213         14        115        214        113
+  is expanded into a "C3D20 L " element with topology:
+      10045      10051      10192      10186      10047      10053      10194      10188      10048      10123
+      10189      10120      10050      10125      10191      10122      10046      10052      10193      10187
+
+ ELEMENT            8 with label "S8      " and with nodes:
+         15         17        217        215         16        117        216        115
+  is expanded into a "C3D20 L " element with topology:
+      10051      10057      10198      10192      10053      10059      10200      10194      10054      10126
+      10195      10123      10056      10128      10197      10125      10052      10058      10199      10193
+
+ ELEMENT            9 with label "S8      " and with nodes:
+         17         19        219        217         18        119        218        117
+  is expanded into a "C3D20 L " element with topology:
+      10057      10063      10204      10198      10059      10065      10206      10200      10060      10129
+      10201      10126      10062      10131      10203      10128      10058      10064      10205      10199
+
+ ELEMENT           10 with label "S8      " and with nodes:
+         19         21        221        219         20        121        220        119
+  is expanded into a "C3D20 L " element with topology:
+      10063      10069      10210      10204      10065      10071      10212      10206      10066      10132
+      10207      10129      10068      10134      10209      10131      10064      10070      10211      10205
+
+ ELEMENT           11 with label "S8      " and with nodes:
+         21         23        223        221         22        123        222        121
+  is expanded into a "C3D20 L " element with topology:
+      10069      10075      10216      10210      10071      10077      10218      10212      10072      10135
+      10213      10132      10074      10137      10215      10134      10070      10076      10217      10211
+
+ ELEMENT           12 with label "S8      " and with nodes:
+         23         25        225        223         24        125        224        123
+  is expanded into a "C3D20 L " element with topology:
+      10075      10081      10222      10216      10077      10083      10224      10218      10078      10138
+      10219      10135      10080      10140      10221      10137      10076      10082      10223      10217
+
+ ELEMENT           13 with label "S8      " and with nodes:
+         25         27        227        225         26        127        226        125
+  is expanded into a "C3D20 L " element with topology:
+      10081      10087      10228      10222      10083      10089      10230      10224      10084      10141
+      10225      10138      10086      10143      10227      10140      10082      10088      10229      10223
+
+ ELEMENT           14 with label "S8      " and with nodes:
+         27         29        229        227         28        129        228        127
+  is expanded into a "C3D20 L " element with topology:
+      10087      10093      10234      10228      10089      10095      10236      10230      10090      10144
+      10231      10141      10092      10146      10233      10143      10088      10094      10235      10229
+
+ ELEMENT           15 with label "S8      " and with nodes:
+         29         31        231        229         30        131        230        129
+  is expanded into a "C3D20 L " element with topology:
+      10093      10099      10240      10234      10095      10101      10242      10236      10096      10147
+      10237      10144      10098      10149      10239      10146      10094      10100      10241      10235
+
+ ELEMENT          101 with label "S8      " and with nodes:
+        201        203        403        401        202        303        402        301
+  is expanded into a "C3D20 L " element with topology:
+      10150      10156      10297      10291      10152      10158      10299      10293      10153      10246
+      10294      10243      10155      10248      10296      10245      10151      10157      10298      10292
+
+ ELEMENT          102 with label "S8      " and with nodes:
+        203        205        405        403        204        305        404        303
+  is expanded into a "C3D20 L " element with topology:
+      10156      10162      10303      10297      10158      10164      10305      10299      10159      10249
+      10300      10246      10161      10251      10302      10248      10157      10163      10304      10298
+
+ ELEMENT          103 with label "S8      " and with nodes:
+        205        207        407        405        206        307        406        305
+  is expanded into a "C3D20 L " element with topology:
+      10162      10168      10309      10303      10164      10170      10311      10305      10165      10252
+      10306      10249      10167      10254      10308      10251      10163      10169      10310      10304
+
+ ELEMENT          104 with label "S8      " and with nodes:
+        207        209        409        407        208        309        408        307
+  is expanded into a "C3D20 L " element with topology:
+      10168      10174      10315      10309      10170      10176      10317      10311      10171      10255
+      10312      10252      10173      10257      10314      10254      10169      10175      10316      10310
+
+ ELEMENT          105 with label "S8      " and with nodes:
+        209        211        411        409        210        311        410        309
+  is expanded into a "C3D20 L " element with topology:
+      10174      10180      10321      10315      10176      10182      10323      10317      10177      10258
+      10318      10255      10179      10260      10320      10257      10175      10181      10322      10316
+
+ ELEMENT          106 with label "S8      " and with nodes:
+        211        213        413        411        212        313        412        311
+  is expanded into a "C3D20 L " element with topology:
+      10180      10186      10327      10321      10182      10188      10329      10323      10183      10261
+      10324      10258      10185      10263      10326      10260      10181      10187      10328      10322
+
+ ELEMENT          107 with label "S8      " and with nodes:
+        213        215        415        413        214        315        414        313
+  is expanded into a "C3D20 L " element with topology:
+      10186      10192      10333      10327      10188      10194      10335      10329      10189      10264
+      10330      10261      10191      10266      10332      10263      10187      10193      10334      10328
+
+ ELEMENT          108 with label "S8      " and with nodes:
+        215        217        417        415        216        317        416        315
+  is expanded into a "C3D20 L " element with topology:
+      10192      10198      10339      10333      10194      10200      10341      10335      10195      10267
+      10336      10264      10197      10269      10338      10266      10193      10199      10340      10334
+
+ ELEMENT          109 with label "S8      " and with nodes:
+        217        219        419        417        218        319        418        317
+  is expanded into a "C3D20 L " element with topology:
+      10198      10204      10345      10339      10200      10206      10347      10341      10201      10270
+      10342      10267      10203      10272      10344      10269      10199      10205      10346      10340
+
+ ELEMENT          110 with label "S8      " and with nodes:
+        219        221        421        419        220        321        420        319
+  is expanded into a "C3D20 L " element with topology:
+      10204      10210      10351      10345      10206      10212      10353      10347      10207      10273
+      10348      10270      10209      10275      10350      10272      10205      10211      10352      10346
+
+ ELEMENT          111 with label "S8      " and with nodes:
+        221        223        423        421        222        323        422        321
+  is expanded into a "C3D20 L " element with topology:
+      10210      10216      10357      10351      10212      10218      10359      10353      10213      10276
+      10354      10273      10215      10278      10356      10275      10211      10217      10358      10352
+
+ ELEMENT          112 with label "S8      " and with nodes:
+        223        225        425        423        224        325        424        323
+  is expanded into a "C3D20 L " element with topology:
+      10216      10222      10363      10357      10218      10224      10365      10359      10219      10279
+      10360      10276      10221      10281      10362      10278      10217      10223      10364      10358
+
+ ELEMENT          113 with label "S8      " and with nodes:
+        225        227        427        425        226        327        426        325
+  is expanded into a "C3D20 L " element with topology:
+      10222      10228      10369      10363      10224      10230      10371      10365      10225      10282
+      10366      10279      10227      10284      10368      10281      10223      10229      10370      10364
+
+ ELEMENT          114 with label "S8      " and with nodes:
+        227        229        429        427        228        329        428        327
+  is expanded into a "C3D20 L " element with topology:
+      10228      10234      10375      10369      10230      10236      10377      10371      10231      10285
+      10372      10282      10233      10287      10374      10284      10229      10235      10376      10370
+
+ ELEMENT          115 with label "S8      " and with nodes:
+        229        231        431        429        230        331        430        329
+  is expanded into a "C3D20 L " element with topology:
+      10234      10240      10381      10375      10236      10242      10383      10377      10237      10288
+      10378      10285      10239      10290      10380      10287      10235      10241      10382      10376
+
+ ELEMENT          201 with label "S8      " and with nodes:
+        401        403        603        601        402        503        602        501
+  is expanded into a "C3D20 L " element with topology:
+      10291      10297      10438      10432      10293      10299      10440      10434      10294      10387
+      10435      10384      10296      10389      10437      10386      10292      10298      10439      10433
+
+ ELEMENT          202 with label "S8      " and with nodes:
+        403        405        605        603        404        505        604        503
+  is expanded into a "C3D20 L " element with topology:
+      10297      10303      10444      10438      10299      10305      10446      10440      10300      10390
+      10441      10387      10302      10392      10443      10389      10298      10304      10445      10439
+
+ ELEMENT          203 with label "S8      " and with nodes:
+        405        407        607        605        406        507        606        505
+  is expanded into a "C3D20 L " element with topology:
+      10303      10309      10450      10444      10305      10311      10452      10446      10306      10393
+      10447      10390      10308      10395      10449      10392      10304      10310      10451      10445
+
+ ELEMENT          204 with label "S8      " and with nodes:
+        407        409        609        607        408        509        608        507
+  is expanded into a "C3D20 L " element with topology:
+      10309      10315      10456      10450      10311      10317      10458      10452      10312      10396
+      10453      10393      10314      10398      10455      10395      10310      10316      10457      10451
+
+ ELEMENT          205 with label "S8      " and with nodes:
+        409        411        611        609        410        511        610        509
+  is expanded into a "C3D20 L " element with topology:
+      10315      10321      10462      10456      10317      10323      10464      10458      10318      10399
+      10459      10396      10320      10401      10461      10398      10316      10322      10463      10457
+
+ ELEMENT          206 with label "S8      " and with nodes:
+        411        413        613        611        412        513        612        511
+  is expanded into a "C3D20 L " element with topology:
+      10321      10327      10468      10462      10323      10329      10470      10464      10324      10402
+      10465      10399      10326      10404      10467      10401      10322      10328      10469      10463
+
+ ELEMENT          207 with label "S8      " and with nodes:
+        413        415        615        613        414        515        614        513
+  is expanded into a "C3D20 L " element with topology:
+      10327      10333      10474      10468      10329      10335      10476      10470      10330      10405
+      10471      10402      10332      10407      10473      10404      10328      10334      10475      10469
+
+ ELEMENT          208 with label "S8      " and with nodes:
+        415        417        617        615        416        517        616        515
+  is expanded into a "C3D20 L " element with topology:
+      10333      10339      10480      10474      10335      10341      10482      10476      10336      10408
+      10477      10405      10338      10410      10479      10407      10334      10340      10481      10475
+
+ ELEMENT          209 with label "S8      " and with nodes:
+        417        419        619        617        418        519        618        517
+  is expanded into a "C3D20 L " element with topology:
+      10339      10345      10486      10480      10341      10347      10488      10482      10342      10411
+      10483      10408      10344      10413      10485      10410      10340      10346      10487      10481
+
+ ELEMENT          210 with label "S8      " and with nodes:
+        419        421        621        619        420        521        620        519
+  is expanded into a "C3D20 L " element with topology:
+      10345      10351      10492      10486      10347      10353      10494      10488      10348      10414
+      10489      10411      10350      10416      10491      10413      10346      10352      10493      10487
+
+ ELEMENT          211 with label "S8      " and with nodes:
+        421        423        623        621        422        523        622        521
+  is expanded into a "C3D20 L " element with topology:
+      10351      10357      10498      10492      10353      10359      10500      10494      10354      10417
+      10495      10414      10356      10419      10497      10416      10352      10358      10499      10493
+
+ ELEMENT          212 with label "S8      " and with nodes:
+        423        425        625        623        424        525        624        523
+  is expanded into a "C3D20 L " element with topology:
+      10357      10363      10504      10498      10359      10365      10506      10500      10360      10420
+      10501      10417      10362      10422      10503      10419      10358      10364      10505      10499
+
+ ELEMENT          213 with label "S8      " and with nodes:
+        425        427        627        625        426        527        626        525
+  is expanded into a "C3D20 L " element with topology:
+      10363      10369      10510      10504      10365      10371      10512      10506      10366      10423
+      10507      10420      10368      10425      10509      10422      10364      10370      10511      10505
+
+ ELEMENT          214 with label "S8      " and with nodes:
+        427        429        629        627        428        529        628        527
+  is expanded into a "C3D20 L " element with topology:
+      10369      10375      10516      10510      10371      10377      10518      10512      10372      10426
+      10513      10423      10374      10428      10515      10425      10370      10376      10517      10511
+
+ ELEMENT          215 with label "S8      " and with nodes:
+        429        431        631        629        430        531        630        529
+  is expanded into a "C3D20 L " element with topology:
+      10375      10381      10522      10516      10377      10383      10524      10518      10378      10429
+      10519      10426      10380      10431      10521      10428      10376      10382      10523      10517
+
+ ELEMENT          301 with label "S8      " and with nodes:
+        601        603        803        801        602        703        802        701
+  is expanded into a "C3D20 L " element with topology:
+      10432      10438      10579      10573      10434      10440      10581      10575      10435      10528
+      10576      10525      10437      10530      10578      10527      10433      10439      10580      10574
+
+ ELEMENT          302 with label "S8      " and with nodes:
+        603        605        805        803        604        705        804        703
+  is expanded into a "C3D20 L " element with topology:
+      10438      10444      10585      10579      10440      10446      10587      10581      10441      10531
+      10582      10528      10443      10533      10584      10530      10439      10445      10586      10580
+
+ ELEMENT          303 with label "S8      " and with nodes:
+        605        607        807        805        606        707        806        705
+  is expanded into a "C3D20 L " element with topology:
+      10444      10450      10591      10585      10446      10452      10593      10587      10447      10534
+      10588      10531      10449      10536      10590      10533      10445      10451      10592      10586
+
+ ELEMENT          304 with label "S8      " and with nodes:
+        607        609        809        807        608        709        808        707
+  is expanded into a "C3D20 L " element with topology:
+      10450      10456      10597      10591      10452      10458      10599      10593      10453      10537
+      10594      10534      10455      10539      10596      10536      10451      10457      10598      10592
+
+ ELEMENT          305 with label "S8      " and with nodes:
+        609        611        811        809        610        711        810        709
+  is expanded into a "C3D20 L " element with topology:
+      10456      10462      10603      10597      10458      10464      10605      10599      10459      10540
+      10600      10537      10461      10542      10602      10539      10457      10463      10604      10598
+
+ ELEMENT          306 with label "S8      " and with nodes:
+        611        613        813        811        612        713        812        711
+  is expanded into a "C3D20 L " element with topology:
+      10462      10468      10609      10603      10464      10470      10611      10605      10465      10543
+      10606      10540      10467      10545      10608      10542      10463      10469      10610      10604
+
+ ELEMENT          307 with label "S8      " and with nodes:
+        613        615        815        813        614        715        814        713
+  is expanded into a "C3D20 L " element with topology:
+      10468      10474      10615      10609      10470      10476      10617      10611      10471      10546
+      10612      10543      10473      10548      10614      10545      10469      10475      10616      10610
+
+ ELEMENT          308 with label "S8      " and with nodes:
+        615        617        817        815        616        717        816        715
+  is expanded into a "C3D20 L " element with topology:
+      10474      10480      10621      10615      10476      10482      10623      10617      10477      10549
+      10618      10546      10479      10551      10620      10548      10475      10481      10622      10616
+
+ ELEMENT          309 with label "S8      " and with nodes:
+        617        619        819        817        618        719        818        717
+  is expanded into a "C3D20 L " element with topology:
+      10480      10486      10627      10621      10482      10488      10629      10623      10483      10552
+      10624      10549      10485      10554      10626      10551      10481      10487      10628      10622
+
+ ELEMENT          310 with label "S8      " and with nodes:
+        619        621        821        819        620        721        820        719
+  is expanded into a "C3D20 L " element with topology:
+      10486      10492      10633      10627      10488      10494      10635      10629      10489      10555
+      10630      10552      10491      10557      10632      10554      10487      10493      10634      10628
+
+ ELEMENT          311 with label "S8      " and with nodes:
+        621        623        823        821        622        723        822        721
+  is expanded into a "C3D20 L " element with topology:
+      10492      10498      10639      10633      10494      10500      10641      10635      10495      10558
+      10636      10555      10497      10560      10638      10557      10493      10499      10640      10634
+
+ ELEMENT          312 with label "S8      " and with nodes:
+        623        625        825        823        624        725        824        723
+  is expanded into a "C3D20 L " element with topology:
+      10498      10504      10645      10639      10500      10506      10647      10641      10501      10561
+      10642      10558      10503      10563      10644      10560      10499      10505      10646      10640
+
+ ELEMENT          313 with label "S8      " and with nodes:
+        625        627        827        825        626        727        826        725
+  is expanded into a "C3D20 L " element with topology:
+      10504      10510      10651      10645      10506      10512      10653      10647      10507      10564
+      10648      10561      10509      10566      10650      10563      10505      10511      10652      10646
+
+ ELEMENT          314 with label "S8      " and with nodes:
+        627        629        829        827        628        729        828        727
+  is expanded into a "C3D20 L " element with topology:
+      10510      10516      10657      10651      10512      10518      10659      10653      10513      10567
+      10654      10564      10515      10569      10656      10566      10511      10517      10658      10652
+
+ ELEMENT          315 with label "S8      " and with nodes:
+        629        631        831        829        630        731        830        729
+  is expanded into a "C3D20 L " element with topology:
+      10516      10522      10663      10657      10518      10524      10665      10659      10519      10570
+      10660      10567      10521      10572      10662      10569      10517      10523      10664      10658
+
+ ELEMENT          401 with label "S8      " and with nodes:
+        801        803       1003       1001        802        903       1002        901
+  is expanded into a "C3D20 L " element with topology:
+      10573      10579      10720      10714      10575      10581      10722      10716      10576      10669
+      10717      10666      10578      10671      10719      10668      10574      10580      10721      10715
+
+ ELEMENT          402 with label "S8      " and with nodes:
+        803        805       1005       1003        804        905       1004        903
+  is expanded into a "C3D20 L " element with topology:
+      10579      10585      10726      10720      10581      10587      10728      10722      10582      10672
+      10723      10669      10584      10674      10725      10671      10580      10586      10727      10721
+
+ ELEMENT          403 with label "S8      " and with nodes:
+        805        807       1007       1005        806        907       1006        905
+  is expanded into a "C3D20 L " element with topology:
+      10585      10591      10732      10726      10587      10593      10734      10728      10588      10675
+      10729      10672      10590      10677      10731      10674      10586      10592      10733      10727
+
+ ELEMENT          404 with label "S8      " and with nodes:
+        807        809       1009       1007        808        909       1008        907
+  is expanded into a "C3D20 L " element with topology:
+      10591      10597      10738      10732      10593      10599      10740      10734      10594      10678
+      10735      10675      10596      10680      10737      10677      10592      10598      10739      10733
+
+ ELEMENT          405 with label "S8      " and with nodes:
+        809        811       1011       1009        810        911       1010        909
+  is expanded into a "C3D20 L " element with topology:
+      10597      10603      10744      10738      10599      10605      10746      10740      10600      10681
+      10741      10678      10602      10683      10743      10680      10598      10604      10745      10739
+
+ ELEMENT          406 with label "S8      " and with nodes:
+        811        813       1013       1011        812        913       1012        911
+  is expanded into a "C3D20 L " element with topology:
+      10603      10609      10750      10744      10605      10611      10752      10746      10606      10684
+      10747      10681      10608      10686      10749      10683      10604      10610      10751      10745
+
+ ELEMENT          407 with label "S8      " and with nodes:
+        813        815       1015       1013        814        915       1014        913
+  is expanded into a "C3D20 L " element with topology:
+      10609      10615      10756      10750      10611      10617      10758      10752      10612      10687
+      10753      10684      10614      10689      10755      10686      10610      10616      10757      10751
+
+ ELEMENT          408 with label "S8      " and with nodes:
+        815        817       1017       1015        816        917       1016        915
+  is expanded into a "C3D20 L " element with topology:
+      10615      10621      10762      10756      10617      10623      10764      10758      10618      10690
+      10759      10687      10620      10692      10761      10689      10616      10622      10763      10757
+
+ ELEMENT          409 with label "S8      " and with nodes:
+        817        819       1019       1017        818        919       1018        917
+  is expanded into a "C3D20 L " element with topology:
+      10621      10627      10768      10762      10623      10629      10770      10764      10624      10693
+      10765      10690      10626      10695      10767      10692      10622      10628      10769      10763
+
+ ELEMENT          410 with label "S8      " and with nodes:
+        819        821       1021       1019        820        921       1020        919
+  is expanded into a "C3D20 L " element with topology:
+      10627      10633      10774      10768      10629      10635      10776      10770      10630      10696
+      10771      10693      10632      10698      10773      10695      10628      10634      10775      10769
+
+ ELEMENT          411 with label "S8      " and with nodes:
+        821        823       1023       1021        822        923       1022        921
+  is expanded into a "C3D20 L " element with topology:
+      10633      10639      10780      10774      10635      10641      10782      10776      10636      10699
+      10777      10696      10638      10701      10779      10698      10634      10640      10781      10775
+
+ ELEMENT          412 with label "S8      " and with nodes:
+        823        825       1025       1023        824        925       1024        923
+  is expanded into a "C3D20 L " element with topology:
+      10639      10645      10786      10780      10641      10647      10788      10782      10642      10702
+      10783      10699      10644      10704      10785      10701      10640      10646      10787      10781
+
+ ELEMENT          413 with label "S8      " and with nodes:
+        825        827       1027       1025        826        927       1026        925
+  is expanded into a "C3D20 L " element with topology:
+      10645      10651      10792      10786      10647      10653      10794      10788      10648      10705
+      10789      10702      10650      10707      10791      10704      10646      10652      10793      10787
+
+ ELEMENT          414 with label "S8      " and with nodes:
+        827        829       1029       1027        828        929       1028        927
+  is expanded into a "C3D20 L " element with topology:
+      10651      10657      10798      10792      10653      10659      10800      10794      10654      10708
+      10795      10705      10656      10710      10797      10707      10652      10658      10799      10793
+
+ ELEMENT          415 with label "S8      " and with nodes:
+        829        831       1031       1029        830        931       1030        929
+  is expanded into a "C3D20 L " element with topology:
+      10657      10663      10804      10798      10659      10665      10806      10800      10660      10711
+      10801      10708      10662      10713      10803      10710      10658      10664      10805      10799
+
+ ELEMENT          501 with label "S8      " and with nodes:
+       1001       1003       1203       1201       1002       1103       1202       1101
+  is expanded into a "C3D20 L " element with topology:
+      10714      10720      10861      10855      10716      10722      10863      10857      10717      10810
+      10858      10807      10719      10812      10860      10809      10715      10721      10862      10856
+
+ ELEMENT          502 with label "S8      " and with nodes:
+       1003       1005       1205       1203       1004       1105       1204       1103
+  is expanded into a "C3D20 L " element with topology:
+      10720      10726      10867      10861      10722      10728      10869      10863      10723      10813
+      10864      10810      10725      10815      10866      10812      10721      10727      10868      10862
+
+ ELEMENT          503 with label "S8      " and with nodes:
+       1005       1007       1207       1205       1006       1107       1206       1105
+  is expanded into a "C3D20 L " element with topology:
+      10726      10732      10873      10867      10728      10734      10875      10869      10729      10816
+      10870      10813      10731      10818      10872      10815      10727      10733      10874      10868
+
+ ELEMENT          504 with label "S8      " and with nodes:
+       1007       1009       1209       1207       1008       1109       1208       1107
+  is expanded into a "C3D20 L " element with topology:
+      10732      10738      10879      10873      10734      10740      10881      10875      10735      10819
+      10876      10816      10737      10821      10878      10818      10733      10739      10880      10874
+
+ ELEMENT          505 with label "S8      " and with nodes:
+       1009       1011       1211       1209       1010       1111       1210       1109
+  is expanded into a "C3D20 L " element with topology:
+      10738      10744      10885      10879      10740      10746      10887      10881      10741      10822
+      10882      10819      10743      10824      10884      10821      10739      10745      10886      10880
+
+ ELEMENT          506 with label "S8      " and with nodes:
+       1011       1013       1213       1211       1012       1113       1212       1111
+  is expanded into a "C3D20 L " element with topology:
+      10744      10750      10891      10885      10746      10752      10893      10887      10747      10825
+      10888      10822      10749      10827      10890      10824      10745      10751      10892      10886
+
+ ELEMENT          507 with label "S8      " and with nodes:
+       1013       1015       1215       1213       1014       1115       1214       1113
+  is expanded into a "C3D20 L " element with topology:
+      10750      10756      10897      10891      10752      10758      10899      10893      10753      10828
+      10894      10825      10755      10830      10896      10827      10751      10757      10898      10892
+
+ ELEMENT          508 with label "S8      " and with nodes:
+       1015       1017       1217       1215       1016       1117       1216       1115
+  is expanded into a "C3D20 L " element with topology:
+      10756      10762      10903      10897      10758      10764      10905      10899      10759      10831
+      10900      10828      10761      10833      10902      10830      10757      10763      10904      10898
+
+ ELEMENT          509 with label "S8      " and with nodes:
+       1017       1019       1219       1217       1018       1119       1218       1117
+  is expanded into a "C3D20 L " element with topology:
+      10762      10768      10909      10903      10764      10770      10911      10905      10765      10834
+      10906      10831      10767      10836      10908      10833      10763      10769      10910      10904
+
+ ELEMENT          510 with label "S8      " and with nodes:
+       1019       1021       1221       1219       1020       1121       1220       1119
+  is expanded into a "C3D20 L " element with topology:
+      10768      10774      10915      10909      10770      10776      10917      10911      10771      10837
+      10912      10834      10773      10839      10914      10836      10769      10775      10916      10910
+
+ ELEMENT          511 with label "S8      " and with nodes:
+       1021       1023       1223       1221       1022       1123       1222       1121
+  is expanded into a "C3D20 L " element with topology:
+      10774      10780      10921      10915      10776      10782      10923      10917      10777      10840
+      10918      10837      10779      10842      10920      10839      10775      10781      10922      10916
+
+ ELEMENT          512 with label "S8      " and with nodes:
+       1023       1025       1225       1223       1024       1125       1224       1123
+  is expanded into a "C3D20 L " element with topology:
+      10780      10786      10927      10921      10782      10788      10929      10923      10783      10843
+      10924      10840      10785      10845      10926      10842      10781      10787      10928      10922
+
+ ELEMENT          513 with label "S8      " and with nodes:
+       1025       1027       1227       1225       1026       1127       1226       1125
+  is expanded into a "C3D20 L " element with topology:
+      10786      10792      10933      10927      10788      10794      10935      10929      10789      10846
+      10930      10843      10791      10848      10932      10845      10787      10793      10934      10928
+
+ ELEMENT          514 with label "S8      " and with nodes:
+       1027       1029       1229       1227       1028       1129       1228       1127
+  is expanded into a "C3D20 L " element with topology:
+      10792      10798      10939      10933      10794      10800      10941      10935      10795      10849
+      10936      10846      10797      10851      10938      10848      10793      10799      10940      10934
+
+ ELEMENT          515 with label "S8      " and with nodes:
+       1029       1031       1231       1229       1030       1131       1230       1129
+  is expanded into a "C3D20 L " element with topology:
+      10798      10804      10945      10939      10800      10806      10947      10941      10801      10852
+      10942      10849      10803      10854      10944      10851      10799      10805      10946      10940
+
+ ELEMENT          601 with label "S8      " and with nodes:
+       1201       1203       1403       1401       1202       1303       1402       1301
+  is expanded into a "C3D20 L " element with topology:
+      10855      10861      11002      10996      10857      10863      11004      10998      10858      10951
+      10999      10948      10860      10953      11001      10950      10856      10862      11003      10997
+
+ ELEMENT          602 with label "S8      " and with nodes:
+       1203       1205       1405       1403       1204       1305       1404       1303
+  is expanded into a "C3D20 L " element with topology:
+      10861      10867      11008      11002      10863      10869      11010      11004      10864      10954
+      11005      10951      10866      10956      11007      10953      10862      10868      11009      11003
+
+ ELEMENT          603 with label "S8      " and with nodes:
+       1205       1207       1407       1405       1206       1307       1406       1305
+  is expanded into a "C3D20 L " element with topology:
+      10867      10873      11014      11008      10869      10875      11016      11010      10870      10957
+      11011      10954      10872      10959      11013      10956      10868      10874      11015      11009
+
+ ELEMENT          604 with label "S8      " and with nodes:
+       1207       1209       1409       1407       1208       1309       1408       1307
+  is expanded into a "C3D20 L " element with topology:
+      10873      10879      11020      11014      10875      10881      11022      11016      10876      10960
+      11017      10957      10878      10962      11019      10959      10874      10880      11021      11015
+
+ ELEMENT          605 with label "S8      " and with nodes:
+       1209       1211       1411       1409       1210       1311       1410       1309
+  is expanded into a "C3D20 L " element with topology:
+      10879      10885      11026      11020      10881      10887      11028      11022      10882      10963
+      11023      10960      10884      10965      11025      10962      10880      10886      11027      11021
+
+ ELEMENT          606 with label "S8      " and with nodes:
+       1211       1213       1413       1411       1212       1313       1412       1311
+  is expanded into a "C3D20 L " element with topology:
+      10885      10891      11032      11026      10887      10893      11034      11028      10888      10966
+      11029      10963      10890      10968      11031      10965      10886      10892      11033      11027
+
+ ELEMENT          607 with label "S8      " and with nodes:
+       1213       1215       1415       1413       1214       1315       1414       1313
+  is expanded into a "C3D20 L " element with topology:
+      10891      10897      11038      11032      10893      10899      11040      11034      10894      10969
+      11035      10966      10896      10971      11037      10968      10892      10898      11039      11033
+
+ ELEMENT          608 with label "S8      " and with nodes:
+       1215       1217       1417       1415       1216       1317       1416       1315
+  is expanded into a "C3D20 L " element with topology:
+      10897      10903      11044      11038      10899      10905      11046      11040      10900      10972
+      11041      10969      10902      10974      11043      10971      10898      10904      11045      11039
+
+ ELEMENT          609 with label "S8      " and with nodes:
+       1217       1219       1419       1417       1218       1319       1418       1317
+  is expanded into a "C3D20 L " element with topology:
+      10903      10909      11050      11044      10905      10911      11052      11046      10906      10975
+      11047      10972      10908      10977      11049      10974      10904      10910      11051      11045
+
+ ELEMENT          610 with label "S8      " and with nodes:
+       1219       1221       1421       1419       1220       1321       1420       1319
+  is expanded into a "C3D20 L " element with topology:
+      10909      10915      11056      11050      10911      10917      11058      11052      10912      10978
+      11053      10975      10914      10980      11055      10977      10910      10916      11057      11051
+
+ ELEMENT          611 with label "S8      " and with nodes:
+       1221       1223       1423       1421       1222       1323       1422       1321
+  is expanded into a "C3D20 L " element with topology:
+      10915      10921      11062      11056      10917      10923      11064      11058      10918      10981
+      11059      10978      10920      10983      11061      10980      10916      10922      11063      11057
+
+ ELEMENT          612 with label "S8      " and with nodes:
+       1223       1225       1425       1423       1224       1325       1424       1323
+  is expanded into a "C3D20 L " element with topology:
+      10921      10927      11068      11062      10923      10929      11070      11064      10924      10984
+      11065      10981      10926      10986      11067      10983      10922      10928      11069      11063
+
+ ELEMENT          613 with label "S8      " and with nodes:
+       1225       1227       1427       1425       1226       1327       1426       1325
+  is expanded into a "C3D20 L " element with topology:
+      10927      10933      11074      11068      10929      10935      11076      11070      10930      10987
+      11071      10984      10932      10989      11073      10986      10928      10934      11075      11069
+
+ ELEMENT          614 with label "S8      " and with nodes:
+       1227       1229       1429       1427       1228       1329       1428       1327
+  is expanded into a "C3D20 L " element with topology:
+      10933      10939      11080      11074      10935      10941      11082      11076      10936      10990
+      11077      10987      10938      10992      11079      10989      10934      10940      11081      11075
+
+ ELEMENT          615 with label "S8      " and with nodes:
+       1229       1231       1431       1429       1230       1331       1430       1329
+  is expanded into a "C3D20 L " element with topology:
+      10939      10945      11086      11080      10941      10947      11088      11082      10942      10993
+      11083      10990      10944      10995      11085      10992      10940      10946      11087      11081
+
+ ELEMENT          701 with label "S8      " and with nodes:
+       1401       1403       1603       1601       1402       1503       1602       1501
+  is expanded into a "C3D20 L " element with topology:
+      10996      11002      11143      11137      10998      11004      11145      11139      10999      11092
+      11140      11089      11001      11094      11142      11091      10997      11003      11144      11138
+
+ ELEMENT          702 with label "S8      " and with nodes:
+       1403       1405       1605       1603       1404       1505       1604       1503
+  is expanded into a "C3D20 L " element with topology:
+      11002      11008      11149      11143      11004      11010      11151      11145      11005      11095
+      11146      11092      11007      11097      11148      11094      11003      11009      11150      11144
+
+ ELEMENT          703 with label "S8      " and with nodes:
+       1405       1407       1607       1605       1406       1507       1606       1505
+  is expanded into a "C3D20 L " element with topology:
+      11008      11014      11155      11149      11010      11016      11157      11151      11011      11098
+      11152      11095      11013      11100      11154      11097      11009      11015      11156      11150
+
+ ELEMENT          704 with label "S8      " and with nodes:
+       1407       1409       1609       1607       1408       1509       1608       1507
+  is expanded into a "C3D20 L " element with topology:
+      11014      11020      11161      11155      11016      11022      11163      11157      11017      11101
+      11158      11098      11019      11103      11160      11100      11015      11021      11162      11156
+
+ ELEMENT          705 with label "S8      " and with nodes:
+       1409       1411       1611       1609       1410       1511       1610       1509
+  is expanded into a "C3D20 L " element with topology:
+      11020      11026      11167      11161      11022      11028      11169      11163      11023      11104
+      11164      11101      11025      11106      11166      11103      11021      11027      11168      11162
+
+ ELEMENT          706 with label "S8      " and with nodes:
+       1411       1413       1613       1611       1412       1513       1612       1511
+  is expanded into a "C3D20 L " element with topology:
+      11026      11032      11173      11167      11028      11034      11175      11169      11029      11107
+      11170      11104      11031      11109      11172      11106      11027      11033      11174      11168
+
+ ELEMENT          707 with label "S8      " and with nodes:
+       1413       1415       1615       1613       1414       1515       1614       1513
+  is expanded into a "C3D20 L " element with topology:
+      11032      11038      11179      11173      11034      11040      11181      11175      11035      11110
+      11176      11107      11037      11112      11178      11109      11033      11039      11180      11174
+
+ ELEMENT          708 with label "S8      " and with nodes:
+       1415       1417       1617       1615       1416       1517       1616       1515
+  is expanded into a "C3D20 L " element with topology:
+      11038      11044      11185      11179      11040      11046      11187      11181      11041      11113
+      11182      11110      11043      11115      11184      11112      11039      11045      11186      11180
+
+ ELEMENT          709 with label "S8      " and with nodes:
+       1417       1419       1619       1617       1418       1519       1618       1517
+  is expanded into a "C3D20 L " element with topology:
+      11044      11050      11191      11185      11046      11052      11193      11187      11047      11116
+      11188      11113      11049      11118      11190      11115      11045      11051      11192      11186
+
+ ELEMENT          710 with label "S8      " and with nodes:
+       1419       1421       1621       1619       1420       1521       1620       1519
+  is expanded into a "C3D20 L " element with topology:
+      11050      11056      11197      11191      11052      11058      11199      11193      11053      11119
+      11194      11116      11055      11121      11196      11118      11051      11057      11198      11192
+
+ ELEMENT          711 with label "S8      " and with nodes:
+       1421       1423       1623       1621       1422       1523       1622       1521
+  is expanded into a "C3D20 L " element with topology:
+      11056      11062      11203      11197      11058      11064      11205      11199      11059      11122
+      11200      11119      11061      11124      11202      11121      11057      11063      11204      11198
+
+ ELEMENT          712 with label "S8      " and with nodes:
+       1423       1425       1625       1623       1424       1525       1624       1523
+  is expanded into a "C3D20 L " element with topology:
+      11062      11068      11209      11203      11064      11070      11211      11205      11065      11125
+      11206      11122      11067      11127      11208      11124      11063      11069      11210      11204
+
+ ELEMENT          713 with label "S8      " and with nodes:
+       1425       1427       1627       1625       1426       1527       1626       1525
+  is expanded into a "C3D20 L " element with topology:
+      11068      11074      11215      11209      11070      11076      11217      11211      11071      11128
+      11212      11125      11073      11130      11214      11127      11069      11075      11216      11210
+
+ ELEMENT          714 with label "S8      " and with nodes:
+       1427       1429       1629       1627       1428       1529       1628       1527
+  is expanded into a "C3D20 L " element with topology:
+      11074      11080      11221      11215      11076      11082      11223      11217      11077      11131
+      11218      11128      11079      11133      11220      11130      11075      11081      11222      11216
+
+ ELEMENT          715 with label "S8      " and with nodes:
+       1429       1431       1631       1629       1430       1531       1630       1529
+  is expanded into a "C3D20 L " element with topology:
+      11080      11086      11227      11221      11082      11088      11229      11223      11083      11134
+      11224      11131      11085      11136      11226      11133      11081      11087      11228      11222
+
+ ELEMENT          801 with label "S8      " and with nodes:
+       1601       1603       1803       1801       1602       1703       1802       1701
+  is expanded into a "C3D20 L " element with topology:
+      11137      11143      11284      11278      11139      11145      11286      11280      11140      11233
+      11281      11230      11142      11235      11283      11232      11138      11144      11285      11279
+
+ ELEMENT          802 with label "S8      " and with nodes:
+       1603       1605       1805       1803       1604       1705       1804       1703
+  is expanded into a "C3D20 L " element with topology:
+      11143      11149      11290      11284      11145      11151      11292      11286      11146      11236
+      11287      11233      11148      11238      11289      11235      11144      11150      11291      11285
+
+ ELEMENT          803 with label "S8      " and with nodes:
+       1605       1607       1807       1805       1606       1707       1806       1705
+  is expanded into a "C3D20 L " element with topology:
+      11149      11155      11296      11290      11151      11157      11298      11292      11152      11239
+      11293      11236      11154      11241      11295      11238      11150      11156      11297      11291
+
+ ELEMENT          804 with label "S8      " and with nodes:
+       1607       1609       1809       1807       1608       1709       1808       1707
+  is expanded into a "C3D20 L " element with topology:
+      11155      11161      11302      11296      11157      11163      11304      11298      11158      11242
+      11299      11239      11160      11244      11301      11241      11156      11162      11303      11297
+
+ ELEMENT          805 with label "S8      " and with nodes:
+       1609       1611       1811       1809       1610       1711       1810       1709
+  is expanded into a "C3D20 L " element with topology:
+      11161      11167      11308      11302      11163      11169      11310      11304      11164      11245
+      11305      11242      11166      11247      11307      11244      11162      11168      11309      11303
+
+ ELEMENT          806 with label "S8      " and with nodes:
+       1611       1613       1813       1811       1612       1713       1812       1711
+  is expanded into a "C3D20 L " element with topology:
+      11167      11173      11314      11308      11169      11175      11316      11310      11170      11248
+      11311      11245      11172      11250      11313      11247      11168      11174      11315      11309
+
+ ELEMENT          807 with label "S8      " and with nodes:
+       1613       1615       1815       1813       1614       1715       1814       1713
+  is expanded into a "C3D20 L " element with topology:
+      11173      11179      11320      11314      11175      11181      11322      11316      11176      11251
+      11317      11248      11178      11253      11319      11250      11174      11180      11321      11315
+
+ ELEMENT          808 with label "S8      " and with nodes:
+       1615       1617       1817       1815       1616       1717       1816       1715
+  is expanded into a "C3D20 L " element with topology:
+      11179      11185      11326      11320      11181      11187      11328      11322      11182      11254
+      11323      11251      11184      11256      11325      11253      11180      11186      11327      11321
+
+ ELEMENT          809 with label "S8      " and with nodes:
+       1617       1619       1819       1817       1618       1719       1818       1717
+  is expanded into a "C3D20 L " element with topology:
+      11185      11191      11332      11326      11187      11193      11334      11328      11188      11257
+      11329      11254      11190      11259      11331      11256      11186      11192      11333      11327
+
+ ELEMENT          810 with label "S8      " and with nodes:
+       1619       1621       1821       1819       1620       1721       1820       1719
+  is expanded into a "C3D20 L " element with topology:
+      11191      11197      11338      11332      11193      11199      11340      11334      11194      11260
+      11335      11257      11196      11262      11337      11259      11192      11198      11339      11333
+
+ ELEMENT          811 with label "S8      " and with nodes:
+       1621       1623       1823       1821       1622       1723       1822       1721
+  is expanded into a "C3D20 L " element with topology:
+      11197      11203      11344      11338      11199      11205      11346      11340      11200      11263
+      11341      11260      11202      11265      11343      11262      11198      11204      11345      11339
+
+ ELEMENT          812 with label "S8      " and with nodes:
+       1623       1625       1825       1823       1624       1725       1824       1723
+  is expanded into a "C3D20 L " element with topology:
+      11203      11209      11350      11344      11205      11211      11352      11346      11206      11266
+      11347      11263      11208      11268      11349      11265      11204      11210      11351      11345
+
+ ELEMENT          813 with label "S8      " and with nodes:
+       1625       1627       1827       1825       1626       1727       1826       1725
+  is expanded into a "C3D20 L " element with topology:
+      11209      11215      11356      11350      11211      11217      11358      11352      11212      11269
+      11353      11266      11214      11271      11355      11268      11210      11216      11357      11351
+
+ ELEMENT          814 with label "S8      " and with nodes:
+       1627       1629       1829       1827       1628       1729       1828       1727
+  is expanded into a "C3D20 L " element with topology:
+      11215      11221      11362      11356      11217      11223      11364      11358      11218      11272
+      11359      11269      11220      11274      11361      11271      11216      11222      11363      11357
+
+ ELEMENT          815 with label "S8      " and with nodes:
+       1629       1631       1831       1829       1630       1731       1830       1729
+  is expanded into a "C3D20 L " element with topology:
+      11221      11227      11368      11362      11223      11229      11370      11364      11224      11275
+      11365      11272      11226      11277      11367      11274      11222      11228      11369      11363
+
+ ELEMENT          901 with label "S8      " and with nodes:
+       1801       1803       2003       2001       1802       1903       2002       1901
+  is expanded into a "C3D20 L " element with topology:
+      11278      11284      11425      11419      11280      11286      11427      11421      11281      11374
+      11422      11371      11283      11376      11424      11373      11279      11285      11426      11420
+
+ ELEMENT          902 with label "S8      " and with nodes:
+       1803       1805       2005       2003       1804       1905       2004       1903
+  is expanded into a "C3D20 L " element with topology:
+      11284      11290      11431      11425      11286      11292      11433      11427      11287      11377
+      11428      11374      11289      11379      11430      11376      11285      11291      11432      11426
+
+ ELEMENT          903 with label "S8      " and with nodes:
+       1805       1807       2007       2005       1806       1907       2006       1905
+  is expanded into a "C3D20 L " element with topology:
+      11290      11296      11437      11431      11292      11298      11439      11433      11293      11380
+      11434      11377      11295      11382      11436      11379      11291      11297      11438      11432
+
+ ELEMENT          904 with label "S8      " and with nodes:
+       1807       1809       2009       2007       1808       1909       2008       1907
+  is expanded into a "C3D20 L " element with topology:
+      11296      11302      11443      11437      11298      11304      11445      11439      11299      11383
+      11440      11380      11301      11385      11442      11382      11297      11303      11444      11438
+
+ ELEMENT          905 with label "S8      " and with nodes:
+       1809       1811       2011       2009       1810       1911       2010       1909
+  is expanded into a "C3D20 L " element with topology:
+      11302      11308      11449      11443      11304      11310      11451      11445      11305      11386
+      11446      11383      11307      11388      11448      11385      11303      11309      11450      11444
+
+ ELEMENT          906 with label "S8      " and with nodes:
+       1811       1813       2013       2011       1812       1913       2012       1911
+  is expanded into a "C3D20 L " element with topology:
+      11308      11314      11455      11449      11310      11316      11457      11451      11311      11389
+      11452      11386      11313      11391      11454      11388      11309      11315      11456      11450
+
+ ELEMENT          907 with label "S8      " and with nodes:
+       1813       1815       2015       2013       1814       1915       2014       1913
+  is expanded into a "C3D20 L " element with topology:
+      11314      11320      11461      11455      11316      11322      11463      11457      11317      11392
+      11458      11389      11319      11394      11460      11391      11315      11321      11462      11456
+
+ ELEMENT          908 with label "S8      " and with nodes:
+       1815       1817       2017       2015       1816       1917       2016       1915
+  is expanded into a "C3D20 L " element with topology:
+      11320      11326      11467      11461      11322      11328      11469      11463      11323      11395
+      11464      11392      11325      11397      11466      11394      11321      11327      11468      11462
+
+ ELEMENT          909 with label "S8      " and with nodes:
+       1817       1819       2019       2017       1818       1919       2018       1917
+  is expanded into a "C3D20 L " element with topology:
+      11326      11332      11473      11467      11328      11334      11475      11469      11329      11398
+      11470      11395      11331      11400      11472      11397      11327      11333      11474      11468
+
+ ELEMENT          910 with label "S8      " and with nodes:
+       1819       1821       2021       2019       1820       1921       2020       1919
+  is expanded into a "C3D20 L " element with topology:
+      11332      11338      11479      11473      11334      11340      11481      11475      11335      11401
+      11476      11398      11337      11403      11478      11400      11333      11339      11480      11474
+
+ ELEMENT          911 with label "S8      " and with nodes:
+       1821       1823       2023       2021       1822       1923       2022       1921
+  is expanded into a "C3D20 L " element with topology:
+      11338      11344      11485      11479      11340      11346      11487      11481      11341      11404
+      11482      11401      11343      11406      11484      11403      11339      11345      11486      11480
+
+ ELEMENT          912 with label "S8      " and with nodes:
+       1823       1825       2025       2023       1824       1925       2024       1923
+  is expanded into a "C3D20 L " element with topology:
+      11344      11350      11491      11485      11346      11352      11493      11487      11347      11407
+      11488      11404      11349      11409      11490      11406      11345      11351      11492      11486
+
+ ELEMENT          913 with label "S8      " and with nodes:
+       1825       1827       2027       2025       1826       1927       2026       1925
+  is expanded into a "C3D20 L " element with topology:
+      11350      11356      11497      11491      11352      11358      11499      11493      11353      11410
+      11494      11407      11355      11412      11496      11409      11351      11357      11498      11492
+
+ ELEMENT          914 with label "S8      " and with nodes:
+       1827       1829       2029       2027       1828       1929       2028       1927
+  is expanded into a "C3D20 L " element with topology:
+      11356      11362      11503      11497      11358      11364      11505      11499      11359      11413
+      11500      11410      11361      11415      11502      11412      11357      11363      11504      11498
+
+ ELEMENT          915 with label "S8      " and with nodes:
+       1829       1831       2031       2029       1830       1931       2030       1929
+  is expanded into a "C3D20 L " element with topology:
+      11362      11368      11509      11503      11364      11370      11511      11505      11365      11416
+      11506      11413      11367      11418      11508      11415      11363      11369      11510      11504
+
+ ELEMENT         1001 with label "S8      " and with nodes:
+       2001       2003       2203       2201       2002       2103       2202       2101
+  is expanded into a "C3D20 L " element with topology:
+      11419      11425      11566      11560      11421      11427      11568      11562      11422      11515
+      11563      11512      11424      11517      11565      11514      11420      11426      11567      11561
+
+ ELEMENT         1002 with label "S8      " and with nodes:
+       2003       2005       2205       2203       2004       2105       2204       2103
+  is expanded into a "C3D20 L " element with topology:
+      11425      11431      11572      11566      11427      11433      11574      11568      11428      11518
+      11569      11515      11430      11520      11571      11517      11426      11432      11573      11567
+
+ ELEMENT         1003 with label "S8      " and with nodes:
+       2005       2007       2207       2205       2006       2107       2206       2105
+  is expanded into a "C3D20 L " element with topology:
+      11431      11437      11578      11572      11433      11439      11580      11574      11434      11521
+      11575      11518      11436      11523      11577      11520      11432      11438      11579      11573
+
+ ELEMENT         1004 with label "S8      " and with nodes:
+       2007       2009       2209       2207       2008       2109       2208       2107
+  is expanded into a "C3D20 L " element with topology:
+      11437      11443      11584      11578      11439      11445      11586      11580      11440      11524
+      11581      11521      11442      11526      11583      11523      11438      11444      11585      11579
+
+ ELEMENT         1005 with label "S8      " and with nodes:
+       2009       2011       2211       2209       2010       2111       2210       2109
+  is expanded into a "C3D20 L " element with topology:
+      11443      11449      11590      11584      11445      11451      11592      11586      11446      11527
+      11587      11524      11448      11529      11589      11526      11444      11450      11591      11585
+
+ ELEMENT         1006 with label "S8      " and with nodes:
+       2011       2013       2213       2211       2012       2113       2212       2111
+  is expanded into a "C3D20 L " element with topology:
+      11449      11455      11596      11590      11451      11457      11598      11592      11452      11530
+      11593      11527      11454      11532      11595      11529      11450      11456      11597      11591
+
+ ELEMENT         1007 with label "S8      " and with nodes:
+       2013       2015       2215       2213       2014       2115       2214       2113
+  is expanded into a "C3D20 L " element with topology:
+      11455      11461      11602      11596      11457      11463      11604      11598      11458      11533
+      11599      11530      11460      11535      11601      11532      11456      11462      11603      11597
+
+ ELEMENT         1008 with label "S8      " and with nodes:
+       2015       2017       2217       2215       2016       2117       2216       2115
+  is expanded into a "C3D20 L " element with topology:
+      11461      11467      11608      11602      11463      11469      11610      11604      11464      11536
+      11605      11533      11466      11538      11607      11535      11462      11468      11609      11603
+
+ ELEMENT         1009 with label "S8      " and with nodes:
+       2017       2019       2219       2217       2018       2119       2218       2117
+  is expanded into a "C3D20 L " element with topology:
+      11467      11473      11614      11608      11469      11475      11616      11610      11470      11539
+      11611      11536      11472      11541      11613      11538      11468      11474      11615      11609
+
+ ELEMENT         1010 with label "S8      " and with nodes:
+       2019       2021       2221       2219       2020       2121       2220       2119
+  is expanded into a "C3D20 L " element with topology:
+      11473      11479      11620      11614      11475      11481      11622      11616      11476      11542
+      11617      11539      11478      11544      11619      11541      11474      11480      11621      11615
+
+ ELEMENT         1011 with label "S8      " and with nodes:
+       2021       2023       2223       2221       2022       2123       2222       2121
+  is expanded into a "C3D20 L " element with topology:
+      11479      11485      11626      11620      11481      11487      11628      11622      11482      11545
+      11623      11542      11484      11547      11625      11544      11480      11486      11627      11621
+
+ ELEMENT         1012 with label "S8      " and with nodes:
+       2023       2025       2225       2223       2024       2125       2224       2123
+  is expanded into a "C3D20 L " element with topology:
+      11485      11491      11632      11626      11487      11493      11634      11628      11488      11548
+      11629      11545      11490      11550      11631      11547      11486      11492      11633      11627
+
+ ELEMENT         1013 with label "S8      " and with nodes:
+       2025       2027       2227       2225       2026       2127       2226       2125
+  is expanded into a "C3D20 L " element with topology:
+      11491      11497      11638      11632      11493      11499      11640      11634      11494      11551
+      11635      11548      11496      11553      11637      11550      11492      11498      11639      11633
+
+ ELEMENT         1014 with label "S8      " and with nodes:
+       2027       2029       2229       2227       2028       2129       2228       2127
+  is expanded into a "C3D20 L " element with topology:
+      11497      11503      11644      11638      11499      11505      11646      11640      11500      11554
+      11641      11551      11502      11556      11643      11553      11498      11504      11645      11639
+
+ ELEMENT         1015 with label "S8      " and with nodes:
+       2029       2031       2231       2229       2030       2131       2230       2129
+  is expanded into a "C3D20 L " element with topology:
+      11503      11509      11650      11644      11505      11511      11652      11646      11506      11557
+      11647      11554      11508      11559      11649      11556      11504      11510      11651      11645
+
+ ELEMENT         1101 with label "S8      " and with nodes:
+       2201       2203       2403       2401       2202       2303       2402       2301
+  is expanded into a "C3D20 L " element with topology:
+      11560      11566      11707      11701      11562      11568      11709      11703      11563      11656
+      11704      11653      11565      11658      11706      11655      11561      11567      11708      11702
+
+ ELEMENT         1102 with label "S8      " and with nodes:
+       2203       2205       2405       2403       2204       2305       2404       2303
+  is expanded into a "C3D20 L " element with topology:
+      11566      11572      11713      11707      11568      11574      11715      11709      11569      11659
+      11710      11656      11571      11661      11712      11658      11567      11573      11714      11708
+
+ ELEMENT         1103 with label "S8      " and with nodes:
+       2205       2207       2407       2405       2206       2307       2406       2305
+  is expanded into a "C3D20 L " element with topology:
+      11572      11578      11719      11713      11574      11580      11721      11715      11575      11662
+      11716      11659      11577      11664      11718      11661      11573      11579      11720      11714
+
+ ELEMENT         1104 with label "S8      " and with nodes:
+       2207       2209       2409       2407       2208       2309       2408       2307
+  is expanded into a "C3D20 L " element with topology:
+      11578      11584      11725      11719      11580      11586      11727      11721      11581      11665
+      11722      11662      11583      11667      11724      11664      11579      11585      11726      11720
+
+ ELEMENT         1105 with label "S8      " and with nodes:
+       2209       2211       2411       2409       2210       2311       2410       2309
+  is expanded into a "C3D20 L " element with topology:
+      11584      11590      11731      11725      11586      11592      11733      11727      11587      11668
+      11728      11665      11589      11670      11730      11667      11585      11591      11732      11726
+
+ ELEMENT         1106 with label "S8      " and with nodes:
+       2211       2213       2413       2411       2212       2313       2412       2311
+  is expanded into a "C3D20 L " element with topology:
+      11590      11596      11737      11731      11592      11598      11739      11733      11593      11671
+      11734      11668      11595      11673      11736      11670      11591      11597      11738      11732
+
+ ELEMENT         1107 with label "S8      " and with nodes:
+       2213       2215       2415       2413       2214       2315       2414       2313
+  is expanded into a "C3D20 L " element with topology:
+      11596      11602      11743      11737      11598      11604      11745      11739      11599      11674
+      11740      11671      11601      11676      11742      11673      11597      11603      11744      11738
+
+ ELEMENT         1108 with label "S8      " and with nodes:
+       2215       2217       2417       2415       2216       2317       2416       2315
+  is expanded into a "C3D20 L " element with topology:
+      11602      11608      11749      11743      11604      11610      11751      11745      11605      11677
+      11746      11674      11607      11679      11748      11676      11603      11609      11750      11744
+
+ ELEMENT         1109 with label "S8      " and with nodes:
+       2217       2219       2419       2417       2218       2319       2418       2317
+  is expanded into a "C3D20 L " element with topology:
+      11608      11614      11755      11749      11610      11616      11757      11751      11611      11680
+      11752      11677      11613      11682      11754      11679      11609      11615      11756      11750
+
+ ELEMENT         1110 with label "S8      " and with nodes:
+       2219       2221       2421       2419       2220       2321       2420       2319
+  is expanded into a "C3D20 L " element with topology:
+      11614      11620      11761      11755      11616      11622      11763      11757      11617      11683
+      11758      11680      11619      11685      11760      11682      11615      11621      11762      11756
+
+ ELEMENT         1111 with label "S8      " and with nodes:
+       2221       2223       2423       2421       2222       2323       2422       2321
+  is expanded into a "C3D20 L " element with topology:
+      11620      11626      11767      11761      11622      11628      11769      11763      11623      11686
+      11764      11683      11625      11688      11766      11685      11621      11627      11768      11762
+
+ ELEMENT         1112 with label "S8      " and with nodes:
+       2223       2225       2425       2423       2224       2325       2424       2323
+  is expanded into a "C3D20 L " element with topology:
+      11626      11632      11773      11767      11628      11634      11775      11769      11629      11689
+      11770      11686      11631      11691      11772      11688      11627      11633      11774      11768
+
+ ELEMENT         1113 with label "S8      " and with nodes:
+       2225       2227       2427       2425       2226       2327       2426       2325
+  is expanded into a "C3D20 L " element with topology:
+      11632      11638      11779      11773      11634      11640      11781      11775      11635      11692
+      11776      11689      11637      11694      11778      11691      11633      11639      11780      11774
+
+ ELEMENT         1114 with label "S8      " and with nodes:
+       2227       2229       2429       2427       2228       2329       2428       2327
+  is expanded into a "C3D20 L " element with topology:
+      11638      11644      11785      11779      11640      11646      11787      11781      11641      11695
+      11782      11692      11643      11697      11784      11694      11639      11645      11786      11780
+
+ ELEMENT         1115 with label "S8      " and with nodes:
+       2229       2231       2431       2429       2230       2331       2430       2329
+  is expanded into a "C3D20 L " element with topology:
+      11644      11650      11791      11785      11646      11652      11793      11787      11647      11698
+      11788      11695      11649      11700      11790      11697      11645      11651      11792      11786
+
+ ELEMENT         1201 with label "S8      " and with nodes:
+       2401       2403       2603       2601       2402       2503       2602       2501
+  is expanded into a "C3D20 L " element with topology:
+      11701      11707      11848      11842      11703      11709      11850      11844      11704      11797
+      11845      11794      11706      11799      11847      11796      11702      11708      11849      11843
+
+ ELEMENT         1202 with label "S8      " and with nodes:
+       2403       2405       2605       2603       2404       2505       2604       2503
+  is expanded into a "C3D20 L " element with topology:
+      11707      11713      11854      11848      11709      11715      11856      11850      11710      11800
+      11851      11797      11712      11802      11853      11799      11708      11714      11855      11849
+
+ ELEMENT         1203 with label "S8      " and with nodes:
+       2405       2407       2607       2605       2406       2507       2606       2505
+  is expanded into a "C3D20 L " element with topology:
+      11713      11719      11860      11854      11715      11721      11862      11856      11716      11803
+      11857      11800      11718      11805      11859      11802      11714      11720      11861      11855
+
+ ELEMENT         1204 with label "S8      " and with nodes:
+       2407       2409       2609       2607       2408       2509       2608       2507
+  is expanded into a "C3D20 L " element with topology:
+      11719      11725      11866      11860      11721      11727      11868      11862      11722      11806
+      11863      11803      11724      11808      11865      11805      11720      11726      11867      11861
+
+ ELEMENT         1205 with label "S8      " and with nodes:
+       2409       2411       2611       2609       2410       2511       2610       2509
+  is expanded into a "C3D20 L " element with topology:
+      11725      11731      11872      11866      11727      11733      11874      11868      11728      11809
+      11869      11806      11730      11811      11871      11808      11726      11732      11873      11867
+
+ ELEMENT         1206 with label "S8      " and with nodes:
+       2411       2413       2613       2611       2412       2513       2612       2511
+  is expanded into a "C3D20 L " element with topology:
+      11731      11737      11878      11872      11733      11739      11880      11874      11734      11812
+      11875      11809      11736      11814      11877      11811      11732      11738      11879      11873
+
+ ELEMENT         1207 with label "S8      " and with nodes:
+       2413       2415       2615       2613       2414       2515       2614       2513
+  is expanded into a "C3D20 L " element with topology:
+      11737      11743      11884      11878      11739      11745      11886      11880      11740      11815
+      11881      11812      11742      11817      11883      11814      11738      11744      11885      11879
+
+ ELEMENT         1208 with label "S8      " and with nodes:
+       2415       2417       2617       2615       2416       2517       2616       2515
+  is expanded into a "C3D20 L " element with topology:
+      11743      11749      11890      11884      11745      11751      11892      11886      11746      11818
+      11887      11815      11748      11820      11889      11817      11744      11750      11891      11885
+
+ ELEMENT         1209 with label "S8      " and with nodes:
+       2417       2419       2619       2617       2418       2519       2618       2517
+  is expanded into a "C3D20 L " element with topology:
+      11749      11755      11896      11890      11751      11757      11898      11892      11752      11821
+      11893      11818      11754      11823      11895      11820      11750      11756      11897      11891
+
+ ELEMENT         1210 with label "S8      " and with nodes:
+       2419       2421       2621       2619       2420       2521       2620       2519
+  is expanded into a "C3D20 L " element with topology:
+      11755      11761      11902      11896      11757      11763      11904      11898      11758      11824
+      11899      11821      11760      11826      11901      11823      11756      11762      11903      11897
+
+ ELEMENT         1211 with label "S8      " and with nodes:
+       2421       2423       2623       2621       2422       2523       2622       2521
+  is expanded into a "C3D20 L " element with topology:
+      11761      11767      11908      11902      11763      11769      11910      11904      11764      11827
+      11905      11824      11766      11829      11907      11826      11762      11768      11909      11903
+
+ ELEMENT         1212 with label "S8      " and with nodes:
+       2423       2425       2625       2623       2424       2525       2624       2523
+  is expanded into a "C3D20 L " element with topology:
+      11767      11773      11914      11908      11769      11775      11916      11910      11770      11830
+      11911      11827      11772      11832      11913      11829      11768      11774      11915      11909
+
+ ELEMENT         1213 with label "S8      " and with nodes:
+       2425       2427       2627       2625       2426       2527       2626       2525
+  is expanded into a "C3D20 L " element with topology:
+      11773      11779      11920      11914      11775      11781      11922      11916      11776      11833
+      11917      11830      11778      11835      11919      11832      11774      11780      11921      11915
+
+ ELEMENT         1214 with label "S8      " and with nodes:
+       2427       2429       2629       2627       2428       2529       2628       2527
+  is expanded into a "C3D20 L " element with topology:
+      11779      11785      11926      11920      11781      11787      11928      11922      11782      11836
+      11923      11833      11784      11838      11925      11835      11780      11786      11927      11921
+
+ ELEMENT         1215 with label "S8      " and with nodes:
+       2429       2431       2631       2629       2430       2531       2630       2529
+  is expanded into a "C3D20 L " element with topology:
+      11785      11791      11932      11926      11787      11793      11934      11928      11788      11839
+      11929      11836      11790      11841      11931      11838      11786      11792      11933      11927
+
+ ELEMENT         1301 with label "S8      " and with nodes:
+       2601       2603       2803       2801       2602       2703       2802       2701
+  is expanded into a "C3D20 L " element with topology:
+      11842      11848      11989      11983      11844      11850      11991      11985      11845      11938
+      11986      11935      11847      11940      11988      11937      11843      11849      11990      11984
+
+ ELEMENT         1302 with label "S8      " and with nodes:
+       2603       2605       2805       2803       2604       2705       2804       2703
+  is expanded into a "C3D20 L " element with topology:
+      11848      11854      11995      11989      11850      11856      11997      11991      11851      11941
+      11992      11938      11853      11943      11994      11940      11849      11855      11996      11990
+
+ ELEMENT         1303 with label "S8      " and with nodes:
+       2605       2607       2807       2805       2606       2707       2806       2705
+  is expanded into a "C3D20 L " element with topology:
+      11854      11860      12001      11995      11856      11862      12003      11997      11857      11944
+      11998      11941      11859      11946      12000      11943      11855      11861      12002      11996
+
+ ELEMENT         1304 with label "S8      " and with nodes:
+       2607       2609       2809       2807       2608       2709       2808       2707
+  is expanded into a "C3D20 L " element with topology:
+      11860      11866      12007      12001      11862      11868      12009      12003      11863      11947
+      12004      11944      11865      11949      12006      11946      11861      11867      12008      12002
+
+ ELEMENT         1305 with label "S8      " and with nodes:
+       2609       2611       2811       2809       2610       2711       2810       2709
+  is expanded into a "C3D20 L " element with topology:
+      11866      11872      12013      12007      11868      11874      12015      12009      11869      11950
+      12010      11947      11871      11952      12012      11949      11867      11873      12014      12008
+
+ ELEMENT         1306 with label "S8      " and with nodes:
+       2611       2613       2813       2811       2612       2713       2812       2711
+  is expanded into a "C3D20 L " element with topology:
+      11872      11878      12019      12013      11874      11880      12021      12015      11875      11953
+      12016      11950      11877      11955      12018      11952      11873      11879      12020      12014
+
+ ELEMENT         1307 with label "S8      " and with nodes:
+       2613       2615       2815       2813       2614       2715       2814       2713
+  is expanded into a "C3D20 L " element with topology:
+      11878      11884      12025      12019      11880      11886      12027      12021      11881      11956
+      12022      11953      11883      11958      12024      11955      11879      11885      12026      12020
+
+ ELEMENT         1308 with label "S8      " and with nodes:
+       2615       2617       2817       2815       2616       2717       2816       2715
+  is expanded into a "C3D20 L " element with topology:
+      11884      11890      12031      12025      11886      11892      12033      12027      11887      11959
+      12028      11956      11889      11961      12030      11958      11885      11891      12032      12026
+
+ ELEMENT         1309 with label "S8      " and with nodes:
+       2617       2619       2819       2817       2618       2719       2818       2717
+  is expanded into a "C3D20 L " element with topology:
+      11890      11896      12037      12031      11892      11898      12039      12033      11893      11962
+      12034      11959      11895      11964      12036      11961      11891      11897      12038      12032
+
+ ELEMENT         1310 with label "S8      " and with nodes:
+       2619       2621       2821       2819       2620       2721       2820       2719
+  is expanded into a "C3D20 L " element with topology:
+      11896      11902      12043      12037      11898      11904      12045      12039      11899      11965
+      12040      11962      11901      11967      12042      11964      11897      11903      12044      12038
+
+ ELEMENT         1311 with label "S8      " and with nodes:
+       2621       2623       2823       2821       2622       2723       2822       2721
+  is expanded into a "C3D20 L " element with topology:
+      11902      11908      12049      12043      11904      11910      12051      12045      11905      11968
+      12046      11965      11907      11970      12048      11967      11903      11909      12050      12044
+
+ ELEMENT         1312 with label "S8      " and with nodes:
+       2623       2625       2825       2823       2624       2725       2824       2723
+  is expanded into a "C3D20 L " element with topology:
+      11908      11914      12055      12049      11910      11916      12057      12051      11911      11971
+      12052      11968      11913      11973      12054      11970      11909      11915      12056      12050
+
+ ELEMENT         1313 with label "S8      " and with nodes:
+       2625       2627       2827       2825       2626       2727       2826       2725
+  is expanded into a "C3D20 L " element with topology:
+      11914      11920      12061      12055      11916      11922      12063      12057      11917      11974
+      12058      11971      11919      11976      12060      11973      11915      11921      12062      12056
+
+ ELEMENT         1314 with label "S8      " and with nodes:
+       2627       2629       2829       2827       2628       2729       2828       2727
+  is expanded into a "C3D20 L " element with topology:
+      11920      11926      12067      12061      11922      11928      12069      12063      11923      11977
+      12064      11974      11925      11979      12066      11976      11921      11927      12068      12062
+
+ ELEMENT         1315 with label "S8      " and with nodes:
+       2629       2631       2831       2829       2630       2731       2830       2729
+  is expanded into a "C3D20 L " element with topology:
+      11926      11932      12073      12067      11928      11934      12075      12069      11929      11980
+      12070      11977      11931      11982      12072      11979      11927      11933      12074      12068
+
+ ELEMENT         1401 with label "S8      " and with nodes:
+       2801       2803       3003       3001       2802       2903       3002       2901
+  is expanded into a "C3D20 L " element with topology:
+      11983      11989      12130      12124      11985      11991      12132      12126      11986      12079
+      12127      12076      11988      12081      12129      12078      11984      11990      12131      12125
+
+ ELEMENT         1402 with label "S8      " and with nodes:
+       2803       2805       3005       3003       2804       2905       3004       2903
+  is expanded into a "C3D20 L " element with topology:
+      11989      11995      12136      12130      11991      11997      12138      12132      11992      12082
+      12133      12079      11994      12084      12135      12081      11990      11996      12137      12131
+
+ ELEMENT         1403 with label "S8      " and with nodes:
+       2805       2807       3007       3005       2806       2907       3006       2905
+  is expanded into a "C3D20 L " element with topology:
+      11995      12001      12142      12136      11997      12003      12144      12138      11998      12085
+      12139      12082      12000      12087      12141      12084      11996      12002      12143      12137
+
+ ELEMENT         1404 with label "S8      " and with nodes:
+       2807       2809       3009       3007       2808       2909       3008       2907
+  is expanded into a "C3D20 L " element with topology:
+      12001      12007      12148      12142      12003      12009      12150      12144      12004      12088
+      12145      12085      12006      12090      12147      12087      12002      12008      12149      12143
+
+ ELEMENT         1405 with label "S8      " and with nodes:
+       2809       2811       3011       3009       2810       2911       3010       2909
+  is expanded into a "C3D20 L " element with topology:
+      12007      12013      12154      12148      12009      12015      12156      12150      12010      12091
+      12151      12088      12012      12093      12153      12090      12008      12014      12155      12149
+
+ ELEMENT         1406 with label "S8      " and with nodes:
+       2811       2813       3013       3011       2812       2913       3012       2911
+  is expanded into a "C3D20 L " element with topology:
+      12013      12019      12160      12154      12015      12021      12162      12156      12016      12094
+      12157      12091      12018      12096      12159      12093      12014      12020      12161      12155
+
+ ELEMENT         1407 with label "S8      " and with nodes:
+       2813       2815       3015       3013       2814       2915       3014       2913
+  is expanded into a "C3D20 L " element with topology:
+      12019      12025      12166      12160      12021      12027      12168      12162      12022      12097
+      12163      12094      12024      12099      12165      12096      12020      12026      12167      12161
+
+ ELEMENT         1408 with label "S8      " and with nodes:
+       2815       2817       3017       3015       2816       2917       3016       2915
+  is expanded into a "C3D20 L " element with topology:
+      12025      12031      12172      12166      12027      12033      12174      12168      12028      12100
+      12169      12097      12030      12102      12171      12099      12026      12032      12173      12167
+
+ ELEMENT         1409 with label "S8      " and with nodes:
+       2817       2819       3019       3017       2818       2919       3018       2917
+  is expanded into a "C3D20 L " element with topology:
+      12031      12037      12178      12172      12033      12039      12180      12174      12034      12103
+      12175      12100      12036      12105      12177      12102      12032      12038      12179      12173
+
+ ELEMENT         1410 with label "S8      " and with nodes:
+       2819       2821       3021       3019       2820       2921       3020       2919
+  is expanded into a "C3D20 L " element with topology:
+      12037      12043      12184      12178      12039      12045      12186      12180      12040      12106
+      12181      12103      12042      12108      12183      12105      12038      12044      12185      12179
+
+ ELEMENT         1411 with label "S8      " and with nodes:
+       2821       2823       3023       3021       2822       2923       3022       2921
+  is expanded into a "C3D20 L " element with topology:
+      12043      12049      12190      12184      12045      12051      12192      12186      12046      12109
+      12187      12106      12048      12111      12189      12108      12044      12050      12191      12185
+
+ ELEMENT         1412 with label "S8      " and with nodes:
+       2823       2825       3025       3023       2824       2925       3024       2923
+  is expanded into a "C3D20 L " element with topology:
+      12049      12055      12196      12190      12051      12057      12198      12192      12052      12112
+      12193      12109      12054      12114      12195      12111      12050      12056      12197      12191
+
+ ELEMENT         1413 with label "S8      " and with nodes:
+       2825       2827       3027       3025       2826       2927       3026       2925
+  is expanded into a "C3D20 L " element with topology:
+      12055      12061      12202      12196      12057      12063      12204      12198      12058      12115
+      12199      12112      12060      12117      12201      12114      12056      12062      12203      12197
+
+ ELEMENT         1414 with label "S8      " and with nodes:
+       2827       2829       3029       3027       2828       2929       3028       2927
+  is expanded into a "C3D20 L " element with topology:
+      12061      12067      12208      12202      12063      12069      12210      12204      12064      12118
+      12205      12115      12066      12120      12207      12117      12062      12068      12209      12203
+
+ ELEMENT         1415 with label "S8      " and with nodes:
+       2829       2831       3031       3029       2830       2931       3030       2929
+  is expanded into a "C3D20 L " element with topology:
+      12067      12073      12214      12208      12069      12075      12216      12210      12070      12121
+      12211      12118      12072      12123      12213      12120      12068      12074      12215      12209
+

@@ -57,7 +57,8 @@ if (__name__ == '__main__'):
         print(modelname)
         
         # Run analysis
-        subprocess.run('ccx -i ' + modelname, shell=True)
+        subprocess.run('ccx -i ' + modelname + ' > ' + modelname + '.log', shell=True)
+        # subprocess.run('ccx -i baffle > ccx.log', shell=True)
 
         # Convert calculation results to VTK format
         subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtk', shell=True)
@@ -66,6 +67,6 @@ if (__name__ == '__main__'):
         subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtu', shell=True)
 
     Clean.cache()
-    Clean.files('.')
+    # Clean.files('.')
 
     print('END')

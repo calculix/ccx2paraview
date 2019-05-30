@@ -35,13 +35,17 @@ if __name__ == '__main__':
     # Parse FRD-file
     p = FRDParser(args.frd + '.frd')
 
-    # Calculate amounts of nodes and elements
-    nn = set([len(b.results) for b in p.result_blocks])
-    nn = sorted(nn, reverse=True)[1] # exclude zero nodes added by ccx due to *TRANSFORM
-    ne = p.elem_block.numelem # total number of elements
+    # Exclude zero nodes added by ccx due to *TRANSFORM
+    nn = sorted(set([len(b.results) for b in p.result_blocks]), reverse=True)
+    if len(nn) == 3: nn = nn[1]
+    elif len(nn) == 1: nn = nn[0]
+    else: nn = p.node_block.numnod
+    # TODO What if output is written for a node subset, not for the whole model?
     print(nn, 'nodes total')
+
+    # Total number of elements
+    ne = p.elem_block.numelem
     print(ne, 'cells total')
-    print('Converting FRD to {}...'.format(args.fmt.upper()))
 
     # Create list of time steps
     steps = sorted(set([b.numstep for b in p.result_blocks])) # list of step numbers
@@ -50,6 +54,7 @@ if __name__ == '__main__':
     if not len(steps): steps = ['1'] # to run converter at least once
 
     # For each time step generate separate .vt* file
+    print('Converting FRD to {}...'.format(args.fmt.upper()))
     for s in steps:
         # Output file name will be the same as input
         if len(steps) > 1: # include step number in file_name

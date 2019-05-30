@@ -1,0 +1,20 @@
+ ELEMENT            1 with label "CPS4    " and with nodes:
+          1          2          5          4
+  is expanded into a "C3D8  S " element with topology:
+         10         13         22         19         12         15         24         21
+
+ ELEMENT            2 with label "CPS4    " and with nodes:
+          2          3          6          5
+  is expanded into a "C3D8  S " element with topology:
+         13         16         25         22         15         18         27         24
+
+ ELEMENT            3 with label "CPS4    " and with nodes:
+          5          6          9          8
+  is expanded into a "C3D8  S " element with topology:
+         22         25         34         31         24         27         36         33
+
+ ELEMENT            4 with label "CPS4    " and with nodes:
+          4          5          8          7
+  is expanded into a "C3D8  S " element with topology:
+         19         22         31         28         21         24         33         30
+

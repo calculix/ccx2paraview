@@ -1,0 +1,6 @@
+ ELEMENT            1 with label "S6      " and with nodes:
+          1          2          3          4          5          6
+  is expanded into a "C3D15 L " element with topology:
+          7         10         13          9         12         15         16         19         22         18
+         21         24          8         11         14
+

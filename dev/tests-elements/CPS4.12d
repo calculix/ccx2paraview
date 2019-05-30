@@ -1,0 +1,5 @@
+ ELEMENT            1 with label "CPS4    " and with nodes:
+          1          2          3          4
+  is expanded into a "C3D8  S " element with topology:
+          5          8         11         14          7         10         13         16
+

@@ -1,0 +1,1800 @@
+ ELEMENT            1 with label "S6      " and with nodes:
+          1          2          3          4          5          6
+  is expanded into a "C3D15 L " element with topology:
+        614        623        629        616        625        631        635        641        644        637
+        643        646        615        624        630
+
+ ELEMENT            2 with label "S6      " and with nodes:
+          3          2          7          5          8          9
+  is expanded into a "C3D15 L " element with topology:
+        629        623        650        631        625        652        641        653        656        643
+        655        658        630        624        651
+
+ ELEMENT            3 with label "S6      " and with nodes:
+          3          7         10          9         11         12
+  is expanded into a "C3D15 L " element with topology:
+        629        650        659        631        652        661        656        665        668        658
+        667        670        630        651        660
+
+ ELEMENT            4 with label "S6      " and with nodes:
+         10          7         13         11         14         15
+  is expanded into a "C3D15 L " element with topology:
+        659        650        674        661        652        676        665        677        680        667
+        679        682        660        651        675
+
+ ELEMENT            5 with label "S6      " and with nodes:
+         10         13         16         15         17         18
+  is expanded into a "C3D15 L " element with topology:
+        659        674        683        661        676        685        680        689        692        682
+        691        694        660        675        684
+
+ ELEMENT            6 with label "S6      " and with nodes:
+         16         13         19         17         20         21
+  is expanded into a "C3D15 L " element with topology:
+        683        674        698        685        676        700        689        701        704        691
+        703        706        684        675        699
+
+ ELEMENT            7 with label "S6      " and with nodes:
+         16         19         22         21         23         24
+  is expanded into a "C3D15 L " element with topology:
+        683        698        707        685        700        709        704        713        716        706
+        715        718        684        699        708
+
+ ELEMENT            8 with label "S6      " and with nodes:
+         22         19         25         23         26         27
+  is expanded into a "C3D15 L " element with topology:
+        707        698        722        709        700        724        713        725        728        715
+        727        730        708        699        723
+
+ ELEMENT            9 with label "S6      " and with nodes:
+         22         25         28         27         29         30
+  is expanded into a "C3D15 L " element with topology:
+        707        722        731        709        724        733        728        740        743        730
+        742        745        708        723        732
+
+ ELEMENT           10 with label "S6      " and with nodes:
+         28         25         31         29         32         33
+  is expanded into a "C3D15 L " element with topology:
+        731        722        749        733        724        751        740        755        758        742
+        757        760        732        723        750
+
+ ELEMENT           11 with label "S6      " and with nodes:
+          2         34          7         35         36          8
+  is expanded into a "C3D15 L " element with topology:
+        623        764        650        625        766        652        770        776        653        772
+        778        655        624        765        651
+
+ ELEMENT           12 with label "S6      " and with nodes:
+          7         34         37         36         38         39
+  is expanded into a "C3D15 L " element with topology:
+        650        764        779        652        766        781        776        782        785        778
+        784        787        651        765        780
+
+ ELEMENT           13 with label "S6      " and with nodes:
+          7         37         13         39         40         14
+  is expanded into a "C3D15 L " element with topology:
+        650        779        674        652        781        676        785        788        677        787
+        790        679        651        780        675
+
+ ELEMENT           14 with label "S6      " and with nodes:
+         13         37         41         40         42         43
+  is expanded into a "C3D15 L " element with topology:
+        674        779        791        676        781        793        788        794        797        790
+        796        799        675        780        792
+
+ ELEMENT           15 with label "S6      " and with nodes:
+         13         41         19         43         44         20
+  is expanded into a "C3D15 L " element with topology:
+        674        791        698        676        793        700        797        800        701        799
+        802        703        675        792        699
+
+ ELEMENT           16 with label "S6      " and with nodes:
+         19         41         45         44         46         47
+  is expanded into a "C3D15 L " element with topology:
+        698        791        803        700        793        805        800        806        809        802
+        808        811        699        792        804
+
+ ELEMENT           17 with label "S6      " and with nodes:
+         19         45         25         47         48         26
+  is expanded into a "C3D15 L " element with topology:
+        698        803        722        700        805        724        809        812        725        811
+        814        727        699        804        723
+
+ ELEMENT           18 with label "S6      " and with nodes:
+         25         45         49         48         50         51
+  is expanded into a "C3D15 L " element with topology:
+        722        803        815        724        805        817        812        818        821        814
+        820        823        723        804        816
+
+ ELEMENT           19 with label "S6      " and with nodes:
+         25         49         31         51         52         32
+  is expanded into a "C3D15 L " element with topology:
+        722        815        749        724        817        751        821        824        755        823
+        826        757        723        816        750
+
+ ELEMENT           20 with label "S6      " and with nodes:
+         31         49         53         52         54         55
+  is expanded into a "C3D15 L " element with topology:
+        749        815        827        751        817        829        824        833        836        826
+        835        838        750        816        828
+
+ ELEMENT           21 with label "S6      " and with nodes:
+         34         56         37         57         58         38
+  is expanded into a "C3D15 L " element with topology:
+        764        842        779        766        844        781        848        854        782        850
+        856        784        765        843        780
+
+ ELEMENT           22 with label "S6      " and with nodes:
+         37         56         59         58         60         61
+  is expanded into a "C3D15 L " element with topology:
+        779        842        857        781        844        859        854        860        863        856
+        862        865        780        843        858
+
+ ELEMENT           23 with label "S6      " and with nodes:
+         37         59         41         61         62         42
+  is expanded into a "C3D15 L " element with topology:
+        779        857        791        781        859        793        863        866        794        865
+        868        796        780        858        792
+
+ ELEMENT           24 with label "S6      " and with nodes:
+         41         59         63         62         64         65
+  is expanded into a "C3D15 L " element with topology:
+        791        857        869        793        859        871        866        872        875        868
+        874        877        792        858        870
+
+ ELEMENT           25 with label "S6      " and with nodes:
+         41         63         45         65         66         46
+  is expanded into a "C3D15 L " element with topology:
+        791        869        803        793        871        805        875        878        806        877
+        880        808        792        870        804
+
+ ELEMENT           26 with label "S6      " and with nodes:
+         45         63         67         66         68         69
+  is expanded into a "C3D15 L " element with topology:
+        803        869        881        805        871        883        878        884        887        880
+        886        889        804        870        882
+
+ ELEMENT           27 with label "S6      " and with nodes:
+         45         67         49         69         70         50
+  is expanded into a "C3D15 L " element with topology:
+        803        881        815        805        883        817        887        890        818        889
+        892        820        804        882        816
+
+ ELEMENT           28 with label "S6      " and with nodes:
+         49         67         71         70         72         73
+  is expanded into a "C3D15 L " element with topology:
+        815        881        893        817        883        895        890        896        899        892
+        898        901        816        882        894
+
+ ELEMENT           29 with label "S6      " and with nodes:
+         49         71         53         73         74         54
+  is expanded into a "C3D15 L " element with topology:
+        815        893        827        817        895        829        899        902        833        901
+        904        835        816        894        828
+
+ ELEMENT           30 with label "S6      " and with nodes:
+         53         71         75         74         76         77
+  is expanded into a "C3D15 L " element with topology:
+        827        893        905        829        895        907        902        911        914        904
+        913        916        828        894        906
+
+ ELEMENT           31 with label "S6      " and with nodes:
+         56         78         59         79         80         60
+  is expanded into a "C3D15 L " element with topology:
+        842        920        857        844        922        859        926        932        860        928
+        934        862        843        921        858
+
+ ELEMENT           32 with label "S6      " and with nodes:
+         59         78         81         80         82         83
+  is expanded into a "C3D15 L " element with topology:
+        857        920        935        859        922        937        932        938        941        934
+        940        943        858        921        936
+
+ ELEMENT           33 with label "S6      " and with nodes:
+         59         81         63         83         84         64
+  is expanded into a "C3D15 L " element with topology:
+        857        935        869        859        937        871        941        944        872        943
+        946        874        858        936        870
+
+ ELEMENT           34 with label "S6      " and with nodes:
+         63         81         85         84         86         87
+  is expanded into a "C3D15 L " element with topology:
+        869        935        947        871        937        949        944        950        953        946
+        952        955        870        936        948
+
+ ELEMENT           35 with label "S6      " and with nodes:
+         63         85         67         87         88         68
+  is expanded into a "C3D15 L " element with topology:
+        869        947        881        871        949        883        953        956        884        955
+        958        886        870        948        882
+
+ ELEMENT           36 with label "S6      " and with nodes:
+         67         85         89         88         90         91
+  is expanded into a "C3D15 L " element with topology:
+        881        947        959        883        949        961        956        962        965        958
+        964        967        882        948        960
+
+ ELEMENT           37 with label "S6      " and with nodes:
+         67         89         71         91         92         72
+  is expanded into a "C3D15 L " element with topology:
+        881        959        893        883        961        895        965        968        896        967
+        970        898        882        960        894
+
+ ELEMENT           38 with label "S6      " and with nodes:
+         71         89         93         92         94         95
+  is expanded into a "C3D15 L " element with topology:
+        893        959        971        895        961        973        968        974        977        970
+        976        979        894        960        972
+
+ ELEMENT           39 with label "S6      " and with nodes:
+         71         93         75         95         96         76
+  is expanded into a "C3D15 L " element with topology:
+        893        971        905        895        973        907        977        980        911        979
+        982        913        894        972        906
+
+ ELEMENT           40 with label "S6      " and with nodes:
+         75         93         97         96         98         99
+  is expanded into a "C3D15 L " element with topology:
+        905        971        983        907        973        985        980        989        992        982
+        991        994        906        972        984
+
+ ELEMENT           41 with label "S6      " and with nodes:
+         78        100         81        101        102         82
+  is expanded into a "C3D15 L " element with topology:
+        920        998        935        922       1000        937       1007       1013        938       1009
+       1015        940        921        999        936
+
+ ELEMENT           42 with label "S6      " and with nodes:
+         81        100        103        102        104        105
+  is expanded into a "C3D15 L " element with topology:
+        935        998       1016        937       1000       1018       1013       1022       1028       1015
+       1024       1030        936        999       1017
+
+ ELEMENT           43 with label "S6      " and with nodes:
+         81        103         85        105        106         86
+  is expanded into a "C3D15 L " element with topology:
+        935       1016        947        937       1018        949       1028       1031        950       1030
+       1033        952        936       1017        948
+
+ ELEMENT           44 with label "S6      " and with nodes:
+         85        103        107        106        108        109
+  is expanded into a "C3D15 L " element with topology:
+        947       1016       1034        949       1018       1036       1031       1040       1046       1033
+       1042       1048        948       1017       1035
+
+ ELEMENT           45 with label "S6      " and with nodes:
+         85        107         89        109        110         90
+  is expanded into a "C3D15 L " element with topology:
+        947       1034        959        949       1036        961       1046       1049        962       1048
+       1051        964        948       1035        960
+
+ ELEMENT           46 with label "S6      " and with nodes:
+         89        107        111        110        112        113
+  is expanded into a "C3D15 L " element with topology:
+        959       1034       1052        961       1036       1054       1049       1058       1064       1051
+       1060       1066        960       1035       1053
+
+ ELEMENT           47 with label "S6      " and with nodes:
+         89        111         93        113        114         94
+  is expanded into a "C3D15 L " element with topology:
+        959       1052        971        961       1054        973       1064       1067        974       1066
+       1069        976        960       1053        972
+
+ ELEMENT           48 with label "S6      " and with nodes:
+         93        111        115        114        116        117
+  is expanded into a "C3D15 L " element with topology:
+        971       1052       1070        973       1054       1072       1067       1076       1082       1069
+       1078       1084        972       1053       1071
+
+ ELEMENT           49 with label "S6      " and with nodes:
+         93        115         97        117        118         98
+  is expanded into a "C3D15 L " element with topology:
+        971       1070        983        973       1072        985       1082       1085        989       1084
+       1087        991        972       1071        984
+
+ ELEMENT           50 with label "S6      " and with nodes:
+         97        115        119        118        120        121
+  is expanded into a "C3D15 L " element with topology:
+        983       1070       1088        985       1072       1090       1085       1097       1103       1087
+       1099       1105        984       1071       1089
+
+ ELEMENT           51 with label "S6      " and with nodes:
+        123        122        124        125        127        126
+  is expanded into a "C3D15 L " element with topology:
+       1118       1109       1124       1120       1111       1126       1130       1139       1136       1132
+       1141       1138       1119       1110       1125
+
+ ELEMENT           52 with label "S6      " and with nodes:
+        123        124        128        126        130        129
+  is expanded into a "C3D15 L " element with topology:
+       1118       1124       1145       1120       1126       1147       1136       1151       1148       1138
+       1153       1150       1119       1125       1146
+
+ ELEMENT           53 with label "S6      " and with nodes:
+        128        124        131        130        133        132
+  is expanded into a "C3D15 L " element with topology:
+       1145       1124       1154       1147       1126       1156       1151       1163       1160       1153
+       1165       1162       1146       1125       1155
+
+ ELEMENT           54 with label "S6      " and with nodes:
+        128        131        134        132        136        135
+  is expanded into a "C3D15 L " element with topology:
+       1145       1154       1169       1147       1156       1171       1160       1175       1172       1162
+       1177       1174       1146       1155       1170
+
+ ELEMENT           55 with label "S6      " and with nodes:
+        134        131        137        136        139        138
+  is expanded into a "C3D15 L " element with topology:
+       1169       1154       1178       1171       1156       1180       1175       1187       1184       1177
+       1189       1186       1170       1155       1179
+
+ ELEMENT           56 with label "S6      " and with nodes:
+        134        137        140        138        142        141
+  is expanded into a "C3D15 L " element with topology:
+       1169       1178       1193       1171       1180       1195       1184       1199       1196       1186
+       1201       1198       1170       1179       1194
+
+ ELEMENT           57 with label "S6      " and with nodes:
+        140        137        143        142        145        144
+  is expanded into a "C3D15 L " element with topology:
+       1193       1178       1202       1195       1180       1204       1199       1211       1208       1201
+       1213       1210       1194       1179       1203
+
+ ELEMENT           58 with label "S6      " and with nodes:
+        140        143        146        144        148        147
+  is expanded into a "C3D15 L " element with topology:
+       1193       1202       1217       1195       1204       1219       1208       1223       1220       1210
+       1225       1222       1194       1203       1218
+
+ ELEMENT           59 with label "S6      " and with nodes:
+        146        143        149        148        151        150
+  is expanded into a "C3D15 L " element with topology:
+       1217       1202       1226       1219       1204       1228       1223       1238       1235       1225
+       1240       1237       1218       1203       1227
+
+ ELEMENT           60 with label "S6      " and with nodes:
+        146        149        152        150        154        153
+  is expanded into a "C3D15 L " element with topology:
+       1217       1226       1244       1219       1228       1246       1235       1253       1250       1237
+       1255       1252       1218       1227       1245
+
+ ELEMENT           61 with label "S6      " and with nodes:
+        155        123        128        156        129        157
+  is expanded into a "C3D15 L " element with topology:
+       1259       1118       1145       1261       1120       1147       1265       1148       1271       1267
+       1150       1273       1260       1119       1146
+
+ ELEMENT           62 with label "S6      " and with nodes:
+        155        128        158        157        160        159
+  is expanded into a "C3D15 L " element with topology:
+       1259       1145       1274       1261       1147       1276       1271       1280       1277       1273
+       1282       1279       1260       1146       1275
+
+ ELEMENT           63 with label "S6      " and with nodes:
+        158        128        134        160        135        161
+  is expanded into a "C3D15 L " element with topology:
+       1274       1145       1169       1276       1147       1171       1280       1172       1283       1282
+       1174       1285       1275       1146       1170
+
+ ELEMENT           64 with label "S6      " and with nodes:
+        158        134        162        161        164        163
+  is expanded into a "C3D15 L " element with topology:
+       1274       1169       1286       1276       1171       1288       1283       1292       1289       1285
+       1294       1291       1275       1170       1287
+
+ ELEMENT           65 with label "S6      " and with nodes:
+        162        134        140        164        141        165
+  is expanded into a "C3D15 L " element with topology:
+       1286       1169       1193       1288       1171       1195       1292       1196       1295       1294
+       1198       1297       1287       1170       1194
+
+ ELEMENT           66 with label "S6      " and with nodes:
+        162        140        166        165        168        167
+  is expanded into a "C3D15 L " element with topology:
+       1286       1193       1298       1288       1195       1300       1295       1304       1301       1297
+       1306       1303       1287       1194       1299
+
+ ELEMENT           67 with label "S6      " and with nodes:
+        166        140        146        168        147        169
+  is expanded into a "C3D15 L " element with topology:
+       1298       1193       1217       1300       1195       1219       1304       1220       1307       1306
+       1222       1309       1299       1194       1218
+
+ ELEMENT           68 with label "S6      " and with nodes:
+        166        146        170        169        172        171
+  is expanded into a "C3D15 L " element with topology:
+       1298       1217       1310       1300       1219       1312       1307       1316       1313       1309
+       1318       1315       1299       1218       1311
+
+ ELEMENT           69 with label "S6      " and with nodes:
+        170        146        152        172        153        173
+  is expanded into a "C3D15 L " element with topology:
+       1310       1217       1244       1312       1219       1246       1316       1250       1319       1318
+       1252       1321       1311       1218       1245
+
+ ELEMENT           70 with label "S6      " and with nodes:
+        170        152        174        173        176        175
+  is expanded into a "C3D15 L " element with topology:
+       1310       1244       1322       1312       1246       1324       1319       1331       1328       1321
+       1333       1330       1311       1245       1323
+
+ ELEMENT           71 with label "S6      " and with nodes:
+        177        155        158        178        159        179
+  is expanded into a "C3D15 L " element with topology:
+       1337       1259       1274       1339       1261       1276       1343       1277       1349       1345
+       1279       1351       1338       1260       1275
+
+ ELEMENT           72 with label "S6      " and with nodes:
+        177        158        180        179        182        181
+  is expanded into a "C3D15 L " element with topology:
+       1337       1274       1352       1339       1276       1354       1349       1358       1355       1351
+       1360       1357       1338       1275       1353
+
+ ELEMENT           73 with label "S6      " and with nodes:
+        180        158        162        182        163        183
+  is expanded into a "C3D15 L " element with topology:
+       1352       1274       1286       1354       1276       1288       1358       1289       1361       1360
+       1291       1363       1353       1275       1287
+
+ ELEMENT           74 with label "S6      " and with nodes:
+        180        162        184        183        186        185
+  is expanded into a "C3D15 L " element with topology:
+       1352       1286       1364       1354       1288       1366       1361       1370       1367       1363
+       1372       1369       1353       1287       1365
+
+ ELEMENT           75 with label "S6      " and with nodes:
+        184        162        166        186        167        187
+  is expanded into a "C3D15 L " element with topology:
+       1364       1286       1298       1366       1288       1300       1370       1301       1373       1372
+       1303       1375       1365       1287       1299
+
+ ELEMENT           76 with label "S6      " and with nodes:
+        184        166        188        187        190        189
+  is expanded into a "C3D15 L " element with topology:
+       1364       1298       1376       1366       1300       1378       1373       1382       1379       1375
+       1384       1381       1365       1299       1377
+
+ ELEMENT           77 with label "S6      " and with nodes:
+        188        166        170        190        171        191
+  is expanded into a "C3D15 L " element with topology:
+       1376       1298       1310       1378       1300       1312       1382       1313       1385       1384
+       1315       1387       1377       1299       1311
+
+ ELEMENT           78 with label "S6      " and with nodes:
+        188        170        192        191        194        193
+  is expanded into a "C3D15 L " element with topology:
+       1376       1310       1388       1378       1312       1390       1385       1394       1391       1387
+       1396       1393       1377       1311       1389
+
+ ELEMENT           79 with label "S6      " and with nodes:
+        192        170        174        194        175        195
+  is expanded into a "C3D15 L " element with topology:
+       1388       1310       1322       1390       1312       1324       1394       1328       1397       1396
+       1330       1399       1389       1311       1323
+
+ ELEMENT           80 with label "S6      " and with nodes:
+        192        174        196        195        198        197
+  is expanded into a "C3D15 L " element with topology:
+       1388       1322       1400       1390       1324       1402       1397       1409       1406       1399
+       1411       1408       1389       1323       1401
+
+ ELEMENT           81 with label "S6      " and with nodes:
+        199        177        180        200        181        201
+  is expanded into a "C3D15 L " element with topology:
+       1415       1337       1352       1417       1339       1354       1421       1355       1427       1423
+       1357       1429       1416       1338       1353
+
+ ELEMENT           82 with label "S6      " and with nodes:
+        199        180        202        201        204        203
+  is expanded into a "C3D15 L " element with topology:
+       1415       1352       1430       1417       1354       1432       1427       1436       1433       1429
+       1438       1435       1416       1353       1431
+
+ ELEMENT           83 with label "S6      " and with nodes:
+        202        180        184        204        185        205
+  is expanded into a "C3D15 L " element with topology:
+       1430       1352       1364       1432       1354       1366       1436       1367       1439       1438
+       1369       1441       1431       1353       1365
+
+ ELEMENT           84 with label "S6      " and with nodes:
+        202        184        206        205        208        207
+  is expanded into a "C3D15 L " element with topology:
+       1430       1364       1442       1432       1366       1444       1439       1448       1445       1441
+       1450       1447       1431       1365       1443
+
+ ELEMENT           85 with label "S6      " and with nodes:
+        206        184        188        208        189        209
+  is expanded into a "C3D15 L " element with topology:
+       1442       1364       1376       1444       1366       1378       1448       1379       1451       1450
+       1381       1453       1443       1365       1377
+
+ ELEMENT           86 with label "S6      " and with nodes:
+        206        188        210        209        212        211
+  is expanded into a "C3D15 L " element with topology:
+       1442       1376       1454       1444       1378       1456       1451       1460       1457       1453
+       1462       1459       1443       1377       1455
+
+ ELEMENT           87 with label "S6      " and with nodes:
+        210        188        192        212        193        213
+  is expanded into a "C3D15 L " element with topology:
+       1454       1376       1388       1456       1378       1390       1460       1391       1463       1462
+       1393       1465       1455       1377       1389
+
+ ELEMENT           88 with label "S6      " and with nodes:
+        210        192        214        213        216        215
+  is expanded into a "C3D15 L " element with topology:
+       1454       1388       1466       1456       1390       1468       1463       1472       1469       1465
+       1474       1471       1455       1389       1467
+
+ ELEMENT           89 with label "S6      " and with nodes:
+        214        192        196        216        197        217
+  is expanded into a "C3D15 L " element with topology:
+       1466       1388       1400       1468       1390       1402       1472       1406       1475       1474
+       1408       1477       1467       1389       1401
+
+ ELEMENT           90 with label "S6      " and with nodes:
+        214        196        218        217        220        219
+  is expanded into a "C3D15 L " element with topology:
+       1466       1400       1478       1468       1402       1480       1475       1487       1484       1477
+       1489       1486       1467       1401       1479
+
+ ELEMENT           91 with label "S6      " and with nodes:
+        221        199        202        222        203        223
+  is expanded into a "C3D15 L " element with topology:
+       1493       1415       1430       1495       1417       1432       1502       1433       1508       1504
+       1435       1510       1494       1416       1431
+
+ ELEMENT           92 with label "S6      " and with nodes:
+        221        202        224        223        226        225
+  is expanded into a "C3D15 L " element with topology:
+       1493       1430       1511       1495       1432       1513       1508       1523       1517       1510
+       1525       1519       1494       1431       1512
+
+ ELEMENT           93 with label "S6      " and with nodes:
+        224        202        206        226        207        227
+  is expanded into a "C3D15 L " element with topology:
+       1511       1430       1442       1513       1432       1444       1523       1445       1526       1525
+       1447       1528       1512       1431       1443
+
+ ELEMENT           94 with label "S6      " and with nodes:
+        224        206        228        227        230        229
+  is expanded into a "C3D15 L " element with topology:
+       1511       1442       1529       1513       1444       1531       1526       1541       1535       1528
+       1543       1537       1512       1443       1530
+
+ ELEMENT           95 with label "S6      " and with nodes:
+        228        206        210        230        211        231
+  is expanded into a "C3D15 L " element with topology:
+       1529       1442       1454       1531       1444       1456       1541       1457       1544       1543
+       1459       1546       1530       1443       1455
+
+ ELEMENT           96 with label "S6      " and with nodes:
+        228        210        232        231        234        233
+  is expanded into a "C3D15 L " element with topology:
+       1529       1454       1547       1531       1456       1549       1544       1559       1553       1546
+       1561       1555       1530       1455       1548
+
+ ELEMENT           97 with label "S6      " and with nodes:
+        232        210        214        234        215        235
+  is expanded into a "C3D15 L " element with topology:
+       1547       1454       1466       1549       1456       1468       1559       1469       1562       1561
+       1471       1564       1548       1455       1467
+
+ ELEMENT           98 with label "S6      " and with nodes:
+        232        214        236        235        238        237
+  is expanded into a "C3D15 L " element with topology:
+       1547       1466       1565       1549       1468       1567       1562       1577       1571       1564
+       1579       1573       1548       1467       1566
+
+ ELEMENT           99 with label "S6      " and with nodes:
+        236        214        218        238        219        239
+  is expanded into a "C3D15 L " element with topology:
+       1565       1466       1478       1567       1468       1480       1577       1484       1580       1579
+       1486       1582       1566       1467       1479
+
+ ELEMENT          100 with label "S6      " and with nodes:
+        236        218        240        239        242        241
+  is expanded into a "C3D15 L " element with topology:
+       1565       1478       1583       1567       1480       1585       1580       1598       1592       1582
+       1600       1594       1566       1479       1584
+
+ ELEMENT          101 with label "S6      " and with nodes:
+          2          1        243          4        245        244
+  is expanded into a "C3D15 L " element with topology:
+        626        617       1604        628        619       1606        638       1613       1610        640
+       1615       1612        627        618       1605
+
+ ELEMENT          102 with label "S6      " and with nodes:
+          2        243        246        244        248        247
+  is expanded into a "C3D15 L " element with topology:
+        626       1604       1619        628       1606       1621       1610       1625       1622       1612
+       1627       1624        627       1605       1620
+
+ ELEMENT          103 with label "S6      " and with nodes:
+        246        243        249        248        251        250
+  is expanded into a "C3D15 L " element with topology:
+       1619       1604       1628       1621       1606       1630       1625       1637       1634       1627
+       1639       1636       1620       1605       1629
+
+ ELEMENT          104 with label "S6      " and with nodes:
+        246        249        252        250        254        253
+  is expanded into a "C3D15 L " element with topology:
+       1619       1628       1643       1621       1630       1645       1634       1649       1646       1636
+       1651       1648       1620       1629       1644
+
+ ELEMENT          105 with label "S6      " and with nodes:
+        252        249        255        254        257        256
+  is expanded into a "C3D15 L " element with topology:
+       1643       1628       1652       1645       1630       1654       1649       1661       1658       1651
+       1663       1660       1644       1629       1653
+
+ ELEMENT          106 with label "S6      " and with nodes:
+        252        255        258        256        260        259
+  is expanded into a "C3D15 L " element with topology:
+       1643       1652       1667       1645       1654       1669       1658       1673       1670       1660
+       1675       1672       1644       1653       1668
+
+ ELEMENT          107 with label "S6      " and with nodes:
+        258        255        261        260        263        262
+  is expanded into a "C3D15 L " element with topology:
+       1667       1652       1676       1669       1654       1678       1673       1685       1682       1675
+       1687       1684       1668       1653       1677
+
+ ELEMENT          108 with label "S6      " and with nodes:
+        258        261        264        262        266        265
+  is expanded into a "C3D15 L " element with topology:
+       1667       1676       1691       1669       1678       1693       1682       1697       1694       1684
+       1699       1696       1668       1677       1692
+
+ ELEMENT          109 with label "S6      " and with nodes:
+        264        261        122        266        268        267
+  is expanded into a "C3D15 L " element with topology:
+       1691       1676       1112       1693       1678       1114       1697       1703       1700       1699
+       1705       1702       1692       1677       1113
+
+ ELEMENT          110 with label "S6      " and with nodes:
+        264        122        123        267        125        269
+  is expanded into a "C3D15 L " element with topology:
+       1691       1112       1121       1693       1114       1123       1700       1133       1709       1702
+       1135       1711       1692       1113       1122
+
+ ELEMENT          111 with label "S6      " and with nodes:
+         34          2        246         35        247        270
+  is expanded into a "C3D15 L " element with topology:
+        767        626       1619        769        628       1621        773       1622       1712        775
+       1624       1714        768        627       1620
+
+ ELEMENT          112 with label "S6      " and with nodes:
+         34        246        271        270        273        272
+  is expanded into a "C3D15 L " element with topology:
+        767       1619       1715        769       1621       1717       1712       1721       1718       1714
+       1723       1720        768       1620       1716
+
+ ELEMENT          113 with label "S6      " and with nodes:
+        271        246        252        273        253        274
+  is expanded into a "C3D15 L " element with topology:
+       1715       1619       1643       1717       1621       1645       1721       1646       1724       1723
+       1648       1726       1716       1620       1644
+
+ ELEMENT          114 with label "S6      " and with nodes:
+        271        252        275        274        277        276
+  is expanded into a "C3D15 L " element with topology:
+       1715       1643       1727       1717       1645       1729       1724       1733       1730       1726
+       1735       1732       1716       1644       1728
+
+ ELEMENT          115 with label "S6      " and with nodes:
+        275        252        258        277        259        278
+  is expanded into a "C3D15 L " element with topology:
+       1727       1643       1667       1729       1645       1669       1733       1670       1736       1735
+       1672       1738       1728       1644       1668
+
+ ELEMENT          116 with label "S6      " and with nodes:
+        275        258        279        278        281        280
+  is expanded into a "C3D15 L " element with topology:
+       1727       1667       1739       1729       1669       1741       1736       1745       1742       1738
+       1747       1744       1728       1668       1740
+
+ ELEMENT          117 with label "S6      " and with nodes:
+        279        258        264        281        265        282
+  is expanded into a "C3D15 L " element with topology:
+       1739       1667       1691       1741       1669       1693       1745       1694       1748       1747
+       1696       1750       1740       1668       1692
+
+ ELEMENT          118 with label "S6      " and with nodes:
+        279        264        283        282        285        284
+  is expanded into a "C3D15 L " element with topology:
+       1739       1691       1751       1741       1693       1753       1748       1757       1754       1750
+       1759       1756       1740       1692       1752
+
+ ELEMENT          119 with label "S6      " and with nodes:
+        283        264        123        285        269        286
+  is expanded into a "C3D15 L " element with topology:
+       1751       1691       1121       1753       1693       1123       1757       1709       1760       1759
+       1711       1762       1752       1692       1122
+
+ ELEMENT          120 with label "S6      " and with nodes:
+        283        123        155        286        156        287
+  is expanded into a "C3D15 L " element with topology:
+       1751       1121       1262       1753       1123       1264       1760       1268       1763       1762
+       1270       1765       1752       1122       1263
+
+ ELEMENT          121 with label "S6      " and with nodes:
+         56         34        271         57        272        288
+  is expanded into a "C3D15 L " element with topology:
+        845        767       1715        847        769       1717        851       1718       1766        853
+       1720       1768        846        768       1716
+
+ ELEMENT          122 with label "S6      " and with nodes:
+         56        271        289        288        291        290
+  is expanded into a "C3D15 L " element with topology:
+        845       1715       1769        847       1717       1771       1766       1775       1772       1768
+       1777       1774        846       1716       1770
+
+ ELEMENT          123 with label "S6      " and with nodes:
+        289        271        275        291        276        292
+  is expanded into a "C3D15 L " element with topology:
+       1769       1715       1727       1771       1717       1729       1775       1730       1778       1777
+       1732       1780       1770       1716       1728
+
+ ELEMENT          124 with label "S6      " and with nodes:
+        289        275        293        292        295        294
+  is expanded into a "C3D15 L " element with topology:
+       1769       1727       1781       1771       1729       1783       1778       1787       1784       1780
+       1789       1786       1770       1728       1782
+
+ ELEMENT          125 with label "S6      " and with nodes:
+        293        275        279        295        280        296
+  is expanded into a "C3D15 L " element with topology:
+       1781       1727       1739       1783       1729       1741       1787       1742       1790       1789
+       1744       1792       1782       1728       1740
+
+ ELEMENT          126 with label "S6      " and with nodes:
+        293        279        297        296        299        298
+  is expanded into a "C3D15 L " element with topology:
+       1781       1739       1793       1783       1741       1795       1790       1799       1796       1792
+       1801       1798       1782       1740       1794
+
+ ELEMENT          127 with label "S6      " and with nodes:
+        297        279        283        299        284        300
+  is expanded into a "C3D15 L " element with topology:
+       1793       1739       1751       1795       1741       1753       1799       1754       1802       1801
+       1756       1804       1794       1740       1752
+
+ ELEMENT          128 with label "S6      " and with nodes:
+        297        283        301        300        303        302
+  is expanded into a "C3D15 L " element with topology:
+       1793       1751       1805       1795       1753       1807       1802       1811       1808       1804
+       1813       1810       1794       1752       1806
+
+ ELEMENT          129 with label "S6      " and with nodes:
+        301        283        155        303        287        304
+  is expanded into a "C3D15 L " element with topology:
+       1805       1751       1262       1807       1753       1264       1811       1763       1814       1813
+       1765       1816       1806       1752       1263
+
+ ELEMENT          130 with label "S6      " and with nodes:
+        301        155        177        304        178        305
+  is expanded into a "C3D15 L " element with topology:
+       1805       1262       1340       1807       1264       1342       1814       1346       1817       1816
+       1348       1819       1806       1263       1341
+
+ ELEMENT          131 with label "S6      " and with nodes:
+         78         56        289         79        290        306
+  is expanded into a "C3D15 L " element with topology:
+        923        845       1769        925        847       1771        929       1772       1820        931
+       1774       1822        924        846       1770
+
+ ELEMENT          132 with label "S6      " and with nodes:
+         78        289        307        306        309        308
+  is expanded into a "C3D15 L " element with topology:
+        923       1769       1823        925       1771       1825       1820       1829       1826       1822
+       1831       1828        924       1770       1824
+
+ ELEMENT          133 with label "S6      " and with nodes:
+        307        289        293        309        294        310
+  is expanded into a "C3D15 L " element with topology:
+       1823       1769       1781       1825       1771       1783       1829       1784       1832       1831
+       1786       1834       1824       1770       1782
+
+ ELEMENT          134 with label "S6      " and with nodes:
+        307        293        311        310        313        312
+  is expanded into a "C3D15 L " element with topology:
+       1823       1781       1835       1825       1783       1837       1832       1841       1838       1834
+       1843       1840       1824       1782       1836
+
+ ELEMENT          135 with label "S6      " and with nodes:
+        311        293        297        313        298        314
+  is expanded into a "C3D15 L " element with topology:
+       1835       1781       1793       1837       1783       1795       1841       1796       1844       1843
+       1798       1846       1836       1782       1794
+
+ ELEMENT          136 with label "S6      " and with nodes:
+        311        297        315        314        317        316
+  is expanded into a "C3D15 L " element with topology:
+       1835       1793       1847       1837       1795       1849       1844       1853       1850       1846
+       1855       1852       1836       1794       1848
+
+ ELEMENT          137 with label "S6      " and with nodes:
+        315        297        301        317        302        318
+  is expanded into a "C3D15 L " element with topology:
+       1847       1793       1805       1849       1795       1807       1853       1808       1856       1855
+       1810       1858       1848       1794       1806
+
+ ELEMENT          138 with label "S6      " and with nodes:
+        315        301        319        318        321        320
+  is expanded into a "C3D15 L " element with topology:
+       1847       1805       1859       1849       1807       1861       1856       1865       1862       1858
+       1867       1864       1848       1806       1860
+
+ ELEMENT          139 with label "S6      " and with nodes:
+        319        301        177        321        305        322
+  is expanded into a "C3D15 L " element with topology:
+       1859       1805       1340       1861       1807       1342       1865       1817       1868       1867
+       1819       1870       1860       1806       1341
+
+ ELEMENT          140 with label "S6      " and with nodes:
+        319        177        199        322        200        323
+  is expanded into a "C3D15 L " element with topology:
+       1859       1340       1418       1861       1342       1420       1868       1424       1871       1870
+       1426       1873       1860       1341       1419
+
+ ELEMENT          141 with label "S6      " and with nodes:
+        100         78        307        101        308        324
+  is expanded into a "C3D15 L " element with topology:
+       1001        923       1823       1003        925       1825       1010       1826       1874       1012
+       1828       1876       1002        924       1824
+
+ ELEMENT          142 with label "S6      " and with nodes:
+        100        307        325        324        327        326
+  is expanded into a "C3D15 L " element with topology:
+       1001       1823       1877       1003       1825       1879       1874       1889       1883       1876
+       1891       1885       1002       1824       1878
+
+ ELEMENT          143 with label "S6      " and with nodes:
+        325        307        311        327        312        328
+  is expanded into a "C3D15 L " element with topology:
+       1877       1823       1835       1879       1825       1837       1889       1838       1892       1891
+       1840       1894       1878       1824       1836
+
+ ELEMENT          144 with label "S6      " and with nodes:
+        325        311        329        328        331        330
+  is expanded into a "C3D15 L " element with topology:
+       1877       1835       1895       1879       1837       1897       1892       1907       1901       1894
+       1909       1903       1878       1836       1896
+
+ ELEMENT          145 with label "S6      " and with nodes:
+        329        311        315        331        316        332
+  is expanded into a "C3D15 L " element with topology:
+       1895       1835       1847       1897       1837       1849       1907       1850       1910       1909
+       1852       1912       1896       1836       1848
+
+ ELEMENT          146 with label "S6      " and with nodes:
+        329        315        333        332        335        334
+  is expanded into a "C3D15 L " element with topology:
+       1895       1847       1913       1897       1849       1915       1910       1925       1919       1912
+       1927       1921       1896       1848       1914
+
+ ELEMENT          147 with label "S6      " and with nodes:
+        333        315        319        335        320        336
+  is expanded into a "C3D15 L " element with topology:
+       1913       1847       1859       1915       1849       1861       1925       1862       1928       1927
+       1864       1930       1914       1848       1860
+
+ ELEMENT          148 with label "S6      " and with nodes:
+        333        319        337        336        339        338
+  is expanded into a "C3D15 L " element with topology:
+       1913       1859       1931       1915       1861       1933       1928       1943       1937       1930
+       1945       1939       1914       1860       1932
+
+ ELEMENT          149 with label "S6      " and with nodes:
+        337        319        199        339        323        340
+  is expanded into a "C3D15 L " element with topology:
+       1931       1859       1418       1933       1861       1420       1943       1871       1946       1945
+       1873       1948       1932       1860       1419
+
+ ELEMENT          150 with label "S6      " and with nodes:
+        337        199        221        340        222        341
+  is expanded into a "C3D15 L " element with topology:
+       1931       1418       1496       1933       1420       1498       1946       1505       1949       1948
+       1507       1951       1932       1419       1497
+
+ ELEMENT          151 with label "S6      " and with nodes:
+         28         31        342         33        343        344
+  is expanded into a "C3D15 L " element with topology:
+        734        752       1955        736        754       1957        761       1961       1964        763
+       1963       1966        735        753       1956
+
+ ELEMENT          152 with label "S6      " and with nodes:
+        342         31        345        343        346        347
+  is expanded into a "C3D15 L " element with topology:
+       1955        752       1970       1957        754       1972       1961       1973       1976       1963
+       1975       1978       1956        753       1971
+
+ ELEMENT          153 with label "S6      " and with nodes:
+        342        345        348        347        349        350
+  is expanded into a "C3D15 L " element with topology:
+       1955       1970       1979       1957       1972       1981       1976       1985       1988       1978
+       1987       1990       1956       1971       1980
+
+ ELEMENT          154 with label "S6      " and with nodes:
+        348        345        351        349        352        353
+  is expanded into a "C3D15 L " element with topology:
+       1979       1970       1994       1981       1972       1996       1985       1997       2000       1987
+       1999       2002       1980       1971       1995
+
+ ELEMENT          155 with label "S6      " and with nodes:
+        348        351        354        353        355        356
+  is expanded into a "C3D15 L " element with topology:
+       1979       1994       2003       1981       1996       2005       2000       2009       2012       2002
+       2011       2014       1980       1995       2004
+
+ ELEMENT          156 with label "S6      " and with nodes:
+        354        351        357        355        358        359
+  is expanded into a "C3D15 L " element with topology:
+       2003       1994       2018       2005       1996       2020       2009       2021       2024       2011
+       2023       2026       2004       1995       2019
+
+ ELEMENT          157 with label "S6      " and with nodes:
+        354        357        360        359        361        362
+  is expanded into a "C3D15 L " element with topology:
+       2003       2018       2027       2005       2020       2029       2024       2033       2036       2026
+       2035       2038       2004       2019       2028
+
+ ELEMENT          158 with label "S6      " and with nodes:
+        360        357        363        361        364        365
+  is expanded into a "C3D15 L " element with topology:
+       2027       2018       2042       2029       2020       2044       2033       2045       2048       2035
+       2047       2050       2028       2019       2043
+
+ ELEMENT          159 with label "S6      " and with nodes:
+        360        363        149        365        366        367
+  is expanded into a "C3D15 L " element with topology:
+       2027       2042       1229       2029       2044       1231       2048       2051       2054       2050
+       2053       2056       2028       2043       1230
+
+ ELEMENT          160 with label "S6      " and with nodes:
+        149        363        152        366        368        154
+  is expanded into a "C3D15 L " element with topology:
+       1229       2042       1247       1231       2044       1249       2051       2060       1256       2053
+       2062       1258       1230       2043       1248
+
+ ELEMENT          161 with label "S6      " and with nodes:
+         31         53        345         55        369        346
+  is expanded into a "C3D15 L " element with topology:
+        752        830       1970        754        832       1972        839       2063       1973        841
+       2065       1975        753        831       1971
+
+ ELEMENT          162 with label "S6      " and with nodes:
+        345         53        370        369        371        372
+  is expanded into a "C3D15 L " element with topology:
+       1970        830       2066       1972        832       2068       2063       2069       2072       2065
+       2071       2074       1971        831       2067
+
+ ELEMENT          163 with label "S6      " and with nodes:
+        345        370        351        372        373        352
+  is expanded into a "C3D15 L " element with topology:
+       1970       2066       1994       1972       2068       1996       2072       2075       1997       2074
+       2077       1999       1971       2067       1995
+
+ ELEMENT          164 with label "S6      " and with nodes:
+        351        370        374        373        375        376
+  is expanded into a "C3D15 L " element with topology:
+       1994       2066       2078       1996       2068       2080       2075       2081       2084       2077
+       2083       2086       1995       2067       2079
+
+ ELEMENT          165 with label "S6      " and with nodes:
+        351        374        357        376        377        358
+  is expanded into a "C3D15 L " element with topology:
+       1994       2078       2018       1996       2080       2020       2084       2087       2021       2086
+       2089       2023       1995       2079       2019
+
+ ELEMENT          166 with label "S6      " and with nodes:
+        357        374        378        377        379        380
+  is expanded into a "C3D15 L " element with topology:
+       2018       2078       2090       2020       2080       2092       2087       2093       2096       2089
+       2095       2098       2019       2079       2091
+
+ ELEMENT          167 with label "S6      " and with nodes:
+        357        378        363        380        381        364
+  is expanded into a "C3D15 L " element with topology:
+       2018       2090       2042       2020       2092       2044       2096       2099       2045       2098
+       2101       2047       2019       2091       2043
+
+ ELEMENT          168 with label "S6      " and with nodes:
+        363        378        382        381        383        384
+  is expanded into a "C3D15 L " element with topology:
+       2042       2090       2102       2044       2092       2104       2099       2105       2108       2101
+       2107       2110       2043       2091       2103
+
+ ELEMENT          169 with label "S6      " and with nodes:
+        363        382        152        384        385        368
+  is expanded into a "C3D15 L " element with topology:
+       2042       2102       1247       2044       2104       1249       2108       2111       2060       2110
+       2113       2062       2043       2103       1248
+
+ ELEMENT          170 with label "S6      " and with nodes:
+        152        382        174        385        386        176
+  is expanded into a "C3D15 L " element with topology:
+       1247       2102       1325       1249       2104       1327       2111       2114       1334       2113
+       2116       1336       1248       2103       1326
+
+ ELEMENT          171 with label "S6      " and with nodes:
+         53         75        370         77        387        371
+  is expanded into a "C3D15 L " element with topology:
+        830        908       2066        832        910       2068        917       2117       2069        919
+       2119       2071        831        909       2067
+
+ ELEMENT          172 with label "S6      " and with nodes:
+        370         75        388        387        389        390
+  is expanded into a "C3D15 L " element with topology:
+       2066        908       2120       2068        910       2122       2117       2123       2126       2119
+       2125       2128       2067        909       2121
+
+ ELEMENT          173 with label "S6      " and with nodes:
+        370        388        374        390        391        375
+  is expanded into a "C3D15 L " element with topology:
+       2066       2120       2078       2068       2122       2080       2126       2129       2081       2128
+       2131       2083       2067       2121       2079
+
+ ELEMENT          174 with label "S6      " and with nodes:
+        374        388        392        391        393        394
+  is expanded into a "C3D15 L " element with topology:
+       2078       2120       2132       2080       2122       2134       2129       2135       2138       2131
+       2137       2140       2079       2121       2133
+
+ ELEMENT          175 with label "S6      " and with nodes:
+        374        392        378        394        395        379
+  is expanded into a "C3D15 L " element with topology:
+       2078       2132       2090       2080       2134       2092       2138       2141       2093       2140
+       2143       2095       2079       2133       2091
+
+ ELEMENT          176 with label "S6      " and with nodes:
+        378        392        396        395        397        398
+  is expanded into a "C3D15 L " element with topology:
+       2090       2132       2144       2092       2134       2146       2141       2147       2150       2143
+       2149       2152       2091       2133       2145
+
+ ELEMENT          177 with label "S6      " and with nodes:
+        378        396        382        398        399        383
+  is expanded into a "C3D15 L " element with topology:
+       2090       2144       2102       2092       2146       2104       2150       2153       2105       2152
+       2155       2107       2091       2145       2103
+
+ ELEMENT          178 with label "S6      " and with nodes:
+        382        396        400        399        401        402
+  is expanded into a "C3D15 L " element with topology:
+       2102       2144       2156       2104       2146       2158       2153       2159       2162       2155
+       2161       2164       2103       2145       2157
+
+ ELEMENT          179 with label "S6      " and with nodes:
+        382        400        174        402        403        386
+  is expanded into a "C3D15 L " element with topology:
+       2102       2156       1325       2104       2158       1327       2162       2165       2114       2164
+       2167       2116       2103       2157       1326
+
+ ELEMENT          180 with label "S6      " and with nodes:
+        174        400        196        403        404        198
+  is expanded into a "C3D15 L " element with topology:
+       1325       2156       1403       1327       2158       1405       2165       2168       1412       2167
+       2170       1414       1326       2157       1404
+
+ ELEMENT          181 with label "S6      " and with nodes:
+         75         97        388         99        405        389
+  is expanded into a "C3D15 L " element with topology:
+        908        986       2120        910        988       2122        995       2171       2123        997
+       2173       2125        909        987       2121
+
+ ELEMENT          182 with label "S6      " and with nodes:
+        388         97        406        405        407        408
+  is expanded into a "C3D15 L " element with topology:
+       2120        986       2174       2122        988       2176       2171       2177       2180       2173
+       2179       2182       2121        987       2175
+
+ ELEMENT          183 with label "S6      " and with nodes:
+        388        406        392        408        409        393
+  is expanded into a "C3D15 L " element with topology:
+       2120       2174       2132       2122       2176       2134       2180       2183       2135       2182
+       2185       2137       2121       2175       2133
+
+ ELEMENT          184 with label "S6      " and with nodes:
+        392        406        410        409        411        412
+  is expanded into a "C3D15 L " element with topology:
+       2132       2174       2186       2134       2176       2188       2183       2189       2192       2185
+       2191       2194       2133       2175       2187
+
+ ELEMENT          185 with label "S6      " and with nodes:
+        392        410        396        412        413        397
+  is expanded into a "C3D15 L " element with topology:
+       2132       2186       2144       2134       2188       2146       2192       2195       2147       2194
+       2197       2149       2133       2187       2145
+
+ ELEMENT          186 with label "S6      " and with nodes:
+        396        410        414        413        415        416
+  is expanded into a "C3D15 L " element with topology:
+       2144       2186       2198       2146       2188       2200       2195       2201       2204       2197
+       2203       2206       2145       2187       2199
+
+ ELEMENT          187 with label "S6      " and with nodes:
+        396        414        400        416        417        401
+  is expanded into a "C3D15 L " element with topology:
+       2144       2198       2156       2146       2200       2158       2204       2207       2159       2206
+       2209       2161       2145       2199       2157
+
+ ELEMENT          188 with label "S6      " and with nodes:
+        400        414        418        417        419        420
+  is expanded into a "C3D15 L " element with topology:
+       2156       2198       2210       2158       2200       2212       2207       2213       2216       2209
+       2215       2218       2157       2199       2211
+
+ ELEMENT          189 with label "S6      " and with nodes:
+        400        418        196        420        421        404
+  is expanded into a "C3D15 L " element with topology:
+       2156       2210       1403       2158       2212       1405       2216       2219       2168       2218
+       2221       2170       2157       2211       1404
+
+ ELEMENT          190 with label "S6      " and with nodes:
+        196        418        218        421        422        220
+  is expanded into a "C3D15 L " element with topology:
+       1403       2210       1481       1405       2212       1483       2219       2222       1490       2221
+       2224       1492       1404       2211       1482
+
+ ELEMENT          191 with label "S6      " and with nodes:
+         97        119        406        121        423        407
+  is expanded into a "C3D15 L " element with topology:
+        986       1091       2174        988       1093       2176       1106       2225       2177       1108
+       2227       2179        987       1092       2175
+
+ ELEMENT          192 with label "S6      " and with nodes:
+        406        119        424        423        425        426
+  is expanded into a "C3D15 L " element with topology:
+       2174       1091       2228       2176       1093       2230       2225       2234       2240       2227
+       2236       2242       2175       1092       2229
+
+ ELEMENT          193 with label "S6      " and with nodes:
+        406        424        410        426        427        411
+  is expanded into a "C3D15 L " element with topology:
+       2174       2228       2186       2176       2230       2188       2240       2243       2189       2242
+       2245       2191       2175       2229       2187
+
+ ELEMENT          194 with label "S6      " and with nodes:
+        410        424        428        427        429        430
+  is expanded into a "C3D15 L " element with topology:
+       2186       2228       2246       2188       2230       2248       2243       2252       2258       2245
+       2254       2260       2187       2229       2247
+
+ ELEMENT          195 with label "S6      " and with nodes:
+        410        428        414        430        431        415
+  is expanded into a "C3D15 L " element with topology:
+       2186       2246       2198       2188       2248       2200       2258       2261       2201       2260
+       2263       2203       2187       2247       2199
+
+ ELEMENT          196 with label "S6      " and with nodes:
+        414        428        432        431        433        434
+  is expanded into a "C3D15 L " element with topology:
+       2198       2246       2264       2200       2248       2266       2261       2270       2276       2263
+       2272       2278       2199       2247       2265
+
+ ELEMENT          197 with label "S6      " and with nodes:
+        414        432        418        434        435        419
+  is expanded into a "C3D15 L " element with topology:
+       2198       2264       2210       2200       2266       2212       2276       2279       2213       2278
+       2281       2215       2199       2265       2211
+
+ ELEMENT          198 with label "S6      " and with nodes:
+        418        432        436        435        437        438
+  is expanded into a "C3D15 L " element with topology:
+       2210       2264       2282       2212       2266       2284       2279       2288       2294       2281
+       2290       2296       2211       2265       2283
+
+ ELEMENT          199 with label "S6      " and with nodes:
+        418        436        218        438        439        422
+  is expanded into a "C3D15 L " element with topology:
+       2210       2282       1481       2212       2284       1483       2294       2297       2222       2296
+       2299       2224       2211       2283       1482
+
+ ELEMENT          200 with label "S6      " and with nodes:
+        218        436        240        439        440        242
+  is expanded into a "C3D15 L " element with topology:
+       1481       2282       1586       1483       2284       1588       2297       2300       1601       2299
+       2302       1603       1482       2283       1587
+
+ ELEMENT          201 with label "S6      " and with nodes:
+        119        115        424        120        441        425
+  is expanded into a "C3D15 L " element with topology:
+       1094       1073       2231       1096       1075       2233       1100       2306       2237       1102
+       2308       2239       1095       1074       2232
+
+ ELEMENT          202 with label "S6      " and with nodes:
+        424        115        442        441        443        444
+  is expanded into a "C3D15 L " element with topology:
+       2231       1073       2309       2233       1075       2311       2306       2312       2315       2308
+       2314       2317       2232       1074       2310
+
+ ELEMENT          203 with label "S6      " and with nodes:
+        424        442        428        444        445        429
+  is expanded into a "C3D15 L " element with topology:
+       2231       2309       2249       2233       2311       2251       2315       2318       2255       2317
+       2320       2257       2232       2310       2250
+
+ ELEMENT          204 with label "S6      " and with nodes:
+        428        442        446        445        447        448
+  is expanded into a "C3D15 L " element with topology:
+       2249       2309       2321       2251       2311       2323       2318       2324       2327       2320
+       2326       2329       2250       2310       2322
+
+ ELEMENT          205 with label "S6      " and with nodes:
+        428        446        432        448        449        433
+  is expanded into a "C3D15 L " element with topology:
+       2249       2321       2267       2251       2323       2269       2327       2330       2273       2329
+       2332       2275       2250       2322       2268
+
+ ELEMENT          206 with label "S6      " and with nodes:
+        432        446        450        449        451        452
+  is expanded into a "C3D15 L " element with topology:
+       2267       2321       2333       2269       2323       2335       2330       2336       2339       2332
+       2338       2341       2268       2322       2334
+
+ ELEMENT          207 with label "S6      " and with nodes:
+        432        450        436        452        453        437
+  is expanded into a "C3D15 L " element with topology:
+       2267       2333       2285       2269       2335       2287       2339       2342       2291       2341
+       2344       2293       2268       2334       2286
+
+ ELEMENT          208 with label "S6      " and with nodes:
+        436        450        454        453        455        456
+  is expanded into a "C3D15 L " element with topology:
+       2285       2333       2345       2287       2335       2347       2342       2348       2351       2344
+       2350       2353       2286       2334       2346
+
+ ELEMENT          209 with label "S6      " and with nodes:
+        436        454        240        456        457        440
+  is expanded into a "C3D15 L " element with topology:
+       2285       2345       1589       2287       2347       1591       2351       2354       2303       2353
+       2356       2305       2286       2346       1590
+
+ ELEMENT          210 with label "S6      " and with nodes:
+        240        454        236        457        458        241
+  is expanded into a "C3D15 L " element with topology:
+       1589       2345       1568       1591       2347       1570       2354       2357       1595       2356
+       2359       1597       1590       2346       1569
+
+ ELEMENT          211 with label "S6      " and with nodes:
+        115        111        442        116        459        443
+  is expanded into a "C3D15 L " element with topology:
+       1073       1055       2309       1075       1057       2311       1079       2360       2312       1081
+       2362       2314       1074       1056       2310
+
+ ELEMENT          212 with label "S6      " and with nodes:
+        442        111        460        459        461        462
+  is expanded into a "C3D15 L " element with topology:
+       2309       1055       2363       2311       1057       2365       2360       2366       2369       2362
+       2368       2371       2310       1056       2364
+
+ ELEMENT          213 with label "S6      " and with nodes:
+        442        460        446        462        463        447
+  is expanded into a "C3D15 L " element with topology:
+       2309       2363       2321       2311       2365       2323       2369       2372       2324       2371
+       2374       2326       2310       2364       2322
+
+ ELEMENT          214 with label "S6      " and with nodes:
+        446        460        464        463        465        466
+  is expanded into a "C3D15 L " element with topology:
+       2321       2363       2375       2323       2365       2377       2372       2378       2381       2374
+       2380       2383       2322       2364       2376
+
+ ELEMENT          215 with label "S6      " and with nodes:
+        446        464        450        466        467        451
+  is expanded into a "C3D15 L " element with topology:
+       2321       2375       2333       2323       2377       2335       2381       2384       2336       2383
+       2386       2338       2322       2376       2334
+
+ ELEMENT          216 with label "S6      " and with nodes:
+        450        464        468        467        469        470
+  is expanded into a "C3D15 L " element with topology:
+       2333       2375       2387       2335       2377       2389       2384       2390       2393       2386
+       2392       2395       2334       2376       2388
+
+ ELEMENT          217 with label "S6      " and with nodes:
+        450        468        454        470        471        455
+  is expanded into a "C3D15 L " element with topology:
+       2333       2387       2345       2335       2389       2347       2393       2396       2348       2395
+       2398       2350       2334       2388       2346
+
+ ELEMENT          218 with label "S6      " and with nodes:
+        454        468        472        471        473        474
+  is expanded into a "C3D15 L " element with topology:
+       2345       2387       2399       2347       2389       2401       2396       2402       2405       2398
+       2404       2407       2346       2388       2400
+
+ ELEMENT          219 with label "S6      " and with nodes:
+        454        472        236        474        475        458
+  is expanded into a "C3D15 L " element with topology:
+       2345       2399       1568       2347       2401       1570       2405       2408       2357       2407
+       2410       2359       2346       2400       1569
+
+ ELEMENT          220 with label "S6      " and with nodes:
+        236        472        232        475        476        237
+  is expanded into a "C3D15 L " element with topology:
+       1568       2399       1550       1570       2401       1552       2408       2411       1574       2410
+       2413       1576       1569       2400       1551
+
+ ELEMENT          221 with label "S6      " and with nodes:
+        111        107        460        112        477        461
+  is expanded into a "C3D15 L " element with topology:
+       1055       1037       2363       1057       1039       2365       1061       2414       2366       1063
+       2416       2368       1056       1038       2364
+
+ ELEMENT          222 with label "S6      " and with nodes:
+        460        107        478        477        479        480
+  is expanded into a "C3D15 L " element with topology:
+       2363       1037       2417       2365       1039       2419       2414       2420       2423       2416
+       2422       2425       2364       1038       2418
+
+ ELEMENT          223 with label "S6      " and with nodes:
+        460        478        464        480        481        465
+  is expanded into a "C3D15 L " element with topology:
+       2363       2417       2375       2365       2419       2377       2423       2426       2378       2425
+       2428       2380       2364       2418       2376
+
+ ELEMENT          224 with label "S6      " and with nodes:
+        464        478        482        481        483        484
+  is expanded into a "C3D15 L " element with topology:
+       2375       2417       2429       2377       2419       2431       2426       2432       2435       2428
+       2434       2437       2376       2418       2430
+
+ ELEMENT          225 with label "S6      " and with nodes:
+        464        482        468        484        485        469
+  is expanded into a "C3D15 L " element with topology:
+       2375       2429       2387       2377       2431       2389       2435       2438       2390       2437
+       2440       2392       2376       2430       2388
+
+ ELEMENT          226 with label "S6      " and with nodes:
+        468        482        486        485        487        488
+  is expanded into a "C3D15 L " element with topology:
+       2387       2429       2441       2389       2431       2443       2438       2444       2447       2440
+       2446       2449       2388       2430       2442
+
+ ELEMENT          227 with label "S6      " and with nodes:
+        468        486        472        488        489        473
+  is expanded into a "C3D15 L " element with topology:
+       2387       2441       2399       2389       2443       2401       2447       2450       2402       2449
+       2452       2404       2388       2442       2400
+
+ ELEMENT          228 with label "S6      " and with nodes:
+        472        486        490        489        491        492
+  is expanded into a "C3D15 L " element with topology:
+       2399       2441       2453       2401       2443       2455       2450       2456       2459       2452
+       2458       2461       2400       2442       2454
+
+ ELEMENT          229 with label "S6      " and with nodes:
+        472        490        232        492        493        476
+  is expanded into a "C3D15 L " element with topology:
+       2399       2453       1550       2401       2455       1552       2459       2462       2411       2461
+       2464       2413       2400       2454       1551
+
+ ELEMENT          230 with label "S6      " and with nodes:
+        232        490        228        493        494        233
+  is expanded into a "C3D15 L " element with topology:
+       1550       2453       1532       1552       2455       1534       2462       2465       1556       2464
+       2467       1558       1551       2454       1533
+
+ ELEMENT          231 with label "S6      " and with nodes:
+        107        103        478        108        495        479
+  is expanded into a "C3D15 L " element with topology:
+       1037       1019       2417       1039       1021       2419       1043       2468       2420       1045
+       2470       2422       1038       1020       2418
+
+ ELEMENT          232 with label "S6      " and with nodes:
+        478        103        496        495        497        498
+  is expanded into a "C3D15 L " element with topology:
+       2417       1019       2471       2419       1021       2473       2468       2474       2477       2470
+       2476       2479       2418       1020       2472
+
+ ELEMENT          233 with label "S6      " and with nodes:
+        478        496        482        498        499        483
+  is expanded into a "C3D15 L " element with topology:
+       2417       2471       2429       2419       2473       2431       2477       2480       2432       2479
+       2482       2434       2418       2472       2430
+
+ ELEMENT          234 with label "S6      " and with nodes:
+        482        496        500        499        501        502
+  is expanded into a "C3D15 L " element with topology:
+       2429       2471       2483       2431       2473       2485       2480       2486       2489       2482
+       2488       2491       2430       2472       2484
+
+ ELEMENT          235 with label "S6      " and with nodes:
+        482        500        486        502        503        487
+  is expanded into a "C3D15 L " element with topology:
+       2429       2483       2441       2431       2485       2443       2489       2492       2444       2491
+       2494       2446       2430       2484       2442
+
+ ELEMENT          236 with label "S6      " and with nodes:
+        486        500        504        503        505        506
+  is expanded into a "C3D15 L " element with topology:
+       2441       2483       2495       2443       2485       2497       2492       2498       2501       2494
+       2500       2503       2442       2484       2496
+
+ ELEMENT          237 with label "S6      " and with nodes:
+        486        504        490        506        507        491
+  is expanded into a "C3D15 L " element with topology:
+       2441       2495       2453       2443       2497       2455       2501       2504       2456       2503
+       2506       2458       2442       2496       2454
+
+ ELEMENT          238 with label "S6      " and with nodes:
+        490        504        508        507        509        510
+  is expanded into a "C3D15 L " element with topology:
+       2453       2495       2507       2455       2497       2509       2504       2510       2513       2506
+       2512       2515       2454       2496       2508
+
+ ELEMENT          239 with label "S6      " and with nodes:
+        490        508        228        510        511        494
+  is expanded into a "C3D15 L " element with topology:
+       2453       2507       1532       2455       2509       1534       2513       2516       2465       2515
+       2518       2467       2454       2508       1533
+
+ ELEMENT          240 with label "S6      " and with nodes:
+        228        508        224        511        512        229
+  is expanded into a "C3D15 L " element with topology:
+       1532       2507       1514       1534       2509       1516       2516       2519       1538       2518
+       2521       1540       1533       2508       1515
+
+ ELEMENT          241 with label "S6      " and with nodes:
+        103        100        496        104        513        497
+  is expanded into a "C3D15 L " element with topology:
+       1019       1004       2471       1021       1006       2473       1025       2522       2474       1027
+       2524       2476       1020       1005       2472
+
+ ELEMENT          242 with label "S6      " and with nodes:
+        496        100        325        513        326        514
+  is expanded into a "C3D15 L " element with topology:
+       2471       1004       1880       2473       1006       1882       2522       1886       2525       2524
+       1888       2527       2472       1005       1881
+
+ ELEMENT          243 with label "S6      " and with nodes:
+        496        325        500        514        515        501
+  is expanded into a "C3D15 L " element with topology:
+       2471       1880       2483       2473       1882       2485       2525       2528       2486       2527
+       2530       2488       2472       1881       2484
+
+ ELEMENT          244 with label "S6      " and with nodes:
+        500        325        329        515        330        516
+  is expanded into a "C3D15 L " element with topology:
+       2483       1880       1898       2485       1882       1900       2528       1904       2531       2530
+       1906       2533       2484       1881       1899
+
+ ELEMENT          245 with label "S6      " and with nodes:
+        500        329        504        516        517        505
+  is expanded into a "C3D15 L " element with topology:
+       2483       1898       2495       2485       1900       2497       2531       2534       2498       2533
+       2536       2500       2484       1899       2496
+
+ ELEMENT          246 with label "S6      " and with nodes:
+        504        329        333        517        334        518
+  is expanded into a "C3D15 L " element with topology:
+       2495       1898       1916       2497       1900       1918       2534       1922       2537       2536
+       1924       2539       2496       1899       1917
+
+ ELEMENT          247 with label "S6      " and with nodes:
+        504        333        508        518        519        509
+  is expanded into a "C3D15 L " element with topology:
+       2495       1916       2507       2497       1918       2509       2537       2540       2510       2539
+       2542       2512       2496       1917       2508
+
+ ELEMENT          248 with label "S6      " and with nodes:
+        508        333        337        519        338        520
+  is expanded into a "C3D15 L " element with topology:
+       2507       1916       1934       2509       1918       1936       2540       1940       2543       2542
+       1942       2545       2508       1917       1935
+
+ ELEMENT          249 with label "S6      " and with nodes:
+        508        337        224        520        521        512
+  is expanded into a "C3D15 L " element with topology:
+       2507       1934       1514       2509       1936       1516       2543       2546       2519       2545
+       2548       2521       2508       1935       1515
+
+ ELEMENT          250 with label "S6      " and with nodes:
+        224        337        221        521        341        225
+  is expanded into a "C3D15 L " element with topology:
+       1514       1934       1499       1516       1936       1501       2546       1952       1520       2548
+       1954       1522       1515       1935       1500
+
+ ELEMENT          251 with label "S6      " and with nodes:
+         22         28        342         30        344        522
+  is expanded into a "C3D15 L " element with topology:
+        710        737       1958        712        739       1960        746       1967       2549        748
+       1969       2551        711        738       1959
+
+ ELEMENT          252 with label "S6      " and with nodes:
+         22        342        523        522        525        524
+  is expanded into a "C3D15 L " element with topology:
+        710       1958       2552        712       1960       2554       2549       2558       2555       2551
+       2560       2557        711       1959       2553
+
+ ELEMENT          253 with label "S6      " and with nodes:
+        523        342        348        525        350        526
+  is expanded into a "C3D15 L " element with topology:
+       2552       1958       1982       2554       1960       1984       2558       1991       2561       2560
+       1993       2563       2553       1959       1983
+
+ ELEMENT          254 with label "S6      " and with nodes:
+        523        348        527        526        529        528
+  is expanded into a "C3D15 L " element with topology:
+       2552       1982       2564       2554       1984       2566       2561       2570       2567       2563
+       2572       2569       2553       1983       2565
+
+ ELEMENT          255 with label "S6      " and with nodes:
+        527        348        354        529        356        530
+  is expanded into a "C3D15 L " element with topology:
+       2564       1982       2006       2566       1984       2008       2570       2015       2573       2572
+       2017       2575       2565       1983       2007
+
+ ELEMENT          256 with label "S6      " and with nodes:
+        527        354        531        530        533        532
+  is expanded into a "C3D15 L " element with topology:
+       2564       2006       2576       2566       2008       2578       2573       2582       2579       2575
+       2584       2581       2565       2007       2577
+
+ ELEMENT          257 with label "S6      " and with nodes:
+        531        354        360        533        362        534
+  is expanded into a "C3D15 L " element with topology:
+       2576       2006       2030       2578       2008       2032       2582       2039       2585       2584
+       2041       2587       2577       2007       2031
+
+ ELEMENT          258 with label "S6      " and with nodes:
+        531        360        535        534        537        536
+  is expanded into a "C3D15 L " element with topology:
+       2576       2030       2588       2578       2032       2590       2585       2594       2591       2587
+       2596       2593       2577       2031       2589
+
+ ELEMENT          259 with label "S6      " and with nodes:
+        535        360        149        537        367        538
+  is expanded into a "C3D15 L " element with topology:
+       2588       2030       1232       2590       2032       1234       2594       2057       2597       2596
+       2059       2599       2589       2031       1233
+
+ ELEMENT          260 with label "S6      " and with nodes:
+        535        149        143        538        151        539
+  is expanded into a "C3D15 L " element with topology:
+       2588       1232       1205       2590       1234       1207       2597       1241       2600       2599
+       1243       2602       2589       1233       1206
+
+ ELEMENT          261 with label "S6      " and with nodes:
+         16         22        523         24        524        540
+  is expanded into a "C3D15 L " element with topology:
+        686        710       2552        688        712       2554        719       2555       2603        721
+       2557       2605        687        711       2553
+
+ ELEMENT          262 with label "S6      " and with nodes:
+         16        523        541        540        543        542
+  is expanded into a "C3D15 L " element with topology:
+        686       2552       2606        688       2554       2608       2603       2612       2609       2605
+       2614       2611        687       2553       2607
+
+ ELEMENT          263 with label "S6      " and with nodes:
+        541        523        527        543        528        544
+  is expanded into a "C3D15 L " element with topology:
+       2606       2552       2564       2608       2554       2566       2612       2567       2615       2614
+       2569       2617       2607       2553       2565
+
+ ELEMENT          264 with label "S6      " and with nodes:
+        541        527        545        544        547        546
+  is expanded into a "C3D15 L " element with topology:
+       2606       2564       2618       2608       2566       2620       2615       2624       2621       2617
+       2626       2623       2607       2565       2619
+
+ ELEMENT          265 with label "S6      " and with nodes:
+        545        527        531        547        532        548
+  is expanded into a "C3D15 L " element with topology:
+       2618       2564       2576       2620       2566       2578       2624       2579       2627       2626
+       2581       2629       2619       2565       2577
+
+ ELEMENT          266 with label "S6      " and with nodes:
+        545        531        549        548        551        550
+  is expanded into a "C3D15 L " element with topology:
+       2618       2576       2630       2620       2578       2632       2627       2636       2633       2629
+       2638       2635       2619       2577       2631
+
+ ELEMENT          267 with label "S6      " and with nodes:
+        549        531        535        551        536        552
+  is expanded into a "C3D15 L " element with topology:
+       2630       2576       2588       2632       2578       2590       2636       2591       2639       2638
+       2593       2641       2631       2577       2589
+
+ ELEMENT          268 with label "S6      " and with nodes:
+        549        535        553        552        555        554
+  is expanded into a "C3D15 L " element with topology:
+       2630       2588       2642       2632       2590       2644       2639       2648       2645       2641
+       2650       2647       2631       2589       2643
+
+ ELEMENT          269 with label "S6      " and with nodes:
+        553        535        143        555        539        556
+  is expanded into a "C3D15 L " element with topology:
+       2642       2588       1205       2644       2590       1207       2648       2600       2651       2650
+       2602       2653       2643       2589       1206
+
+ ELEMENT          270 with label "S6      " and with nodes:
+        553        143        137        556        145        557
+  is expanded into a "C3D15 L " element with topology:
+       2642       1205       1181       2644       1207       1183       2651       1214       2654       2653
+       1216       2656       2643       1206       1182
+
+ ELEMENT          271 with label "S6      " and with nodes:
+         10         16        541         18        542        558
+  is expanded into a "C3D15 L " element with topology:
+        662        686       2606        664        688       2608        695       2609       2657        697
+       2611       2659        663        687       2607
+
+ ELEMENT          272 with label "S6      " and with nodes:
+         10        541        559        558        561        560
+  is expanded into a "C3D15 L " element with topology:
+        662       2606       2660        664       2608       2662       2657       2666       2663       2659
+       2668       2665        663       2607       2661
+
+ ELEMENT          273 with label "S6      " and with nodes:
+        559        541        545        561        546        562
+  is expanded into a "C3D15 L " element with topology:
+       2660       2606       2618       2662       2608       2620       2666       2621       2669       2668
+       2623       2671       2661       2607       2619
+
+ ELEMENT          274 with label "S6      " and with nodes:
+        559        545        563        562        565        564
+  is expanded into a "C3D15 L " element with topology:
+       2660       2618       2672       2662       2620       2674       2669       2678       2675       2671
+       2680       2677       2661       2619       2673
+
+ ELEMENT          275 with label "S6      " and with nodes:
+        563        545        549        565        550        566
+  is expanded into a "C3D15 L " element with topology:
+       2672       2618       2630       2674       2620       2632       2678       2633       2681       2680
+       2635       2683       2673       2619       2631
+
+ ELEMENT          276 with label "S6      " and with nodes:
+        563        549        567        566        569        568
+  is expanded into a "C3D15 L " element with topology:
+       2672       2630       2684       2674       2632       2686       2681       2690       2687       2683
+       2692       2689       2673       2631       2685
+
+ ELEMENT          277 with label "S6      " and with nodes:
+        567        549        553        569        554        570
+  is expanded into a "C3D15 L " element with topology:
+       2684       2630       2642       2686       2632       2644       2690       2645       2693       2692
+       2647       2695       2685       2631       2643
+
+ ELEMENT          278 with label "S6      " and with nodes:
+        567        553        571        570        573        572
+  is expanded into a "C3D15 L " element with topology:
+       2684       2642       2696       2686       2644       2698       2693       2702       2699       2695
+       2704       2701       2685       2643       2697
+
+ ELEMENT          279 with label "S6      " and with nodes:
+        571        553        137        573        557        574
+  is expanded into a "C3D15 L " element with topology:
+       2696       2642       1181       2698       2644       1183       2702       2654       2705       2704
+       2656       2707       2697       2643       1182
+
+ ELEMENT          280 with label "S6      " and with nodes:
+        571        137        131        574        139        575
+  is expanded into a "C3D15 L " element with topology:
+       2696       1181       1157       2698       1183       1159       2705       1190       2708       2707
+       1192       2710       2697       1182       1158
+
+ ELEMENT          281 with label "S6      " and with nodes:
+          3         10        559         12        560        576
+  is expanded into a "C3D15 L " element with topology:
+        632        662       2660        634        664       2662        671       2663       2711        673
+       2665       2713        633        663       2661
+
+ ELEMENT          282 with label "S6      " and with nodes:
+          3        559        577        576        579        578
+  is expanded into a "C3D15 L " element with topology:
+        632       2660       2714        634       2662       2716       2711       2720       2717       2713
+       2722       2719        633       2661       2715
+
+ ELEMENT          283 with label "S6      " and with nodes:
+        577        559        563        579        564        580
+  is expanded into a "C3D15 L " element with topology:
+       2714       2660       2672       2716       2662       2674       2720       2675       2723       2722
+       2677       2725       2715       2661       2673
+
+ ELEMENT          284 with label "S6      " and with nodes:
+        577        563        581        580        583        582
+  is expanded into a "C3D15 L " element with topology:
+       2714       2672       2726       2716       2674       2728       2723       2732       2729       2725
+       2734       2731       2715       2673       2727
+
+ ELEMENT          285 with label "S6      " and with nodes:
+        581        563        567        583        568        584
+  is expanded into a "C3D15 L " element with topology:
+       2726       2672       2684       2728       2674       2686       2732       2687       2735       2734
+       2689       2737       2727       2673       2685
+
+ ELEMENT          286 with label "S6      " and with nodes:
+        581        567        585        584        587        586
+  is expanded into a "C3D15 L " element with topology:
+       2726       2684       2738       2728       2686       2740       2735       2744       2741       2737
+       2746       2743       2727       2685       2739
+
+ ELEMENT          287 with label "S6      " and with nodes:
+        585        567        571        587        572        588
+  is expanded into a "C3D15 L " element with topology:
+       2738       2684       2696       2740       2686       2698       2744       2699       2747       2746
+       2701       2749       2739       2685       2697
+
+ ELEMENT          288 with label "S6      " and with nodes:
+        585        571        589        588        591        590
+  is expanded into a "C3D15 L " element with topology:
+       2738       2696       2750       2740       2698       2752       2747       2756       2753       2749
+       2758       2755       2739       2697       2751
+
+ ELEMENT          289 with label "S6      " and with nodes:
+        589        571        131        591        575        592
+  is expanded into a "C3D15 L " element with topology:
+       2750       2696       1157       2752       2698       1159       2756       2708       2759       2758
+       2710       2761       2751       2697       1158
+
+ ELEMENT          290 with label "S6      " and with nodes:
+        589        131        124        592        133        593
+  is expanded into a "C3D15 L " element with topology:
+       2750       1157       1127       2752       1159       1129       2759       1166       2762       2761
+       1168       2764       2751       1158       1128
+
+ ELEMENT          291 with label "S6      " and with nodes:
+          1          3        577          6        578        594
+  is expanded into a "C3D15 L " element with topology:
+        620        632       2714        622        634       2716        647       2717       2765        649
+       2719       2767        621        633       2715
+
+ ELEMENT          292 with label "S6      " and with nodes:
+          1        577        243        594        595        245
+  is expanded into a "C3D15 L " element with topology:
+        620       2714       1607        622       2716       1609       2765       2768       1616       2767
+       2770       1618        621       2715       1608
+
+ ELEMENT          293 with label "S6      " and with nodes:
+        243        577        581        595        582        596
+  is expanded into a "C3D15 L " element with topology:
+       1607       2714       2726       1609       2716       2728       2768       2729       2771       2770
+       2731       2773       1608       2715       2727
+
+ ELEMENT          294 with label "S6      " and with nodes:
+        243        581        249        596        597        251
+  is expanded into a "C3D15 L " element with topology:
+       1607       2726       1631       1609       2728       1633       2771       2774       1640       2773
+       2776       1642       1608       2727       1632
+
+ ELEMENT          295 with label "S6      " and with nodes:
+        249        581        585        597        586        598
+  is expanded into a "C3D15 L " element with topology:
+       1631       2726       2738       1633       2728       2740       2774       2741       2777       2776
+       2743       2779       1632       2727       2739
+
+ ELEMENT          296 with label "S6      " and with nodes:
+        249        585        255        598        599        257
+  is expanded into a "C3D15 L " element with topology:
+       1631       2738       1655       1633       2740       1657       2777       2780       1664       2779
+       2782       1666       1632       2739       1656
+
+ ELEMENT          297 with label "S6      " and with nodes:
+        255        585        589        599        590        600
+  is expanded into a "C3D15 L " element with topology:
+       1655       2738       2750       1657       2740       2752       2780       2753       2783       2782
+       2755       2785       1656       2739       2751
+
+ ELEMENT          298 with label "S6      " and with nodes:
+        255        589        261        600        601        263
+  is expanded into a "C3D15 L " element with topology:
+       1655       2750       1679       1657       2752       1681       2783       2786       1688       2785
+       2788       1690       1656       2751       1680
+
+ ELEMENT          299 with label "S6      " and with nodes:
+        261        589        124        601        593        602
+  is expanded into a "C3D15 L " element with topology:
+       1679       2750       1127       1681       2752       1129       2786       2762       2789       2788
+       2764       2791       1680       2751       1128
+
+ ELEMENT          300 with label "S6      " and with nodes:
+        261        124        122        602        127        268
+  is expanded into a "C3D15 L " element with topology:
+       1679       1127       1115       1681       1129       1117       2789       1142       1706       2791
+       1144       1708       1680       1128       1116
+

@@ -23,7 +23,7 @@ from math import sqrt, ceil
 class NodalPointCoordinateBlock(object):
     key = 2         # node block Key (Always 2)
     code = 'C'      # node block Code (Always C)
-    numnod = None   # number of nodes in this block # TODO Wrong amount of nodes - has 18 zero nodes more
+    numnod = None   # number of nodes in this block
     fmt = None      # format indicator:
                         # 0   ASCII short
                         # 1   ASCII long
