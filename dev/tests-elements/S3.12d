@@ -1,5 +1,0 @@
- ELEMENT            1 with label "S3      " and with nodes:
-          1          2          3
-  is expanded into a "C3D6  L " element with topology:
-          4          7         10          6          9         12
-

@@ -36,9 +36,10 @@ if __name__ == '__main__':
     p = FRDParser(args.frd + '.frd')
 
     # Exclude zero nodes added by ccx due to *TRANSFORM
-    nn = sorted(set([len(b.results) for b in p.result_blocks]), reverse=True)
+    nn = sorted(set([len(b.results) for b in p.result_blocks]))
+    # print(nn)
     if len(nn) == 3: nn = nn[1]
-    elif len(nn) == 1: nn = nn[0]
+    elif len(nn) == 2: nn = nn[0]
     else: nn = p.node_block.numnod
     # TODO What if output is written for a node subset, not for the whole model?
     print(nn, 'nodes total')
