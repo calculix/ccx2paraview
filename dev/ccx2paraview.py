@@ -36,7 +36,7 @@ if __name__ == '__main__':
     p = FRDParser(args.frd + '.frd')
 
     # Exclude zero nodes added by ccx due to *TRANSFORM
-    nn = sorted(set([len(b.results) for b in p.result_blocks]))
+    nn = sorted(set([len(b.results) for b in p.result_blocks if len(b.results)>0]))
     # print(nn)
     if len(nn) == 3: nn = nn[1]
     elif len(nn) == 2: nn = nn[0]
