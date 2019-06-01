@@ -7,7 +7,7 @@ Distributed under GNU General Public License, version 2.
 
 # Calculix to Paraview converter (frd to vtk/vtu)
 
-The main script is *ccx2paraview.py*. Together with *VTKWriter.py*, *VTUWriter.py* and *FRDParser.py* it converts [CalculiX](http://www.dhondt.de/) .frd-file to view and postprocess calculation results in [Paraview](https://www.paraview.org/). For each time step generates separate file - it makes possible to animate time history. You'll need *python3* with *numpy* to use this converter.
+The main script is *ccx2paraview.py*. Together with *VTKWriter.py*, *VTUWriter.py* and *FRDParser.py* it converts [CalculiX](http://www.dhondt.de/) .frd-file to view and postprocess calculation results in [Paraview](https://www.paraview.org/). For each output interval generates separate file - it makes possible to animate time history. You'll need *python3* with *numpy* to use this converter.
 
 It is recommended to convert .frd to modern XML .vtu format:
 

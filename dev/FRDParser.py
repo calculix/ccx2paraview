@@ -269,60 +269,58 @@ class NodalResultsBlock(object):
             if self.fmt < 2:
                 in_file.readline() # last record for ascii only
 
+        # Append Mises and principal stresses to node results
         if self.name == 'S':
-            self.AppendMisesStress()
-            self.AppendPrincipalStresses()
+            try:
+                # Check if numpy is installed
+                import numpy
 
-    # Append Mises stress to nodes results
-    def AppendMisesStress(self):
-        c = Component()
-        c.ictype = 1; c.name = 'Mises'
-        self.components[c.name] = c
-        self.ncomps += 1
+                # component_names = (
+                #     'Mises',
+                #     'Max Principal',
+                #     'Mid Principal',
+                #     'Min Principal',
+                #     'Tresca',
+                #     'Pressure',
+                #     'Third Invariant'
+                # )
+                component_names = (
+                    'Mises',
+                    'Principal1',
+                    'Principal2',
+                    'Principal3',
+                )
+                for i in range(4):
+                    c = Component()
+                    c.ictype = 1; c.name = component_names[i]
+                    self.components[c.name] = c
+                    self.ncomps += 1
 
-        # Iterate over nodes
-        for node in self.results.keys():
-            data = self.results[node] # list with results for current node
-            Sxx = data[0]; Syy = data[1]; Szz = data[2]
-            Sxy = data[3]; Syz = data[4]; Szx = data[5]
+                # Iterate over nodes
+                for node in self.results.keys():
+                    data = self.results[node] # list with results for current node
+                    Sxx = data[0]; Syy = data[1]; Szz = data[2]
+                    Sxy = data[3]; Syz = data[4]; Szx = data[5]
+                    stessTensor = numpy.array([[Sxx, Sxy, Szx], [Sxy, Syy, Syz], [Szx, Syz, Szz]])
 
-            # Calculate Mises stress for current node
-            mises = 1/sqrt(2) *\
-                sqrt(   (Sxx - Syy)**2 +\
-                        (Syy - Szz)**2 +\
-                        (Szz - Sxx)**2 +\
-                        6 * Syz**2 +\
-                        6 * Szx**2 +\
-                        6 * Sxy**2)
-            self.results[node].append(mises)
+                    # Calculate Mises stress for current node
+                    mises = 1/sqrt(2) *\
+                        sqrt(   (Sxx - Syy)**2 +\
+                                (Syy - Szz)**2 +\
+                                (Szz - Sxx)**2 +\
+                                6 * Syz**2 +\
+                                6 * Szx**2 +\
+                                6 * Sxy**2)
+                    self.results[node].append(mises)
 
-    # Append principal stresses to nodes results
-    def AppendPrincipalStresses(self):
-        # Check if numpy is installed
-        try:
-            import numpy
+                    # Calculate principal stresses for current node
+                    w, v = numpy.linalg.eig(stessTensor)
+                    for ps in w.tolist():
+                        self.results[node].append(ps)
 
-            for i in range(3):
-                c = Component()
-                c.ictype = 1; c.name = 'Principal'+str(i+1)
-                self.components[c.name] = c
-                self.ncomps += 1
-
-            # Iterate over nodes
-            for node in self.results.keys():
-                data = self.results[node] # list with results for current node
-                Sxx = data[0]; Syy = data[1]; Szz = data[2]
-                Sxy = data[3]; Syz = data[4]; Szx = data[5]
-                stessTensor = numpy.array([[Sxx, Sxy, Szx], [Sxy, Syy, Syz], [Szx, Syz, Szz]])
-
-                # Calculate principal stresses for current node
-                w, v = numpy.linalg.eig(stessTensor)
-                for ps in w.tolist():
-                    self.results[node].append(ps)
-
-        except ImportError:
-            print('Numpy is not installed.')
-            print('Principal stresses will not be calculated.')
+            except ImportError:
+                print('Numpy is not installed.')
+                print('Additional stresses and strains will not be appended.')
 
 
 # Main class

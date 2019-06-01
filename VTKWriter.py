@@ -106,6 +106,7 @@ class VTKWriter:
             data = b.results[node]
             f.write('\t')
             for d in data:
+                if d < 1e-9: d = 0 # filter small values for smooth zero fields
                 f.write('\t{:> .8E}'.format(d))
             f.write('\n')
 
