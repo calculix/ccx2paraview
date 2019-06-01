@@ -19,7 +19,7 @@ from math import sqrt, ceil
 
 
 # Nodal Point Coordinate Block
-# cgx_2.15 documentation, § 11.3
+# cgx_2.15 Manual, § 11.3
 class NodalPointCoordinateBlock(object):
     key = 2         # node block Key (Always 2)
     code = 'C'      # node block Code (Always C)
@@ -79,7 +79,7 @@ class Element(object):
 
 
 # Element Definition Block
-# cgx_2.15 documentation, § 11.4
+# cgx_2.15 Manual, § 11.4
 class ElementDefinitionBlock(object):
     # First value is meaningless, since elements are 1-based
     nodes_per_elem_type = [0, 8, 6, 4, 20, 15, 10, 3, 6, 4, 8, 2, 3]
@@ -137,7 +137,6 @@ class ElementDefinitionBlock(object):
 
 
 # Result component
-# D1, D2, D3, T, SXX, SYY, SZZ etc.
 class Component(object):
     ictype = None   # component type:
                     # 1   scalar
@@ -155,7 +154,7 @@ class Component(object):
 
 
 # Nodal Results Block
-# cgx_2.15 documentation, § 11.6
+# cgx_2.15 Manual, § 11.6
 class NodalResultsBlock(object):
     # FRD variables will be renamed back to the names from .inp-file
     inpname = {
@@ -164,7 +163,7 @@ class NodalResultsBlock(object):
         'STRESS':'S',
         'TOSTRAIN':'E',
         'FORC':'RF',
-        'PE':'PEEQ'
+        'PE':'PEEQ',
     }
     key = 100   # result block key (Always 100)
     code = 'C'  # result block code (Always C)
@@ -273,7 +272,7 @@ class NodalResultsBlock(object):
         if self.name == 'S':
             try:
                 # Check if numpy is installed
-                import numpy
+                import numpy as np
 
                 # component_names = (
                 #     'Mises',
@@ -286,9 +285,9 @@ class NodalResultsBlock(object):
                 # )
                 component_names = (
                     'Mises',
-                    'Principal1',
-                    'Principal2',
-                    'Principal3',
+                    'Min Principal',
+                    'Mid Principal',
+                    'Max Principal',
                 )
                 for i in range(len(component_names)):
                     c = Component()
@@ -301,7 +300,7 @@ class NodalResultsBlock(object):
                     data = self.results[node] # list with results for current node
                     Sxx = data[0]; Syy = data[1]; Szz = data[2]
                     Sxy = data[3]; Syz = data[4]; Szx = data[5]
-                    tensor = numpy.array([[Sxx, Sxy, Szx], [Sxy, Syy, Syz], [Szx, Syz, Szz]])
+                    tensor = np.array([[Sxx, Sxy, Szx], [Sxy, Syy, Syz], [Szx, Syz, Szz]])
 
                     # Calculate Mises stress for current node
                     mises = 1/sqrt(2) *\
@@ -314,8 +313,7 @@ class NodalResultsBlock(object):
                     self.results[node].append(mises)
 
                     # Calculate principal stresses for current node
-                    w, v = numpy.linalg.eig(tensor)
-                    for ps in w.tolist():
+                    for ps in np.linalg.eigvalsh(tensor).tolist():
                         self.results[node].append(ps)
 
             except ImportError:
@@ -326,12 +324,13 @@ class NodalResultsBlock(object):
         if self.name == 'E':
             try:
                 # Check if numpy is installed
-                import numpy
+                import numpy as np
 
                 component_names = (
-                    'Principal1',
-                    'Principal2',
-                    'Principal3',
+                    'Mises',
+                    'Min Principal',
+                    'Mid Principal',
+                    'Max Principal',
                 )
                 for i in range(len(component_names)):
                     c = Component()
@@ -344,11 +343,20 @@ class NodalResultsBlock(object):
                     data = self.results[node] # list with results for current node
                     Exx = data[0]; Eyy = data[1]; Ezz = data[2]
                     Exy = data[3]; Eyz = data[4]; Ezx = data[5]
-                    tensor = numpy.array([[Exx, Exy, Ezx], [Exy, Eyy, Eyz], [Ezx, Eyz, Ezz]])
+                    tensor = np.array([[Exx, Exy, Ezx], [Exy, Eyy, Eyz], [Ezx, Eyz, Ezz]])
+
+                    # Calculate Mises strain for current node
+                    mises = sqrt(2)/3 *\
+                        sqrt(   (Exx - Eyy)**2 +\
+                                (Eyy - Ezz)**2 +\
+                                (Ezz - Exx)**2 +\
+                                6 * Eyz**2 +\
+                                6 * Ezx**2 +\
+                                6 * Exy**2)
+                    self.results[node].append(mises)
 
                     # Calculate principal strains for current node
-                    w, v = numpy.linalg.eig(tensor)
-                    for ps in w.tolist():
+                    for ps in np.linalg.eigvalsh(tensor).tolist():
                         self.results[node].append(ps)
 
             except ImportError:
