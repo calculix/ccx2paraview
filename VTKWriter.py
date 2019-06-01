@@ -97,11 +97,11 @@ class VTKWriter:
 
 
     # Write data
-    def write_data(self, f, b, nn):
+    def write_data(self, f, b, numnod):
         f.write('FIELD {} 1\n'.format(b.name))
-        f.write('\t{} {} {} double\n'.format(b.name, len(b.components), nn))
+        f.write('\t{} {} {} double\n'.format(b.name, len(b.components), numnod))
         nodes = sorted(b.results.keys())
-        for n in range(nn): # iterate over nodes
+        for n in range(numnod): # iterate over nodes
             node = nodes[n] 
             data = b.results[node]
             f.write('\t')
@@ -111,7 +111,7 @@ class VTKWriter:
 
 
     # Main function
-    def __init__(self, p, skip_error_field, file_name, step, nn, ne): # p is FRDParser object
+    def __init__(self, p, skip_error_field, file_name, step): # p is FRDParser object
 
         with open(file_name, 'w') as f:
             # Header
@@ -120,7 +120,7 @@ class VTKWriter:
             f.write('DATASET UNSTRUCTURED_GRID\n\n')
 
             # POINTS section - coordinates of all nodes
-            f.write('POINTS ' + str(nn) + ' double\n')
+            f.write('POINTS ' + str(p.node_block.numnod) + ' double\n')
             new_node_number = 0 # node numbers should start from 0
             renumbered_nodes = {} # old_number : new_number
             for n in p.node_block.nodes.keys():
@@ -132,7 +132,7 @@ class VTKWriter:
                 renumbered_nodes[n] = new_node_number
                 new_node_number += 1
 
-                if new_node_number == nn: 
+                if new_node_number == p.node_block.numnod: 
                     break
 
             f.write('\n')
@@ -142,20 +142,20 @@ class VTKWriter:
             for e in p.elem_block.elements:
                 if e.etype == 5: totn += 6
                 else: totn += len(e.nodes)
-            f.write('CELLS {} {}\n'.format(ne, ne + totn)) # number of cells and size of the cell list
+            f.write('CELLS {} {}\n'.format(p.elem_block.numelem, p.elem_block.numelem + totn)) # number of cells and size of the cell list
             for e in p.elem_block.elements:
                 self.write_element_connectivity(renumbered_nodes, e, f)
             f.write('\n')
 
             # CELL TYPES section - write element types:
-            f.write('CELL_TYPES {}\n'.format(ne))
+            f.write('CELL_TYPES {}\n'.format(p.elem_block.numelem))
             for e in p.elem_block.elements:
                 vtk_elem_type = self.convert_elem_type(e.etype)
                 f.write('\t{}\n'.format(vtk_elem_type))
             f.write('\n')
 
             # POINT DATA - from here start all the results
-            f.write('POINT_DATA {}\n'.format(nn))
+            f.write('POINT_DATA {}\n'.format(p.node_block.numnod))
             for b in p.result_blocks: # iterate over FRDResultBlocks
                 if skip_error_field and 'ERROR' in b.name:
                     continue
@@ -166,12 +166,12 @@ class VTKWriter:
                           'time {}, '.format(b.value) +\
                           '{}, '.format(b.name) +\
                           '{} components, '.format(len(b.components))
-                    if len(b.results) != nn:
-                          log += '{}->{} values'.format(len(b.results), nn)
+                    if len(b.results) != p.node_block.numnod:
+                          log += '{}->{} values'.format(len(b.results), p.node_block.numnod)
                     else:
-                        log += '{} values'.format(nn)
+                        log += '{} values'.format(p.node_block.numnod)
                     print(log)
-                    self.write_data(f, b, nn)
+                    self.write_data(f, b, p.node_block.numnod)
                 else:
                     print(b.name, '- no data for this step')
 

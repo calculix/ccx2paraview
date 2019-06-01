@@ -28,7 +28,7 @@
 				</DataArray>
 			</Cells>
 			<PointData>
-				<DataArray type="Float32" Name="DISP" NumberOfComponents="3" ComponentName0="D1" ComponentName1="D2" ComponentName2="D3" format="ascii">
+				<DataArray type="Float32" Name="U" NumberOfComponents="3" ComponentName0="D1" ComponentName1="D2" ComponentName2="D3" format="ascii">
 					 0.00000000E+00	 0.00000000E+00	 0.00000000E+00
 					 0.00000000E+00	 0.00000000E+00	 0.00000000E+00
 					 0.00000000E+00	 0.00000000E+00	 0.00000000E+00

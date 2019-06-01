@@ -115,7 +115,7 @@ class VTUWriter:
 
 
     # Write data
-    def write_data(self, f, b, nn):
+    def write_data(self, f, b, numnod):
         
         # Calculate amount of components and define their names
         component_names = ''
@@ -130,7 +130,7 @@ class VTUWriter:
         # Write data
         f.write('\t\t\t\t<DataArray type="Float32" Name="{}" NumberOfComponents="{}" {}format="ascii">\n'.format(b.name, len(b.components), component_names))
         nodes = sorted(b.results.keys())
-        for n in range(nn): # iterate over nodes
+        for n in range(numnod): # iterate over nodes
             node = nodes[n] 
             data = b.results[node]
             f.write('\t\t\t\t')
@@ -141,14 +141,14 @@ class VTUWriter:
 
 
     # Main function
-    def __init__(self, p, skip_error_field, file_name, step, nn, ne): # p is FRDParser object
+    def __init__(self, p, skip_error_field, file_name, step): # p is FRDParser object
 
         with open(file_name, 'w') as f:
             # Header
             f.write('<?xml version="1.0"?>\n')
             f.write('<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">\n')
             f.write('\t<UnstructuredGrid>\n')
-            f.write('\t\t<Piece NumberOfPoints="{}" NumberOfCells="{}">\n'.format(nn, ne))
+            f.write('\t\t<Piece NumberOfPoints="{}" NumberOfCells="{}">\n'.format(p.node_block.numnod, p.elem_block.numelem))
 
             # POINTS section - coordinates of all nodes
             f.write('\t\t\t<Points>\n')
@@ -165,7 +165,7 @@ class VTUWriter:
                 renumbered_nodes[n] = new_node_number
                 new_node_number += 1
 
-                if new_node_number == nn: 
+                if new_node_number == p.node_block.numnod: 
                     break
 
             f.write('\n\t\t\t\t</DataArray>\n')
@@ -213,12 +213,12 @@ class VTUWriter:
                           'time {}, '.format(b.value) +\
                           '{}, '.format(b.name) +\
                           '{} components, '.format(len(b.components))
-                    if len(b.results) != nn:
-                          log += '{}->{} values'.format(len(b.results), nn)
+                    if len(b.results) != p.node_block.numnod:
+                          log += '{}->{} values'.format(len(b.results), p.node_block.numnod)
                     else:
-                        log += '{} values'.format(nn)
+                        log += '{} values'.format(p.node_block.numnod)
                     print(log)
-                    self.write_data(f, b, nn)
+                    self.write_data(f, b, p.node_block.numnod)
                 else:
                     print(b.name, '- no data for this step')
             f.write("\t\t\t</PointData>"+'\n')

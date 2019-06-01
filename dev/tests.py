@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 # © Ihor Mirzov, UJV Rez, May 2019
 
+"""
+    python3 tests.py
+"""
+
 import subprocess, os, sys
 import multiprocessing as mp
 
@@ -34,16 +38,16 @@ class Clean:
 
 
 # List all .inp-files here and in all subdirectories
-def listAllInputFiles(startFolder):
-    allInputFiles = []
+def listAllFiles(startFolder, fmt):
+    all_files = []
     for f in os.listdir(startFolder): # iterate over files and folders in current directory
         f = os.path.abspath(startFolder + '/' + f)
         if os.path.isdir(f): # if folder
-            for inputFile in listAllInputFiles(f):
-                allInputFiles.append(inputFile)
-        elif f[-4:] == '.inp':
-            allInputFiles.append(f[:-4])
-    return allInputFiles
+            for ff in listAllFiles(f, fmt):
+                all_files.append(ff)
+        elif f[-4:] == fmt:
+            all_files.append(f[:-4])
+    return all_files
 
 
 if (__name__ == '__main__'):
@@ -53,19 +57,15 @@ if (__name__ == '__main__'):
     cpu_count = str(mp.cpu_count()) # amount of cores
     os.environ['OMP_NUM_THREADS'] = cpu_count
 
-    for modelname in listAllInputFiles('.'):
-        print(modelname)
-        
-        # Run analysis
-        subprocess.run('ccx -i ' + modelname + ' > ' + modelname + '.log', shell=True)
+    # # Run analysis
+    # for modelname in listAllFiles('.', '.inp'):
+    #     print(modelname)
+    #     subprocess.run('ccx -i ' + modelname + ' > ' + modelname + '.log', shell=True)
 
-        # Convert calculation results to VTK format
+    # Convert calculation results
+    for modelname in listAllFiles('.', '.frd'):
         subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtk', shell=True)
-
-        # Convert calculation results to VTU format
         subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtu', shell=True)
 
     Clean.cache()
     Clean.files('.')
-
-    print('END')

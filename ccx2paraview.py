@@ -35,19 +35,6 @@ if __name__ == '__main__':
     # Parse FRD-file
     p = FRDParser(args.frd + '.frd')
 
-    # Exclude zero nodes added by ccx due to *TRANSFORM
-    nn = sorted(set([len(b.results) for b in p.result_blocks if len(b.results)>0]))
-    # print(nn)
-    if len(nn) == 3: nn = nn[1]
-    elif len(nn) == 2: nn = nn[0]
-    else: nn = p.node_block.numnod
-    # TODO What if output is written for a node subset, not for the whole model?
-    print(nn, 'nodes total')
-
-    # Total number of elements
-    ne = p.elem_block.numelem
-    print(ne, 'cells total')
-
     # Create list of time steps
     steps = sorted(set([b.numstep for b in p.result_blocks])) # list of step numbers
     width = len(str(len(steps))) # max length of string designating step number
@@ -66,9 +53,9 @@ if __name__ == '__main__':
 
         # Call converters
         if args.fmt == 'vtk':
-            VTKWriter(p, args.skip, file_name, s, nn, ne)
+            VTKWriter(p, args.skip, file_name, s)
         if args.fmt == 'vtu':
-            VTUWriter(p, args.skip, file_name, s, nn, ne)
+            VTUWriter(p, args.skip, file_name, s)
 
     # Delete cached files
     os.system('py3clean .')

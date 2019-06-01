@@ -155,9 +155,17 @@ class Component(object):
 
 
 # Nodal Results Block
-# DISP, NDTEMP, STRESS, SDV etc.
 # cgx_2.15 documentation, § 11.6
 class NodalResultsBlock(object):
+    # FRD variables will be renamed back to the names from .inp-file
+    inpname = {
+        'DISP':'U',
+        'NDTEMP':'NT',
+        'STRESS':'S',
+        'TOSTRAIN':'E',
+        'FORC':'RF',
+        'PE':'PEEQ'
+    }
     key = 100   # result block key (Always 100)
     code = 'C'  # result block code (Always C)
 
@@ -198,6 +206,9 @@ class NodalResultsBlock(object):
             in_file.read(2) # key = -4
             in_file.read(2) # pad bytes
             self.name = in_file.read(8).decode().strip()
+            # Rename result block to correspond to variables from the .inp-file
+            if self.name in self.inpname.keys():
+                self.name = self.inpname[self.name]
             self.ncomps = int(in_file.read(5))
             self.irtype = int(in_file.read(5))
             if self.irtype != 1:
@@ -211,6 +222,9 @@ class NodalResultsBlock(object):
                 c.key = int(in_file.read(2))
                 in_file.read(2) # pad bytes
                 c.name = in_file.read(8).decode().strip()
+                # Exclude variable name from the component name: SXX->xx, EYZ->yz
+                if c.name.startswith(self.name):
+                    c.name = c.name[len(self.name):].lower()
                 self.components[c.name] = c
                 c.menu = int(in_file.read(5))
                 c.ictype = int(in_file.read(5)) # component type
@@ -255,7 +269,7 @@ class NodalResultsBlock(object):
             if self.fmt < 2:
                 in_file.readline() # last record for ascii only
 
-        if 'STRESS' in self.name:
+        if self.name == 'S':
             self.AppendMisesStress()
             self.AppendPrincipalStresses()
 
@@ -353,3 +367,14 @@ class FRDParser(object):
                     elif key == 9999:
                         eof = True
                     eof = (eof or (in_file.read(1) == b''))
+
+            # Exclude zero nodes added by ccx due to *TRANSFORM
+            nn = sorted(set([len(b.results) for b in self.result_blocks if len(b.results)>0]))
+            if len(nn) == 3:
+                self.node_block.numnod = nn[1]
+            elif len(nn) == 2:
+                self.node_block.numnod = nn[0]
+            # TODO What if output is written for a node subset, not for the whole model?
+            print(self.node_block.numnod, 'nodes total') # total number of nodes
+            print(self.elem_block.numelem, 'cells total') # total number of elements
+
