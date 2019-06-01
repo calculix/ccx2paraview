@@ -290,7 +290,7 @@ class NodalResultsBlock(object):
                     'Principal2',
                     'Principal3',
                 )
-                for i in range(4):
+                for i in range(len(component_names)):
                     c = Component()
                     c.ictype = 1; c.name = component_names[i]
                     self.components[c.name] = c
@@ -301,7 +301,7 @@ class NodalResultsBlock(object):
                     data = self.results[node] # list with results for current node
                     Sxx = data[0]; Syy = data[1]; Szz = data[2]
                     Sxy = data[3]; Syz = data[4]; Szx = data[5]
-                    stessTensor = numpy.array([[Sxx, Sxy, Szx], [Sxy, Syy, Syz], [Szx, Syz, Szz]])
+                    tensor = numpy.array([[Sxx, Sxy, Szx], [Sxy, Syy, Syz], [Szx, Syz, Szz]])
 
                     # Calculate Mises stress for current node
                     mises = 1/sqrt(2) *\
@@ -314,13 +314,46 @@ class NodalResultsBlock(object):
                     self.results[node].append(mises)
 
                     # Calculate principal stresses for current node
-                    w, v = numpy.linalg.eig(stessTensor)
+                    w, v = numpy.linalg.eig(tensor)
                     for ps in w.tolist():
                         self.results[node].append(ps)
 
             except ImportError:
                 print('Numpy is not installed.')
-                print('Additional stresses and strains will not be appended.')
+                print('Additional stresses will not be appended.')
+
+        # Append principal strains to node results
+        if self.name == 'E':
+            try:
+                # Check if numpy is installed
+                import numpy
+
+                component_names = (
+                    'Principal1',
+                    'Principal2',
+                    'Principal3',
+                )
+                for i in range(len(component_names)):
+                    c = Component()
+                    c.ictype = 1; c.name = component_names[i]
+                    self.components[c.name] = c
+                    self.ncomps += 1
+
+                # Iterate over nodes
+                for node in self.results.keys():
+                    data = self.results[node] # list with results for current node
+                    Exx = data[0]; Eyy = data[1]; Ezz = data[2]
+                    Exy = data[3]; Eyz = data[4]; Ezx = data[5]
+                    tensor = numpy.array([[Exx, Exy, Ezx], [Exy, Eyy, Eyz], [Ezx, Eyz, Ezz]])
+
+                    # Calculate principal strains for current node
+                    w, v = numpy.linalg.eig(tensor)
+                    for ps in w.tolist():
+                        self.results[node].append(ps)
+
+            except ImportError:
+                print('Numpy is not installed.')
+                print('Additional strains will not be appended.')
 
 
 # Main class
