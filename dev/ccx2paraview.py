@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# © Ihor Mirzov, UJV Rez, April 2019
 
 """
-    Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format.
+    © Ihor Mirzov, UJV Rez, April 2019
+    Distributed under GNU General Public License, version 2.
 
+    Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format.
     Run with command:
         python3 ccx2paraview.py -frd 'jobname' -fmt vtk
     or:

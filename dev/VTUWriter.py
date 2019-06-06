@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
-# © Ihor Mirzov, UJV Rez, April 2019
-# Inspired by odb2vtk converter written by Liujie-SYSU: https://github.com/Liujie-SYSU/odb2vtk
-
 
 """
+    © Ihor Mirzov, UJV Rez, April 2019
+    Distributed under GNU General Public License, version 2.
+
+    Inspired by odb2vtk converter written by Liujie-SYSU: https://github.com/Liujie-SYSU/odb2vtk
+
     About the format read:
     https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf
     https://lorensen.github.io/VTKExamples/site/VTKFileFormats/#unstructuredgrid
@@ -14,50 +16,10 @@
 """
 
 
+from INPParser import Mesh
+
+
 class VTUWriter:
-
-
-    # Convert Calculix element type to VTK
-    def convert_elem_type(self, frd_elem_type):
-        """
-            Keep in mind that CalculiX expands shell elements
-            In vtk elements nodes are numbered starting from 0, not 1
-
-            For frd see http://www.dhondt.de/cgx_2.15.pdf pages 117-123 (chapter 10)
-            For vtk see https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf pages 9-10
-
-            CalculiX type  1 -  8 node brick element = vtk type 12 - VTK_HEXAHEDRON
-            CalculiX type  2 -  6 node penta element = vtk type 13 - VTK_WEDGE
-            CalculiX type  3 -  4 node   tet element = vtk type 10 - VTK_TETRA
-            CalculiX type  4 - 20 node brick element = vtk type 25 - VTK_QUADRATIC_HEXAHEDRON
-            CalculiX type  5 - 15 node penta element ~ vtk type 13 - VTK_WEDGE
-            CalculiX type  6 - 10 node   tet element = vtk type 24 - VTK_QUADRATIC_TETRA
-            CalculiX type  7 -  3 node shell element = vtk type  5 - VTK_TRIANGLE
-            CalculiX type  8 -  6 node shell element = vtk type 22 - VTK_QUADRATIC_TRIANGLE
-            CalculiX type  9 -  4 node shell element = vtk type  9 - VTK_QUAD
-            CalculiX type 10 -  8 node shell element = vtk type 23 - VTK_QUADRATIC_QUAD
-            CalculiX type 11 -  2 node  beam element = vtk type  3 - VTK_LINE
-            CalculiX type 12 -  3 node  beam element = vtk type 21 - VTK_QUADRATIC_EDGE
-        """
-        # frd_elem_type : vtk_elem_type
-        dic = {
-                    1: 12,
-                    2: 13,
-                    3: 10,
-                    4: 25,
-                    5: 13,
-                    6: 24,
-                    7:  5,
-                    8: 22,
-                    9:  9,
-                10: 23,
-                11:  3,
-                12: 21,
-            }
-        if frd_elem_type in dic:
-            return dic[frd_elem_type]
-        else:
-            return 0
 
 
     # Write element connectivity with renumbered nodes
@@ -195,7 +157,7 @@ class VTUWriter:
             f.write('\t\t\t\t<DataArray type="UInt8" Name="types" format="ascii">\n')
             f.write('\t\t\t\t\t')
             for e in p.elem_block.elements:
-                vtk_elem_type = self.convert_elem_type(e.etype)
+                vtk_elem_type = Mesh.convert_elem_type(e.etype)
                 f.write('{0} '.format(vtk_elem_type))
             f.write('\n\t\t\t\t</DataArray>\n')
 

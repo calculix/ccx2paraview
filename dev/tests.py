@@ -1,7 +1,10 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# © Ihor Mirzov, UJV Rez, May 2019
 
 """
+    © Ihor Mirzov, UJV Rez, April 2019
+    Distributed under GNU General Public License, version 2.
+
     python3 tests.py
 """
 
@@ -66,6 +69,7 @@ if (__name__ == '__main__'):
     for modelname in listAllFiles('.', '.frd'):
         subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtk', shell=True)
         subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtu', shell=True)
+        # break # one file only
 
     Clean.cache()
     Clean.files('.')
