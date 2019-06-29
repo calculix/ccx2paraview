@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    © Ihor Mirzov, UJV Rez, April 2019
+    © Ihor Mirzov, April 2019
     Distributed under GNU General Public License, version 2.
 
     Inspired by odb2vtk converter written by Liujie-SYSU: https://github.com/Liujie-SYSU/odb2vtk

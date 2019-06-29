@@ -3,7 +3,7 @@
 
 
 """
-    © Ihor Mirzov, UJV Rez, May 2019.
+    © Ihor Mirzov, May 2019.
     Distributed under GNU General Public License, version 2.
 
     Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format.

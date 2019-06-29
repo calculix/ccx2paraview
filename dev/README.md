@@ -16,4 +16,4 @@ You'll need */usr/local/bin/ccx* command to be available in your system. Run all
 
 # FRDParser_original.py
 
-[Original code](https://gitlab.lrz.de/snippets/238) of the FRD parser, written by Lukas Bante, LRZ, in Sep 2017.
+[Original code](https://gitlab.lrz.de/snippets/238) of the FRD parser, written by Lukas Bante, in Sep 2017.

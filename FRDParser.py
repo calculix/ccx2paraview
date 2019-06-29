@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# © Lukas Bante, LRZ,     Sep 2017 - original code https://gitlab.lrz.de/snippets/238
-# © Ihor Mirzov, UJV Rez, May 2019 - refactoring and bugfix
+# © Lukas Bante, Sep 2017 - original code https://gitlab.lrz.de/snippets/238
+# © Ihor Mirzov, May 2019 - refactoring and bugfix
 
 """
     This module contains a python classes for parsing Calculix .frd-files.

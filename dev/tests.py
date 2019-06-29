@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    © Ihor Mirzov, UJV Rez, April 2019
+    © Ihor Mirzov, April 2019
     Distributed under GNU General Public License, version 2.
 
     python3 tests.py
