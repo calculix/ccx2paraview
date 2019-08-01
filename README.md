@@ -35,11 +35,7 @@ Unfortunately, VTK format doesn't support names for field components. So, for st
     8. Mid Principal
     9. Max Principal
 
-Tested in ccx_2.15 and Paraview 5.6.0 for:
-
-- element types: S3, S6, S4, S8, CPE3, CPE4, CPS3, CPS4, C3D15, C3D20
-- output variables: U, NT, S, E, RF, PEEQ, SDV
-- analysis type: static, coupled temperature-displacement, visco, frequency
+Tested for [all Caclulix examples](./dev/tests-examples/).
 
 <br/><br/>
 
