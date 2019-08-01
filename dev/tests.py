@@ -27,7 +27,8 @@ class Clean:
     @staticmethod
     def files(startFolder):
         extensions = (  '.12d', '.cvg', '.dat', '.vwf', '.out', '.nam', '.inp1', '.inp2',
-                        '.sta', '.log', '.equ', '.eig', '.stm', '.mtx', '.net', '.inp0'  )
+                        '.sta', '.log', '.equ', '.eig', '.stm', '.mtx', '.net', '.inp0',
+                        '.rin', '.fcv'  )
         for f in os.listdir(startFolder):
             f = os.path.abspath(startFolder + '/' + f)
             if os.path.isdir(f): # if folder
