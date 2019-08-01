@@ -7,9 +7,7 @@ Distributed under GNU General Public License, version 2.
 
 # Calculix to Paraview converter (frd to vtk/vtu)
 
-The main script is *ccx2paraview.py*. Together with *VTKWriter.py*, *VTUWriter.py* and *FRDParser.py* it converts [CalculiX](http://www.dhondt.de/) .frd-file to view and postprocess calculation results in [Paraview](https://www.paraview.org/). For each output interval generates separate file - it makes possible to animate time history. You'll need [Python 3](https://www.python.org/downloads/) with *numpy* to use this converter:
-
-    pip3 install numpy
+Converts [CalculiX](http://www.dhondt.de/) .frd-file to view and postprocess calculation results in [Paraview](https://www.paraview.org/). For each output interval generates separate file - it makes possible to animate time history. Generates Mises and Principal components for stress and strain tensors.
 
 <br/><br/>
 
@@ -17,12 +15,15 @@ The main script is *ccx2paraview.py*. Together with *VTKWriter.py*, *VTUWriter.p
 
 # How to use
 
-You'll need only files:
-- ccx2paraview.py
-- frd2vtk.py
-- FRDParser.py
-- VTKWriter.py
-- VTUWriter.py
+You'll need [Python 3](https://www.python.org/downloads/) with *numpy* to use this converter:
+
+    pip3 install numpy
+
+The main script is [ccx2paraview.py](ccx2paraview.py). Also you'll need:
+- [frd2vtk.py](frd2vtk.py)
+- [FRDParser.py](FRDParser.py)
+- [VTKWriter.py](VTKWriter.py)
+- [VTUWriter.py](VTUWriter.py)
 
 It is recommended to convert .frd to modern XML .vtu format:
 
