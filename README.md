@@ -7,7 +7,22 @@ Distributed under GNU General Public License, version 2.
 
 # Calculix to Paraview converter (frd to vtk/vtu)
 
-The main script is *ccx2paraview.py*. Together with *VTKWriter.py*, *VTUWriter.py* and *FRDParser.py* it converts [CalculiX](http://www.dhondt.de/) .frd-file to view and postprocess calculation results in [Paraview](https://www.paraview.org/). For each output interval generates separate file - it makes possible to animate time history. You'll need *python3* with *numpy* to use this converter.
+The main script is *ccx2paraview.py*. Together with *VTKWriter.py*, *VTUWriter.py* and *FRDParser.py* it converts [CalculiX](http://www.dhondt.de/) .frd-file to view and postprocess calculation results in [Paraview](https://www.paraview.org/). For each output interval generates separate file - it makes possible to animate time history. You'll need [Python 3](https://www.python.org/downloads/) with *numpy* to use this converter:
+
+    pip3 install numpy
+
+<br/><br/>
+
+
+
+# How to use
+
+You'll need only files:
+- ccx2paraview.py
+- frd2vtk.py
+- FRDParser.py
+- VTKWriter.py
+- VTUWriter.py
 
 It is recommended to convert .frd to modern XML .vtu format:
 
@@ -35,6 +50,8 @@ Unfortunately, VTK format doesn't support names for field components. So, for st
     8. Mid Principal
     9. Max Principal
 
+Folder [dev](./dev/) contains test results and development version of the converter - users may not need it.
+
 Tested for [all Caclulix examples](./dev/tests-examples/).
 
 <br/><br/>
@@ -50,11 +67,3 @@ Please, you may:
 - post issues here, on the GitHub
 - attach your models and screenshots
 - follow discussion in the [Yahoo CalculiX Group](https://groups.yahoo.com/neo/groups/CALCULIX/conversations/topics/13712)
-
-<br/><br/>
-
-
-
-# dev
-
-Folder with tests and development version of the converter. Users may not need it.
