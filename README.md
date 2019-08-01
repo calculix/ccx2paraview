@@ -55,10 +55,6 @@ Please, you may:
 - attach your models and screenshots
 - follow discussion in the [Yahoo CalculiX Group](https://groups.yahoo.com/neo/groups/CALCULIX/conversations/topics/13712)
 
-Current TODO-list:
-
-- Test converter for all the Calculix examples.
-
 <br/><br/>
 
 

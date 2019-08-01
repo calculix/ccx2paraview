@@ -16,7 +16,7 @@
 """
 
 
-from INPParser import Mesh
+import frd2vtk
 
 
 class VTUWriter:
@@ -157,7 +157,7 @@ class VTUWriter:
             f.write('\t\t\t\t<DataArray type="UInt8" Name="types" format="ascii">\n')
             f.write('\t\t\t\t\t')
             for e in p.elem_block.elements:
-                vtk_elem_type = Mesh.convert_elem_type(e.etype)
+                vtk_elem_type = frd2vtk.convert_elem_type(e.etype)
                 f.write('{0} '.format(vtk_elem_type))
             f.write('\n\t\t\t\t</DataArray>\n')
 

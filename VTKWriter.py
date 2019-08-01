@@ -15,7 +15,7 @@
 """
 
 
-from INPParser import Mesh
+import frd2vtk
 
 
 class VTKWriter:
@@ -113,7 +113,7 @@ class VTKWriter:
             # CELL TYPES section - write element types:
             f.write('CELL_TYPES {}\n'.format(p.elem_block.numelem))
             for e in p.elem_block.elements:
-                vtk_elem_type = Mesh.convert_elem_type(e.etype)
+                vtk_elem_type = frd2vtk.convert_elem_type(e.etype)
                 f.write('\t{}\n'.format(vtk_elem_type))
             f.write('\n')
 

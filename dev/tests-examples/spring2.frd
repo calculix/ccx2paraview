@@ -1,0 +1,20 @@
+    1C
+    1UUSER                                                              
+    1UDATE              01.august.2019                                  
+    1UTIME              09:56:29                                        
+    1UHOST                                                              
+    1UPGM               CalculiX                                        
+    1UVERSION           Version 2.15                             
+    1UCOMPILETIME       Fri 15 Mar 11:57:46 CET 2019                    
+    1UDIR                                                               
+    1UDBN                                                               
+    1UMAT    1SPRING                                                    
+    2C                             2                                     1
+ -1         1 0.00000E+00 0.00000E+00 0.00000E+00
+ -1         2 1.00000E+00 0.00000E+00 0.00000E+00
+ -3
+    3C                             1                                     1
+ -1         1   11    0    1
+ -2         1         2
+ -3
+ 9999

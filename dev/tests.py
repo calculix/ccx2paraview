@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -27,7 +26,8 @@ class Clean:
     # Cleaup trash files in startFolder and all subfolders
     @staticmethod
     def files(startFolder):
-        extensions = ('.12d', '.cvg', '.dat', 'vwf', '.out', '.sta', '.log')
+        extensions = (  '.12d', '.cvg', '.dat', '.vwf', '.out', '.nam', '.inp1', '.inp2',
+                        '.sta', '.log', '.equ', '.eig', '.stm', '.mtx', '.net', '.inp0'  )
         for f in os.listdir(startFolder):
             f = os.path.abspath(startFolder + '/' + f)
             if os.path.isdir(f): # if folder
@@ -60,15 +60,15 @@ if (__name__ == '__main__'):
     cpu_count = str(mp.cpu_count()) # amount of cores
     os.environ['OMP_NUM_THREADS'] = cpu_count
 
-    # # Run analysis
+    # Run analysis
     # for modelname in listAllFiles('.', '.inp'):
     #     print(modelname)
     #     subprocess.run('ccx -i ' + modelname + ' > ' + modelname + '.log', shell=True)
 
     # Convert calculation results
-    for modelname in listAllFiles('.', '.frd'):
-        subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtk', shell=True)
-        subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtu', shell=True)
+    # for modelname in listAllFiles('.', '.frd'):
+    #     subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtk', shell=True)
+    #     subprocess.run('python3 ccx2paraview.py -frd ' + modelname + ' -fmt vtu', shell=True)
         # break # one file only
 
     Clean.cache()
