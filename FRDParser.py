@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-# © Lukas Bante, Sep 2017 - original code https://gitlab.lrz.de/snippets/238
-# © Ihor Mirzov, May 2019 - refactoring and bugfix
 
 """
+    © Lukas Bante, Sep 2017 - original code https://gitlab.lrz.de/snippets/238
+    © Ihor Mirzov, May 2019 - refactoring and bugfix
+    Distributed under GNU General Public License, version 2.
+
     This module contains a python classes for parsing Calculix .frd-files.
 
     FRDParser is the main class and contains the following subclasses:
@@ -416,4 +418,3 @@ class FRDParser(object):
             # TODO What if output is written for a node subset, not for the whole model?
             print(self.node_block.numnod, 'nodes total') # total number of nodes
             print(self.elem_block.numelem, 'cells total') # total number of elements
-
