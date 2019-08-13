@@ -49,7 +49,7 @@ class NodalPointCoordinateBlock:
             node_coords = [ float(match.group(2)),
                             float(match.group(3)),
                             float(match.group(4)), ]
-            self.nodes[node_number] = FEM.Node(node_number, node_coords)
+            self.nodes[node_number] = Node(node_number, node_coords)
             logging.debug('Node {}: {}'.format(node_number, node_coords))
 
         self.numnod = len(self.nodes) # number of nodes in this block
@@ -100,7 +100,7 @@ class ElementDefinitionBlock:
             nodes = [int(n) for n in line.split()[1:]]
             element_nodes.extend(nodes)
 
-        elem = FEM.Element(element_num, element_type, element_nodes)
+        elem = Element(element_num, element_type, element_nodes)
         self.elements.append(elem)
         logging.debug('Element {}: {}'.format(element_num, element_nodes))
 

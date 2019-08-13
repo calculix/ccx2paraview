@@ -24,7 +24,7 @@ def listAllFiles(startFolder, ext):
                 all_files.append(ff)
         elif f.endswith(ext):
             all_files.append(f) # with extension
-    return all_files
+    return sorted(all_files)
 
 
 if (__name__ == '__main__'):
@@ -32,11 +32,11 @@ if (__name__ == '__main__'):
     start = time.perf_counter() # start time
 
     # Configure logging
-    test_file = './tests.log'
-    if os.path.isfile(test_file):
-        os.remove(test_file)
+    # test_file = './tests.log'
+    # if os.path.isfile(test_file):
+    #     os.remove(test_file)
     logging.basicConfig(level=logging.INFO,
-                        filename=test_file, filemode='a',
+                        # filename=test_file, filemode='a',
                         format='%(levelname)s: %(message)s')
 
     # # Enable multithreading
@@ -51,13 +51,15 @@ if (__name__ == '__main__'):
 
     # Convert calculation results
     for filename in listAllFiles('./tests', '.frd'):
-        subprocess.run('python3 ccx2paraview.py ' + filename + ' vtk', shell=True)
-        subprocess.run('python3 ccx2paraview.py ' + filename + ' vtu', shell=True)
+        # subprocess.run('python3 ccx2paraview.py ' + filename + ' vtk', shell=True)
+        # subprocess.run('python3 ccx2paraview.py ' + filename + ' vtu', shell=True)
+        subprocess.run('./ccx2paraview ' + filename + ' vtk', shell=True)
+        subprocess.run('./ccx2paraview ' + filename + ' vtu', shell=True)
         # break # one file only
 
     # # Test FRDParser only
     # import FRDParser
-    # for filename in sorted(listAllFiles('./tests', '.frd')):
+    # for filename in listAllFiles('./tests', '.frd'):
     #     FRDParser.Parse(filename)
 
     clean.cache()
