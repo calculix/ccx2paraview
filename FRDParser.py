@@ -3,278 +3,278 @@
 """
     © Lukas Bante, Sep 2017 - original code https://gitlab.lrz.de/snippets/238
     © Ihor Mirzov, May 2019 - refactoring and bugfix
-    Distributed under GNU General Public License, version 2.
+    Distributed under GNU General Public License v3.0
 
     This module contains a python classes for parsing Calculix .frd-files.
-
-    FRDParser is the main class and contains the following subclasses:
-        NodalPointCoordinateBlock, containing node information
-        ElementDefinitionBlock, containing element information
-        NodalResultsBlock, containing result information
-
-    Note that only Unix Line endings are currently supported!
 """
 
 
-import struct
-from math import sqrt, ceil
+import re, logging
+
+
+# A single node object
+class Node:
+    def __init__(self, num, coords):
+        self.num = num
+        self.coords = coords
+
+
+# A single finite element object
+class Element:
+    def __init__(self, num, etype, nodes):
+        self.num = num
+        self.type = etype
+        self.nodes = nodes
 
 
 # Nodal Point Coordinate Block
 # cgx_2.15 Manual, § 11.3
-class NodalPointCoordinateBlock(object):
-    key = 2         # node block Key (Always 2)
-    code = 'C'      # node block Code (Always C)
-    numnod = None   # number of nodes in this block
-    fmt = None      # format indicator:
-                        # 0   ASCII short
-                        # 1   ASCII long
-                        # 2   Binary float (4 bytes)
-                        # 3   Binary double (8 bytes)
-    nodes = {}      # dictionary with node coordinates {node:coords}
-
-    # Read values for this NodalPointCoordinateBlock Object from File in_file
-    def __init__(self, in_file=None):
-        if in_file:
-            in_file.read(18) # pad bytes
-            self.numnod = int(in_file.read(12))
-            in_file.read(37) # pad bytes
-            self.fmt = int(in_file.read(1))
-            in_file.read(1) # eol
-            for _ in range(self.numnod):
-                if self.fmt < 2:
-                    in_file.read(1)
-                    in_file.read(2) # node key (ASCII only, always -1)
-                    node_number = int(in_file.read(5*(self.fmt+1))) # node number
-                    node_coords = [float(in_file.read(12)) for j in range(3)] # node coordinates (x,y,z)
-                    in_file.read(1) # eol
-                else:
-                    node_number = struct.unpack('i', in_file.read(4))[0]
-                    if self.fmt == 2:
-                        node_coords = struct.unpack('fff', in_file.read(12))
-                    else:
-                        node_coords = struct.unpack('ddd', in_file.read(24))
-                self.nodes[node_number] = node_coords
-            if self.fmt < 2:
-                in_file.readline() # last record for ascii only
+class NodalPointCoordinateBlock:
 
 
-# Element
-class Element(object):
-    number = None       # Element Number
-    nodes = []          # List of node numbers belonging to this element
-    etype = None        # Element Type (cf. cgx manual):
-                        # 1   8-Node Brick Element he8
-                        # 2   6-Node Penta Element pe6
-                        # 3   4-Node Tet Element
-                        # 4   20-Node Brick Element he20
-                        # 5   15-Node Penta Element
-                        # 6   10-Node Tet Element
-                        # 7   3-Node Shell Element tr3, tr3u
-                        # 8   6-Node Shell Element tr6
-                        # 9   4-Node Shell Element qu4
-                        # 10  8-Node Shell Element qu8
-                        # 11  2-Node Beam Element be2
-                        # 12  3-Node Beam Element be3
-    group = None        # Element Group Number
-    material = None     # Element Material Number
+    # Read nodal coordinates
+    def __init__(self, in_file):
+        line = readByteLine(in_file)
+        self.nodes = {} # dictionary with nodes {num:Node}
+        while True:
+            line = readByteLine(in_file)
+
+            # End of block
+            if line == '-3':
+                break
+
+            regex = '^-1(.{10})' + '(.{12})'*3
+            match = parseLine(regex, line)
+            node_number = int(match.group(1))
+            node_coords = [ float(match.group(2)),
+                            float(match.group(3)),
+                            float(match.group(4)), ]
+            self.nodes[node_number] = FEM.Node(node_number, node_coords)
+            logging.debug('Node {}: {}'.format(node_number, node_coords))
+
+        self.numnod = len(self.nodes) # number of nodes in this block
+        logging.info('{} nodes'.format(self.numnod)) # total number of nodes
 
 
 # Element Definition Block
 # cgx_2.15 Manual, § 11.4
-class ElementDefinitionBlock(object):
-    # First value is meaningless, since elements are 1-based
-    nodes_per_elem_type = [0, 8, 6, 4, 20, 15, 10, 3, 6, 4, 8, 2, 3]
-    key = 3             # element block Key (Always 3)
-    code = 'C'          # element block Code (Always C)
-    numelem = None      # number of elements in this block
-    elements = []       # list of Element objects
-    fmt = None          # format indicator:
-                        # 0 ASCII short
-                        # 1 ASCII long
-                        # 2 Binary
+class ElementDefinitionBlock:
 
-    # Read values for this ElementDefinitionBlock Object from File in_file
-    def __init__(self, in_file=None):
-        if in_file:
-            in_file.read(18) # pad bytes
-            self.numelem = int(in_file.read(12))
-            in_file.read(37) # pad bytes
-            self.fmt = int(in_file.read(1))
-            in_file.read(1) # eol
+    # Parse elements
+    def __init__(self, in_file):
+        self.in_file = in_file
+        line = readByteLine(in_file)
+        self.elements = [] # list of Element objects
 
-            for _ in range(self.numelem):
-                elem = Element()
-                if self.fmt < 2:
-                    in_file.read(1)
-                    in_file.read(2) # elem key
-                    elem.number = int(in_file.read(5*(self.fmt+1)))
-                    elem.etype = int(in_file.read(5))
-                    elem.group = int(in_file.read(5))
-                    elem.material = int(in_file.read(5))
-                    in_file.read(1) # eol
-                    elem.nodes = []
-                    num_nodes = self.nodes_per_elem_type[elem.etype]
-                    num_lines = int(num_nodes/(5*(3-self.fmt)+1))+1
-                    for j in range(num_lines):
-                        in_file.read(3) # pad byte and key = -2
-                        k_start = j*5*(3-self.fmt)
-                        k_end = min(num_nodes - k_start, (j+1)*5*(3-self.fmt))
-                        for _ in range(0, k_end):
-                            elem.nodes.append(
-                                int(in_file.read(5*(self.fmt+1))))
-                        in_file.read(1) # eol
-                else:
-                    elem.number = struct.unpack('i', in_file.read(4))[0]
-                    elem.etype = struct.unpack('i', in_file.read(4))[0]
-                    num_nodes = self.nodes_per_elem_type[elem.etype]
-                    elem.group = struct.unpack('i', in_file.read(4))[0]
-                    elem.material = struct.unpack('i', in_file.read(4))[0]
-                    elem.nodes = struct.unpack(
-                        'i'*num_nodes, in_file.read(num_nodes*4))
-                self.elements.append(elem)
+        while True:
+            line = readByteLine(in_file)
 
-            if self.fmt < 2:
-                in_file.readline() # last record for ascii only
+            # End of block
+            if line == '-3':
+                break
+
+            self.parseElement(line)
+
+        self.numelem = len(self.elements) # number of elements in this block
+        logging.info('{} cells'.format(self.numelem)) # total number of elements
 
 
-# Result component
-class Component(object):
-    ictype = None   # component type:
-                    # 1   scalar
-                    # 2   vector with 3 components
-                    # 4   matrix
-                    # 12  vector with 3 amplitudes and 3 phase-angles
-                    # 14  tensor with 6 amplitudes and 6 phase-angles
-    key = -5        # component key (always -5)
-    name = None     # component name to be used in the cgx menu
-    menu = 1        # always 1
-    icind1 = None   # sub-component index or row number
-    icind2 = None   # column number for ictype==4
-    iexist = None   # 0   data are provided (only imlemented type)
-    icname = None   # ALL - calculate the total displacement if ictype==2
+    # Read element composition
+    def parseElement(self, line):
+        """
+            -1         1    1    0AIR
+            -2         1         2         3         4         5         6         7         8
+            -1         1   10    0    1
+            -2         1         2         3         4         5         6         7         8
+            -1         2   11    0    2
+            -2         9        10
+            -1         3   12    0    2
+            -2        10        12        11
+         """
+        element_num = int(line.split()[1])
+        element_type = int(line.split()[2])
+        element_nodes = []
+        num_nodes = self.amount_of_nodes_in_frd_element(element_type)
+        for j in range(self.num_lines(element_type)):
+            line = readByteLine(self.in_file)
+            nodes = [int(n) for n in line.split()[1:]]
+            element_nodes.extend(nodes)
+
+        elem = FEM.Element(element_num, element_type, element_nodes)
+        self.elements.append(elem)
+        logging.debug('Element {}: {}'.format(element_num, element_nodes))
+
+
+    # Amount of nodes in frd element
+    def amount_of_nodes_in_frd_element(self, etype):
+        # First value is meaningless, since elements are 1-based
+        return (0, 8, 6, 4, 20, 15, 10, 3, 6, 4, 8, 2, 3)[etype]
+
+
+    # Amount of lines in element connectivity definition
+    def num_lines(self, etype):
+        # First value is meaningless, since elements are 1-based
+        return (0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1)[etype]
 
 
 # Nodal Results Block
 # cgx_2.15 Manual, § 11.6
-class NodalResultsBlock(object):
-    # FRD variables will be renamed back to the names from .inp-file
-    inpname = {
-        'DISP':'U',
-        'NDTEMP':'NT',
-        'STRESS':'S',
-        'TOSTRAIN':'E',
-        'FORC':'RF',
-        'PE':'PEEQ',
-    }
-    key = 100   # result block key (Always 100)
-    code = 'C'  # result block code (Always C)
+class NodalResultsBlock:
 
-    # Read values for this NodalResultsBlock object from file in_file
-    def __init__(self, in_file=None):
-        self.value = None       # could be frequency, time or any numerical value
-        self.numnod = None      # number of nodes in this nodal result block # TODO Wrong amount of nodes - has 18 zero nodes more
-        self.text = None        # any text
-        self.ictype = None      # analysis type:
-                                # 0 static
-                                # 1 time step
-                                # 2 frequency
-                                # 3 load step
-                                # 4 user named
-        self.numstep = None     # step number
-        self.analys = None      # analysis description
-        self.fmt = None         # format Indicator:
-                                # 0 ASCII short
-                                # 1 ASCII long
-                                # 2 Binary
-        self.name = None        # dataset name
-        self.irtype = None      # 1   nodal data, material independent (only type imple.)
-        self.ncomps = None      # amount of components
-        self.components = {}    # dictionary with Component objects {name:object}
-        self.results = {}       # dictionary with nodal result {node:data}
 
-        if in_file:
-            in_file.read(6).decode().strip() # name (not used)
-            self.value = float(in_file.read(12))
-            self.numnod = int(in_file.read(12))
-            self.text = in_file.read(20).decode().strip()
-            self.ictype = int(in_file.read(2))
-            self.numstep = int(in_file.read(5))
-            self.analys = in_file.read(10).decode().strip()
-            self.fmt = int(in_file.read(2))
-            in_file.read(1) # eol
-            in_file.read(1) # pad byte
-            in_file.read(2) # key = -4
-            in_file.read(2) # pad bytes
-            self.name = in_file.read(8).decode().strip()
-            # Rename result block to correspond to variables from the .inp-file
-            if self.name in self.inpname.keys():
-                self.name = self.inpname[self.name]
-            self.ncomps = int(in_file.read(5))
-            self.irtype = int(in_file.read(5))
-            if self.irtype != 1:
-                raise NotImplementedError()
-            in_file.read(1) # eol
+    # Read calculated values
+    def __init__(self, in_file, node_block):
+        self.in_file = in_file
+        self.node_block = node_block
+        self.components = []               # component names
+        self.results = {}                  # dictionary with nodal result {node:data}
 
-            # Iterate over components
-            for i in range(self.ncomps):
-                c = Component()
-                in_file.read(1) # pad byte
-                c.key = int(in_file.read(2))
-                in_file.read(2) # pad bytes
-                c.name = in_file.read(8).decode().strip()
-                # Exclude variable name from the component name: SXX->xx, EYZ->yz
-                if c.name.startswith(self.name):
-                    c.name = c.name[len(self.name):].lower()
-                self.components[c.name] = c
-                c.menu = int(in_file.read(5))
-                c.ictype = int(in_file.read(5)) # component type
-                c.icind1 = int(in_file.read(5))
-                if c.ictype == 4:
-                    c.icind2 = int(in_file.read(5))
-                elif c.ictype == 2 and i == 3: # remove 'ALL' component for DISP
-                    c.icind2 = int(in_file.read(5))
-                    c.iexist = int(in_file.read(5))
-                    c.icname = in_file.read(3).decode().strip()
-                    self.ncomps -= 1
-                    del self.components[c.name]
-                else:
-                    c.iexist = int(in_file.read(5))
-                in_file.read(1) # eol
+        self.readStepInfo()
+        self.readVarsInfo()
+        self.readComponentsInfo()
+        results_counter = self.readNodalResults()
+        self.appendStresses() # append Mises and principal stresses
+        self.appendStrains() # append principal strains
 
-            # Iterate over nodes
-            for i in range(self.numnod):
-                data = []
-                node = None
-                if self.fmt < 2:
-                    num_lines = ceil(self.ncomps/6)
-                    for j in range(num_lines):
-                        in_file.read(3) # pad byte and key = -1 || -2
-                        if node is None:
-                            node = int(in_file.read(5*(self.fmt+1)))
-                        else:
-                            in_file.read(5*(self.fmt+1))
-                        if j < num_lines - 1:
-                            k_end = 6
-                        else:
-                            k_end = self.ncomps - j*6
-                        for _ in range(k_end):
-                            data.append(float(in_file.read(12)))
-                        in_file.read(1) # eol
-                else:
-                    node = struct.unpack('i', in_file.read(4))[0]
-                    data = struct.unpack(
-                        'f'*self.ncomps, in_file.read(self.ncomps*4))
-                self.results[node] = data
+        logging.info('Step {}, time {:.1f}, {}, {} components, {} values'\
+            .format(self.numstep, self.value, self.name,
+                    len(self.components), results_counter))
 
-            if self.fmt < 2:
-                in_file.readline() # last record for ascii only
 
-        # Append Mises and principal stresses to node results
+    # Read step information
+    def readStepInfo(self):
+        """
+            CL  101 0.36028E+01         320                     3    1           1
+            CL  101 1.000000000         803                     0    1           1
+            CL  101 1.000000000          32                     0    1           1
+            CL  102 117547.9305          90                     2    2MODAL      1
+        """
+        line = readByteLine(self.in_file)[7:]
+        regex = '^(.{12})\s+\d+\s+\d+\s+(\d+)'
+        match = parseLine(regex, line)
+        self.value = float(match.group(1)) # could be frequency, time or any numerical value
+        self.numstep = int(match.group(2)) # step number
+
+
+    # Read variables information
+    def readVarsInfo(self):
+        """
+            -4  V3DF        4    1
+            -4  DISP        4    1
+            -4  STRESS      6    1
+            -4  DOR1  Rx    4    1
+        """
+        line = readByteLine(self.in_file)[4:]
+        regex = '^(\w+)' + '\D+(\d+)'*2
+        match = parseLine(regex, line)
+        self.ncomps = int(match.group(2)) # amount of components
+
+        # Rename result block to the name from .inp-file
+        inpname = {
+            'DISP':'U',
+            'NDTEMP':'NT',
+            'STRESS':'S',
+            'TOSTRAIN':'E',
+            'FORC':'RF',
+            'PE':'PEEQ',
+            }
+        self.name = match.group(1) # dataset name
+        if self.name in inpname:
+            self.name = inpname[self.name]
+
+
+    # Iterate over components
+    def readComponentsInfo(self):
+        """
+            -5  D1          1    2    1    0
+            -5  D2          1    2    2    0
+            -5  D3          1    2    3    0
+            -5  ALL         1    2    0    0    1ALL
+
+            -5  DFDN        1    1    1    0
+            -5  DFDNFIL     1    1    2    0
+
+            -5  V1          1    2    1    0
+            -5  V2          1    2    2    0
+            -5  V3          1    2    3    0
+            -5  ALL         1    2    0    0    1ALL
+
+            -5  SXX         1    4    1    1
+            -5  SYY         1    4    2    2
+            -5  SZZ         1    4    3    3
+            -5  SXY         1    4    1    2
+            -5  SYZ         1    4    2    3
+            -5  SZX         1    4    3    1
+        """
+        for i in range(self.ncomps):
+            line = readByteLine(self.in_file)[4:]
+            regex = '^\w+'
+            match = parseLine(regex, line)
+
+            # Exclude variable name from the component name: SXX->xx, EYZ->yz
+            component_name = match.group(0)
+            if component_name.startswith(self.name):
+                component_name = component_name[len(self.name):].lower()
+
+            if 'ALL' in component_name:
+                self.ncomps -= 1
+            else:
+                self.components.append(component_name)
+
+
+    # Iterate over nodal results
+    def readNodalResults(self):
+        """
+            -1         1-7.97316E+10-3.75220E-01
+            -1         2-8.19094E+10-3.85469E-01
+
+            -1         1-6.93889E-18-9.95185E-01-4.66908E-34
+            -1         2-1.94151E-01-9.76063E-01 6.46011E-30
+
+            -1         1 1.47281E+04 1.39140E+04 2.80480E+04 5.35318E+04 6.36642E+03 1.82617E+03
+            -2           5.31719E+01 6.69780E+01 2.76244E+01 2.47686E+01 1.99930E+02 2.14517E+02
+        """
+        # Fill data with zeroes - sometimes FRD result block has only non zero values
+        for node_num in self.node_block.nodes.keys():
+            self.results[node_num] = [0]*self.ncomps
+
+        results_counter = 0 # independent results counter
+        while True:
+            line = readByteLine(self.in_file)
+
+            # End of block
+            if line == '-3':
+                break
+
+            row_comps = min(6, self.ncomps) # amount of values written in row
+            regex = '^-1\s+(\d+)' + '(.{12})' * row_comps
+            match = parseLine(regex, line)
+            node = int(match.group(1))
+            data = [float(match.group(c+2)) for c in range(row_comps)]
+            results_counter += 1
+            self.results[node] = data
+
+            # Result could be multiline
+            for j in range((self.ncomps-1)//6):
+                row_comps = min(6, self.ncomps-6*(j+1)) # amount of values written in row
+                line = readByteLine(self.in_file)
+                regex = '^-2\s+' + '(.{12})' * row_comps
+                match = parseLine(regex, line)
+                data = [float(match.group(c+1)) for c in range(row_comps)]
+                self.results[node].extend(data)
+
+            logging.debug('Node {}: {}'.format(node, self.results[node]))
+
+        return results_counter
+
+
+    # Append Mises and principal stresses
+    def appendStresses(self):
         if self.name == 'S':
             try:
                 # Check if numpy is installed
                 import numpy as np
+                from math import sqrt
 
                 # component_names = (
                 #     'Mises',
@@ -290,16 +290,16 @@ class NodalResultsBlock(object):
                     'Min Principal',
                     'Mid Principal',
                     'Max Principal',
-                )
+                    )
                 for i in range(len(component_names)):
-                    c = Component()
-                    c.ictype = 1; c.name = component_names[i]
-                    self.components[c.name] = c
+                    # c = Component()
+                    # c.ictype = 1; c.name = component_names[i]
+                    self.components.append(component_names[i])
                     self.ncomps += 1
 
                 # Iterate over nodes
-                for node in self.results.keys():
-                    data = self.results[node] # list with results for current node
+                for node_num in self.node_block.nodes.keys():
+                    data = self.results[node_num] # list with results for current node
                     Sxx = data[0]; Syy = data[1]; Szz = data[2]
                     Sxy = data[3]; Syz = data[4]; Szx = data[5]
                     tensor = np.array([[Sxx, Sxy, Szx], [Sxy, Syy, Syz], [Szx, Syz, Szz]])
@@ -312,37 +312,40 @@ class NodalResultsBlock(object):
                                 6 * Syz**2 +\
                                 6 * Szx**2 +\
                                 6 * Sxy**2)
-                    self.results[node].append(mises)
+                    self.results[node_num].append(mises)
 
                     # Calculate principal stresses for current node
                     for ps in np.linalg.eigvalsh(tensor).tolist():
-                        self.results[node].append(ps)
+                        self.results[node_num].append(ps)
 
             except ImportError:
-                print('Numpy is not installed.')
-                print('Additional stresses will not be appended.')
+                logging.error('Numpy is not installed.\n' +\
+                    'Additional stresses will not be appended.')
 
-        # Append principal strains to node results
+
+    # Append principal strains
+    def appendStrains(self):
         if self.name == 'E':
             try:
                 # Check if numpy is installed
                 import numpy as np
+                from math import sqrt
 
                 component_names = (
                     'Mises',
                     'Min Principal',
                     'Mid Principal',
                     'Max Principal',
-                )
+                    )
                 for i in range(len(component_names)):
-                    c = Component()
-                    c.ictype = 1; c.name = component_names[i]
-                    self.components[c.name] = c
+                    # c = Component()
+                    # c.ictype = 1; c.name = component_names[i]
+                    self.components.append(component_names[i])
                     self.ncomps += 1
 
                 # Iterate over nodes
-                for node in self.results.keys():
-                    data = self.results[node] # list with results for current node
+                for node_num in self.node_block.nodes.keys():
+                    data = self.results[node_num] # list with results for current node
                     Exx = data[0]; Eyy = data[1]; Ezz = data[2]
                     Exy = data[3]; Eyz = data[4]; Ezx = data[5]
                     tensor = np.array([[Exx, Exy, Ezx], [Exy, Eyy, Eyz], [Ezx, Eyz, Ezz]])
@@ -355,66 +358,82 @@ class NodalResultsBlock(object):
                                 6 * Eyz**2 +\
                                 6 * Ezx**2 +\
                                 6 * Exy**2)
-                    self.results[node].append(mises)
+                    self.results[node_num].append(mises)
 
                     # Calculate principal strains for current node
                     for ps in np.linalg.eigvalsh(tensor).tolist():
-                        self.results[node].append(ps)
+                        self.results[node_num].append(ps)
 
             except ImportError:
-                print('Numpy is not installed.')
-                print('Additional strains will not be appended.')
+                logging.error('Numpy is not installed.\n' +\
+                    'Additional strains will not be appended.')
 
 
 # Main class
-class FRDParser(object):
+class Parse:
+
 
     # Read contents of the .frd file
     def __init__(self, file_name=None):
-        self.file_name = None       # path to the .frd-file to be read
-        self.node_block = None      # node block
-        self.elem_block = None      # elements block
-        self.result_blocks = []     # all result blocks in order of appearance
+        self.file_name = None   # path to the .frd-file to be read
+        self.node_block = None  # node block
+        self.elem_block = None  # elements block
+        self.result_blocks = [] # all result blocks in order of appearance
         if file_name:
             self.file_name = file_name
-            print('Reading .frd-file...')
+            logging.info('Parsing ' + file_name)
             with open(file_name, 'rb') as in_file:
-                eof = (in_file.read(1) == b'')
-                while not eof:
-                    key = int(in_file.read(4))
-                    code = in_file.read(1).decode()
-                    block = None
-
+                key = in_file.read(5).decode().strip()
+                while key:
                     # Header
-                    if key == 1:
-                        in_file.readline().decode().strip()
+                    if key == '1' or key == '1P':
+                        readByteLine(in_file)
 
                     # Nodes
-                    elif key == 2:
+                    elif key == '2':
                         block = NodalPointCoordinateBlock(in_file)
                         self.node_block = block
 
                     # Elements
-                    elif key == 3:
+                    elif key == '3':
                         block = ElementDefinitionBlock(in_file)
                         self.elem_block = block
 
                     # Results
-                    elif key == 100:
-                        block = NodalResultsBlock(in_file)
+                    elif key == '100':
+                        block = NodalResultsBlock(in_file, self.node_block)
                         self.result_blocks.append(block)
 
                     # End
-                    elif key == 9999:
-                        eof = True
-                    eof = (eof or (in_file.read(1) == b''))
+                    elif key == '9999':
+                        break
 
-            # Exclude zero nodes added by ccx due to *TRANSFORM
-            nn = sorted(set([len(b.results) for b in self.result_blocks if len(b.results)>0]))
-            if len(nn) == 3:
-                self.node_block.numnod = nn[1]
-            elif len(nn) == 2:
-                self.node_block.numnod = nn[0]
-            # TODO What if output is written for a node subset, not for the whole model?
-            print(self.node_block.numnod, 'nodes total') # total number of nodes
-            print(self.elem_block.numelem, 'cells total') # total number of elements
+                    key = in_file.read(5).decode().strip()
+
+            # # Exclude zero nodes added by ccx due to *TRANSFORM
+            # nn = sorted(set([len(b.results) for b in self.result_blocks if len(b.results)>0]))
+            # if len(nn) == 3:
+            #     self.node_block.numnod = nn[1]
+            # elif len(nn) == 2:
+            #     self.node_block.numnod = nn[0]
+
+
+# Read byte line and decode
+def readByteLine(f):
+    byte = f.read(1).decode()
+    line = byte
+    while byte != '\n':
+        byte = f.read(1).decode()
+        line += byte
+    return line.strip()
+
+
+# Parse regex in line and report problems
+def parseLine(regex, line):
+    match = re.search(regex, line)
+    if match:
+        return match
+    else:
+        logging.error('Can\'t parse line:\n{}\nwith regex:\n{}'\
+                .format(line, regex))
+        raise Exception

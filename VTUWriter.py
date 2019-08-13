@@ -2,7 +2,7 @@
 
 """
     © Ihor Mirzov, April 2019
-    Distributed under GNU General Public License, version 2.
+    Distributed under GNU General Public License v3.0
 
     Inspired by odb2vtk converter written by Liujie-SYSU: https://github.com/Liujie-SYSU/odb2vtk
 
@@ -16,10 +16,10 @@
 """
 
 
-import frd2vtk
+import frd2vtk, logging
 
 
-class VTUWriter:
+class writeVTU:
 
 
     # Write element connectivity with renumbered nodes
@@ -27,7 +27,7 @@ class VTUWriter:
         element_string = ''
 
         # frd: 20 node brick element
-        if e.etype == 4:
+        if e.type == 4:
             # Last eight nodes have to be repositioned
             r1 = tuple(range(12)) # 8,9,10,11
             r2 = tuple(range(12, 16)) # 12,13,14,15
@@ -38,8 +38,8 @@ class VTUWriter:
                 element_string += '{:d} '.format(node)
 
         # frd: 15 node penta element
-        elif e.etype==5 or e.etype==2:
-            """ 
+        elif e.type==5 or e.type==2:
+            """
                 CalculiX elements type 5 are not supported in VTK and
                 has to be processed as CalculiX type 2 (6 node wedge,
                 VTK type 13). Additional nodes are omitted.
@@ -61,28 +61,27 @@ class VTUWriter:
     # Amount of nodes in element: needed to calculate offset
     def amount_of_nodes_in_vtk_element(self, e):
         # frd: 20 node brick element
-        if e.etype == 4:
+        if e.type == 4:
             n = 20
 
         # frd: 15 node penta element
-        elif e.etype==5 or e.etype==2:
+        elif e.type==5 or e.type==2:
             n = 6
 
         # All other elements
         else:
             n = len(e.nodes)
 
-        # print(e.etype, n)
         return n
 
 
     # Write data
     def write_data(self, f, b, numnod):
-        
+
         # Calculate amount of components and define their names
         component_names = ''
         i = 0 # counter
-        for c in b.components.keys():
+        for c in b.components:
             if 'SDV' in c:
                 component_names += 'ComponentName{}="{}" '.format(i, i)
             else:
@@ -93,7 +92,7 @@ class VTUWriter:
         f.write('\t\t\t\t<DataArray type="Float32" Name="{}" NumberOfComponents="{}" {}format="ascii">\n'.format(b.name, len(b.components), component_names))
         nodes = sorted(b.results.keys())
         for n in range(numnod): # iterate over nodes
-            node = nodes[n] 
+            node = nodes[n]
             data = b.results[node]
             f.write('\t\t\t\t')
             for d in data:
@@ -104,7 +103,7 @@ class VTUWriter:
 
 
     # Main function
-    def __init__(self, p, skip_error_field, file_name, step): # p is FRDParser object
+    def __init__(self, p, file_name, step): # p is FRDParser object
 
         with open(file_name, 'w') as f:
             # Header
@@ -121,14 +120,15 @@ class VTUWriter:
             for n in p.node_block.nodes.keys():
 
                 # Write nodes coordinates
-                coordinates = ''.join('\t{:> .8E}'.format(coord) for coord in p.node_block.nodes[n])
+                coordinates = ''.join('\t{:> .8E}'.format(coord) \
+                    for coord in p.node_block.nodes[n].coords)
                 f.write('\t\t\t\t' + coordinates + '\n')
 
                 # For vtk nodes should be renumbered starting from 0
                 renumbered_nodes[n] = new_node_number
                 new_node_number += 1
 
-                if new_node_number == p.node_block.numnod: 
+                if new_node_number == p.node_block.numnod:
                     break
 
             f.write('\n\t\t\t\t</DataArray>\n')
@@ -157,7 +157,7 @@ class VTUWriter:
             f.write('\t\t\t\t<DataArray type="UInt8" Name="types" format="ascii">\n')
             f.write('\t\t\t\t\t')
             for e in p.elem_block.elements:
-                vtk_elem_type = frd2vtk.convert_elem_type(e.etype)
+                vtk_elem_type = frd2vtk.convert_elem_type(e.type)
                 f.write('{0} '.format(vtk_elem_type))
             f.write('\n\t\t\t\t</DataArray>\n')
 
@@ -166,25 +166,19 @@ class VTUWriter:
 
             # POINT DATA - from here start all the results
             f.write('\t\t\t<PointData>\n')
-            for b in p.result_blocks: # iterate over FRDResultBlocks
-                if skip_error_field and 'ERROR' in b.name:
-                    continue
+            for b in p.result_blocks: # iterate over NodalResultsBlock
                 if b.numstep != int(step): # write results for one time step only
                     continue
                 if len(b.results) and len(b.components):
-                    log = 'Step {}, '.format(b.numstep) +\
-                          'time {}, '.format(b.value) +\
-                          '{}, '.format(b.name) +\
-                          '{} components, '.format(len(b.components))
-                    if len(b.results) != p.node_block.numnod:
-                          log += '{}->{} values'.format(len(b.results), p.node_block.numnod)
-                    else:
-                        log += '{} values'.format(p.node_block.numnod)
-                    print(log)
+                    logging.info('Step {}, '.format(b.numstep) +\
+                                'time {}, '.format(b.value) +\
+                                '{}, '.format(b.name) +\
+                                '{} components, '.format(len(b.components)) +\
+                                '{} values'.format(len(b.results)))
                     self.write_data(f, b, p.node_block.numnod)
                 else:
-                    print(b.name, '- no data for this step')
-            f.write("\t\t\t</PointData>"+'\n')
+                    logging.warning(b.name, '- no data for this step')
+            f.write('\t\t\t</PointData>\n')
 
             f.write('\t\t</Piece>\n')
             f.write('\t</UnstructuredGrid>\n')

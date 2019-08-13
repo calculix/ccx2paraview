@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">
+	<UnstructuredGrid>
+		<Piece NumberOfPoints="12" NumberOfCells="2">
+			<Points>
+				<DataArray type="Float64" NumberOfComponents="3" format="ascii">
+					 1.00000000E+02	 0.00000000E+00	 0.00000000E+00
+					 0.00000000E+00	 0.00000000E+00	 0.00000000E+00
+					 0.00000000E+00	 1.00000000E+02	 0.00000000E+00
+					 1.00000000E+02	 1.00000000E+02	 0.00000000E+00
+					 2.00000000E+02	 1.00000000E+02	 0.00000000E+00
+					 2.00000000E+02	 0.00000000E+00	 0.00000000E+00
+					 1.00000000E+02	 0.00000000E+00	-1.00000000E+02
+					 1.00000000E+02	 1.00000000E+02	-1.00000000E+02
+					 0.00000000E+00	 1.00000000E+02	-1.00000000E+02
+					 0.00000000E+00	 0.00000000E+00	-1.00000000E+02
+					 2.00000000E+02	 0.00000000E+00	-1.00000000E+02
+					 2.00000000E+02	 1.00000000E+02	-1.00000000E+02
+
+				</DataArray>
+			</Points>
+			<Cells>
+				<DataArray type="Int32" Name="connectivity" format="ascii">
+					5 0 3 4 10 6 7 11 0 1 2 3 6 9 8 7 
+				</DataArray>
+				<DataArray type="Int32" Name="offsets" format="ascii">
+					8 16 
+				</DataArray>
+				<DataArray type="UInt8" Name="types" format="ascii">
+					12 12 
+				</DataArray>
+			</Cells>
+			<PointData>
+				<DataArray type="Float32" Name="DOR1" NumberOfComponents="3" ComponentName0="dD1dRy" ComponentName1="dD2dRy" ComponentName2="dD3dRy" format="ascii">
+					 2.09887000E-02	 2.62772000E-03	-4.38617000E-03
+					 0.00000000E+00	 0.00000000E+00	 0.00000000E+00
+					 0.00000000E+00	 0.00000000E+00	 0.00000000E+00
+					 2.09887000E-02	-2.62772000E-03	-4.38617000E-03
+					 3.18463000E-02	-6.54505000E-04	-1.63085000E-03
+					 3.18463000E-02	 6.54513000E-04	-1.63085000E-03
+					 2.09887000E-02	 2.62772000E-03	 4.38617000E-03
+					 2.09887000E-02	-2.62772000E-03	 4.38617000E-03
+					 0.00000000E+00	 0.00000000E+00	 0.00000000E+00
+					 0.00000000E+00	 0.00000000E+00	 0.00000000E+00
+					 3.18463000E-02	 6.54513000E-04	 1.63085000E-03
+					 3.18463000E-02	-6.54505000E-04	 1.63085000E-03
+				</DataArray>
+			</PointData>
+		</Piece>
+	</UnstructuredGrid>
+</VTKFile>
