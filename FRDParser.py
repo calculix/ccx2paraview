@@ -420,10 +420,16 @@ class Parse:
 
 # Read byte line and decode
 def readByteLine(f):
-    byte = f.read(1).decode()
+    try:
+        byte = f.read(1).decode()
+    except UnicodeDecodeError:
+        byte = ' '
     line = byte
     while byte != '\n':
-        byte = f.read(1).decode()
+        try:
+            byte = f.read(1).decode()
+        except UnicodeDecodeError:
+            byte = ' '
         line += byte
     return line.strip()
 
