@@ -4,7 +4,8 @@
     © Ihor Mirzov, April 2019
     Distributed under GNU General Public License v3.0
 
-    Inspired by odb2vtk converter written by Liujie-SYSU: https://github.com/Liujie-SYSU/odb2vtk
+    Inspired by odb2vtk converter written by Liujie-SYSU:
+    https://github.com/Liujie-SYSU/odb2vtk
 
     About the format read:
     https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf
@@ -193,4 +194,10 @@ class writeVTU:
     https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/marching.py
     https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/BuildUGrid.py
     https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestXMLUnstructuredGridIO.py
+
+    TODO Use it to write mesh
+    writer = vtk.vtkXMLDataSetWriter()
+    writer.SetFileName(file_name)
+    writer.SetInputData(unstructured_grid)
+    writer.Write()
 """

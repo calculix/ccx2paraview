@@ -139,4 +139,10 @@ class writeVTK:
     https://vtk.org/doc/nightly/html/classvtkUnstructuredGridWriter.html
     https://vtk.org/doc/nightly/html/c2_vtk_e_5.html#c2_vtk_e_vtkUnstructuredGrid
     https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/pointToCellData.py
+
+    TODO Use it to write mesh
+    writer = vtk.vtkUnstructuredGridWriter()
+    writer.SetFileName(file_name)
+    writer.SetInputData(unstructured_grid)
+    writer.Write()
 """
