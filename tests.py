@@ -49,20 +49,20 @@ if (__name__ == '__main__'):
     #     print(filename)
     #     subprocess.run('ccx -i ' + filename + ' > ' + filename + '.log', shell=True)
 
-    # # Convert calculation results
-    # for filename in listAllFiles('./tests', '.frd'):
-    #     subprocess.run('python3 ccx2paraview.py ' + filename + ' vtk', shell=True)
-    #     subprocess.run('python3 ccx2paraview.py ' + filename + ' vtu', shell=True)
-    #     # break # one file only
-
-    # Convert calculation results with binary
+    # Convert calculation results
     for filename in listAllFiles('./tests', '.frd'):
-        if os.name == 'nt':
-            subprocess.run('ccx2paraview.exe ' + filename + ' vtk', shell=True)
-            subprocess.run('ccx2paraview.exe ' + filename + ' vtu', shell=True)
-        else:
-            subprocess.run('./ccx2paraview ' + filename + ' vtk', shell=True)
-            subprocess.run('./ccx2paraview ' + filename + ' vtu', shell=True)
+        subprocess.run('python3 ccx2paraview.py ' + filename + ' vtk', shell=True)
+        subprocess.run('python3 ccx2paraview.py ' + filename + ' vtu', shell=True)
+        # break # one file only
+
+    # # Convert calculation results with binary
+    # for filename in listAllFiles('tests', '.frd'):
+    #     if os.name == 'nt':
+    #         subprocess.run('ccx2paraview.exe ' + filename + ' vtk', shell=True)
+    #         subprocess.run('ccx2paraview.exe ' + filename + ' vtu', shell=True)
+    #     else:
+    #         subprocess.run('./ccx2paraview ' + filename + ' vtk', shell=True)
+    #         subprocess.run('./ccx2paraview ' + filename + ' vtu', shell=True)
 
     # # Test FRDParser only
     # import FRDParser
@@ -70,5 +70,5 @@ if (__name__ == '__main__'):
     #     FRDParser.Parse(filename)
 
     clean.cache()
-    clean.files('./tests')
+    clean.files('tests')
     logging.info('Total {:.1f} seconds'.format(time.perf_counter()-start))
