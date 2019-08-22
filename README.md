@@ -5,7 +5,7 @@ Distributed under GNU General Public License v3.0
 
 
 
-# Calculix to Paraview converter (frd to vtk/vtu)
+# CalculiX to Paraview converter (frd to vtk/vtu)
 
 Converts [CalculiX](http://www.dhondt.de/) .frd-file to view and postprocess calculation results in [Paraview](https://www.paraview.org/). Generates Mises and Principal components for stress and strain tensors.
 
@@ -19,7 +19,7 @@ I'm testing the script and trying to reduce processing time as much as possible.
 
 # Download
 
-Download Linux and Windows binaries from the [releases page](./releases). Binaries don't need to be installed.
+Download Linux and Windows binaries from the [releases page](https://github.com/imirzov/ccx2paraview/releases). Binaries don't need to be installed.
 
 <br/><br/>
 
@@ -78,7 +78,7 @@ Please, you may:
 
 - Simply use this software and ask questions.
 - Share your models and screenshots.
-- Report problems by [posting issues](./issues).
+- Report problems by [posting issues](https://github.com/imirzov/ccx2paraview/issues).
 - Follow discussion in the [Yahoo CalculiX Group](https://groups.yahoo.com/neo/groups/CALCULIX/conversations/topics/13712)
 
 <br/><br/>
@@ -90,7 +90,7 @@ Please, you may:
 Converter is tested for all Caclulix examples. Folder [tests](./tests/) contains tests results. Each test contains .inp-task + .frd-calculation + .vtk and .vtu convertion results.
 
 - *./tests/elements* contains tests of mesh conversion
-- *./tests/examples* - models are taken directly from [Calculix examples](http://www.dhondt.de/ccx_2.15.test.tar.bz2)
+- *./tests/examples* - models are taken directly from [CalculiX examples](http://www.dhondt.de/ccx_2.15.test.tar.bz2)
 - *./tests/users* contains files sent by users
 
 
