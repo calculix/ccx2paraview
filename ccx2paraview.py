@@ -14,7 +14,7 @@
 # TODO https://github.com/pearu/pyvtk/blob/master/examples/example1.py
 
 import argparse, os, logging
-import FRDParser, VTKWriter, VTUWriter, clean
+import FRDParser, VTKWriter, VTUWriter, PVDWriter, clean
 
 
 if __name__ == '__main__':
@@ -43,6 +43,8 @@ if __name__ == '__main__':
         width = len(str(len(steps))) # max length of string designating step number
         steps = ['{:0{width}}'.format(s, width=width) for s in steps] # pad with zero
         if not len(steps): steps = ['1'] # to run converter at least once
+        times = sorted(set([b.value for b in p.result_blocks])) # list of step times
+        names = []
 
         # For each time step generate separate .vt* file
         logging.info('Writing {}.{}'.format(args.filename[:-4], args.format))
@@ -50,6 +52,7 @@ if __name__ == '__main__':
             # Output file name will be the same as input
             if len(steps) > 1: # include step number in file_name
                 file_name = p.file_name.replace('.frd', '.{}.{}'.format(s, args.format))
+                names.append(os.path.basename(file_name))
             else: # exclude step number from file_name
                 file_name = p.file_name.replace('.frd', '.{}'.format(args.format))
 
@@ -58,6 +61,11 @@ if __name__ == '__main__':
                 VTKWriter.writeVTK(p, file_name, s)
             if args.format == 'vtu':
                 VTUWriter.writeVTU(p, file_name, s)
+
+        # Write ParaView Data (PVD) for series of VTU files.
+        if len(times) > 1:
+            PVDWriter.writePVD(p.file_name.replace('.frd', '.pvd'), times, names)
+
 
     else:
         logging.warning('File is empty!')

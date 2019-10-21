@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    © Ihor Mirzov, August 2019
+    © Ihor Mirzov, October 2019
     Distributed under GNU General Public License v3.0
 
     Usage:
@@ -50,8 +50,8 @@ if (__name__ == '__main__'):
     #     subprocess.run('ccx -i ' + filename + ' > ' + filename + '.log', shell=True)
 
     # Convert calculation results
-    for filename in listAllFiles('./tests', '.frd'):
-        subprocess.run('python3 ccx2paraview.py ' + filename + ' vtk', shell=True)
+    for filename in listAllFiles('./tests/users', '.frd'):
+        # subprocess.run('python3 ccx2paraview.py ' + filename + ' vtk', shell=True)
         subprocess.run('python3 ccx2paraview.py ' + filename + ' vtu', shell=True)
         # break # one file only
 
