@@ -434,6 +434,10 @@ def readByteLine(f):
     return line.strip()
 
 
+# Read byte line and decode: return None after EOF
+# TODO Use readByteLine from D:\Calculix\ccx_cae\src\ccx_mesh.py
+
+
 # Parse regex in line and report problems
 def parseLine(regex, line):
     match = re.search(regex, line)

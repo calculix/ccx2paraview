@@ -5,9 +5,9 @@
     © Ihor Mirzov, August 2019
     Distributed under GNU General Public License v3.0
 
-    Convert Calculix element type to VTK
-    Keep in mind that CalculiX expands shell elements
-    In vtk elements nodes are numbered starting from 0, not from 1
+    Convert Calculix element type to VTK.
+    Keep in mind that CalculiX expands shell elements.
+    In vtk elements nodes are numbered starting from 0, not from 1.
 
     For frd see http://www.dhondt.de/cgx_2.15.pdf pages 117-123 (chapter 10)
     For vtk see https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf pages 9-10

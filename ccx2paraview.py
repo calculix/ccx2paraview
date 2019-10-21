@@ -11,6 +11,7 @@
         python3 ccx2paraview.py ./tests/examples/beamf.frd vtu
 """
 
+# TODO https://github.com/pearu/pyvtk/blob/master/examples/example1.py
 
 import argparse, os, logging
 import FRDParser, VTKWriter, VTUWriter, clean
