@@ -51,7 +51,7 @@ if (__name__ == '__main__'):
 
     # Convert calculation results
     for filename in listAllFiles('./tests/users', '.frd'):
-        # subprocess.run('python3 ccx2paraview.py ' + filename + ' vtk', shell=True)
+        subprocess.run('python3 ccx2paraview.py ' + filename + ' vtk', shell=True)
         subprocess.run('python3 ccx2paraview.py ' + filename + ' vtu', shell=True)
         # break # one file only
 

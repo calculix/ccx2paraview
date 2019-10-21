@@ -63,7 +63,7 @@ if __name__ == '__main__':
                 VTUWriter.writeVTU(p, file_name, s)
 
         # Write ParaView Data (PVD) for series of VTU files.
-        if len(times) > 1:
+        if len(times) > 1 and args.format == 'vtu':
             PVDWriter.writePVD(p.file_name.replace('.frd', '.pvd'), times, names)
 
 

@@ -19,7 +19,11 @@ I'm testing the script and trying to reduce processing time as much as possible.
 
 # Download
 
-Download Linux and Windows binaries from the [releases page](https://github.com/imirzov/ccx2paraview/releases). Binaries don't need to be installed.
+Download binaries from the [releases page](https://github.com/imirzov/ccx2paraview/releases). Binaries don't need to be installed.
+
+For the latest version use the source code. See below how to use.
+
+Dear users, from now there will be no Windows binary since I'm not using this OS anymore.
 
 <br/><br/>
 
@@ -27,19 +31,15 @@ Download Linux and Windows binaries from the [releases page](https://github.com/
 
 # How to use
 
-You'll need [Python 3](https://www.python.org/downloads/) with *numpy* to use this converter:
+To run this converter from source you'll need [Python 3](https://www.python.org/downloads/) with *numpy*:
 
     pip3 install numpy
 
-The main script is [ccx2paraview.py](ccx2paraview.py). Also you'll need:
-- [frd2vtk.py](frd2vtk.py)
-- [FRDParser.py](FRDParser.py)
-- [VTKWriter.py](VTKWriter.py)
-- [VTUWriter.py](VTUWriter.py)
-
-It is recommended to convert .frd to modern XML .vtu format:
+The main script is [ccx2paraview.py](ccx2paraview.py). It is recommended to convert .frd to modern XML .vtu format:
 
     python3 ccx2paraview.py jobname.frd vtu
+
+If you have more than one time step there will be additional XML file created - the PVD file. Open it in Paraview to read data from all time steps (all VTU files) at ones.
 
 To convert .frd to legacy ASCII .vtk format, use command:
 
