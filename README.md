@@ -37,13 +37,16 @@ Download binaries from the [releases page](https://github.com/imirzov/ccx2paravi
 
 For the latest version use the source code. See below how to use.
 
-Dear users, from now there will be no Windows binary since I'm not using this OS anymore.
-
 <br/><br/>
 
 
 
 # How to use
+
+    in Linux:       ./ccx2paraview jobname.frd vtu
+                    ./ccx2paraview jobname.frd vtk
+    in Windows:     ccx2paraview.exe jobname.frd vtu
+                    ccx2paraview.exe jobname.frd vtk
 
 To run this converter from source you'll need [Python 3](https://www.python.org/downloads/) with *numpy*:
 
