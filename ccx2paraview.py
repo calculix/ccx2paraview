@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -7,8 +8,8 @@
     Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format.
 
     Run with command:
-        python3 ccx2paraview.py ./tests/examples/beamf.frd vtk
-        python3 ccx2paraview.py ./tests/examples/beamf.frd vtu
+        python3 ccx2paraview.py ./tests/official-examples/beamf.frd vtk
+        python3 ccx2paraview.py ./tests/official-examples/beamf.frd vtu
 """
 
 # TODO https://github.com/pearu/pyvtk/blob/master/examples/example1.py
