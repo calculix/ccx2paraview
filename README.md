@@ -11,7 +11,7 @@ Distributed under GNU General Public License v3.0
 [How to use](#how-to-use) |
 [Screenshots](#screenshots) |
 [Your help](#your-help) |
-[For developers](#for-developers) |
+[For developers](#for-developers)
 
 ---
 
