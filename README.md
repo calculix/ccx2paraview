@@ -1,5 +1,19 @@
-© Ihor Mirzov, October 2019  
+© Ihor Mirzov, January 2020  
 Distributed under GNU General Public License v3.0
+
+<br/><br/>
+
+
+
+---
+
+[Downloads](#downloads) |
+[How to use](#how-to-use) |
+[Screenshots](#screenshots) |
+[Your help](#your-help) |
+[For developers](#for-developers) |
+
+---
 
 <br/><br/>
 
@@ -17,7 +31,7 @@ I'm testing the script and trying to reduce processing time as much as possible.
 
 
 
-# Download
+# Downloads
 
 Download binaries from the [releases page](https://github.com/imirzov/ccx2paraview/releases). Binaries don't need to be installed.
 
@@ -62,7 +76,7 @@ Unfortunately, VTK format doesn't support names for field components. So, for st
 
 
 
-# Examples
+# Screenshots
 
 ![baffle](./tests/users/baffle.png "baffle")
 
@@ -79,7 +93,6 @@ Please, you may:
 - Simply use this software and ask questions.
 - Share your models and screenshots.
 - Report problems by [posting issues](https://github.com/imirzov/ccx2paraview/issues).
-- Follow discussion in the [Yahoo CalculiX Group](https://groups.yahoo.com/neo/groups/CALCULIX/conversations/topics/13712)
 
 <br/><br/>
 
@@ -90,7 +103,7 @@ Please, you may:
 Converter is tested for all Caclulix examples. Folder [tests](./tests/) contains tests results. Each test contains .inp-task + .frd-calculation + .vtk and .vtu convertion results.
 
 - *./tests/elements* contains tests of mesh conversion
-- *./tests/examples* - models are taken directly from [CalculiX examples](http://www.dhondt.de/ccx_2.15.test.tar.bz2)
+- *./tests/official-examples* - models are taken directly from [CalculiX examples](http://www.dhondt.de/ccx_2.15.test.tar.bz2)
 - *./tests/users* contains files sent by users
 
 
