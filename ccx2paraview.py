@@ -48,7 +48,8 @@ if __name__ == '__main__':
         names = []
 
         # For each time step generate separate .vt* file
-        logging.info('Writing {}.{}'.format(args.filename[:-4], args.format))
+        relpath = os.path.relpath(args.filename, start=__file__)
+        logging.info('Writing {}.{}'.format(relpath[:-4], args.format))
         for s in steps:
             # Output file name will be the same as input
             if len(steps) > 1: # include step number in file_name

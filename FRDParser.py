@@ -10,7 +10,7 @@
 """
 
 
-import re, logging
+import re, logging, math
 
 
 # A single node object
@@ -251,7 +251,23 @@ class NodalResultsBlock:
             regex = '^-1\s+(\d+)' + '(.{12})' * row_comps
             match = parseLine(regex, line)
             node = int(match.group(1))
-            data = [float(match.group(c+2)) for c in range(row_comps)]
+            try:
+                data = [float(match.group(c+2)) for c in range(row_comps)]
+            except:
+                """
+                    Fixin' bug in CCX:
+                    simetimes too big float number could go without 'E': 
+                    -6.35399+123, -2.96833+115
+                """
+                data = []
+                for c in range(row_comps):
+                    string = match.group(c+2)
+                    if string.startswith('+'):
+                        data.append(math.inf)
+                    else:
+                        data.append(-math.inf)
+                    logging.warning('Treating number ' + string + ' as infinity!')
+
             results_counter += 1
             self.results[node] = data
 
