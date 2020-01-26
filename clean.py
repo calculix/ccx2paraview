@@ -37,7 +37,7 @@ def cache(folder=None):
 def files(startFolder=None):
     extensions = (  '.12d', '.cvg', '.dat', '.vwf', '.out', '.nam', '.inp1', '.inp2',
                     '.sta', '.log', '.equ', '.eig', '.stm', '.mtx', '.net', '.inp0',
-                    '.rin', '.fcv'  )
+                    '.rin', '.fcv', 'dummy' )
     if not startFolder:
         startFolder = os.getcwd()
     for f in os.listdir(startFolder):

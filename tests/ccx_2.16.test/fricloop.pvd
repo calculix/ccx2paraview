@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
+	<Collection>
+		<DataSet timestep="0.1" file="fricloop.01.vtu"/>
+		<DataSet timestep="0.2" file="fricloop.02.vtu"/>
+		<DataSet timestep="0.35" file="fricloop.03.vtu"/>
+		<DataSet timestep="0.575" file="fricloop.04.vtu"/>
+		<DataSet timestep="0.9125" file="fricloop.05.vtu"/>
+		<DataSet timestep="1.0" file="fricloop.06.vtu"/>
+		<DataSet timestep="1.01" file="fricloop.07.vtu"/>
+		<DataSet timestep="1.02" file="fricloop.08.vtu"/>
+		<DataSet timestep="1.035" file="fricloop.09.vtu"/>
+		<DataSet timestep="1.0575" file="fricloop.10.vtu"/>
+		<DataSet timestep="1.09125" file="fricloop.11.vtu"/>
+		<DataSet timestep="1.141875" file="fricloop.12.vtu"/>
+		<DataSet timestep="1.2178125" file="fricloop.13.vtu"/>
+		<DataSet timestep="1.33171875" file="fricloop.14.vtu"/>
+		<DataSet timestep="1.502578125" file="fricloop.15.vtu"/>
+		<DataSet timestep="1.758867188" file="fricloop.16.vtu"/>
+		<DataSet timestep="2.0" file="fricloop.17.vtu"/>
+		<DataSet timestep="2.02" file="fricloop.18.vtu"/>
+		<DataSet timestep="2.04" file="fricloop.19.vtu"/>
+		<DataSet timestep="2.07" file="fricloop.20.vtu"/>
+		<DataSet timestep="2.115" file="fricloop.21.vtu"/>
+		<DataSet timestep="2.1825" file="fricloop.22.vtu"/>
+		<DataSet timestep="2.28375" file="fricloop.23.vtu"/>
+		<DataSet timestep="2.435625" file="fricloop.24.vtu"/>
+		<DataSet timestep="2.6634375" file="fricloop.25.vtu"/>
+		<DataSet timestep="3.00515625" file="fricloop.26.vtu"/>
+		<DataSet timestep="3.517734375" file="fricloop.27.vtu"/>
+		<DataSet timestep="4.0" file="fricloop.28.vtu"/>
+		<DataSet timestep="4.01" file="fricloop.29.vtu"/>
+		<DataSet timestep="4.02" file="fricloop.30.vtu"/>
+		<DataSet timestep="4.035" file="fricloop.31.vtu"/>
+		<DataSet timestep="4.0575" file="fricloop.32.vtu"/>
+		<DataSet timestep="4.09125" file="fricloop.33.vtu"/>
+		<DataSet timestep="4.141875" file="fricloop.34.vtu"/>
+		<DataSet timestep="4.2178125" file="fricloop.35.vtu"/>
+		<DataSet timestep="4.33171875" file="fricloop.36.vtu"/>
+		<DataSet timestep="4.502578125" file="fricloop.37.vtu"/>
+		<DataSet timestep="4.758867187" file="fricloop.38.vtu"/>
+		<DataSet timestep="5.0" file="fricloop.39.vtu"/>
+	</Collection>
+</VTKFile>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
+	<Collection>
+		<DataSet timestep="0.1" file="changefric.01.vtu"/>
+		<DataSet timestep="0.2" file="changefric.02.vtu"/>
+		<DataSet timestep="0.35" file="changefric.03.vtu"/>
+		<DataSet timestep="0.575" file="changefric.04.vtu"/>
+		<DataSet timestep="0.9125" file="changefric.05.vtu"/>
+		<DataSet timestep="1.0" file="changefric.06.vtu"/>
+		<DataSet timestep="2.0" file="changefric.07.vtu"/>
+		<DataSet timestep="2.01" file="changefric.08.vtu"/>
+		<DataSet timestep="2.02" file="changefric.09.vtu"/>
+		<DataSet timestep="2.035" file="changefric.10.vtu"/>
+		<DataSet timestep="2.0575" file="changefric.11.vtu"/>
+		<DataSet timestep="2.09125" file="changefric.12.vtu"/>
+		<DataSet timestep="2.141875" file="changefric.13.vtu"/>
+		<DataSet timestep="2.2178125" file="changefric.14.vtu"/>
+		<DataSet timestep="2.33171875" file="changefric.15.vtu"/>
+		<DataSet timestep="2.502578125" file="changefric.16.vtu"/>
+		<DataSet timestep="2.758867187" file="changefric.17.vtu"/>
+		<DataSet timestep="3.0" file="changefric.18.vtu"/>
+		<DataSet timestep="3.01" file="changefric.19.vtu"/>
+		<DataSet timestep="3.02" file="changefric.20.vtu"/>
+		<DataSet timestep="3.035" file="changefric.21.vtu"/>
+		<DataSet timestep="3.0575" file="changefric.22.vtu"/>
+		<DataSet timestep="3.09125" file="changefric.23.vtu"/>
+		<DataSet timestep="3.141875" file="changefric.24.vtu"/>
+		<DataSet timestep="3.2178125" file="changefric.25.vtu"/>
+		<DataSet timestep="3.33171875" file="changefric.26.vtu"/>
+		<DataSet timestep="3.502578125" file="changefric.27.vtu"/>
+		<DataSet timestep="3.758867187" file="changefric.28.vtu"/>
+		<DataSet timestep="4.0" file="changefric.29.vtu"/>
+		<DataSet timestep="4.01" file="changefric.30.vtu"/>
+		<DataSet timestep="4.02" file="changefric.31.vtu"/>
+		<DataSet timestep="4.035" file="changefric.32.vtu"/>
+		<DataSet timestep="4.0575" file="changefric.33.vtu"/>
+		<DataSet timestep="4.09125" file="changefric.34.vtu"/>
+		<DataSet timestep="4.141875" file="changefric.35.vtu"/>
+		<DataSet timestep="4.2178125" file="changefric.36.vtu"/>
+		<DataSet timestep="4.33171875" file="changefric.37.vtu"/>
+		<DataSet timestep="4.502578125" file="changefric.38.vtu"/>
+		<DataSet timestep="4.758867187" file="changefric.39.vtu"/>
+		<DataSet timestep="5.0" file="changefric.40.vtu"/>
+	</Collection>
+</VTKFile>

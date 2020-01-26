@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
+	<Collection>
+		<DataSet timestep="12000.0" file="beamdy20.11.vtu"/>
+		<DataSet timestep="12001.0" file="beamdy20.12.vtu"/>
+	</Collection>
+</VTKFile>

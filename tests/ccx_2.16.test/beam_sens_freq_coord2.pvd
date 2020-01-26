@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
+	<Collection>
+		<DataSet timestep="0.0" file="beam_sens_freq_coord2.01.vtu"/>
+		<DataSet timestep="1.0" file="beam_sens_freq_coord2.02.vtu"/>
+		<DataSet timestep="117547.9305" file="beam_sens_freq_coord2.03.vtu"/>
+		<DataSet timestep="137032.9829" file="beam_sens_freq_coord2.04.vtu"/>
+		<DataSet timestep="266253.1736" file="beam_sens_freq_coord2.05.vtu"/>
+		<DataSet timestep="363862.3317" file="beam_sens_freq_coord2.06.vtu"/>
+		<DataSet timestep="415424.325" file="beam_sens_freq_coord2.07.vtu"/>
+		<DataSet timestep="639830.8957" file="beam_sens_freq_coord2.08.vtu"/>
+		<DataSet timestep="701285.2202" file="beam_sens_freq_coord2.09.vtu"/>
+	</Collection>
+</VTKFile>
