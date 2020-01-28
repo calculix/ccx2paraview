@@ -5,19 +5,49 @@
     © Ihor Mirzov, January 2020
     Distributed under GNU General Public License v3.0
 
-    Usage:
-        python3 tests.py
-        python3 tests.py > tests.log
+    Test converter on all CalculiX examples.
+    Ctrl + F5 to Run.
 
-    TODO use logging and write everything into logfile
-    TODO reduce size of John_Mannisto_blade_sector
     TODO multiprocessing
     TODO os.scandir
+    TODO cgx and mkraska examples
 """
 
 
-import subprocess, os, time, multiprocessing, glob
-import clean, FRDParser
+import os
+import sys
+import time
+import subprocess
+import multiprocessing
+import glob
+import logging
+
+import clean
+import FRDParser
+
+
+log_file = os.path.join(os.path.dirname(__file__), 'tests.log')
+dir_test = os.path.join(os.path.dirname(__file__), 'tests')
+limit = 10
+
+
+# Configure logging to emit messages via 'print' method
+class myHandler(logging.Handler):
+
+    def __init__(self):
+        super().__init__()
+        self.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
+
+    def emit(self, LogRecord):
+        msg_text = self.format(LogRecord)
+        print(msg_text)
+
+
+# Redefine print method to write logs to file
+def print(*args):
+    line = ' '.join([str(arg) for arg in args])
+    with open(log_file, 'a') as f:
+        f.write(str(line) + '\n')
 
 
 # List all .ext-files here and in all subdirectories
@@ -38,30 +68,34 @@ def run_all_analyses_in(folder):
     start = time.perf_counter() # start time
     counter = 1
     start_folder = os.curdir
-    for filename in list_all_files_in(folder, '.inp'):
+    for file_name in list_all_files_in(folder, '.inp'):
 
         # Skip already calculated models
-        if not os.path.isfile(filename[:-4] + '.frd'):
-            relpath = os.path.relpath(filename, start=__file__)
-            print(counter, relpath)
+        if not os.path.isfile(file_name[:-4] + '.frd'):
+            relpath = os.path.relpath(file_name, start=__file__)
+            sys.stdout.write('{} {}\n'.format(counter, relpath))
             counter += 1
             os.chdir(folder)
-            subprocess.run('ccx -i ' + filename[:-4] + ' > ' + filename[:-4] + '.log', shell=True)
+            subprocess.run('ccx -i ' + file_name[:-4] + ' > ' + file_name[:-4] + '.log', shell=True)
+
+        if counter > limit: break
 
     os.chdir(start_folder)
     clean.files(folder)
-    print('Total {:.1f} seconds'.format(time.perf_counter() - start))
+    sys.stdout.write('Total {:.1f} seconds\n'\
+                     .format(time.perf_counter() - start))
 
 
 # Test FRDParser only
 def test_frd_parser_on_models_in(folder):
     start = time.perf_counter() # start time
     counter = 1
-    for filename in list_all_files_in(folder, '.frd'):
-        relpath = os.path.relpath(filename, start=__file__)
-        print(counter, relpath)
+    for file_name in list_all_files_in(folder, '.frd'):
+        relpath = os.path.relpath(file_name, start=__file__)
+        sys.stdout.write('{} {}\n'.format(counter, relpath))
+        FRDParser.Parse(file_name)
         counter += 1
-        FRDParser.Parse(filename)
+        if counter > limit: break
     print('Total {:.1f} seconds'.format(time.perf_counter() - start))
 
 
@@ -69,41 +103,53 @@ def test_frd_parser_on_models_in(folder):
 def convert_calculation_results_in(folder):
     start = time.perf_counter() # start time
     counter = 1
-    for filename in list_all_files_in(folder, '.frd'):
-        counter += 1
+    for file_name in list_all_files_in(folder, '.frd'):
+        # TODO Compare log with ccx_cae tests
 
         # Skip already converted models
-        if not len(glob.glob(filename[:-4] + '*.vt[ku]')):
-            relpath = os.path.relpath(filename, start=__file__)
-            print(counter, relpath)
-            subprocess.run('python3 ./ccx2paraview.py ' + filename + ' vtk', shell=True)
-            subprocess.run('python3 ./ccx2paraview.py ' + filename + ' vtu', shell=True)
+        # if not len(glob.glob(file_name[:-4] + '*.vt[ku]')):
+        print('\n==================================================')
+        subprocess.run('python3 ./ccx2paraview.py ' + file_name + ' vtk', shell=True)
+        print('\n==================================================')
+        subprocess.run('python3 ./ccx2paraview.py ' + file_name + ' vtu', shell=True)
+
+        counter += 1
+        if counter > limit: break
+
+    print('Total {:.1f} seconds'.format(time.perf_counter() - start))
 
 
 # Check if created binaries work fine
 def check_binaries(folder):
-    for filename in list_all_files_in(folder, '.frd'):
-        relpath = os.path.relpath(filename, start=__file__)
-        print(relpath)
+    counter = 1
+    for file_name in list_all_files_in(folder, '.frd'):
         if os.name == 'nt':
-            subprocess.run('ccx2paraview.exe ' + filename + ' vtk', shell=True)
-            subprocess.run('ccx2paraview.exe ' + filename + ' vtu', shell=True)
+            subprocess.run('ccx2paraview.exe ' + file_name + ' vtk', shell=True)
+            subprocess.run('ccx2paraview.exe ' + file_name + ' vtu', shell=True)
         else:
-            subprocess.run('./ccx2paraview ' + filename + ' vtk', shell=True)
-            subprocess.run('./ccx2paraview ' + filename + ' vtu', shell=True)
-        break # one file only
+            subprocess.run('./ccx2paraview ' + file_name + ' vtk', shell=True)
+            subprocess.run('./ccx2paraview ' + file_name + ' vtu', shell=True)
+        counter += 1
+        if counter > limit: break
 
 
 if (__name__ == '__main__'):
     clean.screen()
-    folder_tests = os.path.abspath('./tests')
+
+    # Prepare logging
+    if os.path.isfile(log_file): os.remove(log_file)
+    logging.getLogger().addHandler(myHandler())
+    logging.getLogger().setLevel(logging.INFO)
 
     # Enable multithreading for CalculiX
     os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
 
-    # run_all_analyses_in(folder_tests)
-    # convert_calculation_results_in(folder_tests)
-    # test_frd_parser_on_models_in(folder_tests)
-    check_binaries(folder_tests)
+    # run_all_analyses_in(dir_test)
+    convert_calculation_results_in(dir_test)
+    # test_frd_parser_on_models_in(dir_test)
+    # check_binaries(dir_test)
+
+    # import math
+    # print('\t{: 15.8E}'.format(math.inf))
 
     clean.cache()

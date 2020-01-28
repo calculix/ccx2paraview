@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    © Ihor Mirzov, October 2019
+    © Ihor Mirzov, January 2020
     Distributed under GNU General Public License v3.0
 
     Inspired by C# converter written by Maciek Hawryłkiewicz in 2015.
@@ -17,7 +17,9 @@
 """
 
 
-import frd2vtk, logging
+import frd2vtk
+import logging
+import math
 
 
 # Write element connectivity with renumbered nodes
@@ -62,14 +64,29 @@ def write_data(f, b, numnod):
     f.write('FIELD {} 1\n'.format(b.name))
     f.write('\t{} {} {} double\n'.format(b.name, len(b.components), numnod))
     nodes = sorted(b.results.keys())
+
+    # Some warnings repeat too much time - mark them
+    emitted_warning_types = {'Inf':0, 'NaN':0}
+
     for n in range(numnod): # iterate over nodes
         node = nodes[n]
         data = b.results[node]
         f.write('\t')
         for d in data:
-            if abs(d) < 1e-9: d = 0 # filter small values for smooth zero fields
-            f.write('\t{:> .8E}'.format(d))
+            # # Filter small values for smooth zero fields
+            # if abs(d) < 1e-9: d = 0
+            if math.isinf(d):
+                d = 0.0
+                emitted_warning_types['Inf'] += 1
+            if math.isnan(d):
+                d = 0.0
+                emitted_warning_types['NaN'] += 1
+            f.write('\t{: .8E}'.format(d))
         f.write('\n')
+
+    for k, v in emitted_warning_types.items():
+        if v > 0:
+            logging.warning('{} {} values are converted to 0.0'.format(v, k))
 
 
 # Main function
@@ -86,8 +103,9 @@ def writeVTK(p, file_name, step): # p is FRDParser object
         new_node_number = 0 # node numbers should start from 0
         renumbered_nodes = {} # old_number : new_number
         for n in p.node_block.nodes.keys():
+
             # Write nodes coordinates
-            coordinates = ''.join('\t{:> .8E}'.format(coord) \
+            coordinates = ''.join('\t{: .8E}'.format(coord) \
                 for coord in p.node_block.nodes[n].coords)
             f.write(coordinates + '\n')
 

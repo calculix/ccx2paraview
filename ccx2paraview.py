@@ -14,15 +14,22 @@
 
 # TODO https://github.com/pearu/pyvtk/blob/master/examples/example1.py
 
-import argparse, os, logging
-import FRDParser, VTKWriter, VTUWriter, PVDWriter, clean
+import argparse
+import os
+import logging
+
+import FRDParser
+import VTKWriter
+import VTUWriter
+import PVDWriter
+import clean
 
 
 if __name__ == '__main__':
-    # Configure logging
-    # test_file = './tests.log'
+    # Configure logging TODO
+    test_file = './tests.log'
     logging.basicConfig(level=logging.INFO,
-                        # filename=test_file, filemode='a',
+                        filename=test_file, filemode='a',
                         format='%(levelname)s: %(message)s')
 
     # Command line parameters

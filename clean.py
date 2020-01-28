@@ -36,8 +36,8 @@ def cache(folder=None):
 # Cleaup trash files in startFolder and all subfolders
 def files(startFolder=None):
     extensions = (  '.12d', '.cvg', '.dat', '.vwf', '.out', '.nam', '.inp1', '.inp2',
-                    '.sta', '.log', '.equ', '.eig', '.stm', '.mtx', '.net', '.inp0',
-                    '.rin', '.fcv', 'dummy' )
+                    '.sta', '.equ', '.eig', '.stm', '.mtx', '.net', '.inp0', '.rin',
+                    '.fcv', 'dummy' )
     if not startFolder:
         startFolder = os.getcwd()
     for f in os.listdir(startFolder):

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    © Ihor Mirzov, October 2019
+    © Ihor Mirzov, January 2020
     Distributed under GNU General Public License v3.0
 
     Inspired by odb2vtk converter written by Liujie-SYSU:
@@ -19,7 +19,9 @@
 """
 
 
-import frd2vtk, logging
+import frd2vtk
+import logging
+import math
 
 
 # Write element connectivity with renumbered nodes
@@ -88,6 +90,9 @@ def write_data(f, b, numnod):
             component_names += 'ComponentName{}="{}" '.format(i, c)
         i += 1
 
+    # Some warnings repeat too much time - mark them
+    emitted_warning_types = {'Inf':0, 'NaN':0}
+
     # Write data
     f.write('\t\t\t\t<DataArray type="Float32" Name="{}" NumberOfComponents="{}" {}format="ascii">\n'.format(b.name, len(b.components), component_names))
     nodes = sorted(b.results.keys())
@@ -96,10 +101,21 @@ def write_data(f, b, numnod):
         data = b.results[node]
         f.write('\t\t\t\t')
         for d in data:
-            if abs(d) < 1e-9: d = 0 # filter small values for smooth zero fields
-            f.write('\t{:> .8E}'.format(d))
+            # # Filter small values for smooth zero fields
+            # if abs(d) < 1e-9: d = 0
+            if math.isinf(d):
+                d = 0.0
+                emitted_warning_types['Inf'] += 1
+            if math.isnan(d):
+                d = 0.0
+                emitted_warning_types['NaN'] += 1
+            f.write('\t{: .8E}'.format(d))
         f.write('\n')
     f.write('\t\t\t\t</DataArray>\n')
+
+    for k, v in emitted_warning_types.items():
+        if v > 0:
+            logging.warning('{} {} values are converted to 0.0'.format(v, k))
 
 
 # Main function
@@ -120,7 +136,7 @@ def writeVTU(p, file_name, step): # p is FRDParser object
         for n in p.node_block.nodes.keys():
 
             # Write nodes coordinates
-            coordinates = ''.join('\t{:> .8E}'.format(coord) \
+            coordinates = ''.join('\t{: .8E}'.format(coord) \
                 for coord in p.node_block.nodes[n].coords)
             f.write('\t\t\t\t' + coordinates + '\n')
 

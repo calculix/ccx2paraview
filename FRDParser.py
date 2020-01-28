@@ -2,15 +2,18 @@
 # -*- coding: utf-8 -*-
 
 """
-    © Lukas Bante, Sep 2017 - original code https://gitlab.lrz.de/snippets/238
-    © Ihor Mirzov, May 2019 - refactoring and bugfix
-    Distributed under GNU General Public License v3.0
+© Lukas Bante, Sep 2017 - original code https://gitlab.lrz.de/snippets/238
+© Ihor Mirzov, Jan 2020 - bugfix, refactoring and improvement
+Distributed under GNU General Public License v3.0
 
-    This module contains a python classes for parsing Calculix .frd-files.
+This module contains classes for parsing CalculiX .frd files.
 """
 
 
-import os, re, logging, math
+import os
+import re
+import logging
+import math
 
 
 # A single node object
@@ -239,6 +242,9 @@ class NodalResultsBlock:
         for node_num in self.node_block.nodes.keys():
             self.results[node_num] = [0]*self.ncomps
 
+        # Some warnings repeat too much time - mark them
+        emitted_warning_types = []
+
         results_counter = 0 # independent results counter
         while True:
             line = readByteLine(self.in_file)
@@ -251,22 +257,25 @@ class NodalResultsBlock:
             regex = '^-1\s+(\d+)' + '(.{12})' * row_comps
             match = parseLine(regex, line)
             node = int(match.group(1))
-            try:
-                data = [float(match.group(c+2)) for c in range(row_comps)]
-            except:
-                """
-                    Fixin' bug in CCX:
-                    simetimes too big float number could go without 'E': 
-                    -6.35399+123, -2.96833+115
-                """
-                data = []
-                for c in range(row_comps):
-                    string = match.group(c+2)
-                    if string.startswith('+'):
-                        data.append(math.inf)
-                    else:
-                        data.append(-math.inf)
-                    logging.warning('Treating number ' + string + ' as infinity!')
+            data = []
+            for c in range(row_comps):
+                m = match.group(c + 2)
+                try:
+                    # NaN/Inf values will be parsed 
+                    num = float(m)
+                    # Warning type 1
+                    if ('NaN' in m or 'Inf' in m) \
+                        and not 1 in emitted_warning_types:
+                        logging.warning('NaN and Inf are not supported in Paraview.')
+                        emitted_warning_types.append(1)
+                except Exception as e:
+                    # Too big number is written without 'E'
+                    num = float(re.sub(r'(.+).([+-])(\d{3})', r'\1e\2\3', m))
+                    # Warning type 2
+                    if not 2 in emitted_warning_types:
+                        logging.warning(m.strip() + ' -> {}'.format(num))
+                        emitted_warning_types.append(2)
+                data.append(num)
 
             results_counter += 1
             self.results[node] = data
@@ -291,7 +300,6 @@ class NodalResultsBlock:
             try:
                 # Check if numpy is installed
                 import numpy as np
-                from math import sqrt
 
                 # component_names = (
                 #     'Mises',
@@ -322,13 +330,13 @@ class NodalResultsBlock:
                     tensor = np.array([[Sxx, Sxy, Szx], [Sxy, Syy, Syz], [Szx, Syz, Szz]])
 
                     # Calculate Mises stress for current node
-                    mises = 1/sqrt(2) *\
-                        sqrt(   (Sxx - Syy)**2 +\
-                                (Syy - Szz)**2 +\
-                                (Szz - Sxx)**2 +\
-                                6 * Syz**2 +\
-                                6 * Szx**2 +\
-                                6 * Sxy**2)
+                    mises = 1 / math.sqrt(2) *\
+                        math.sqrt(  (Sxx - Syy)**2 +\
+                                    (Syy - Szz)**2 +\
+                                    (Szz - Sxx)**2 +\
+                                    6 * Syz**2 +\
+                                    6 * Szx**2 +\
+                                    6 * Sxy**2)
                     self.results[node_num].append(mises)
 
                     # Calculate principal stresses for current node
@@ -346,7 +354,6 @@ class NodalResultsBlock:
             try:
                 # Check if numpy is installed
                 import numpy as np
-                from math import sqrt
 
                 component_names = (
                     'Mises',
@@ -368,8 +375,8 @@ class NodalResultsBlock:
                     tensor = np.array([[Exx, Exy, Ezx], [Exy, Eyy, Eyz], [Ezx, Eyz, Ezz]])
 
                     # Calculate Mises strain for current node
-                    mises = sqrt(2)/3 *\
-                        sqrt(   (Exx - Eyy)**2 +\
+                    mises = math.sqrt(2)/3 *\
+                        math.sqrt(   (Exx - Eyy)**2 +\
                                 (Eyy - Ezz)**2 +\
                                 (Ezz - Exx)**2 +\
                                 6 * Eyz**2 +\
@@ -453,7 +460,7 @@ def readByteLine(f):
 
 
 # Read byte line and decode: return None after EOF
-# TODO Use readByteLine from D:\Calculix\ccx_cae\src\ccx_mesh.py
+# TODO Use readByteLine from ccx_cae/src/model/parsers/mesh.py
 
 
 # Parse regex in line and report problems

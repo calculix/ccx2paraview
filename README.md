@@ -23,11 +23,11 @@ Distributed under GNU General Public License v3.0
 
 Converts [CalculiX](http://www.dhondt.de/) .frd-file to view and postprocess analysis results in [Paraview](https://www.paraview.org/). Generates Mises and Principal components for stress and strain tensors.
 
-The script generates separate file for each output interval - it makes possible to animate time history. **Caution!** If you have 300 time steps in the FRD, there will be 300 VTU files. If you need one file - write output only for one step in you CalculiX model.
+The script generates separate file for each output interval - it makes possible to animate time history. **Caution!** If you have 300 time steps in the FRD, there will be 300 Paraview files. If you need one file - write output only for one step in your CalculiX model.
 
 I'm testing the script and trying to reduce processing time as much as possible. As for me now it's quite optimized and fast. But Python itself is slower than C/C++. Here we can do nothing, so, for example, [Calmed converter](https://www.salome-platform.org/forum/forum_12/126338563) must be faster - another question is if it's able to convert any model. This script should.
 
-**ccx2paraview** is tested for all CalculiX examples. Folder [tests](./tests/) contains tests results. Each test contains .inp-task + .frd-calculation + .vtk and .vtu convertion results.
+Converter is tested for all CalculiX examples. Folder [tests](./tests/) contains convertion results. Each test contains .inp-task + .frd-calculation + .vtk and .vtu convertion results.
 
 <br/><br/>
 
@@ -50,19 +50,9 @@ Run binary with commands:
     in Windows:     ccx2paraview.exe jobname.frd vtu
                     ccx2paraview.exe jobname.frd vtk
 
-To run this converter from source you'll need [Python 3](https://www.python.org/downloads/) with *numpy*:
+It is recommended to convert .frd to modern XML .vtu format. If you have more than one time step there will be additional XML file created - the PVD file. Open it in Paraview to read data from all time steps (all VTU files) at ones.
 
-    pip3 install numpy
-
-The main script is [ccx2paraview.py](ccx2paraview.py). It is recommended to convert .frd to modern XML .vtu format:
-
-    python3 ccx2paraview.py jobname.frd vtu
-
-If you have more than one time step there will be additional XML file created - the PVD file. Open it in Paraview to read data from all time steps (all VTU files) at ones.
-
-To convert .frd to legacy ASCII .vtk format, use command:
-
-    python3 ccx2paraview.py jobname.frd vtk
+Running this converter from source is not recommended, because sources are under development and may contain bugs.
 
 Unfortunately, VTK format doesn't support names for field components. So, for stress and strain tensors components will be numbered as:
 
@@ -104,6 +94,18 @@ Please, you may:
 
 
 # For developers
+
+To run this converter from source you'll need [Python 3](https://www.python.org/downloads/) with *numpy*:
+
+    pip3 install numpy
+
+The main script is [ccx2paraview.py](ccx2paraview.py):
+
+    python3 ccx2paraview.py jobname.frd vtu
+
+To convert .frd to legacy ASCII .vtk format, use command:
+
+    python3 ccx2paraview.py jobname.frd vtk
 
 Create binary with [pyinstaller](https://www.pyinstaller.org/) (both in Linux and in Windows):
 

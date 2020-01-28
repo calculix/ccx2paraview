@@ -1,539 +1,361 @@
-1 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/agard01msvis.frd
-2 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/agard02ms.frd
-3 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/agard04ms.frd
-4 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/agard05msvis.frd
-5 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/backstep.frd
-6 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/bump_0.672.frd
-7 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/bumpsubfine.frd
-8 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/bumpsuperfineshallow.frd
-9 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/carter10viscfine.frd
-10 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/couettefine.frd
-11 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/cylair.frd
-12 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/cylfine.frd
-13 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/lid400.frd
-14 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/lid400_w.frd
-15 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/naca012_visc_mach0.85.frd
-16 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/rae2822_ud.frd
-17 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/stepsuperfine.frd
-18 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.fluidtest/stepsuperwedge.frd
-19 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.structest/contact2e.frd
-20 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.structest/contact2i.frd
-21 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/achtel2.frd
-22 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/achtel29.frd
-23 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/achtel9.frd
-24 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/achtelc.frd
-25 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/achtelcas.frd
-26 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/achteld.frd
-27 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/achtelg.frd
-28 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/achtelp.frd
-29 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/acou1.frd
-30 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/acou2.frd
-31 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/acou3.frd
-32 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/acou4.frd
-33 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/aircolumn.frd
-34 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/anipla.frd
-35 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/aniso.frd
-36 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/artery1.frd
-37 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/artery2.frd
-38 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/artery3.frd
-39 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/artery4.frd
-40 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/artery5.frd
-41 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ax6.frd
-42 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ax6ht.frd
-43 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/axial.frd
-44 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/axiplane.frd
-45 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/axrad.frd
-46 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/axrad2.frd
-47 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/b31.frd
-48 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/b31nodthi.frd
-49 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ball.frd
-50 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam10p.frd
-51 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam20p.frd
-52 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam20t.frd
-53 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam8b.frd
-54 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam8f.frd
-55 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam8p.frd
-56 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam8t.frd
-57 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam_sens_freq_coord1.frd
-58 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam_sens_freq_coord2.frd
-59 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam_sens_freq_coord3.frd
-60 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam_sens_stress_coord1.frd
-61 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beam_sens_stress_coord2.frd
-62 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamabq.frd
-63 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamb.frd
-64 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamcom.frd
-65 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamcontact.frd
-66 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamcr.frd
-67 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamcr2.frd
-68 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamd.frd
-69 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamd2.frd
-70 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdelay.frd
-71 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy1.frd
-72 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy10.frd
-73 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy10bm.frd
-74 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy11.frd
-75 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy12.frd
-76 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy13.frd
-77 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy14.frd
-78 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy15.frd
-79 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy16.frd
-80 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy17.frd
-81 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy18.frd
-82 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy19.frd
-83 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy2.frd
-84 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy20.frd
-85 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy3.frd
-86 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy4.frd
-87 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy5.frd
-88 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy6.frd
-89 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy7.frd
-90 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy7bm.frd
-91 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy8.frd
-92 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdy9.frd
-93 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamdynamic.frd
-94 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamexpdy1.frd
-95 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamf.frd
-96 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamf2.frd
-97 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamf3.frd
-98 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamf3submodel.frd
-99 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamfrdread.frd
-100 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamfrdwrite.frd
-101 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamfsh1.frd
-102 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamfstrucdamp.frd
-103 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamfsubmodel.frd
-104 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamft.frd
-105 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamheatplas.frd
-106 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamhf.frd
-107 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamhtbf.frd
-108 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamhtbo.frd
-109 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamhtcr.frd
-110 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamhtcr2.frd
-111 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamhtfc.frd
-112 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamhtfc2.frd
-113 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamhtfcaero.frd
-114 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamhtfcaerothne.frd
-115 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamhtfcnu.frd
-116 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamidset.frd
-117 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamimpdy1.frd
-118 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamimpdy1nodirect.frd
-119 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamimpdy2.frd
-120 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamlin.frd
-121 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beammix.frd
-122 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beammpc.frd
-123 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beammr.frd
-124 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beammrco.frd
-125 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beammrlin.frd
-126 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnh.frd
-127 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnld.frd
-128 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnldy.frd
-129 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnldye.frd
-130 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnldye20.frd
-131 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnldyems.frd
-132 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnldynodirect.frd
-133 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnldyp.frd
-134 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnldype.frd
-135 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnlmpc.frd
-136 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnlp.frd
-137 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnlptp.frd
-138 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnlt.frd
-139 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamnoan.frd
-140 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamog.frd
-141 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamp.frd
-142 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamp1rotate.frd
-143 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamp2.frd
-144 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamp2rotate.frd
-145 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamp2stage.frd
-146 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamp_ciarlet.frd
-147 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampd.frd
-148 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampdepmpc.frd
-149 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamperror.frd
-150 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampfix.frd
-151 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampic.frd
-152 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampik.frd
-153 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampis.frd
-154 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampiso.frd
-155 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampiso2.frd
-156 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampisof.frd
-157 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampkin.frd
-158 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampl.frd
-159 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamplane.frd
-160 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampo1.frd
-161 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampo2.frd
-162 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampo3.frd
-163 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamprand.frd
-164 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamprb.frd
-165 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampset.frd
-166 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beampt.frd
-167 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamptied1.frd
-168 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamptied1noadjust.frd
-169 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamptied2.frd
-170 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamptied3.frd
-171 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamptied4.frd
-172 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamptied5.frd
-173 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamptied6.frd
-174 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamptied7.frd
-175 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamptrans.frd
-176 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamrb.frd
-177 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamrb2.frd
-178 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamstraight.frd
-179 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamt.frd
-180 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamt2.frd
-181 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamt3.frd
-182 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamt4.frd
-183 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamt6.frd
-184 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamth.frd
-185 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamtor.frd
-186 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamu.frd
-187 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamuamp.frd
-188 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamwrite.frd
-189 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamwrite2.frd
-190 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/beamwrite3.frd
-191 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/bifur.frd
-192 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/bolt.frd
-193 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/boxprofile.frd
-194 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/boxprofile2.frd
-195 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/branch1.frd
-196 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/branch2.frd
-197 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/branchjoint1.frd
-198 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/branchjoint2.frd
-199 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/branchjoint3.frd
-200 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/branchjoint4.frd
-201 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/branchsplit1.frd
-202 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/branchsplit2.frd
-203 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/branchsplit3.frd
-204 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/c3d15.frd
-205 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/c3d6.frd
-206 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/capacitor.frd
-207 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/carbonseal.frd
-208 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/centheat1.frd
-209 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/changefric.frd
-210 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/changesolidsection.frd
-211 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/changesurfbeh.frd
-212 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/channel1.frd
-213 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/channel10.frd
-214 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/channel11.frd
-215 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/channel12.frd
-216 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/channel2.frd
-217 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/channel3.frd
-218 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/channel4.frd
-219 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/channel5.frd
-220 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/channel6.frd
-221 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/channel7.frd
-222 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/channel9.frd
-223 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/chanson1.frd
-224 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/characteristic.frd
-225 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/circ10p.frd
-226 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/circ10pfin.frd
-227 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/concretebeam.frd
-228 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact1.frd
-229 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact10.frd
-230 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact11.frd
-231 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact12.frd
-232 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact2.frd
-233 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact3.frd
-234 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact4.frd
-235 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact5.frd
-236 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact6.frd
-237 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact7.frd
-238 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact8.frd
-239 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contact9.frd
-240 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contactenergy.frd
-241 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contdamp1.frd
-242 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/contdamp2.frd
-243 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/cou.frd
-244 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/cou2d.frd
-245 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/coucss.frd
-246 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/couctr.frd
-247 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/couette1.frd
-248 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/couette2.frd
-249 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/couettecyl.frd
-250 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/couettecyl4.frd
-251 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/couettecylcent.frd
-252 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/couettecylcomp.frd
-253 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/coupling1.frd
-254 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/coupling2.frd
-255 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/coupling3.frd
-256 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/coupling4.frd
-257 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/coupling5.frd
-258 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/coupling6.frd
-259 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/coupling7.frd
-260 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/cube2.frd
-261 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/cubef2f1.frd
-262 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/cubef2f2.frd
-263 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/cubef2f3.frd
-264 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/cubenewt.frd
-265 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/cubespring.frd
-266 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/cyl.frd
-267 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dam.frd
-268 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dashpot1.frd
-269 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dashpot2.frd
-270 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dashpot3.frd
-271 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dashpot5.frd
-272 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dashpot6.frd
-273 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/disk2.frd
-274 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dist.frd
-275 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/distcoup.frd
-276 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/distcoup2.frd
-277 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dloadlin20f.frd
-278 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dloadlinI.frd
-279 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dloadlinIf.frd
-280 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dyncube.frd
-281 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/dyncubeexp.frd
-282 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/edgeload.frd
-283 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/equrem1.frd
-284 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/equrem2.frd
-285 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/equrem3.frd
-286 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/equrem4.frd
-287 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/fluidwrite.frd
-288 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/fricloop.frd
-289 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/friction1.frd
-290 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/friction2.frd
-291 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/friction3.frd
-292 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/fullseg.frd
-293 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/furnace.frd
-294 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gap.frd
-295 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gap2.frd
-296 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe-cfd-pressure.frd
-297 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe-fanno10.frd
-298 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe-fanno8-oil.frd
-299 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe-fanno9.frd
-300 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe1-oil.frd
-301 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe1.frd
-302 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe11.frd
-303 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe12.frd
-304 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe13.frd
-305 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe14.frd
-306 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe15.frd
-307 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe2.frd
-308 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe3.frd
-309 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe4.frd
-310 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe5.frd
-311 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe6.frd
-312 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe7.frd
-313 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe8-cfd-massflow.frd
-314 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe8-cfd-pressure-split.frd
-315 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe8-cfd-pressure.frd
-316 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe8-oil.frd
-317 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe8.frd
-318 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspipe9.frd
-319 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/gaspres.frd
-320 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/green1.frd
-321 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/green2.frd
-322 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/green3.frd
-323 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/green4.frd
-324 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/greencyc1.frd
-325 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/greencyc2.frd
-326 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/hinge.frd
-327 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/hueeber1.frd
-328 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/hueeber2.frd
-329 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/hueeber3.frd
-330 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/hueeber4.frd
-331 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/impdyn.frd
-332 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/induction.frd
-333 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/induction2.frd
-334 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/induction3.frd
-335 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/inistrain.frd
-336 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/inistrain2.frd
-337 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/labyrinth1fin.frd
-338 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/labyrinthstepped.frd
-339 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/labyrinthstraight.frd
-340 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/largerot1.frd
-341 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/largerot2.frd
-342 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/largerot3.frd
-343 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/largerot4.frd
-344 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/largerot5.frd
-345 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/leifer1.frd
-346 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/leifer2.frd
-347 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/linearnet.frd
-348 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/load1.frd
-349 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/mass1.frd
-350 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/mass2.frd
-351 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/mass3.frd
-352 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/massflow_percent_ccx.frd
-353 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/membrane1.frd
-354 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/membrane2.frd
-355 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/membrane3.frd
-356 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/metalforming.frd
-357 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/modelchel.frd
-358 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/modelchel2.frd
-359 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/modelchel3.frd
-360 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/moehring.frd
-361 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/mpcforce.frd
-362 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/multistage.frd
-363 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/networkmpc.frd
-364 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/networkmpc2.frd
-365 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/oneel.frd
-366 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/oneel20cf.frd
-367 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/oneel20df.frd
-368 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/oneel20fi.frd
-369 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/oneel20rs.frd
-370 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/oneel8ra.frd
-371 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/oneeltruss.frd
-372 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/opt1.frd
-373 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pendel.frd
-374 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pipe.frd
-375 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pipe2.frd
-376 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pipempc1.frd
-377 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pipempc2.frd
-378 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pipempc3.frd
-379 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/piperestrictor.frd
-380 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/planestrain.frd
-381 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/planestrain2.frd
-382 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/planestress.frd
-383 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/planestress2.frd
-384 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/planestress3.frd
-385 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/planestress3dsens.frd
-386 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/planestress4.frd
-387 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/planestressquadsens.frd
-388 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/planestresssens.frd
-389 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/plate.frd
-390 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/poi2d.frd
-391 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/poi2d2.frd
-392 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/potied.frd
-393 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pret1.frd
-394 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pret2.frd
-395 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pret3.frd
-396 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pret4.frd
-397 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pret5.frd
-398 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pret6.frd
-399 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/pret7.frd
-400 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/primaryair.frd
-401 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/punch1.frd
-402 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/punch2.frd
-403 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/resstress1.frd
-404 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/resstress2.frd
-405 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/resstress3.frd
-406 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/restrictor-oil.frd
-407 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/restrictor.frd
-408 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ring1.frd
-409 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ring2.frd
-410 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ring3.frd
-411 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ring4.frd
-412 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ringfcontact1.frd
-413 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ringfcontact2.frd
-414 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ringfcontact3.frd
-415 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ringfcontact4.frd
-416 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/ringfcontact5.frd
-417 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rot1.frd
-418 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rot2.frd
-419 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rot3.frd
-420 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rot4.frd
-421 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotor.frd
-422 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotor2.frd
-423 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotor3.frd
-424 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotpipe1.frd
-425 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotpipe2.frd
-426 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotpipe3.frd
-427 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotpipe3inv.frd
-428 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotpipe4.frd
-429 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotpipe5.frd
-430 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotpipe6.frd
-431 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotpipe7.frd
-432 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/rotpipeu.frd
-433 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sc123.frd
-434 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sc123creep.frd
-435 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/scheibe.frd
-436 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/scheibe2f2f.frd
-437 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/scheibe2n2f.frd
-438 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/section.frd
-439 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/section4.frd
-440 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/segdyn.frd
-441 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/segment.frd
-442 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/segment1.frd
-443 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/segment2.frd
-444 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/segmentbeam.frd
-445 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/segmentbeam2.frd
-446 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/segmentf.frd
-447 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/segmentface.frd
-448 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/segmentm.frd
-449 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/segmenttet.frd
-450 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/segststate.frd
-451 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sens2d.frd
-452 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sens3d.frd
-453 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sens_disp_orien.frd
-454 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sens_disp_orien_nlgeom.frd
-455 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sens_freq_disp_cyc.frd
-456 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sens_freq_orien.frd
-457 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sensitivity_I.frd
-458 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sensitivity_V.frd
-459 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sensitivity_VI.frd
-460 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/sensitivity_VII.frd
-461 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shell1.frd
-462 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shell1lin.frd
-463 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shell2.frd
-464 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shell3.frd
-465 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shell4.frd
-466 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shell5.frd
-467 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shell6.frd
-468 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shell6rot2.frd
-469 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shell7.frd
-470 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shell7rot.frd
-471 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shell7rot2.frd
-472 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shellbeam.frd
-473 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shellf.frd
-474 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shellf2.frd
-475 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shellnor.frd
-476 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shellquadsens.frd
-477 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/shellsens.frd
-478 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/simplebeam.frd
-479 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/simplebeampipe1.frd
-480 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/simplebeampipe2.frd
-481 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/simplebeampipe3.frd
-482 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/simplebeampipe4.frd
-483 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/simplebeampipe5.frd
-484 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/slant.frd
-485 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/small_pressure_gradient.frd
-486 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/solidshell1.frd
-487 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/solidshell2.frd
-488 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/spring1.frd
-489 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/spring2.frd
-490 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/spring3.frd
-491 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/spring4.frd
-492 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/spring5.frd
-493 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/spring6.frd
-494 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/spring7.frd
-495 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/square.frd
-496 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/submodelbeamp.frd
-497 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/submodelbeampdouble.frd
-498 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/submodeltwobeam.frd
-499 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/submodeltwobeamnlgeom.frd
-500 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/substructure.frd
-501 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/swing.frd
-502 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/tempdiscon.frd
-503 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/thermomech.frd
-504 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/thermomech2.frd
-505 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/thread.frd
-506 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/transition.frd
-507 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/truss.frd
-508 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/truss2.frd
-509 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/twobeam.frd
-510 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/unet1.frd
-511 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/unetp1.frd
-512 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/uprofile.frd
-513 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/userbeam.frd
-514 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/vortex1.frd
-515 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/vortex2.frd
-516 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/vortex3.frd
-517 /media/ihor/WORK/Calculix/ccx2paraview/tests/ccx_2.16.test/wire.frd
-518 /media/ihor/WORK/Calculix/ccx2paraview/tests/elements/C3D15.frd
-519 /media/ihor/WORK/Calculix/ccx2paraview/tests/elements/C3D20.frd
-520 /media/ihor/WORK/Calculix/ccx2paraview/tests/elements/CPE3.frd
-521 /media/ihor/WORK/Calculix/ccx2paraview/tests/elements/CPE4.frd
-522 /media/ihor/WORK/Calculix/ccx2paraview/tests/elements/CPS3.frd
-523 /media/ihor/WORK/Calculix/ccx2paraview/tests/elements/CPS4.frd
-524 /media/ihor/WORK/Calculix/ccx2paraview/tests/elements/S3.frd
-525 /media/ihor/WORK/Calculix/ccx2paraview/tests/elements/S4.frd
-526 /media/ihor/WORK/Calculix/ccx2paraview/tests/elements/S6.frd
-527 /media/ihor/WORK/Calculix/ccx2paraview/tests/elements/S8.frd
-528 /media/ihor/WORK/Calculix/ccx2paraview/tests/other/Jan_Lukas_explicit_dynamic.frd
-529 /media/ihor/WORK/Calculix/ccx2paraview/tests/other/Jan_Lukas_modal_dynamic_beammodal.frd
-530 /media/ihor/WORK/Calculix/ccx2paraview/tests/other/Jan_Lukas_modal_dynamic_beammodal2.frd
-531 /media/ihor/WORK/Calculix/ccx2paraview/tests/other/Jan_Lukas_modal_dynamic_staticbe.frd
-532 /media/ihor/WORK/Calculix/ccx2paraview/tests/other/Jan_Lukas_modal_dynamic_staticbeam2.frd
-533 /media/ihor/WORK/Calculix/ccx2paraview/tests/other/Jan_Lukas_static_structural.frd
-534 /media/ihor/WORK/Calculix/ccx2paraview/tests/other/John_Mannisto_blade_sector_demo.frd
-535 /media/ihor/WORK/Calculix/ccx2paraview/tests/other/Mirzov_baffle_2D.frd
-536 /media/ihor/WORK/Calculix/ccx2paraview/tests/other/ball.frd
-537 /media/ihor/WORK/Calculix/ccx2paraview/tests/other/ccx_ultimate.frd
-538 /media/ihor/WORK/Calculix/ccx2paraview/tests/other/piston.frd
-Total 930.6 seconds
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/agard01msvis.frd
+INFO: 7506 nodes
+INFO: 7351 cells
+WARNING: -1.90650+130 -> -1.9065e+130
+WARNING: NaN and Inf are not supported in Paraview.
+INFO: Step 1, time 0.3, V3DF, 3 components, 7506 values
+WARNING: 6.86634+128 -> 6.8663e+128
+INFO: Step 1, time 0.3, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 0.3, TS3DF, 1 components, 7506 values
+WARNING: 1.70368+130 -> 1.7036e+130
+WARNING: NaN and Inf are not supported in Paraview.
+INFO: Step 1, time 0.3, M3DF, 1 components, 7506 values
+WARNING: 2.26761+260 -> 2.2676e+260
+WARNING: NaN and Inf are not supported in Paraview.
+INFO: Step 1, time 0.3, TT3DF, 1 components, 7506 values
+WARNING: 1.37327+129 -> 1.3732e+129
+INFO: Step 1, time 0.3, CP3DF, 1 components, 7506 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/agard01msvis.vtk
+INFO: Step 1, time 0.28947, V3DF, 3 components, 7506 values
+WARNING: 48 NaN values are converted to 0.0
+INFO: Step 1, time 0.28947, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 0.28947, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 0.28947, M3DF, 1 components, 7506 values
+WARNING: 938 Inf values are converted to 0.0
+WARNING: 3688 NaN values are converted to 0.0
+INFO: Step 1, time 0.28947, TT3DF, 1 components, 7506 values
+WARNING: 938 Inf values are converted to 0.0
+WARNING: 3688 NaN values are converted to 0.0
+INFO: Step 1, time 0.28947, CP3DF, 1 components, 7506 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/agard01msvis.frd
+INFO: 7506 nodes
+INFO: 7351 cells
+WARNING: -1.90650+130 -> -1.9065e+130
+WARNING: NaN and Inf are not supported in Paraview.
+INFO: Step 1, time 0.3, V3DF, 3 components, 7506 values
+WARNING: 6.86634+128 -> 6.8663e+128
+INFO: Step 1, time 0.3, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 0.3, TS3DF, 1 components, 7506 values
+WARNING: 1.70368+130 -> 1.7036e+130
+WARNING: NaN and Inf are not supported in Paraview.
+INFO: Step 1, time 0.3, M3DF, 1 components, 7506 values
+WARNING: 2.26761+260 -> 2.2676e+260
+WARNING: NaN and Inf are not supported in Paraview.
+INFO: Step 1, time 0.3, TT3DF, 1 components, 7506 values
+WARNING: 1.37327+129 -> 1.3732e+129
+INFO: Step 1, time 0.3, CP3DF, 1 components, 7506 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/agard01msvis.vtu
+INFO: Step 1, time 0.28947, V3DF, 3 components, 7506 values
+WARNING: 48 NaN values are converted to 0.0
+INFO: Step 1, time 0.28947, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 0.28947, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 0.28947, M3DF, 1 components, 7506 values
+WARNING: 938 Inf values are converted to 0.0
+WARNING: 3688 NaN values are converted to 0.0
+INFO: Step 1, time 0.28947, TT3DF, 1 components, 7506 values
+WARNING: 938 Inf values are converted to 0.0
+WARNING: 3688 NaN values are converted to 0.0
+INFO: Step 1, time 0.28947, CP3DF, 1 components, 7506 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/agard02ms.frd
+INFO: 7506 nodes
+INFO: 7351 cells
+INFO: Step 1, time 8.5, V3DF, 3 components, 7506 values
+INFO: Step 1, time 8.5, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 8.5, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 8.5, M3DF, 1 components, 7506 values
+INFO: Step 1, time 8.5, TT3DF, 1 components, 7506 values
+INFO: Step 1, time 8.5, CP3DF, 1 components, 7506 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/agard02ms.vtk
+INFO: Step 1, time 8.4529, V3DF, 3 components, 7506 values
+INFO: Step 1, time 8.4529, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 8.4529, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 8.4529, M3DF, 1 components, 7506 values
+INFO: Step 1, time 8.4529, TT3DF, 1 components, 7506 values
+INFO: Step 1, time 8.4529, CP3DF, 1 components, 7506 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/agard02ms.frd
+INFO: 7506 nodes
+INFO: 7351 cells
+INFO: Step 1, time 8.5, V3DF, 3 components, 7506 values
+INFO: Step 1, time 8.5, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 8.5, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 8.5, M3DF, 1 components, 7506 values
+INFO: Step 1, time 8.5, TT3DF, 1 components, 7506 values
+INFO: Step 1, time 8.5, CP3DF, 1 components, 7506 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/agard02ms.vtu
+INFO: Step 1, time 8.4529, V3DF, 3 components, 7506 values
+INFO: Step 1, time 8.4529, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 8.4529, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 8.4529, M3DF, 1 components, 7506 values
+INFO: Step 1, time 8.4529, TT3DF, 1 components, 7506 values
+INFO: Step 1, time 8.4529, CP3DF, 1 components, 7506 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/agard04ms.frd
+INFO: 7506 nodes
+INFO: 7351 cells
+INFO: Step 1, time 5.8, V3DF, 3 components, 7506 values
+INFO: Step 1, time 5.8, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8, M3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8, TT3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8, CP3DF, 1 components, 7506 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/agard04ms.vtk
+INFO: Step 1, time 5.8179, V3DF, 3 components, 7506 values
+INFO: Step 1, time 5.8179, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8179, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8179, M3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8179, TT3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8179, CP3DF, 1 components, 7506 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/agard04ms.frd
+INFO: 7506 nodes
+INFO: 7351 cells
+INFO: Step 1, time 5.8, V3DF, 3 components, 7506 values
+INFO: Step 1, time 5.8, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8, M3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8, TT3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8, CP3DF, 1 components, 7506 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/agard04ms.vtu
+INFO: Step 1, time 5.8179, V3DF, 3 components, 7506 values
+INFO: Step 1, time 5.8179, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8179, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8179, M3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8179, TT3DF, 1 components, 7506 values
+INFO: Step 1, time 5.8179, CP3DF, 1 components, 7506 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/agard05msvis.frd
+INFO: 7506 nodes
+INFO: 7351 cells
+WARNING: NaN and Inf are not supported in Paraview.
+WARNING: 1.50868+122 -> 1.5086e+122
+INFO: Step 1, time 2.4, V3DF, 3 components, 7506 values
+WARNING: 7.31981+114 -> 7.3198e+114
+INFO: Step 1, time 2.4, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 2.4, TS3DF, 1 components, 7506 values
+WARNING: NaN and Inf are not supported in Paraview.
+WARNING: 1.42755+143 -> 1.4275e+143
+INFO: Step 1, time 2.4, M3DF, 1 components, 7506 values
+WARNING: NaN and Inf are not supported in Paraview.
+WARNING: 3.45327+176 -> 3.4532e+176
+INFO: Step 1, time 2.4, TT3DF, 1 components, 7506 values
+WARNING: 1.46396+115 -> 1.4639e+115
+INFO: Step 1, time 2.4, CP3DF, 1 components, 7506 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/agard05msvis.vtk
+INFO: Step 1, time 2.3728, V3DF, 3 components, 7506 values
+WARNING: 240 NaN values are converted to 0.0
+INFO: Step 1, time 2.3728, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 2.3728, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 2.3728, M3DF, 1 components, 7506 values
+WARNING: 778 Inf values are converted to 0.0
+WARNING: 4722 NaN values are converted to 0.0
+INFO: Step 1, time 2.3728, TT3DF, 1 components, 7506 values
+WARNING: 782 Inf values are converted to 0.0
+WARNING: 4722 NaN values are converted to 0.0
+INFO: Step 1, time 2.3728, CP3DF, 1 components, 7506 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/agard05msvis.frd
+INFO: 7506 nodes
+INFO: 7351 cells
+WARNING: NaN and Inf are not supported in Paraview.
+WARNING: 1.50868+122 -> 1.5086e+122
+INFO: Step 1, time 2.4, V3DF, 3 components, 7506 values
+WARNING: 7.31981+114 -> 7.3198e+114
+INFO: Step 1, time 2.4, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 2.4, TS3DF, 1 components, 7506 values
+WARNING: NaN and Inf are not supported in Paraview.
+WARNING: 1.42755+143 -> 1.4275e+143
+INFO: Step 1, time 2.4, M3DF, 1 components, 7506 values
+WARNING: NaN and Inf are not supported in Paraview.
+WARNING: 3.45327+176 -> 3.4532e+176
+INFO: Step 1, time 2.4, TT3DF, 1 components, 7506 values
+WARNING: 1.46396+115 -> 1.4639e+115
+INFO: Step 1, time 2.4, CP3DF, 1 components, 7506 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/agard05msvis.vtu
+INFO: Step 1, time 2.3728, V3DF, 3 components, 7506 values
+WARNING: 240 NaN values are converted to 0.0
+INFO: Step 1, time 2.3728, PS3DF, 1 components, 7506 values
+INFO: Step 1, time 2.3728, TS3DF, 1 components, 7506 values
+INFO: Step 1, time 2.3728, M3DF, 1 components, 7506 values
+WARNING: 778 Inf values are converted to 0.0
+WARNING: 4722 NaN values are converted to 0.0
+INFO: Step 1, time 2.3728, TT3DF, 1 components, 7506 values
+WARNING: 782 Inf values are converted to 0.0
+WARNING: 4722 NaN values are converted to 0.0
+INFO: Step 1, time 2.3728, CP3DF, 1 components, 7506 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/backstep.frd
+INFO: 7818 nodes
+INFO: 3740 cells
+INFO: Step 1, time 125.5, V3DF, 3 components, 7818 values
+INFO: Step 1, time 125.5, PS3DF, 1 components, 7818 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/backstep.vtk
+INFO: Step 1, time 125.46, V3DF, 3 components, 7818 values
+INFO: Step 1, time 125.46, PS3DF, 1 components, 7818 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/backstep.frd
+INFO: 7818 nodes
+INFO: 3740 cells
+INFO: Step 1, time 125.5, V3DF, 3 components, 7818 values
+INFO: Step 1, time 125.5, PS3DF, 1 components, 7818 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/backstep.vtu
+INFO: Step 1, time 125.46, V3DF, 3 components, 7818 values
+INFO: Step 1, time 125.46, PS3DF, 1 components, 7818 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/bump_0.672.frd
+INFO: 682 nodes
+INFO: 300 cells
+INFO: Step 1, time 1631.3, V3DF, 3 components, 682 values
+INFO: Step 1, time 1631.3, PS3DF, 1 components, 682 values
+INFO: Step 1, time 1631.3, TS3DF, 1 components, 682 values
+INFO: Step 1, time 1631.3, M3DF, 1 components, 682 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/bump_0.672.vtk
+INFO: Step 1, time 1631.3, V3DF, 3 components, 682 values
+INFO: Step 1, time 1631.3, PS3DF, 1 components, 682 values
+INFO: Step 1, time 1631.3, TS3DF, 1 components, 682 values
+INFO: Step 1, time 1631.3, M3DF, 1 components, 682 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/bump_0.672.frd
+INFO: 682 nodes
+INFO: 300 cells
+INFO: Step 1, time 1631.3, V3DF, 3 components, 682 values
+INFO: Step 1, time 1631.3, PS3DF, 1 components, 682 values
+INFO: Step 1, time 1631.3, TS3DF, 1 components, 682 values
+INFO: Step 1, time 1631.3, M3DF, 1 components, 682 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/bump_0.672.vtu
+INFO: Step 1, time 1631.3, V3DF, 3 components, 682 values
+INFO: Step 1, time 1631.3, PS3DF, 1 components, 682 values
+INFO: Step 1, time 1631.3, TS3DF, 1 components, 682 values
+INFO: Step 1, time 1631.3, M3DF, 1 components, 682 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/bumpsubfine.frd
+INFO: 9922 nodes
+INFO: 4800 cells
+INFO: Step 1, time 95.4, V3DF, 3 components, 9922 values
+INFO: Step 1, time 95.4, PS3DF, 1 components, 9922 values
+INFO: Step 1, time 95.4, TS3DF, 1 components, 9922 values
+INFO: Step 1, time 95.4, M3DF, 1 components, 9922 values
+INFO: Step 1, time 95.4, TT3DF, 1 components, 9922 values
+INFO: Step 1, time 95.4, PT3DF, 1 components, 9922 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/bumpsubfine.vtk
+INFO: Step 1, time 95.395, V3DF, 3 components, 9922 values
+INFO: Step 1, time 95.395, PS3DF, 1 components, 9922 values
+INFO: Step 1, time 95.395, TS3DF, 1 components, 9922 values
+INFO: Step 1, time 95.395, M3DF, 1 components, 9922 values
+INFO: Step 1, time 95.395, TT3DF, 1 components, 9922 values
+INFO: Step 1, time 95.395, PT3DF, 1 components, 9922 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/bumpsubfine.frd
+INFO: 9922 nodes
+INFO: 4800 cells
+INFO: Step 1, time 95.4, V3DF, 3 components, 9922 values
+INFO: Step 1, time 95.4, PS3DF, 1 components, 9922 values
+INFO: Step 1, time 95.4, TS3DF, 1 components, 9922 values
+INFO: Step 1, time 95.4, M3DF, 1 components, 9922 values
+INFO: Step 1, time 95.4, TT3DF, 1 components, 9922 values
+INFO: Step 1, time 95.4, PT3DF, 1 components, 9922 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/bumpsubfine.vtu
+INFO: Step 1, time 95.395, V3DF, 3 components, 9922 values
+INFO: Step 1, time 95.395, PS3DF, 1 components, 9922 values
+INFO: Step 1, time 95.395, TS3DF, 1 components, 9922 values
+INFO: Step 1, time 95.395, M3DF, 1 components, 9922 values
+INFO: Step 1, time 95.395, TT3DF, 1 components, 9922 values
+INFO: Step 1, time 95.395, PT3DF, 1 components, 9922 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/bumpsuperfineshallow.frd
+INFO: 9922 nodes
+INFO: 4800 cells
+INFO: Step 1, time 22.8, V3DF, 3 components, 9922 values
+INFO: Step 1, time 22.8, PS3DF, 1 components, 9922 values
+INFO: Step 1, time 22.8, TS3DF, 1 components, 9922 values
+INFO: Step 1, time 22.8, M3DF, 1 components, 9922 values
+INFO: Step 1, time 22.8, TT3DF, 1 components, 9922 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/bumpsuperfineshallow.vtk
+INFO: Step 1, time 22.813, V3DF, 3 components, 9922 values
+INFO: Step 1, time 22.813, PS3DF, 1 components, 9922 values
+INFO: Step 1, time 22.813, TS3DF, 1 components, 9922 values
+INFO: Step 1, time 22.813, M3DF, 1 components, 9922 values
+INFO: Step 1, time 22.813, TT3DF, 1 components, 9922 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/bumpsuperfineshallow.frd
+INFO: 9922 nodes
+INFO: 4800 cells
+INFO: Step 1, time 22.8, V3DF, 3 components, 9922 values
+INFO: Step 1, time 22.8, PS3DF, 1 components, 9922 values
+INFO: Step 1, time 22.8, TS3DF, 1 components, 9922 values
+INFO: Step 1, time 22.8, M3DF, 1 components, 9922 values
+INFO: Step 1, time 22.8, TT3DF, 1 components, 9922 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/bumpsuperfineshallow.vtu
+INFO: Step 1, time 22.813, V3DF, 3 components, 9922 values
+INFO: Step 1, time 22.813, PS3DF, 1 components, 9922 values
+INFO: Step 1, time 22.813, TS3DF, 1 components, 9922 values
+INFO: Step 1, time 22.813, M3DF, 1 components, 9922 values
+INFO: Step 1, time 22.813, TT3DF, 1 components, 9922 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/carter10viscfine.frd
+INFO: 39800 nodes
+INFO: 19602 cells
+INFO: Step 1, time 321.8, V3DF, 3 components, 39800 values
+INFO: Step 1, time 321.8, PS3DF, 1 components, 39800 values
+INFO: Step 1, time 321.8, TS3DF, 1 components, 39800 values
+INFO: Step 1, time 321.8, M3DF, 1 components, 39800 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/carter10viscfine.vtk
+INFO: Step 1, time 321.77, V3DF, 3 components, 39800 values
+INFO: Step 1, time 321.77, PS3DF, 1 components, 39800 values
+INFO: Step 1, time 321.77, TS3DF, 1 components, 39800 values
+INFO: Step 1, time 321.77, M3DF, 1 components, 39800 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/carter10viscfine.frd
+INFO: 39800 nodes
+INFO: 19602 cells
+INFO: Step 1, time 321.8, V3DF, 3 components, 39800 values
+INFO: Step 1, time 321.8, PS3DF, 1 components, 39800 values
+INFO: Step 1, time 321.8, TS3DF, 1 components, 39800 values
+INFO: Step 1, time 321.8, M3DF, 1 components, 39800 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/carter10viscfine.vtu
+INFO: Step 1, time 321.77, V3DF, 3 components, 39800 values
+INFO: Step 1, time 321.77, PS3DF, 1 components, 39800 values
+INFO: Step 1, time 321.77, TS3DF, 1 components, 39800 values
+INFO: Step 1, time 321.77, M3DF, 1 components, 39800 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/couettefine.frd
+INFO: 400 nodes
+INFO: 99 cells
+INFO: Step 1, time 993.8, V3DF, 3 components, 400 values
+INFO: Step 1, time 993.8, TS3DF, 1 components, 400 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/couettefine.vtk
+INFO: Step 1, time 993.79, V3DF, 3 components, 400 values
+INFO: Step 1, time 993.79, TS3DF, 1 components, 400 values
+
+==================================================
+INFO: Parsing ../tests/ccx_2.16.fluidtest/couettefine.frd
+INFO: 400 nodes
+INFO: 99 cells
+INFO: Step 1, time 993.8, V3DF, 3 components, 400 values
+INFO: Step 1, time 993.8, TS3DF, 1 components, 400 values
+INFO: Writing ../tests/ccx_2.16.fluidtest/couettefine.vtu
+INFO: Step 1, time 993.79, V3DF, 3 components, 400 values
+INFO: Step 1, time 993.79, TS3DF, 1 components, 400 values
+Total 38.5 seconds
