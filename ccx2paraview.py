@@ -12,8 +12,6 @@
         python3 ccx2paraview.py ./tests/*/beamf.frd vtu
 """
 
-# TODO https://github.com/pearu/pyvtk/blob/master/examples/example1.py
-
 import argparse
 import os
 import logging
@@ -23,7 +21,6 @@ import VTKWriter
 import VTUWriter
 import PVDWriter
 import clean
-
 
 if __name__ == '__main__':
     # Configure logging TODO

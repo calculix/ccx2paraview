@@ -1,18 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-    © Ihor Mirzov, January 2020
-    Distributed under GNU General Public License v3.0
+""" © Ihor Mirzov, January 2020
+Distributed under GNU General Public License v3.0
+Test ccx2paraview converter on all the CalculiX examples
+Ctrl + F5 to Run """
 
-    Test converter on all CalculiX examples.
-    Ctrl + F5 to Run.
-
-    TODO multiprocessing
-    TODO os.scandir
-    TODO cgx and mkraska examples
-"""
-
+# TODO multiprocessing
+# TODO cgx and mkraska examples
 
 import os
 import sys
@@ -24,7 +19,6 @@ import logging
 
 import clean
 import FRDParser
-
 
 log_file = os.path.join(os.path.dirname(__file__), 'tests.log')
 dir_test = os.path.join(os.path.dirname(__file__), 'tests')
@@ -51,15 +45,14 @@ def print(*args):
 
 
 # List all .ext-files here and in all subdirectories
-def list_all_files_in(start_folder, ext):
+def scan_all_files_in(start_folder, ext):
     all_files = []
-    for f in os.listdir(start_folder): # iterate in current directory
-        f = os.path.abspath(start_folder + '/' + f)
-        if os.path.isdir(f): # if folder
-            for ff in list_all_files_in(f, ext):
+    for f in os.scandir(start_folder):
+        if f.is_dir():
+            for ff in scan_all_files_in(f.path, ext):
                 all_files.append(ff)
-        elif f.endswith(ext): # if file with needed extension
-            all_files.append(f)
+        elif f.is_file() and f.name.endswith(ext):
+            all_files.append(f.path)
     return sorted(all_files)
 
 
@@ -148,8 +141,5 @@ if (__name__ == '__main__'):
     convert_calculation_results_in(dir_test)
     # test_frd_parser_on_models_in(dir_test)
     # check_binaries(dir_test)
-
-    # import math
-    # print('\t{: 15.8E}'.format(math.inf))
 
     clean.cache()
