@@ -6,9 +6,7 @@
 © Ihor Mirzov, Jan 2020 - bugfix, refactoring and improvement
 Distributed under GNU General Public License v3.0
 
-This module contains classes for parsing CalculiX .frd files.
-"""
-
+This module contains classes for parsing CalculiX .frd files """
 
 import os
 import re
@@ -243,7 +241,9 @@ class NodalResultsBlock:
             self.results[node_num] = [0]*self.ncomps
 
         # Some warnings repeat too much time - mark them
-        emitted_warning_types = []
+        before = ''
+        after = None
+        emitted_warning_types = {'NaNInf':0, 'WrongFormat':0}
 
         results_counter = 0 # independent results counter
         while True:
@@ -263,18 +263,14 @@ class NodalResultsBlock:
                 try:
                     # NaN/Inf values will be parsed 
                     num = float(m)
-                    # Warning type 1
-                    if ('NaN' in m or 'Inf' in m) \
-                        and not 1 in emitted_warning_types:
-                        logging.warning('NaN and Inf are not supported in Paraview.')
-                        emitted_warning_types.append(1)
+                    if ('NaN' in m or 'Inf' in m):
+                        emitted_warning_types['NaNInf'] += 1
                 except Exception as e:
                     # Too big number is written without 'E'
                     num = float(re.sub(r'(.+).([+-])(\d{3})', r'\1e\2\3', m))
-                    # Warning type 2
-                    if not 2 in emitted_warning_types:
-                        logging.warning(m.strip() + ' -> {}'.format(num))
-                        emitted_warning_types.append(2)
+                    emitted_warning_types['WrongFormat'] += 1
+                    before = m
+                    after = num
                 data.append(num)
 
             results_counter += 1
@@ -291,6 +287,12 @@ class NodalResultsBlock:
 
             logging.debug('Node {}: {}'.format(node, self.results[node]))
 
+        if emitted_warning_types['NaNInf']:
+            logging.warning('NaN and Inf are not supported in Paraview ({} warnings).'\
+                .format(emitted_warning_types['NaNInf']))
+        if emitted_warning_types['WrongFormat']:
+            logging.warning('Wrong format, {} -> {} ({} warnings).'\
+                .format(before.strip(), after, emitted_warning_types['WrongFormat']))
         return results_counter
 
 

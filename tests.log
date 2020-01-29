@@ -3,19 +3,19 @@
 INFO: Parsing ../tests/ccx_2.16.fluidtest/agard01msvis.frd
 INFO: 7506 nodes
 INFO: 7351 cells
-WARNING: -1.90650+130 -> -1.9065e+130
-WARNING: NaN and Inf are not supported in Paraview.
+WARNING: NaN and Inf are not supported in Paraview (48 warnings).
+WARNING: Wrong format, 1.64443+129 -> 1.6444e+129 (7138 warnings).
 INFO: Step 1, time 0.3, V3DF, 3 components, 7506 values
-WARNING: 6.86634+128 -> 6.8663e+128
+WARNING: Wrong format, 1.54498+125 -> 1.5449e+125 (3434 warnings).
 INFO: Step 1, time 0.3, PS3DF, 1 components, 7506 values
 INFO: Step 1, time 0.3, TS3DF, 1 components, 7506 values
-WARNING: 1.70368+130 -> 1.7036e+130
-WARNING: NaN and Inf are not supported in Paraview.
+WARNING: NaN and Inf are not supported in Paraview (4626 warnings).
+WARNING: Wrong format, 1.31600+129 -> 1.316e+129 (526 warnings).
 INFO: Step 1, time 0.3, M3DF, 1 components, 7506 values
-WARNING: 2.26761+260 -> 2.2676e+260
-WARNING: NaN and Inf are not supported in Paraview.
+WARNING: NaN and Inf are not supported in Paraview (4626 warnings).
+WARNING: Wrong format, 1.34869+196 -> 1.3486e+196 (724 warnings).
 INFO: Step 1, time 0.3, TT3DF, 1 components, 7506 values
-WARNING: 1.37327+129 -> 1.3732e+129
+WARNING: Wrong format, 3.08997+125 -> 3.0899e+125 (3434 warnings).
 INFO: Step 1, time 0.3, CP3DF, 1 components, 7506 values
 INFO: Writing ../tests/ccx_2.16.fluidtest/agard01msvis.vtk
 INFO: Step 1, time 0.28947, V3DF, 3 components, 7506 values
@@ -34,19 +34,19 @@ INFO: Step 1, time 0.28947, CP3DF, 1 components, 7506 values
 INFO: Parsing ../tests/ccx_2.16.fluidtest/agard01msvis.frd
 INFO: 7506 nodes
 INFO: 7351 cells
-WARNING: -1.90650+130 -> -1.9065e+130
-WARNING: NaN and Inf are not supported in Paraview.
+WARNING: NaN and Inf are not supported in Paraview (48 warnings).
+WARNING: Wrong format, 1.64443+129 -> 1.6444e+129 (7138 warnings).
 INFO: Step 1, time 0.3, V3DF, 3 components, 7506 values
-WARNING: 6.86634+128 -> 6.8663e+128
+WARNING: Wrong format, 1.54498+125 -> 1.5449e+125 (3434 warnings).
 INFO: Step 1, time 0.3, PS3DF, 1 components, 7506 values
 INFO: Step 1, time 0.3, TS3DF, 1 components, 7506 values
-WARNING: 1.70368+130 -> 1.7036e+130
-WARNING: NaN and Inf are not supported in Paraview.
+WARNING: NaN and Inf are not supported in Paraview (4626 warnings).
+WARNING: Wrong format, 1.31600+129 -> 1.316e+129 (526 warnings).
 INFO: Step 1, time 0.3, M3DF, 1 components, 7506 values
-WARNING: 2.26761+260 -> 2.2676e+260
-WARNING: NaN and Inf are not supported in Paraview.
+WARNING: NaN and Inf are not supported in Paraview (4626 warnings).
+WARNING: Wrong format, 1.34869+196 -> 1.3486e+196 (724 warnings).
 INFO: Step 1, time 0.3, TT3DF, 1 components, 7506 values
-WARNING: 1.37327+129 -> 1.3732e+129
+WARNING: Wrong format, 3.08997+125 -> 3.0899e+125 (3434 warnings).
 INFO: Step 1, time 0.3, CP3DF, 1 components, 7506 values
 INFO: Writing ../tests/ccx_2.16.fluidtest/agard01msvis.vtu
 INFO: Step 1, time 0.28947, V3DF, 3 components, 7506 values
@@ -137,19 +137,19 @@ INFO: Step 1, time 5.8179, CP3DF, 1 components, 7506 values
 INFO: Parsing ../tests/ccx_2.16.fluidtest/agard05msvis.frd
 INFO: 7506 nodes
 INFO: 7351 cells
-WARNING: NaN and Inf are not supported in Paraview.
-WARNING: 1.50868+122 -> 1.5086e+122
+WARNING: NaN and Inf are not supported in Paraview (240 warnings).
+WARNING: Wrong format, 1.38574+125 -> 1.3857e+125 (7676 warnings).
 INFO: Step 1, time 2.4, V3DF, 3 components, 7506 values
-WARNING: 7.31981+114 -> 7.3198e+114
+WARNING: Wrong format, -2.17165+146 -> -2.1716e+146 (5052 warnings).
 INFO: Step 1, time 2.4, PS3DF, 1 components, 7506 values
 INFO: Step 1, time 2.4, TS3DF, 1 components, 7506 values
-WARNING: NaN and Inf are not supported in Paraview.
-WARNING: 1.42755+143 -> 1.4275e+143
+WARNING: NaN and Inf are not supported in Paraview (5500 warnings).
+WARNING: Wrong format, 2.59461+125 -> 2.5946e+125 (716 warnings).
 INFO: Step 1, time 2.4, M3DF, 1 components, 7506 values
-WARNING: NaN and Inf are not supported in Paraview.
-WARNING: 3.45327+176 -> 3.4532e+176
+WARNING: NaN and Inf are not supported in Paraview (5504 warnings).
+WARNING: Wrong format, 1.25316+100 -> 1.2531e+100 (1166 warnings).
 INFO: Step 1, time 2.4, TT3DF, 1 components, 7506 values
-WARNING: 1.46396+115 -> 1.4639e+115
+WARNING: Wrong format, -4.34330+146 -> -4.3433e+146 (5058 warnings).
 INFO: Step 1, time 2.4, CP3DF, 1 components, 7506 values
 INFO: Writing ../tests/ccx_2.16.fluidtest/agard05msvis.vtk
 INFO: Step 1, time 2.3728, V3DF, 3 components, 7506 values
@@ -168,19 +168,19 @@ INFO: Step 1, time 2.3728, CP3DF, 1 components, 7506 values
 INFO: Parsing ../tests/ccx_2.16.fluidtest/agard05msvis.frd
 INFO: 7506 nodes
 INFO: 7351 cells
-WARNING: NaN and Inf are not supported in Paraview.
-WARNING: 1.50868+122 -> 1.5086e+122
+WARNING: NaN and Inf are not supported in Paraview (240 warnings).
+WARNING: Wrong format, 1.38574+125 -> 1.3857e+125 (7676 warnings).
 INFO: Step 1, time 2.4, V3DF, 3 components, 7506 values
-WARNING: 7.31981+114 -> 7.3198e+114
+WARNING: Wrong format, -2.17165+146 -> -2.1716e+146 (5052 warnings).
 INFO: Step 1, time 2.4, PS3DF, 1 components, 7506 values
 INFO: Step 1, time 2.4, TS3DF, 1 components, 7506 values
-WARNING: NaN and Inf are not supported in Paraview.
-WARNING: 1.42755+143 -> 1.4275e+143
+WARNING: NaN and Inf are not supported in Paraview (5500 warnings).
+WARNING: Wrong format, 2.59461+125 -> 2.5946e+125 (716 warnings).
 INFO: Step 1, time 2.4, M3DF, 1 components, 7506 values
-WARNING: NaN and Inf are not supported in Paraview.
-WARNING: 3.45327+176 -> 3.4532e+176
+WARNING: NaN and Inf are not supported in Paraview (5504 warnings).
+WARNING: Wrong format, 1.25316+100 -> 1.2531e+100 (1166 warnings).
 INFO: Step 1, time 2.4, TT3DF, 1 components, 7506 values
-WARNING: 1.46396+115 -> 1.4639e+115
+WARNING: Wrong format, -4.34330+146 -> -4.3433e+146 (5058 warnings).
 INFO: Step 1, time 2.4, CP3DF, 1 components, 7506 values
 INFO: Writing ../tests/ccx_2.16.fluidtest/agard05msvis.vtu
 INFO: Step 1, time 2.3728, V3DF, 3 components, 7506 values
@@ -358,4 +358,4 @@ INFO: Step 1, time 993.8, TS3DF, 1 components, 400 values
 INFO: Writing ../tests/ccx_2.16.fluidtest/couettefine.vtu
 INFO: Step 1, time 993.79, V3DF, 3 components, 400 values
 INFO: Step 1, time 993.79, TS3DF, 1 components, 400 values
-Total 38.5 seconds
+Total 28.9 seconds

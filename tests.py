@@ -39,9 +39,10 @@ class myHandler(logging.Handler):
 
 # Redefine print method to write logs to file
 def print(*args):
-    line = ' '.join([str(arg) for arg in args])
+    line = ' '.join([str(arg) for arg in args]) + '\n'
     with open(log_file, 'a') as f:
-        f.write(str(line) + '\n')
+        f.write(line)
+    sys.stdout.write(line)
 
 
 # List all .ext-files here and in all subdirectories
@@ -61,7 +62,7 @@ def run_all_analyses_in(folder):
     start = time.perf_counter() # start time
     counter = 1
     start_folder = os.curdir
-    for file_name in list_all_files_in(folder, '.inp'):
+    for file_name in scan_all_files_in(folder, '.inp'):
 
         # Skip already calculated models
         if not os.path.isfile(file_name[:-4] + '.frd'):
@@ -83,7 +84,7 @@ def run_all_analyses_in(folder):
 def test_frd_parser_on_models_in(folder):
     start = time.perf_counter() # start time
     counter = 1
-    for file_name in list_all_files_in(folder, '.frd'):
+    for file_name in scan_all_files_in(folder, '.frd'):
         relpath = os.path.relpath(file_name, start=__file__)
         sys.stdout.write('{} {}\n'.format(counter, relpath))
         FRDParser.Parse(file_name)
@@ -96,7 +97,7 @@ def test_frd_parser_on_models_in(folder):
 def convert_calculation_results_in(folder):
     start = time.perf_counter() # start time
     counter = 1
-    for file_name in list_all_files_in(folder, '.frd'):
+    for file_name in scan_all_files_in(folder, '.frd'):
         # TODO Compare log with ccx_cae tests
 
         # Skip already converted models
@@ -115,7 +116,7 @@ def convert_calculation_results_in(folder):
 # Check if created binaries work fine
 def check_binaries(folder):
     counter = 1
-    for file_name in list_all_files_in(folder, '.frd'):
+    for file_name in scan_all_files_in(folder, '.frd'):
         if os.name == 'nt':
             subprocess.run('ccx2paraview.exe ' + file_name + ' vtk', shell=True)
             subprocess.run('ccx2paraview.exe ' + file_name + ' vtu', shell=True)
