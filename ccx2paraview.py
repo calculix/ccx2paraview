@@ -31,6 +31,8 @@ class Converter:
     def run(self):
 
         # Parse FRD-file
+        relpath = os.path.relpath(self.file_name, start=__file__)
+        logging.info('Parsing ' + relpath)
         p = FRDParser.Parse(self.file_name)
 
         # If file isn't empty
@@ -46,7 +48,7 @@ class Converter:
 
             # For each time step generate separate .vt* file
             relpath = os.path.relpath(self.file_name, start=__file__)
-            print('Writing {}.{}'.format(relpath[:-4], self.fmt))
+            logging.info('Writing {}.{}'.format(relpath[:-4], self.fmt))
             for s in steps:
                 # Output file name will be the same as input
                 if len(steps) > 1: # include step number in file_name

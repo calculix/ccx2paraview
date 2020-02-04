@@ -407,8 +407,6 @@ class Parse:
         self.result_blocks = [] # all result blocks in order of appearance
         if file_name:
             self.file_name = file_name
-            relpath = os.path.relpath(file_name, start=__file__)
-            logging.info('Parsing ' + relpath)
             with open(file_name, 'rb') as in_file:
                 key = in_file.read(5).decode().strip()
                 while key:
