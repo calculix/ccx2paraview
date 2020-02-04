@@ -53,7 +53,7 @@ def results():
     for f in os.scandir('.'):
         if f.name.endswith(extensions):
             try:
-                os.remove(f.name)
+                os.remove(f.path)
                 sys.__stdout__.write('Delelted: ' + f.path + '\n')
             except:
                 sys.__stdout__.write(f.path + ': ' + sys.exc_info()[1][1] + '\n')
