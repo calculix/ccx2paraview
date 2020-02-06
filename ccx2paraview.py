@@ -2,14 +2,13 @@
 # -*- coding: utf-8 -*-
 
 """ © Ihor Mirzov, February 2020
-    Distributed under GNU General Public License v3.0
+Distributed under GNU General Public License v3.0
 
-    Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format.
+Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format:
+python3 ccx2paraview.py ./tests/other/Ihor_Mirzov_baffle_2D.frd vtk
+python3 ccx2paraview.py ./tests/other/Ihor_Mirzov_baffle_2D.frd vtu
 
-    Example:
-    python3 ccx2paraview.py ./tests/other/Ihor_Mirzov_baffle_2D.frd vtk
-    python3 ccx2paraview.py ./tests/other/Ihor_Mirzov_baffle_2D.frd vtu
-"""
+TODO XDMF format """
 
 import os
 import logging
@@ -39,7 +38,7 @@ class Converter:
         if p.node_block and p.elem_block:
 
             # Create list of time steps
-            steps = sorted(set([b.numstep for b in p.result_blocks])) # list of step numbers
+            steps = sorted(set([b.numstep for b in p.result_blocks]))
             width = len(str(len(steps))) # max length of string designating step number
             steps = ['{:0{width}}'.format(s, width=width) for s in steps] # pad with zero
             if not len(steps): steps = ['1'] # to run converter at least once
@@ -47,17 +46,22 @@ class Converter:
             names = []
 
             # For each time step generate separate .vt* file
-            relpath = os.path.relpath(self.file_name, start=__file__)
+            # Output file name will be the same as input
             logging.info('Writing {}.{}'.format(relpath[:-4], self.fmt))
             for s in steps:
-                # Output file name will be the same as input
-                if len(steps) > 1: # include step number in file_name
-                    file_name = p.file_name.replace('.frd', '.{}.{}'.format(s, self.fmt))
-                    names.append(os.path.basename(file_name))
-                else: # exclude step number from file_name
-                    file_name = p.file_name.replace('.frd', '.{}'.format(self.fmt))
 
-                # Call converters
+                # Include step number in file_name
+                if len(steps) > 1:
+                    ext = '.{}.{}'.format(s, self.fmt)
+                    file_name = p.file_name.replace('.frd', ext)
+                    names.append(os.path.basename(file_name))
+
+                # Exclude step number from file_name
+                else:
+                    ext = '.{}'.format(self.fmt)
+                    file_name = p.file_name.replace('.frd', ext)
+
+                # Call writers
                 if self.fmt == 'vtk':
                     VTKWriter.writeVTK(p, file_name, s)
                 if self.fmt == 'vtu':

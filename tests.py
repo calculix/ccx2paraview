@@ -7,7 +7,6 @@ Distributed under GNU General Public License v3.0
 Test ccx2paraview converter on all the CalculiX examples
 Ctrl + F5 to Run """
 
-# TODO Compare log with ccx_cae tests
 # TODO multiprocessing
 # TODO cgx and mkraska examples
 
@@ -26,7 +25,7 @@ from log import print
 
 
 # How many files to process
-limit = 500000000
+limit = 1000000
 
 
 # List all .ext-files here and in all subdirectories
@@ -95,7 +94,7 @@ if (__name__ == '__main__'):
     logging.getLogger().setLevel(logging.INFO)
 
     # Enable multithreading for CalculiX
-    os.environ['OMP_NUM_THREADS'] = str(multiprocessing.cpu_count())
+    os.environ['OMP_NUM_THREADS'] = str(os.cpu_count())
 
     tests_folder = os.path.join(os.path.dirname(__file__), 'tests')
     # run_all_analyses_in(tests_folder)
