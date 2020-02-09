@@ -138,7 +138,7 @@ class NodalResultsBlock:
         self.appendStresses() # append Mises and principal stresses
         self.appendStrains() # append principal strains
 
-        logging.info('Step {}, time {:.1f}, {}, {} components, {} values'\
+        logging.info('Step {}, time {:.2e}, {}, {} components, {} values'\
             .format(self.numstep, self.value, self.name,
                     len(self.components), results_counter))
 

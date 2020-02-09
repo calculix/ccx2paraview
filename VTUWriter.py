@@ -188,7 +188,7 @@ def writeVTU(p, file_name, step): # p is FRDParser object
                 continue
             if len(b.results) and len(b.components):
                 logging.info('Step {}, '.format(b.numstep) +\
-                            'time {}, '.format(b.value) +\
+                            'time {:.2e}, '.format(b.value) +\
                             '{}, '.format(b.name) +\
                             '{} components, '.format(len(b.components)) +\
                             '{} values'.format(len(b.results)))
