@@ -86,6 +86,22 @@ def convert_calculation_results_in(folder):
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
 
 
+# Convert calculation results with binaries
+def test_binary_in(folder):
+    print('CONVERTER TEST\n\n')
+    start = time.perf_counter() # start time
+    for file_name in scan_all_files_in(folder, '.frd'):
+        if os.name == 'nt':
+            command = 'bin\\ccx2paraview.exe'
+        else:
+            command = './bin/ccx2paraview'
+        for fmt in ['vtk', 'vtu']:
+            print('\n' + '='*50)
+            subprocess.run('{} {} {}'.format(command, file_name, fmt), shell=True)
+
+    print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
+
+
 if (__name__ == '__main__'):
     clean.screen()
 
@@ -99,6 +115,7 @@ if (__name__ == '__main__'):
     folder = os.path.join(os.path.dirname(__file__), 'examples')
     # run_all_analyses_in(folder)
     # test_frd_parser_on_models_in(folder)
-    convert_calculation_results_in(folder)
+    # convert_calculation_results_in(folder)
+    test_binary_in(folder)
 
     clean.cache()
