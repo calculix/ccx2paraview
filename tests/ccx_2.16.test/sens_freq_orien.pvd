@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
-	<Collection>
-		<DataSet timestep="2907.726044" file="sens_freq_orien.01.vtu"/>
-		<DataSet timestep="2917.383012" file="sens_freq_orien.02.vtu"/>
-		<DataSet timestep="5157.985274" file="sens_freq_orien.03.vtu"/>
-		<DataSet timestep="9553.968678" file="sens_freq_orien.04.vtu"/>
-	</Collection>
-</VTKFile>

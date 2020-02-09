@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
-	<Collection>
-		<DataSet timestep="0.5" file="beamp2.1.vtu"/>
-		<DataSet timestep="1.0" file="beamp2.2.vtu"/>
-		<DataSet timestep="1.5" file="beamp2.3.vtu"/>
-		<DataSet timestep="2.0" file="beamp2.4.vtu"/>
-	</Collection>
-</VTKFile>

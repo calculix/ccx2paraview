@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
-	<Collection>
-		<DataSet timestep="1e-10" file="impdyn.1.vtu"/>
-		<DataSet timestep="4.5001e-06" file="impdyn.2.vtu"/>
-	</Collection>
-</VTKFile>
