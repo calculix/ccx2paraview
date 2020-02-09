@@ -90,7 +90,7 @@ def write_data(f, b, numnod):
 
 
 # Main function
-def writeVTK(p, file_name, step): # p is FRDParser object
+def writeVTK(p, file_name, time): # p is FRDParser object
 
     with open(file_name, 'w') as f:
         # Header
@@ -138,7 +138,7 @@ def writeVTK(p, file_name, step): # p is FRDParser object
         # POINT DATA - from here start all the results
         f.write('POINT_DATA {}\n'.format(p.node_block.numnod))
         for b in p.result_blocks: # iterate over NodalResultsBlock
-            if b.numstep != int(step): # write results for one time step only
+            if b.value != time: # write results for one time step only
                 continue
             if len(b.results) and len(b.components):
                 logging.info('Step {}, '.format(b.numstep) +\
@@ -148,7 +148,7 @@ def writeVTK(p, file_name, step): # p is FRDParser object
                             '{} values'.format(len(b.results)))
                 write_data(f, b, p.node_block.numnod)
             else:
-                logging.warning(b.name, '- no data for this step')
+                logging.warning(b.name, '- no data for this increment')
 
 
 """

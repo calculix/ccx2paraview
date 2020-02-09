@@ -8,6 +8,9 @@ Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format:
 python3 ccx2paraview.py ./tests/other/Ihor_Mirzov_baffle_2D.frd vtk
 python3 ccx2paraview.py ./tests/other/Ihor_Mirzov_baffle_2D.frd vtu
 
+TODO It would be a killer feature if Paraview could visualize
+     gauss point results from the dat file...
+
 TODO XDMF format """
 
 import os
@@ -30,46 +33,41 @@ class Converter:
     def run(self):
 
         # Parse FRD-file
-        relpath = os.path.relpath(self.file_name, start=__file__)
+        relpath = os.path.relpath(self.file_name, start=os.path.dirname(__file__))
         logging.info('Parsing ' + relpath)
         p = FRDParser.Parse(self.file_name)
 
         # If file isn't empty
         if p.node_block and p.elem_block:
+            times_names = {} # {increment time: file name, ...}
+            times = sorted(set([b.value for b in p.result_blocks])) # list of increment times
+            width = len(str(len(times))) # max length of string designating step number
+            logging.info('{} time increments'.format(len(times)))
 
-            # Create list of time steps
-            steps = sorted(set([b.numstep for b in p.result_blocks]))
-            width = len(str(len(steps))) # max length of string designating step number
-            steps = ['{:0{width}}'.format(s, width=width) for s in steps] # pad with zero
-            if not len(steps): steps = ['1'] # to run converter at least once
-            times = sorted(set([b.value for b in p.result_blocks])) # list of step times
-            names = []
-
-            # For each time step generate separate .vt* file
-            # Output file name will be the same as input
-            logging.info('Writing {}.{}'.format(relpath[:-4], self.fmt))
-            for s in steps:
-
-                # Include step number in file_name
-                if len(steps) > 1:
-                    ext = '.{}.{}'.format(s, self.fmt)
+            counter = 1
+            for t in sorted(times):
+                if len(times) > 1:
+                    # Include step number in file_name, pad with zero
+                    ext = '.{:0{width}}.{}'.format(counter, self.fmt, width=width)
                     file_name = p.file_name.replace('.frd', ext)
-                    names.append(os.path.basename(file_name))
-
-                # Exclude step number from file_name
                 else:
                     ext = '.{}'.format(self.fmt)
                     file_name = p.file_name.replace('.frd', ext)
+                times_names[t] = file_name
+                counter += 1
 
-                # Call writers
+            # For each time increment generate separate .vt* file
+            # Output file name will be the same as input
+            for t, file_name in times_names.items():
+                logging.info('Writing {}'.format(file_name))
                 if self.fmt == 'vtk':
-                    VTKWriter.writeVTK(p, file_name, s)
+                    VTKWriter.writeVTK(p, file_name, t)
                 if self.fmt == 'vtu':
-                    VTUWriter.writeVTU(p, file_name, s)
+                    VTUWriter.writeVTU(p, file_name, t)
 
             # Write ParaView Data (PVD) for series of VTU files.
             if len(times) > 1 and self.fmt == 'vtu':
-                PVDWriter.writePVD(p.file_name.replace('.frd', '.pvd'), times, names)
+                PVDWriter.writePVD(p.file_name.replace('.frd', '.pvd'), times_names)
 
         else:
             logging.warning('File is empty!')

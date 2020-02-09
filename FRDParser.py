@@ -128,8 +128,8 @@ class NodalResultsBlock:
     def __init__(self, in_file, node_block):
         self.in_file = in_file
         self.node_block = node_block
-        self.components = []               # component names
-        self.results = {}                  # dictionary with nodal result {node:data}
+        self.components = [] # component names
+        self.results = {} # dictionary with nodal result {node:data}
 
         self.readStepInfo()
         self.readVarsInfo()

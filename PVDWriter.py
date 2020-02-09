@@ -10,16 +10,19 @@
 
 """
 
+import os
 
-def writePVD(file_name, times, names):
-    # times and names lists should be the same length
-
+# times and names lists should be the same length
+def writePVD(file_name, times_names):
     with open(file_name, 'w') as f:
         f.write('<?xml version="1.0"?>\n')
         f.write('<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">\n')
         f.write('\t<Collection>\n')
-        for i in range(len(times)):
-            f.write('\t\t<DataSet timestep="{}" file="{}"/>\n'\
-                .format(times[i], names[i]))
+
+        # Now Paraview doesn't support timestep formatting
+        for t, file_name in times_names.items():
+            f.write('\t\t<DataSet file="{}" timestep="{}"/>\n'\
+                .format(os.path.basename(file_name), t))
+
         f.write('\t</Collection>\n')
         f.write('</VTKFile>')
