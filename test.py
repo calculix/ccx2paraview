@@ -96,7 +96,7 @@ if (__name__ == '__main__'):
     # Enable multithreading for CalculiX
     os.environ['OMP_NUM_THREADS'] = str(os.cpu_count())
 
-    tests_folder = os.path.join(os.path.dirname(__file__), 'tests')
+    tests_folder = os.path.join(os.path.dirname(__file__), 'examples')
     # run_all_analyses_in(tests_folder)
     test_frd_parser_on_models_in(tests_folder)
     # convert_calculation_results_in(tests_folder)

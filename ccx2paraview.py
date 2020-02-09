@@ -41,7 +41,10 @@ class Converter:
         if p.node_block and p.elem_block:
             times = sorted(set([b.value for b in p.result_blocks]))
             l = len(times)
-            logging.info('{} time increment{}'.format(l, 's'*min(1, l-1)))
+            if l == 0:
+                logging.warning('No time increments!')
+            else:
+                logging.info('{} time increment{}'.format(l, 's'*min(1, l-1)))
 
             """ If model has many time steps - many output files
             will be created. Each output file's name should contain

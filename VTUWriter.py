@@ -187,8 +187,12 @@ def writeVTU(p, file_name, time): # p is FRDParser object
             if b.value != time: # write results for one time increment only
                 continue
             if len(b.results) and len(b.components):
+                if b.value < 1:
+                    time_str = 'time {:.2e}, '.format(b.value)
+                else:
+                    time_str = 'time {:.1f}, '.format(b.value)
                 logging.info('Step {}, '.format(b.numstep) +\
-                            'time {:.2e}, '.format(b.value) +\
+                            time_str +\
                             '{}, '.format(b.name) +\
                             '{} components, '.format(len(b.components)) +\
                             '{} values'.format(len(b.results)))

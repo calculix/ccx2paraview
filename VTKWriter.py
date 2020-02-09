@@ -138,11 +138,15 @@ def writeVTK(p, file_name, time): # p is FRDParser object
         # POINT DATA - from here start all the results
         f.write('POINT_DATA {}\n'.format(p.node_block.numnod))
         for b in p.result_blocks: # iterate over NodalResultsBlock
-            if b.value != time: # write results for one time step only
+            if b.value != time: # write results for one time increment only
                 continue
             if len(b.results) and len(b.components):
+                if b.value < 1:
+                    time_str = 'time {:.2e}, '.format(b.value)
+                else:
+                    time_str = 'time {:.1f}, '.format(b.value)
                 logging.info('Step {}, '.format(b.numstep) +\
-                            'time {:.2e}, '.format(b.value) +\
+                            time_str +\
                             '{}, '.format(b.name) +\
                             '{} components, '.format(len(b.components)) +\
                             '{} values'.format(len(b.results)))
