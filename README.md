@@ -27,7 +27,7 @@ The script generates separate file for each output interval - it makes possible 
 
 I'm testing the script and trying to reduce processing time as much as possible. As for me now it's quite optimized and fast. But Python itself is slower than C/C++. Here we can do nothing, so, for example, [Calmed converter](https://www.salome-platform.org/forum/forum_12/126338563) must be faster - another question is if it's able to convert any model. This script should.
 
-Converter is tested for all CalculiX examples. Folder [tests](./tests/) contains convertion results. Each test contains .inp-task + .frd-calculation + .vtk and .vtu convertion results.
+Converter is tested for all official CalculiX examples - folder [examples](./examples/) contains convertion results. Each test contains .inp-task + .frd-calculation + .vtk and .vtu convertion results.
 
 <br/><br/>
 
@@ -73,9 +73,9 @@ Unfortunately, VTK format doesn't support names for field components. So, for st
 
 # Screenshots
 
-![baffle](./tests/other/Ihor_Mirzov_baffle_2D.png "baffle")
+![baffle](./examples/other/Ihor_Mirzov_baffle_2D.png "baffle")
 
-![piston](./tests/other/Sergio_Pluchinsky_piston.png "piston")
+![piston](./examples/other/Sergio_Pluchinsky_piston.png "piston")
 
 <br/><br/>
 
