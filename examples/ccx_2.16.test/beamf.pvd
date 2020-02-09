@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
+	<Collection>
+		<DataSet file="beamf.01.vtu" timestep="13096.03106"/>
+		<DataSet file="beamf.02.vtu" timestep="19319.52008"/>
+		<DataSet file="beamf.03.vtu" timestep="76839.71062"/>
+		<DataSet file="beamf.04.vtu" timestep="86955.22991"/>
+		<DataSet file="beamf.05.vtu" timestep="105963.5851"/>
+		<DataSet file="beamf.06.vtu" timestep="162998.471"/>
+		<DataSet file="beamf.07.vtu" timestep="197644.9912"/>
+		<DataSet file="beamf.08.vtu" timestep="256160.9594"/>
+		<DataSet file="beamf.09.vtu" timestep="261139.5406"/>
+		<DataSet file="beamf.10.vtu" timestep="351862.3121"/>
+	</Collection>
+</VTKFile>

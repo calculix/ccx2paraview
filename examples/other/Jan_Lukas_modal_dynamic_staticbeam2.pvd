@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
+	<Collection>
+		<DataSet file="Jan_Lukas_modal_dynamic_staticbeam2.01.vtu" timestep="837.3825237"/>
+		<DataSet file="Jan_Lukas_modal_dynamic_staticbeam2.02.vtu" timestep="5026.947094"/>
+		<DataSet file="Jan_Lukas_modal_dynamic_staticbeam2.03.vtu" timestep="7452.8205"/>
+		<DataSet file="Jan_Lukas_modal_dynamic_staticbeam2.04.vtu" timestep="12989.89356"/>
+		<DataSet file="Jan_Lukas_modal_dynamic_staticbeam2.05.vtu" timestep="13260.23419"/>
+		<DataSet file="Jan_Lukas_modal_dynamic_staticbeam2.06.vtu" timestep="22364.52687"/>
+		<DataSet file="Jan_Lukas_modal_dynamic_staticbeam2.07.vtu" timestep="24163.27076"/>
+		<DataSet file="Jan_Lukas_modal_dynamic_staticbeam2.08.vtu" timestep="37022.88488"/>
+		<DataSet file="Jan_Lukas_modal_dynamic_staticbeam2.09.vtu" timestep="37302.02027"/>
+		<DataSet file="Jan_Lukas_modal_dynamic_staticbeam2.10.vtu" timestep="38917.39631"/>
+		<DataSet file="Jan_Lukas_modal_dynamic_staticbeam2.11.vtu" timestep="51346.77972"/>
+	</Collection>
+</VTKFile>

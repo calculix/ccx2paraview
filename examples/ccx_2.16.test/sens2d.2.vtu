@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<VTKFile type="UnstructuredGrid" version="0.1" byte_order="LittleEndian">
+	<UnstructuredGrid>
+		<Piece NumberOfPoints="4" NumberOfCells="1">
+			<Points>
+				<DataArray type="Float64" NumberOfComponents="3" format="ascii">
+					 1.00000000E+02	 0.00000000E+00	 0.00000000E+00
+					 0.00000000E+00	 0.00000000E+00	 0.00000000E+00
+					 0.00000000E+00	 1.00000000E+02	 0.00000000E+00
+					 1.00000000E+02	 1.00000000E+02	 0.00000000E+00
+				</DataArray>
+			</Points>
+			<Cells>
+				<DataArray type="Int32" Name="connectivity" format="ascii">
+					1 0 3 2 
+				</DataArray>
+				<DataArray type="Int32" Name="offsets" format="ascii">
+					4 
+				</DataArray>
+				<DataArray type="UInt8" Name="types" format="ascii">
+					9 
+				</DataArray>
+			</Cells>
+			<PointData>
+				<DataArray type="Float32" Name="U" NumberOfComponents="3" ComponentName0="D1" ComponentName1="D2" ComponentName2="D3" format="ascii">
+					 0.00000000E+00	-3.71429000E+00	 0.00000000E+00
+					 0.00000000E+00	 0.00000000E+00	 0.00000000E+00
+					 0.00000000E+00	 0.00000000E+00	 0.00000000E+00
+					 0.00000000E+00	-3.71429000E+00	 0.00000000E+00
+				</DataArray>
+				<DataArray type="Float32" Name="S" NumberOfComponents="10" ComponentName0="xx" ComponentName1="yy" ComponentName2="zz" ComponentName3="xy" ComponentName4="yz" ComponentName5="zx" ComponentName6="Mises" ComponentName7="Min Principal" ComponentName8="Mid Principal" ComponentName9="Max Principal" format="ascii">
+					 0.00000000E+00	 1.16072000E-13	 0.00000000E+00	-3.89984000E+03	-3.86131000E-14	 0.00000000E+00	 6.75472102E+03	-3.89984000E+03	-7.64632134E-31	 3.89984000E+03
+					 0.00000000E+00	-2.23493000E-15	 0.00000000E+00	-3.89984000E+03	-8.68162000E-14	 0.00000000E+00	 6.75472102E+03	-3.89984000E+03	 3.86531375E-30	 3.89984000E+03
+					 0.00000000E+00	-2.23493000E-15	 0.00000000E+00	-3.89984000E+03	 1.98000000E-13	 0.00000000E+00	 6.75472102E+03	-3.89984000E+03	 2.01054402E-29	 3.89984000E+03
+					 0.00000000E+00	 1.16072000E-13	 0.00000000E+00	-3.89984000E+03	-9.14962000E-13	 0.00000000E+00	 6.75472102E+03	-3.89984000E+03	-4.29328107E-28	 3.89984000E+03
+				</DataArray>
+				<DataArray type="Float32" Name="ERROR" NumberOfComponents="1" ComponentName0="STR" format="ascii">
+					 0.00000000E+00
+					 0.00000000E+00
+					 0.00000000E+00
+					 0.00000000E+00
+				</DataArray>
+			</PointData>
+		</Piece>
+	</UnstructuredGrid>
+</VTKFile>

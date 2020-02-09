@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
+	<Collection>
+		<DataSet file="sc123.01.vtu" timestep="0.72"/>
+		<DataSet file="sc123.02.vtu" timestep="1.44"/>
+		<DataSet file="sc123.03.vtu" timestep="2.52"/>
+		<DataSet file="sc123.04.vtu" timestep="4.14"/>
+		<DataSet file="sc123.05.vtu" timestep="6.57"/>
+		<DataSet file="sc123.06.vtu" timestep="10.215"/>
+		<DataSet file="sc123.07.vtu" timestep="15.6825"/>
+		<DataSet file="sc123.08.vtu" timestep="23.88375"/>
+		<DataSet file="sc123.09.vtu" timestep="36.185625"/>
+		<DataSet file="sc123.10.vtu" timestep="40.79882813"/>
+		<DataSet file="sc123.11.vtu" timestep="45.41203125"/>
+		<DataSet file="sc123.12.vtu" timestep="52.33183594"/>
+		<DataSet file="sc123.13.vtu" timestep="62.71154297"/>
+		<DataSet file="sc123.14.vtu" timestep="72.0"/>
+	</Collection>
+</VTKFile>

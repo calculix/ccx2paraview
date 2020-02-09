@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
+	<Collection>
+		<DataSet file="dyncube.1.vtu" timestep="1.0"/>
+		<DataSet file="dyncube.2.vtu" timestep="2.0"/>
+		<DataSet file="dyncube.3.vtu" timestep="3.0"/>
+	</Collection>
+</VTKFile>
