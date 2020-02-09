@@ -94,7 +94,8 @@ def write_data(f, b, numnod):
     emitted_warning_types = {'Inf':0, 'NaN':0}
 
     # Write data
-    f.write('\t\t\t\t<DataArray type="Float32" Name="{}" NumberOfComponents="{}" {}format="ascii">\n'.format(b.name, len(b.components), component_names))
+    f.write('\t\t\t\t<DataArray type="Float32" Name="{}" NumberOfComponents="{}" {}format="ascii">\n'\
+        .format(b.name, len(b.components), component_names))
     nodes = sorted(b.results.keys())
     for n in range(numnod): # iterate over nodes
         node = nodes[n]
@@ -147,7 +148,7 @@ def writeVTU(p, file_name, step): # p is FRDParser object
             if new_node_number == p.node_block.numnod:
                 break
 
-        f.write('\n\t\t\t\t</DataArray>\n')
+        f.write('\t\t\t\t</DataArray>\n')
         f.write('\t\t\t</Points>\n')
 
 
