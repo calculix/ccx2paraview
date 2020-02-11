@@ -8,8 +8,11 @@ Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format:
 python3 ccx2paraview.py ./tests/other/Ihor_Mirzov_baffle_2D.frd vtk
 python3 ccx2paraview.py ./tests/other/Ihor_Mirzov_baffle_2D.frd vtu
 
-TODO It would be a killer feature if Paraview could visualize
-     gauss point results from the dat file...
+TODO It would be a killer feature if Paraview could
+visualize gauss point results from the dat file...
+https://public.kitware.com/pipermail/paraview/2013-January/027121.html
+
+TODO Parse DAT files - there are lots of results
 
 TODO XDMF format """
 
