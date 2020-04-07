@@ -44,40 +44,45 @@ class Converter:
         if p.node_block and p.elem_block:
             times = sorted(set([b.value for b in p.result_blocks]))
             l = len(times)
-            if l == 0:
-                logging.warning('No time increments!')
-            else:
+            if l:
                 logging.info('{} time increment{}'.format(l, 's'*min(1, l-1)))
 
-            """ If model has many time steps - many output files
-            will be created. Each output file's name should contain
-            increment number padded with zero """
-            counter = 1
-            times_names = {} # {increment time: file name, ...}
-            for t in sorted(times):
-                if l > 1:
-                    ext = '.{:0{width}}.{}'.format(counter, self.fmt, width=len(str(l)))
-                    file_name = self.file_name.replace('.frd', ext)
-                else:
-                    ext = '.{}'.format(self.fmt)
-                    file_name = self.file_name.replace('.frd', ext)
-                times_names[t] = file_name
-                counter += 1
+                """ If model has many time steps - many output files
+                will be created. Each output file's name should contain
+                increment number padded with zero """
+                counter = 1
+                times_names = {} # {increment time: file name, ...}
+                for t in sorted(times):
+                    if l > 1:
+                        ext = '.{:0{width}}.{}'.format(counter, self.fmt, width=len(str(l)))
+                        file_name = self.file_name.replace('.frd', ext)
+                    else:
+                        ext = '.{}'.format(self.fmt)
+                        file_name = self.file_name.replace('.frd', ext)
+                    times_names[t] = file_name
+                    counter += 1
 
-            # For each time increment generate separate .vt* file
-            # Output file name will be the same as input
-            for t, file_name in times_names.items():
-                relpath = os.path.relpath(file_name, start=os.path.dirname(__file__))
-                logging.info('Writing {}'.format(relpath))
+                # For each time increment generate separate .vt* file
+                # Output file name will be the same as input
+                for t, file_name in times_names.items():
+                    relpath = os.path.relpath(file_name, start=os.path.dirname(__file__))
+                    logging.info('Writing {}'.format(relpath))
+                    if self.fmt == 'vtk':
+                        VTKWriter.writeVTK(p, file_name, t)
+                    if self.fmt == 'vtu':
+                        VTUWriter.writeVTU(p, file_name, t)
+
+                # Write ParaView Data (PVD) for series of VTU files.
+                if l > 1 and self.fmt == 'vtu':
+                    PVDWriter.writePVD(self.file_name.replace('.frd', '.pvd'), times_names)
+
+            else:
+                logging.warning('No time increments!')
+                file_name = self.file_name[:-3] + self.fmt
                 if self.fmt == 'vtk':
-                    VTKWriter.writeVTK(p, file_name, t)
+                    VTKWriter.writeVTK(p, file_name, None)
                 if self.fmt == 'vtu':
-                    VTUWriter.writeVTU(p, file_name, t)
-
-            # Write ParaView Data (PVD) for series of VTU files.
-            if l > 1 and self.fmt == 'vtu':
-                PVDWriter.writePVD(self.file_name.replace('.frd', '.pvd'), times_names)
-
+                    VTUWriter.writeVTU(p, file_name, None)
         else:
             logging.warning('File is empty!')
 
