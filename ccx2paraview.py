@@ -14,9 +14,13 @@ https://public.kitware.com/pipermail/paraview/2013-January/027121.html
 
 TODO Parse DAT files - there are lots of results
 
-TODO XDMF format """
+TODO XDMF format:
+https://github.com/calculix/ccx2paraview/issues/6
+
+"""
 
 import os
+import sys
 import logging
 import argparse
 
@@ -102,8 +106,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Create converter and run it
-    ccx2paraview = Converter(args.filename, args.format)
-    ccx2paraview.run()
+    if args.format in ['vtk', 'vtu']:
+        ccx2paraview = Converter(args.filename, args.format)
+        ccx2paraview.run()
+    else:
+        msg = 'ERROR! Wrong format \"{}\". '.format(args.format) \
+            + 'Choose one of: vtk, vtu.'
+        print(msg)
 
     # Delete cached files
     clean.cache()
