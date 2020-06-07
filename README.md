@@ -7,7 +7,7 @@ Distributed under GNU General Public License v3.0
 
 ---
 
-[Downloads](#downloads) |
+[Downloads](https://github.com/calculix/ccx2paraview/releases) |
 [How to use](#how-to-use) |
 [Screenshots](#screenshots) |
 [Your help](#your-help) |
