@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, January 2020
+""" © Ihor Mirzov, June 2020
 Distributed under GNU General Public License v3.0
 
 Test ccx2paraview converter on all the CalculiX examples
@@ -14,18 +14,16 @@ import os
 import sys
 import time
 import subprocess
-import multiprocessing
 import logging
 
-import clean
-import ccx2paraview
-import FRDParser
-from log import myHandler
-from log import print
-
+sys.path.append('.')
+from src import clean
+from src import ccx2paraview
+from src import FRDParser
+from log import myHandler, print
 
 # How many files to process
-limit = 1000000
+limit = 1
 
 
 # List all .ext-files here and in all subdirectories
@@ -102,7 +100,7 @@ def test_binary_in(folder):
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
 
 
-if (__name__ == '__main__'):
+if __name__ == '__main__':
     clean.screen()
 
     # Prepare logging
@@ -112,7 +110,7 @@ if (__name__ == '__main__'):
     # Enable multithreading for CalculiX
     os.environ['OMP_NUM_THREADS'] = str(os.cpu_count())
 
-    folder = os.path.join(os.path.dirname(__file__), 'examples', 'elements')
+    folder = os.path.join(os.path.dirname(__file__), '..', 'examples', 'other')
     # run_all_analyses_in(folder)
     # test_frd_parser_on_models_in(folder)
     convert_calculation_results_in(folder)

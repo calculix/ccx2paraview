@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, February 2020
+""" © Ihor Mirzov, June 2020
 Distributed under GNU General Public License v3.0
 Logging handler for all my projects """
 
 import os
 import sys
 import logging
+
 
 log_file = os.path.join(os.path.dirname(__file__), 'test.log')
 

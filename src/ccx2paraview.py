@@ -5,8 +5,8 @@
 Distributed under GNU General Public License v3.0
 
 Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format:
-python3 ccx2paraview.py ./tests/other/Ihor_Mirzov_baffle_2D.frd vtk
-python3 ccx2paraview.py ./tests/other/Ihor_Mirzov_baffle_2D.frd vtu
+python3 ./src/ccx2paraview.py ./examples/other/Ihor_Mirzov_baffle_2D.frd vtk
+python3 ./src/ccx2paraview.py ./examples/other/Ihor_Mirzov_baffle_2D.frd vtu
 
 TODO It would be a killer feature if Paraview could
 visualize gauss point results from the dat file...
@@ -24,11 +24,12 @@ import sys
 import logging
 import argparse
 
-import FRDParser
-import VTKWriter
-import VTUWriter
-import PVDWriter
-import clean
+sys.path.append('.')
+from src import FRDParser
+from src import VTKWriter
+from src import VTUWriter
+from src import PVDWriter
+from src import clean
 
 
 class Converter:

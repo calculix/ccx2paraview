@@ -19,9 +19,10 @@
 """
 
 
-import frd2vtk
 import logging
 import math
+
+from . import frd2vtk
 
 
 # Write element connectivity with renumbered nodes

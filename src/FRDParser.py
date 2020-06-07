@@ -463,10 +463,32 @@ def readByteLine(f):
             byte = ' '
         line += byte
     return line.strip()
-
-
+# TODO Use this readByteLine:
 # Read byte line and decode: return None after EOF
-# TODO Use readByteLine from ccx_cae/src/model/parsers/mesh.py
+def read_byte_line(f):
+
+    # Check EOF
+    byte = f.read(1)
+    if not byte:
+        return None
+
+    # Convert first byte
+    try:
+        line = byte.decode()
+    except UnicodeDecodeError:
+        line = ' ' # replace endecoded symbols with space
+
+    # Continue reading until EOF or new line
+    while byte != b'\n':
+        byte = f.read(1)
+        if not byte:
+            return line.strip() # EOF
+        try:
+            line += byte.decode()
+        except UnicodeDecodeError:
+            line += ' ' # replace endecoded symbols with space
+
+    return line.strip()
 
 
 # Parse regex in line and report problems
