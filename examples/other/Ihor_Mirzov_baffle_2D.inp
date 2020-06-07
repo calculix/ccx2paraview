@@ -1,5 +1,5 @@
 *HEADING
-    VVER-1000 heavy reflector
+    VVER_1000_heavy_reflector
 *NODE, NSET=ALL
     1, 828.23981055246, -1524.5470856015, 0.0
     2, -828.23981055246, -1524.5470856015, 0.0
