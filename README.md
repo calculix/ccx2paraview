@@ -33,14 +33,6 @@ Converter is tested for all official CalculiX examples - folder [examples](./exa
 
 
 
-# Downloads
-
-Download binaries from the [releases page](https://github.com/calculix/ccx2paraview/releases). Binaries don't need to be installed.
-
-<br/><br/>
-
-
-
 # How to use
 
 Run binary with commands:
