@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-    © Ihor Mirzov, October 2019
-    Distributed under GNU General Public License v3.0
+""" © Ihor Mirzov, October 2019
+Distributed under GNU General Public License v3.0
 
-    Writes ParaView Data (PVD) for series of VTU files.
-    https://www.paraview.org/Wiki/ParaView/Data_formats#PVD_File_Format
-
-"""
+Writes ParaView Data (PVD) for series of VTU files.
+https://www.paraview.org/Wiki/ParaView/Data_formats#PVD_File_Format """
 
 import os
 

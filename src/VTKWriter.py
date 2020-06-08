@@ -1,20 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-    © Ihor Mirzov, January 2020
-    Distributed under GNU General Public License v3.0
+""" © Ihor Mirzov, January 2020
+Distributed under GNU General Public License v3.0
 
-    Inspired by C# converter written by Maciek Hawryłkiewicz in 2015.
+Inspired by C# converter written by Maciek Hawryłkiewicz in 2015.
 
-    About the format read:
-    https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf
+About the format read:
+https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf
 
-    Remember that the frd file is node based, so element results are also
-    stored at the nodes after extrapolation from the integration points:
-    http://www.dhondt.de/ccx_2.15.pdf
-
-"""
+Remember that the frd file is node based, so element results are also
+stored at the nodes after extrapolation from the integration points:
+http://www.dhondt.de/ccx_2.15.pdf """
 
 
 import logging

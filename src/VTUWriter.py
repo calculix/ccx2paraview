@@ -1,22 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-    © Ihor Mirzov, January 2020
-    Distributed under GNU General Public License v3.0
+""" © Ihor Mirzov, January 2020
+Distributed under GNU General Public License v3.0
 
-    Inspired by odb2vtk converter written by Liujie-SYSU:
-    https://github.com/Liujie-SYSU/odb2vtk
+Inspired by odb2vtk converter written by Liujie-SYSU:
+https://github.com/Liujie-SYSU/odb2vtk
 
-    About the format read:
-    https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf
-    https://lorensen.github.io/VTKExamples/site/VTKFileFormats/#unstructuredgrid
+About the format read:
+https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf
+https://lorensen.github.io/VTKExamples/site/VTKFileFormats/#unstructuredgrid
 
-    Remember that the frd file is node based, so element results are also
-    stored at the nodes after extrapolation from the integration points:
-    http://www.dhondt.de/ccx_2.15.pdf
-
-"""
+Remember that the frd file is node based, so element results are also
+stored at the nodes after extrapolation from the integration points:
+http://www.dhondt.de/ccx_2.15.pdf """
 
 
 import logging
@@ -207,18 +204,16 @@ def writeVTU(p, file_name, time): # p is FRDParser object
         f.write('</VTKFile>')
 
 
-"""
-    TODO learn and use it for future code improvement:
-    https://vtk.org/doc/nightly/html/c2_vtk_t_23.html#c2_vtk_t_vtkXMLUnstructuredGridWriter
-    https://vtk.org/doc/nightly/html/c2_vtk_t_20.html#c2_vtk_t_vtkUnstructuredGrid
-    https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestCellArray.py
-    https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/marching.py
-    https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/BuildUGrid.py
-    https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestXMLUnstructuredGridIO.py
+""" TODO learn and use it for future code improvement:
+https://vtk.org/doc/nightly/html/c2_vtk_t_23.html#c2_vtk_t_vtkXMLUnstructuredGridWriter
+https://vtk.org/doc/nightly/html/c2_vtk_t_20.html#c2_vtk_t_vtkUnstructuredGrid
+https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestCellArray.py
+https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/marching.py
+https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/BuildUGrid.py
+https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestXMLUnstructuredGridIO.py
 
-    TODO Use it to write mesh
-    writer = vtk.vtkXMLDataSetWriter()
-    writer.SetFileName(file_name)
-    writer.SetInputData(unstructured_grid)
-    writer.Write()
-"""
+TODO Use it to write mesh
+writer = vtk.vtkXMLDataSetWriter()
+writer.SetFileName(file_name)
+writer.SetInputData(unstructured_grid)
+writer.Write() """
