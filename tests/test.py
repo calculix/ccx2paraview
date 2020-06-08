@@ -16,11 +16,11 @@ import time
 import subprocess
 import logging
 
-sys.path.append('.')
-from src import clean
-from src import ccx2paraview
-from src import FRDParser
-from log import myHandler, print
+# sys.path.append('.')
+from ccx2paraview import clean
+from ccx2paraview import ccx2paraview
+from ccx2paraview import FRDParser
+from .log import myHandler, print
 
 # How many files to process
 limit = 1
