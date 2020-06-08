@@ -24,12 +24,12 @@ import sys
 import logging
 import argparse
 
-sys.path.append('.')
-from src import FRDParser
-from src import VTKWriter
-from src import VTUWriter
-from src import PVDWriter
-from src import clean
+
+from . import FRDParser
+from . import VTKWriter
+from . import VTUWriter
+from . import PVDWriter
+from . import clean
 
 
 class Converter:
