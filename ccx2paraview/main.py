@@ -5,8 +5,8 @@
 Distributed under GNU General Public License v3.0
 
 Converts CalculiX .frd resutls file to ASCII .vtk or XML .vtu format:
-python3 ./src/ccx2paraview.py ./examples/other/Ihor_Mirzov_baffle_2D.frd vtk
-python3 ./src/ccx2paraview.py ./examples/other/Ihor_Mirzov_baffle_2D.frd vtu
+python3 ./ccx2paraview/main.py ./examples/other/Ihor_Mirzov_baffle_2D.frd vtk
+python3 ./ccx2paraview/main.py ./examples/other/Ihor_Mirzov_baffle_2D.frd vtu
 
 TODO It would be a killer feature if Paraview could
 visualize gauss point results from the dat file...
@@ -18,12 +18,10 @@ TODO XDMF format:
 https://github.com/calculix/ccx2paraview/issues/6
 
 """
-
+import shutil
 import os
-import sys
 import logging
 import argparse
-
 
 from . import FRDParser
 from . import VTKWriter
@@ -33,38 +31,52 @@ from . import clean
 
 
 class Converter:
+    """
 
-    def __init__(self, file_name, fmt):
-        self.file_name = file_name
+    :param file_path: Absolute or relative path of .frd file
+    :param fmt: Type of export
+    :param output_folder: Folder for generated output (optional).
+    """
+    def __init__(self, file_path, fmt, output_folder=None):
+
+        self.file_path = file_path
+        temp = os.path.split(file_path)[-1].split('.')
+        self.file_name = temp[0]
+        self._output_folder = output_folder
+        self.ext = temp[1]
         self.fmt = fmt
 
     def run(self):
+        """
 
+        :return:
+        """
+        os.makedirs(self.output_folder, exist_ok=True)
+        shutil.copy(self.file_path, self.output_file)
         # Parse FRD-file
-        relpath = os.path.relpath(self.file_name, start=os.path.dirname(__file__))
+        relpath = os.path.relpath(self.output_file, start=os.path.dirname(__file__))
         logging.info('Parsing ' + relpath)
-        p = FRDParser.Parse(self.file_name)
+        p = FRDParser.Parse(self.output_file)
 
         # If file contains mesh data
         if p.node_block and p.elem_block:
             times = sorted(set([b.value for b in p.result_blocks]))
             l = len(times)
             if l:
-                logging.info('{} time increment{}'.format(l, 's'*min(1, l-1)))
+                logging.info('{} time increment{}'.format(l, 's' * min(1, l - 1)))
 
                 """ If model has many time steps - many output files
                 will be created. Each output file's name should contain
                 increment number padded with zero """
                 counter = 1
-                times_names = {} # {increment time: file name, ...}
+                times_names = {}  # {increment time: file name, ...}
                 for t in sorted(times):
                     if l > 1:
                         ext = '.{:0{width}}.{}'.format(counter, self.fmt, width=len(str(l)))
-                        file_name = self.file_name.replace('.frd', ext)
+
                     else:
                         ext = '.{}'.format(self.fmt)
-                        file_name = self.file_name.replace('.frd', ext)
-                    times_names[t] = file_name
+                    times_names[t] = self.output_file.replace('.frd', ext)
                     counter += 1
 
                 # For each time increment generate separate .vt* file
@@ -79,17 +91,28 @@ class Converter:
 
                 # Write ParaView Data (PVD) for series of VTU files.
                 if l > 1 and self.fmt == 'vtu':
-                    PVDWriter.writePVD(self.file_name.replace('.frd', '.pvd'), times_names)
+                    PVDWriter.writePVD(self.output_file.replace('.frd', '.pvd'), times_names)
 
             else:
                 logging.warning('No time increments!')
-                file_name = self.file_name[:-3] + self.fmt
+                file_name = self.output_file[:-3] + self.fmt
                 if self.fmt == 'vtk':
                     VTKWriter.writeVTK(p, file_name, None)
                 if self.fmt == 'vtu':
                     VTUWriter.writeVTU(p, file_name, None)
         else:
             logging.warning('File is empty!')
+
+    @property
+    def output_folder(self):
+        if self._output_folder is None:
+            return os.path.join(os.path.dirname(self.file_path), 'results')
+        else:
+            return os.path.abspath(self._output_folder)
+
+    @property
+    def output_file(self):
+        return os.path.join(self.output_folder, self.file_name + '.' + self.ext)
 
 
 if __name__ == '__main__':
@@ -112,7 +135,7 @@ if __name__ == '__main__':
         ccx2paraview.run()
     else:
         msg = 'ERROR! Wrong format \"{}\". '.format(args.format) \
-            + 'Choose one of: vtk, vtu.'
+              + 'Choose one of: vtk, vtu.'
         print(msg)
 
     # Delete cached files

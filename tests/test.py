@@ -17,10 +17,8 @@ import subprocess
 import logging
 
 # sys.path.append('.')
-from ccx2paraview import clean
-from ccx2paraview import ccx2paraview
-from ccx2paraview import FRDParser
-from .log import myHandler, print
+from ccx2paraview import clean, FRDParser, Converter
+from ccx2paraview.log import myHandler, print
 
 # How many files to process
 limit = 1
@@ -78,9 +76,9 @@ def convert_calculation_results_in(folder):
     start = time.perf_counter() # start time
     for file_name in scan_all_files_in(folder, '.frd'):
         print('\n' + '='*50)
-        ccx2paraview.Converter(file_name, 'vtk').run()
+        Converter(file_name, 'vtk').run()
         print('\n' + '='*50)
-        ccx2paraview.Converter(file_name, 'vtu').run()
+        Converter(file_name, 'vtu').run()
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
 
 
