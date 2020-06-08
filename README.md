@@ -35,7 +35,7 @@ Converter is tested for all official CalculiX examples - folder [examples](./exa
 
 # How to use
 
-Run binary with commands:
+Running this converter from source is not recommended, because sources are under development and may contain bugs. Download and run binary instead:
 
     in Linux:       ./ccx2paraview jobname.frd vtu
                     ./ccx2paraview jobname.frd vtk
@@ -44,9 +44,7 @@ Run binary with commands:
 
 It is recommended to convert .frd to modern XML .vtu format. If you have more than one time step there will be additional XML file created - the PVD file. Open it in Paraview to read data from all time steps (all VTU files) at ones.
 
-Running this converter from source is not recommended, because sources are under development and may contain bugs.
-
-Unfortunately, VTK format doesn't support names for field components. So, for stress and strain tensors components will be numbered as:
+If you still need VTK format, keep in mind - it doesn't support names for field components. So, for stress and strain tensors components will be numbered as:
 
     0. xx
     1. yy
@@ -91,15 +89,12 @@ To run this converter from source you'll need [Python 3](https://www.python.org/
 
     pip3 install numpy
 
-The main script is [ccx2paraview.py](ccx2paraview.py):
+The main script is [ccx2paraview.py](./src/ccx2paraview.py):
 
-    python3 ccx2paraview.py jobname.frd vtu
-
-To convert .frd to legacy ASCII .vtk format, use command:
-
-    python3 ccx2paraview.py jobname.frd vtk
+    python3 ./src/ccx2paraview.py jobname.frd vtu
+    python3 ./src/ccx2paraview.py jobname.frd vtk
 
 Create binary with [pyinstaller](https://www.pyinstaller.org/) (both in Linux and in Windows):
 
     pip3 install pyinstaller
-    pyinstaller ccx2paraview.py --onefile
+    pyinstaller ./src/ccx2paraview.py --onefile
