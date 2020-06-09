@@ -39,10 +39,10 @@ Running this software from source is not recommended, because sources are under 
 
 Run the software with command:
 
-    in Linux:       ./ccx2paraview jobname.frd vtu
-                    ./ccx2paraview jobname.frd vtk
-    in Windows:     ccx2paraview.exe jobname.frd vtu
-                    ccx2paraview.exe jobname.frd vtk
+    in Linux:       ./ccx2paraview yourjobname.frd vtu
+                    ./ccx2paraview yourjobname.frd vtk
+    in Windows:     ccx2paraview.exe yourjobname.frd vtu
+                    ccx2paraview.exe yourjobname.frd vtk
 
 It is recommended to convert .frd to modern XML .vtu format. If you have more than one time step there will be additional XML file created - the PVD file. Open it in Paraview to read data from all time steps (all VTU files) at ones.
 
