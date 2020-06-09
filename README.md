@@ -35,7 +35,9 @@ Converter is tested for all official CalculiX examples - folder [examples](./exa
 
 # How to use
 
-Running this converter from source is not recommended, because sources are under development and may contain bugs. Download and run binary instead:
+Running this software from source is not recommended, because sources are under development and may contain bugs. So, first, [download released binaries](https://github.com/calculix/ccx2paraview/releases), unpack them and allow to be executed (give permissions).
+
+Run the software with command:
 
     in Linux:       ./ccx2paraview jobname.frd vtu
                     ./ccx2paraview jobname.frd vtk
@@ -91,8 +93,8 @@ To run this converter from source you'll need [Python 3](https://www.python.org/
 
 The main script is [ccx2paraview.py](./src/ccx2paraview.py):
 
-    python3 ./src/ccx2paraview.py jobname.frd vtu
-    python3 ./src/ccx2paraview.py jobname.frd vtk
+    python3 ./src/ccx2paraview.py yourjobname.frd vtu
+    python3 ./src/ccx2paraview.py yourjobname.frd vtk
 
 Create binary with [pyinstaller](https://www.pyinstaller.org/) (both in Linux and in Windows):
 
