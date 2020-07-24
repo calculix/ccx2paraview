@@ -13,6 +13,8 @@ import re
 import logging
 import math
 
+import numpy as np
+
 
 # A single node object
 class Node:
@@ -306,9 +308,6 @@ class NodalResultsBlock:
     def appendStresses(self):
         if self.name == 'S':
             try:
-                # Check if numpy is installed
-                import numpy as np
-
                 # component_names = (
                 #     'Mises',
                 #     'Max Principal',
@@ -351,18 +350,14 @@ class NodalResultsBlock:
                     for ps in np.linalg.eigvalsh(tensor).tolist():
                         self.results[node_num].append(ps)
 
-            except ImportError:
-                logging.error('Numpy is not installed.\n' +\
-                    'Additional stresses will not be appended.')
+            except:
+                logging.error('Additional stresses will not be appended.')
 
 
     # Append principal strains
     def appendStrains(self):
         if self.name == 'E':
             try:
-                # Check if numpy is installed
-                import numpy as np
-
                 component_names = (
                     'Mises',
                     'Min Principal',
@@ -370,8 +365,6 @@ class NodalResultsBlock:
                     'Max Principal',
                     )
                 for i in range(len(component_names)):
-                    # c = Component()
-                    # c.ictype = 1; c.name = component_names[i]
                     self.components.append(component_names[i])
                     self.ncomps += 1
 
@@ -396,9 +389,8 @@ class NodalResultsBlock:
                     for ps in np.linalg.eigvalsh(tensor).tolist():
                         self.results[node_num].append(ps)
 
-            except ImportError:
-                logging.error('Numpy is not installed.\n' +\
-                    'Additional strains will not be appended.')
+            except:
+                logging.error('Additional strains will not be appended.')
 
 
 # Main class

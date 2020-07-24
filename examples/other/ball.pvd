@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
 	<Collection>
-		<DataSet file="ball.1.vtu" timestep="0.1"/>
-		<DataSet file="ball.2.vtu" timestep="0.2"/>
-		<DataSet file="ball.3.vtu" timestep="0.3"/>
-		<DataSet file="ball.4.vtu" timestep="0.4"/>
-		<DataSet file="ball.5.vtu" timestep="0.5"/>
-		<DataSet file="ball.6.vtu" timestep="0.6"/>
-		<DataSet file="ball.7.vtu" timestep="0.7"/>
-		<DataSet file="ball.8.vtu" timestep="0.8"/>
+		<DataSet timestep="0.1" file="ball.1.vtu"/>
+		<DataSet timestep="0.2" file="ball.2.vtu"/>
+		<DataSet timestep="0.3" file="ball.3.vtu"/>
+		<DataSet timestep="0.4" file="ball.4.vtu"/>
+		<DataSet timestep="0.5" file="ball.5.vtu"/>
+		<DataSet timestep="0.6" file="ball.6.vtu"/>
+		<DataSet timestep="0.7" file="ball.7.vtu"/>
+		<DataSet timestep="0.8" file="ball.8.vtu"/>
 	</Collection>
 </VTKFile>
