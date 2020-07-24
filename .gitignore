@@ -7,3 +7,4 @@ __pycache__/
 /examples/*/*.dat
 /examples/*/*.log
 /examples/*/*.sta
+/examples/*/*.out
