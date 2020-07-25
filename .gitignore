@@ -1,6 +1,7 @@
 dummy
 .vscode/
 __pycache__/
+/bin/
 /releases/
 /examples/*/*.12d
 /examples/*/*.cvg
