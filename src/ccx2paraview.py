@@ -24,12 +24,13 @@ import sys
 import logging
 import argparse
 
-sys.path.append('.')
-from src import FRDParser
-from src import VTKWriter
-from src import VTUWriter
-from src import PVDWriter
-from src import clean
+sys_path = os.path.dirname(__file__)
+sys.path.append(sys_path)
+import FRDParser
+import VTKWriter
+import VTUWriter
+import PVDWriter
+import clean
 
 
 class Converter:
@@ -41,8 +42,8 @@ class Converter:
     def run(self):
 
         # Parse FRD-file
-        relpath = os.path.relpath(self.file_name, start=os.path.dirname(__file__))
-        logging.info('Parsing ' + relpath)
+        base_name = os.path.basename(self.file_name)
+        logging.info('Parsing ' + base_name)
         p = FRDParser.Parse(self.file_name)
 
         # If file contains mesh data
@@ -50,7 +51,8 @@ class Converter:
             times = sorted(set([b.value for b in p.result_blocks]))
             l = len(times)
             if l:
-                logging.info('{} time increment{}'.format(l, 's'*min(1, l-1)))
+                msg = '{} time increment{}'.format(l, 's'*min(1, l-1))
+                logging.info(msg)
 
                 """ If model has many time steps - many output files
                 will be created. Each output file's name should contain
@@ -59,7 +61,8 @@ class Converter:
                 times_names = {} # {increment time: file name, ...}
                 for t in sorted(times):
                     if l > 1:
-                        ext = '.{:0{width}}.{}'.format(counter, self.fmt, width=len(str(l)))
+                        ext = '.{:0{width}}.{}'\
+                            .format(counter, self.fmt, width=len(str(l)))
                         file_name = self.file_name.replace('.frd', ext)
                     else:
                         ext = '.{}'.format(self.fmt)
@@ -70,16 +73,17 @@ class Converter:
                 # For each time increment generate separate .vt* file
                 # Output file name will be the same as input
                 for t, file_name in times_names.items():
-                    relpath = os.path.relpath(file_name, start=os.path.dirname(__file__))
-                    logging.info('Writing {}'.format(relpath))
+                    base_name = os.path.basename(file_name)
+                    logging.info('Writing ' + base_name)
                     if self.fmt == 'vtk':
                         VTKWriter.writeVTK(p, file_name, t)
                     if self.fmt == 'vtu':
                         VTUWriter.writeVTU(p, file_name, t)
 
-                # Write ParaView Data (PVD) for series of VTU files.
+                # Write ParaView Data (PVD) for series of VTU files
                 if l > 1 and self.fmt == 'vtu':
-                    PVDWriter.writePVD(self.file_name.replace('.frd', '.pvd'), times_names)
+                    PVDWriter.writePVD(self.file_name\
+                        .replace('.frd', '.pvd'), times_names)
 
             else:
                 logging.warning('No time increments!')
@@ -93,17 +97,18 @@ class Converter:
 
 
 if __name__ == '__main__':
+    clean.screen()
 
     # Configure logging
     logging.basicConfig(level=logging.INFO,
-                        format='%(levelname)s: %(message)s')
+        format='%(levelname)s: %(message)s')
 
     # Command line parameters
     parser = argparse.ArgumentParser()
     parser.add_argument('filename', type=str,
-                        help='FRD file name with extension')
+        help='FRD file name with extension')
     parser.add_argument('format', type=str,
-                        help='output format: vtu or vtk')
+        help='output format: vtu or vtk')
     args = parser.parse_args()
 
     # Create converter and run it
@@ -115,5 +120,4 @@ if __name__ == '__main__':
             + 'Choose one of: vtk, vtu.'
         print(msg)
 
-    # Delete cached files
     clean.cache()

@@ -13,10 +13,14 @@ Ctrl + F5 to Run """
 import os
 import sys
 import time
-import subprocess
 import logging
+import subprocess
 
-sys.path.append('.')
+sys_path = os.path.dirname(__file__)
+sys_path = os.path.join(sys_path, '..')
+sys_path = os.path.normpath(sys_path)
+sys.path.append(sys_path)
+
 from src import clean
 from src import ccx2paraview
 from src import FRDParser
@@ -24,7 +28,6 @@ from log import myHandler, print
 
 # How many files to process
 limit = 1
-
 
 # List all .ext-files here and in all subdirectories
 def scan_all_files_in(start_folder, ext):
@@ -37,7 +40,6 @@ def scan_all_files_in(start_folder, ext):
             all_files.append(f.path)
     return sorted(all_files)[:limit]
 
-
 # Submits all INP models starting from folder
 def run_all_analyses_in(folder):
     start = time.perf_counter() # start time
@@ -47,7 +49,7 @@ def run_all_analyses_in(folder):
 
         # Skip already calculated models
         if not os.path.isfile(file_name[:-4] + '.frd'):
-            relpath = os.path.relpath(file_name, start=__file__)
+            relpath = os.path.relpath(file_name, start=folder)
             sys.stdout.write('{} {}\n'.format(counter, relpath))
             counter += 1
             os.chdir(folder)
@@ -58,23 +60,21 @@ def run_all_analyses_in(folder):
     sys.stdout.write('\nTotal {:.1f} seconds\n'\
                      .format(time.perf_counter() - start))
 
-
 # Test FRDParser only
 def test_frd_parser_on_models_in(folder):
     start = time.perf_counter() # start time
     print('FRD PARSER TEST\n\n')
     counter = 1
     for file_name in scan_all_files_in(folder, '.frd'):
-        relpath = os.path.relpath(file_name, start=os.getcwd())
+        relpath = os.path.relpath(file_name, start=folder)
         print('\n{}\n{}: {}'.format('='*50, counter, relpath))
         FRDParser.Parse(file_name)
         counter += 1
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
 
-
 # Convert calculation results
 def convert_calculation_results_in(folder):
-    print('CONVERTER TEST\n\n')
+    print('FRD CONVERTER TEST\n\n')
     start = time.perf_counter() # start time
     for file_name in scan_all_files_in(folder, '.frd'):
         print('\n' + '='*50)
@@ -83,22 +83,19 @@ def convert_calculation_results_in(folder):
         ccx2paraview.Converter(file_name, 'vtu').run()
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
 
-
 # Convert calculation results with binaries
 def test_binary_in(folder):
     print('CONVERTER TEST\n\n')
     start = time.perf_counter() # start time
     for file_name in scan_all_files_in(folder, '.frd'):
         if os.name == 'nt':
-            command = 'bin\\ccx2paraview.exe'
+            command = '..\\bin\\ccx2paraview.exe'
         else:
-            command = './bin/ccx2paraview'
+            command = '../bin/ccx2paraview'
         for fmt in ['vtk', 'vtu']:
             print('\n' + '='*50)
             subprocess.run('{} {} {}'.format(command, file_name, fmt), shell=True)
-
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
-
 
 if __name__ == '__main__':
     clean.screen()
@@ -110,10 +107,11 @@ if __name__ == '__main__':
     # Enable multithreading for CalculiX
     os.environ['OMP_NUM_THREADS'] = str(os.cpu_count())
 
-    folder = os.path.join(os.path.dirname(__file__), '..', 'examples', 'other')
+    folder = os.path.join(os.path.dirname(__file__), \
+        '..', 'examples', 'other')
     # run_all_analyses_in(folder)
-    # test_frd_parser_on_models_in(folder)
-    convert_calculation_results_in(folder)
+    test_frd_parser_on_models_in(folder)
+    # convert_calculation_results_in(folder)
     # test_binary_in(folder)
 
     clean.cache()
