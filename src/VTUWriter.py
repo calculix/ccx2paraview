@@ -19,7 +19,7 @@ http://www.dhondt.de/ccx_2.15.pdf """
 import logging
 import math
 
-from . import frd2vtk
+import frd2vtk
 
 
 # Write element connectivity with renumbered nodes
