@@ -54,7 +54,7 @@ class NodalPointCoordinateBlock:
                             float(match.group(3)),
                             float(match.group(4)), ]
             self.nodes[node_number] = Node(node_number, node_coords)
-            logging.debug('Node {}: {}'.format(node_number, node_coords))
+            # logging.debug('Node {}: {}'.format(node_number, node_coords))
 
         self.numnod = len(self.nodes) # number of nodes in this block
         logging.info('{} nodes'.format(self.numnod)) # total number of nodes
@@ -106,7 +106,7 @@ class ElementDefinitionBlock:
 
         elem = Element(element_num, element_type, element_nodes)
         self.elements.append(elem)
-        logging.debug('Element {}: {}'.format(element_num, element_nodes))
+        # logging.debug('Element {}: {}'.format(element_num, element_nodes))
 
 
     # Amount of nodes in frd element
@@ -293,7 +293,7 @@ class NodalResultsBlock:
                 data = [float(match.group(c+1)) for c in range(row_comps)]
                 self.results[node].extend(data)
 
-            logging.debug('Node {}: {}'.format(node, self.results[node]))
+            # logging.debug('Node {}: {}'.format(node, self.results[node]))
 
         if emitted_warning_types['NaNInf']:
             logging.warning('NaN and Inf are not supported in Paraview ({} warnings).'\
