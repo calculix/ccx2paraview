@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
-	<Collection>
-		<DataSet file="fluidwrite.1.vtu" timestep="0.01"/>
-		<DataSet file="fluidwrite.2.vtu" timestep="0.02"/>
-	</Collection>
-</VTKFile>

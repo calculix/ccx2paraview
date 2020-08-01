@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
-	<Collection>
-		<DataSet file="planestresssens.1.vtu" timestep="0.0"/>
-		<DataSet file="planestresssens.2.vtu" timestep="1.0"/>
-	</Collection>
-</VTKFile>

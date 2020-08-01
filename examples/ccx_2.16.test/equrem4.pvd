@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">
-	<Collection>
-		<DataSet file="equrem4.1.vtu" timestep="1.0"/>
-		<DataSet file="equrem4.2.vtu" timestep="1.02"/>
-	</Collection>
-</VTKFile>
