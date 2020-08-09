@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, June 2020
+""" © Ihor Mirzov, August 2020
 Distributed under GNU General Public License v3.0
 
 Test ccx2paraview converter on all the CalculiX examples
-Ctrl + F5 to Run """
+Ctrl+F5 to run in VSCode"""
 
 # TODO multiprocessing
-# TODO cgx and mkraska examples
 
 import os
 import sys
@@ -39,26 +38,6 @@ def scan_all_files_in(start_folder, ext):
         elif f.is_file() and f.name.endswith(ext):
             all_files.append(f.path)
     return sorted(all_files)[:limit]
-
-# Submits all INP models starting from folder
-def run_all_analyses_in(folder):
-    start = time.perf_counter() # start time
-    counter = 1
-    start_folder = os.curdir
-    for file_name in scan_all_files_in(folder, '.inp'):
-
-        # Skip already calculated models
-        if not os.path.isfile(file_name[:-4] + '.frd'):
-            relpath = os.path.relpath(file_name, start=folder)
-            sys.stdout.write('{} {}\n'.format(counter, relpath))
-            counter += 1
-            os.chdir(folder)
-            subprocess.run('ccx -i ' + file_name[:-4] + ' > ' + file_name[:-4] + '.log', shell=True)
-
-    os.chdir(start_folder)
-    clean.files(folder)
-    sys.stdout.write('\nTotal {:.1f} seconds\n'\
-                     .format(time.perf_counter() - start))
 
 # Test FRDParser only
 def test_frd_parser_on_models_in(folder):
@@ -109,7 +88,6 @@ if __name__ == '__main__':
 
     folder = os.path.join(os.path.dirname(__file__), \
         '..', 'examples', 'other')
-    # run_all_analyses_in(folder)
     test_frd_parser_on_models_in(folder)
     # convert_calculation_results_in(folder)
     # test_binary_in(folder)
