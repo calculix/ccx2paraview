@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: ccx2paraview
+Version: 2.3.1
+Summary: CalculiX to Paraview converter (frd to vtk/vtu)
+Home-page: https://github.com/calculix/ccx2paraview
+Author: Ihor Mirzov
+Author-email: imirzov@gmail.com
+License: UNKNOWN
+Description: CalculiX to Paraview converter (frd to vtk/vtu). 
+        Converts CalculiX FRD file to view and postprocess analysis results 
+        in Paraview. Generates Mises and Principal components for stress 
+        and strain tensors.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown

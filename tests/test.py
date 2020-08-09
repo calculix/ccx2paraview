@@ -20,13 +20,13 @@ sys_path = os.path.join(sys_path, '..')
 sys_path = os.path.normpath(sys_path)
 sys.path.append(sys_path)
 
-from src import clean
-from src import ccx2paraview
-from src import FRDParser
+from ccx2paraview import clean
+from ccx2paraview import ccx2paraview
+from ccx2paraview import FRDParser
 from log import myHandler, print
 
 # How many files to process
-limit = 1
+limit = 1000
 
 # List all .ext-files here and in all subdirectories
 def scan_all_files_in(start_folder, ext):
@@ -87,8 +87,8 @@ if __name__ == '__main__':
     os.environ['OMP_NUM_THREADS'] = str(os.cpu_count())
 
     folder = os.path.join(os.path.dirname(__file__), \
-        '..', 'examples', 'other')
-    test_frd_parser_on_models_in(folder)
+        '..', '..', 'examples', 'other')
+    test_frd_parser_on_models_in(os.path.normpath(folder))
     # convert_calculation_results_in(folder)
     # test_binary_in(folder)
 

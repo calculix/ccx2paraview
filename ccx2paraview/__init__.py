@@ -24,7 +24,8 @@ import sys
 import logging
 import argparse
 
-sys_path = os.path.dirname(__file__)
+sys_path = os.path.abspath(__file__)
+sys_path = os.path.dirname(sys_path)
 sys.path.append(sys_path)
 import FRDParser
 import VTKWriter

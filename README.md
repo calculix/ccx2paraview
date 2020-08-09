@@ -35,7 +35,7 @@ The script is tested to reduce processing time as much as possible. Now it's qui
 
 Running this software from source is not recommended, because sources are under development and may contain bugs. So, first, [download released binaries](https://github.com/calculix/ccx2paraview/releases), unpack them and allow to be executed (give permissions).
 
-Run the software with command:
+Run the binary with command:
 
     in Linux:       ./ccx2paraview yourjobname.frd vtu
                     ./ccx2paraview yourjobname.frd vtk
@@ -63,9 +63,9 @@ If you still need VTK format, keep in mind - it doesn't support names for field 
 
 # Screenshots
 
-![baffle](./img_baffle.png "baffle")
+![baffle](https://github.com/calculix/ccx2paraview/blob/master/img_baffle.png "baffle")
 
-![piston](./img_piston.png "piston")
+![piston](https://github.com/calculix/ccx2paraview/blob/master/img_piston.png "piston")
 
 <br/><br/>
 
@@ -89,12 +89,11 @@ To run this converter from source you'll need [Python 3](https://www.python.org/
 
     pip3 install numpy
 
-The main script is [ccx2paraview.py](./src/ccx2paraview.py):
+Install package with command:
 
-    python3 ./src/ccx2paraview.py yourjobname.frd vtu
-    python3 ./src/ccx2paraview.py yourjobname.frd vtk
+    pip3 install ccx2paraview
 
 Create binary with [pyinstaller](https://www.pyinstaller.org/) (both in Linux and in Windows):
 
     pip3 install pyinstaller
-    pyinstaller ./src/ccx2paraview.py --onefile
+    pyinstaller ./ccx2paraview/__init__.py --onefile
