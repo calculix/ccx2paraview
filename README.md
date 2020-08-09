@@ -103,3 +103,9 @@ Create binary with [pyinstaller](https://www.pyinstaller.org/) (both in Linux an
 
     pip3 install pyinstaller
     pyinstaller ./ccx2paraview/__init__.py --onefile
+
+Read [here](https://packaging.python.org/tutorials/packaging-projects/) about how to create Python packages:
+
+    python3 -m pip install --user --upgrade setuptools wheel
+    python3 setup.py sdist bdist_wheel
+    twine upload dist/*
