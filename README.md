@@ -63,9 +63,9 @@ If you still need VTK format, keep in mind - it doesn't support names for field 
 
 # Screenshots
 
-![baffle](./examples/other/Ihor_Mirzov_baffle_2D.png "baffle")
+![baffle](./img_baffle.png "baffle")
 
-![piston](./examples/other/Sergio_Pluchinsky_piston.png "piston")
+![piston](./img_piston.png "piston")
 
 <br/><br/>
 
