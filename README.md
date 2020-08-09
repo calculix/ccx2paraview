@@ -25,9 +25,7 @@ Converts [CalculiX](http://www.dhondt.de/) .frd-file to view and postprocess ana
 
 The script generates separate file for each output interval - it makes possible to animate time history. **Caution!** If you have 300 time steps in the FRD, there will be 300 Paraview files. If you need one file - write output only for one step in your CalculiX model.
 
-I'm testing the script and trying to reduce processing time as much as possible. As for me now it's quite optimized and fast. But Python itself is slower than C/C++. Here we can do nothing, so, for example, [Calmed converter](https://www.salome-platform.org/forum/forum_12/126338563) must be faster - another question is if it's able to convert any model. This script should.
-
-Converter is tested for all official CalculiX examples - folder [examples](./examples/) contains convertion results. Each test contains .inp-task + .frd-calculation + .vtk and .vtu convertion results.
+The script is tested to reduce processing time as much as possible. Now it's quite optimized and fast, but Python itself is slower than C/C++. Here we can do nothing, so, for example, [Calmed converter](https://www.salome-platform.org/forum/forum_12/126338563) must be faster - another question is if it's able to convert any model. This script should: ccx2paraview is tested on all [official CalculiX examples](https://github.com/calculix/examples/tree/master/ccx).
 
 <br/><br/>
 
