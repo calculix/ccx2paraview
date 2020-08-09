@@ -93,6 +93,12 @@ Install package with command:
 
     pip3 install ccx2paraview
 
+In your code use ccx2paraview package in this way:
+
+    import ccx2paraview
+    c = ccx2paraview.Converter(frd_file_name, 'vtu')
+    c.run()
+
 Create binary with [pyinstaller](https://www.pyinstaller.org/) (both in Linux and in Windows):
 
     pip3 install pyinstaller
