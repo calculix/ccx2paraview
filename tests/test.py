@@ -15,13 +15,14 @@ import time
 import logging
 import subprocess
 
-sys_path = os.path.dirname(__file__)
+sys_path = os.path.abspath(__file__)
+sys_path = os.path.dirname(sys_path)
 sys_path = os.path.join(sys_path, '..')
 sys_path = os.path.normpath(sys_path)
-sys.path.append(sys_path)
+sys.path.insert(0, sys_path)
 
+import ccx2paraview
 from ccx2paraview import clean
-from ccx2paraview import ccx2paraview
 from ccx2paraview import FRDParser
 from log import myHandler, print
 
@@ -76,6 +77,7 @@ def test_binary_in(folder):
             subprocess.run('{} {} {}'.format(command, file_name, fmt), shell=True)
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
 
+# Run
 if __name__ == '__main__':
     clean.screen()
 

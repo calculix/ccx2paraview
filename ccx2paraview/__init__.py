@@ -26,7 +26,8 @@ import argparse
 
 sys_path = os.path.abspath(__file__)
 sys_path = os.path.dirname(sys_path)
-sys.path.append(sys_path)
+sys.path.insert(0, sys_path)
+
 import FRDParser
 import VTKWriter
 import VTUWriter
