@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, January 2020
+""" © Ihor Mirzov, 2019-2020
 Distributed under GNU General Public License v3.0
 
 Inspired by C# converter written by Maciek Hawryłkiewicz in 2015.

@@ -1,26 +1,17 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, January 2020
+""" © Ihor Mirzov, 2019-2020
 Distributed under GNU General Public License v3.0
 
-Inspired by odb2vtk converter written by Liujie-SYSU:
-https://github.com/Liujie-SYSU/odb2vtk
-
-About the format read:
-https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf
-https://lorensen.github.io/VTKExamples/site/VTKFileFormats/#unstructuredgrid
-
-Remember that the frd file is node based, so element results are also
-stored at the nodes after extrapolation from the integration points:
-http://www.dhondt.de/ccx_2.15.pdf """
-
+Writes VTU file based on data from FRDParser object.
+VTK package and native VTK methods are not used here.
+All XML tags are written in a dummy way. """
 
 import logging
 import math
 
 import frd2vtk
-
 
 # Write element connectivity with renumbered nodes
 def write_element_connectivity(renumbered_nodes, e, f):
@@ -57,7 +48,6 @@ def write_element_connectivity(renumbered_nodes, e, f):
 
     f.write(element_string)
 
-
 # Amount of nodes in element: needed to calculate offset
 def amount_of_nodes_in_vtk_element(e):
     # frd: 20 node brick element
@@ -73,7 +63,6 @@ def amount_of_nodes_in_vtk_element(e):
         n = len(e.nodes)
 
     return n
-
 
 # Write data
 def write_data(f, b, numnod):
@@ -115,7 +104,6 @@ def write_data(f, b, numnod):
     for k, v in emitted_warning_types.items():
         if v > 0:
             logging.warning('{} {} values are converted to 0.0'.format(v, k))
-
 
 # Main function
 def writeVTU(p, file_name, time): # p is FRDParser object
@@ -202,18 +190,3 @@ def writeVTU(p, file_name, time): # p is FRDParser object
         f.write('\t\t</Piece>\n')
         f.write('\t</UnstructuredGrid>\n')
         f.write('</VTKFile>')
-
-
-""" TODO learn and use it for future code improvement:
-https://vtk.org/doc/nightly/html/c2_vtk_t_23.html#c2_vtk_t_vtkXMLUnstructuredGridWriter
-https://vtk.org/doc/nightly/html/c2_vtk_t_20.html#c2_vtk_t_vtkUnstructuredGrid
-https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestCellArray.py
-https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/marching.py
-https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/BuildUGrid.py
-https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestXMLUnstructuredGridIO.py
-
-TODO Use it to write mesh
-writer = vtk.vtkXMLDataSetWriter()
-writer.SetFileName(file_name)
-writer.SetInputData(unstructured_grid)
-writer.Write() """
