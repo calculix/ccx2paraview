@@ -7,8 +7,6 @@ Distributed under GNU General Public License v3.0
 Test ccx2paraview converter on all the CalculiX examples
 Ctrl+F5 to run in VSCode"""
 
-# TODO multiprocessing
-
 import os
 import sys
 import time

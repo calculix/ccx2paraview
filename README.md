@@ -1,4 +1,4 @@
-© Ihor Mirzov, June 2020  
+© Ihor Mirzov, 2019-2020  
 Distributed under GNU General Public License v3.0
 
 <br/><br/>
@@ -11,7 +11,8 @@ Distributed under GNU General Public License v3.0
 [How to use](#how-to-use) |
 [Screenshots](#screenshots) |
 [Your help](#your-help) |
-[For developers](#for-developers)
+[For developers](#for-developers) |
+[TODO](#todo)
 
 ---
 
@@ -106,3 +107,48 @@ Read [here](https://packaging.python.org/tutorials/packaging-projects/) about ho
     python3 -m pip install --user --upgrade setuptools wheel
     python3 setup.py sdist bdist_wheel
     twine upload dist/*
+
+Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) and VTK [unstructured grid](https://lorensen.github.io/VTKExamples/site/VTKFileFormats/#unstructuredgrid). Remember that FRD file is node based, so element results are also stored at the nodes after extrapolation from the integration points ([link](http://www.dhondt.de/ccx_2.15.pdf)).
+
+<br/><br/>
+
+
+
+# TODO
+
+It would be a killer feature if Paraview could visualize gauss point results from the dat file... https://public.kitware.com/pipermail/paraview/2013-January/027121.html
+
+Parse DAT files - there are lots of results.
+
+XDMF format: https://github.com/calculix/ccx2paraview/issues/6
+
+Learn and use it for future code improvement:
+
+    https://vtk.org/doc/nightly/html/classvtkUnstructuredGridWriter.html
+    https://vtk.org/doc/nightly/html/c2_vtk_e_5.html#c2_vtk_e_vtkUnstructuredGrid
+    https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/pointToCellData.py
+
+Use it to write mesh:
+
+    writer = vtk.vtkUnstructuredGridWriter()
+    writer.SetFileName(file_name)
+    writer.SetInputData(unstructured_grid)
+    writer.Write()
+
+Multiprocessing for tests.
+
+Learn and use it for future code improvement:
+
+    https://vtk.org/doc/nightly/html/c2_vtk_t_23.html#c2_vtk_t_vtkXMLUnstructuredGridWriter
+    https://vtk.org/doc/nightly/html/c2_vtk_t_20.html#c2_vtk_t_vtkUnstructuredGrid
+    https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestCellArray.py
+    https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/marching.py
+    https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/BuildUGrid.py
+    https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestXMLUnstructuredGridIO.py
+
+Use it to write mesh:
+
+    writer = vtk.vtkXMLDataSetWriter()
+    writer.SetFileName(file_name)
+    writer.SetInputData(unstructured_grid)
+    writer.Write() 
