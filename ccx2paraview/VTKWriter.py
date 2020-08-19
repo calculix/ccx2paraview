@@ -4,21 +4,13 @@
 """ © Ihor Mirzov, 2019-2020
 Distributed under GNU General Public License v3.0
 
-Inspired by C# converter written by Maciek Hawryłkiewicz in 2015.
-
-About the format read:
-https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf
-
-Remember that the frd file is node based, so element results are also
-stored at the nodes after extrapolation from the integration points:
-http://www.dhondt.de/ccx_2.15.pdf """
-
+Writes VTK file based on data from FRDParser object.
+VTK package and native VTK methods are not used here. """
 
 import logging
 import math
 
 import frd2vtk
-
 
 # Write element connectivity with renumbered nodes
 def write_element_connectivity(renumbered_nodes, e, f):
@@ -56,7 +48,6 @@ def write_element_connectivity(renumbered_nodes, e, f):
 
     f.write('\t' + element_string + '\n')
 
-
 # Write data
 def write_data(f, b, numnod):
     f.write('FIELD {} 1\n'.format(b.name))
@@ -85,7 +76,6 @@ def write_data(f, b, numnod):
     for k, v in emitted_warning_types.items():
         if v > 0:
             logging.warning('{} {} values are converted to 0.0'.format(v, k))
-
 
 # Main function
 def writeVTK(p, file_name, time): # p is FRDParser object
@@ -151,17 +141,3 @@ def writeVTK(p, file_name, time): # p is FRDParser object
                 write_data(f, b, p.node_block.numnod)
             else:
                 logging.warning(b.name, '- no data for this increment')
-
-
-"""
-    TODO learn and use it for future code improvement:
-    https://vtk.org/doc/nightly/html/classvtkUnstructuredGridWriter.html
-    https://vtk.org/doc/nightly/html/c2_vtk_e_5.html#c2_vtk_e_vtkUnstructuredGrid
-    https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/pointToCellData.py
-
-    TODO Use it to write mesh
-    writer = vtk.vtkUnstructuredGridWriter()
-    writer.SetFileName(file_name)
-    writer.SetInputData(unstructured_grid)
-    writer.Write()
-"""
