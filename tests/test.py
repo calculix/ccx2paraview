@@ -88,8 +88,8 @@ if __name__ == '__main__':
 
     folder = os.path.join(os.path.dirname(__file__), \
         '..', '..', 'examples', 'other')
-    test_frd_parser_on_models_in(os.path.normpath(folder))
-    # convert_calculation_results_in(folder)
+    # test_frd_parser_on_models_in(os.path.normpath(folder))
+    convert_calculation_results_in(folder)
     # test_binary_in(folder)
 
     clean.cache()
