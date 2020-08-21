@@ -116,39 +116,10 @@ Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-fo
 
 # TODO
 
-It would be a killer feature if Paraview could visualize gauss point results from the dat file... https://public.kitware.com/pipermail/paraview/2013-January/027121.html
+Parse DAT files: it would be a killer feature if Paraview could visualize gauss point results.
+https://public.kitware.com/pipermail/paraview/2013-January/027121.html
 
-Parse DAT files - there are lots of results.
 
 XDMF format: https://github.com/calculix/ccx2paraview/issues/6
 
-Learn and use it for future code improvement:
-
-    https://vtk.org/doc/nightly/html/classvtkUnstructuredGridWriter.html
-    https://vtk.org/doc/nightly/html/c2_vtk_e_5.html#c2_vtk_e_vtkUnstructuredGrid
-    https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/pointToCellData.py
-
-Use it to write mesh:
-
-    writer = vtk.vtkUnstructuredGridWriter()
-    writer.SetFileName(file_name)
-    writer.SetInputData(unstructured_grid)
-    writer.Write()
-
 Multiprocessing for tests.
-
-Learn and use it for future code improvement:
-
-    https://vtk.org/doc/nightly/html/c2_vtk_t_23.html#c2_vtk_t_vtkXMLUnstructuredGridWriter
-    https://vtk.org/doc/nightly/html/c2_vtk_t_20.html#c2_vtk_t_vtkUnstructuredGrid
-    https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestCellArray.py
-    https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/marching.py
-    https://vtk.org/gitweb?p=VTK.git;a=blob;f=Examples/DataManipulation/Python/BuildUGrid.py
-    https://vtk.org/gitweb?p=VTK.git;a=blob;f=IO/XML/Testing/Python/TestXMLUnstructuredGridIO.py
-
-Use it to write mesh:
-
-    writer = vtk.vtkXMLDataSetWriter()
-    writer.SetFileName(file_name)
-    writer.SetInputData(unstructured_grid)
-    writer.Write() 

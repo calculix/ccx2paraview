@@ -19,7 +19,7 @@ sys.path.insert(0, sys_path)
 
 import FRDParser
 import VTKWriter
-import VTUWriter
+import VTUWriter2
 import PVDWriter
 import clean
 
@@ -69,7 +69,7 @@ class Converter:
                     if self.fmt == 'vtk':
                         VTKWriter.writeVTK(p, file_name, t)
                     if self.fmt == 'vtu':
-                        VTUWriter.writeVTU(p, file_name, t)
+                        VTUWriter2.writeVTU(p, file_name, t)
 
                 # Write ParaView Data (PVD) for series of VTU files
                 if l > 1 and self.fmt == 'vtu':
@@ -82,7 +82,7 @@ class Converter:
                 if self.fmt == 'vtk':
                     VTKWriter.writeVTK(p, file_name, None)
                 if self.fmt == 'vtu':
-                    VTUWriter.writeVTU(p, file_name, None)
+                    VTUWriter2.writeVTU(p, file_name, None)
         else:
             logging.warning('File is empty!')
 
