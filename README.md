@@ -49,6 +49,8 @@ It is recommended to convert .frd to modern XML .vtu format - its contents are c
 
 Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported.
 
+**Attention!** While developing this converter I'm using latest Python3, latest VTK and latest Paraview. If you have problems with opening conversion results in Paraview - update it.
+
 <br/><br/>
 
 
@@ -98,7 +100,7 @@ Read [here](https://packaging.python.org/tutorials/packaging-projects/) about ho
     python3 setup.py sdist bdist_wheel
     twine upload dist/*
 
-Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) and VTK [unstructured grid](https://lorensen.github.io/VTKExamples/site/VTKFileFormats/#unstructuredgrid). Remember that FRD file is node based, so element results are also stored at the nodes after extrapolation from the integration points ([link](http://www.dhondt.de/ccx_2.15.pdf)).
+Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) and VTK [unstructured grid](https://lorensen.github.io/VTKExamples/site/VTKFileFormats/#unstructuredgrid). Remember that FRD file is node based, so element results are also stored at the nodes after extrapolation from the integration points.
 
 <br/><br/>
 
@@ -106,10 +108,11 @@ Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-fo
 
 # TODO
 
+Move PVD writer into writer.py.
+
+XDMF writer: https://github.com/calculix/ccx2paraview/issues/6
+
 Parse DAT files: it would be a killer feature if Paraview could visualize gauss point results.
 https://public.kitware.com/pipermail/paraview/2013-January/027121.html
-
-
-XDMF format: https://github.com/calculix/ccx2paraview/issues/6
 
 Multiprocessing for tests.
