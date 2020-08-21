@@ -4,12 +4,13 @@
 """ © Ihor Mirzov, 2020
 Distributed under GNU General Public License v3.0
 
-Writes VTU file based on data from FRDParser object.
-Used VTK package with native methods. """
+Writes .vtk and .vtu files based on data from FRDParser object.
+Uses native VTK python package. """
+
+import math
+import logging
 
 import vtk
-import logging
-import math
 
 import frd2vtk
 
@@ -137,36 +138,40 @@ def assign_data(ugrid, b, numnod):
 
 # Main function
 # p is a FRDParser object
-def writeVTU(p, file_name, time):
-    ugrid = generate_ugrid(p)
+class Writer:
 
-    # POINT DATA - from here start all the results
-    for b in p.result_blocks: # iterate over NodalResultsBlock
-        if b.value != time: # write results for one time increment only
-            continue
-        if len(b.results) and len(b.components):
-            if b.value < 1:
-                time_str = 'time {:.2e}, '.format(b.value)
+    def __init__(self, p, file_name, time):
+        self.file_name = file_name
+        self.ugrid = generate_ugrid(p)
+
+        # POINT DATA - from here start all the results
+        for b in p.result_blocks: # iterate over NodalResultsBlock
+            if b.value != time: # write results for one time increment only
+                continue
+            if len(b.results) and len(b.components):
+                if b.value < 1:
+                    time_str = 'time {:.2e}, '.format(b.value)
+                else:
+                    time_str = 'time {:.1f}, '.format(b.value)
+                logging.info('Step {}, '.format(b.numstep) +\
+                            time_str +\
+                            '{}, '.format(b.name) +\
+                            '{} components, '.format(len(b.components)) +\
+                            '{} values'.format(len(b.results)))
+                assign_data(self.ugrid, b, p.node_block.numnod)
             else:
-                time_str = 'time {:.1f}, '.format(b.value)
-            logging.info('Step {}, '.format(b.numstep) +\
-                        time_str +\
-                        '{}, '.format(b.name) +\
-                        '{} components, '.format(len(b.components)) +\
-                        '{} values'.format(len(b.results)))
-            assign_data(ugrid, b, p.node_block.numnod)
-        else:
-            logging.warning(b.name, '- no data for this increment')
+                logging.warning(b.name, '- no data for this increment')
 
-    # .vtk
-    # writer = vtk.vtkUnstructuredGridWriter() # VTK
-    # writer.SetInputData(ugrid)
+    def write_vtk(self):
+        writer = vtk.vtkUnstructuredGridWriter()
+        writer.SetInputData(self.ugrid)
+        writer.SetFileName(self.file_name)
+        writer.Write()
 
-    # .vtu
-    writer = vtk.vtkXMLUnstructuredGridWriter()
-    writer.SetInputDataObject(ugrid)
-    writer.SetDataModeToAscii()
-    # writer.SetDataModeToBinary()
-
-    writer.SetFileName(file_name)
-    writer.Write()
+    def write_vtu(self):
+        writer = vtk.vtkXMLUnstructuredGridWriter()
+        writer.SetInputDataObject(self.ugrid)
+        # writer.SetDataModeToAscii() # text file
+        writer.SetDataModeToBinary() # compressed file
+        writer.SetFileName(self.file_name)
+        writer.Write()

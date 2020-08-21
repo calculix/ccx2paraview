@@ -18,8 +18,7 @@ sys_path = os.path.dirname(sys_path)
 sys.path.insert(0, sys_path)
 
 import FRDParser
-import VTKWriter
-import VTUWriter2
+from writer import Writer
 import PVDWriter
 import clean
 
@@ -66,10 +65,9 @@ class Converter:
                 for t, file_name in times_names.items():
                     base_name = os.path.basename(file_name)
                     logging.info('Writing ' + base_name)
-                    if self.fmt == 'vtk':
-                        VTKWriter.writeVTK(p, file_name, t)
-                    if self.fmt == 'vtu':
-                        VTUWriter2.writeVTU(p, file_name, t)
+                    w = Writer(p, file_name, t)
+                    if self.fmt == 'vtk': w.write_vtk()
+                    if self.fmt == 'vtu': w.write_vtu()
 
                 # Write ParaView Data (PVD) for series of VTU files
                 if l > 1 and self.fmt == 'vtu':
@@ -79,10 +77,9 @@ class Converter:
             else:
                 logging.warning('No time increments!')
                 file_name = self.file_name[:-3] + self.fmt
-                if self.fmt == 'vtk':
-                    VTKWriter.writeVTK(p, file_name, None)
-                if self.fmt == 'vtu':
-                    VTUWriter2.writeVTU(p, file_name, None)
+                w = Writer(p, file_name, None)
+                if self.fmt == 'vtk': w.write_vtk()
+                if self.fmt == 'vtu': w.write_vtu()
         else:
             logging.warning('File is empty!')
 
