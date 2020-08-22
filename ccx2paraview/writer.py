@@ -160,7 +160,7 @@ class Writer:
                             '{} values'.format(len(b.results)))
                 assign_data(self.ugrid, b, p.node_block.numnod)
             else:
-                logging.warning(b.name, '- no data for this increment')
+                logging.warning(b.name + ' - no data for this increment')
 
     def write_vtk(self):
         writer = vtk.vtkUnstructuredGridWriter()

@@ -10,8 +10,9 @@ This module contains classes for parsing CalculiX .frd files """
 
 import os
 import re
-import logging
+import sys
 import math
+import logging
 
 import numpy as np
 
@@ -33,16 +34,15 @@ class Element:
         self.nodes = nodes
 
 
-# Nodal Point Coordinate Block
-# cgx_2.15 Manual, § 11.3
+# Nodal Point Coordinate Block: cgx_2.15 Manual, § 11.3
 class NodalPointCoordinateBlock:
 
     # Read nodal coordinates
     def __init__(self, in_file):
-        line = readByteLine(in_file)
+        line = read_byte_line(in_file)
         self.nodes = {} # dictionary with nodes {num:Node}
         while True:
-            line = readByteLine(in_file)
+            line = read_byte_line(in_file)
 
             # End of block
             if line == '-3':
@@ -61,18 +61,17 @@ class NodalPointCoordinateBlock:
         logging.info('{} nodes'.format(self.numnod)) # total number of nodes
 
 
-# Element Definition Block
-# cgx_2.15 Manual, § 11.4
+# Element Definition Block: cgx_2.15 Manual, § 11.4
 class ElementDefinitionBlock:
 
     # Parse elements
     def __init__(self, in_file):
         self.in_file = in_file
-        line = readByteLine(in_file)
+        line = read_byte_line(in_file)
         self.elements = [] # list of Element objects
 
         while True:
-            line = readByteLine(in_file)
+            line = read_byte_line(in_file)
 
             # End of block
             if line == '-3':
@@ -100,7 +99,7 @@ class ElementDefinitionBlock:
         element_nodes = []
         num_nodes = self.amount_of_nodes_in_frd_element(element_type)
         for j in range(self.num_lines(element_type)):
-            line = readByteLine(self.in_file)
+            line = read_byte_line(self.in_file)
             nodes = [int(n) for n in line.split()[1:]]
             element_nodes.extend(nodes)
 
@@ -119,8 +118,7 @@ class ElementDefinitionBlock:
         return (0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1)[etype]
 
 
-# Nodal Results Block
-# cgx_2.15 Manual, § 11.6
+# Nodal Results Block: cgx_2.15 Manual, § 11.6
 class NodalResultsBlock:
 
     # Read calculated values
@@ -155,7 +153,7 @@ class NodalResultsBlock:
             CL  101 1.000000000          32                     0    1           1
             CL  102 117547.9305          90                     2    2MODAL      1
         """
-        line = readByteLine(self.in_file)[7:]
+        line = read_byte_line(self.in_file)[7:]
         regex = '^(.{12})\s+\d+\s+\d+\s+(\d+)'
         match = parseLine(regex, line)
         self.value = float(match.group(1)) # could be frequency, time or any numerical value
@@ -169,7 +167,7 @@ class NodalResultsBlock:
             -4  STRESS      6    1
             -4  DOR1  Rx    4    1
         """
-        line = readByteLine(self.in_file)[4:]
+        line = read_byte_line(self.in_file)[4:]
         regex = '^(\w+)' + '\D+(\d+)'*2
         match = parseLine(regex, line)
         self.ncomps = int(match.group(2)) # amount of components
@@ -211,7 +209,7 @@ class NodalResultsBlock:
             -5  SZX         1    4    3    1
         """
         for i in range(self.ncomps):
-            line = readByteLine(self.in_file)[4:]
+            line = read_byte_line(self.in_file)[4:]
             regex = '^\w+'
             match = parseLine(regex, line)
 
@@ -248,7 +246,7 @@ class NodalResultsBlock:
 
         results_counter = 0 # independent results counter
         while True:
-            line = readByteLine(self.in_file)
+            line = read_byte_line(self.in_file)
 
             # End of block
             if line == '-3':
@@ -280,7 +278,7 @@ class NodalResultsBlock:
             # Result could be multiline
             for j in range((self.ncomps-1)//6):
                 row_comps = min(6, self.ncomps-6*(j+1)) # amount of values written in row
-                line = readByteLine(self.in_file)
+                line = read_byte_line(self.in_file)
                 regex = '^-2\s+' + '(.{12})' * row_comps
                 match = parseLine(regex, line)
                 data = [float(match.group(c+1)) for c in range(row_comps)]
@@ -400,7 +398,7 @@ class Parse:
                 while key:
                     # Header
                     if key == '1' or key == '1P':
-                        readByteLine(in_file)
+                        read_byte_line(in_file)
 
                     # Nodes
                     elif key == '2':
@@ -431,29 +429,7 @@ class Parse:
             else:
                 logging.warning('No time increments!')
 
-            # # Exclude zero nodes added by ccx due to *TRANSFORM
-            # nn = sorted(set([len(b.results) for b in self.result_blocks if len(b.results)>0]))
-            # if len(nn) == 3:
-            #     self.node_block.numnod = nn[1]
-            # elif len(nn) == 2:
-            #     self.node_block.numnod = nn[0]
 
-
-# Read byte line and decode
-def readByteLine(f):
-    try:
-        byte = f.read(1).decode()
-    except UnicodeDecodeError:
-        byte = ' '
-    line = byte
-    while byte != '\n':
-        try:
-            byte = f.read(1).decode()
-        except UnicodeDecodeError:
-            byte = ' '
-        line += byte
-    return line.strip()
-# TODO Use this readByteLine:
 # Read byte line and decode: return None after EOF
 def read_byte_line(f):
 
@@ -488,5 +464,5 @@ def parseLine(regex, line):
         return match
     else:
         logging.error('Can\'t parse line:\n{}\nwith regex:\n{}'\
-                .format(line, regex))
+            .format(line, regex))
         raise Exception
