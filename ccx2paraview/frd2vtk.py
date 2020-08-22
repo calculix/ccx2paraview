@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-
 """ © Ihor Mirzov, 2019-2020
 Distributed under GNU General Public License v3.0
 
 Convert Calculix element type to VTK.
 Keep in mind that CalculiX expands shell elements.
-In vtk elements nodes are numbered starting from 0, not from 1.
+In VTK nodes are numbered starting from 0, not from 1.
 
-For frd see http://www.dhondt.de/cgx_2.15.pdf pages 117-123 (chapter 10)
-For vtk see https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf pages 9-10
+For FRD see http://www.dhondt.de/cgx_2.15.pdf pages 117-123 (chapter 10)
+For VTK see https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf pages 9-10
 
  _________________________________________________________________
 |                               |                                 |
@@ -101,12 +100,11 @@ For vtk see https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf pages 9-
 |    | DCOUP3D  |               |      |                          |
 |    | MASS     |               |      |                          |
 |____|__________|_______________|______|__________________________|
+
 """
 
-
+# frd_elem_type : vtk_elem_type
 def convert_elem_type(frd_elem_type):
-
-    # frd_elem_type : vtk_elem_type
     frd2vtk_num = {
         1: 12,
         2: 13,
@@ -119,69 +117,67 @@ def convert_elem_type(frd_elem_type):
         9:  9,
         10: 23,
         11:  3,
-        12: 21,
-        }
+        12: 21}
     frd2vtk_txt = {
-            'C3D8':12,
-            'F3D8':12,
-            'C3D8R':12,
-            'C3D8I':12,
-            'C3D6':13,
-            'F3D6':13,
-            'C3D4':10,
-            'F3D4':10,
-            'C3D20':25,
-            'C3D20R':25,
-            'C3D15':13,
-            'C3D10':24,
-            'C3D10T':24,
-            'S3':5,
-            'M3D3':5,
-            'CPS3':5,
-            'CPE3':5,
-            'CAX3':5,
-            'S6':22,
-            'M3D6':22,
-            'CPS6':22,
-            'CPE6':22,
-            'CAX6':22,
-            'S4':9,
-            'S4R':9,
-            'M3D4':9,
-            'M3D4R':9,
-            'CPS4':9,
-            'CPS4R':9,
-            'CPE4':9,
-            'CPE4R':9,
-            'CAX4':9,
-            'CAX4R':9,
-            'S8':23,
-            'S8R':23,
-            'M3D8':23,
-            'M3D8R':23,
-            'CPS8':23,
-            'CPS8R':23,
-            'CPE8':23,
-            'CPE8R':23,
-            'CAX8':23,
-            'CAX8R':23,
-            'B21':3,
-            'B31':3,
-            'B31R':3,
-            'T2D2':3,
-            'T3D2':3,
-            'GAPUNI':3,
-            'DASHPOTA':3,
-            'SPRING2':3,
-            'SPRINGA':3,
-            'B32':21,
-            'B32R':21,
-            'T3D3':21,
-            'D':21,
-            'SPRING1':1,
-            'DCOUP3D':1,
-            'MASS':1,
-        }
+        'C3D8':12,
+        'F3D8':12,
+        'C3D8R':12,
+        'C3D8I':12,
+        'C3D6':13,
+        'F3D6':13,
+        'C3D4':10,
+        'F3D4':10,
+        'C3D20':25,
+        'C3D20R':25,
+        'C3D15':13,
+        'C3D10':24,
+        'C3D10T':24,
+        'S3':5,
+        'M3D3':5,
+        'CPS3':5,
+        'CPE3':5,
+        'CAX3':5,
+        'S6':22,
+        'M3D6':22,
+        'CPS6':22,
+        'CPE6':22,
+        'CAX6':22,
+        'S4':9,
+        'S4R':9,
+        'M3D4':9,
+        'M3D4R':9,
+        'CPS4':9,
+        'CPS4R':9,
+        'CPE4':9,
+        'CPE4R':9,
+        'CAX4':9,
+        'CAX4R':9,
+        'S8':23,
+        'S8R':23,
+        'M3D8':23,
+        'M3D8R':23,
+        'CPS8':23,
+        'CPS8R':23,
+        'CPE8':23,
+        'CPE8R':23,
+        'CAX8':23,
+        'CAX8R':23,
+        'B21':3,
+        'B31':3,
+        'B31R':3,
+        'T2D2':3,
+        'T3D2':3,
+        'GAPUNI':3,
+        'DASHPOTA':3,
+        'SPRING2':3,
+        'SPRINGA':3,
+        'B32':21,
+        'B32R':21,
+        'T3D3':21,
+        'D':21,
+        'SPRING1':1,
+        'DCOUP3D':1,
+        'MASS':1}
     if frd_elem_type in frd2vtk_num:
         return frd2vtk_num[frd_elem_type]
     else:

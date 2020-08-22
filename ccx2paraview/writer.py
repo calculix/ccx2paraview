@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, 2020
+""" © Ihor Mirzov, 2019-2020
 Distributed under GNU General Public License v3.0
 
 Writes .vtk and .vtu files based on data from FRDParser object.
 Uses native VTK python package. """
 
+import os
 import math
 import logging
 
@@ -136,6 +137,7 @@ def assign_data(ugrid, b, numnod):
         if v > 0:
             logging.warning('{} {} values are converted to 0.0'.format(v, k))
 
+
 # Main function
 # p is a FRDParser object
 class Writer:
@@ -175,3 +177,18 @@ class Writer:
         writer.SetDataModeToBinary() # compressed file
         writer.SetFileName(self.file_name)
         writer.Write()
+
+
+# Writes ParaView Data (PVD) file for series of VTU files
+def write_pvd(file_name, times_names):
+    with open(file_name, 'w') as f:
+        f.write('<?xml version="1.0"?>\n')
+        f.write('<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">\n')
+        f.write('\t<Collection>\n')
+
+        for t, n in times_names.items():
+            f.write('\t\t<DataSet file="{}" timestep="{}"/>\n'\
+                .format(os.path.basename(n), t))
+
+        f.write('\t</Collection>\n')
+        f.write('</VTKFile>')

@@ -18,8 +18,7 @@ sys_path = os.path.dirname(sys_path)
 sys.path.insert(0, sys_path)
 
 import FRDParser
-from writer import Writer
-import PVDWriter
+import writer
 import clean
 
 
@@ -63,18 +62,18 @@ class Converter:
                     for t, file_name in times_names.items():
                         base_name = os.path.basename(file_name)
                         logging.info('Writing ' + base_name)
-                        w = Writer(p, file_name, t)
+                        w = writer.Writer(p, file_name, t)
                         if fmt == 'vtk': w.write_vtk()
                         if fmt == 'vtu': w.write_vtu()
 
                     # Write ParaView Data (PVD) for series of VTU files
                     if l > 1 and fmt == 'vtu':
-                        PVDWriter.writePVD(self.file_name\
+                        writer.write_pvd(self.file_name\
                             .replace('.frd', '.pvd'), times_names)
 
                 else:
                     file_name = self.file_name[:-3] + fmt
-                    w = Writer(p, file_name, None)
+                    w = writer.Writer(p, file_name, None)
                     if fmt == 'vtk': w.write_vtk()
                     if fmt == 'vtu': w.write_vtu()
         else:
