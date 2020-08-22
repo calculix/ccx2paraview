@@ -47,7 +47,7 @@ Run the binary with command:
 
 It is recommended to convert .frd to modern XML .vtu format - its contents are compressed. If you have more than one time step there will be additional XML file created - the PVD file. Open it in Paraview to read data from all time steps (all VTU files) at ones.
 
-Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported.
+Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - previously there were problems with component names. Also you can pass both formats to convert .frd to .vtk and .vtu at once.
 
 **Attention!** While developing this converter I'm using latest Python3, latest VTK and latest Paraview. If you have problems with opening conversion results in Paraview - update it.
 
