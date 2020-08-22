@@ -18,6 +18,7 @@ import numpy as np
 
 # A single node object
 class Node:
+
     def __init__(self, num, coords):
         self.num = num
         self.coords = coords
@@ -25,6 +26,7 @@ class Node:
 
 # A single finite element object
 class Element:
+
     def __init__(self, num, etype, nodes):
         self.num = num
         self.type = etype
@@ -34,7 +36,6 @@ class Element:
 # Nodal Point Coordinate Block
 # cgx_2.15 Manual, § 11.3
 class NodalPointCoordinateBlock:
-
 
     # Read nodal coordinates
     def __init__(self, in_file):
@@ -82,7 +83,6 @@ class ElementDefinitionBlock:
         self.numelem = len(self.elements) # number of elements in this block
         logging.info('{} cells'.format(self.numelem)) # total number of elements
 
-
     # Read element composition
     def parseElement(self, line):
         """
@@ -108,12 +108,10 @@ class ElementDefinitionBlock:
         self.elements.append(elem)
         # logging.debug('Element {}: {}'.format(element_num, element_nodes))
 
-
     # Amount of nodes in frd element
     def amount_of_nodes_in_frd_element(self, etype):
         # First value is meaningless, since elements are 1-based
         return (0, 8, 6, 4, 20, 15, 10, 3, 6, 4, 8, 2, 3)[etype]
-
 
     # Amount of lines in element connectivity definition
     def num_lines(self, etype):
@@ -124,7 +122,6 @@ class ElementDefinitionBlock:
 # Nodal Results Block
 # cgx_2.15 Manual, § 11.6
 class NodalResultsBlock:
-
 
     # Read calculated values
     def __init__(self, in_file, node_block):
@@ -150,7 +147,6 @@ class NodalResultsBlock:
                     '{} components, '.format(len(self.components)) +\
                     '{} values'.format(results_counter))
 
-
     # Read step information
     def readStepInfo(self):
         """
@@ -164,7 +160,6 @@ class NodalResultsBlock:
         match = parseLine(regex, line)
         self.value = float(match.group(1)) # could be frequency, time or any numerical value
         self.numstep = int(match.group(2)) # step number
-
 
     # Read variables information
     def readVarsInfo(self):
@@ -191,7 +186,6 @@ class NodalResultsBlock:
         self.name = match.group(1) # dataset name
         if self.name in inpname:
             self.name = inpname[self.name]
-
 
     # Iterate over components
     def readComponentsInfo(self):
@@ -230,7 +224,6 @@ class NodalResultsBlock:
                 self.ncomps -= 1
             else:
                 self.components.append(component_name)
-
 
     # Iterate over nodal results
     def readNodalResults(self):
@@ -303,7 +296,6 @@ class NodalResultsBlock:
                 .format(before.strip(), after, emitted_warning_types['WrongFormat']))
         return results_counter
 
-
     # Append Mises and principal stresses
     def appendStresses(self):
         if self.name == 'S':
@@ -353,7 +345,6 @@ class NodalResultsBlock:
             except:
                 logging.error('Additional stresses will not be appended.')
 
-
     # Append principal strains
     def appendStrains(self):
         if self.name == 'E':
@@ -396,7 +387,6 @@ class NodalResultsBlock:
 # Main class
 class Parse:
 
-
     # Read contents of the .frd file
     def __init__(self, file_name=None):
         self.file_name = None   # path to the .frd-file to be read
@@ -432,6 +422,14 @@ class Parse:
                         break
 
                     key = in_file.read(5).decode().strip()
+
+            self.times = sorted(set([b.value for b in self.result_blocks]))
+            l = len(self.times)
+            if l:
+                msg = '{} time increment{}'.format(l, 's'*min(1, l-1))
+                logging.info(msg)
+            else:
+                logging.warning('No time increments!')
 
             # # Exclude zero nodes added by ccx due to *TRANSFORM
             # nn = sorted(set([len(b.results) for b in self.result_blocks if len(b.results)>0]))

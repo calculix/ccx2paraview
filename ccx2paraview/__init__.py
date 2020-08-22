@@ -35,22 +35,19 @@ class Converter:
         base_name = os.path.basename(self.file_name)
         logging.info('Parsing ' + base_name)
         p = FRDParser.Parse(self.file_name)
+        l = len(p.times)
 
         # If file contains mesh data
         if p.node_block and p.elem_block:
             for fmt in self.fmt_list:
-                times = sorted(set([b.value for b in p.result_blocks]))
-                l = len(times)
                 if l:
-                    msg = '{} time increment{}'.format(l, 's'*min(1, l-1))
-                    logging.info(msg)
-
                     """ If model has many time steps - many output files
                     will be created. Each output file's name should contain
                     increment number padded with zero """
+                    print()
                     counter = 1
                     times_names = {} # {increment time: file name, ...}
-                    for t in sorted(times):
+                    for t in p.times:
                         if l > 1:
                             ext = '.{:0{width}}.{}'\
                                 .format(counter, fmt, width=len(str(l)))
@@ -76,7 +73,6 @@ class Converter:
                             .replace('.frd', '.pvd'), times_names)
 
                 else:
-                    logging.warning('No time increments!')
                     file_name = self.file_name[:-3] + fmt
                     w = Writer(p, file_name, None)
                     if fmt == 'vtk': w.write_vtk()
