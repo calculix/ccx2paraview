@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 """
-© Lukas Bante, Sep 2017 - original code https://gitlab.lrz.de/snippets/238
-© Ihor Mirzov, Jan 2020 - bugfix, refactoring and improvement
+© Lukas Bante, 2017 - original code https://gitlab.lrz.de/snippets/238
+© Ihor Mirzov, 2019-2020 - bugfix, refactoring and improvement
 Distributed under GNU General Public License v3.0
 
 This module contains classes for parsing CalculiX .frd files """
