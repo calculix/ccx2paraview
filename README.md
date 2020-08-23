@@ -22,7 +22,7 @@ Distributed under GNU General Public License v3.0
 
 # CalculiX to Paraview converter (frd to vtk/vtu)
 
-Converts [CalculiX](http://www.dhondt.de/) .frd-file to view and postprocess analysis results in [Paraview](https://www.paraview.org/). Generates Mises and Principal components for stress and strain tensors.
+Converts [CalculiX](http://www.dhondt.de/) ASCII .frd-file to view and postprocess analysis results in [Paraview](https://www.paraview.org/). Generates Mises and Principal components for stress and strain tensors.
 
 Creates separate file for each output interval - it makes possible to animate time history. **Caution!** If you have 300 time steps in the FRD, there will be 300 Paraview files. If you need one file - write output only for one step in your CalculiX model.
 
@@ -36,18 +36,22 @@ FRD parser is tested to reduce processing time as much as possible. Now it's qui
 
 # How to use
 
+Please, pay attention to .frd-file type - it should be ASCII, not binary! Use keywords *NODE FILE, *EL FILE and *CONTACT FILE in your INP model to get results in ASCII format.
+
 Running this software from source is not recommended, because sources are under development and may contain bugs. So, first, [download released binaries](https://github.com/calculix/ccx2paraview/releases), unpack them and allow to be executed (give permissions).
 
-Run the binary with command:
+Run binary with command:
 
     in Linux:       ./ccx2paraview yourjobname.frd vtu
                     ./ccx2paraview yourjobname.frd vtk
     in Windows:     ccx2paraview.exe yourjobname.frd vtu
                     ccx2paraview.exe yourjobname.frd vtk
 
+Also you can pass both formats to convert .frd to .vtk and .vtu at once.
+
 It is recommended to convert .frd to modern XML .vtu format - its contents are compressed. If you have more than one time step there will be additional XML file created - [the PVD file](https://www.paraview.org/Wiki/ParaView/Data_formats#PVD_File_Format). Open it in Paraview to read data from all time steps (all VTU files) at ones.
 
-Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - previously there were problems with component names. Also you can pass both formats to convert .frd to .vtk and .vtu at once.
+Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - previously there were problems with component names.
 
 **Attention!** While developing this converter I'm using latest Python3, latest VTK and latest Paraview. If you have problems with opening conversion results in Paraview - update it.
 
@@ -108,11 +112,14 @@ Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-fo
 
 # TODO
 
-Move PVD writer into writer.py.
+Export tensors as tensors: https://github.com/calculix/ccx2paraview/issues/13
 
-XDMF writer: https://github.com/calculix/ccx2paraview/issues/6
-
-Parse DAT files: it would be a killer feature if Paraview could visualize gauss point results.
-https://public.kitware.com/pipermail/paraview/2013-January/027121.html
+Parse binary .frd files.
 
 Multiprocessing for tests.
+
+Contribute to meshio.
+
+Use meshio XDMF writer: https://github.com/calculix/ccx2paraview/issues/6
+
+Parse DAT files: it would be a killer feature if Paraview could visualize results in gauss points.
