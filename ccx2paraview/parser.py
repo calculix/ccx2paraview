@@ -12,6 +12,7 @@ import os
 import re
 import sys
 import math
+import copy
 import logging
 
 import numpy as np
@@ -34,7 +35,7 @@ class Element:
         self.nodes = nodes
 
 
-# Nodal Point Coordinate Block: cgx_2.15 Manual, § 11.3
+# Nodal Point Coordinate Block: cgx_2.17 Manual, § 11.3
 class NodalPointCoordinateBlock:
 
     # Read nodal coordinates
@@ -61,7 +62,7 @@ class NodalPointCoordinateBlock:
         logging.info('{} nodes'.format(self.numnod)) # total number of nodes
 
 
-# Element Definition Block: cgx_2.15 Manual, § 11.4
+# Element Definition Block: cgx_2.17 Manual, § 11.4
 class ElementDefinitionBlock:
 
     # Parse elements
@@ -77,13 +78,13 @@ class ElementDefinitionBlock:
             if line == '-3':
                 break
 
-            self.parseElement(line)
+            self.parse_element(line)
 
         self.numelem = len(self.elements) # number of elements in this block
         logging.info('{} cells'.format(self.numelem)) # total number of elements
 
     # Read element composition
-    def parseElement(self, line):
+    def parse_element(self, line):
         """
             -1         1    1    0AIR
             -2         1         2         3         4         5         6         7         8
@@ -118,22 +119,28 @@ class ElementDefinitionBlock:
         return (0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1)[etype]
 
 
-# Nodal Results Block: cgx_2.15 Manual, § 11.6
+# Nodal Results Block: cgx_2.17 Manual, § 11.6
 class NodalResultsBlock:
 
     # Read calculated values
-    def __init__(self, in_file, node_block):
-        self.in_file = in_file
-        self.node_block = node_block
+    def __init__(self):
         self.components = [] # component names
         self.results = {} # dictionary with nodal result {node:data}
+        self.name = None
+        self.value = 0
+        self.ncomps = 0
+        self.numstep = 0
 
-        self.readStepInfo()
-        self.readVarsInfo()
-        self.readComponentsInfo()
-        results_counter = self.readNodalResults()
-        self.appendStresses() # append Mises and principal stresses
-        self.appendStrains() # append principal strains
+    def run(self, in_file, node_block):
+        self.in_file = in_file
+        self.node_block = node_block
+
+        self.read_step_info()
+        self.read_vars_info()
+        self.read_components_info()
+        results_counter = self.read_nodal_results()
+        # self.append_stresses() # append Mises and principal stresses
+        # self.append_strains() # append principal strains
 
         if self.value < 1:
             time_str = 'time {:.2e}, '.format(self.value)
@@ -146,7 +153,7 @@ class NodalResultsBlock:
                     '{} values'.format(results_counter))
 
     # Read step information
-    def readStepInfo(self):
+    def read_step_info(self):
         """
             CL  101 0.36028E+01         320                     3    1           1
             CL  101 1.000000000         803                     0    1           1
@@ -160,7 +167,7 @@ class NodalResultsBlock:
         self.numstep = int(match.group(2)) # step number
 
     # Read variables information
-    def readVarsInfo(self):
+    def read_vars_info(self):
         """
             -4  V3DF        4    1
             -4  DISP        4    1
@@ -186,7 +193,7 @@ class NodalResultsBlock:
             self.name = inpname[self.name]
 
     # Iterate over components
-    def readComponentsInfo(self):
+    def read_components_info(self):
         """
             -5  D1          1    2    1    0
             -5  D2          1    2    2    0
@@ -213,10 +220,10 @@ class NodalResultsBlock:
             regex = '^\w+'
             match = parseLine(regex, line)
 
-            # Exclude variable name from the component name: SXX->xx, EYZ->yz
+            # Exclude variable name from the component name: SXX->XX, EYZ->YZ
             component_name = match.group(0)
             if component_name.startswith(self.name):
-                component_name = component_name[len(self.name):].lower()
+                component_name = component_name[len(self.name):]
 
             if 'ALL' in component_name:
                 self.ncomps -= 1
@@ -224,7 +231,7 @@ class NodalResultsBlock:
                 self.components.append(component_name)
 
     # Iterate over nodal results
-    def readNodalResults(self):
+    def read_nodal_results(self):
         """
             -1         1-7.97316E+10-3.75220E-01
             -1         2-8.19094E+10-3.85469E-01
@@ -294,28 +301,39 @@ class NodalResultsBlock:
                 .format(before.strip(), after, emitted_warning_types['WrongFormat']))
         return results_counter
 
+    # All 9 tensor components
+    def reshape9(self):
+        self.ncomps = 9
+        xx = self.components[0]
+        yy = self.components[1]
+        zz = self.components[2]
+        xy = self.components[3]
+        yz = self.components[4]
+        xz = self.components[5]
+        self.components = [
+            xx, xy, xz,
+            xy, yy, yz,
+            xz, yz, zz]
+        for node_num in self.node_block.nodes.keys():
+            data = self.results[node_num]
+            xx = data[0]; yy = data[1]; zz = data[2]
+            xy = data[3]; yz = data[4]; xz = data[5]
+            self.results[node_num] = [
+                xx, xy, xz,
+                xy, yy, yz,
+                xz, yz, zz]
+
     # Append Mises and principal stresses
-    def appendStresses(self):
+    # NOTE DEPRECATED
+    def append_stresses(self):
         if self.name == 'S':
             try:
-                # component_names = (
-                #     'Mises',
-                #     'Max Principal',
-                #     'Mid Principal',
-                #     'Min Principal',
-                #     'Tresca',
-                #     'Pressure',
-                #     'Third Invariant'
-                # )
                 component_names = (
                     'Mises',
                     'Min Principal',
                     'Mid Principal',
-                    'Max Principal',
-                    )
+                    'Max Principal')
                 for i in range(len(component_names)):
-                    # c = Component()
-                    # c.ictype = 1; c.name = component_names[i]
                     self.components.append(component_names[i])
                     self.ncomps += 1
 
@@ -323,8 +341,8 @@ class NodalResultsBlock:
                 for node_num in self.node_block.nodes.keys():
                     data = self.results[node_num] # list with results for current node
                     Sxx = data[0]; Syy = data[1]; Szz = data[2]
-                    Sxy = data[3]; Syz = data[4]; Szx = data[5]
-                    tensor = np.array([[Sxx, Sxy, Szx], [Sxy, Syy, Syz], [Szx, Syz, Szz]])
+                    Sxy = data[3]; Syz = data[4]; Sxz = data[5]
+                    tensor = np.array([[Sxx, Sxy, Sxz], [Sxy, Syy, Syz], [Sxz, Syz, Szz]])
 
                     # Calculate Mises stress for current node
                     mises = 1 / math.sqrt(2) *\
@@ -332,7 +350,7 @@ class NodalResultsBlock:
                                     (Syy - Szz)**2 +\
                                     (Szz - Sxx)**2 +\
                                     6 * Syz**2 +\
-                                    6 * Szx**2 +\
+                                    6 * Sxz**2 +\
                                     6 * Sxy**2)
                     self.results[node_num].append(mises)
 
@@ -344,7 +362,8 @@ class NodalResultsBlock:
                 logging.error('Additional stresses will not be appended.')
 
     # Append principal strains
-    def appendStrains(self):
+    # NOTE DEPRECATED
+    def append_strains(self):
         if self.name == 'E':
             try:
                 component_names = (
@@ -361,8 +380,8 @@ class NodalResultsBlock:
                 for node_num in self.node_block.nodes.keys():
                     data = self.results[node_num] # list with results for current node
                     Exx = data[0]; Eyy = data[1]; Ezz = data[2]
-                    Exy = data[3]; Eyz = data[4]; Ezx = data[5]
-                    tensor = np.array([[Exx, Exy, Ezx], [Exy, Eyy, Eyz], [Ezx, Eyz, Ezz]])
+                    Exy = data[3]; Eyz = data[4]; Exz = data[5]
+                    tensor = np.array([[Exx, Exy, Exz], [Exy, Eyy, Eyz], [Exz, Eyz, Ezz]])
 
                     # Calculate Mises strain for current node
                     mises = math.sqrt(2)/3 *\
@@ -370,7 +389,7 @@ class NodalResultsBlock:
                                 (Eyy - Ezz)**2 +\
                                 (Ezz - Exx)**2 +\
                                 6 * Eyz**2 +\
-                                6 * Ezx**2 +\
+                                6 * Exz**2 +\
                                 6 * Exy**2)
                     self.results[node_num].append(mises)
 
@@ -383,7 +402,7 @@ class NodalResultsBlock:
 
 
 # Main class
-class Parse:
+class FRD:
 
     # Read contents of the .frd file
     def __init__(self, file_name=None):
@@ -412,8 +431,19 @@ class Parse:
 
                     # Results
                     elif key == '100':
-                        block = NodalResultsBlock(in_file, self.node_block)
-                        self.result_blocks.append(block)
+                        b = NodalResultsBlock()
+                        b.run(in_file, self.node_block)
+                        self.result_blocks.append(b)
+                        if b.name == 'S':
+                            b1 = self.calculate_mises_stress(b)
+                            b2 = self.calculate_principal(b)
+                            self.result_blocks.extend([b1,b2])
+                            # b.reshape9()
+                        if b.name == 'E':
+                            b1 = self.calculate_mises_strain(b)
+                            b2 = self.calculate_principal(b)
+                            self.result_blocks.extend([b1,b2])
+                            # b.reshape9()
 
                     # End
                     elif key == '9999':
@@ -421,13 +451,93 @@ class Parse:
 
                     key = in_file.read(5).decode().strip()
 
-            self.times = sorted(set([b.value for b in self.result_blocks]))
+            self.times = [b.value for b in self.result_blocks]
+            self.times = sorted(set(self.times))
             l = len(self.times)
             if l:
                 msg = '{} time increment{}'.format(l, 's'*min(1, l-1))
                 logging.info(msg)
             else:
                 logging.warning('No time increments!')
+
+    # Append von Mises stress
+    def calculate_mises_stress(self, b):
+        b1 = NodalResultsBlock()
+        b1.name = 'S_Mises'
+        b1.components = (b1.name, )
+        b1.ncomps = len(b1.components)
+        b1.value = b.value
+        b1.numstep = b.numstep
+
+        # Iterate over nodes
+        for node_num in b.node_block.nodes.keys():
+            data = b.results[node_num] # list with results for current node
+            Sxx = data[0]; Syy = data[1]; Szz = data[2]
+            Sxy = data[3]; Syz = data[4]; Sxz = data[5]
+            tensor = np.array([[Sxx, Sxy, Sxz], [Sxy, Syy, Syz], [Sxz, Syz, Szz]])
+
+            # Calculate Mises stress for current node
+            mises = 1 / math.sqrt(2) \
+                * math.sqrt((Sxx - Syy)**2 \
+                + (Syy - Szz)**2 \
+                + (Szz - Sxx)**2 \
+                + 6 * Syz**2 \
+                + 6 * Sxz**2 \
+                + 6 * Sxy**2)
+            b1.results[node_num] = [mises]
+
+        return b1
+
+    # Append von Mises equivalent strain
+    def calculate_mises_strain(self, b):
+        b1 = NodalResultsBlock()
+        b1.name = 'E_Mises'
+        b1.components = (b1.name,)
+        b1.ncomps = len(b1.components)
+        b1.value = b.value
+        b1.numstep = b.numstep
+
+        # Iterate over nodes
+        for node_num in b.node_block.nodes.keys():
+            data = b.results[node_num] # list with results for current node
+            Sxx = data[0]; Syy = data[1]; Szz = data[2]
+            Sxy = data[3]; Syz = data[4]; Sxz = data[5]
+            tensor = np.array([[Sxx, Sxy, Sxz], [Sxy, Syy, Syz], [Sxz, Syz, Szz]])
+
+            # Calculate Mises stress for current node
+            mises = 1 / math.sqrt(2) \
+                * math.sqrt((Sxx - Syy)**2 \
+                + (Syy - Szz)**2 \
+                + (Szz - Sxx)**2 \
+                + 6 * Syz**2 \
+                + 6 * Sxz**2 \
+                + 6 * Sxy**2)
+            b1.results[node_num] = [mises]
+
+        return b1
+
+    # Append tensor's eigenvalues
+    def calculate_principal(self, b):
+        b1 = NodalResultsBlock()
+        b1.name = b.name + '_Principal'
+        b1.components = ('Min', 'Mid', 'Max')
+        b1.ncomps = len(b1.components)
+        b1.value = b.value
+        b1.numstep = b.numstep
+
+        # Iterate over nodes
+        for node_num in b.node_block.nodes.keys():
+            data = b.results[node_num] # list with results for current node
+            Txx = data[0]; Tyy = data[1]; Tzz = data[2]
+            Txy = data[3]; Tyz = data[4]; Txz = data[5]
+            tensor = np.array([[Txx, Txy, Txz], [Txy, Tyy, Tyz], [Txz, Tyz, Tzz]])
+
+            # Calculate principal values for current node
+            b1.results[node_num] = []
+            for ps in sorted(np.linalg.eigvals(tensor).tolist()):
+                b1.results[node_num].append(ps)
+
+        return b1
 
 
 # Read byte line and decode: return None after EOF

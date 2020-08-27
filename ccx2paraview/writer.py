@@ -4,7 +4,7 @@
 """ © Ihor Mirzov, 2019-2020
 Distributed under GNU General Public License v3.0
 
-Writes .vtk and .vtu files based on data from FRDParser object.
+Writes .vtk and .vtu files based on data from FRD object.
 Uses native VTK python package. """
 
 import os
@@ -98,7 +98,6 @@ def generate_ugrid(p):
 
 # Assign data to VTK mesh
 def assign_data(ugrid, b, numnod):
-
     data_array = vtk.vtkDoubleArray()
     data_array.SetName(b.name)
     data_array.SetNumberOfComponents(len(b.components))
@@ -131,7 +130,6 @@ def assign_data(ugrid, b, numnod):
         data_array.InsertTuple(index, data)
         index += 1
     ugrid.GetPointData().AddArray(data_array)
-    ugrid.Modified()
 
     for k, v in emitted_warning_types.items():
         if v > 0:
@@ -139,7 +137,7 @@ def assign_data(ugrid, b, numnod):
 
 
 # Main function
-# p is a FRDParser object
+# p is a FRD object
 class Writer:
 
     def __init__(self, p, file_name, time):

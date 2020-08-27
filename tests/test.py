@@ -22,7 +22,7 @@ sys.path.insert(0, sys_path)
 
 import ccx2paraview
 from ccx2paraview import clean
-from ccx2paraview import FRDParser
+from ccx2paraview import parser
 from log import myHandler, print
 
 # How many files to process
@@ -39,7 +39,7 @@ def scan_all_files_in(start_folder, ext):
             all_files.append(f.path)
     return sorted(all_files)[:limit]
 
-# Test FRDParser only
+# Test FRD parser only
 def test_frd_parser_on_models_in(folder):
     print('FRD PARSER TEST\n\n')
     counter = 0
@@ -48,7 +48,7 @@ def test_frd_parser_on_models_in(folder):
         relpath = os.path.relpath(file_name, start=folder)
         print('\n{}\n{}: {}'.format('='*50, counter, relpath))
         try:
-            FRDParser.Parse(file_name)
+            parser.FRD(file_name)
         except:
             logging.error(traceback.format_exc())
 

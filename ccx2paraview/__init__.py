@@ -17,7 +17,7 @@ sys_path = os.path.abspath(__file__)
 sys_path = os.path.dirname(sys_path)
 sys.path.insert(0, sys_path)
 
-import FRDParser
+import parser
 import writer
 import clean
 
@@ -33,7 +33,7 @@ class Converter:
         # Parse FRD-file
         base_name = os.path.basename(self.file_name)
         logging.info('Parsing ' + base_name)
-        p = FRDParser.Parse(self.file_name)
+        p = parser.FRD(self.file_name)
         l = len(p.times)
 
         # If file contains mesh data
@@ -88,12 +88,12 @@ if __name__ == '__main__':
         format='%(levelname)s: %(message)s')
 
     # Command line arguments
-    parser = argparse.ArgumentParser()
-    parser.add_argument('filename', type=str,
+    ap = argparse.ArgumentParser()
+    ap.add_argument('filename', type=str,
         help='FRD file name with extension')
-    parser.add_argument('format', type=str, nargs='+',
+    ap.add_argument('format', type=str, nargs='+',
         help='output format: vtk, vtu')
-    args = parser.parse_args()
+    args = ap.parse_args()
 
     # Check arguments
     ok = True
