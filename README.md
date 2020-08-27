@@ -104,15 +104,13 @@ Read [here](https://packaging.python.org/tutorials/packaging-projects/) about ho
     python3 setup.py sdist bdist_wheel
     twine upload dist/*
 
-Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) and VTK [unstructured grid](https://lorensen.github.io/VTKExamples/site/VTKFileFormats/#unstructuredgrid). Remember that FRD file is node based, so element results are also stored at the nodes after extrapolation from the integration points.
+Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) and VTK [unstructured grid](https://lorensen.github.io/VTKExamples/site/VTKFileFormats/#unstructuredgrid). Remember that FRD file is node based, so element results are also stored at nodes after extrapolation from the integration points.
 
 <br/><br/>
 
 
 
 # TODO
-
-Export tensors as tensors: https://github.com/calculix/ccx2paraview/issues/13
 
 Parse binary .frd files.
 
