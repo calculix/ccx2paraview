@@ -61,8 +61,10 @@ Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - p
 
 # Screenshots
 
+Converted von Mises stress field with Turbo colormap:  
 ![baffle](https://github.com/calculix/ccx2paraview/blob/master/img_baffle.png "baffle")
 
+Converted translations field with Viridis colormap:  
 ![blades](https://github.com/calculix/ccx2paraview/blob/master/img_blades.png "blades")
 
 <br/><br/>
