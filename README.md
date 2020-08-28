@@ -22,7 +22,7 @@ Distributed under GNU General Public License v3.0
 
 # CalculiX to Paraview converter (frd to vtk/vtu)
 
-Converts [CalculiX](http://www.dhondt.de/) ASCII .frd-file to view and postprocess analysis results in [Paraview](https://www.paraview.org/). Generates Mises and Principal components for stress and strain tensors.
+Converts [CalculiX](http://www.dhondt.de/) ASCII .frd-file to view and postprocess analysis results in [Paraview](https://www.paraview.org/). Generates von Mises and principal components for stress and strain tensors.
 
 Creates separate file for each output interval - it makes possible to animate time history. **Caution!** If you have 300 time steps in the FRD, there will be 300 Paraview files. If you need one file - write output only for one step in your CalculiX model.
 
@@ -63,7 +63,7 @@ Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - p
 
 ![baffle](https://github.com/calculix/ccx2paraview/blob/master/img_baffle.png "baffle")
 
-![piston](https://github.com/calculix/ccx2paraview/blob/master/img_piston.png "piston")
+![blades](https://github.com/calculix/ccx2paraview/blob/master/img_blades.png "blades")
 
 <br/><br/>
 
@@ -112,12 +112,12 @@ Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-fo
 
 # TODO
 
-Parse binary .frd files.
-
 Multiprocessing for tests.
 
-Contribute to meshio.
+Paraview programmable filter for tensor principal directions (eigenvectors).
 
-Use meshio XDMF writer: https://github.com/calculix/ccx2paraview/issues/6
+Parse binary .frd files.
 
 Parse DAT files: it would be a killer feature if Paraview could visualize results in gauss points.
+
+Contribute to meshio. Use meshio XDMF writer: https://github.com/calculix/ccx2paraview/issues/6
