@@ -17,7 +17,7 @@ sys_path = os.path.abspath(__file__)
 sys_path = os.path.dirname(sys_path)
 sys.path.insert(0, sys_path)
 
-import parser
+import reader
 import writer
 import clean
 
@@ -30,10 +30,10 @@ class Converter:
 
     def run(self):
 
-        # Parse FRD-file
+        # Read FRD-file
         base_name = os.path.basename(self.file_name)
-        logging.info('Parsing ' + base_name)
-        p = parser.FRD(self.file_name)
+        logging.info('Reading ' + base_name)
+        p = reader.FRD(self.file_name)
         l = len(p.times)
 
         # If file contains mesh data

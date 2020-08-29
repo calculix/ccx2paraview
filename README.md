@@ -28,7 +28,7 @@ Creates separate file for each output interval - it makes possible to animate ti
 
 Converter is tested on [CalculiX examples](https://github.com/calculix/examples). Here is how some [test log](https://github.com/calculix/ccx2paraview/blob/master/tests/test.log) looks like.
 
-FRD parser is tested to reduce processing time as much as possible. Now it's quite optimized and fast, but Python itself is slower than C/C++. Here we can do nothing, so, for example, [Calmed converter](https://www.salome-platform.org/forum/forum_12/126338563) must be faster - another question is if it's able to parse and convert any CalculiX results.
+FRD reader is tested to reduce processing time as much as possible. Now it's quite optimized and fast, but Python itself is slower than C/C++. Here we can do nothing, so, for example, [Calmed converter](https://www.salome-platform.org/forum/forum_12/126338563) must be faster - another question is if it's able to read and convert any CalculiX results.
 
 <br/><br/>
 
@@ -95,10 +95,20 @@ In your code use ccx2paraview package in this way:
     c = ccx2paraview.Converter(frd_file_name, 'vtu')
     c.run()
 
-Create binary from sources folder with [nuitka](https://nuitka.net/) (Python version >= 3.8) or [pyinstaller](https://www.pyinstaller.org/) (Python version < 3.8):
+If you have Python version >= 3.8 create binary with [nuitka](https://nuitka.net/):
 
-    pip3 install nuitka pyinstaller
+    pip3 install nuitka
+    
+    In Windows:
+    set CC=C:\\MinGW64\\mingw64\\bin\\gcc.exe
+    python3 -m nuitka --follow-imports --mingw64 __init__.py
+
+    In Linux:
     python3 -m nuitka --follow-imports __init__.py
+
+If you have Python version < 3.8 create binary with [pyinstaller](https://www.pyinstaller.org/):
+
+    pip3 install pyinstaller
     pyinstaller __init__.py --onefile
 
 Read [here](https://packaging.python.org/tutorials/packaging-projects/) about how to create packages for [pypi.org](https://pypi.org/):
@@ -119,8 +129,8 @@ Multiprocessing for tests.
 
 Paraview programmable filter for tensor principal directions (eigenvectors).
 
-Parse binary .frd files.
+Read binary .frd files.
 
-Parse DAT files: it would be a killer feature if Paraview could visualize results in gauss points.
+Read DAT files: it would be a killer feature if Paraview could visualize results in gauss points.
 
 Contribute to meshio. Use meshio XDMF writer: https://github.com/calculix/ccx2paraview/issues/6

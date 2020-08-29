@@ -21,8 +21,7 @@ sys_path = os.path.normpath(sys_path)
 sys.path.insert(0, sys_path)
 
 import ccx2paraview
-from ccx2paraview import clean
-from ccx2paraview import parser
+from ccx2paraview import clean, reader
 from log import myHandler, print, read_and_log
 
 # How many files to process
@@ -40,16 +39,16 @@ def scan_all_files_in(start_folder, ext):
             all_files.append(ff)
     return sorted(all_files)[:limit]
 
-# Test FRD parser only
-def test_frd_parser_on_models_in(folder):
-    print('FRD PARSER TEST\n\n')
+# Test FRD reader only
+def test_frd_reader_on_models_in(folder):
+    print('FRD READER TEST\n\n')
     counter = 0
     for file_name in scan_all_files_in(folder, '.frd'):
         counter += 1
         relpath = os.path.relpath(file_name, start=folder)
         print('\n{}\n{}: {}'.format('='*50, counter, relpath))
         try:
-            parser.FRD(file_name)
+            reader.FRD(file_name)
         except:
             logging.error(traceback.format_exc())
 
@@ -99,9 +98,9 @@ if __name__ == '__main__':
         '..', '..', 'examples')
 
     # Choose what we test
-    # test_frd_parser_on_models_in(os.path.normpath(folder))
-    # convert_calculation_results_in(folder)
-    test_binary_in(folder)
+    # test_frd_reader_on_models_in(os.path.normpath(folder))
+    convert_calculation_results_in(folder)
+    # test_binary_in(folder)
 
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
     clean.cache()

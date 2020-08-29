@@ -2,21 +2,21 @@ CONVERTER TEST
 
 ==================================================
 1: ccx/test/achtel2.frd
-INFO: Parsing achtel2.frd
+INFO: Reading achtel2.frd
 INFO: 98 nodes
 INFO: 8 cells
 WARNING: No time increments!
 
 ==================================================
 2: ccx/test/ball.frd
-INFO: Parsing ball.frd
+INFO: Reading ball.frd
 INFO: 1037 nodes
 INFO: 769 cells
 WARNING: No time increments!
 
 ==================================================
 3: ccx/test/beamfrdwrite.frd
-INFO: Parsing beamfrdwrite.frd
+INFO: Reading beamfrdwrite.frd
 INFO: 261 nodes
 INFO: 32 cells
 INFO: Step 1, time 1.0, NT, 1 components, 261 values
@@ -33,7 +33,7 @@ INFO: Step 2, time 2.0, NT, 1 components, 261 values
 
 ==================================================
 4: ccx/test/metalforming.frd
-INFO: Parsing metalforming.frd
+INFO: Reading metalforming.frd
 INFO: 2032 nodes
 INFO: 848 cells
 INFO: Step 1, time 1.00e-03, CONTACT, 6 components, 147 values
@@ -45,7 +45,7 @@ INFO: Step 1, time 1.00e-03, CONTACT, 6 components, 2032 values
 
 ==================================================
 5: ccx/test/twobeam.frd
-INFO: Parsing twobeam.frd
+INFO: Reading twobeam.frd
 INFO: 282 nodes
 INFO: 32 cells
 INFO: Step 1, time 1.0, U, 3 components, 282 values
@@ -67,7 +67,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 282 values
 
 ==================================================
 6: cgx/result.frd
-INFO: Parsing result.frd
+INFO: Reading result.frd
 INFO: 3150 nodes
 INFO: 560 cells
 INFO: Step 1, time 10459.8, U, 3 components, 3150 values
@@ -194,84 +194,84 @@ INFO: Step 10, time 68812.0, S_Principal, 3 components, 3150 values
 
 ==================================================
 7: elements/C3D15.frd
-INFO: Parsing C3D15.frd
+INFO: Reading C3D15.frd
 INFO: 15 nodes
 INFO: 1 cells
 WARNING: No time increments!
 
 ==================================================
 8: elements/C3D20.frd
-INFO: Parsing C3D20.frd
+INFO: Reading C3D20.frd
 INFO: 20 nodes
 INFO: 1 cells
 WARNING: No time increments!
 
 ==================================================
 9: elements/C3D4.frd
-INFO: Parsing C3D4.frd
+INFO: Reading C3D4.frd
 INFO: 4 nodes
 INFO: 1 cells
 WARNING: No time increments!
 
 ==================================================
 10: elements/CPE3.frd
-INFO: Parsing CPE3.frd
+INFO: Reading CPE3.frd
 INFO: 12 nodes
 INFO: 1 cells
 WARNING: No time increments!
 
 ==================================================
 11: elements/CPE4.frd
-INFO: Parsing CPE4.frd
+INFO: Reading CPE4.frd
 INFO: 16 nodes
 INFO: 1 cells
 WARNING: No time increments!
 
 ==================================================
 12: elements/CPS3.frd
-INFO: Parsing CPS3.frd
+INFO: Reading CPS3.frd
 INFO: 12 nodes
 INFO: 1 cells
 WARNING: No time increments!
 
 ==================================================
 13: elements/CPS4.frd
-INFO: Parsing CPS4.frd
+INFO: Reading CPS4.frd
 INFO: 16 nodes
 INFO: 1 cells
 WARNING: No time increments!
 
 ==================================================
 14: elements/S3.frd
-INFO: Parsing S3.frd
+INFO: Reading S3.frd
 INFO: 12 nodes
 INFO: 1 cells
 WARNING: No time increments!
 
 ==================================================
 15: elements/S4.frd
-INFO: Parsing S4.frd
+INFO: Reading S4.frd
 INFO: 19 nodes
 INFO: 1 cells
 WARNING: No time increments!
 
 ==================================================
 16: elements/S6.frd
-INFO: Parsing S6.frd
+INFO: Reading S6.frd
 INFO: 24 nodes
 INFO: 1 cells
 WARNING: No time increments!
 
 ==================================================
 17: elements/S8.frd
-INFO: Parsing S8.frd
+INFO: Reading S8.frd
 INFO: 32 nodes
 INFO: 1 cells
 WARNING: No time increments!
 
 ==================================================
 18: mkraska/CAD/OnshapeTutorial/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 5625 nodes
 INFO: 3126 cells
 INFO: Step 1, time 1.0, U, 3 components, 5625 values
@@ -293,7 +293,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 5625 values
 
 ==================================================
 19: mkraska/CAD/Opt/Refs/Solve.frd
-INFO: Parsing Solve.frd
+INFO: Reading Solve.frd
 INFO: 612 nodes
 INFO: 267 cells
 INFO: Step 1, time 1.0, U, 3 components, 612 values
@@ -318,7 +318,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 612 values
 
 ==================================================
 20: mkraska/Contact/CNC/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 141406 nodes
 INFO: 79648 cells
 INFO: Step 1, time 0.00e+00, U, 3 components, 141406 values
@@ -423,7 +423,7 @@ INFO: Step 20, time 1255.5, U, 3 components, 141406 values
 
 ==================================================
 21: mkraska/Contact/Eyebar/Refs/eyebar.frd
-INFO: Parsing eyebar.frd
+INFO: Reading eyebar.frd
 INFO: 1806 nodes
 INFO: 1680 cells
 INFO: Step 1, time 1.00e-02, U, 3 components, 1806 values
@@ -1130,7 +1130,7 @@ INFO: Step 25, time 1.0, ERROR, 1 components, 1806 values
 
 ==================================================
 22: mkraska/Contact/Hertz_2D/Refs/Hertz.frd
-INFO: Parsing Hertz.frd
+INFO: Reading Hertz.frd
 INFO: 9602 nodes
 INFO: 3100 cells
 INFO: Step 1, time 1.0, U, 3 components, 9602 values
@@ -1187,7 +1187,7 @@ INFO: Step 2, time 2.0, ERROR, 1 components, 9602 values
 
 ==================================================
 23: mkraska/Contact/Hertz_axi/Refs/Hertz.frd
-INFO: Parsing Hertz.frd
+INFO: Reading Hertz.frd
 INFO: 9602 nodes
 INFO: 3100 cells
 INFO: Step 1, time 1.0, U, 3 components, 9602 values
@@ -1219,7 +1219,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 9602 values
 
 ==================================================
 24: mkraska/Contact/Leafspring/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 360 nodes
 INFO: 26 cells
 INFO: Step 1, time 1.10e-02, U, 3 components, 360 values
@@ -1280,7 +1280,7 @@ INFO: Step 3, time 1.0, ERROR, 1 components, 360 values
 
 ==================================================
 25: mkraska/Contact/Penalty/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 16 nodes
 INFO: 2 cells
 INFO: Step 1, time 1.0, U, 3 components, 16 values
@@ -1848,7 +1848,7 @@ INFO: Step 51, time 2.0, CELS, 1 components, 16 values
 
 ==================================================
 26: mkraska/Contact/Shell0/Refs/qu4_equ/equ.frd
-INFO: Parsing equ.frd
+INFO: Reading equ.frd
 INFO: 100 nodes
 INFO: 32 cells
 INFO: Step 2, time 0.00e+00, U, 3 components, 100 values
@@ -2153,7 +2153,7 @@ INFO: Step 21, time 44650.9, ERROR, 1 components, 100 values
 
 ==================================================
 27: mkraska/Contact/Shell0/Refs/qu4_pc-ns/pc-ns.frd
-INFO: Parsing pc-ns.frd
+INFO: Reading pc-ns.frd
 INFO: 100 nodes
 INFO: 32 cells
 INFO: Step 2, time 4.12e-03, U, 3 components, 100 values
@@ -2456,7 +2456,7 @@ INFO: Step 20, time 45709.7, ERROR, 1 components, 100 values
 
 ==================================================
 28: mkraska/Contact/Shell0/Refs/qu4_pc-ss/pc-ss.frd
-INFO: Parsing pc-ss.frd
+INFO: Reading pc-ss.frd
 INFO: 100 nodes
 INFO: 32 cells
 INFO: Step 2, time 0.00e+00, U, 3 components, 100 values
@@ -2757,7 +2757,7 @@ INFO: Step 21, time 57134.6, ERROR, 1 components, 100 values
 
 ==================================================
 29: mkraska/Contact/Shell0/Refs/qu4_tie/tie.frd
-INFO: Parsing tie.frd
+INFO: Reading tie.frd
 INFO: 100 nodes
 INFO: 32 cells
 INFO: Step 2, time 0.00e+00, U, 3 components, 100 values
@@ -3058,7 +3058,7 @@ INFO: Step 21, time 45813.7, ERROR, 1 components, 100 values
 
 ==================================================
 30: mkraska/Contact/Shell0/Refs/qu8_equ/equ.frd
-INFO: Parsing equ.frd
+INFO: Reading equ.frd
 INFO: 310 nodes
 INFO: 32 cells
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
@@ -3357,7 +3357,7 @@ INFO: Step 21, time 18518.9, ERROR, 1 components, 310 values
 
 ==================================================
 31: mkraska/Contact/Shell0/Refs/qu8_pc-ns/pc-ns.frd
-INFO: Parsing pc-ns.frd
+INFO: Reading pc-ns.frd
 INFO: 310 nodes
 INFO: 32 cells
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
@@ -3656,7 +3656,7 @@ INFO: Step 21, time 20490.5, ERROR, 1 components, 310 values
 
 ==================================================
 32: mkraska/Contact/Shell0/Refs/qu8_pc-ss/pc-ss.frd
-INFO: Parsing pc-ss.frd
+INFO: Reading pc-ss.frd
 INFO: 310 nodes
 INFO: 32 cells
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
@@ -3961,7 +3961,7 @@ INFO: Step 21, time 20612.1, ERROR, 1 components, 310 values
 
 ==================================================
 33: mkraska/Contact/Shell0/Refs/qu8_tie/tie.frd
-INFO: Parsing tie.frd
+INFO: Reading tie.frd
 INFO: 310 nodes
 INFO: 32 cells
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
@@ -4260,7 +4260,7 @@ INFO: Step 21, time 20849.6, ERROR, 1 components, 310 values
 
 ==================================================
 34: mkraska/Contact/Shell0/Refs/qu8r_equ/equ.frd
-INFO: Parsing equ.frd
+INFO: Reading equ.frd
 INFO: 310 nodes
 INFO: 32 cells
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
@@ -4559,7 +4559,7 @@ INFO: Step 21, time 14425.5, ERROR, 1 components, 310 values
 
 ==================================================
 35: mkraska/Contact/Shell0/Refs/qu8r_pc-ns/pc-ns.frd
-INFO: Parsing pc-ns.frd
+INFO: Reading pc-ns.frd
 INFO: 310 nodes
 INFO: 32 cells
 INFO: Step 2, time 1.02e-01, U, 3 components, 310 values
@@ -4862,7 +4862,7 @@ INFO: Step 21, time 17817.6, ERROR, 1 components, 310 values
 
 ==================================================
 36: mkraska/Contact/Shell0/Refs/qu8r_pc-ss/pc-ss.frd
-INFO: Parsing pc-ss.frd
+INFO: Reading pc-ss.frd
 INFO: 310 nodes
 INFO: 32 cells
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
@@ -5165,7 +5165,7 @@ INFO: Step 21, time 18755.0, ERROR, 1 components, 310 values
 
 ==================================================
 37: mkraska/Contact/Shell0/Refs/qu8r_tie/tie.frd
-INFO: Parsing tie.frd
+INFO: Reading tie.frd
 INFO: 310 nodes
 INFO: 32 cells
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
@@ -5466,7 +5466,7 @@ INFO: Step 21, time 17862.8, ERROR, 1 components, 310 values
 
 ==================================================
 38: mkraska/Contact/Shell1/Refs/tie.frd
-INFO: Parsing tie.frd
+INFO: Reading tie.frd
 INFO: 1193 nodes
 INFO: 272 cells
 INFO: Step 1, time 1.0, U, 3 components, 1193 values
@@ -5488,7 +5488,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 1193 values
 
 ==================================================
 39: mkraska/Contact/Tubes/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 3876 nodes
 INFO: 1800 cells
 INFO: Step 1, time 1.00e-01, U, 3 components, 3876 values
@@ -5621,7 +5621,7 @@ INFO: Step 7, time 1.0, ERROR, 1 components, 3876 values
 
 ==================================================
 40: mkraska/Contact/Valve/Refs/valve.frd
-INFO: Parsing valve.frd
+INFO: Reading valve.frd
 INFO: 1283 nodes
 INFO: 555 cells
 INFO: Step 1, time 1.0, U, 3 components, 1283 values
@@ -5646,7 +5646,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 1283 values
 
 ==================================================
 41: mkraska/Drahtbiegen/Biegung/Refs/Biegung.frd
-INFO: Parsing Biegung.frd
+INFO: Reading Biegung.frd
 INFO: 859 nodes
 INFO: 340 cells
 INFO: Step 1, time 1.00e-02, U, 3 components, 859 values
@@ -8362,7 +8362,7 @@ INFO: Step 129, time 1.0, ERROR, 1 components, 859 values
 
 ==================================================
 42: mkraska/Dynamics/Discrete/Refs/MS.frd
-INFO: Parsing MS.frd
+INFO: Reading MS.frd
 INFO: 21 nodes
 INFO: 7 cells
 INFO: Step 1, time 3521.9, U, 3 components, 21 values
@@ -9015,7 +9015,7 @@ INFO: Step 60, time 12000.0, PDISP, 6 components, 21 values
 
 ==================================================
 43: mkraska/Dynamics/Discrete/Refs/MSM.frd
-INFO: Parsing MSM.frd
+INFO: Reading MSM.frd
 INFO: 3 nodes
 INFO: 4 cells
 INFO: Step 1, time 0.00e+00, U, 3 components, 3 values
@@ -9030,7 +9030,7 @@ INFO: Step 2, time 0.00e+00, U, 3 components, 3 values
 
 ==================================================
 44: mkraska/Elements/Solid/Refs/solid.frd
-INFO: Parsing solid.frd
+INFO: Reading solid.frd
 INFO: 1386 nodes
 INFO: 1000 cells
 INFO: Step 1, time 1.0, U, 3 components, 1386 values
@@ -9052,7 +9052,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 1386 values
 
 ==================================================
 45: mkraska/Kasten/Refs/Kasten.frd
-INFO: Parsing Kasten.frd
+INFO: Reading Kasten.frd
 INFO: 2012 nodes
 INFO: 240 cells
 INFO: Step 1, time 1.0, U, 3 components, 2012 values
@@ -10874,7 +10874,7 @@ INFO: Step 101, time 2.0, ERROR, 1 components, 2012 values
 
 ==================================================
 46: mkraska/Linear/BiaxBending/Refs/Biegung.frd
-INFO: Parsing Biegung.frd
+INFO: Reading Biegung.frd
 INFO: 1353 nodes
 INFO: 760 cells
 INFO: Step 1, time 1.0, U, 3 components, 1353 values
@@ -10896,7 +10896,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 1353 values
 
 ==================================================
 47: mkraska/Linear/Crack1/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 12906 nodes
 INFO: 7352 cells
 INFO: Step 1, time 1.0, U, 3 components, 12906 values
@@ -10918,7 +10918,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 12906 values
 
 ==================================================
 48: mkraska/Linear/L-Plate/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 1203 nodes
 INFO: 150 cells
 INFO: Step 1, time 1.0, U, 3 components, 1203 values
@@ -10993,7 +10993,7 @@ INFO: Step 7, time 365.7, U, 3 components, 1203 values
 
 ==================================================
 49: mkraska/Linear/Mesh1/Refs/modal.frd
-INFO: Parsing modal.frd
+INFO: Reading modal.frd
 INFO: 1010 nodes
 INFO: 476 cells
 INFO: Step 1, time 0.00e+00, U, 3 components, 1010 values
@@ -11056,7 +11056,7 @@ INFO: Step 12, time 5646.5, U, 3 components, 1010 values
 
 ==================================================
 50: mkraska/Linear/PSE/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 1764 nodes
 INFO: 960 cells
 INFO: Step 1, time 1.0, U, 3 components, 1764 values
@@ -11085,7 +11085,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 1764 values
 
 ==================================================
 51: mkraska/Linear/Plates/Refs/plates.frd
-INFO: Parsing plates.frd
+INFO: Reading plates.frd
 INFO: 104 nodes
 INFO: 60 cells
 INFO: Step 1, time 1.0, U, 3 components, 104 values
@@ -11107,7 +11107,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 104 values
 
 ==================================================
 52: mkraska/Linear/Separate/Refs/element.frd
-INFO: Parsing element.frd
+INFO: Reading element.frd
 INFO: 240 nodes
 INFO: 60 cells
 INFO: Step 1, time 1.0, U, 3 components, 240 values
@@ -11129,7 +11129,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 240 values
 
 ==================================================
 53: mkraska/Linear/Separate/Refs/nodal.frd
-INFO: Parsing nodal.frd
+INFO: Reading nodal.frd
 INFO: 104 nodes
 INFO: 60 cells
 INFO: Step 1, time 1.0, U, 3 components, 104 values
@@ -11151,7 +11151,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 104 values
 
 ==================================================
 54: mkraska/Linear/ShearCenter/Refs/II.frd
-INFO: Parsing II.frd
+INFO: Reading II.frd
 INFO: 12191 nodes
 INFO: 1440 cells
 INFO: Step 1, time 1.0, U, 3 components, 12191 values
@@ -11173,7 +11173,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 12191 values
 
 ==================================================
 55: mkraska/Linear/StressConc/Refs/Stress.frd
-INFO: Parsing Stress.frd
+INFO: Reading Stress.frd
 INFO: 500 nodes
 INFO: 219 cells
 INFO: Step 1, time 1.0, U, 3 components, 500 values
@@ -11195,7 +11195,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 500 values
 
 ==================================================
 56: mkraska/Linear/StressConc1/Refs/Stress.frd
-INFO: Parsing Stress.frd
+INFO: Reading Stress.frd
 INFO: 793 nodes
 INFO: 352 cells
 INFO: Step 1, time 1.0, U, 3 components, 793 values
@@ -11217,7 +11217,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 793 values
 
 ==================================================
 57: mkraska/Linear/StressConc1/Refs/Stress1.frd
-INFO: Parsing Stress1.frd
+INFO: Reading Stress1.frd
 INFO: 1807 nodes
 INFO: 352 cells
 INFO: Step 1, time 1.0, U, 3 components, 1807 values
@@ -11242,7 +11242,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 1807 values
 
 ==================================================
 58: mkraska/NonLinear/3PB/Refs/Biegung.frd
-INFO: Parsing Biegung.frd
+INFO: Reading Biegung.frd
 INFO: 5175 nodes
 INFO: 3296 cells
 INFO: Step 1, time 1.00e-02, U, 3 components, 5175 values
@@ -12185,7 +12185,7 @@ INFO: Step 52, time 1.0, ERROR, 1 components, 5175 values
 
 ==================================================
 59: mkraska/NonLinear/Cut/Refs/ResultsForLastIterations.frd
-INFO: Parsing ResultsForLastIterations.frd
+INFO: Reading ResultsForLastIterations.frd
 INFO: 31372 nodes
 INFO: 32253 cells
 INFO: Step 1, time 0.00e+00, U, 3 components, 31372 values
@@ -12656,7 +12656,7 @@ INFO: Step 154, time 0.00e+00, U, 3 components, 31372 values
 
 ==================================================
 60: mkraska/NonLinear/Honeycomb/Refs/Biegung.frd
-INFO: Parsing Biegung.frd
+INFO: Reading Biegung.frd
 INFO: 11086 nodes
 INFO: 4376 cells
 INFO: Step 1, time 1.00e-02, U, 3 components, 11086 values
@@ -14463,7 +14463,7 @@ INFO: Step 100, time 1.0, ERROR, 1 components, 11086 values
 
 ==================================================
 61: mkraska/NonLinear/Honeycomb/Refs/ResultsForLastIterations.frd
-INFO: Parsing ResultsForLastIterations.frd
+INFO: Reading ResultsForLastIterations.frd
 INFO: 43749 nodes
 INFO: 4994 cells
 INFO: Step 1, time 0.00e+00, U, 3 components, 43749 values
@@ -14505,7 +14505,7 @@ INFO: Step 11, time 0.00e+00, U, 3 components, 43749 values
 
 ==================================================
 62: mkraska/NonLinear/Rohrknie/Refs/shell-modal.frd
-INFO: Parsing shell-modal.frd
+INFO: Reading shell-modal.frd
 INFO: 672 nodes
 INFO: 88 cells
 INFO: Step 1, time 339.9, U, 3 components, 672 values
@@ -14562,7 +14562,7 @@ INFO: Step 10, time 2533.2, U, 3 components, 672 values
 
 ==================================================
 63: mkraska/NonLinear/Rohrknie/Refs/shell-sym-modal.frd
-INFO: Parsing shell-sym-modal.frd
+INFO: Reading shell-sym-modal.frd
 INFO: 386 nodes
 INFO: 44 cells
 INFO: Step 1, time 479.7, U, 3 components, 386 values
@@ -14619,7 +14619,7 @@ INFO: Step 10, time 5492.1, U, 3 components, 386 values
 
 ==================================================
 64: mkraska/NonLinear/Rohrknie/Refs/solid-modal.frd
-INFO: Parsing solid-modal.frd
+INFO: Reading solid-modal.frd
 INFO: 664 nodes
 INFO: 88 cells
 INFO: Step 1, time 337.2, U, 3 components, 664 values
@@ -14676,7 +14676,7 @@ INFO: Step 10, time 2528.6, U, 3 components, 664 values
 
 ==================================================
 65: mkraska/NonLinear/Rohrknie/Refs/solid-static.frd
-INFO: Parsing solid-static.frd
+INFO: Reading solid-static.frd
 INFO: 664 nodes
 INFO: 88 cells
 INFO: Step 1, time 1.0, U, 3 components, 664 values
@@ -14998,7 +14998,7 @@ INFO: Step 21, time 2.0, ERROR, 1 components, 664 values
 
 ==================================================
 66: mkraska/NonLinear/Rohrknie/Refs/solid-sym-modal.frd
-INFO: Parsing solid-sym-modal.frd
+INFO: Reading solid-sym-modal.frd
 INFO: 386 nodes
 INFO: 44 cells
 INFO: Step 1, time 337.2, U, 3 components, 386 values
@@ -15055,7 +15055,7 @@ INFO: Step 10, time 5465.9, U, 3 components, 386 values
 
 ==================================================
 67: mkraska/NonLinear/Sandwichtest/Refs/Biegung.frd
-INFO: Parsing Biegung.frd
+INFO: Reading Biegung.frd
 INFO: 4659 nodes
 INFO: 1160 cells
 INFO: Step 1, time 1.00e-03, U, 3 components, 4659 values
@@ -15986,7 +15986,7 @@ INFO: Step 44, time 1.0, ERROR, 1 components, 4659 values
 
 ==================================================
 68: mkraska/NonLinear/Sections/Plastic/Refs/Biegung.frd
-INFO: Parsing Biegung.frd
+INFO: Reading Biegung.frd
 INFO: 11571 nodes
 INFO: 8720 cells
 INFO: Step 1, time 5.00e-02, U, 3 components, 11571 values
@@ -16353,7 +16353,7 @@ INFO: Step 20, time 1.0, ERROR, 1 components, 11571 values
 
 ==================================================
 69: mkraska/NonLinear/Sections/Refs/Biegung.frd
-INFO: Parsing Biegung.frd
+INFO: Reading Biegung.frd
 INFO: 6542 nodes
 INFO: 1090 cells
 INFO: Step 1, time 1.0, U, 3 components, 6542 values
@@ -16375,7 +16375,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 6542 values
 
 ==================================================
 70: mkraska/NonLinear/TensileTest/Refs/Zug.frd
-INFO: Parsing Zug.frd
+INFO: Reading Zug.frd
 INFO: 2093 nodes
 INFO: 360 cells
 INFO: Step 101, time 2.0, U, 3 components, 2093 values
@@ -16400,7 +16400,7 @@ INFO: Step 101, time 2.0, ERROR, 1 components, 2093 values
 
 ==================================================
 71: mkraska/Pillow/Refs/static.frd
-INFO: Parsing static.frd
+INFO: Reading static.frd
 INFO: 882 nodes
 INFO: 400 cells
 INFO: Step 1, time 1.00e-01, U, 3 components, 882 values
@@ -16490,7 +16490,7 @@ INFO: Step 6, time 6.00e-01, RF, 3 components, 882 values
 
 ==================================================
 72: mkraska/RVE/Periodic/Refs/Solve.frd
-INFO: Parsing Solve.frd
+INFO: Reading Solve.frd
 INFO: 1331 nodes
 INFO: 1000 cells
 INFO: Step 1, time 1.0, U, 3 components, 1331 values
@@ -16512,7 +16512,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 1331 values
 
 ==================================================
 73: mkraska/RVE/PlanarSlide/Refs/Zug.frd
-INFO: Parsing Zug.frd
+INFO: Reading Zug.frd
 INFO: 21711 nodes
 INFO: 13264 cells
 INFO: Step 1, time 1.00e-02, U, 3 components, 21711 values
@@ -16789,7 +16789,7 @@ INFO: Step 15, time 1.0, ERROR, 1 components, 21711 values
 
 ==================================================
 74: mkraska/RVE/PlaneOrtho1/Refs/Zug.frd
-INFO: Parsing Zug.frd
+INFO: Reading Zug.frd
 INFO: 1154 nodes
 INFO: 527 cells
 INFO: Step 1, time 1.00e-02, U, 3 components, 1154 values
@@ -17066,7 +17066,7 @@ INFO: Step 15, time 1.0, ERROR, 1 components, 1154 values
 
 ==================================================
 75: mkraska/Test/Beam/Refs/modal.frd
-INFO: Parsing modal.frd
+INFO: Reading modal.frd
 INFO: 202 nodes
 INFO: 18 cells
 INFO: Step 1, time 0.00e+00, U, 3 components, 202 values
@@ -17171,7 +17171,7 @@ INFO: Step 20, time 26008.8, U, 3 components, 202 values
 
 ==================================================
 76: mkraska/Test/BeamSections/Refs/b32.frd
-INFO: Parsing b32.frd
+INFO: Reading b32.frd
 INFO: 68 nodes
 INFO: 5 cells
 INFO: Step 1, time 1.0, U, 3 components, 68 values
@@ -17200,7 +17200,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 68 values
 
 ==================================================
 77: mkraska/Test/BeamSections/Refs/u1General.frd
-INFO: Parsing u1General.frd
+INFO: Reading u1General.frd
 INFO: 0 nodes
 INFO: 0 cells
 INFO: Step 1, time 1.0, U, 6 components, 0 values
@@ -17222,7 +17222,7 @@ WARNING: ERROR - no data for this increment
 
 ==================================================
 78: mkraska/Test/Distributing/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 702 nodes
 INFO: 312 cells
 INFO: Step 1, time 1.0, U, 3 components, 702 values
@@ -17274,7 +17274,7 @@ INFO: Step 3, time 3.0, ERROR, 1 components, 702 values
 
 ==================================================
 79: mkraska/Test/Joints/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 2968 nodes
 INFO: 1269 cells
 INFO: Step 1, time 0.00e+00, U, 3 components, 2968 values
@@ -17344,7 +17344,7 @@ INFO: Step 10, time 5913.2, U, 3 components, 2968 values
 
 ==================================================
 80: mkraska/Test/Joints/Refs/solve2.frd
-INFO: Parsing solve2.frd
+INFO: Reading solve2.frd
 INFO: 2908 nodes
 INFO: 1266 cells
 INFO: Step 1, time 0.00e+00, U, 3 components, 2908 values
@@ -17439,7 +17439,7 @@ INFO: Step 10, time 6870.1, U, 3 components, 2908 values
 
 ==================================================
 81: mkraska/Test/Meanrot/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 702 nodes
 INFO: 312 cells
 INFO: Step 1, time 1.0, U, 3 components, 702 values
@@ -17491,7 +17491,7 @@ INFO: Step 3, time 3.0, ERROR, 1 components, 702 values
 
 ==================================================
 82: mkraska/Test/Supports/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 525 nodes
 INFO: 320 cells
 INFO: Step 1, time 0.00e+00, U, 3 components, 525 values
@@ -17596,7 +17596,7 @@ INFO: Step 20, time 18187.3, U, 3 components, 525 values
 
 ==================================================
 83: mkraska/Test/Supports/Refs/trans.frd
-INFO: Parsing trans.frd
+INFO: Reading trans.frd
 INFO: 525 nodes
 INFO: 320 cells
 INFO: Step 1, time 1.0, U, 3 components, 525 values
@@ -18068,7 +18068,7 @@ INFO: Step 31, time 4.0, ERROR, 1 components, 525 values
 
 ==================================================
 84: mkraska/Test/Supports/Refs/trfix.frd
-INFO: Parsing trfix.frd
+INFO: Reading trfix.frd
 INFO: 525 nodes
 INFO: 320 cells
 INFO: Step 1, time 1.0, U, 3 components, 525 values
@@ -18120,7 +18120,7 @@ INFO: Step 3, time 3.0, ERROR, 1 components, 525 values
 
 ==================================================
 85: mkraska/Test/Supports1/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 2746 nodes
 INFO: 1317 cells
 INFO: Step 1, time 0.00e+00, U, 3 components, 2746 values
@@ -18227,7 +18227,7 @@ INFO: Step 20, time 33566.3, U, 3 components, 2746 values
 
 ==================================================
 86: mkraska/Thermal/Thermal distortion/Refs/Tjoint.frd
-INFO: Parsing Tjoint.frd
+INFO: Reading Tjoint.frd
 INFO: 1201 nodes
 INFO: 566 cells
 INFO: Step 1, time 1.0, U, 3 components, 1201 values
@@ -18249,7 +18249,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 1201 values
 
 ==================================================
 87: mkraska/Thermal/Thermal shock/Refs/solve.frd
-INFO: Parsing solve.frd
+INFO: Reading solve.frd
 INFO: 1373 nodes
 INFO: 240 cells
 INFO: Step 1, time 1.00e-02, U, 3 components, 1373 values
@@ -19156,7 +19156,7 @@ INFO: Step 50, time 5.00e-01, ERROR, 1 components, 1373 values
 
 ==================================================
 88: mkraska/Thermal/Thermografie/Refs/Naht.frd
-INFO: Parsing Naht.frd
+INFO: Reading Naht.frd
 INFO: 7602 nodes
 INFO: 4728 cells
 INFO: Step 1, time 2.00e-02, NT, 1 components, 7602 values
@@ -19663,7 +19663,7 @@ INFO: Step 100, time 2.0, NT, 1 components, 7602 values
 
 ==================================================
 89: other/CubeTie/CubeTie.frd
-INFO: Parsing CubeTie.frd
+INFO: Reading CubeTie.frd
 INFO: 44556 nodes
 INFO: 7700 cells
 INFO: Step 1, time 3.22e-05, U, 3 components, 44556 values
@@ -19701,7 +19701,7 @@ INFO: Step 6, time 3.01e-02, U, 3 components, 44556 values
 
 ==================================================
 90: other/Dichtstoff_beam_coupling_compl.frd
-INFO: Parsing Dichtstoff_beam_coupling_compl.frd
+INFO: Reading Dichtstoff_beam_coupling_compl.frd
 INFO: 378 nodes
 INFO: 160 cells
 INFO: Step 1, time 1.0, U, 3 components, 378 values
@@ -19723,7 +19723,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 378 values
 
 ==================================================
 91: other/Ihor_Mirzov_baffle_2D.frd
-INFO: Parsing Ihor_Mirzov_baffle_2D.frd
+INFO: Reading Ihor_Mirzov_baffle_2D.frd
 INFO: 14836 nodes
 INFO: 6778 cells
 INFO: Step 1, time 1.0, NT, 1 components, 14836 values
@@ -19735,7 +19735,7 @@ INFO: Step 1, time 1.0, NT, 1 components, 14836 values
 
 ==================================================
 92: other/Jan_Lukas_modal_dynamic_beammodal.frd
-INFO: Parsing Jan_Lukas_modal_dynamic_beammodal.frd
+INFO: Reading Jan_Lukas_modal_dynamic_beammodal.frd
 INFO: 1221 nodes
 INFO: 160 cells
 INFO: Step 1, time 209.2, U, 3 components, 1221 values
@@ -20082,7 +20082,7 @@ INFO: Step 16, time 18574.3, ERROR, 1 components, 1221 values
 
 ==================================================
 93: other/Jan_Lukas_modal_dynamic_staticbeam2.frd
-INFO: Parsing Jan_Lukas_modal_dynamic_staticbeam2.frd
+INFO: Reading Jan_Lukas_modal_dynamic_staticbeam2.frd
 INFO: 321 nodes
 INFO: 40 cells
 INFO: Step 1, time 837.4, U, 3 components, 321 values
@@ -20431,7 +20431,7 @@ INFO: Step 16, time 51346.8, ERROR, 1 components, 321 values
 
 ==================================================
 94: other/Jan_Lukas_static_structural.frd
-INFO: Parsing Jan_Lukas_static_structural.frd
+INFO: Reading Jan_Lukas_static_structural.frd
 INFO: 321 nodes
 INFO: 40 cells
 INFO: Step 1, time 1.0, U, 3 components, 321 values
@@ -20460,7 +20460,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 321 values
 
 ==================================================
 95: other/John_Mannisto_blade_sector.frd
-INFO: Parsing John_Mannisto_blade_sector.frd
+INFO: Reading John_Mannisto_blade_sector.frd
 INFO: 1720 nodes
 INFO: 832 cells
 INFO: Step 1, time 2.64e-05, U, 3 components, 1720 values
@@ -20587,7 +20587,7 @@ INFO: Step 25, time 318.5, DISPI, 3 components, 1720 values
 
 ==================================================
 96: other/Kaffeeheblerei_hinge.frd
-INFO: Parsing Kaffeeheblerei_hinge.frd
+INFO: Reading Kaffeeheblerei_hinge.frd
 INFO: 378 nodes
 INFO: 160 cells
 INFO: Step 1, time 1.0, U, 3 components, 378 values
@@ -20609,7 +20609,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 378 values
 
 ==================================================
 97: other/Nidish_Narayanaa_Balaji.frd
-INFO: Parsing Nidish_Narayanaa_Balaji.frd
+INFO: Reading Nidish_Narayanaa_Balaji.frd
 INFO: 3432 nodes
 INFO: 2560 cells
 INFO: Step 1, time 721.9, U, 3 components, 3432 values
@@ -20766,7 +20766,7 @@ INFO: Step 10, time 20441.6, ERROR, 1 components, 3432 values
 
 ==================================================
 98: other/ball.frd
-INFO: Parsing ball.frd
+INFO: Reading ball.frd
 INFO: 4812 nodes
 INFO: 2259 cells
 INFO: Step 1, time 1.00e-01, U, 3 components, 4812 values
@@ -20893,7 +20893,7 @@ INFO: Step 8, time 8.00e-01, ERROR, 1 components, 4812 values
 
 ==================================================
 99: other/dichtstoff_2_HE8.frd
-INFO: Parsing dichtstoff_2_HE8.frd
+INFO: Reading dichtstoff_2_HE8.frd
 INFO: 12 nodes
 INFO: 2 cells
 INFO: Step 1, time 1.0, U, 3 components, 12 values
@@ -20915,7 +20915,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 12 values
 
 ==================================================
 100: yahoo/1.frd
-INFO: Parsing 1.frd
+INFO: Reading 1.frd
 INFO: 4 nodes
 INFO: 1 cells
 INFO: Step 1, time 1.00e-01, U, 3 components, 4 values
@@ -21582,7 +21582,7 @@ INFO: Step 30, time 3.0, ERROR, 1 components, 4 values
 
 ==================================================
 101: yahoo/2d_ramberg_osgood.frd
-INFO: Parsing 2d_ramberg_osgood.frd
+INFO: Reading 2d_ramberg_osgood.frd
 INFO: 25 nodes
 INFO: 6 cells
 INFO: Step 1, time 1.0, U, 3 components, 25 values
@@ -21617,7 +21617,7 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 25 values
 
 ==================================================
 102: yahoo/3d_DEFORMATION_PLASTICITY.frd
-INFO: Parsing 3d_DEFORMATION_PLASTICITY.frd
+INFO: Reading 3d_DEFORMATION_PLASTICITY.frd
 INFO: 36 nodes
 INFO: 8 cells
 INFO: Step 1, time 1.0, U, 3 components, 36 values
@@ -21650,4 +21650,4 @@ INFO: Step 1, time 1.0, RF, 3 components, 36 values
 INFO: Step 1, time 1.0, ENER, 1 components, 36 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 36 values
 
-Total 563.5 seconds
+Total 599.1 seconds

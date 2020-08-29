@@ -6,7 +6,7 @@
 © Ihor Mirzov, 2019-2020 - bugfix, refactoring and improvement
 Distributed under GNU General Public License v3.0
 
-This module contains classes for parsing CalculiX .frd files """
+This module contains classes for reading CalculiX .frd files """
 
 import os
 import re
@@ -50,7 +50,7 @@ class NodalPointCoordinateBlock:
                 break
 
             regex = '^-1(.{10})' + '(.{12})'*3
-            match = parseLine(regex, line)
+            match = read_line(regex, line)
             node_number = int(match.group(1))
             node_coords = [ float(match.group(2)),
                             float(match.group(3)),
@@ -65,7 +65,7 @@ class NodalPointCoordinateBlock:
 # Element Definition Block: cgx_2.17 Manual, § 11.4
 class ElementDefinitionBlock:
 
-    # Parse elements
+    # Read elements
     def __init__(self, in_file):
         self.in_file = in_file
         line = read_byte_line(in_file)
@@ -78,13 +78,13 @@ class ElementDefinitionBlock:
             if line == '-3':
                 break
 
-            self.parse_element(line)
+            self.read_element(line)
 
         self.numelem = len(self.elements) # number of elements in this block
         logging.info('{} cells'.format(self.numelem)) # total number of elements
 
     # Read element composition
-    def parse_element(self, line):
+    def read_element(self, line):
         """
             -1         1    1    0AIR
             -2         1         2         3         4         5         6         7         8
@@ -162,7 +162,7 @@ class NodalResultsBlock:
         """
         line = read_byte_line(self.in_file)[7:]
         regex = '^(.{12})\s+\d+\s+\d+\s+(\d+)'
-        match = parseLine(regex, line)
+        match = read_line(regex, line)
         self.value = float(match.group(1)) # could be frequency, time or any numerical value
         self.numstep = int(match.group(2)) # step number
 
@@ -176,7 +176,7 @@ class NodalResultsBlock:
         """
         line = read_byte_line(self.in_file)[4:]
         regex = '^(\w+)' + '\D+(\d+)'*2
-        match = parseLine(regex, line)
+        match = read_line(regex, line)
         self.ncomps = int(match.group(2)) # amount of components
 
         # Rename result block to the name from .inp-file
@@ -218,7 +218,7 @@ class NodalResultsBlock:
         for i in range(self.ncomps):
             line = read_byte_line(self.in_file)[4:]
             regex = '^\w+'
-            match = parseLine(regex, line)
+            match = read_line(regex, line)
 
             # Exclude variable name from the component name: SXX->XX, EYZ->YZ
             component_name = match.group(0)
@@ -261,13 +261,13 @@ class NodalResultsBlock:
 
             row_comps = min(6, self.ncomps) # amount of values written in row
             regex = '^-1\s+(\d+)' + '(.{12})' * row_comps
-            match = parseLine(regex, line)
+            match = read_line(regex, line)
             node = int(match.group(1))
             data = []
             for c in range(row_comps):
                 m = match.group(c + 2)
                 try:
-                    # NaN/Inf values will be parsed 
+                    # NaN/Inf values will be parsed
                     num = float(m)
                     if ('NaN' in m or 'Inf' in m):
                         emitted_warning_types['NaNInf'] += 1
@@ -287,7 +287,7 @@ class NodalResultsBlock:
                 row_comps = min(6, self.ncomps-6*(j+1)) # amount of values written in row
                 line = read_byte_line(self.in_file)
                 regex = '^-2\s+' + '(.{12})' * row_comps
-                match = parseLine(regex, line)
+                match = read_line(regex, line)
                 data = [float(match.group(c+1)) for c in range(row_comps)]
                 self.results[node].extend(data)
 
@@ -567,8 +567,8 @@ def read_byte_line(f):
     return line.strip()
 
 
-# Parse regex in line and report problems
-def parseLine(regex, line):
+# Search regex in line and report problems
+def read_line(regex, line):
     match = re.search(regex, line)
     if match:
         return match
