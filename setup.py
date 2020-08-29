@@ -10,7 +10,7 @@ and strain tensors."""
 
 setuptools.setup(
     name="ccx2paraview",
-    version="2.3.1",
+    version="3.0.0",
     author="Ihor Mirzov",
     author_email="imirzov@gmail.com",
     description="CalculiX to Paraview converter (frd to vtk/vtu)",
