@@ -41,8 +41,11 @@ def print(*args):
 def read_and_log(stdout):
     while True:
         line = stdout.readline()
-        line = line.replace(b'\x1b[H\x1b[2J\x1b[3J', b'') # clear screen
-        line = line.replace(b'\r', b'') # for Windows
+        if os.name == 'nt':
+            line = line.replace(b'\x0c', b'') # clear screen Windows
+            line = line.replace(b'\r', b'') # \n Windows
+        else:
+            line = line.replace(b'\x1b[H\x1b[2J\x1b[3J', b'') # clear screen Linux
         if line != b'':
             line = line.decode().rstrip()
             print(line)
