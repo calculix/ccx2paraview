@@ -95,10 +95,11 @@ In your code use ccx2paraview package in this way:
     c = ccx2paraview.Converter(frd_file_name, 'vtu')
     c.run()
 
-Create binary with [pyinstaller](https://www.pyinstaller.org/):
+Create binary from sources folder with [nuitka](https://nuitka.net/) (Python version >= 3.8) or [pyinstaller](https://www.pyinstaller.org/) (Python version < 3.8):
 
-    pip3 install pyinstaller
-    pyinstaller ./ccx2paraview/__init__.py --onefile
+    pip3 install nuitka pyinstaller
+    python3 -m nuitka --follow-imports __init__.py
+    pyinstaller __init__.py --onefile
 
 Read [here](https://packaging.python.org/tutorials/packaging-projects/) about how to create packages for [pypi.org](https://pypi.org/):
 
