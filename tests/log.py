@@ -35,3 +35,16 @@ def print(*args):
     with open(log_file, 'a') as f:
         f.write(line)
     sys.stdout.write(line)
+
+
+# Infininte cycle to read process'es stdout
+def read_and_log(stdout):
+    while True:
+        line = stdout.readline()
+        line = line.replace(b'\x1b[H\x1b[2J\x1b[3J', b'') # clear screen
+        line = line.replace(b'\r', b'') # for Windows
+        if line != b'':
+            line = line.decode().rstrip()
+            print(line)
+        else:
+            break

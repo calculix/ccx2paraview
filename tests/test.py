@@ -23,7 +23,7 @@ sys.path.insert(0, sys_path)
 import ccx2paraview
 from ccx2paraview import clean
 from ccx2paraview import parser
-from log import myHandler, print
+from log import myHandler, print, read_and_log
 
 # How many files to process
 limit = 10000
@@ -36,7 +36,8 @@ def scan_all_files_in(start_folder, ext):
             for ff in scan_all_files_in(f.path, ext):
                 all_files.append(ff)
         elif f.is_file() and f.name.endswith(ext):
-            all_files.append(f.path)
+            ff = os.path.normpath(f.path)
+            all_files.append(ff)
     return sorted(all_files)[:limit]
 
 # Test FRD parser only
@@ -72,15 +73,19 @@ def test_binary_in(folder):
     for file_name in scan_all_files_in(folder, '.frd'):
         counter += 1
         if os.name == 'nt':
-            command = '..\\bin\\ccx2paraview.exe'
+            command = '.\\bin\\ccx2paraview.exe'
         else:
-            command = '../bin/ccx2paraview'
+            command = './bin/ccx2paraview'
         relpath = os.path.relpath(file_name, start=folder)
         for fmt in ['vtk', 'vtu']:
             print('\n{}\n{}: {}'.format('='*50, counter, relpath))
+            cmd = [command, file_name, fmt]
             try:
-                subprocess.run('{} {} {}'
-                    .format(command, file_name, fmt), shell=True)
+                process = subprocess.Popen(cmd,
+                    stdin=subprocess.PIPE,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT)
+                read_and_log(process.stdout)
             except:
                 logging.error(traceback.format_exc())
 
@@ -88,15 +93,15 @@ def test_binary_in(folder):
 if __name__ == '__main__':
     clean.screen()
     logging.getLogger().addHandler(myHandler())
-    logging.getLogger().setLevel(logging.INFO)
+    logging.getLogger().setLevel(logging.DEBUG)
     start = time.perf_counter()
     folder = os.path.join(os.path.dirname(__file__), \
         '..', '..', 'examples')
 
     # Choose what we test
     # test_frd_parser_on_models_in(os.path.normpath(folder))
-    convert_calculation_results_in(folder)
-    # test_binary_in(folder)
+    # convert_calculation_results_in(folder)
+    test_binary_in(folder)
 
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
     clean.cache()
