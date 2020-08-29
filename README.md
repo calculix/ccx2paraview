@@ -113,7 +113,7 @@ If you have Python version < 3.8 create binary with [pyinstaller](https://www.py
 
 Read [here](https://packaging.python.org/tutorials/packaging-projects/) about how to create packages for [pypi.org](https://pypi.org/):
 
-    python3 -m pip install --user --upgrade setuptools wheel
+    python3 -m pip install --user --upgrade setuptools wheel twine
     python3 setup.py sdist bdist_wheel
     twine upload dist/*
 
