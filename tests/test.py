@@ -24,11 +24,8 @@ import ccx2paraview
 from ccx2paraview import clean, reader
 from log import myHandler, print, read_and_log
 
-# How many files to process
-limit = 10000
-
 # List all .ext-files here and in all subdirectories
-def scan_all_files_in(start_folder, ext):
+def scan_all_files_in(start_folder, ext, limit=10000):
     all_files = []
     for f in os.scandir(start_folder):
         if f.is_dir():
@@ -72,7 +69,7 @@ def test_binary_in(folder):
     for file_name in scan_all_files_in(folder, '.frd'):
         counter += 1
         if os.name == 'nt':
-            command = '.\\bin\\ccx2paraview.exe'
+            command = 'bin\\ccx2paraview.exe'
         else:
             command = './bin/ccx2paraview'
         relpath = os.path.relpath(file_name, start=folder)
@@ -90,15 +87,20 @@ def test_binary_in(folder):
 
 # Run
 if __name__ == '__main__':
+    start = time.perf_counter()
     clean.screen()
+
+    # Prepare logging
     logging.getLogger().addHandler(myHandler())
     logging.getLogger().setLevel(logging.DEBUG)
-    start = time.perf_counter()
-    folder = os.path.join(os.path.dirname(__file__), \
-        '..', '..', 'examples')
+
+    folder = os.path.abspath(__file__)
+    folder = os.path.dirname(folder)
+    folder = os.path.join(folder, '..', '..', 'examples')
+    folder = os.path.normpath(folder)
 
     # Choose what we test
-    # test_frd_reader_on_models_in(os.path.normpath(folder))
+    # test_frd_reader_on_models_in(folder)
     convert_calculation_results_in(folder)
     # test_binary_in(folder)
 

@@ -3,14 +3,16 @@
 
 """ © Ihor Mirzov, 2019-2020
 Distributed under GNU General Public License v3.0
-Logging handler for all my projects """
+Logging handler for my projects """
 
 import os
 import sys
 import logging
 
 
-log_file = os.path.join(os.path.dirname(__file__), 'test.log')
+log_file = os.path.abspath(__file__)
+log_file = os.path.dirname(log_file)
+log_file = os.path.join(log_file, 'test.log')
 
 
 # Configure logging to emit messages via 'print' method

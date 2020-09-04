@@ -2,3 +2,4 @@
 __pycache__/
 /bin/
 /releases/
+/programmable_filter.py

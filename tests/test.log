@@ -20463,127 +20463,127 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 321 values
 INFO: Reading John_Mannisto_blade_sector.frd
 INFO: 1720 nodes
 INFO: 832 cells
-INFO: Step 1, time 2.64e-05, U, 3 components, 1720 values
-INFO: Step 1, time 2.64e-05, DISPI, 3 components, 1720 values
-INFO: Step 3, time 8.77e-05, U, 3 components, 1720 values
-INFO: Step 3, time 8.77e-05, DISPI, 3 components, 1720 values
-INFO: Step 5, time 174.9, U, 3 components, 1720 values
-INFO: Step 5, time 174.9, DISPI, 3 components, 1720 values
-INFO: Step 6, time 0.00e+00, U, 3 components, 1720 values
-INFO: Step 6, time 0.00e+00, DISPI, 3 components, 1720 values
-INFO: Step 8, time 2.91e-05, U, 3 components, 1720 values
-INFO: Step 8, time 2.91e-05, DISPI, 3 components, 1720 values
-INFO: Step 10, time 99.7, U, 3 components, 1720 values
-INFO: Step 10, time 99.7, DISPI, 3 components, 1720 values
-INFO: Step 11, time 86.3, U, 3 components, 1720 values
-INFO: Step 11, time 86.3, DISPI, 3 components, 1720 values
-INFO: Step 13, time 166.4, U, 3 components, 1720 values
-INFO: Step 13, time 166.4, DISPI, 3 components, 1720 values
-INFO: Step 15, time 316.1, U, 3 components, 1720 values
-INFO: Step 15, time 316.1, DISPI, 3 components, 1720 values
-INFO: Step 16, time 87.6, U, 3 components, 1720 values
-INFO: Step 16, time 87.6, DISPI, 3 components, 1720 values
-INFO: Step 18, time 210.0, U, 3 components, 1720 values
-INFO: Step 18, time 210.0, DISPI, 3 components, 1720 values
-INFO: Step 20, time 318.1, U, 3 components, 1720 values
-INFO: Step 20, time 318.1, DISPI, 3 components, 1720 values
-INFO: Step 21, time 87.9, U, 3 components, 1720 values
-INFO: Step 21, time 87.9, DISPI, 3 components, 1720 values
-INFO: Step 23, time 217.5, U, 3 components, 1720 values
-INFO: Step 23, time 217.5, DISPI, 3 components, 1720 values
-INFO: Step 25, time 318.5, U, 3 components, 1720 values
-INFO: Step 25, time 318.5, DISPI, 3 components, 1720 values
+INFO: Step 1, time 87.1, U, 3 components, 1720 values
+INFO: Step 1, time 87.1, DISPI, 3 components, 1720 values
+INFO: Step 3, time 204.1, U, 3 components, 1720 values
+INFO: Step 3, time 204.1, DISPI, 3 components, 1720 values
+INFO: Step 5, time 316.1, U, 3 components, 1720 values
+INFO: Step 5, time 316.1, DISPI, 3 components, 1720 values
+INFO: Step 6, time 89.2, U, 3 components, 1720 values
+INFO: Step 6, time 89.2, DISPI, 3 components, 1720 values
+INFO: Step 8, time 200.5, U, 3 components, 1720 values
+INFO: Step 8, time 200.5, DISPI, 3 components, 1720 values
+INFO: Step 10, time 316.1, U, 3 components, 1720 values
+INFO: Step 10, time 316.1, DISPI, 3 components, 1720 values
+INFO: Step 11, time 89.3, U, 3 components, 1720 values
+INFO: Step 11, time 89.3, DISPI, 3 components, 1720 values
+INFO: Step 13, time 206.2, U, 3 components, 1720 values
+INFO: Step 13, time 206.2, DISPI, 3 components, 1720 values
+INFO: Step 15, time 317.5, U, 3 components, 1720 values
+INFO: Step 15, time 317.5, DISPI, 3 components, 1720 values
+INFO: Step 16, time 88.5, U, 3 components, 1720 values
+INFO: Step 16, time 88.5, DISPI, 3 components, 1720 values
+INFO: Step 18, time 215.5, U, 3 components, 1720 values
+INFO: Step 18, time 215.5, DISPI, 3 components, 1720 values
+INFO: Step 20, time 318.4, U, 3 components, 1720 values
+INFO: Step 20, time 318.4, DISPI, 3 components, 1720 values
+INFO: Step 21, time 88.2, U, 3 components, 1720 values
+INFO: Step 21, time 88.2, DISPI, 3 components, 1720 values
+INFO: Step 23, time 218.8, U, 3 components, 1720 values
+INFO: Step 23, time 218.8, DISPI, 3 components, 1720 values
+INFO: Step 25, time 318.6, U, 3 components, 1720 values
+INFO: Step 25, time 318.6, DISPI, 3 components, 1720 values
 INFO: 15 time increments
 INFO: Writing John_Mannisto_blade_sector.01.vtk
-INFO: Step 6, time 0.00e+00, U, 3 components, 1720 values
-INFO: Step 6, time 0.00e+00, DISPI, 3 components, 1720 values
+INFO: Step 1, time 87.1, U, 3 components, 1720 values
+INFO: Step 1, time 87.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.02.vtk
-INFO: Step 1, time 2.64e-05, U, 3 components, 1720 values
-INFO: Step 1, time 2.64e-05, DISPI, 3 components, 1720 values
+INFO: Step 21, time 88.2, U, 3 components, 1720 values
+INFO: Step 21, time 88.2, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.03.vtk
-INFO: Step 8, time 2.91e-05, U, 3 components, 1720 values
-INFO: Step 8, time 2.91e-05, DISPI, 3 components, 1720 values
+INFO: Step 16, time 88.5, U, 3 components, 1720 values
+INFO: Step 16, time 88.5, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.04.vtk
-INFO: Step 3, time 8.77e-05, U, 3 components, 1720 values
-INFO: Step 3, time 8.77e-05, DISPI, 3 components, 1720 values
+INFO: Step 6, time 89.2, U, 3 components, 1720 values
+INFO: Step 6, time 89.2, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.05.vtk
-INFO: Step 11, time 86.3, U, 3 components, 1720 values
-INFO: Step 11, time 86.3, DISPI, 3 components, 1720 values
+INFO: Step 11, time 89.3, U, 3 components, 1720 values
+INFO: Step 11, time 89.3, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.06.vtk
-INFO: Step 16, time 87.6, U, 3 components, 1720 values
-INFO: Step 16, time 87.6, DISPI, 3 components, 1720 values
+INFO: Step 8, time 200.5, U, 3 components, 1720 values
+INFO: Step 8, time 200.5, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.07.vtk
-INFO: Step 21, time 87.9, U, 3 components, 1720 values
-INFO: Step 21, time 87.9, DISPI, 3 components, 1720 values
+INFO: Step 3, time 204.1, U, 3 components, 1720 values
+INFO: Step 3, time 204.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.08.vtk
-INFO: Step 10, time 99.7, U, 3 components, 1720 values
-INFO: Step 10, time 99.7, DISPI, 3 components, 1720 values
+INFO: Step 13, time 206.2, U, 3 components, 1720 values
+INFO: Step 13, time 206.2, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.09.vtk
-INFO: Step 13, time 166.4, U, 3 components, 1720 values
-INFO: Step 13, time 166.4, DISPI, 3 components, 1720 values
+INFO: Step 18, time 215.5, U, 3 components, 1720 values
+INFO: Step 18, time 215.5, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.10.vtk
-INFO: Step 5, time 174.9, U, 3 components, 1720 values
-INFO: Step 5, time 174.9, DISPI, 3 components, 1720 values
+INFO: Step 23, time 218.8, U, 3 components, 1720 values
+INFO: Step 23, time 218.8, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.11.vtk
-INFO: Step 18, time 210.0, U, 3 components, 1720 values
-INFO: Step 18, time 210.0, DISPI, 3 components, 1720 values
+INFO: Step 10, time 316.1, U, 3 components, 1720 values
+INFO: Step 10, time 316.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.12.vtk
-INFO: Step 23, time 217.5, U, 3 components, 1720 values
-INFO: Step 23, time 217.5, DISPI, 3 components, 1720 values
+INFO: Step 5, time 316.1, U, 3 components, 1720 values
+INFO: Step 5, time 316.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.13.vtk
-INFO: Step 15, time 316.1, U, 3 components, 1720 values
-INFO: Step 15, time 316.1, DISPI, 3 components, 1720 values
+INFO: Step 15, time 317.5, U, 3 components, 1720 values
+INFO: Step 15, time 317.5, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.14.vtk
-INFO: Step 20, time 318.1, U, 3 components, 1720 values
-INFO: Step 20, time 318.1, DISPI, 3 components, 1720 values
+INFO: Step 20, time 318.4, U, 3 components, 1720 values
+INFO: Step 20, time 318.4, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.15.vtk
-INFO: Step 25, time 318.5, U, 3 components, 1720 values
-INFO: Step 25, time 318.5, DISPI, 3 components, 1720 values
+INFO: Step 25, time 318.6, U, 3 components, 1720 values
+INFO: Step 25, time 318.6, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.01.vtu
-INFO: Step 6, time 0.00e+00, U, 3 components, 1720 values
-INFO: Step 6, time 0.00e+00, DISPI, 3 components, 1720 values
+INFO: Step 1, time 87.1, U, 3 components, 1720 values
+INFO: Step 1, time 87.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.02.vtu
-INFO: Step 1, time 2.64e-05, U, 3 components, 1720 values
-INFO: Step 1, time 2.64e-05, DISPI, 3 components, 1720 values
+INFO: Step 21, time 88.2, U, 3 components, 1720 values
+INFO: Step 21, time 88.2, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.03.vtu
-INFO: Step 8, time 2.91e-05, U, 3 components, 1720 values
-INFO: Step 8, time 2.91e-05, DISPI, 3 components, 1720 values
+INFO: Step 16, time 88.5, U, 3 components, 1720 values
+INFO: Step 16, time 88.5, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.04.vtu
-INFO: Step 3, time 8.77e-05, U, 3 components, 1720 values
-INFO: Step 3, time 8.77e-05, DISPI, 3 components, 1720 values
+INFO: Step 6, time 89.2, U, 3 components, 1720 values
+INFO: Step 6, time 89.2, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.05.vtu
-INFO: Step 11, time 86.3, U, 3 components, 1720 values
-INFO: Step 11, time 86.3, DISPI, 3 components, 1720 values
+INFO: Step 11, time 89.3, U, 3 components, 1720 values
+INFO: Step 11, time 89.3, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.06.vtu
-INFO: Step 16, time 87.6, U, 3 components, 1720 values
-INFO: Step 16, time 87.6, DISPI, 3 components, 1720 values
+INFO: Step 8, time 200.5, U, 3 components, 1720 values
+INFO: Step 8, time 200.5, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.07.vtu
-INFO: Step 21, time 87.9, U, 3 components, 1720 values
-INFO: Step 21, time 87.9, DISPI, 3 components, 1720 values
+INFO: Step 3, time 204.1, U, 3 components, 1720 values
+INFO: Step 3, time 204.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.08.vtu
-INFO: Step 10, time 99.7, U, 3 components, 1720 values
-INFO: Step 10, time 99.7, DISPI, 3 components, 1720 values
+INFO: Step 13, time 206.2, U, 3 components, 1720 values
+INFO: Step 13, time 206.2, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.09.vtu
-INFO: Step 13, time 166.4, U, 3 components, 1720 values
-INFO: Step 13, time 166.4, DISPI, 3 components, 1720 values
+INFO: Step 18, time 215.5, U, 3 components, 1720 values
+INFO: Step 18, time 215.5, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.10.vtu
-INFO: Step 5, time 174.9, U, 3 components, 1720 values
-INFO: Step 5, time 174.9, DISPI, 3 components, 1720 values
+INFO: Step 23, time 218.8, U, 3 components, 1720 values
+INFO: Step 23, time 218.8, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.11.vtu
-INFO: Step 18, time 210.0, U, 3 components, 1720 values
-INFO: Step 18, time 210.0, DISPI, 3 components, 1720 values
+INFO: Step 10, time 316.1, U, 3 components, 1720 values
+INFO: Step 10, time 316.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.12.vtu
-INFO: Step 23, time 217.5, U, 3 components, 1720 values
-INFO: Step 23, time 217.5, DISPI, 3 components, 1720 values
+INFO: Step 5, time 316.1, U, 3 components, 1720 values
+INFO: Step 5, time 316.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.13.vtu
-INFO: Step 15, time 316.1, U, 3 components, 1720 values
-INFO: Step 15, time 316.1, DISPI, 3 components, 1720 values
+INFO: Step 15, time 317.5, U, 3 components, 1720 values
+INFO: Step 15, time 317.5, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.14.vtu
-INFO: Step 20, time 318.1, U, 3 components, 1720 values
-INFO: Step 20, time 318.1, DISPI, 3 components, 1720 values
+INFO: Step 20, time 318.4, U, 3 components, 1720 values
+INFO: Step 20, time 318.4, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.15.vtu
-INFO: Step 25, time 318.5, U, 3 components, 1720 values
-INFO: Step 25, time 318.5, DISPI, 3 components, 1720 values
+INFO: Step 25, time 318.6, U, 3 components, 1720 values
+INFO: Step 25, time 318.6, DISPI, 3 components, 1720 values
 
 ==================================================
 96: other/Kaffeeheblerei_hinge.frd
@@ -21650,4 +21650,4 @@ INFO: Step 1, time 1.0, RF, 3 components, 36 values
 INFO: Step 1, time 1.0, ENER, 1 components, 36 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 36 values
 
-Total 599.1 seconds
+Total 580.4 seconds
