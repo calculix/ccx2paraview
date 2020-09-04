@@ -91,8 +91,10 @@ To run this converter from source you'll need [Python 3](https://www.python.org/
 
 In your code use ccx2paraview package in this way:
 
+    import logging
     import ccx2paraview
-    c = ccx2paraview.Converter(frd_file_name, 'vtu')
+    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+    c = ccx2paraview.Converter(frd_file_name, ['vtu'])
     c.run()
 
 If you have Python version >= 3.8 create binary with [nuitka](https://nuitka.net/):
