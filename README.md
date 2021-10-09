@@ -75,6 +75,7 @@ Converted translations field with Viridis colormap:
 
 Please, you may:
 
+- Star this project.
 - Simply use this software and ask questions.
 - Share your models and screenshots.
 - Report problems by [posting issues](https://github.com/calculix/ccx2paraview/issues).
@@ -133,6 +134,8 @@ Paraview programmable filter for tensor principal directions (eigenvectors).
 
 Read binary .frd files.
 
+Process huge files increment by increment.
+
 Read DAT files: it would be a killer feature if Paraview could visualize results in gauss points.
 
-Contribute to meshio. Use meshio XDMF writer: https://github.com/calculix/ccx2paraview/issues/6
+Contribute to meshio. FRD writer. Use meshio XDMF writer: https://github.com/calculix/ccx2paraview/issues/6
