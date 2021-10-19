@@ -1,5 +1,9 @@
-© Ihor Mirzov, 2019-2020  
+© Ihor Mirzov, 2019-2021  
 Distributed under GNU General Public License v3.0
+
+[![PyPi Version](https://img.shields.io/pypi/v/ccx2paraview.svg)](https://pypi.org/project/ccx2paraview)
+[![PyPi downloads](https://img.shields.io/pypi/dm/ccx2paraview.svg)](https://pypistats.org/packages/ccx2paraview)
+
 
 <br/><br/>
 
