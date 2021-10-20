@@ -1,9 +1,10 @@
 © Ihor Mirzov, 2019-2021  
 Distributed under GNU General Public License v3.0
 
-[![PyPi Version](https://img.shields.io/pypi/v/ccx2paraview.svg)](https://pypi.org/project/ccx2paraview)
-[![PyPi downloads](https://img.shields.io/pypi/dm/ccx2paraview.svg)](https://pypistats.org/packages/ccx2paraview)
-
+[![PyPi](https://badgen.net/badge/icon/pypi?icon=pypi&label)](https://pypi.org/project/ccx2paraview)
+[![PyPi downloads](https://img.shields.io/pypi/dm/ccx2paraview.svg)](https://pypistats.org/packages/ccx2paraview)  
+[![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com/calculix/ccx2paraview)
+[![Github All Releases](https://img.shields.io/github/downloads/calculix/ccx2paraview/total.svg)](https://github.com/calculix/ccx2paraview/releases)
 
 <br/><br/>
 
@@ -89,6 +90,9 @@ Please, you may:
 
 
 # For developers
+
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/ccx2paraview.svg)](https://www.python.org/downloads/)
+[![Visual Studio Code](https://img.shields.io/badge/--007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://code.visualstudio.com/)
 
 To run this converter from source you'll need [Python 3](https://www.python.org/downloads/) with *numpy* and *vtk*. Install all with command:
 
