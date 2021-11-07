@@ -94,6 +94,8 @@ Please, you may:
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ccx2paraview.svg)](https://www.python.org/downloads/)
 [![Visual Studio Code](https://img.shields.io/badge/--007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://code.visualstudio.com/)
 
+[![CalculiX-to-Paraview Converter](https://img.youtube.com/vi/KofE0x0csZE/maxresdefault.jpg)](https://www.youtube.com/watch?v=KofE0x0csZE)
+
 To run this converter from source you'll need [Python 3](https://www.python.org/downloads/) with *numpy* and *vtk*. Install all with command:
 
     pip3 install numpy vtk ccx2paraview
