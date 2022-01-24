@@ -3,9 +3,9 @@
 
 import setuptools
 
-long_description = """CalculiX to Paraview converter (frd to vtk/vtu). 
-Converts CalculiX FRD file to view and postprocess analysis results 
-in Paraview. Generates Mises and Principal components for stress 
+long_description = """CalculiX to Paraview converter (frd to vtk/vtu).
+Converts CalculiX FRD file to view and postprocess analysis results
+in Paraview. Generates Mises and Principal components for stress
 and strain tensors."""
 
 setuptools.setup(
@@ -24,4 +24,9 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
+    entry_points={
+        "console_scripts": [
+            "ccx2paraview=ccx2paraview:main",
+        ],
+    },
 )
