@@ -33,7 +33,7 @@ Creates separate file for each output interval - it makes possible to animate ti
 
 Converter is tested on [CalculiX examples](https://github.com/calculix/examples). Here is how some [test log](https://github.com/calculix/ccx2paraview/blob/master/tests/test.log) looks like.
 
-FRD reader is tested to reduce processing time as much as possible. Now it's quite optimized and fast, but Python itself is slower than C/C++. Here we can do nothing, so, for example, [Calmed converter](https://calculix.discourse.group/t/exporting-mode-shapes/182/6) must be faster - another question is if it's able to read and convert any CalculiX results.
+FRD reader is tested to reduce processing time as much as possible. Now it's quite optimized and fast, but Python itself is slower than C/C++. Here we can do nothing, so, for example, [Calmed converter](https://calculix.discourse.group/t/exporting-mode-shapes/182/7) must be faster - another question is if it's able to read and convert any CalculiX results.
 
 <br/><br/>
 

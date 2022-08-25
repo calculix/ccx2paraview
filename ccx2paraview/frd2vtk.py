@@ -103,8 +103,8 @@ For VTK see https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf pages 9-
 
 """
 
-# frd_elem_type : vtk_elem_type
 def convert_elem_type(frd_elem_type):
+    """frd_elem_type : vtk_elem_type."""
     frd2vtk_num = {
         1: 12,
         2: 13,

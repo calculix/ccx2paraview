@@ -23,6 +23,7 @@ import clean
 
 
 class Converter:
+
     def __init__(self, file_name, fmt_list):
         self.file_name = file_name
         self.fmt_list = fmt_list

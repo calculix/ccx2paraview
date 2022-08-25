@@ -8,26 +8,23 @@ Distributed under GNU General Public License v3.0
 
 This module contains classes for reading CalculiX .frd files """
 
-import os
 import re
-import sys
 import math
-import copy
 import logging
 
 import numpy as np
 
 
-# A single node object
 class Node:
+    """A single node object."""
 
     def __init__(self, num, coords):
         self.num = num
         self.coords = coords
 
 
-# A single finite element object
 class Element:
+    """A single finite element object."""
 
     def __init__(self, num, etype, nodes):
         self.num = num
@@ -35,11 +32,11 @@ class Element:
         self.nodes = nodes
 
 
-# Nodal Point Coordinate Block: cgx_2.17 Manual, § 11.3
 class NodalPointCoordinateBlock:
+    """Nodal Point Coordinate Block: cgx_2.17 Manual, § 11.3."""
 
-    # Read nodal coordinates
     def __init__(self, in_file):
+        """Read nodal coordinates."""
         line = read_byte_line(in_file)
         self.nodes = {} # dictionary with nodes {num:Node}
         while True:
@@ -62,11 +59,11 @@ class NodalPointCoordinateBlock:
         logging.info('{} nodes'.format(self.numnod)) # total number of nodes
 
 
-# Element Definition Block: cgx_2.17 Manual, § 11.4
 class ElementDefinitionBlock:
+    """Element Definition Block: cgx_2.17 Manual, § 11.4."""
 
-    # Read elements
     def __init__(self, in_file):
+        """Read elements."""
         self.in_file = in_file
         line = read_byte_line(in_file)
         self.elements = [] # list of Element objects
@@ -83,9 +80,8 @@ class ElementDefinitionBlock:
         self.numelem = len(self.elements) # number of elements in this block
         logging.info('{} cells'.format(self.numelem)) # total number of elements
 
-    # Read element composition
     def read_element(self, line):
-        """
+        """Read element composition
             -1         1    1    0AIR
             -2         1         2         3         4         5         6         7         8
             -1         1   10    0    1
@@ -104,26 +100,28 @@ class ElementDefinitionBlock:
             nodes = [int(n) for n in line.split()[1:]]
             element_nodes.extend(nodes)
 
+        # logging.debug('Element {}: {}'.format(element_num, element_nodes))
         elem = Element(element_num, element_type, element_nodes)
         self.elements.append(elem)
-        # logging.debug('Element {}: {}'.format(element_num, element_nodes))
 
-    # Amount of nodes in frd element
     def amount_of_nodes_in_frd_element(self, etype):
-        # First value is meaningless, since elements are 1-based
+        """Amount of nodes in frd element.
+        First value is meaningless, since elements are 1-based.
+        """
         return (0, 8, 6, 4, 20, 15, 10, 3, 6, 4, 8, 2, 3)[etype]
 
-    # Amount of lines in element connectivity definition
     def num_lines(self, etype):
-        # First value is meaningless, since elements are 1-based
+        """Amount of lines in element connectivity definition.
+        First value is meaningless, since elements are 1-based.
+        """
         return (0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1)[etype]
 
 
-# Nodal Results Block: cgx_2.17 Manual, § 11.6
 class NodalResultsBlock:
+    """Nodal Results Block: cgx_2.17 Manual, § 11.6."""
 
-    # Read calculated values
     def __init__(self):
+        """Read calculated values."""
         self.components = [] # component names
         self.results = {} # dictionary with nodal result {node:data}
         self.name = None
@@ -152,9 +150,8 @@ class NodalResultsBlock:
                     '{} components, '.format(len(self.components)) +\
                     '{} values'.format(results_counter))
 
-    # Read step information
     def read_step_info(self):
-        """
+        """Read step information
             CL  101 0.36028E+01         320                     3    1           1
             CL  101 1.000000000         803                     0    1           1
             CL  101 1.000000000          32                     0    1           1
@@ -166,9 +163,8 @@ class NodalResultsBlock:
         self.value = float(match.group(1)) # could be frequency, time or any numerical value
         self.numstep = int(match.group(2)) # step number
 
-    # Read variables information
     def read_vars_info(self):
-        """
+        """Read variables information
             -4  V3DF        4    1
             -4  DISP        4    1
             -4  STRESS      6    1
@@ -192,9 +188,8 @@ class NodalResultsBlock:
         if self.name in inpname:
             self.name = inpname[self.name]
 
-    # Iterate over components
     def read_components_info(self):
-        """
+        """Iterate over components
             -5  D1          1    2    1    0
             -5  D2          1    2    2    0
             -5  D3          1    2    3    0
@@ -230,9 +225,8 @@ class NodalResultsBlock:
             else:
                 self.components.append(component_name)
 
-    # Iterate over nodal results
     def read_nodal_results(self):
-        """
+        """Iterate over nodal results
             -1         1-7.97316E+10-3.75220E-01
             -1         2-8.19094E+10-3.85469E-01
 
@@ -301,8 +295,8 @@ class NodalResultsBlock:
                 .format(before.strip(), after, emitted_warning_types['WrongFormat']))
         return results_counter
 
-    # All 9 tensor components
     def reshape9(self):
+        """All 9 tensor components."""
         self.ncomps = 9
         xx = self.components[0]
         yy = self.components[1]
@@ -323,8 +317,9 @@ class NodalResultsBlock:
                 xy, yy, yz,
                 xz, yz, zz]
 
-    # Append Mises and principal stresses
-    # NOTE DEPRECATED
+    """
+    Append Mises and principal stresses
+    NOTE DEPRECATED
     def append_stresses(self):
         if self.name == 'S':
             try:
@@ -360,9 +355,11 @@ class NodalResultsBlock:
 
             except:
                 logging.error('Additional stresses will not be appended.')
+    """
 
-    # Append principal strains
-    # NOTE DEPRECATED
+    """
+    Append principal strains
+    NOTE DEPRECATED
     def append_strains(self):
         if self.name == 'E':
             try:
@@ -399,13 +396,15 @@ class NodalResultsBlock:
 
             except:
                 logging.error('Additional strains will not be appended.')
+    """
 
 
-# Main class
 class FRD:
+    """Main class."""
 
-    # Read contents of the .frd file
     def __init__(self, file_name=None):
+        """Read contents of the .frd file."""
+
         self.file_name = None   # path to the .frd-file to be read
         self.node_block = None  # node block
         self.elem_block = None  # elements block
@@ -460,8 +459,9 @@ class FRD:
             else:
                 logging.warning('No time increments!')
 
-    # Append von Mises stress
     def calculate_mises_stress(self, b):
+        """Append von Mises stress."""
+
         b1 = NodalResultsBlock()
         b1.name = 'S_Mises'
         b1.components = (b1.name, )
@@ -488,8 +488,9 @@ class FRD:
 
         return b1
 
-    # Append von Mises equivalent strain
     def calculate_mises_strain(self, b):
+        """Append von Mises equivalent strain."""
+
         b1 = NodalResultsBlock()
         b1.name = 'E_Mises'
         b1.components = (b1.name,)
@@ -516,8 +517,9 @@ class FRD:
 
         return b1
 
-    # Append tensor's eigenvalues
     def calculate_principal(self, b):
+        """Append tensor's eigenvalues."""
+
         b1 = NodalResultsBlock()
         b1.name = b.name + '_Principal'
         b1.components = ('Min', 'Mid', 'Max')
@@ -540,8 +542,8 @@ class FRD:
         return b1
 
 
-# Read byte line and decode: return None after EOF
 def read_byte_line(f):
+    """Read byte line and decode: return None after EOF."""
 
     # Check EOF
     byte = f.read(1)
@@ -567,8 +569,8 @@ def read_byte_line(f):
     return line.strip()
 
 
-# Search regex in line and report problems
 def read_line(regex, line):
+    """Search regex in line and report problems."""
     match = re.search(regex, line)
     if match:
         return match

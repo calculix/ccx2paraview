@@ -15,8 +15,9 @@ import vtk
 
 import frd2vtk
 
-# Write element connectivity with renumbered nodes
+
 def get_element_connectivity(renumbered_nodes, e):
+    """Write element connectivity with renumbered nodes."""
     connectivity = []
 
     # frd: 20 node brick element
@@ -50,9 +51,11 @@ def get_element_connectivity(renumbered_nodes, e):
     
     return connectivity
 
-# Amount of nodes in element: needed to calculate offset
-# Node offset is an index in the connectivity DataArray
+
 def amount_of_nodes_in_vtk_element(e):
+    """Amount of nodes in element: needed to calculate offset
+    Node offset is an index in the connectivity DataArray
+    """
     # frd: 20 node brick element
     if e.type == 4:
         n = 20
@@ -67,8 +70,10 @@ def amount_of_nodes_in_vtk_element(e):
 
     return n
 
-# Generate VTK mesh
+
 def generate_ugrid(p):
+    """Generate VTK mesh."""
+
     ugrid = vtk.vtkUnstructuredGrid() # create empty grid in VTK
 
     # POINTS section
@@ -96,8 +101,10 @@ def generate_ugrid(p):
 
     return ugrid
 
-# Assign data to VTK mesh
+
 def assign_data(ugrid, b, numnod):
+    """Assign data to VTK mesh."""
+
     data_array = vtk.vtkDoubleArray()
     data_array.SetName(b.name)
     data_array.SetNumberOfComponents(len(b.components))
@@ -136,11 +143,11 @@ def assign_data(ugrid, b, numnod):
             logging.warning('{} {} values are converted to 0.0'.format(v, k))
 
 
-# Main function
-# p is a FRD object
 class Writer:
 
     def __init__(self, p, file_name, time):
+        """Main function: p is a FRD object."""
+        
         self.file_name = file_name
         self.ugrid = generate_ugrid(p)
 
@@ -177,8 +184,9 @@ class Writer:
         writer.Write()
 
 
-# Writes ParaView Data (PVD) file for series of VTU files
 def write_pvd(file_name, times_names):
+    """Writes ParaView Data (PVD) file for series of VTU files."""
+
     with open(file_name, 'w') as f:
         f.write('<?xml version="1.0"?>\n')
         f.write('<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">\n')
