@@ -138,6 +138,9 @@ Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-fo
 
 # TODO
 
+Use CCXStressReader to get stress in Gauss points:
+https://github.com/Mote3D/CCXStressReader
+
 Multiprocessing for tests.
 
 Paraview programmable filter for tensor principal directions (eigenvectors).

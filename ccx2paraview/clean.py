@@ -24,6 +24,8 @@ def cache(folder=None):
         shutil.rmtree(pycache) # works in Linux as in Windows
 
     # Recursively clear cache in child folders
+    # TODO If ran from HOME folder
+    # TODO PermissionError: [Errno 13] Permission denied: '/home/ihor/.dbus'
     for f in os.scandir(folder):
         if f.is_dir():
             cache(f.path)
