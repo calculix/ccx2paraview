@@ -33,7 +33,7 @@ Creates separate file for each output interval - it makes possible to animate ti
 
 Converter is tested on [CalculiX examples](https://github.com/calculix/examples). Here is how some [test log](https://github.com/calculix/ccx2paraview/blob/master/tests/test.log) looks like.
 
-FRD reader is tested to reduce processing time as much as possible. Now it's quite optimized and fast, but Python itself is slower than C/C++. Here we can do nothing, so, for example, [Calmed converter](https://www.salome-platform.org/forum/forum_12/126338563) must be faster - another question is if it's able to read and convert any CalculiX results.
+FRD reader is tested to reduce processing time as much as possible. Now it's quite optimized and fast, but Python itself is slower than C/C++. Here we can do nothing, so, for example, [Calmed converter](https://calculix.discourse.group/t/exporting-mode-shapes/182/6) must be faster - another question is if it's able to read and convert any CalculiX results.
 
 <br/><br/>
 
@@ -124,13 +124,13 @@ If you have Python version < 3.8 create binary with [pyinstaller](https://www.py
     pip3 install pyinstaller
     pyinstaller __init__.py --onefile
 
-Read [here](https://packaging.python.org/tutorials/packaging-projects/) about how to create packages for [pypi.org](https://pypi.org/):
+Read [how to create packages](https://packaging.python.org/tutorials/packaging-projects/) for [pypi.org](https://pypi.org/):
 
     python3 -m pip install --user --upgrade setuptools wheel twine
     python3 setup.py sdist bdist_wheel
     twine upload dist/*
 
-Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) and VTK [unstructured grid](https://lorensen.github.io/VTKExamples/site/VTKFileFormats/#unstructuredgrid). Remember that FRD file is node based, so element results are also stored at nodes after extrapolation from the integration points.
+Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) and VTK [unstructured grid](https://kitware.github.io/vtk-examples/site/VTKFileFormats/#unstructuredgrid). Remember that FRD file is node based, so element results are also stored at nodes after extrapolation from the integration points.
 
 <br/><br/>
 
@@ -138,8 +138,7 @@ Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-fo
 
 # TODO
 
-Use CCXStressReader to get stress in Gauss points:
-https://github.com/Mote3D/CCXStressReader
+Read DAT files: it would be a killer feature if Paraview could visualize results in Gauss points. Use [CCXStressReader](https://github.com/Mote3D/CCXStressReader).
 
 Multiprocessing for tests.
 
@@ -149,10 +148,8 @@ Read binary .frd files.
 
 Process huge files increment by increment.
 
-Read DAT files: it would be a killer feature if Paraview could visualize results in gauss points.
-
 Contribute to meshio. FRD writer. Use meshio XDMF writer: https://github.com/calculix/ccx2paraview/issues/6
 
 Include an integer scalar containing each element’s GROUP or MATERIAL.
 
-Add element’s material tangent stiffness tensor. Easiest for the paraview user would be to provide it  in the (deflected)  global cartesian frame. This dataset is useful for  checking input data for anisotropic materials, as well as for the stuff I do with inverse design of fields of this tensor. But it’s a lot more work to produce, especially with nonlinear materials. It’s almost as useful to see the highest principal value of the stiffness, as a scalar or a vector. (but for the vector you need to do the transformation)
+Add element’s material tangent stiffness tensor. Easiest for the paraview user would be to provide it in the (deflected) global cartesian frame. This dataset is useful for checking input data for anisotropic materials, as well as for the stuff with inverse design of fields of this tensor. But it’s a lot more work to produce, especially with nonlinear materials. It’s almost as useful to see the highest principal value of the stiffness, as a scalar or a vector. (but for the vector you need to do the transformation)
