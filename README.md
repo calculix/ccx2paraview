@@ -58,6 +58,42 @@ It is recommended to convert .frd to modern XML .vtu format - its contents are c
 
 Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - previously there were problems with component names.
 
+A snippet for Paraview programmable filter to convert 6 components data array to full tensor:
+
+```Python
+import numpy as np 
+res = np.array([])
+pd = inputs[0].PointData['S']
+for xx,yy,zz,xy,yz,xz in pd:
+    t = np.array([[xx,xy,xz],[xy,yy,yz],[xz,yz,zz]])
+    res = np.append(res, t)
+tensor = dsa.VTKArray(res)
+tensor.shape = (len(pd), 3, 3)
+output.PointData.append(tensor, 'S_tensor')
+```
+
+A snippet for Paraview programmable filter to calculate eigenvalues and eigenvectors:
+
+```Python
+import numpy as np
+eigenvalues = np.array([])
+eigenvectors = np.array([])
+pd = inputs[0].PointData['S']
+for xx,yy,zz,xy,yz,xz in pd:
+    t = np.array([[xx,xy,xz],[xy,yy,yz],[xz,yz,zz]])
+    w, v = np.linalg.eig(t)
+    w_ = np.absolute(w).tolist()
+    i = w_.index(max(w_))
+    eigenvalues = np.append(eigenvalues, w[i]) # max abs eigenvalue
+    eigenvectors = np.append(eigenvectors, v[i]) # max principal vector
+eigenvectors = dsa.VTKArray(eigenvectors)
+eigenvalues = dsa.VTKArray(eigenvalues)
+eigenvectors.shape = (len(pd), 3)
+eigenvalues.shape = (len(pd), 1)
+output.PointData.append(eigenvectors, 'S_max_principal_vectors')
+output.PointData.append(eigenvalues, 'S_max_eigenvalues')
+```
+
 **Attention!** While developing this converter I'm using latest Python3, latest VTK and latest Paraview. If you have problems with opening conversion results in Paraview - update it.
 
 <br/><br/>
@@ -153,3 +189,5 @@ Contribute to meshio. FRD writer. Use meshio XDMF writer: https://github.com/cal
 Include an integer scalar containing each element’s GROUP or MATERIAL.
 
 Add element’s material tangent stiffness tensor. Easiest for the paraview user would be to provide it in the (deflected) global cartesian frame. This dataset is useful for checking input data for anisotropic materials, as well as for the stuff with inverse design of fields of this tensor. But it’s a lot more work to produce, especially with nonlinear materials. It’s almost as useful to see the highest principal value of the stiffness, as a scalar or a vector. (but for the vector you need to do the transformation)
+
+Why is the frd file read in binary mode (line 414)? Opening the file in binary mode and then assembling each line byte by byte (read_byte_line) seems a bit complicated (and maybe slow).
