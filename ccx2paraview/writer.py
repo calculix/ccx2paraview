@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, 2019-2020
+"""© Ihor Mirzov, 2019-2020
 Distributed under GNU General Public License v3.0
 
 Writes .vtk and .vtu files based on data from FRD object.
-Uses native VTK python package. """
+Uses native VTK Python package.
+"""
 
 import os
 import math
@@ -33,10 +34,9 @@ def get_element_connectivity(renumbered_nodes, e):
 
     # frd: 15 node penta element
     elif e.type==5 or e.type==2:
-        """
-            CalculiX elements type 5 are not supported in VTK and
-            has to be processed as CalculiX type 2 (6 node wedge,
-            VTK type 13). Additional nodes are omitted.
+        """CalculiX elements type 5 are not supported in VTK and
+        has to be processed as CalculiX type 2 (6 node wedge,
+        VTK type 13). Additional nodes are omitted.
         """
         for i in [0,2,1,3,5,4]: # repositioning nodes
             node = renumbered_nodes[e.nodes[i]] # node after renumbering
@@ -48,7 +48,7 @@ def get_element_connectivity(renumbered_nodes, e):
         for i in range(n):
             node = renumbered_nodes[e.nodes[i]] # node after renumbering
             connectivity.append(node)
-    
+
     return connectivity
 
 
@@ -71,9 +71,8 @@ def amount_of_nodes_in_vtk_element(e):
     return n
 
 
-def generate_ugrid(p):
+def generate_ugrid(frd):
     """Generate VTK mesh."""
-
     ugrid = vtk.vtkUnstructuredGrid() # create empty grid in VTK
 
     # POINTS section
@@ -81,19 +80,19 @@ def generate_ugrid(p):
     points = vtk.vtkPoints()
     renumbered_nodes = {} # old_number : new_number
     new_node_number = 0
-    for n in sorted(p.node_block.nodes.keys()):
+    for n in sorted(frd.node_block.nodes.keys()):
         renumbered_nodes[n] = new_node_number
-        coordinates = p.node_block.nodes[n].coords
+        coordinates = frd.node_block.nodes[n].coords
         points.InsertPoint(new_node_number, coordinates)
         new_node_number += 1
-        if new_node_number == p.node_block.numnod:
+        if new_node_number == frd.node_block.numnod:
             break
     ugrid.SetPoints(points) # insert all points to the grid
 
     # CELLS section - elements connectyvity
     # Sometimes element nodes should be repositioned
-    ugrid.Allocate(p.elem_block.numelem)
-    for e in sorted(p.elem_block.elements, key=lambda x: x.num):
+    ugrid.Allocate(frd.elem_block.numelem)
+    for e in sorted(frd.elem_block.elements, key=lambda x: x.num):
         vtk_elem_type = frd2vtk.convert_elem_type(e.type)
         offset = amount_of_nodes_in_vtk_element(e)
         connectivity = get_element_connectivity(renumbered_nodes, e)
@@ -102,72 +101,71 @@ def generate_ugrid(p):
     return ugrid
 
 
-def assign_data(ugrid, b, numnod):
-    """Assign data to VTK mesh."""
-
+def convert_frd_data_to_vtk(b, numnod):
+    """Convert parsed FRD data to vtkDoubleArray."""
     data_array = vtk.vtkDoubleArray()
     data_array.SetName(b.name)
     data_array.SetNumberOfComponents(len(b.components))
     data_array.SetNumberOfTuples(numnod)
 
-    # Calculate amount of components and define their names
-    i = 0 # counter
-    for c in b.components:
+    # Set component names
+    for i,c in enumerate(b.components):
         if 'SDV' in c:
             data_array.SetComponentName(i, i)
         else:
             data_array.SetComponentName(i, c)
-        i += 1
 
     # Some warnings repeat too much time - mark them
     emitted_warning_types = {'Inf':0, 'NaN':0}
 
     # Assign data
     nodes = sorted(b.results.keys())[:numnod]
-    index = 0
-    for n in nodes:
-        data = b.results[n]
-        for i in range(len(data)):
-            if math.isinf(data[i]):
-                data[i] = 0.0
+    for i,n in enumerate(nodes):
+        node_values = b.results[n]
+        for j,r in enumerate(node_values):
+            if math.isinf(r):
+                node_values[j] = 0.0
                 emitted_warning_types['Inf'] += 1
-            if math.isnan(data[i]):
-                data[i] = 0.0
+            if math.isnan(r):
+                node_values[j] = 0.0
                 emitted_warning_types['NaN'] += 1
-        data_array.InsertTuple(index, data)
-        index += 1
-    ugrid.GetPointData().AddArray(data_array)
+        data_array.InsertTuple(i, node_values)
 
-    for k, v in emitted_warning_types.items():
+    for k,v in emitted_warning_types.items():
         if v > 0:
             logging.warning('{} {} values are converted to 0.0'.format(v, k))
+
+    return data_array
 
 
 class Writer:
 
-    def __init__(self, p, file_name, time):
-        """Main function: p is a FRD object."""
-        
+    def __init__(self, frd, file_name, time):
+        """Main function: frd is a FRD object."""
         self.file_name = file_name
-        self.ugrid = generate_ugrid(p)
+        self.ugrid = generate_ugrid(frd)
+        pd = self.ugrid.GetPointData()
 
         # POINT DATA - from here start all the results
-        for b in p.result_blocks: # iterate over NodalResultsBlock
-            if b.value != time: # write results for one time increment only
-                continue
-            if len(b.results) and len(b.components):
-                if b.value < 1:
-                    time_str = 'time {:.2e}, '.format(b.value)
+        for b in frd.result_blocks: # iterate over NodalResultsBlock (increments)
+            if b.value == time: # write results for one time increment only
+                if len(b.results) and len(b.components):
+                    # Print some log
+                    if b.value < 1:
+                        time_str = 'time {:.2e}, '.format(b.value)
+                    else:
+                        time_str = 'time {:.1f}, '.format(b.value)
+                    txt = 'Step {}, '.format(b.numstep) + time_str \
+                        + '{}, '.format(b.name) \
+                        + '{} components, '.format(len(b.components)) \
+                        + '{} values'.format(len(b.results))
+                    logging.info(txt)
+
+                    da = convert_frd_data_to_vtk(b, frd.node_block.numnod)
+                    pd.AddArray(da)
+                    pd.Modified()
                 else:
-                    time_str = 'time {:.1f}, '.format(b.value)
-                logging.info('Step {}, '.format(b.numstep) +\
-                            time_str +\
-                            '{}, '.format(b.name) +\
-                            '{} components, '.format(len(b.components)) +\
-                            '{} values'.format(len(b.results)))
-                assign_data(self.ugrid, b, p.node_block.numnod)
-            else:
-                logging.warning(b.name + ' - no data for this increment')
+                    logging.warning(b.name + ' - no data for this increment')
 
     def write_vtk(self):
         writer = vtk.vtkUnstructuredGridWriter()

@@ -82,19 +82,19 @@ class ElementDefinitionBlock:
 
     def read_element(self, line):
         """Read element composition
-            -1         1    1    0AIR
-            -2         1         2         3         4         5         6         7         8
-            -1         1   10    0    1
-            -2         1         2         3         4         5         6         7         8
-            -1         2   11    0    2
-            -2         9        10
-            -1         3   12    0    2
-            -2        10        12        11
-         """
+        -1         1    1    0AIR
+        -2         1         2         3         4         5         6         7         8
+        -1         1   10    0    1
+        -2         1         2         3         4         5         6         7         8
+        -1         2   11    0    2
+        -2         9        10
+        -1         3   12    0    2
+        -2        10        12        11
+        """
         element_num = int(line.split()[1])
         element_type = int(line.split()[2])
         element_nodes = []
-        num_nodes = self.amount_of_nodes_in_frd_element(element_type)
+        # num_nodes = self.amount_of_nodes_in_frd_element(element_type)
         for j in range(self.num_lines(element_type)):
             line = read_byte_line(self.in_file)
             nodes = [int(n) for n in line.split()[1:]]
@@ -144,18 +144,18 @@ class NodalResultsBlock:
             time_str = 'time {:.2e}, '.format(self.value)
         else:
             time_str = 'time {:.1f}, '.format(self.value)
-        logging.info('Step {}, '.format(self.numstep) +\
-                    time_str +\
-                    '{}, '.format(self.name) +\
-                    '{} components, '.format(len(self.components)) +\
-                    '{} values'.format(results_counter))
+        txt = 'Step {}, '.format(self.numstep) + time_str \
+            + '{}, '.format(self.name) \
+            + '{} components, '.format(len(self.components)) \
+            + '{} values'.format(results_counter)
+        logging.info(txt)
 
     def read_step_info(self):
         """Read step information
-            CL  101 0.36028E+01         320                     3    1           1
-            CL  101 1.000000000         803                     0    1           1
-            CL  101 1.000000000          32                     0    1           1
-            CL  102 117547.9305          90                     2    2MODAL      1
+        CL  101 0.36028E+01         320                     3    1           1
+        CL  101 1.000000000         803                     0    1           1
+        CL  101 1.000000000          32                     0    1           1
+        CL  102 117547.9305          90                     2    2MODAL      1
         """
         line = read_byte_line(self.in_file)[7:]
         regex = '^(.{12})\s+\d+\s+\d+\s+(\d+)'
@@ -165,10 +165,10 @@ class NodalResultsBlock:
 
     def read_vars_info(self):
         """Read variables information
-            -4  V3DF        4    1
-            -4  DISP        4    1
-            -4  STRESS      6    1
-            -4  DOR1  Rx    4    1
+        -4  V3DF        4    1
+        -4  DISP        4    1
+        -4  STRESS      6    1
+        -4  DOR1  Rx    4    1
         """
         line = read_byte_line(self.in_file)[4:]
         regex = '^(\w+)' + '\D+(\d+)'*2
@@ -190,25 +190,25 @@ class NodalResultsBlock:
 
     def read_components_info(self):
         """Iterate over components
-            -5  D1          1    2    1    0
-            -5  D2          1    2    2    0
-            -5  D3          1    2    3    0
-            -5  ALL         1    2    0    0    1ALL
+        -5  D1          1    2    1    0
+        -5  D2          1    2    2    0
+        -5  D3          1    2    3    0
+        -5  ALL         1    2    0    0    1ALL
 
-            -5  DFDN        1    1    1    0
-            -5  DFDNFIL     1    1    2    0
+        -5  DFDN        1    1    1    0
+        -5  DFDNFIL     1    1    2    0
 
-            -5  V1          1    2    1    0
-            -5  V2          1    2    2    0
-            -5  V3          1    2    3    0
-            -5  ALL         1    2    0    0    1ALL
+        -5  V1          1    2    1    0
+        -5  V2          1    2    2    0
+        -5  V3          1    2    3    0
+        -5  ALL         1    2    0    0    1ALL
 
-            -5  SXX         1    4    1    1
-            -5  SYY         1    4    2    2
-            -5  SZZ         1    4    3    3
-            -5  SXY         1    4    1    2
-            -5  SYZ         1    4    2    3
-            -5  SZX         1    4    3    1
+        -5  SXX         1    4    1    1
+        -5  SYY         1    4    2    2
+        -5  SZZ         1    4    3    3
+        -5  SXY         1    4    1    2
+        -5  SYZ         1    4    2    3
+        -5  SZX         1    4    3    1
         """
         for i in range(self.ncomps):
             line = read_byte_line(self.in_file)[4:]
@@ -227,14 +227,14 @@ class NodalResultsBlock:
 
     def read_nodal_results(self):
         """Iterate over nodal results
-            -1         1-7.97316E+10-3.75220E-01
-            -1         2-8.19094E+10-3.85469E-01
+        -1         1-7.97316E+10-3.75220E-01
+        -1         2-8.19094E+10-3.85469E-01
 
-            -1         1-6.93889E-18-9.95185E-01-4.66908E-34
-            -1         2-1.94151E-01-9.76063E-01 6.46011E-30
+        -1         1-6.93889E-18-9.95185E-01-4.66908E-34
+        -1         2-1.94151E-01-9.76063E-01 6.46011E-30
 
-            -1         1 1.47281E+04 1.39140E+04 2.80480E+04 5.35318E+04 6.36642E+03 1.82617E+03
-            -2           5.31719E+01 6.69780E+01 2.76244E+01 2.47686E+01 1.99930E+02 2.14517E+02
+        -1         1 1.47281E+04 1.39140E+04 2.80480E+04 5.35318E+04 6.36642E+03 1.82617E+03
+        -2           5.31719E+01 6.69780E+01 2.76244E+01 2.47686E+01 1.99930E+02 2.14517E+02
         """
         # Fill data with zeroes - sometimes FRD result block has only non zero values
         for node_num in self.node_block.nodes.keys():
@@ -404,7 +404,6 @@ class FRD:
 
     def __init__(self, file_name=None):
         """Read contents of the .frd file."""
-
         self.file_name = None   # path to the .frd-file to be read
         self.node_block = None  # node block
         self.elem_block = None  # elements block
@@ -461,7 +460,6 @@ class FRD:
 
     def calculate_mises_stress(self, b):
         """Append von Mises stress."""
-
         b1 = NodalResultsBlock()
         b1.name = 'S_Mises'
         b1.components = (b1.name, )
@@ -490,7 +488,6 @@ class FRD:
 
     def calculate_mises_strain(self, b):
         """Append von Mises equivalent strain."""
-
         b1 = NodalResultsBlock()
         b1.name = 'E_Mises'
         b1.components = (b1.name,)
@@ -519,7 +516,6 @@ class FRD:
 
     def calculate_principal(self, b):
         """Append tensor's eigenvalues."""
-
         b1 = NodalResultsBlock()
         b1.name = b.name + '_Principal'
         b1.components = ('Min', 'Mid', 'Max')
