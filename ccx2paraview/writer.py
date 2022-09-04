@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""© Ihor Mirzov, 2019-2020
+""" © Ihor Mirzov, 2019-2022
 Distributed under GNU General Public License v3.0
 
 Writes .vtk and .vtu files based on data from FRD object.
@@ -15,6 +15,7 @@ import logging
 import vtk
 
 import frd2vtk
+from utils import print_some_log
 
 
 def get_element_connectivity(renumbered_nodes, e):
@@ -150,16 +151,7 @@ class Writer:
         for b in frd.result_blocks: # iterate over NodalResultsBlock (increments)
             if b.value == time: # write results for one time increment only
                 if len(b.results) and len(b.components):
-                    # Print some log
-                    if b.value < 1:
-                        time_str = 'time {:.2e}, '.format(b.value)
-                    else:
-                        time_str = 'time {:.1f}, '.format(b.value)
-                    txt = 'Step {}, '.format(b.numstep) + time_str \
-                        + '{}, '.format(b.name) \
-                        + '{} components, '.format(len(b.components)) \
-                        + '{} values'.format(len(b.results))
-                    logging.info(txt)
+                    print_some_log(b)
 
                     da = convert_frd_data_to_vtk(b, frd.node_block.numnod)
                     pd.AddArray(da)

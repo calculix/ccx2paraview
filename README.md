@@ -178,8 +178,6 @@ Read DAT files: it would be a killer feature if Paraview could visualize results
 
 Multiprocessing for tests.
 
-Paraview programmable filter for tensor principal directions (eigenvectors).
-
 Read binary .frd files.
 
 Process huge files increment by increment.
@@ -189,5 +187,3 @@ Contribute to meshio. FRD writer. Use meshio XDMF writer: https://github.com/cal
 Include an integer scalar containing each element’s GROUP or MATERIAL.
 
 Add element’s material tangent stiffness tensor. Easiest for the paraview user would be to provide it in the (deflected) global cartesian frame. This dataset is useful for checking input data for anisotropic materials, as well as for the stuff with inverse design of fields of this tensor. But it’s a lot more work to produce, especially with nonlinear materials. It’s almost as useful to see the highest principal value of the stiffness, as a scalar or a vector. (but for the vector you need to do the transformation)
-
-Why is the frd file read in binary mode (line 414)? Opening the file in binary mode and then assembling each line byte by byte (read_byte_line) seems a bit complicated (and maybe slow).

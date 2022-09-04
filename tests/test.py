@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, 2019-2020
+""" © Ihor Mirzov, 2019-2022
 Distributed under GNU General Public License v3.0
 
 Test ccx2paraview converter on all the CalculiX examples
-Ctrl+F5 to run in VSCode"""
+Ctrl+F5 to run in VSCode.
+"""
 
 import os
 import sys
@@ -24,6 +25,7 @@ import ccx2paraview
 from ccx2paraview import clean, reader
 from log import myHandler, print, read_and_log
 
+
 # List all .ext-files here and in all subdirectories
 def scan_all_files_in(start_folder, ext, limit=10000):
     all_files = []
@@ -35,6 +37,7 @@ def scan_all_files_in(start_folder, ext, limit=10000):
             ff = os.path.normpath(f.path)
             all_files.append(ff)
     return sorted(all_files)[:limit]
+
 
 # Test FRD reader only
 def test_frd_reader_on_models_in(folder):
@@ -49,6 +52,7 @@ def test_frd_reader_on_models_in(folder):
         except:
             logging.error(traceback.format_exc())
 
+
 # Convert calculation results
 def convert_calculation_results_in(folder):
     print('CONVERTER TEST\n\n')
@@ -61,6 +65,7 @@ def convert_calculation_results_in(folder):
             ccx2paraview.Converter(file_name, ['vtk', 'vtu']).run()
         except:
             logging.error(traceback.format_exc())
+
 
 # Convert calculation results with binaries
 def test_binary_in(folder):
@@ -85,6 +90,7 @@ def test_binary_in(folder):
             except:
                 logging.error(traceback.format_exc())
 
+
 # Run
 if __name__ == '__main__':
     start = time.perf_counter()
@@ -94,10 +100,7 @@ if __name__ == '__main__':
     logging.getLogger().addHandler(myHandler())
     logging.getLogger().setLevel(logging.DEBUG)
 
-    folder = os.path.abspath(__file__)
-    folder = os.path.dirname(folder)
-    folder = os.path.join(folder, '..', '..', 'examples')
-    folder = os.path.normpath(folder)
+    folder = '../examples'
 
     # Choose what we test
     # test_frd_reader_on_models_in(folder)

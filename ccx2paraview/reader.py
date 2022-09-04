@@ -3,7 +3,7 @@
 
 """
 © Lukas Bante, 2017 - original code https://gitlab.lrz.de/snippets/238
-© Ihor Mirzov, 2019-2020 - bugfix, refactoring and improvement
+© Ihor Mirzov, 2019-2022 - bugfix, refactoring and improvement
 Distributed under GNU General Public License v3.0
 
 This module contains classes for reading CalculiX .frd files """
@@ -13,6 +13,8 @@ import math
 import logging
 
 import numpy as np
+
+from utils import print_some_log
 
 
 class Node:
@@ -37,23 +39,21 @@ class NodalPointCoordinateBlock:
 
     def __init__(self, in_file):
         """Read nodal coordinates."""
-        line = read_byte_line(in_file)
         self.nodes = {} # dictionary with nodes {num:Node}
         while True:
-            line = read_byte_line(in_file)
+            line = in_file.readline().strip()
 
             # End of block
-            if line == '-3':
+            if not line or line == '-3':
                 break
 
             regex = '^-1(.{10})' + '(.{12})'*3
-            match = read_line(regex, line)
+            match = match_line(regex, line)
             node_number = int(match.group(1))
             node_coords = [ float(match.group(2)),
                             float(match.group(3)),
                             float(match.group(4)), ]
             self.nodes[node_number] = Node(node_number, node_coords)
-            # logging.debug('Node {}: {}'.format(node_number, node_coords))
 
         self.numnod = len(self.nodes) # number of nodes in this block
         logging.info('{} nodes'.format(self.numnod)) # total number of nodes
@@ -65,14 +65,13 @@ class ElementDefinitionBlock:
     def __init__(self, in_file):
         """Read elements."""
         self.in_file = in_file
-        line = read_byte_line(in_file)
         self.elements = [] # list of Element objects
 
         while True:
-            line = read_byte_line(in_file)
+            line = in_file.readline().strip()
 
             # End of block
-            if line == '-3':
+            if not line or line == '-3':
                 break
 
             self.read_element(line)
@@ -94,21 +93,16 @@ class ElementDefinitionBlock:
         element_num = int(line.split()[1])
         element_type = int(line.split()[2])
         element_nodes = []
-        # num_nodes = self.amount_of_nodes_in_frd_element(element_type)
         for j in range(self.num_lines(element_type)):
-            line = read_byte_line(self.in_file)
+            line = self.in_file.readline().strip()
             nodes = [int(n) for n in line.split()[1:]]
             element_nodes.extend(nodes)
 
-        # logging.debug('Element {}: {}'.format(element_num, element_nodes))
+        # txt = 'Element {}, type {}: {}' \
+        #     .format(element_num, element_type, element_nodes)
+        # logging.debug(txt)
         elem = Element(element_num, element_type, element_nodes)
         self.elements.append(elem)
-
-    def amount_of_nodes_in_frd_element(self, etype):
-        """Amount of nodes in frd element.
-        First value is meaningless, since elements are 1-based.
-        """
-        return (0, 8, 6, 4, 20, 15, 10, 3, 6, 4, 8, 2, 3)[etype]
 
     def num_lines(self, etype):
         """Amount of lines in element connectivity definition.
@@ -120,7 +114,7 @@ class ElementDefinitionBlock:
 class NodalResultsBlock:
     """Nodal Results Block: cgx_2.17 Manual, § 11.6."""
 
-    def __init__(self):
+    def __init__(self, line=''):
         """Read calculated values."""
         self.components = [] # component names
         self.results = {} # dictionary with nodal result {node:data}
@@ -128,6 +122,7 @@ class NodalResultsBlock:
         self.value = 0
         self.ncomps = 0
         self.numstep = 0
+        self.line = line
 
     def run(self, in_file, node_block):
         self.in_file = in_file
@@ -137,18 +132,7 @@ class NodalResultsBlock:
         self.read_vars_info()
         self.read_components_info()
         results_counter = self.read_nodal_results()
-        # self.append_stresses() # append Mises and principal stresses
-        # self.append_strains() # append principal strains
-
-        if self.value < 1:
-            time_str = 'time {:.2e}, '.format(self.value)
-        else:
-            time_str = 'time {:.1f}, '.format(self.value)
-        txt = 'Step {}, '.format(self.numstep) + time_str \
-            + '{}, '.format(self.name) \
-            + '{} components, '.format(len(self.components)) \
-            + '{} values'.format(results_counter)
-        logging.info(txt)
+        print_some_log(self, results_counter)
 
     def read_step_info(self):
         """Read step information
@@ -157,11 +141,12 @@ class NodalResultsBlock:
         CL  101 1.000000000          32                     0    1           1
         CL  102 117547.9305          90                     2    2MODAL      1
         """
-        line = read_byte_line(self.in_file)[7:]
+        line = self.line[12:]
         regex = '^(.{12})\s+\d+\s+\d+\s+(\d+)'
-        match = read_line(regex, line)
+        match = match_line(regex, line)
         self.value = float(match.group(1)) # could be frequency, time or any numerical value
         self.numstep = int(match.group(2)) # step number
+        # logging.debug('value {}, numstep {}'.format(self.value, self.numstep))
 
     def read_vars_info(self):
         """Read variables information
@@ -170,9 +155,9 @@ class NodalResultsBlock:
         -4  STRESS      6    1
         -4  DOR1  Rx    4    1
         """
-        line = read_byte_line(self.in_file)[4:]
-        regex = '^(\w+)' + '\D+(\d+)'*2
-        match = read_line(regex, line)
+        line = self.in_file.readline().strip()
+        regex = '^-4\s+(\w+)' + '\D+(\d+)'*2
+        match = match_line(regex, line)
         self.ncomps = int(match.group(2)) # amount of components
 
         # Rename result block to the name from .inp-file
@@ -185,6 +170,7 @@ class NodalResultsBlock:
             'PE':'PEEQ',
             }
         self.name = match.group(1) # dataset name
+        # logging.debug('Name {}, ncomps {}'.format(self.name, self.ncomps))
         if self.name in inpname:
             self.name = inpname[self.name]
 
@@ -211,9 +197,9 @@ class NodalResultsBlock:
         -5  SZX         1    4    3    1
         """
         for i in range(self.ncomps):
-            line = read_byte_line(self.in_file)[4:]
+            line = self.in_file.readline()[5:]
             regex = '^\w+'
-            match = read_line(regex, line)
+            match = match_line(regex, line)
 
             # Exclude variable name from the component name: SXX->XX, EYZ->YZ
             component_name = match.group(0)
@@ -247,15 +233,15 @@ class NodalResultsBlock:
 
         results_counter = 0 # independent results counter
         while True:
-            line = read_byte_line(self.in_file)
+            line = self.in_file.readline().strip()
 
             # End of block
-            if line == '-3':
+            if not line or line == '-3':
                 break
 
             row_comps = min(6, self.ncomps) # amount of values written in row
             regex = '^-1\s+(\d+)' + '(.{12})' * row_comps
-            match = read_line(regex, line)
+            match = match_line(regex, line)
             node = int(match.group(1))
             data = []
             for c in range(row_comps):
@@ -265,7 +251,7 @@ class NodalResultsBlock:
                     num = float(m)
                     if ('NaN' in m or 'Inf' in m):
                         emitted_warning_types['NaNInf'] += 1
-                except Exception as e:
+                except:
                     # Too big number is written without 'E'
                     num = float(re.sub(r'(.+).([+-])(\d{3})', r'\1e\2\3', m))
                     emitted_warning_types['WrongFormat'] += 1
@@ -279,9 +265,9 @@ class NodalResultsBlock:
             # Result could be multiline
             for j in range((self.ncomps-1)//6):
                 row_comps = min(6, self.ncomps-6*(j+1)) # amount of values written in row
-                line = read_byte_line(self.in_file)
+                line = self.in_file.readline().strip()
                 regex = '^-2\s+' + '(.{12})' * row_comps
-                match = read_line(regex, line)
+                match = match_line(regex, line)
                 data = [float(match.group(c+1)) for c in range(row_comps)]
                 self.results[node].extend(data)
 
@@ -295,108 +281,24 @@ class NodalResultsBlock:
                 .format(before.strip(), after, emitted_warning_types['WrongFormat']))
         return results_counter
 
-    def reshape9(self):
-        """All 9 tensor components."""
-        self.ncomps = 9
-        xx = self.components[0]
-        yy = self.components[1]
-        zz = self.components[2]
-        xy = self.components[3]
-        yz = self.components[4]
-        xz = self.components[5]
-        self.components = [
-            xx, xy, xz,
-            xy, yy, yz,
-            xz, yz, zz]
-        for node_num in self.node_block.nodes.keys():
-            data = self.results[node_num]
-            xx = data[0]; yy = data[1]; zz = data[2]
-            xy = data[3]; yz = data[4]; xz = data[5]
-            self.results[node_num] = [
-                xx, xy, xz,
-                xy, yy, yz,
-                xz, yz, zz]
 
-    """
-    Append Mises and principal stresses
-    NOTE DEPRECATED
-    def append_stresses(self):
-        if self.name == 'S':
-            try:
-                component_names = (
-                    'Mises',
-                    'Min Principal',
-                    'Mid Principal',
-                    'Max Principal')
-                for i in range(len(component_names)):
-                    self.components.append(component_names[i])
-                    self.ncomps += 1
+class Reader:
+    """To implement large file parsing we need a step-by-step
+    reader and writer. For now the whole file is being parsed,
+    then written, which need more memory."""
 
-                # Iterate over nodes
-                for node_num in self.node_block.nodes.keys():
-                    data = self.results[node_num] # list with results for current node
-                    Sxx = data[0]; Syy = data[1]; Szz = data[2]
-                    Sxy = data[3]; Syz = data[4]; Sxz = data[5]
-                    tensor = np.array([[Sxx, Sxy, Sxz], [Sxy, Syy, Syz], [Sxz, Syz, Szz]])
+    def __init__(self) -> None:
+        pass
 
-                    # Calculate Mises stress for current node
-                    mises = 1 / math.sqrt(2) *\
-                        math.sqrt(  (Sxx - Syy)**2 +\
-                                    (Syy - Szz)**2 +\
-                                    (Szz - Sxx)**2 +\
-                                    6 * Syz**2 +\
-                                    6 * Sxz**2 +\
-                                    6 * Sxy**2)
-                    self.results[node_num].append(mises)
+    def get_file_info(self):
+        """Parse amount of steps, nodes, elements."""
+        pass
 
-                    # Calculate principal stresses for current node
-                    for ps in np.linalg.eigvalsh(tensor).tolist():
-                        self.results[node_num].append(ps)
+    def parse_next_step(self):
+        pass
 
-            except:
-                logging.error('Additional stresses will not be appended.')
-    """
-
-    """
-    Append principal strains
-    NOTE DEPRECATED
-    def append_strains(self):
-        if self.name == 'E':
-            try:
-                component_names = (
-                    'Mises',
-                    'Min Principal',
-                    'Mid Principal',
-                    'Max Principal',
-                    )
-                for i in range(len(component_names)):
-                    self.components.append(component_names[i])
-                    self.ncomps += 1
-
-                # Iterate over nodes
-                for node_num in self.node_block.nodes.keys():
-                    data = self.results[node_num] # list with results for current node
-                    Exx = data[0]; Eyy = data[1]; Ezz = data[2]
-                    Exy = data[3]; Eyz = data[4]; Exz = data[5]
-                    tensor = np.array([[Exx, Exy, Exz], [Exy, Eyy, Eyz], [Exz, Eyz, Ezz]])
-
-                    # Calculate Mises strain for current node
-                    mises = math.sqrt(2)/3 *\
-                        math.sqrt(   (Exx - Eyy)**2 +\
-                                (Eyy - Ezz)**2 +\
-                                (Ezz - Exx)**2 +\
-                                6 * Eyz**2 +\
-                                6 * Exz**2 +\
-                                6 * Exy**2)
-                    self.results[node_num].append(mises)
-
-                    # Calculate principal strains for current node
-                    for ps in np.linalg.eigvalsh(tensor).tolist():
-                        self.results[node_num].append(ps)
-
-            except:
-                logging.error('Additional strains will not be appended.')
-    """
+    def parse_step(self, n):
+        pass
 
 
 class FRD:
@@ -410,12 +312,18 @@ class FRD:
         self.result_blocks = [] # all result blocks in order of appearance
         if file_name:
             self.file_name = file_name
-            with open(file_name, 'rb') as in_file:
-                key = in_file.read(5).decode().strip()
-                while key:
+            with open(file_name, 'r') as in_file:
+                while True:
+                    line = in_file.readline()
+                    if not line:
+                        break
+
+                    key = line[:5].strip()
+
                     # Header
                     if key == '1' or key == '1P':
-                        read_byte_line(in_file)
+                        # in_file.readline()
+                        pass
 
                     # Nodes
                     elif key == '2':
@@ -429,25 +337,21 @@ class FRD:
 
                     # Results
                     elif key == '100':
-                        b = NodalResultsBlock()
+                        b = NodalResultsBlock(line)
                         b.run(in_file, self.node_block)
                         self.result_blocks.append(b)
                         if b.name == 'S':
                             b1 = self.calculate_mises_stress(b)
                             b2 = self.calculate_principal(b)
                             self.result_blocks.extend([b1,b2])
-                            # b.reshape9()
                         if b.name == 'E':
                             b1 = self.calculate_mises_strain(b)
                             b2 = self.calculate_principal(b)
                             self.result_blocks.extend([b1,b2])
-                            # b.reshape9()
 
                     # End
                     elif key == '9999':
                         break
-
-                    key = in_file.read(5).decode().strip()
 
             self.times = [b.value for b in self.result_blocks]
             self.times = sorted(set(self.times))
@@ -472,7 +376,6 @@ class FRD:
             data = b.results[node_num] # list with results for current node
             Sxx = data[0]; Syy = data[1]; Szz = data[2]
             Sxy = data[3]; Syz = data[4]; Sxz = data[5]
-            tensor = np.array([[Sxx, Sxy, Sxz], [Sxy, Syy, Syz], [Sxz, Syz, Szz]])
 
             # Calculate Mises stress for current node
             mises = 1 / math.sqrt(2) \
@@ -500,7 +403,6 @@ class FRD:
             data = b.results[node_num] # list with results for current node
             Sxx = data[0]; Syy = data[1]; Szz = data[2]
             Sxy = data[3]; Syz = data[4]; Sxz = data[5]
-            tensor = np.array([[Sxx, Sxy, Sxz], [Sxy, Syy, Syz], [Sxz, Syz, Szz]])
 
             # Calculate Mises stress for current node
             mises = 1 / math.sqrt(2) \
@@ -538,34 +440,7 @@ class FRD:
         return b1
 
 
-def read_byte_line(f):
-    """Read byte line and decode: return None after EOF."""
-
-    # Check EOF
-    byte = f.read(1)
-    if not byte:
-        return None
-
-    # Convert first byte
-    try:
-        line = byte.decode()
-    except UnicodeDecodeError:
-        line = ' ' # replace endecoded symbols with space
-
-    # Continue reading until EOF or new line
-    while byte != b'\n':
-        byte = f.read(1)
-        if not byte:
-            return line.strip() # EOF
-        try:
-            line += byte.decode()
-        except UnicodeDecodeError:
-            line += ' ' # replace endecoded symbols with space
-
-    return line.strip()
-
-
-def read_line(regex, line):
+def match_line(regex, line):
     """Search regex in line and report problems."""
     match = re.search(regex, line)
     if match:

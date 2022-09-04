@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, 2019-2020
+""" © Ihor Mirzov, 2019-2022
 Distributed under GNU General Public License v3.0
 
 Converts CalculiX .frd-file to .vtk (ASCII) or .vtu (XML) format:
@@ -52,7 +52,8 @@ class Converter:
             if l:
                 """If model has many time steps - many output files
                 will be created. Each output file's name should contain
-                increment number padded with zero"""
+                increment number padded with zero.
+                """
                 print()
                 counter = 1
                 times_names = {}  # {increment time: file name, ...}
@@ -68,8 +69,9 @@ class Converter:
                     times_names[t] = file_name
                     counter += 1
 
-                # For each time increment generate separate .vt* file
-                # Output file name will be the same as input
+                """For each time increment generate separate .vt* file
+                Output file name will be the same as input.
+                """
                 for t, file_name in times_names.items():
                     base_name = os.path.basename(file_name)
                     logging.info('Writing ' + base_name)

@@ -19662,7 +19662,97 @@ INFO: Writing Naht.100.vtu
 INFO: Step 100, time 2.0, NT, 1 components, 7602 values
 
 ==================================================
-89: other/CubeTie/CubeTie.frd
+89: mkraska_final_ccx/Pillow/static.frd
+INFO: Reading static.frd
+INFO: 882 nodes
+INFO: 400 cells
+INFO: Step 1, time 1.00e-01, U, 3 components, 882 values
+INFO: Step 1, time 1.00e-01, S, 6 components, 882 values
+INFO: Step 1, time 1.00e-01, ERROR, 1 components, 882 values
+INFO: Step 2, time 2.00e-01, U, 3 components, 882 values
+INFO: Step 2, time 2.00e-01, S, 6 components, 882 values
+INFO: Step 2, time 2.00e-01, ERROR, 1 components, 882 values
+INFO: Step 3, time 3.00e-01, U, 3 components, 882 values
+INFO: Step 3, time 3.00e-01, S, 6 components, 882 values
+INFO: Step 3, time 3.00e-01, ERROR, 1 components, 882 values
+INFO: Step 4, time 4.00e-01, U, 3 components, 882 values
+INFO: Step 4, time 4.00e-01, S, 6 components, 882 values
+INFO: Step 4, time 4.00e-01, ERROR, 1 components, 882 values
+INFO: Step 5, time 5.00e-01, U, 3 components, 882 values
+INFO: Step 5, time 5.00e-01, S, 6 components, 882 values
+INFO: Step 5, time 5.00e-01, ERROR, 1 components, 882 values
+INFO: Step 6, time 6.00e-01, U, 3 components, 882 values
+INFO: Step 6, time 6.00e-01, RF, 3 components, 882 values
+INFO: 6 time increments
+INFO: Writing static.1.vtk
+INFO: Step 1, time 1.00e-01, U, 3 components, 882 values
+INFO: Step 1, time 1.00e-01, S, 6 components, 882 values
+INFO: Step 1, time 1.00e-01, S_Mises, 1 components, 882 values
+INFO: Step 1, time 1.00e-01, S_Principal, 3 components, 882 values
+INFO: Step 1, time 1.00e-01, ERROR, 1 components, 882 values
+INFO: Writing static.2.vtk
+INFO: Step 2, time 2.00e-01, U, 3 components, 882 values
+INFO: Step 2, time 2.00e-01, S, 6 components, 882 values
+INFO: Step 2, time 2.00e-01, S_Mises, 1 components, 882 values
+INFO: Step 2, time 2.00e-01, S_Principal, 3 components, 882 values
+INFO: Step 2, time 2.00e-01, ERROR, 1 components, 882 values
+INFO: Writing static.3.vtk
+INFO: Step 3, time 3.00e-01, U, 3 components, 882 values
+INFO: Step 3, time 3.00e-01, S, 6 components, 882 values
+INFO: Step 3, time 3.00e-01, S_Mises, 1 components, 882 values
+INFO: Step 3, time 3.00e-01, S_Principal, 3 components, 882 values
+INFO: Step 3, time 3.00e-01, ERROR, 1 components, 882 values
+INFO: Writing static.4.vtk
+INFO: Step 4, time 4.00e-01, U, 3 components, 882 values
+INFO: Step 4, time 4.00e-01, S, 6 components, 882 values
+INFO: Step 4, time 4.00e-01, S_Mises, 1 components, 882 values
+INFO: Step 4, time 4.00e-01, S_Principal, 3 components, 882 values
+INFO: Step 4, time 4.00e-01, ERROR, 1 components, 882 values
+INFO: Writing static.5.vtk
+INFO: Step 5, time 5.00e-01, U, 3 components, 882 values
+INFO: Step 5, time 5.00e-01, S, 6 components, 882 values
+INFO: Step 5, time 5.00e-01, S_Mises, 1 components, 882 values
+INFO: Step 5, time 5.00e-01, S_Principal, 3 components, 882 values
+INFO: Step 5, time 5.00e-01, ERROR, 1 components, 882 values
+INFO: Writing static.6.vtk
+INFO: Step 6, time 6.00e-01, U, 3 components, 882 values
+INFO: Step 6, time 6.00e-01, RF, 3 components, 882 values
+INFO: Writing static.1.vtu
+INFO: Step 1, time 1.00e-01, U, 3 components, 882 values
+INFO: Step 1, time 1.00e-01, S, 6 components, 882 values
+INFO: Step 1, time 1.00e-01, S_Mises, 1 components, 882 values
+INFO: Step 1, time 1.00e-01, S_Principal, 3 components, 882 values
+INFO: Step 1, time 1.00e-01, ERROR, 1 components, 882 values
+INFO: Writing static.2.vtu
+INFO: Step 2, time 2.00e-01, U, 3 components, 882 values
+INFO: Step 2, time 2.00e-01, S, 6 components, 882 values
+INFO: Step 2, time 2.00e-01, S_Mises, 1 components, 882 values
+INFO: Step 2, time 2.00e-01, S_Principal, 3 components, 882 values
+INFO: Step 2, time 2.00e-01, ERROR, 1 components, 882 values
+INFO: Writing static.3.vtu
+INFO: Step 3, time 3.00e-01, U, 3 components, 882 values
+INFO: Step 3, time 3.00e-01, S, 6 components, 882 values
+INFO: Step 3, time 3.00e-01, S_Mises, 1 components, 882 values
+INFO: Step 3, time 3.00e-01, S_Principal, 3 components, 882 values
+INFO: Step 3, time 3.00e-01, ERROR, 1 components, 882 values
+INFO: Writing static.4.vtu
+INFO: Step 4, time 4.00e-01, U, 3 components, 882 values
+INFO: Step 4, time 4.00e-01, S, 6 components, 882 values
+INFO: Step 4, time 4.00e-01, S_Mises, 1 components, 882 values
+INFO: Step 4, time 4.00e-01, S_Principal, 3 components, 882 values
+INFO: Step 4, time 4.00e-01, ERROR, 1 components, 882 values
+INFO: Writing static.5.vtu
+INFO: Step 5, time 5.00e-01, U, 3 components, 882 values
+INFO: Step 5, time 5.00e-01, S, 6 components, 882 values
+INFO: Step 5, time 5.00e-01, S_Mises, 1 components, 882 values
+INFO: Step 5, time 5.00e-01, S_Principal, 3 components, 882 values
+INFO: Step 5, time 5.00e-01, ERROR, 1 components, 882 values
+INFO: Writing static.6.vtu
+INFO: Step 6, time 6.00e-01, U, 3 components, 882 values
+INFO: Step 6, time 6.00e-01, RF, 3 components, 882 values
+
+==================================================
+90: other/CubeTie/CubeTie.frd
 INFO: Reading CubeTie.frd
 INFO: 44556 nodes
 INFO: 7700 cells
@@ -19700,7 +19790,7 @@ INFO: Writing CubeTie.6.vtu
 INFO: Step 6, time 3.01e-02, U, 3 components, 44556 values
 
 ==================================================
-90: other/Dichtstoff_beam_coupling_compl.frd
+91: other/Dichtstoff_beam_coupling_compl.frd
 INFO: Reading Dichtstoff_beam_coupling_compl.frd
 INFO: 378 nodes
 INFO: 160 cells
@@ -19722,7 +19812,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 378 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 378 values
 
 ==================================================
-91: other/Ihor_Mirzov_baffle_2D.frd
+92: other/Ihor_Mirzov_baffle_2D.frd
 INFO: Reading Ihor_Mirzov_baffle_2D.frd
 INFO: 14836 nodes
 INFO: 6778 cells
@@ -19734,7 +19824,7 @@ INFO: Writing Ihor_Mirzov_baffle_2D.vtu
 INFO: Step 1, time 1.0, NT, 1 components, 14836 values
 
 ==================================================
-92: other/Jan_Lukas_modal_dynamic_beammodal.frd
+93: other/Jan_Lukas_modal_dynamic_beammodal.frd
 INFO: Reading Jan_Lukas_modal_dynamic_beammodal.frd
 INFO: 1221 nodes
 INFO: 160 cells
@@ -20081,7 +20171,7 @@ INFO: Step 16, time 18574.3, E_Principal, 3 components, 1221 values
 INFO: Step 16, time 18574.3, ERROR, 1 components, 1221 values
 
 ==================================================
-93: other/Jan_Lukas_modal_dynamic_staticbeam2.frd
+94: other/Jan_Lukas_modal_dynamic_staticbeam2.frd
 INFO: Reading Jan_Lukas_modal_dynamic_staticbeam2.frd
 INFO: 321 nodes
 INFO: 40 cells
@@ -20430,7 +20520,7 @@ INFO: Step 16, time 51346.8, E_Principal, 3 components, 321 values
 INFO: Step 16, time 51346.8, ERROR, 1 components, 321 values
 
 ==================================================
-94: other/Jan_Lukas_static_structural.frd
+95: other/Jan_Lukas_static_structural.frd
 INFO: Reading Jan_Lukas_static_structural.frd
 INFO: 321 nodes
 INFO: 40 cells
@@ -20459,7 +20549,7 @@ INFO: Step 1, time 1.0, E_Principal, 3 components, 321 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 321 values
 
 ==================================================
-95: other/John_Mannisto_blade_sector.frd
+96: other/John_Mannisto_blade_sector.frd
 INFO: Reading John_Mannisto_blade_sector.frd
 INFO: 1720 nodes
 INFO: 832 cells
@@ -20586,7 +20676,7 @@ INFO: Step 25, time 318.6, U, 3 components, 1720 values
 INFO: Step 25, time 318.6, DISPI, 3 components, 1720 values
 
 ==================================================
-96: other/Kaffeeheblerei_hinge.frd
+97: other/Kaffeeheblerei_hinge.frd
 INFO: Reading Kaffeeheblerei_hinge.frd
 INFO: 378 nodes
 INFO: 160 cells
@@ -20608,7 +20698,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 378 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 378 values
 
 ==================================================
-97: other/Nidish_Narayanaa_Balaji.frd
+98: other/Nidish_Narayanaa_Balaji.frd
 INFO: Reading Nidish_Narayanaa_Balaji.frd
 INFO: 3432 nodes
 INFO: 2560 cells
@@ -20765,7 +20855,7 @@ INFO: Step 10, time 20441.6, S_Principal, 3 components, 3432 values
 INFO: Step 10, time 20441.6, ERROR, 1 components, 3432 values
 
 ==================================================
-98: other/ball.frd
+99: other/ball.frd
 INFO: Reading ball.frd
 INFO: 4812 nodes
 INFO: 2259 cells
@@ -20892,7 +20982,33 @@ INFO: Step 8, time 8.00e-01, S_Principal, 3 components, 4812 values
 INFO: Step 8, time 8.00e-01, ERROR, 1 components, 4812 values
 
 ==================================================
-99: other/dichtstoff_2_HE8.frd
+100: other/ddjokic-CalculiX-tests-master/Spanner/Spanner-out.frd
+INFO: Reading Spanner-out.frd
+INFO: 10386 nodes
+INFO: 5099 cells
+INFO: Step 1, time 1.0, U, 3 components, 10386 values
+INFO: Step 1, time 1.0, S, 6 components, 10386 values
+INFO: Step 1, time 1.0, E, 6 components, 10386 values
+INFO: 1 time increment
+INFO: Writing Spanner-out.vtk
+INFO: Step 1, time 1.0, U, 3 components, 10386 values
+INFO: Step 1, time 1.0, S, 6 components, 10386 values
+INFO: Step 1, time 1.0, S_Mises, 1 components, 10386 values
+INFO: Step 1, time 1.0, S_Principal, 3 components, 10386 values
+INFO: Step 1, time 1.0, E, 6 components, 10386 values
+INFO: Step 1, time 1.0, E_Mises, 1 components, 10386 values
+INFO: Step 1, time 1.0, E_Principal, 3 components, 10386 values
+INFO: Writing Spanner-out.vtu
+INFO: Step 1, time 1.0, U, 3 components, 10386 values
+INFO: Step 1, time 1.0, S, 6 components, 10386 values
+INFO: Step 1, time 1.0, S_Mises, 1 components, 10386 values
+INFO: Step 1, time 1.0, S_Principal, 3 components, 10386 values
+INFO: Step 1, time 1.0, E, 6 components, 10386 values
+INFO: Step 1, time 1.0, E_Mises, 1 components, 10386 values
+INFO: Step 1, time 1.0, E_Principal, 3 components, 10386 values
+
+==================================================
+101: other/dichtstoff_2_HE8.frd
 INFO: Reading dichtstoff_2_HE8.frd
 INFO: 12 nodes
 INFO: 2 cells
@@ -20914,7 +21030,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 12 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 12 values
 
 ==================================================
-100: yahoo/1.frd
+102: yahoo/1.frd
 INFO: Reading 1.frd
 INFO: 4 nodes
 INFO: 1 cells
@@ -21581,7 +21697,7 @@ INFO: Step 30, time 3.0, E_Principal, 3 components, 4 values
 INFO: Step 30, time 3.0, ERROR, 1 components, 4 values
 
 ==================================================
-101: yahoo/2d_ramberg_osgood.frd
+103: yahoo/2d_ramberg_osgood.frd
 INFO: Reading 2d_ramberg_osgood.frd
 INFO: 25 nodes
 INFO: 6 cells
@@ -21616,7 +21732,7 @@ INFO: Step 1, time 1.0, ENER, 1 components, 25 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 25 values
 
 ==================================================
-102: yahoo/3d_DEFORMATION_PLASTICITY.frd
+104: yahoo/3d_DEFORMATION_PLASTICITY.frd
 INFO: Reading 3d_DEFORMATION_PLASTICITY.frd
 INFO: 36 nodes
 INFO: 8 cells
@@ -21650,4 +21766,4 @@ INFO: Step 1, time 1.0, RF, 3 components, 36 values
 INFO: Step 1, time 1.0, ENER, 1 components, 36 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 36 values
 
-Total 580.4 seconds
+Total 447.9 seconds
