@@ -21,6 +21,7 @@ class Node:
     """A single node object."""
 
     def __init__(self, num, coords):
+        # logging.debug('Node {}: {}'.format(num, coords))
         self.num = num
         self.coords = coords
 
@@ -29,13 +30,15 @@ class Element:
     """A single finite element object."""
 
     def __init__(self, num, etype, nodes):
+        # txt = 'Element {}, type {}: {}'.format(num, etype, nodes)
+        # logging.debug(txt)
         self.num = num
         self.type = etype
         self.nodes = nodes
 
 
 class NodalPointCoordinateBlock:
-    """Nodal Point Coordinate Block: cgx_2.17 Manual, § 11.3."""
+    """Nodal Point Coordinate Block: cgx_2.20.pdf Manual, § 11.3."""
 
     def __init__(self, in_file):
         """Read nodal coordinates."""
@@ -60,7 +63,7 @@ class NodalPointCoordinateBlock:
 
 
 class ElementDefinitionBlock:
-    """Element Definition Block: cgx_2.17 Manual, § 11.4."""
+    """Element Definition Block: cgx_2.20.pdf Manual, § 11.4."""
 
     def __init__(self, in_file):
         """Read elements."""
@@ -98,9 +101,6 @@ class ElementDefinitionBlock:
             nodes = [int(n) for n in line.split()[1:]]
             element_nodes.extend(nodes)
 
-        # txt = 'Element {}, type {}: {}' \
-        #     .format(element_num, element_type, element_nodes)
-        # logging.debug(txt)
         elem = Element(element_num, element_type, element_nodes)
         self.elements.append(elem)
 
@@ -112,7 +112,7 @@ class ElementDefinitionBlock:
 
 
 class NodalResultsBlock:
-    """Nodal Results Block: cgx_2.17 Manual, § 11.6."""
+    """Nodal Results Block: cgx_2.20.pdf Manual, § 11.6."""
 
     def __init__(self, line=''):
         """Read calculated values."""
@@ -146,7 +146,9 @@ class NodalResultsBlock:
         match = match_line(regex, line)
         self.value = float(match.group(1)) # could be frequency, time or any numerical value
         self.numstep = int(match.group(2)) # step number
-        # logging.debug('value {}, numstep {}'.format(self.value, self.numstep))
+        # txt = 'Step info: value {}, numstep {}' \
+        #     .format(self.value, self.numstep)
+        # logging.debug(txt)
 
     def read_vars_info(self):
         """Read variables information
@@ -170,7 +172,9 @@ class NodalResultsBlock:
             'PE':'PEEQ',
             }
         self.name = match.group(1) # dataset name
-        # logging.debug('Name {}, ncomps {}'.format(self.name, self.ncomps))
+        # txt = 'Vars info: name {}, ncomps {}' \
+        #     .format(self.name, self.ncomps)
+        # logging.debug(txt)
         if self.name in inpname:
             self.name = inpname[self.name]
 
@@ -205,6 +209,7 @@ class NodalResultsBlock:
             component_name = match.group(0)
             if component_name.startswith(self.name):
                 component_name = component_name[len(self.name):]
+            # logging.debug('Component name ' + component_name)
 
             if 'ALL' in component_name:
                 self.ncomps -= 1
@@ -441,7 +446,9 @@ class FRD:
 
 
 def match_line(regex, line):
-    """Search regex in line and report problems."""
+    """Search regex in line and report problems.
+    NOTE Using regular expressions is faster than splitting strings.
+    """
     match = re.search(regex, line)
     if match:
         return match
