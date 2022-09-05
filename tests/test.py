@@ -91,6 +91,14 @@ def test_binary_in(folder):
                 logging.error(traceback.format_exc())
 
 
+def test_single_file(file_path):
+    print('\n{}\n{}'.format('='*50, file_path))
+    try:
+        ccx2paraview.Converter(file_path, ['vtk', 'vtu']).run()
+    except:
+        logging.error(traceback.format_exc())
+
+
 # Run
 if __name__ == '__main__':
     start = time.perf_counter()
@@ -98,7 +106,7 @@ if __name__ == '__main__':
 
     # Prepare logging
     logging.getLogger().addHandler(myHandler())
-    logging.getLogger().setLevel(logging.DEBUG)
+    logging.getLogger().setLevel(logging.INFO)
 
     folder = '../examples'
 
@@ -106,6 +114,7 @@ if __name__ == '__main__':
     # test_frd_reader_on_models_in(folder)
     convert_calculation_results_in(folder)
     # test_binary_in(folder)
+    # test_single_file('../examples/ccx/test/metalforming.frd')
 
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
     clean.cache()
