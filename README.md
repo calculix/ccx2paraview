@@ -138,11 +138,13 @@ To run this converter from source you'll need [Python 3](https://www.python.org/
 
 In your code use ccx2paraview package in this way:
 
+```Python
     import logging
     import ccx2paraview
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
     c = ccx2paraview.Converter(frd_file_name, ['vtu'])
     c.run()
+```
 
 If you have Python version >= 3.8 create binary with [nuitka](https://nuitka.net/):
 
@@ -159,6 +161,13 @@ If you have Python version < 3.8 create binary with [pyinstaller](https://www.py
 
     pip3 install pyinstaller
     pyinstaller __init__.py --onefile
+
+Also there is a good way to create a binary with Cython (works fine for a signle module):
+
+    sudo apt install cython3
+    cython3 -3 --embed -o ccx2paraview.c ccx2paraview.py
+    PYTHONLIBVER=python$(python3 -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')$(python3-config --abiflags)
+    gcc -Os $(python3-config --includes) ccx2paraview.c -o ccx2paraview $(python3-config --ldflags) -l$PYTHONLIBVER
 
 Read [how to create packages](https://packaging.python.org/tutorials/packaging-projects/) for [pypi.org](https://pypi.org/):
 
