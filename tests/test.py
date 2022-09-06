@@ -112,8 +112,8 @@ if __name__ == '__main__':
 
     # Choose what we test
     # test_frd_reader_on_models_in(folder)
-    convert_calculation_results_in(folder)
-    # test_binary_in(folder)
+    # convert_calculation_results_in(folder)
+    test_binary_in(folder)
     # test_single_file('../examples/ccx/test/metalforming.frd')
 
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))

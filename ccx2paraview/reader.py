@@ -6,7 +6,8 @@
 © Ihor Mirzov, 2019-2022 - bugfix, refactoring and improvement
 Distributed under GNU General Public License v3.0
 
-This module contains classes for reading CalculiX .frd files """
+This module contains classes for reading CalculiX .frd files.
+"""
 
 import re
 import math
