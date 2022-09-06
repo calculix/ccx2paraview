@@ -19,15 +19,15 @@ sys_path = os.path.abspath(__file__)
 sys_path = os.path.dirname(sys_path)
 sys_path = os.path.join(sys_path, '..')
 sys_path = os.path.normpath(sys_path)
-sys.path.insert(0, sys_path)
+if sys_path not in sys.path:
+    sys.path.insert(0, sys_path)
 
-import ccx2paraview
-from ccx2paraview import clean, reader
+from ccx2paraview import screen, cache, FRD, Converter
 from log import myHandler, print, read_and_log
 
 
-# List all .ext-files here and in all subdirectories
 def scan_all_files_in(start_folder, ext, limit=10000):
+    """List all .ext-files here and in all subdirectories."""
     all_files = []
     for f in os.scandir(start_folder):
         if f.is_dir():
@@ -39,8 +39,8 @@ def scan_all_files_in(start_folder, ext, limit=10000):
     return sorted(all_files)[:limit]
 
 
-# Test FRD reader only
 def test_frd_reader_on_models_in(folder):
+    """Test FRD reader only."""
     print('FRD READER TEST\n\n')
     counter = 0
     for file_name in scan_all_files_in(folder, '.frd'):
@@ -48,13 +48,13 @@ def test_frd_reader_on_models_in(folder):
         relpath = os.path.relpath(file_name, start=folder)
         print('\n{}\n{}: {}'.format('='*50, counter, relpath))
         try:
-            reader.FRD(file_name)
+            FRD(file_name)
         except:
             logging.error(traceback.format_exc())
 
 
-# Convert calculation results
 def convert_calculation_results_in(folder):
+    """Convert calculation results."""
     print('CONVERTER TEST\n\n')
     counter = 0
     for file_name in scan_all_files_in(folder, '.frd'):
@@ -62,13 +62,13 @@ def convert_calculation_results_in(folder):
         relpath = os.path.relpath(file_name, start=folder)
         print('\n{}\n{}: {}'.format('='*50, counter, relpath))
         try:
-            ccx2paraview.Converter(file_name, ['vtk', 'vtu']).run()
+            Converter(file_name, ['vtk', 'vtu']).run()
         except:
             logging.error(traceback.format_exc())
 
 
-# Convert calculation results with binaries
 def test_binary_in(folder):
+    """Convert calculation results with binaries."""
     print('CONVERTER TEST\n\n')
     counter = 0
     for file_name in scan_all_files_in(folder, '.frd'):
@@ -94,7 +94,7 @@ def test_binary_in(folder):
 def test_single_file(file_path):
     print('\n{}\n{}'.format('='*50, file_path))
     try:
-        ccx2paraview.Converter(file_path, ['vtk', 'vtu']).run()
+        Converter(file_path, ['vtk', 'vtu']).run()
     except:
         logging.error(traceback.format_exc())
 
@@ -102,7 +102,7 @@ def test_single_file(file_path):
 # Run
 if __name__ == '__main__':
     start = time.perf_counter()
-    clean.screen()
+    screen()
 
     # Prepare logging
     logging.getLogger().addHandler(myHandler())
@@ -113,8 +113,8 @@ if __name__ == '__main__':
     # Choose what we test
     # test_frd_reader_on_models_in(folder)
     # convert_calculation_results_in(folder)
-    test_binary_in(folder)
-    # test_single_file('../examples/ccx/test/metalforming.frd')
+    # test_binary_in(folder)
+    test_single_file('../examples/ccx/test/metalforming.frd')
 
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
-    clean.cache()
+    cache()
