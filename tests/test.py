@@ -99,6 +99,12 @@ def test_single_file(file_path):
         logging.error(traceback.format_exc())
 
 
+def test_pypi_package(file_path):
+    import ccx2paraview
+    c = ccx2paraview.Converter(file_path, ['vtu'])
+    c.run()
+
+
 # Run
 if __name__ == '__main__':
     start = time.perf_counter()
@@ -114,7 +120,10 @@ if __name__ == '__main__':
     # test_frd_reader_on_models_in(folder)
     # convert_calculation_results_in(folder)
     # test_binary_in(folder)
-    test_single_file('../examples/ccx/test/metalforming.frd')
+
+    file_path = '../examples/ccx/test/metalforming.frd'
+    # test_single_file(file_path)
+    test_pypi_package(file_path)
 
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
     cache()
