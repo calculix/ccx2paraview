@@ -41,16 +41,18 @@ FRD reader is tested to reduce processing time as much as possible. Now it's qui
 
 # How to use
 
-Please, pay attention to .frd-file type - it should be ASCII, not binary! Use keywords *NODE FILE, *EL FILE and *CONTACT FILE in your INP model to get results in ASCII format.
+To run this converter you'll need [Python 3](https://www.python.org/downloads/) with *numpy* and *vtk*:
 
-Running this software from source is not recommended, because sources are under development and may contain bugs. So, first, [download released binaries](https://github.com/calculix/ccx2paraview/releases), unpack them and allow to be executed (give permissions).
+    pip3 install numpy vtk
 
-Run binary with command:
+Please, pay attention that .frd-file type should be ASCII, not binary! Use keywords *NODE FILE, *EL FILE and *CONTACT FILE in your INP model to get results in ASCII format.
 
-    in Linux:       ./ccx2paraview yourjobname.frd vtu
-                    ./ccx2paraview yourjobname.frd vtk
-    in Windows:     ccx2paraview.exe yourjobname.frd vtu
-                    ccx2paraview.exe yourjobname.frd vtk
+[Download released sources](https://github.com/calculix/ccx2paraview/releases), unpack them and allow to be executed (give permissions).
+
+Run converter with command (both in Linux and in Windows):
+
+    python3 ccx2paraview.py yourjobname.frd vtk
+    python3 ccx2paraview.py yourjobname.frd vtu
 
 Also you can pass both formats to convert .frd to .vtk and .vtu at once.
 
@@ -58,7 +60,7 @@ It is recommended to convert .frd to modern XML .vtu format - its contents are c
 
 Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - previously there were problems with component names.
 
-A snippet for Paraview programmable filter to convert 6 components data array to full tensor:
+A snippet for Paraview **programmable filter** to convert 6 components data array to full tensor:
 
 ```Python
 import numpy as np 
@@ -132,7 +134,7 @@ Please, you may:
 
 [![CalculiX-to-Paraview Converter](https://img.youtube.com/vi/KofE0x0csZE/maxresdefault.jpg)](https://www.youtube.com/watch?v=KofE0x0csZE)
 
-To run this converter from source you'll need [Python 3](https://www.python.org/downloads/) with *numpy* and *vtk*. Install all with command:
+Install package with dependacies:
 
     pip3 install numpy vtk ccx2paraview
 
