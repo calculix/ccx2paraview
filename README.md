@@ -1,4 +1,4 @@
-© Ihor Mirzov, 2019-2021  
+© Ihor Mirzov, 2019-2022  
 Distributed under GNU General Public License v3.0
 
 [![PyPi](https://badgen.net/badge/icon/pypi?icon=pypi&label)](https://pypi.org/project/ccx2paraview)
@@ -173,9 +173,9 @@ Also there is a good way to create a binary with Cython (works fine for a signle
 
 Read [how to create packages](https://packaging.python.org/tutorials/packaging-projects/) for [pypi.org](https://pypi.org/):
 
-    python3 -m pip install --user --upgrade setuptools wheel twine
-    python3 setup.py sdist bdist_wheel
-    twine upload dist/*
+    python3 -m pip install --upgrade build twine
+    python3 -m build
+    python3 -m twine upload dist/*
 
 Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) and VTK [unstructured grid](https://kitware.github.io/vtk-examples/site/VTKFileFormats/#unstructuredgrid). Remember that FRD file is node based, so element results are also stored at nodes after extrapolation from the integration points.
 
