@@ -118,12 +118,12 @@ if __name__ == '__main__':
 
     # Choose what we test
     # test_frd_reader_on_models_in(folder)
-    # convert_calculation_results_in(folder)
+    convert_calculation_results_in(folder)
     # test_binary_in(folder)
 
-    file_path = '../examples/ccx/test/metalforming.frd'
+    # file_path = '../examples/ccx/test/metalforming.frd'
     # test_single_file(file_path)
-    test_pypi_package(file_path)
+    # test_pypi_package(file_path)
 
     print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
     cache()

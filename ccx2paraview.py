@@ -263,7 +263,7 @@ def amount_of_nodes_in_vtk_element(e):
     return n
 
 
-def generate_ugrid(frd):
+def generate_ugrid(node_block, elem_block):
     """Generate VTK mesh."""
     ugrid = vtk.vtkUnstructuredGrid() # create empty grid in VTK
 
@@ -272,19 +272,19 @@ def generate_ugrid(frd):
     points = vtk.vtkPoints()
     renumbered_nodes = {} # old_number : new_number
     new_node_number = 0
-    for n in sorted(frd.node_block.nodes.keys()):
+    for n in sorted(node_block.nodes.keys()):
         renumbered_nodes[n] = new_node_number
-        coordinates = frd.node_block.nodes[n].coords
+        coordinates = node_block.nodes[n].coords
         points.InsertPoint(new_node_number, coordinates)
         new_node_number += 1
-        if new_node_number == frd.node_block.numnod:
+        if new_node_number == node_block.numnod:
             break
     ugrid.SetPoints(points) # insert all points to the grid
 
     # CELLS section - elements connectyvity
     # Sometimes element nodes should be repositioned
-    ugrid.Allocate(frd.elem_block.numelem)
-    for e in sorted(frd.elem_block.elements, key=lambda x: x.num):
+    ugrid.Allocate(elem_block.numelem)
+    for e in sorted(elem_block.elements, key=lambda x: x.num):
         vtk_elem_type = convert_elem_type(e.type)
         offset = amount_of_nodes_in_vtk_element(e)
         connectivity = get_element_connectivity(renumbered_nodes, e)
@@ -333,38 +333,39 @@ def convert_frd_data_to_vtk(b, numnod):
 class Writer:
     """Writes .vtk and .vtu files based on data from FRD object.
     Uses native VTK Python package.
+    Writes results for one time increment only.
     """
 
-    def __init__(self, frd, file_name, time):
+    def __init__(self, node_block, elem_block, result_blocks=[]):
         """Main function: frd is a FRD object."""
-        self.file_name = file_name
-        self.ugrid = generate_ugrid(frd)
-        pd = self.ugrid.GetPointData()
+        self.ugrid = generate_ugrid(node_block, elem_block)
+        self.node_block = node_block
+        self.elem_block = elem_block
+        self.result_blocks = result_blocks
 
+    def fill_point_data(self, inc):
         # POINT DATA - from here start all the results
-        for b in frd.result_blocks: # iterate over NodalResultsBlock (increments)
-            if b.value == time: # write results for one time increment only
+        pd = self.ugrid.GetPointData()
+        for b in self.result_blocks: # iterate over NodalResultsBlock (increments)
+            if b.inc == inc: # write results for one time increment only
                 if len(b.results) and len(b.components):
-                    print_some_log(b)
-
-                    da = convert_frd_data_to_vtk(b, frd.node_block.numnod)
+                    da = convert_frd_data_to_vtk(b, self.node_block.numnod)
                     pd.AddArray(da)
                     pd.Modified()
                 else:
                     logging.warning(b.name + ' - no data for this increment')
 
-    def write_vtk(self):
-        writer = vtk.vtkUnstructuredGridWriter()
-        writer.SetInputData(self.ugrid)
-        writer.SetFileName(self.file_name)
-        writer.Write()
-
-    def write_vtu(self):
-        writer = vtk.vtkXMLUnstructuredGridWriter()
-        writer.SetInputDataObject(self.ugrid)
-        # writer.SetDataModeToAscii() # text file
-        writer.SetDataModeToBinary() # compressed file
-        writer.SetFileName(self.file_name)
+    def write_file(self, file_name):
+        """Write file."""
+        logging.info('Writing ' + os.path.basename(file_name))
+        if file_name.endswith('vtk'):
+            writer = vtk.vtkUnstructuredGridWriter()
+            writer.SetInputData(self.ugrid)
+        elif file_name.endswith('vtu'):
+            writer = vtk.vtkXMLUnstructuredGridWriter()
+            writer.SetInputDataObject(self.ugrid)
+            writer.SetDataModeToBinary() # compressed file
+        writer.SetFileName(file_name)
         writer.Write()
 
 
@@ -475,36 +476,19 @@ class NodalResultsBlock:
         self.components = [] # component names
         self.results = {} # dictionary with nodal result {node:data}
         self.name = None
-        self.value = 0
+        self.inc = 0
         self.ncomps = 0
-        self.numstep = 0
+        self.step = 0
         self.line = line
 
     def run(self, in_file, node_block):
         self.in_file = in_file
         self.node_block = node_block
 
-        self.read_step_info()
+        self.inc, self.step = get_inc_step(self.line)
         self.read_vars_info()
         self.read_components_info()
-        results_counter = self.read_nodal_results()
-        print_some_log(self, results_counter)
-
-    def read_step_info(self):
-        """Read step information
-        CL  101 0.36028E+01         320                     3    1           1
-        CL  101 1.000000000         803                     0    1           1
-        CL  101 1.000000000          32                     0    1           1
-        CL  102 117547.9305          90                     2    2MODAL      1
-        """
-        line = self.line[12:]
-        regex = '^(.{12})\s+\d+\s+\d+\s+(\d+)'
-        match = match_line(regex, line)
-        self.value = float(match.group(1)) # could be frequency, time or any numerical value
-        self.numstep = int(match.group(2)) # step number
-        # txt = 'Step info: value {}, numstep {}' \
-        #     .format(self.value, self.numstep)
-        # logging.debug(txt)
+        self.read_nodal_results()
 
     def read_vars_info(self):
         """Read variables information
@@ -642,67 +626,117 @@ class NodalResultsBlock:
                 .format(before.strip(), after, emitted_warning_types['WrongFormat']))
         return results_counter
 
+    def print_some_log(self):
+        if self.inc < 1:
+            time_str = 'time {:.2e}, '.format(self.inc)
+        else:
+            time_str = 'time {:.1f}, '.format(self.inc)
+        txt = 'Step {}, '.format(self.step) + time_str \
+            + '{}, '.format(self.name) \
+            + '{} components, '.format(len(self.components)) \
+            + '{} values'.format(len(self.results))
+        logging.info(txt)
+
 
 class FRD:
-    """Main class."""
+    """Main class.
+    To implement large file parsing we need a step-by-step reader and writer.
+    """
 
-    def __init__(self, file_name=None):
+    def __init__(self, file_name):
         """Read contents of the .frd file."""
-        self.file_name = None   # path to the .frd-file to be read
+        self.file_name = file_name   # path to the .frd-file to be read
         self.node_block = None  # node block
         self.elem_block = None  # elements block
         self.result_blocks = [] # all result blocks in order of appearance
-        if file_name:
-            self.file_name = file_name
-            with open(file_name, 'r') as in_file:
-                while True:
-                    line = in_file.readline()
-                    if not line:
-                        break
+        self.increments = set()
 
-                    key = line[:5].strip()
+    def parse_mesh(self):
+        with open(self.file_name, 'r') as in_file:
+            while True:
+                line = in_file.readline()
+                if not line:
+                    break
+                key = line[:5].strip()
 
-                    # Header
-                    if key == '1' or key == '1P':
-                        # in_file.readline()
-                        pass
+                # Nodes
+                if key == '2':
+                    self.node_block = NodalPointCoordinateBlock(in_file)
 
-                    # Nodes
-                    elif key == '2':
-                        block = NodalPointCoordinateBlock(in_file)
-                        self.node_block = block
+                # Elements
+                elif key == '3':
+                    self.elem_block = ElementDefinitionBlock(in_file)
 
-                    # Elements
-                    elif key == '3':
-                        block = ElementDefinitionBlock(in_file)
-                        self.elem_block = block
+                # End
+                elif key == '9999':
+                    break
 
-                    # Results
-                    elif key == '100':
-                        b = NodalResultsBlock(line)
-                        b.run(in_file, self.node_block)
-                        self.result_blocks.append(b)
-                        if b.name == 'S':
-                            b1 = self.calculate_mises_stress(b)
-                            b2 = self.calculate_principal(b)
-                            self.result_blocks.extend([b1,b2])
-                        if b.name == 'E':
-                            b1 = self.calculate_mises_strain(b)
-                            b2 = self.calculate_principal(b)
-                            self.result_blocks.extend([b1,b2])
+        return self.node_block, self.elem_block
 
-                    # End
-                    elif key == '9999':
-                        break
+    def count_increments(self):
+        """Count amount of time increments and amount of calculated variables.
+        It is assumed, that there is constant set of variables calculated at 
+        each time increment.
+        """
+        with open(self.file_name, 'r') as in_file:
+            while True:
+                line = in_file.readline()
+                if not line:
+                    break
+                key = line[:5].strip()
+                # Results
+                if key == '100':
+                    inc = get_inc_step(line)[0]
+                    self.increments.add(inc)
+                # End
+                elif key == '9999':
+                    break
 
-            self.times = [b.value for b in self.result_blocks]
-            self.times = sorted(set(self.times))
-            l = len(self.times)
-            if l:
-                msg = '{} time increment{}'.format(l, 's'*min(1, l-1))
-                logging.info(msg)
-            else:
-                logging.warning('No time increments!')
+        i = len(self.increments)
+        if i:
+            msg = '{} time increment{}'.format(i, 's'*min(1, i-1))
+            logging.info(msg)
+        else:
+            logging.warning('No time increments!')
+        return i
+
+    def parse_results(self, inc):
+        """Header: key == '1' or key == '1P'."""
+        self.result_blocks.clear()
+        with open(self.file_name, 'r') as in_file:
+            while True:
+                line = in_file.readline()
+                if not line:
+                    break
+                key = line[:5].strip()
+
+                # Read results for certain time increment
+                if key == '100':
+                    if inc != get_inc_step(line)[0]:
+                        continue
+
+                    b = NodalResultsBlock(line)
+                    b.run(in_file, self.node_block)
+                    self.result_blocks.append(b)
+                    b.print_some_log()
+                    if b.name == 'S':
+                        b1 = self.calculate_mises_stress(b)
+                        b2 = self.calculate_principal(b)
+                        self.result_blocks.extend([b1, b2])
+                        b1.print_some_log()
+                        b2.print_some_log()
+                    if b.name == 'E':
+                        b1 = self.calculate_mises_strain(b)
+                        b2 = self.calculate_principal(b)
+                        self.result_blocks.extend([b1, b2])
+                        b1.print_some_log()
+                        b2.print_some_log()
+
+                # End
+                elif key == '9999':
+                    break
+
+        return self.result_blocks
 
     def calculate_mises_stress(self, b):
         """Append von Mises stress."""
@@ -710,8 +744,8 @@ class FRD:
         b1.name = 'S_Mises'
         b1.components = (b1.name, )
         b1.ncomps = len(b1.components)
-        b1.value = b.value
-        b1.numstep = b.numstep
+        b1.inc = b.inc
+        b1.step = b.step
 
         # Iterate over nodes
         for node_num in b.node_block.nodes.keys():
@@ -737,8 +771,8 @@ class FRD:
         b1.name = 'E_Mises'
         b1.components = (b1.name,)
         b1.ncomps = len(b1.components)
-        b1.value = b.value
-        b1.numstep = b.numstep
+        b1.inc = b.inc
+        b1.step = b.step
 
         # Iterate over nodes
         for node_num in b.node_block.nodes.keys():
@@ -764,8 +798,8 @@ class FRD:
         b1.name = b.name + '_Principal'
         b1.components = ('Min', 'Mid', 'Max')
         b1.ncomps = len(b1.components)
-        b1.value = b.value
-        b1.numstep = b.numstep
+        b1.inc = b.inc
+        b1.step = b.step
 
         # Iterate over nodes
         for node_num in b.node_block.nodes.keys():
@@ -780,6 +814,31 @@ class FRD:
                 b1.results[node_num].append(ps)
 
         return b1
+
+    def has_mesh(self):
+        blocks = [self.node_block, self.elem_block]
+        if all([b is not None for b in blocks]):
+            return True
+        logging.warning('File is empty!')
+        return False
+
+
+def get_inc_step(line):
+    """Read step information
+    CL  101 0.36028E+01         320                     3    1           1
+    CL  101 1.000000000         803                     0    1           1
+    CL  101 1.000000000          32                     0    1           1
+    CL  102 117547.9305          90                     2    2MODAL      1
+    """
+    line = line[12:]
+    regex = '^(.{12})\s+\d+\s+\d+\s+(\d+)'
+    match = match_line(regex, line)
+    inc = float(match.group(1)) # could be frequency, time or any numerical value
+    step = int(match.group(2)) # step number
+    # txt = 'Step info: value {}, step {}' \
+    #     .format(inc, step)
+    # logging.debug(txt)
+    return inc, step
 
 
 def match_line(regex, line):
@@ -807,7 +866,7 @@ def screen():
 
 def cache(folder=None):
     """Recursively delete cached files in all subfolders."""
-    if not folder:
+    if folder is None:
         folder = os.getcwd()
     pycache = os.path.join(folder, '__pycache__')
     if os.path.isdir(pycache):
@@ -819,52 +878,21 @@ def cache(folder=None):
             if f.is_dir():
                 cache(f.path)
     except PermissionError:
-        print('ERROR: Insufficient permissions for ' + folder)
+        logging.error('Insufficient permissions for ' + folder)
 
 
-def files(startFolder=None):
-    """Cleaup trash files in startFolder and all subfolders."""
-    extensions = (  '.12d', '.cvg', '.dat', '.vwf', '.out', '.nam', '.inp1', '.inp2',
-                    '.sta', '.equ', '.eig', '.stm', '.mtx', '.net', '.inp0', '.rin',
-                    '.fcv', 'dummy' )
-    if not startFolder:
-        startFolder = os.getcwd()
-    for f in os.scandir(startFolder):
-        if f.is_dir(): # if folder
-            files(f.path)
-        elif f.is_file() and f.name.endswith(extensions):
-            try:
-                os.remove(f.path)
-                sys.__stdout__.write('Delelted: ' + f.path + '\n')
-            except:
-                sys.__stdout__.write(f.path + ': ' + sys.exc_info()[1][1] + '\n')
-
-
-def results():
+def results(folder=None):
     """Cleaup old result files."""
-    extensions = ('.frd', '.vtk', '.vtu')
-    for f in os.scandir('.'):
+    if folder is None:
+        folder = os.getcwd()
+    extensions = ('.vtk', '.vtu')
+    for f in os.scandir(folder):
         if f.name.endswith(extensions):
             try:
                 os.remove(f.path)
                 sys.__stdout__.write('Delelted: ' + f.path + '\n')
             except:
                 sys.__stdout__.write(f.path + ': ' + sys.exc_info()[1][1] + '\n')
-
-
-def print_some_log(b, results_counter=None):
-    """b is a results block."""
-    if results_counter is None:
-        results_counter = len(b.results)
-    if b.value < 1:
-        time_str = 'time {:.2e}, '.format(b.value)
-    else:
-        time_str = 'time {:.1f}, '.format(b.value)
-    txt = 'Step {}, '.format(b.numstep) + time_str \
-        + '{}, '.format(b.name) \
-        + '{} components, '.format(len(b.components)) \
-        + '{} values'.format(results_counter)
-    logging.info(txt)
 
 
 
@@ -878,80 +906,71 @@ class Converter:
     python3 ccx2paraview.py ../examples/other/Ihor_Mirzov_baffle_2D.frd vtu
     """
 
-    def __init__(self, file_name, fmt_list):
-        self.file_name = file_name
-        self.fmt_list = fmt_list
-        self.times_names = {}  # {increment time: file name, ...}
+    def __init__(self, frd_file_name, fmt_list):
+        self.frd_file_name = frd_file_name
+        self.fmt_list = [fmt.lower() for fmt in fmt_list]
+        self.frd = FRD(self.frd_file_name)
 
     def run(self):
-        # Read FRD-file
-        base_name = os.path.basename(self.file_name)
-        logging.info('Reading ' + base_name)
-        frd = FRD(self.file_name)
+        logging.info('Reading ' + os.path.basename(self.frd_file_name))
 
-        # If file does not contain mesh data
-        if not frd.node_block or not frd.elem_block:
-            logging.warning('File is empty!')
+        # Check if file contains mesh data
+        node_block, elem_block = self.frd.parse_mesh()
+        if not self.frd.has_mesh():
             return
 
-        l = len(frd.times)
-        for fmt in self.fmt_list:
-            if l:
-                """If model has many time steps - many output files
-                will be created. Each output file's name should contain
-                increment number padded with zero.
-                """
-                print()
-                counter = 1
-                for t in frd.times:
-                    if l > 1:
-                        ext = '.{:0{width}}.{}'.format(
-                            counter, fmt, width=len(str(l))
-                        )
-                        file_name = self.file_name.replace('.frd', ext)
-                    else:
-                        ext = '.{}'.format(fmt)
-                        file_name = self.file_name.replace('.frd', ext)
-                    self.times_names[t] = file_name
-                    counter += 1
+        # Check if FRD has no step data - only mesh
+        i = self.frd.count_increments()
+        if i == 0:
+            w = Writer(node_block, elem_block)
+            for fmt in self.fmt_list: # ['vtk', 'vtu']
+                file_name = self.frd_file_name[:-3] + fmt
+                w.write_file(file_name)
 
-                """For each time increment generate separate .vt* file
-                Output file name will be the same as input.
-                """
-                for t, file_name in self.times_names.items():
-                    base_name = os.path.basename(file_name)
-                    logging.info('Writing ' + base_name)
-                    self.run_writer(frd, file_name, t, fmt)
+        else:
+            """For each time increment generate separate .vt* file
+            Output file name will be the same as input but with increment time.
+            """
+            for inc, file_name in self.inc_filenames():
+                result_blocks = self.frd.parse_results(inc)
+                w = Writer(node_block, elem_block, result_blocks)
+                w.fill_point_data(inc)
+                for fmt in self.fmt_list: # ['vtk', 'vtu']
+                    w.write_file(file_name + fmt)
 
-                # Write ParaView Data (PVD) for series of VTU files
-                if l > 1 and fmt == 'vtu':
-                    self.write_pvd()
+            # Write ParaView Data (PVD) for series of VTU files
+            if i > 1 and 'vtu' in self.fmt_list:
+                self.write_pvd()
 
+    def inc_filenames(self):
+        """If model has many time increments - many output files
+        will be created. Each output file's name should contain
+        increment number padded with zero.
+        """
+        i = len(self.frd.increments)
+        d = {} # {increment time: file name}
+        for counter,t in enumerate(sorted(self.frd.increments)):
+            if i > 1:
+                num = '.{:0{width}}.'.format(counter+1, width=len(str(i)))
             else:
-                """FRD has no step data - only mesh."""
-                file_name = self.file_name[:-3] + fmt
-                self.run_writer(frd, file_name, None, fmt)
+                num = '.'
+            file_name = self.frd_file_name[:-4] + num
+            d[t] = file_name # without extension
+        return sorted(d.items())
 
     def write_pvd(self):
         """Writes ParaView Data (PVD) file for series of VTU files."""
-        with open(self.file_name[:-4] + '.pvd', 'w') as f:
+        with open(self.frd_file_name[:-4] + '.pvd', 'w') as f:
             f.write('<?xml version="1.0"?>\n')
             f.write('<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">\n')
             f.write('\t<Collection>\n')
 
-            for t, n in self.times_names.items():
+            for inc, file_name in self.inc_filenames():
                 f.write('\t\t<DataSet file="{}" timestep="{}"/>\n'\
-                    .format(os.path.basename(n), t))
+                    .format(os.path.basename(file_name), inc))
 
             f.write('\t</Collection>\n')
             f.write('</VTKFile>')
-
-    def run_writer(self, frd, file_name, time_inc, fmt):
-        w = Writer(frd, file_name, time_inc)
-        if fmt == 'vtk':
-            w.write_vtk()
-        if fmt == 'vtu':
-            w.write_vtu()
 
 
 def main():
@@ -965,23 +984,17 @@ def main():
     args = ap.parse_args()
 
     # Check arguments
-    ok = True
+    assert os.path.isfile(args.filename), 'FRD file does not exist.'
     for a in args.format:
-        if a not in ('vtk', 'vtu'):
-            ok = False
-            break
+        msg = 'Wrong format "{}". '.format(a) + 'Choose between: vtk, vtu.'
+        assert a in ('vtk', 'vtu'), msg
 
     # Create converter and run it
-    if ok:
-        ccx2paraview = Converter(args.filename, args.format)
-        ccx2paraview.run()
-    else:
-        msg = 'ERROR! Wrong format "{}". '.format(a) + 'Choose between: vtk, vtu.'
-        print(msg)
-
-    cache()
+    ccx2paraview = Converter(args.filename, args.format)
+    ccx2paraview.run()
 
 
 if __name__ == '__main__':
     screen()
     main()
+    cache()

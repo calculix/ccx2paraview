@@ -191,7 +191,7 @@ Multiprocessing for tests.
 
 Read binary .frd files.
 
-Process huge files increment by increment.
+Open FRD only once.
 
 Contribute to meshio. FRD writer. Use meshio XDMF writer: https://github.com/calculix/ccx2paraview/issues/6
 
