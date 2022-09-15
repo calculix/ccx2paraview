@@ -945,7 +945,8 @@ class Converter:
     def inc_filenames(self):
         """If model has many time increments - many output files
         will be created. Each output file's name should contain
-        increment number padded with zero.
+        increment number padded with zero. In this method file_name
+        has no extension.
         """
         i = len(self.frd.increments)
         d = {} # {increment time: file name}
@@ -966,7 +967,7 @@ class Converter:
             f.write('\t<Collection>\n')
 
             for inc, file_name in self.inc_filenames():
-                f.write('\t\t<DataSet file="{}" timestep="{}"/>\n'\
+                f.write('\t\t<DataSet file="{}vtu" timestep="{}"/>\n'\
                     .format(os.path.basename(file_name), inc))
 
             f.write('\t</Collection>\n')
