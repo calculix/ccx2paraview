@@ -26,6 +26,12 @@ from ccx2paraview import screen, cache, FRD, Converter
 from log import myHandler, print, read_and_log
 
 
+def get_time_delta(delta):
+    """Return spent time delta in format mm:ss.s."""
+    return '{:d}m {:.1f}s'\
+        .format(int(delta%3600/60), delta%3600%60)
+
+
 def scan_all_files_in(start_folder, ext, limit=10000):
     """List all .ext-files here and in all subdirectories."""
     all_files = []
@@ -92,6 +98,7 @@ def test_binary_in(folder):
 
 
 def test_single_file(file_path):
+    print('CONVERTER TEST\n\n')
     print('\n{}\n{}'.format('='*50, file_path))
     try:
         Converter(file_path, ['vtk', 'vtu']).run()
@@ -114,16 +121,17 @@ if __name__ == '__main__':
     logging.getLogger().addHandler(myHandler())
     logging.getLogger().setLevel(logging.INFO)
 
-    folder = '../examples'
-
     # Choose what we test
+    # folder = '../examples'
     # test_frd_reader_on_models_in(folder)
-    convert_calculation_results_in(folder)
+    # convert_calculation_results_in(folder)
     # test_binary_in(folder)
 
-    # file_path = '../examples/ccx/test/metalforming.frd'
-    # test_single_file(file_path)
+    file_path = '../examples/other/Nidish_Narayanaa_Balaji.frd'
+    # file_path = '../examples/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd'
+    test_single_file(file_path)
     # test_pypi_package(file_path)
 
-    print('\nTotal {:.1f} seconds'.format(time.perf_counter() - start))
+    delta = time.perf_counter() - start
+    print('\nTotal', get_time_delta(delta))
     cache()
