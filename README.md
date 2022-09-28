@@ -185,13 +185,17 @@ Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-fo
 
 # TODO
 
+Log memory consumption.
+
+Which file is written faster: VTK or VTU? VTK is twice faster?
+
+Use threads for convertion and writing. Read FRD in the main thread.
+
 Read DAT files: it would be a killer feature if Paraview could visualize results in Gauss points. Use [CCXStressReader](https://github.com/Mote3D/CCXStressReader).
 
 Multiprocessing for tests.
 
 Read binary .frd files.
-
-Open FRD only once.
 
 Contribute to meshio. FRD writer. Use meshio XDMF writer: https://github.com/calculix/ccx2paraview/issues/6
 

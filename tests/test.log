@@ -255,65 +255,67 @@ INFO: Writing Solve.vtu
 INFO: Reading solve.frd
 INFO: 141406 nodes
 INFO: 79648 cells
-INFO: 19 time increments
+INFO: 20 time increments
 INFO: Step 1, time 0.00e+00, U, 3 components, 141406 values
-INFO: Step 2, time 0.00e+00, U, 3 components, 141406 values
 INFO: Writing solve.01.vtk
 INFO: Writing solve.01.vtu
-INFO: Step 3, time 3.99e-03, U, 3 components, 141406 values
+INFO: Step 2, time 0.00e+00, U, 3 components, 141406 values
 INFO: Writing solve.02.vtk
 INFO: Writing solve.02.vtu
-INFO: Step 4, time 3.06e-01, U, 3 components, 141406 values
+INFO: Step 3, time 3.99e-03, U, 3 components, 141406 values
 INFO: Writing solve.03.vtk
 INFO: Writing solve.03.vtu
-INFO: Step 5, time 3.8, U, 3 components, 141406 values
+INFO: Step 4, time 3.06e-01, U, 3 components, 141406 values
 INFO: Writing solve.04.vtk
 INFO: Writing solve.04.vtu
-INFO: Step 6, time 5.8, U, 3 components, 141406 values
+INFO: Step 5, time 3.8, U, 3 components, 141406 values
 INFO: Writing solve.05.vtk
 INFO: Writing solve.05.vtu
-INFO: Step 7, time 19.2, U, 3 components, 141406 values
+INFO: Step 6, time 5.8, U, 3 components, 141406 values
 INFO: Writing solve.06.vtk
 INFO: Writing solve.06.vtu
-INFO: Step 8, time 164.8, U, 3 components, 141406 values
+INFO: Step 7, time 19.2, U, 3 components, 141406 values
 INFO: Writing solve.07.vtk
 INFO: Writing solve.07.vtu
-INFO: Step 9, time 224.9, U, 3 components, 141406 values
+INFO: Step 8, time 164.8, U, 3 components, 141406 values
 INFO: Writing solve.08.vtk
 INFO: Writing solve.08.vtu
-INFO: Step 10, time 372.0, U, 3 components, 141406 values
+INFO: Step 9, time 224.9, U, 3 components, 141406 values
 INFO: Writing solve.09.vtk
 INFO: Writing solve.09.vtu
-INFO: Step 11, time 519.4, U, 3 components, 141406 values
+INFO: Step 10, time 372.0, U, 3 components, 141406 values
 INFO: Writing solve.10.vtk
 INFO: Writing solve.10.vtu
-INFO: Step 12, time 639.1, U, 3 components, 141406 values
+INFO: Step 11, time 519.4, U, 3 components, 141406 values
 INFO: Writing solve.11.vtk
 INFO: Writing solve.11.vtu
-INFO: Step 13, time 906.2, U, 3 components, 141406 values
+INFO: Step 12, time 639.1, U, 3 components, 141406 values
 INFO: Writing solve.12.vtk
 INFO: Writing solve.12.vtu
-INFO: Step 14, time 1012.8, U, 3 components, 141406 values
+INFO: Step 13, time 906.2, U, 3 components, 141406 values
 INFO: Writing solve.13.vtk
 INFO: Writing solve.13.vtu
-INFO: Step 15, time 1136.6, U, 3 components, 141406 values
+INFO: Step 14, time 1012.8, U, 3 components, 141406 values
 INFO: Writing solve.14.vtk
 INFO: Writing solve.14.vtu
-INFO: Step 16, time 1174.3, U, 3 components, 141406 values
+INFO: Step 15, time 1136.6, U, 3 components, 141406 values
 INFO: Writing solve.15.vtk
 INFO: Writing solve.15.vtu
-INFO: Step 17, time 1177.7, U, 3 components, 141406 values
+INFO: Step 16, time 1174.3, U, 3 components, 141406 values
 INFO: Writing solve.16.vtk
 INFO: Writing solve.16.vtu
-INFO: Step 18, time 1197.9, U, 3 components, 141406 values
+INFO: Step 17, time 1177.7, U, 3 components, 141406 values
 INFO: Writing solve.17.vtk
 INFO: Writing solve.17.vtu
-INFO: Step 19, time 1199.8, U, 3 components, 141406 values
+INFO: Step 18, time 1197.9, U, 3 components, 141406 values
 INFO: Writing solve.18.vtk
 INFO: Writing solve.18.vtu
-INFO: Step 20, time 1255.5, U, 3 components, 141406 values
+INFO: Step 19, time 1199.8, U, 3 components, 141406 values
 INFO: Writing solve.19.vtk
 INFO: Writing solve.19.vtu
+INFO: Step 20, time 1255.5, U, 3 components, 141406 values
+INFO: Writing solve.20.vtk
+INFO: Writing solve.20.vtu
 
 ==================================================
 21: mkraska/Contact/Eyebar/Refs/eyebar.frd
@@ -967,1293 +969,1335 @@ INFO: Writing solve.51.vtu
 INFO: Reading equ.frd
 INFO: 100 nodes
 INFO: 32 cells
-INFO: 19 time increments
+INFO: 20 time increments
 INFO: Step 2, time 0.00e+00, U, 3 components, 100 values
 INFO: Step 2, time 0.00e+00, S, 6 components, 100 values
 INFO: Step 2, time 0.00e+00, S_Mises, 1 components, 100 values
 INFO: Step 2, time 0.00e+00, S_Principal, 3 components, 100 values
 INFO: Step 2, time 0.00e+00, ERROR, 1 components, 100 values
+INFO: Writing equ.01.vtk
+INFO: Writing equ.01.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 100 values
 INFO: Step 3, time 0.00e+00, S, 6 components, 100 values
 INFO: Step 3, time 0.00e+00, S_Mises, 1 components, 100 values
 INFO: Step 3, time 0.00e+00, S_Principal, 3 components, 100 values
 INFO: Step 3, time 0.00e+00, ERROR, 1 components, 100 values
-INFO: Writing equ.01.vtk
-INFO: Writing equ.01.vtu
+INFO: Writing equ.02.vtk
+INFO: Writing equ.02.vtu
 INFO: Step 4, time 4.24e-02, U, 3 components, 100 values
 INFO: Step 4, time 4.24e-02, S, 6 components, 100 values
 INFO: Step 4, time 4.24e-02, S_Mises, 1 components, 100 values
 INFO: Step 4, time 4.24e-02, S_Principal, 3 components, 100 values
 INFO: Step 4, time 4.24e-02, ERROR, 1 components, 100 values
-INFO: Writing equ.02.vtk
-INFO: Writing equ.02.vtu
+INFO: Writing equ.03.vtk
+INFO: Writing equ.03.vtu
 INFO: Step 5, time 6.11e-02, U, 3 components, 100 values
 INFO: Step 5, time 6.11e-02, S, 6 components, 100 values
 INFO: Step 5, time 6.11e-02, S_Mises, 1 components, 100 values
 INFO: Step 5, time 6.11e-02, S_Principal, 3 components, 100 values
 INFO: Step 5, time 6.11e-02, ERROR, 1 components, 100 values
-INFO: Writing equ.03.vtk
-INFO: Writing equ.03.vtu
+INFO: Writing equ.04.vtk
+INFO: Writing equ.04.vtu
 INFO: Step 6, time 7.24e-02, U, 3 components, 100 values
 INFO: Step 6, time 7.24e-02, S, 6 components, 100 values
 INFO: Step 6, time 7.24e-02, S_Mises, 1 components, 100 values
 INFO: Step 6, time 7.24e-02, S_Principal, 3 components, 100 values
 INFO: Step 6, time 7.24e-02, ERROR, 1 components, 100 values
-INFO: Writing equ.04.vtk
-INFO: Writing equ.04.vtu
+INFO: Writing equ.05.vtk
+INFO: Writing equ.05.vtu
 INFO: Step 7, time 7.98e-02, U, 3 components, 100 values
 INFO: Step 7, time 7.98e-02, S, 6 components, 100 values
 INFO: Step 7, time 7.98e-02, S_Mises, 1 components, 100 values
 INFO: Step 7, time 7.98e-02, S_Principal, 3 components, 100 values
 INFO: Step 7, time 7.98e-02, ERROR, 1 components, 100 values
-INFO: Writing equ.05.vtk
-INFO: Writing equ.05.vtu
+INFO: Writing equ.06.vtk
+INFO: Writing equ.06.vtu
 INFO: Step 8, time 9.97e-02, U, 3 components, 100 values
 INFO: Step 8, time 9.97e-02, S, 6 components, 100 values
 INFO: Step 8, time 9.97e-02, S_Mises, 1 components, 100 values
 INFO: Step 8, time 9.97e-02, S_Principal, 3 components, 100 values
 INFO: Step 8, time 9.97e-02, ERROR, 1 components, 100 values
-INFO: Writing equ.06.vtk
-INFO: Writing equ.06.vtu
+INFO: Writing equ.07.vtk
+INFO: Writing equ.07.vtu
 INFO: Step 9, time 2538.3, U, 3 components, 100 values
 INFO: Step 9, time 2538.3, S, 6 components, 100 values
 INFO: Step 9, time 2538.3, S_Mises, 1 components, 100 values
 INFO: Step 9, time 2538.3, S_Principal, 3 components, 100 values
 INFO: Step 9, time 2538.3, ERROR, 1 components, 100 values
-INFO: Writing equ.07.vtk
-INFO: Writing equ.07.vtu
+INFO: Writing equ.08.vtk
+INFO: Writing equ.08.vtu
 INFO: Step 10, time 3085.2, U, 3 components, 100 values
 INFO: Step 10, time 3085.2, S, 6 components, 100 values
 INFO: Step 10, time 3085.2, S_Mises, 1 components, 100 values
 INFO: Step 10, time 3085.2, S_Principal, 3 components, 100 values
 INFO: Step 10, time 3085.2, ERROR, 1 components, 100 values
-INFO: Writing equ.08.vtk
-INFO: Writing equ.08.vtu
+INFO: Writing equ.09.vtk
+INFO: Writing equ.09.vtu
 INFO: Step 11, time 4083.5, U, 3 components, 100 values
 INFO: Step 11, time 4083.5, S, 6 components, 100 values
 INFO: Step 11, time 4083.5, S_Mises, 1 components, 100 values
 INFO: Step 11, time 4083.5, S_Principal, 3 components, 100 values
 INFO: Step 11, time 4083.5, ERROR, 1 components, 100 values
-INFO: Writing equ.09.vtk
-INFO: Writing equ.09.vtu
+INFO: Writing equ.10.vtk
+INFO: Writing equ.10.vtu
 INFO: Step 12, time 5512.6, U, 3 components, 100 values
 INFO: Step 12, time 5512.6, S, 6 components, 100 values
 INFO: Step 12, time 5512.6, S_Mises, 1 components, 100 values
 INFO: Step 12, time 5512.6, S_Principal, 3 components, 100 values
 INFO: Step 12, time 5512.6, ERROR, 1 components, 100 values
-INFO: Writing equ.10.vtk
-INFO: Writing equ.10.vtu
+INFO: Writing equ.11.vtk
+INFO: Writing equ.11.vtu
 INFO: Step 13, time 13439.8, U, 3 components, 100 values
 INFO: Step 13, time 13439.8, S, 6 components, 100 values
 INFO: Step 13, time 13439.8, S_Mises, 1 components, 100 values
 INFO: Step 13, time 13439.8, S_Principal, 3 components, 100 values
 INFO: Step 13, time 13439.8, ERROR, 1 components, 100 values
-INFO: Writing equ.11.vtk
-INFO: Writing equ.11.vtu
+INFO: Writing equ.12.vtk
+INFO: Writing equ.12.vtu
 INFO: Step 14, time 14124.4, U, 3 components, 100 values
 INFO: Step 14, time 14124.4, S, 6 components, 100 values
 INFO: Step 14, time 14124.4, S_Mises, 1 components, 100 values
 INFO: Step 14, time 14124.4, S_Principal, 3 components, 100 values
 INFO: Step 14, time 14124.4, ERROR, 1 components, 100 values
-INFO: Writing equ.12.vtk
-INFO: Writing equ.12.vtu
+INFO: Writing equ.13.vtk
+INFO: Writing equ.13.vtu
 INFO: Step 15, time 15967.4, U, 3 components, 100 values
 INFO: Step 15, time 15967.4, S, 6 components, 100 values
 INFO: Step 15, time 15967.4, S_Mises, 1 components, 100 values
 INFO: Step 15, time 15967.4, S_Principal, 3 components, 100 values
 INFO: Step 15, time 15967.4, ERROR, 1 components, 100 values
-INFO: Writing equ.13.vtk
-INFO: Writing equ.13.vtu
+INFO: Writing equ.14.vtk
+INFO: Writing equ.14.vtu
 INFO: Step 16, time 16435.2, U, 3 components, 100 values
 INFO: Step 16, time 16435.2, S, 6 components, 100 values
 INFO: Step 16, time 16435.2, S_Mises, 1 components, 100 values
 INFO: Step 16, time 16435.2, S_Principal, 3 components, 100 values
 INFO: Step 16, time 16435.2, ERROR, 1 components, 100 values
-INFO: Writing equ.14.vtk
-INFO: Writing equ.14.vtu
+INFO: Writing equ.15.vtk
+INFO: Writing equ.15.vtu
 INFO: Step 17, time 18563.7, U, 3 components, 100 values
 INFO: Step 17, time 18563.7, S, 6 components, 100 values
 INFO: Step 17, time 18563.7, S_Mises, 1 components, 100 values
 INFO: Step 17, time 18563.7, S_Principal, 3 components, 100 values
 INFO: Step 17, time 18563.7, ERROR, 1 components, 100 values
-INFO: Writing equ.15.vtk
-INFO: Writing equ.15.vtu
+INFO: Writing equ.16.vtk
+INFO: Writing equ.16.vtu
 INFO: Step 18, time 19958.5, U, 3 components, 100 values
 INFO: Step 18, time 19958.5, S, 6 components, 100 values
 INFO: Step 18, time 19958.5, S_Mises, 1 components, 100 values
 INFO: Step 18, time 19958.5, S_Principal, 3 components, 100 values
 INFO: Step 18, time 19958.5, ERROR, 1 components, 100 values
-INFO: Writing equ.16.vtk
-INFO: Writing equ.16.vtu
+INFO: Writing equ.17.vtk
+INFO: Writing equ.17.vtu
 INFO: Step 19, time 22490.3, U, 3 components, 100 values
 INFO: Step 19, time 22490.3, S, 6 components, 100 values
 INFO: Step 19, time 22490.3, S_Mises, 1 components, 100 values
 INFO: Step 19, time 22490.3, S_Principal, 3 components, 100 values
 INFO: Step 19, time 22490.3, ERROR, 1 components, 100 values
-INFO: Writing equ.17.vtk
-INFO: Writing equ.17.vtu
+INFO: Writing equ.18.vtk
+INFO: Writing equ.18.vtu
 INFO: Step 20, time 35272.8, U, 3 components, 100 values
 INFO: Step 20, time 35272.8, S, 6 components, 100 values
 INFO: Step 20, time 35272.8, S_Mises, 1 components, 100 values
 INFO: Step 20, time 35272.8, S_Principal, 3 components, 100 values
 INFO: Step 20, time 35272.8, ERROR, 1 components, 100 values
-INFO: Writing equ.18.vtk
-INFO: Writing equ.18.vtu
+INFO: Writing equ.19.vtk
+INFO: Writing equ.19.vtu
 INFO: Step 21, time 44650.9, U, 3 components, 100 values
 INFO: Step 21, time 44650.9, S, 6 components, 100 values
 INFO: Step 21, time 44650.9, S_Mises, 1 components, 100 values
 INFO: Step 21, time 44650.9, S_Principal, 3 components, 100 values
 INFO: Step 21, time 44650.9, ERROR, 1 components, 100 values
-INFO: Writing equ.19.vtk
-INFO: Writing equ.19.vtu
+INFO: Writing equ.20.vtk
+INFO: Writing equ.20.vtu
 
 ==================================================
 27: mkraska/Contact/Shell0/Refs/qu4_pc-ns/pc-ns.frd
 INFO: Reading pc-ns.frd
 INFO: 100 nodes
 INFO: 32 cells
-INFO: 18 time increments
-INFO: Step 4, time 0.00e+00, U, 3 components, 100 values
-INFO: Step 4, time 0.00e+00, S, 6 components, 100 values
-INFO: Step 4, time 0.00e+00, S_Mises, 1 components, 100 values
-INFO: Step 4, time 0.00e+00, S_Principal, 3 components, 100 values
-INFO: Step 4, time 0.00e+00, ERROR, 1 components, 100 values
-INFO: Step 5, time 0.00e+00, U, 3 components, 100 values
-INFO: Step 5, time 0.00e+00, S, 6 components, 100 values
-INFO: Step 5, time 0.00e+00, S_Mises, 1 components, 100 values
-INFO: Step 5, time 0.00e+00, S_Principal, 3 components, 100 values
-INFO: Step 5, time 0.00e+00, ERROR, 1 components, 100 values
-INFO: Step 6, time 0.00e+00, U, 3 components, 100 values
-INFO: Step 6, time 0.00e+00, S, 6 components, 100 values
-INFO: Step 6, time 0.00e+00, S_Mises, 1 components, 100 values
-INFO: Step 6, time 0.00e+00, S_Principal, 3 components, 100 values
-INFO: Step 6, time 0.00e+00, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.01.vtk
-INFO: Writing pc-ns.01.vtu
+INFO: 20 time increments
 INFO: Step 2, time 4.12e-03, U, 3 components, 100 values
 INFO: Step 2, time 4.12e-03, S, 6 components, 100 values
 INFO: Step 2, time 4.12e-03, S_Mises, 1 components, 100 values
 INFO: Step 2, time 4.12e-03, S_Principal, 3 components, 100 values
 INFO: Step 2, time 4.12e-03, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.02.vtk
-INFO: Writing pc-ns.02.vtu
+INFO: Writing pc-ns.01.vtk
+INFO: Writing pc-ns.01.vtu
 INFO: Step 3, time 1.89e-02, U, 3 components, 100 values
 INFO: Step 3, time 1.89e-02, S, 6 components, 100 values
 INFO: Step 3, time 1.89e-02, S_Mises, 1 components, 100 values
 INFO: Step 3, time 1.89e-02, S_Principal, 3 components, 100 values
 INFO: Step 3, time 1.89e-02, ERROR, 1 components, 100 values
+INFO: Writing pc-ns.02.vtk
+INFO: Writing pc-ns.02.vtu
+INFO: Step 4, time 0.00e+00, U, 3 components, 100 values
+INFO: Step 4, time 0.00e+00, S, 6 components, 100 values
+INFO: Step 4, time 0.00e+00, S_Mises, 1 components, 100 values
+INFO: Step 4, time 0.00e+00, S_Principal, 3 components, 100 values
+INFO: Step 4, time 0.00e+00, ERROR, 1 components, 100 values
 INFO: Writing pc-ns.03.vtk
 INFO: Writing pc-ns.03.vtu
+INFO: Step 5, time 0.00e+00, U, 3 components, 100 values
+INFO: Step 5, time 0.00e+00, S, 6 components, 100 values
+INFO: Step 5, time 0.00e+00, S_Mises, 1 components, 100 values
+INFO: Step 5, time 0.00e+00, S_Principal, 3 components, 100 values
+INFO: Step 5, time 0.00e+00, ERROR, 1 components, 100 values
+INFO: Writing pc-ns.04.vtk
+INFO: Writing pc-ns.04.vtu
+INFO: Step 6, time 0.00e+00, U, 3 components, 100 values
+INFO: Step 6, time 0.00e+00, S, 6 components, 100 values
+INFO: Step 6, time 0.00e+00, S_Mises, 1 components, 100 values
+INFO: Step 6, time 0.00e+00, S_Principal, 3 components, 100 values
+INFO: Step 6, time 0.00e+00, ERROR, 1 components, 100 values
+INFO: Writing pc-ns.05.vtk
+INFO: Writing pc-ns.05.vtu
 INFO: Step 7, time 7.36e-02, U, 3 components, 100 values
 INFO: Step 7, time 7.36e-02, S, 6 components, 100 values
 INFO: Step 7, time 7.36e-02, S_Mises, 1 components, 100 values
 INFO: Step 7, time 7.36e-02, S_Principal, 3 components, 100 values
 INFO: Step 7, time 7.36e-02, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.04.vtk
-INFO: Writing pc-ns.04.vtu
+INFO: Writing pc-ns.06.vtk
+INFO: Writing pc-ns.06.vtu
 INFO: Step 8, time 1522.8, U, 3 components, 100 values
 INFO: Step 8, time 1522.8, S, 6 components, 100 values
 INFO: Step 8, time 1522.8, S_Mises, 1 components, 100 values
 INFO: Step 8, time 1522.8, S_Principal, 3 components, 100 values
 INFO: Step 8, time 1522.8, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.05.vtk
-INFO: Writing pc-ns.05.vtu
+INFO: Writing pc-ns.07.vtk
+INFO: Writing pc-ns.07.vtu
 INFO: Step 9, time 2812.9, U, 3 components, 100 values
 INFO: Step 9, time 2812.9, S, 6 components, 100 values
 INFO: Step 9, time 2812.9, S_Mises, 1 components, 100 values
 INFO: Step 9, time 2812.9, S_Principal, 3 components, 100 values
 INFO: Step 9, time 2812.9, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.06.vtk
-INFO: Writing pc-ns.06.vtu
+INFO: Writing pc-ns.08.vtk
+INFO: Writing pc-ns.08.vtu
 INFO: Step 10, time 5216.3, U, 3 components, 100 values
 INFO: Step 10, time 5216.3, S, 6 components, 100 values
 INFO: Step 10, time 5216.3, S_Mises, 1 components, 100 values
 INFO: Step 10, time 5216.3, S_Principal, 3 components, 100 values
 INFO: Step 10, time 5216.3, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.07.vtk
-INFO: Writing pc-ns.07.vtu
+INFO: Writing pc-ns.09.vtk
+INFO: Writing pc-ns.09.vtu
 INFO: Step 11, time 5543.4, U, 3 components, 100 values
 INFO: Step 11, time 5543.4, S, 6 components, 100 values
 INFO: Step 11, time 5543.4, S_Mises, 1 components, 100 values
 INFO: Step 11, time 5543.4, S_Principal, 3 components, 100 values
 INFO: Step 11, time 5543.4, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.08.vtk
-INFO: Writing pc-ns.08.vtu
+INFO: Writing pc-ns.10.vtk
+INFO: Writing pc-ns.10.vtu
 INFO: Step 12, time 7284.9, U, 3 components, 100 values
 INFO: Step 12, time 7284.9, S, 6 components, 100 values
 INFO: Step 12, time 7284.9, S_Mises, 1 components, 100 values
 INFO: Step 12, time 7284.9, S_Principal, 3 components, 100 values
 INFO: Step 12, time 7284.9, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.09.vtk
-INFO: Writing pc-ns.09.vtu
+INFO: Writing pc-ns.11.vtk
+INFO: Writing pc-ns.11.vtu
 INFO: Step 13, time 14155.1, U, 3 components, 100 values
 INFO: Step 13, time 14155.1, S, 6 components, 100 values
 INFO: Step 13, time 14155.1, S_Mises, 1 components, 100 values
 INFO: Step 13, time 14155.1, S_Principal, 3 components, 100 values
 INFO: Step 13, time 14155.1, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.10.vtk
-INFO: Writing pc-ns.10.vtu
+INFO: Writing pc-ns.12.vtk
+INFO: Writing pc-ns.12.vtu
 INFO: Step 14, time 16167.7, U, 3 components, 100 values
 INFO: Step 14, time 16167.7, S, 6 components, 100 values
 INFO: Step 14, time 16167.7, S_Mises, 1 components, 100 values
 INFO: Step 14, time 16167.7, S_Principal, 3 components, 100 values
 INFO: Step 14, time 16167.7, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.11.vtk
-INFO: Writing pc-ns.11.vtu
+INFO: Writing pc-ns.13.vtk
+INFO: Writing pc-ns.13.vtu
 INFO: Step 15, time 19263.8, U, 3 components, 100 values
 INFO: Step 15, time 19263.8, S, 6 components, 100 values
 INFO: Step 15, time 19263.8, S_Mises, 1 components, 100 values
 INFO: Step 15, time 19263.8, S_Principal, 3 components, 100 values
 INFO: Step 15, time 19263.8, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.12.vtk
-INFO: Writing pc-ns.12.vtu
-INFO: Step 17, time 20319.6, U, 3 components, 100 values
-INFO: Step 17, time 20319.6, S, 6 components, 100 values
-INFO: Step 17, time 20319.6, S_Mises, 1 components, 100 values
-INFO: Step 17, time 20319.6, S_Principal, 3 components, 100 values
-INFO: Step 17, time 20319.6, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.13.vtk
-INFO: Writing pc-ns.13.vtu
+INFO: Writing pc-ns.14.vtk
+INFO: Writing pc-ns.14.vtu
 INFO: Step 16, time 20882.7, U, 3 components, 100 values
 INFO: Step 16, time 20882.7, S, 6 components, 100 values
 INFO: Step 16, time 20882.7, S_Mises, 1 components, 100 values
 INFO: Step 16, time 20882.7, S_Principal, 3 components, 100 values
 INFO: Step 16, time 20882.7, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.14.vtk
-INFO: Writing pc-ns.14.vtu
+INFO: Writing pc-ns.15.vtk
+INFO: Writing pc-ns.15.vtu
+INFO: Step 17, time 20319.6, U, 3 components, 100 values
+INFO: Step 17, time 20319.6, S, 6 components, 100 values
+INFO: Step 17, time 20319.6, S_Mises, 1 components, 100 values
+INFO: Step 17, time 20319.6, S_Principal, 3 components, 100 values
+INFO: Step 17, time 20319.6, ERROR, 1 components, 100 values
+INFO: Writing pc-ns.16.vtk
+INFO: Writing pc-ns.16.vtu
 INFO: Step 18, time 21870.9, U, 3 components, 100 values
 INFO: Step 18, time 21870.9, S, 6 components, 100 values
 INFO: Step 18, time 21870.9, S_Mises, 1 components, 100 values
 INFO: Step 18, time 21870.9, S_Principal, 3 components, 100 values
 INFO: Step 18, time 21870.9, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.15.vtk
-INFO: Writing pc-ns.15.vtu
+INFO: Writing pc-ns.17.vtk
+INFO: Writing pc-ns.17.vtu
 INFO: Step 19, time 26012.1, U, 3 components, 100 values
 INFO: Step 19, time 26012.1, S, 6 components, 100 values
 INFO: Step 19, time 26012.1, S_Mises, 1 components, 100 values
 INFO: Step 19, time 26012.1, S_Principal, 3 components, 100 values
 INFO: Step 19, time 26012.1, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.16.vtk
-INFO: Writing pc-ns.16.vtu
-INFO: Step 21, time 44746.8, U, 3 components, 100 values
-INFO: Step 21, time 44746.8, S, 6 components, 100 values
-INFO: Step 21, time 44746.8, S_Mises, 1 components, 100 values
-INFO: Step 21, time 44746.8, S_Principal, 3 components, 100 values
-INFO: Step 21, time 44746.8, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.17.vtk
-INFO: Writing pc-ns.17.vtu
+INFO: Writing pc-ns.18.vtk
+INFO: Writing pc-ns.18.vtu
 INFO: Step 20, time 45709.7, U, 3 components, 100 values
 INFO: Step 20, time 45709.7, S, 6 components, 100 values
 INFO: Step 20, time 45709.7, S_Mises, 1 components, 100 values
 INFO: Step 20, time 45709.7, S_Principal, 3 components, 100 values
 INFO: Step 20, time 45709.7, ERROR, 1 components, 100 values
-INFO: Writing pc-ns.18.vtk
-INFO: Writing pc-ns.18.vtu
+INFO: Writing pc-ns.19.vtk
+INFO: Writing pc-ns.19.vtu
+INFO: Step 21, time 44746.8, U, 3 components, 100 values
+INFO: Step 21, time 44746.8, S, 6 components, 100 values
+INFO: Step 21, time 44746.8, S_Mises, 1 components, 100 values
+INFO: Step 21, time 44746.8, S_Principal, 3 components, 100 values
+INFO: Step 21, time 44746.8, ERROR, 1 components, 100 values
+INFO: Writing pc-ns.20.vtk
+INFO: Writing pc-ns.20.vtu
 
 ==================================================
 28: mkraska/Contact/Shell0/Refs/qu4_pc-ss/pc-ss.frd
 INFO: Reading pc-ss.frd
 INFO: 100 nodes
 INFO: 32 cells
-INFO: 17 time increments
+INFO: 20 time increments
 INFO: Step 2, time 0.00e+00, U, 3 components, 100 values
 INFO: Step 2, time 0.00e+00, S, 6 components, 100 values
 INFO: Step 2, time 0.00e+00, S_Mises, 1 components, 100 values
 INFO: Step 2, time 0.00e+00, S_Principal, 3 components, 100 values
 INFO: Step 2, time 0.00e+00, ERROR, 1 components, 100 values
+INFO: Writing pc-ss.01.vtk
+INFO: Writing pc-ss.01.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 100 values
 INFO: Step 3, time 0.00e+00, S, 6 components, 100 values
 INFO: Step 3, time 0.00e+00, S_Mises, 1 components, 100 values
 INFO: Step 3, time 0.00e+00, S_Principal, 3 components, 100 values
 INFO: Step 3, time 0.00e+00, ERROR, 1 components, 100 values
+INFO: Writing pc-ss.02.vtk
+INFO: Writing pc-ss.02.vtu
 INFO: Step 4, time 0.00e+00, U, 3 components, 100 values
 INFO: Step 4, time 0.00e+00, S, 6 components, 100 values
 INFO: Step 4, time 0.00e+00, S_Mises, 1 components, 100 values
 INFO: Step 4, time 0.00e+00, S_Principal, 3 components, 100 values
 INFO: Step 4, time 0.00e+00, ERROR, 1 components, 100 values
+INFO: Writing pc-ss.03.vtk
+INFO: Writing pc-ss.03.vtu
 INFO: Step 5, time 0.00e+00, U, 3 components, 100 values
 INFO: Step 5, time 0.00e+00, S, 6 components, 100 values
 INFO: Step 5, time 0.00e+00, S_Mises, 1 components, 100 values
 INFO: Step 5, time 0.00e+00, S_Principal, 3 components, 100 values
 INFO: Step 5, time 0.00e+00, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.01.vtk
-INFO: Writing pc-ss.01.vtu
+INFO: Writing pc-ss.04.vtk
+INFO: Writing pc-ss.04.vtu
 INFO: Step 6, time 1.81e-02, U, 3 components, 100 values
 INFO: Step 6, time 1.81e-02, S, 6 components, 100 values
 INFO: Step 6, time 1.81e-02, S_Mises, 1 components, 100 values
 INFO: Step 6, time 1.81e-02, S_Principal, 3 components, 100 values
 INFO: Step 6, time 1.81e-02, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.02.vtk
-INFO: Writing pc-ss.02.vtu
+INFO: Writing pc-ss.05.vtk
+INFO: Writing pc-ss.05.vtu
 INFO: Step 7, time 7.73e-02, U, 3 components, 100 values
 INFO: Step 7, time 7.73e-02, S, 6 components, 100 values
 INFO: Step 7, time 7.73e-02, S_Mises, 1 components, 100 values
 INFO: Step 7, time 7.73e-02, S_Principal, 3 components, 100 values
 INFO: Step 7, time 7.73e-02, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.03.vtk
-INFO: Writing pc-ss.03.vtu
+INFO: Writing pc-ss.06.vtk
+INFO: Writing pc-ss.06.vtu
 INFO: Step 8, time 1318.8, U, 3 components, 100 values
 INFO: Step 8, time 1318.8, S, 6 components, 100 values
 INFO: Step 8, time 1318.8, S_Mises, 1 components, 100 values
 INFO: Step 8, time 1318.8, S_Principal, 3 components, 100 values
 INFO: Step 8, time 1318.8, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.04.vtk
-INFO: Writing pc-ss.04.vtu
+INFO: Writing pc-ss.07.vtk
+INFO: Writing pc-ss.07.vtu
 INFO: Step 9, time 4000.8, U, 3 components, 100 values
 INFO: Step 9, time 4000.8, S, 6 components, 100 values
 INFO: Step 9, time 4000.8, S_Mises, 1 components, 100 values
 INFO: Step 9, time 4000.8, S_Principal, 3 components, 100 values
 INFO: Step 9, time 4000.8, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.05.vtk
-INFO: Writing pc-ss.05.vtu
+INFO: Writing pc-ss.08.vtk
+INFO: Writing pc-ss.08.vtu
 INFO: Step 10, time 6417.8, U, 3 components, 100 values
 INFO: Step 10, time 6417.8, S, 6 components, 100 values
 INFO: Step 10, time 6417.8, S_Mises, 1 components, 100 values
 INFO: Step 10, time 6417.8, S_Principal, 3 components, 100 values
 INFO: Step 10, time 6417.8, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.06.vtk
-INFO: Writing pc-ss.06.vtu
+INFO: Writing pc-ss.09.vtk
+INFO: Writing pc-ss.09.vtu
 INFO: Step 11, time 7391.3, U, 3 components, 100 values
 INFO: Step 11, time 7391.3, S, 6 components, 100 values
 INFO: Step 11, time 7391.3, S_Mises, 1 components, 100 values
 INFO: Step 11, time 7391.3, S_Principal, 3 components, 100 values
 INFO: Step 11, time 7391.3, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.07.vtk
-INFO: Writing pc-ss.07.vtu
+INFO: Writing pc-ss.10.vtk
+INFO: Writing pc-ss.10.vtu
 INFO: Step 12, time 13034.4, U, 3 components, 100 values
 INFO: Step 12, time 13034.4, S, 6 components, 100 values
 INFO: Step 12, time 13034.4, S_Mises, 1 components, 100 values
 INFO: Step 12, time 13034.4, S_Principal, 3 components, 100 values
 INFO: Step 12, time 13034.4, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.08.vtk
-INFO: Writing pc-ss.08.vtu
+INFO: Writing pc-ss.11.vtk
+INFO: Writing pc-ss.11.vtu
 INFO: Step 13, time 14079.2, U, 3 components, 100 values
 INFO: Step 13, time 14079.2, S, 6 components, 100 values
 INFO: Step 13, time 14079.2, S_Mises, 1 components, 100 values
 INFO: Step 13, time 14079.2, S_Principal, 3 components, 100 values
 INFO: Step 13, time 14079.2, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.09.vtk
-INFO: Writing pc-ss.09.vtu
+INFO: Writing pc-ss.12.vtk
+INFO: Writing pc-ss.12.vtu
 INFO: Step 14, time 19257.9, U, 3 components, 100 values
 INFO: Step 14, time 19257.9, S, 6 components, 100 values
 INFO: Step 14, time 19257.9, S_Mises, 1 components, 100 values
 INFO: Step 14, time 19257.9, S_Principal, 3 components, 100 values
 INFO: Step 14, time 19257.9, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.10.vtk
-INFO: Writing pc-ss.10.vtu
+INFO: Writing pc-ss.13.vtk
+INFO: Writing pc-ss.13.vtu
 INFO: Step 15, time 21288.3, U, 3 components, 100 values
 INFO: Step 15, time 21288.3, S, 6 components, 100 values
 INFO: Step 15, time 21288.3, S_Mises, 1 components, 100 values
 INFO: Step 15, time 21288.3, S_Principal, 3 components, 100 values
 INFO: Step 15, time 21288.3, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.11.vtk
-INFO: Writing pc-ss.11.vtu
+INFO: Writing pc-ss.14.vtk
+INFO: Writing pc-ss.14.vtu
 INFO: Step 16, time 22773.0, U, 3 components, 100 values
 INFO: Step 16, time 22773.0, S, 6 components, 100 values
 INFO: Step 16, time 22773.0, S_Mises, 1 components, 100 values
 INFO: Step 16, time 22773.0, S_Principal, 3 components, 100 values
 INFO: Step 16, time 22773.0, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.12.vtk
-INFO: Writing pc-ss.12.vtu
+INFO: Writing pc-ss.15.vtk
+INFO: Writing pc-ss.15.vtu
 INFO: Step 17, time 30890.5, U, 3 components, 100 values
 INFO: Step 17, time 30890.5, S, 6 components, 100 values
 INFO: Step 17, time 30890.5, S_Mises, 1 components, 100 values
 INFO: Step 17, time 30890.5, S_Principal, 3 components, 100 values
 INFO: Step 17, time 30890.5, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.13.vtk
-INFO: Writing pc-ss.13.vtu
+INFO: Writing pc-ss.16.vtk
+INFO: Writing pc-ss.16.vtu
 INFO: Step 18, time 34286.3, U, 3 components, 100 values
 INFO: Step 18, time 34286.3, S, 6 components, 100 values
 INFO: Step 18, time 34286.3, S_Mises, 1 components, 100 values
 INFO: Step 18, time 34286.3, S_Principal, 3 components, 100 values
 INFO: Step 18, time 34286.3, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.14.vtk
-INFO: Writing pc-ss.14.vtu
+INFO: Writing pc-ss.17.vtk
+INFO: Writing pc-ss.17.vtu
 INFO: Step 19, time 36613.0, U, 3 components, 100 values
 INFO: Step 19, time 36613.0, S, 6 components, 100 values
 INFO: Step 19, time 36613.0, S_Mises, 1 components, 100 values
 INFO: Step 19, time 36613.0, S_Principal, 3 components, 100 values
 INFO: Step 19, time 36613.0, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.15.vtk
-INFO: Writing pc-ss.15.vtu
+INFO: Writing pc-ss.18.vtk
+INFO: Writing pc-ss.18.vtu
 INFO: Step 20, time 55158.9, U, 3 components, 100 values
 INFO: Step 20, time 55158.9, S, 6 components, 100 values
 INFO: Step 20, time 55158.9, S_Mises, 1 components, 100 values
 INFO: Step 20, time 55158.9, S_Principal, 3 components, 100 values
 INFO: Step 20, time 55158.9, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.16.vtk
-INFO: Writing pc-ss.16.vtu
+INFO: Writing pc-ss.19.vtk
+INFO: Writing pc-ss.19.vtu
 INFO: Step 21, time 57134.6, U, 3 components, 100 values
 INFO: Step 21, time 57134.6, S, 6 components, 100 values
 INFO: Step 21, time 57134.6, S_Mises, 1 components, 100 values
 INFO: Step 21, time 57134.6, S_Principal, 3 components, 100 values
 INFO: Step 21, time 57134.6, ERROR, 1 components, 100 values
-INFO: Writing pc-ss.17.vtk
-INFO: Writing pc-ss.17.vtu
+INFO: Writing pc-ss.20.vtk
+INFO: Writing pc-ss.20.vtu
 
 ==================================================
 29: mkraska/Contact/Shell0/Refs/qu4_tie/tie.frd
 INFO: Reading tie.frd
 INFO: 100 nodes
 INFO: 32 cells
-INFO: 17 time increments
+INFO: 20 time increments
 INFO: Step 2, time 0.00e+00, U, 3 components, 100 values
 INFO: Step 2, time 0.00e+00, S, 6 components, 100 values
 INFO: Step 2, time 0.00e+00, S_Mises, 1 components, 100 values
 INFO: Step 2, time 0.00e+00, S_Principal, 3 components, 100 values
 INFO: Step 2, time 0.00e+00, ERROR, 1 components, 100 values
+INFO: Writing tie.01.vtk
+INFO: Writing tie.01.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 100 values
 INFO: Step 3, time 0.00e+00, S, 6 components, 100 values
 INFO: Step 3, time 0.00e+00, S_Mises, 1 components, 100 values
 INFO: Step 3, time 0.00e+00, S_Principal, 3 components, 100 values
 INFO: Step 3, time 0.00e+00, ERROR, 1 components, 100 values
+INFO: Writing tie.02.vtk
+INFO: Writing tie.02.vtu
 INFO: Step 4, time 0.00e+00, U, 3 components, 100 values
 INFO: Step 4, time 0.00e+00, S, 6 components, 100 values
 INFO: Step 4, time 0.00e+00, S_Mises, 1 components, 100 values
 INFO: Step 4, time 0.00e+00, S_Principal, 3 components, 100 values
 INFO: Step 4, time 0.00e+00, ERROR, 1 components, 100 values
+INFO: Writing tie.03.vtk
+INFO: Writing tie.03.vtu
 INFO: Step 5, time 0.00e+00, U, 3 components, 100 values
 INFO: Step 5, time 0.00e+00, S, 6 components, 100 values
 INFO: Step 5, time 0.00e+00, S_Mises, 1 components, 100 values
 INFO: Step 5, time 0.00e+00, S_Principal, 3 components, 100 values
 INFO: Step 5, time 0.00e+00, ERROR, 1 components, 100 values
-INFO: Writing tie.01.vtk
-INFO: Writing tie.01.vtu
+INFO: Writing tie.04.vtk
+INFO: Writing tie.04.vtu
 INFO: Step 6, time 4.63e-02, U, 3 components, 100 values
 INFO: Step 6, time 4.63e-02, S, 6 components, 100 values
 INFO: Step 6, time 4.63e-02, S_Mises, 1 components, 100 values
 INFO: Step 6, time 4.63e-02, S_Principal, 3 components, 100 values
 INFO: Step 6, time 4.63e-02, ERROR, 1 components, 100 values
-INFO: Writing tie.02.vtk
-INFO: Writing tie.02.vtu
+INFO: Writing tie.05.vtk
+INFO: Writing tie.05.vtu
 INFO: Step 7, time 6.59e-02, U, 3 components, 100 values
 INFO: Step 7, time 6.59e-02, S, 6 components, 100 values
 INFO: Step 7, time 6.59e-02, S_Mises, 1 components, 100 values
 INFO: Step 7, time 6.59e-02, S_Principal, 3 components, 100 values
 INFO: Step 7, time 6.59e-02, ERROR, 1 components, 100 values
-INFO: Writing tie.03.vtk
-INFO: Writing tie.03.vtu
+INFO: Writing tie.06.vtk
+INFO: Writing tie.06.vtu
 INFO: Step 8, time 1530.9, U, 3 components, 100 values
 INFO: Step 8, time 1530.9, S, 6 components, 100 values
 INFO: Step 8, time 1530.9, S_Mises, 1 components, 100 values
 INFO: Step 8, time 1530.9, S_Principal, 3 components, 100 values
 INFO: Step 8, time 1530.9, ERROR, 1 components, 100 values
-INFO: Writing tie.04.vtk
-INFO: Writing tie.04.vtu
+INFO: Writing tie.07.vtk
+INFO: Writing tie.07.vtu
 INFO: Step 9, time 2842.0, U, 3 components, 100 values
 INFO: Step 9, time 2842.0, S, 6 components, 100 values
 INFO: Step 9, time 2842.0, S_Mises, 1 components, 100 values
 INFO: Step 9, time 2842.0, S_Principal, 3 components, 100 values
 INFO: Step 9, time 2842.0, ERROR, 1 components, 100 values
-INFO: Writing tie.05.vtk
-INFO: Writing tie.05.vtu
+INFO: Writing tie.08.vtk
+INFO: Writing tie.08.vtu
 INFO: Step 10, time 5344.8, U, 3 components, 100 values
 INFO: Step 10, time 5344.8, S, 6 components, 100 values
 INFO: Step 10, time 5344.8, S_Mises, 1 components, 100 values
 INFO: Step 10, time 5344.8, S_Principal, 3 components, 100 values
 INFO: Step 10, time 5344.8, ERROR, 1 components, 100 values
-INFO: Writing tie.06.vtk
-INFO: Writing tie.06.vtu
+INFO: Writing tie.09.vtk
+INFO: Writing tie.09.vtu
 INFO: Step 11, time 5620.3, U, 3 components, 100 values
 INFO: Step 11, time 5620.3, S, 6 components, 100 values
 INFO: Step 11, time 5620.3, S_Mises, 1 components, 100 values
 INFO: Step 11, time 5620.3, S_Principal, 3 components, 100 values
 INFO: Step 11, time 5620.3, ERROR, 1 components, 100 values
-INFO: Writing tie.07.vtk
-INFO: Writing tie.07.vtu
+INFO: Writing tie.10.vtk
+INFO: Writing tie.10.vtu
 INFO: Step 12, time 7414.2, U, 3 components, 100 values
 INFO: Step 12, time 7414.2, S, 6 components, 100 values
 INFO: Step 12, time 7414.2, S_Mises, 1 components, 100 values
 INFO: Step 12, time 7414.2, S_Principal, 3 components, 100 values
 INFO: Step 12, time 7414.2, ERROR, 1 components, 100 values
-INFO: Writing tie.08.vtk
-INFO: Writing tie.08.vtu
+INFO: Writing tie.11.vtk
+INFO: Writing tie.11.vtu
 INFO: Step 13, time 14262.7, U, 3 components, 100 values
 INFO: Step 13, time 14262.7, S, 6 components, 100 values
 INFO: Step 13, time 14262.7, S_Mises, 1 components, 100 values
 INFO: Step 13, time 14262.7, S_Principal, 3 components, 100 values
 INFO: Step 13, time 14262.7, ERROR, 1 components, 100 values
-INFO: Writing tie.09.vtk
-INFO: Writing tie.09.vtu
+INFO: Writing tie.12.vtk
+INFO: Writing tie.12.vtu
 INFO: Step 14, time 16641.3, U, 3 components, 100 values
 INFO: Step 14, time 16641.3, S, 6 components, 100 values
 INFO: Step 14, time 16641.3, S_Mises, 1 components, 100 values
 INFO: Step 14, time 16641.3, S_Principal, 3 components, 100 values
 INFO: Step 14, time 16641.3, ERROR, 1 components, 100 values
-INFO: Writing tie.10.vtk
-INFO: Writing tie.10.vtu
+INFO: Writing tie.13.vtk
+INFO: Writing tie.13.vtu
 INFO: Step 15, time 19418.3, U, 3 components, 100 values
 INFO: Step 15, time 19418.3, S, 6 components, 100 values
 INFO: Step 15, time 19418.3, S_Mises, 1 components, 100 values
 INFO: Step 15, time 19418.3, S_Principal, 3 components, 100 values
 INFO: Step 15, time 19418.3, ERROR, 1 components, 100 values
-INFO: Writing tie.11.vtk
-INFO: Writing tie.11.vtu
+INFO: Writing tie.14.vtk
+INFO: Writing tie.14.vtu
 INFO: Step 16, time 20373.8, U, 3 components, 100 values
 INFO: Step 16, time 20373.8, S, 6 components, 100 values
 INFO: Step 16, time 20373.8, S_Mises, 1 components, 100 values
 INFO: Step 16, time 20373.8, S_Principal, 3 components, 100 values
 INFO: Step 16, time 20373.8, ERROR, 1 components, 100 values
-INFO: Writing tie.12.vtk
-INFO: Writing tie.12.vtu
+INFO: Writing tie.15.vtk
+INFO: Writing tie.15.vtu
 INFO: Step 17, time 20911.7, U, 3 components, 100 values
 INFO: Step 17, time 20911.7, S, 6 components, 100 values
 INFO: Step 17, time 20911.7, S_Mises, 1 components, 100 values
 INFO: Step 17, time 20911.7, S_Principal, 3 components, 100 values
 INFO: Step 17, time 20911.7, ERROR, 1 components, 100 values
-INFO: Writing tie.13.vtk
-INFO: Writing tie.13.vtu
+INFO: Writing tie.16.vtk
+INFO: Writing tie.16.vtu
 INFO: Step 18, time 22160.4, U, 3 components, 100 values
 INFO: Step 18, time 22160.4, S, 6 components, 100 values
 INFO: Step 18, time 22160.4, S_Mises, 1 components, 100 values
 INFO: Step 18, time 22160.4, S_Principal, 3 components, 100 values
 INFO: Step 18, time 22160.4, ERROR, 1 components, 100 values
-INFO: Writing tie.14.vtk
-INFO: Writing tie.14.vtu
+INFO: Writing tie.17.vtk
+INFO: Writing tie.17.vtu
 INFO: Step 19, time 26223.3, U, 3 components, 100 values
 INFO: Step 19, time 26223.3, S, 6 components, 100 values
 INFO: Step 19, time 26223.3, S_Mises, 1 components, 100 values
 INFO: Step 19, time 26223.3, S_Principal, 3 components, 100 values
 INFO: Step 19, time 26223.3, ERROR, 1 components, 100 values
-INFO: Writing tie.15.vtk
-INFO: Writing tie.15.vtu
+INFO: Writing tie.18.vtk
+INFO: Writing tie.18.vtu
 INFO: Step 20, time 45006.7, U, 3 components, 100 values
 INFO: Step 20, time 45006.7, S, 6 components, 100 values
 INFO: Step 20, time 45006.7, S_Mises, 1 components, 100 values
 INFO: Step 20, time 45006.7, S_Principal, 3 components, 100 values
 INFO: Step 20, time 45006.7, ERROR, 1 components, 100 values
-INFO: Writing tie.16.vtk
-INFO: Writing tie.16.vtu
+INFO: Writing tie.19.vtk
+INFO: Writing tie.19.vtu
 INFO: Step 21, time 45813.7, U, 3 components, 100 values
 INFO: Step 21, time 45813.7, S, 6 components, 100 values
 INFO: Step 21, time 45813.7, S_Mises, 1 components, 100 values
 INFO: Step 21, time 45813.7, S_Principal, 3 components, 100 values
 INFO: Step 21, time 45813.7, ERROR, 1 components, 100 values
-INFO: Writing tie.17.vtk
-INFO: Writing tie.17.vtu
+INFO: Writing tie.20.vtk
+INFO: Writing tie.20.vtu
 
 ==================================================
 30: mkraska/Contact/Shell0/Refs/qu8_equ/equ.frd
 INFO: Reading equ.frd
 INFO: 310 nodes
 INFO: 32 cells
-INFO: 16 time increments
+INFO: 20 time increments
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing equ.01.vtk
+INFO: Writing equ.01.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing equ.02.vtk
+INFO: Writing equ.02.vtu
 INFO: Step 4, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing equ.03.vtk
+INFO: Writing equ.03.vtu
 INFO: Step 5, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 5, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 5, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 5, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 5, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing equ.04.vtk
+INFO: Writing equ.04.vtu
 INFO: Step 6, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 6, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 6, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 6, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 6, time 0.00e+00, ERROR, 1 components, 310 values
-INFO: Writing equ.01.vtk
-INFO: Writing equ.01.vtu
+INFO: Writing equ.05.vtk
+INFO: Writing equ.05.vtu
 INFO: Step 7, time 9.67e-02, U, 3 components, 310 values
 INFO: Step 7, time 9.67e-02, S, 6 components, 310 values
 INFO: Step 7, time 9.67e-02, S_Mises, 1 components, 310 values
 INFO: Step 7, time 9.67e-02, S_Principal, 3 components, 310 values
 INFO: Step 7, time 9.67e-02, ERROR, 1 components, 310 values
-INFO: Writing equ.02.vtk
-INFO: Writing equ.02.vtu
+INFO: Writing equ.06.vtk
+INFO: Writing equ.06.vtu
 INFO: Step 8, time 4.63e-01, U, 3 components, 310 values
 INFO: Step 8, time 4.63e-01, S, 6 components, 310 values
 INFO: Step 8, time 4.63e-01, S_Mises, 1 components, 310 values
 INFO: Step 8, time 4.63e-01, S_Principal, 3 components, 310 values
 INFO: Step 8, time 4.63e-01, ERROR, 1 components, 310 values
-INFO: Writing equ.03.vtk
-INFO: Writing equ.03.vtu
+INFO: Writing equ.07.vtk
+INFO: Writing equ.07.vtu
 INFO: Step 9, time 2407.5, U, 3 components, 310 values
 INFO: Step 9, time 2407.5, S, 6 components, 310 values
 INFO: Step 9, time 2407.5, S_Mises, 1 components, 310 values
 INFO: Step 9, time 2407.5, S_Principal, 3 components, 310 values
 INFO: Step 9, time 2407.5, ERROR, 1 components, 310 values
-INFO: Writing equ.04.vtk
-INFO: Writing equ.04.vtu
+INFO: Writing equ.08.vtk
+INFO: Writing equ.08.vtu
 INFO: Step 10, time 2797.8, U, 3 components, 310 values
 INFO: Step 10, time 2797.8, S, 6 components, 310 values
 INFO: Step 10, time 2797.8, S_Mises, 1 components, 310 values
 INFO: Step 10, time 2797.8, S_Principal, 3 components, 310 values
 INFO: Step 10, time 2797.8, ERROR, 1 components, 310 values
-INFO: Writing equ.05.vtk
-INFO: Writing equ.05.vtu
+INFO: Writing equ.09.vtk
+INFO: Writing equ.09.vtu
 INFO: Step 11, time 3995.8, U, 3 components, 310 values
 INFO: Step 11, time 3995.8, S, 6 components, 310 values
 INFO: Step 11, time 3995.8, S_Mises, 1 components, 310 values
 INFO: Step 11, time 3995.8, S_Principal, 3 components, 310 values
 INFO: Step 11, time 3995.8, ERROR, 1 components, 310 values
-INFO: Writing equ.06.vtk
-INFO: Writing equ.06.vtu
+INFO: Writing equ.10.vtk
+INFO: Writing equ.10.vtu
 INFO: Step 12, time 5372.6, U, 3 components, 310 values
 INFO: Step 12, time 5372.6, S, 6 components, 310 values
 INFO: Step 12, time 5372.6, S_Mises, 1 components, 310 values
 INFO: Step 12, time 5372.6, S_Principal, 3 components, 310 values
 INFO: Step 12, time 5372.6, ERROR, 1 components, 310 values
-INFO: Writing equ.07.vtk
-INFO: Writing equ.07.vtu
+INFO: Writing equ.11.vtk
+INFO: Writing equ.11.vtu
 INFO: Step 13, time 7759.7, U, 3 components, 310 values
 INFO: Step 13, time 7759.7, S, 6 components, 310 values
 INFO: Step 13, time 7759.7, S_Mises, 1 components, 310 values
 INFO: Step 13, time 7759.7, S_Principal, 3 components, 310 values
 INFO: Step 13, time 7759.7, ERROR, 1 components, 310 values
-INFO: Writing equ.08.vtk
-INFO: Writing equ.08.vtu
+INFO: Writing equ.12.vtk
+INFO: Writing equ.12.vtu
 INFO: Step 14, time 8158.3, U, 3 components, 310 values
 INFO: Step 14, time 8158.3, S, 6 components, 310 values
 INFO: Step 14, time 8158.3, S_Mises, 1 components, 310 values
 INFO: Step 14, time 8158.3, S_Principal, 3 components, 310 values
 INFO: Step 14, time 8158.3, ERROR, 1 components, 310 values
-INFO: Writing equ.09.vtk
-INFO: Writing equ.09.vtu
+INFO: Writing equ.13.vtk
+INFO: Writing equ.13.vtu
 INFO: Step 15, time 8204.4, U, 3 components, 310 values
 INFO: Step 15, time 8204.4, S, 6 components, 310 values
 INFO: Step 15, time 8204.4, S_Mises, 1 components, 310 values
 INFO: Step 15, time 8204.4, S_Principal, 3 components, 310 values
 INFO: Step 15, time 8204.4, ERROR, 1 components, 310 values
-INFO: Writing equ.10.vtk
-INFO: Writing equ.10.vtu
+INFO: Writing equ.14.vtk
+INFO: Writing equ.14.vtu
 INFO: Step 16, time 12295.3, U, 3 components, 310 values
 INFO: Step 16, time 12295.3, S, 6 components, 310 values
 INFO: Step 16, time 12295.3, S_Mises, 1 components, 310 values
 INFO: Step 16, time 12295.3, S_Principal, 3 components, 310 values
 INFO: Step 16, time 12295.3, ERROR, 1 components, 310 values
-INFO: Writing equ.11.vtk
-INFO: Writing equ.11.vtu
+INFO: Writing equ.15.vtk
+INFO: Writing equ.15.vtu
 INFO: Step 17, time 14106.0, U, 3 components, 310 values
 INFO: Step 17, time 14106.0, S, 6 components, 310 values
 INFO: Step 17, time 14106.0, S_Mises, 1 components, 310 values
 INFO: Step 17, time 14106.0, S_Principal, 3 components, 310 values
 INFO: Step 17, time 14106.0, ERROR, 1 components, 310 values
-INFO: Writing equ.12.vtk
-INFO: Writing equ.12.vtu
+INFO: Writing equ.16.vtk
+INFO: Writing equ.16.vtu
 INFO: Step 18, time 14604.9, U, 3 components, 310 values
 INFO: Step 18, time 14604.9, S, 6 components, 310 values
 INFO: Step 18, time 14604.9, S_Mises, 1 components, 310 values
 INFO: Step 18, time 14604.9, S_Principal, 3 components, 310 values
 INFO: Step 18, time 14604.9, ERROR, 1 components, 310 values
-INFO: Writing equ.13.vtk
-INFO: Writing equ.13.vtu
+INFO: Writing equ.17.vtk
+INFO: Writing equ.17.vtu
 INFO: Step 19, time 14633.1, U, 3 components, 310 values
 INFO: Step 19, time 14633.1, S, 6 components, 310 values
 INFO: Step 19, time 14633.1, S_Mises, 1 components, 310 values
 INFO: Step 19, time 14633.1, S_Principal, 3 components, 310 values
 INFO: Step 19, time 14633.1, ERROR, 1 components, 310 values
-INFO: Writing equ.14.vtk
-INFO: Writing equ.14.vtu
+INFO: Writing equ.18.vtk
+INFO: Writing equ.18.vtu
 INFO: Step 20, time 16096.3, U, 3 components, 310 values
 INFO: Step 20, time 16096.3, S, 6 components, 310 values
 INFO: Step 20, time 16096.3, S_Mises, 1 components, 310 values
 INFO: Step 20, time 16096.3, S_Principal, 3 components, 310 values
 INFO: Step 20, time 16096.3, ERROR, 1 components, 310 values
-INFO: Writing equ.15.vtk
-INFO: Writing equ.15.vtu
+INFO: Writing equ.19.vtk
+INFO: Writing equ.19.vtu
 INFO: Step 21, time 18518.9, U, 3 components, 310 values
 INFO: Step 21, time 18518.9, S, 6 components, 310 values
 INFO: Step 21, time 18518.9, S_Mises, 1 components, 310 values
 INFO: Step 21, time 18518.9, S_Principal, 3 components, 310 values
 INFO: Step 21, time 18518.9, ERROR, 1 components, 310 values
-INFO: Writing equ.16.vtk
-INFO: Writing equ.16.vtu
+INFO: Writing equ.20.vtk
+INFO: Writing equ.20.vtu
 
 ==================================================
 31: mkraska/Contact/Shell0/Refs/qu8_pc-ns/pc-ns.frd
 INFO: Reading pc-ns.frd
 INFO: 310 nodes
 INFO: 32 cells
-INFO: 16 time increments
+INFO: 20 time increments
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.01.vtk
+INFO: Writing pc-ns.01.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.02.vtk
+INFO: Writing pc-ns.02.vtu
 INFO: Step 4, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.03.vtk
+INFO: Writing pc-ns.03.vtu
 INFO: Step 5, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 5, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 5, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 5, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 5, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.04.vtk
+INFO: Writing pc-ns.04.vtu
 INFO: Step 6, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 6, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 6, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 6, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 6, time 0.00e+00, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.01.vtk
-INFO: Writing pc-ns.01.vtu
+INFO: Writing pc-ns.05.vtk
+INFO: Writing pc-ns.05.vtu
 INFO: Step 7, time 3.07e-01, U, 3 components, 310 values
 INFO: Step 7, time 3.07e-01, S, 6 components, 310 values
 INFO: Step 7, time 3.07e-01, S_Mises, 1 components, 310 values
 INFO: Step 7, time 3.07e-01, S_Principal, 3 components, 310 values
 INFO: Step 7, time 3.07e-01, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.02.vtk
-INFO: Writing pc-ns.02.vtu
+INFO: Writing pc-ns.06.vtk
+INFO: Writing pc-ns.06.vtu
 INFO: Step 8, time 1405.0, U, 3 components, 310 values
 INFO: Step 8, time 1405.0, S, 6 components, 310 values
 INFO: Step 8, time 1405.0, S_Mises, 1 components, 310 values
 INFO: Step 8, time 1405.0, S_Principal, 3 components, 310 values
 INFO: Step 8, time 1405.0, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.03.vtk
-INFO: Writing pc-ns.03.vtu
+INFO: Writing pc-ns.07.vtk
+INFO: Writing pc-ns.07.vtu
 INFO: Step 9, time 2629.2, U, 3 components, 310 values
 INFO: Step 9, time 2629.2, S, 6 components, 310 values
 INFO: Step 9, time 2629.2, S_Mises, 1 components, 310 values
 INFO: Step 9, time 2629.2, S_Principal, 3 components, 310 values
 INFO: Step 9, time 2629.2, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.04.vtk
-INFO: Writing pc-ns.04.vtu
+INFO: Writing pc-ns.08.vtk
+INFO: Writing pc-ns.08.vtu
 INFO: Step 10, time 3223.4, U, 3 components, 310 values
 INFO: Step 10, time 3223.4, S, 6 components, 310 values
 INFO: Step 10, time 3223.4, S_Mises, 1 components, 310 values
 INFO: Step 10, time 3223.4, S_Principal, 3 components, 310 values
 INFO: Step 10, time 3223.4, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.05.vtk
-INFO: Writing pc-ns.05.vtu
+INFO: Writing pc-ns.09.vtk
+INFO: Writing pc-ns.09.vtu
 INFO: Step 11, time 4826.6, U, 3 components, 310 values
 INFO: Step 11, time 4826.6, S, 6 components, 310 values
 INFO: Step 11, time 4826.6, S_Mises, 1 components, 310 values
 INFO: Step 11, time 4826.6, S_Principal, 3 components, 310 values
 INFO: Step 11, time 4826.6, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.06.vtk
-INFO: Writing pc-ns.06.vtu
+INFO: Writing pc-ns.10.vtk
+INFO: Writing pc-ns.10.vtu
 INFO: Step 12, time 7154.9, U, 3 components, 310 values
 INFO: Step 12, time 7154.9, S, 6 components, 310 values
 INFO: Step 12, time 7154.9, S_Mises, 1 components, 310 values
 INFO: Step 12, time 7154.9, S_Principal, 3 components, 310 values
 INFO: Step 12, time 7154.9, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.07.vtk
-INFO: Writing pc-ns.07.vtu
-INFO: Step 14, time 7989.8, U, 3 components, 310 values
-INFO: Step 14, time 7989.8, S, 6 components, 310 values
-INFO: Step 14, time 7989.8, S_Mises, 1 components, 310 values
-INFO: Step 14, time 7989.8, S_Principal, 3 components, 310 values
-INFO: Step 14, time 7989.8, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.08.vtk
-INFO: Writing pc-ns.08.vtu
+INFO: Writing pc-ns.11.vtk
+INFO: Writing pc-ns.11.vtu
 INFO: Step 13, time 8741.4, U, 3 components, 310 values
 INFO: Step 13, time 8741.4, S, 6 components, 310 values
 INFO: Step 13, time 8741.4, S_Mises, 1 components, 310 values
 INFO: Step 13, time 8741.4, S_Principal, 3 components, 310 values
 INFO: Step 13, time 8741.4, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.09.vtk
-INFO: Writing pc-ns.09.vtu
+INFO: Writing pc-ns.12.vtk
+INFO: Writing pc-ns.12.vtu
+INFO: Step 14, time 7989.8, U, 3 components, 310 values
+INFO: Step 14, time 7989.8, S, 6 components, 310 values
+INFO: Step 14, time 7989.8, S_Mises, 1 components, 310 values
+INFO: Step 14, time 7989.8, S_Principal, 3 components, 310 values
+INFO: Step 14, time 7989.8, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.13.vtk
+INFO: Writing pc-ns.13.vtu
 INFO: Step 15, time 10523.0, U, 3 components, 310 values
 INFO: Step 15, time 10523.0, S, 6 components, 310 values
 INFO: Step 15, time 10523.0, S_Mises, 1 components, 310 values
 INFO: Step 15, time 10523.0, S_Principal, 3 components, 310 values
 INFO: Step 15, time 10523.0, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.10.vtk
-INFO: Writing pc-ns.10.vtu
+INFO: Writing pc-ns.14.vtk
+INFO: Writing pc-ns.14.vtu
 INFO: Step 16, time 12920.5, U, 3 components, 310 values
 INFO: Step 16, time 12920.5, S, 6 components, 310 values
 INFO: Step 16, time 12920.5, S_Mises, 1 components, 310 values
 INFO: Step 16, time 12920.5, S_Principal, 3 components, 310 values
 INFO: Step 16, time 12920.5, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.11.vtk
-INFO: Writing pc-ns.11.vtu
+INFO: Writing pc-ns.15.vtk
+INFO: Writing pc-ns.15.vtu
 INFO: Step 17, time 14307.7, U, 3 components, 310 values
 INFO: Step 17, time 14307.7, S, 6 components, 310 values
 INFO: Step 17, time 14307.7, S_Mises, 1 components, 310 values
 INFO: Step 17, time 14307.7, S_Principal, 3 components, 310 values
 INFO: Step 17, time 14307.7, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.12.vtk
-INFO: Writing pc-ns.12.vtu
+INFO: Writing pc-ns.16.vtk
+INFO: Writing pc-ns.16.vtu
 INFO: Step 18, time 14810.5, U, 3 components, 310 values
 INFO: Step 18, time 14810.5, S, 6 components, 310 values
 INFO: Step 18, time 14810.5, S_Mises, 1 components, 310 values
 INFO: Step 18, time 14810.5, S_Principal, 3 components, 310 values
 INFO: Step 18, time 14810.5, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.13.vtk
-INFO: Writing pc-ns.13.vtu
+INFO: Writing pc-ns.17.vtk
+INFO: Writing pc-ns.17.vtu
 INFO: Step 19, time 16683.4, U, 3 components, 310 values
 INFO: Step 19, time 16683.4, S, 6 components, 310 values
 INFO: Step 19, time 16683.4, S_Mises, 1 components, 310 values
 INFO: Step 19, time 16683.4, S_Principal, 3 components, 310 values
 INFO: Step 19, time 16683.4, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.14.vtk
-INFO: Writing pc-ns.14.vtu
+INFO: Writing pc-ns.18.vtk
+INFO: Writing pc-ns.18.vtu
 INFO: Step 20, time 20099.0, U, 3 components, 310 values
 INFO: Step 20, time 20099.0, S, 6 components, 310 values
 INFO: Step 20, time 20099.0, S_Mises, 1 components, 310 values
 INFO: Step 20, time 20099.0, S_Principal, 3 components, 310 values
 INFO: Step 20, time 20099.0, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.15.vtk
-INFO: Writing pc-ns.15.vtu
+INFO: Writing pc-ns.19.vtk
+INFO: Writing pc-ns.19.vtu
 INFO: Step 21, time 20490.5, U, 3 components, 310 values
 INFO: Step 21, time 20490.5, S, 6 components, 310 values
 INFO: Step 21, time 20490.5, S_Mises, 1 components, 310 values
 INFO: Step 21, time 20490.5, S_Principal, 3 components, 310 values
 INFO: Step 21, time 20490.5, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.16.vtk
-INFO: Writing pc-ns.16.vtu
+INFO: Writing pc-ns.20.vtk
+INFO: Writing pc-ns.20.vtu
 
 ==================================================
 32: mkraska/Contact/Shell0/Refs/qu8_pc-ss/pc-ss.frd
 INFO: Reading pc-ss.frd
 INFO: 310 nodes
 INFO: 32 cells
-INFO: 19 time increments
+INFO: 20 time increments
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing pc-ss.01.vtk
+INFO: Writing pc-ss.01.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.01.vtk
-INFO: Writing pc-ss.01.vtu
+INFO: Writing pc-ss.02.vtk
+INFO: Writing pc-ss.02.vtu
 INFO: Step 4, time 4.86e-02, U, 3 components, 310 values
 INFO: Step 4, time 4.86e-02, S, 6 components, 310 values
 INFO: Step 4, time 4.86e-02, S_Mises, 1 components, 310 values
 INFO: Step 4, time 4.86e-02, S_Principal, 3 components, 310 values
 INFO: Step 4, time 4.86e-02, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.02.vtk
-INFO: Writing pc-ss.02.vtu
+INFO: Writing pc-ss.03.vtk
+INFO: Writing pc-ss.03.vtu
 INFO: Step 5, time 1.78e-01, U, 3 components, 310 values
 INFO: Step 5, time 1.78e-01, S, 6 components, 310 values
 INFO: Step 5, time 1.78e-01, S_Mises, 1 components, 310 values
 INFO: Step 5, time 1.78e-01, S_Principal, 3 components, 310 values
 INFO: Step 5, time 1.78e-01, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.03.vtk
-INFO: Writing pc-ss.03.vtu
+INFO: Writing pc-ss.04.vtk
+INFO: Writing pc-ss.04.vtu
 INFO: Step 6, time 1.84e-01, U, 3 components, 310 values
 INFO: Step 6, time 1.84e-01, S, 6 components, 310 values
 INFO: Step 6, time 1.84e-01, S_Mises, 1 components, 310 values
 INFO: Step 6, time 1.84e-01, S_Principal, 3 components, 310 values
 INFO: Step 6, time 1.84e-01, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.04.vtk
-INFO: Writing pc-ss.04.vtu
+INFO: Writing pc-ss.05.vtk
+INFO: Writing pc-ss.05.vtu
 INFO: Step 7, time 748.3, U, 3 components, 310 values
 INFO: Step 7, time 748.3, S, 6 components, 310 values
 INFO: Step 7, time 748.3, S_Mises, 1 components, 310 values
 INFO: Step 7, time 748.3, S_Principal, 3 components, 310 values
 INFO: Step 7, time 748.3, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.05.vtk
-INFO: Writing pc-ss.05.vtu
+INFO: Writing pc-ss.06.vtk
+INFO: Writing pc-ss.06.vtu
 INFO: Step 8, time 1394.6, U, 3 components, 310 values
 INFO: Step 8, time 1394.6, S, 6 components, 310 values
 INFO: Step 8, time 1394.6, S_Mises, 1 components, 310 values
 INFO: Step 8, time 1394.6, S_Principal, 3 components, 310 values
 INFO: Step 8, time 1394.6, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.06.vtk
-INFO: Writing pc-ss.06.vtu
+INFO: Writing pc-ss.07.vtk
+INFO: Writing pc-ss.07.vtu
 INFO: Step 9, time 2963.3, U, 3 components, 310 values
 INFO: Step 9, time 2963.3, S, 6 components, 310 values
 INFO: Step 9, time 2963.3, S_Mises, 1 components, 310 values
 INFO: Step 9, time 2963.3, S_Principal, 3 components, 310 values
 INFO: Step 9, time 2963.3, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.07.vtk
-INFO: Writing pc-ss.07.vtu
+INFO: Writing pc-ss.08.vtk
+INFO: Writing pc-ss.08.vtu
 INFO: Step 10, time 3286.6, U, 3 components, 310 values
 INFO: Step 10, time 3286.6, S, 6 components, 310 values
 INFO: Step 10, time 3286.6, S_Mises, 1 components, 310 values
 INFO: Step 10, time 3286.6, S_Principal, 3 components, 310 values
 INFO: Step 10, time 3286.6, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.08.vtk
-INFO: Writing pc-ss.08.vtu
+INFO: Writing pc-ss.09.vtk
+INFO: Writing pc-ss.09.vtu
 INFO: Step 11, time 5466.9, U, 3 components, 310 values
 INFO: Step 11, time 5466.9, S, 6 components, 310 values
 INFO: Step 11, time 5466.9, S_Mises, 1 components, 310 values
 INFO: Step 11, time 5466.9, S_Principal, 3 components, 310 values
 INFO: Step 11, time 5466.9, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.09.vtk
-INFO: Writing pc-ss.09.vtu
+INFO: Writing pc-ss.10.vtk
+INFO: Writing pc-ss.10.vtu
 INFO: Step 12, time 6904.6, U, 3 components, 310 values
 INFO: Step 12, time 6904.6, S, 6 components, 310 values
 INFO: Step 12, time 6904.6, S_Mises, 1 components, 310 values
 INFO: Step 12, time 6904.6, S_Principal, 3 components, 310 values
 INFO: Step 12, time 6904.6, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.10.vtk
-INFO: Writing pc-ss.10.vtu
+INFO: Writing pc-ss.11.vtk
+INFO: Writing pc-ss.11.vtu
 INFO: Step 13, time 7974.5, U, 3 components, 310 values
 INFO: Step 13, time 7974.5, S, 6 components, 310 values
 INFO: Step 13, time 7974.5, S_Mises, 1 components, 310 values
 INFO: Step 13, time 7974.5, S_Principal, 3 components, 310 values
 INFO: Step 13, time 7974.5, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.11.vtk
-INFO: Writing pc-ss.11.vtu
+INFO: Writing pc-ss.12.vtk
+INFO: Writing pc-ss.12.vtu
 INFO: Step 14, time 10710.3, U, 3 components, 310 values
 INFO: Step 14, time 10710.3, S, 6 components, 310 values
 INFO: Step 14, time 10710.3, S_Mises, 1 components, 310 values
 INFO: Step 14, time 10710.3, S_Principal, 3 components, 310 values
 INFO: Step 14, time 10710.3, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.12.vtk
-INFO: Writing pc-ss.12.vtu
+INFO: Writing pc-ss.13.vtk
+INFO: Writing pc-ss.13.vtu
 INFO: Step 15, time 11437.8, U, 3 components, 310 values
 INFO: Step 15, time 11437.8, S, 6 components, 310 values
 INFO: Step 15, time 11437.8, S_Mises, 1 components, 310 values
 INFO: Step 15, time 11437.8, S_Principal, 3 components, 310 values
 INFO: Step 15, time 11437.8, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.13.vtk
-INFO: Writing pc-ss.13.vtu
+INFO: Writing pc-ss.14.vtk
+INFO: Writing pc-ss.14.vtu
 INFO: Step 16, time 13256.0, U, 3 components, 310 values
 INFO: Step 16, time 13256.0, S, 6 components, 310 values
 INFO: Step 16, time 13256.0, S_Mises, 1 components, 310 values
 INFO: Step 16, time 13256.0, S_Principal, 3 components, 310 values
 INFO: Step 16, time 13256.0, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.14.vtk
-INFO: Writing pc-ss.14.vtu
+INFO: Writing pc-ss.15.vtk
+INFO: Writing pc-ss.15.vtu
 INFO: Step 17, time 14456.7, U, 3 components, 310 values
 INFO: Step 17, time 14456.7, S, 6 components, 310 values
 INFO: Step 17, time 14456.7, S_Mises, 1 components, 310 values
 INFO: Step 17, time 14456.7, S_Principal, 3 components, 310 values
 INFO: Step 17, time 14456.7, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.15.vtk
-INFO: Writing pc-ss.15.vtu
+INFO: Writing pc-ss.16.vtk
+INFO: Writing pc-ss.16.vtu
 INFO: Step 18, time 14731.7, U, 3 components, 310 values
 INFO: Step 18, time 14731.7, S, 6 components, 310 values
 INFO: Step 18, time 14731.7, S_Mises, 1 components, 310 values
 INFO: Step 18, time 14731.7, S_Principal, 3 components, 310 values
 INFO: Step 18, time 14731.7, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.16.vtk
-INFO: Writing pc-ss.16.vtu
+INFO: Writing pc-ss.17.vtk
+INFO: Writing pc-ss.17.vtu
 INFO: Step 19, time 18495.9, U, 3 components, 310 values
 INFO: Step 19, time 18495.9, S, 6 components, 310 values
 INFO: Step 19, time 18495.9, S_Mises, 1 components, 310 values
 INFO: Step 19, time 18495.9, S_Principal, 3 components, 310 values
 INFO: Step 19, time 18495.9, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.17.vtk
-INFO: Writing pc-ss.17.vtu
+INFO: Writing pc-ss.18.vtk
+INFO: Writing pc-ss.18.vtu
 INFO: Step 20, time 20331.1, U, 3 components, 310 values
 INFO: Step 20, time 20331.1, S, 6 components, 310 values
 INFO: Step 20, time 20331.1, S_Mises, 1 components, 310 values
 INFO: Step 20, time 20331.1, S_Principal, 3 components, 310 values
 INFO: Step 20, time 20331.1, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.18.vtk
-INFO: Writing pc-ss.18.vtu
+INFO: Writing pc-ss.19.vtk
+INFO: Writing pc-ss.19.vtu
 INFO: Step 21, time 20612.1, U, 3 components, 310 values
 INFO: Step 21, time 20612.1, S, 6 components, 310 values
 INFO: Step 21, time 20612.1, S_Mises, 1 components, 310 values
 INFO: Step 21, time 20612.1, S_Principal, 3 components, 310 values
 INFO: Step 21, time 20612.1, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.19.vtk
-INFO: Writing pc-ss.19.vtu
+INFO: Writing pc-ss.20.vtk
+INFO: Writing pc-ss.20.vtu
 
 ==================================================
 33: mkraska/Contact/Shell0/Refs/qu8_tie/tie.frd
 INFO: Reading tie.frd
 INFO: 310 nodes
 INFO: 32 cells
-INFO: 16 time increments
+INFO: 20 time increments
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing tie.01.vtk
+INFO: Writing tie.01.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing tie.02.vtk
+INFO: Writing tie.02.vtu
 INFO: Step 4, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing tie.03.vtk
+INFO: Writing tie.03.vtu
 INFO: Step 5, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 5, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 5, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 5, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 5, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing tie.04.vtk
+INFO: Writing tie.04.vtu
 INFO: Step 6, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 6, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 6, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 6, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 6, time 0.00e+00, ERROR, 1 components, 310 values
-INFO: Writing tie.01.vtk
-INFO: Writing tie.01.vtu
+INFO: Writing tie.05.vtk
+INFO: Writing tie.05.vtu
 INFO: Step 7, time 3.19e-01, U, 3 components, 310 values
 INFO: Step 7, time 3.19e-01, S, 6 components, 310 values
 INFO: Step 7, time 3.19e-01, S_Mises, 1 components, 310 values
 INFO: Step 7, time 3.19e-01, S_Principal, 3 components, 310 values
 INFO: Step 7, time 3.19e-01, ERROR, 1 components, 310 values
-INFO: Writing tie.02.vtk
-INFO: Writing tie.02.vtu
+INFO: Writing tie.06.vtk
+INFO: Writing tie.06.vtu
 INFO: Step 8, time 1467.9, U, 3 components, 310 values
 INFO: Step 8, time 1467.9, S, 6 components, 310 values
 INFO: Step 8, time 1467.9, S_Mises, 1 components, 310 values
 INFO: Step 8, time 1467.9, S_Principal, 3 components, 310 values
 INFO: Step 8, time 1467.9, ERROR, 1 components, 310 values
-INFO: Writing tie.03.vtk
-INFO: Writing tie.03.vtu
+INFO: Writing tie.07.vtk
+INFO: Writing tie.07.vtu
 INFO: Step 9, time 2654.2, U, 3 components, 310 values
 INFO: Step 9, time 2654.2, S, 6 components, 310 values
 INFO: Step 9, time 2654.2, S_Mises, 1 components, 310 values
 INFO: Step 9, time 2654.2, S_Principal, 3 components, 310 values
 INFO: Step 9, time 2654.2, ERROR, 1 components, 310 values
-INFO: Writing tie.04.vtk
-INFO: Writing tie.04.vtu
+INFO: Writing tie.08.vtk
+INFO: Writing tie.08.vtu
 INFO: Step 10, time 3282.9, U, 3 components, 310 values
 INFO: Step 10, time 3282.9, S, 6 components, 310 values
 INFO: Step 10, time 3282.9, S_Mises, 1 components, 310 values
 INFO: Step 10, time 3282.9, S_Principal, 3 components, 310 values
 INFO: Step 10, time 3282.9, ERROR, 1 components, 310 values
-INFO: Writing tie.05.vtk
-INFO: Writing tie.05.vtu
+INFO: Writing tie.09.vtk
+INFO: Writing tie.09.vtu
 INFO: Step 11, time 4977.3, U, 3 components, 310 values
 INFO: Step 11, time 4977.3, S, 6 components, 310 values
 INFO: Step 11, time 4977.3, S_Mises, 1 components, 310 values
 INFO: Step 11, time 4977.3, S_Principal, 3 components, 310 values
 INFO: Step 11, time 4977.3, ERROR, 1 components, 310 values
-INFO: Writing tie.06.vtk
-INFO: Writing tie.06.vtu
+INFO: Writing tie.10.vtk
+INFO: Writing tie.10.vtu
 INFO: Step 12, time 7327.5, U, 3 components, 310 values
 INFO: Step 12, time 7327.5, S, 6 components, 310 values
 INFO: Step 12, time 7327.5, S_Mises, 1 components, 310 values
 INFO: Step 12, time 7327.5, S_Principal, 3 components, 310 values
 INFO: Step 12, time 7327.5, ERROR, 1 components, 310 values
-INFO: Writing tie.07.vtk
-INFO: Writing tie.07.vtu
+INFO: Writing tie.11.vtk
+INFO: Writing tie.11.vtu
 INFO: Step 13, time 8062.2, U, 3 components, 310 values
 INFO: Step 13, time 8062.2, S, 6 components, 310 values
 INFO: Step 13, time 8062.2, S_Mises, 1 components, 310 values
 INFO: Step 13, time 8062.2, S_Principal, 3 components, 310 values
 INFO: Step 13, time 8062.2, ERROR, 1 components, 310 values
-INFO: Writing tie.08.vtk
-INFO: Writing tie.08.vtu
+INFO: Writing tie.12.vtk
+INFO: Writing tie.12.vtu
 INFO: Step 14, time 8974.5, U, 3 components, 310 values
 INFO: Step 14, time 8974.5, S, 6 components, 310 values
 INFO: Step 14, time 8974.5, S_Mises, 1 components, 310 values
 INFO: Step 14, time 8974.5, S_Principal, 3 components, 310 values
 INFO: Step 14, time 8974.5, ERROR, 1 components, 310 values
-INFO: Writing tie.09.vtk
-INFO: Writing tie.09.vtu
+INFO: Writing tie.13.vtk
+INFO: Writing tie.13.vtu
 INFO: Step 15, time 10734.9, U, 3 components, 310 values
 INFO: Step 15, time 10734.9, S, 6 components, 310 values
 INFO: Step 15, time 10734.9, S_Mises, 1 components, 310 values
 INFO: Step 15, time 10734.9, S_Principal, 3 components, 310 values
 INFO: Step 15, time 10734.9, ERROR, 1 components, 310 values
-INFO: Writing tie.10.vtk
-INFO: Writing tie.10.vtu
+INFO: Writing tie.14.vtk
+INFO: Writing tie.14.vtu
 INFO: Step 16, time 12973.5, U, 3 components, 310 values
 INFO: Step 16, time 12973.5, S, 6 components, 310 values
 INFO: Step 16, time 12973.5, S_Mises, 1 components, 310 values
 INFO: Step 16, time 12973.5, S_Principal, 3 components, 310 values
 INFO: Step 16, time 12973.5, ERROR, 1 components, 310 values
-INFO: Writing tie.11.vtk
-INFO: Writing tie.11.vtu
+INFO: Writing tie.15.vtk
+INFO: Writing tie.15.vtu
 INFO: Step 17, time 14369.3, U, 3 components, 310 values
 INFO: Step 17, time 14369.3, S, 6 components, 310 values
 INFO: Step 17, time 14369.3, S_Mises, 1 components, 310 values
 INFO: Step 17, time 14369.3, S_Principal, 3 components, 310 values
 INFO: Step 17, time 14369.3, ERROR, 1 components, 310 values
-INFO: Writing tie.12.vtk
-INFO: Writing tie.12.vtu
+INFO: Writing tie.16.vtk
+INFO: Writing tie.16.vtu
 INFO: Step 18, time 15080.3, U, 3 components, 310 values
 INFO: Step 18, time 15080.3, S, 6 components, 310 values
 INFO: Step 18, time 15080.3, S_Mises, 1 components, 310 values
 INFO: Step 18, time 15080.3, S_Principal, 3 components, 310 values
 INFO: Step 18, time 15080.3, ERROR, 1 components, 310 values
-INFO: Writing tie.13.vtk
-INFO: Writing tie.13.vtu
+INFO: Writing tie.17.vtk
+INFO: Writing tie.17.vtu
 INFO: Step 19, time 16999.2, U, 3 components, 310 values
 INFO: Step 19, time 16999.2, S, 6 components, 310 values
 INFO: Step 19, time 16999.2, S_Mises, 1 components, 310 values
 INFO: Step 19, time 16999.2, S_Principal, 3 components, 310 values
 INFO: Step 19, time 16999.2, ERROR, 1 components, 310 values
-INFO: Writing tie.14.vtk
-INFO: Writing tie.14.vtu
+INFO: Writing tie.18.vtk
+INFO: Writing tie.18.vtu
 INFO: Step 20, time 20188.9, U, 3 components, 310 values
 INFO: Step 20, time 20188.9, S, 6 components, 310 values
 INFO: Step 20, time 20188.9, S_Mises, 1 components, 310 values
 INFO: Step 20, time 20188.9, S_Principal, 3 components, 310 values
 INFO: Step 20, time 20188.9, ERROR, 1 components, 310 values
-INFO: Writing tie.15.vtk
-INFO: Writing tie.15.vtu
+INFO: Writing tie.19.vtk
+INFO: Writing tie.19.vtu
 INFO: Step 21, time 20849.6, U, 3 components, 310 values
 INFO: Step 21, time 20849.6, S, 6 components, 310 values
 INFO: Step 21, time 20849.6, S_Mises, 1 components, 310 values
 INFO: Step 21, time 20849.6, S_Principal, 3 components, 310 values
 INFO: Step 21, time 20849.6, ERROR, 1 components, 310 values
-INFO: Writing tie.16.vtk
-INFO: Writing tie.16.vtu
+INFO: Writing tie.20.vtk
+INFO: Writing tie.20.vtu
 
 ==================================================
 34: mkraska/Contact/Shell0/Refs/qu8r_equ/equ.frd
 INFO: Reading equ.frd
 INFO: 310 nodes
 INFO: 32 cells
-INFO: 16 time increments
+INFO: 20 time increments
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing equ.01.vtk
+INFO: Writing equ.01.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing equ.02.vtk
+INFO: Writing equ.02.vtu
 INFO: Step 4, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing equ.03.vtk
+INFO: Writing equ.03.vtu
 INFO: Step 5, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 5, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 5, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 5, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 5, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing equ.04.vtk
+INFO: Writing equ.04.vtu
 INFO: Step 6, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 6, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 6, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 6, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 6, time 0.00e+00, ERROR, 1 components, 310 values
-INFO: Writing equ.01.vtk
-INFO: Writing equ.01.vtu
+INFO: Writing equ.05.vtk
+INFO: Writing equ.05.vtu
 INFO: Step 7, time 2.16e-02, U, 3 components, 310 values
 INFO: Step 7, time 2.16e-02, S, 6 components, 310 values
 INFO: Step 7, time 2.16e-02, S_Mises, 1 components, 310 values
 INFO: Step 7, time 2.16e-02, S_Principal, 3 components, 310 values
 INFO: Step 7, time 2.16e-02, ERROR, 1 components, 310 values
-INFO: Writing equ.02.vtk
-INFO: Writing equ.02.vtu
+INFO: Writing equ.06.vtk
+INFO: Writing equ.06.vtu
 INFO: Step 8, time 9.17e-02, U, 3 components, 310 values
 INFO: Step 8, time 9.17e-02, S, 6 components, 310 values
 INFO: Step 8, time 9.17e-02, S_Mises, 1 components, 310 values
 INFO: Step 8, time 9.17e-02, S_Principal, 3 components, 310 values
 INFO: Step 8, time 9.17e-02, ERROR, 1 components, 310 values
-INFO: Writing equ.03.vtk
-INFO: Writing equ.03.vtu
+INFO: Writing equ.07.vtk
+INFO: Writing equ.07.vtu
 INFO: Step 9, time 1.29e-01, U, 3 components, 310 values
 INFO: Step 9, time 1.29e-01, S, 6 components, 310 values
 INFO: Step 9, time 1.29e-01, S_Mises, 1 components, 310 values
 INFO: Step 9, time 1.29e-01, S_Principal, 3 components, 310 values
 INFO: Step 9, time 1.29e-01, ERROR, 1 components, 310 values
-INFO: Writing equ.04.vtk
-INFO: Writing equ.04.vtu
+INFO: Writing equ.08.vtk
+INFO: Writing equ.08.vtu
 INFO: Step 10, time 722.9, U, 3 components, 310 values
 INFO: Step 10, time 722.9, S, 6 components, 310 values
 INFO: Step 10, time 722.9, S_Mises, 1 components, 310 values
 INFO: Step 10, time 722.9, S_Principal, 3 components, 310 values
 INFO: Step 10, time 722.9, ERROR, 1 components, 310 values
-INFO: Writing equ.05.vtk
-INFO: Writing equ.05.vtu
+INFO: Writing equ.09.vtk
+INFO: Writing equ.09.vtu
 INFO: Step 11, time 2635.0, U, 3 components, 310 values
 INFO: Step 11, time 2635.0, S, 6 components, 310 values
 INFO: Step 11, time 2635.0, S_Mises, 1 components, 310 values
 INFO: Step 11, time 2635.0, S_Principal, 3 components, 310 values
 INFO: Step 11, time 2635.0, ERROR, 1 components, 310 values
-INFO: Writing equ.06.vtk
-INFO: Writing equ.06.vtu
+INFO: Writing equ.10.vtk
+INFO: Writing equ.10.vtu
 INFO: Step 12, time 3007.2, U, 3 components, 310 values
 INFO: Step 12, time 3007.2, S, 6 components, 310 values
 INFO: Step 12, time 3007.2, S_Mises, 1 components, 310 values
 INFO: Step 12, time 3007.2, S_Principal, 3 components, 310 values
 INFO: Step 12, time 3007.2, ERROR, 1 components, 310 values
-INFO: Writing equ.07.vtk
-INFO: Writing equ.07.vtu
+INFO: Writing equ.11.vtk
+INFO: Writing equ.11.vtu
 INFO: Step 13, time 4820.2, U, 3 components, 310 values
 INFO: Step 13, time 4820.2, S, 6 components, 310 values
 INFO: Step 13, time 4820.2, S_Mises, 1 components, 310 values
 INFO: Step 13, time 4820.2, S_Principal, 3 components, 310 values
 INFO: Step 13, time 4820.2, ERROR, 1 components, 310 values
-INFO: Writing equ.08.vtk
-INFO: Writing equ.08.vtu
+INFO: Writing equ.12.vtk
+INFO: Writing equ.12.vtu
 INFO: Step 14, time 6939.9, U, 3 components, 310 values
 INFO: Step 14, time 6939.9, S, 6 components, 310 values
 INFO: Step 14, time 6939.9, S_Mises, 1 components, 310 values
 INFO: Step 14, time 6939.9, S_Principal, 3 components, 310 values
 INFO: Step 14, time 6939.9, ERROR, 1 components, 310 values
-INFO: Writing equ.09.vtk
-INFO: Writing equ.09.vtu
+INFO: Writing equ.13.vtk
+INFO: Writing equ.13.vtu
 INFO: Step 15, time 7344.0, U, 3 components, 310 values
 INFO: Step 15, time 7344.0, S, 6 components, 310 values
 INFO: Step 15, time 7344.0, S_Mises, 1 components, 310 values
 INFO: Step 15, time 7344.0, S_Principal, 3 components, 310 values
 INFO: Step 15, time 7344.0, ERROR, 1 components, 310 values
-INFO: Writing equ.10.vtk
-INFO: Writing equ.10.vtu
+INFO: Writing equ.14.vtk
+INFO: Writing equ.14.vtu
 INFO: Step 16, time 7792.2, U, 3 components, 310 values
 INFO: Step 16, time 7792.2, S, 6 components, 310 values
 INFO: Step 16, time 7792.2, S_Mises, 1 components, 310 values
 INFO: Step 16, time 7792.2, S_Principal, 3 components, 310 values
 INFO: Step 16, time 7792.2, ERROR, 1 components, 310 values
-INFO: Writing equ.11.vtk
-INFO: Writing equ.11.vtu
+INFO: Writing equ.15.vtk
+INFO: Writing equ.15.vtu
 INFO: Step 17, time 10770.6, U, 3 components, 310 values
 INFO: Step 17, time 10770.6, S, 6 components, 310 values
 INFO: Step 17, time 10770.6, S_Mises, 1 components, 310 values
 INFO: Step 17, time 10770.6, S_Principal, 3 components, 310 values
 INFO: Step 17, time 10770.6, ERROR, 1 components, 310 values
-INFO: Writing equ.12.vtk
-INFO: Writing equ.12.vtu
+INFO: Writing equ.16.vtk
+INFO: Writing equ.16.vtu
 INFO: Step 18, time 11366.8, U, 3 components, 310 values
 INFO: Step 18, time 11366.8, S, 6 components, 310 values
 INFO: Step 18, time 11366.8, S_Mises, 1 components, 310 values
 INFO: Step 18, time 11366.8, S_Principal, 3 components, 310 values
 INFO: Step 18, time 11366.8, ERROR, 1 components, 310 values
-INFO: Writing equ.13.vtk
-INFO: Writing equ.13.vtu
+INFO: Writing equ.17.vtk
+INFO: Writing equ.17.vtu
 INFO: Step 19, time 12890.3, U, 3 components, 310 values
 INFO: Step 19, time 12890.3, S, 6 components, 310 values
 INFO: Step 19, time 12890.3, S_Mises, 1 components, 310 values
 INFO: Step 19, time 12890.3, S_Principal, 3 components, 310 values
 INFO: Step 19, time 12890.3, ERROR, 1 components, 310 values
-INFO: Writing equ.14.vtk
-INFO: Writing equ.14.vtu
+INFO: Writing equ.18.vtk
+INFO: Writing equ.18.vtu
 INFO: Step 20, time 14159.8, U, 3 components, 310 values
 INFO: Step 20, time 14159.8, S, 6 components, 310 values
 INFO: Step 20, time 14159.8, S_Mises, 1 components, 310 values
 INFO: Step 20, time 14159.8, S_Principal, 3 components, 310 values
 INFO: Step 20, time 14159.8, ERROR, 1 components, 310 values
-INFO: Writing equ.15.vtk
-INFO: Writing equ.15.vtu
+INFO: Writing equ.19.vtk
+INFO: Writing equ.19.vtu
 INFO: Step 21, time 14425.5, U, 3 components, 310 values
 INFO: Step 21, time 14425.5, S, 6 components, 310 values
 INFO: Step 21, time 14425.5, S_Mises, 1 components, 310 values
 INFO: Step 21, time 14425.5, S_Principal, 3 components, 310 values
 INFO: Step 21, time 14425.5, ERROR, 1 components, 310 values
-INFO: Writing equ.16.vtk
-INFO: Writing equ.16.vtu
+INFO: Writing equ.20.vtk
+INFO: Writing equ.20.vtu
 
 ==================================================
 35: mkraska/Contact/Shell0/Refs/qu8r_pc-ns/pc-ns.frd
 INFO: Reading pc-ns.frd
 INFO: 310 nodes
 INFO: 32 cells
-INFO: 18 time increments
-INFO: Step 5, time 0.00e+00, U, 3 components, 310 values
-INFO: Step 5, time 0.00e+00, S, 6 components, 310 values
-INFO: Step 5, time 0.00e+00, S_Mises, 1 components, 310 values
-INFO: Step 5, time 0.00e+00, S_Principal, 3 components, 310 values
-INFO: Step 5, time 0.00e+00, ERROR, 1 components, 310 values
-INFO: Step 6, time 0.00e+00, U, 3 components, 310 values
-INFO: Step 6, time 0.00e+00, S, 6 components, 310 values
-INFO: Step 6, time 0.00e+00, S_Mises, 1 components, 310 values
-INFO: Step 6, time 0.00e+00, S_Principal, 3 components, 310 values
-INFO: Step 6, time 0.00e+00, ERROR, 1 components, 310 values
-INFO: Step 7, time 0.00e+00, U, 3 components, 310 values
-INFO: Step 7, time 0.00e+00, S, 6 components, 310 values
-INFO: Step 7, time 0.00e+00, S_Mises, 1 components, 310 values
-INFO: Step 7, time 0.00e+00, S_Principal, 3 components, 310 values
-INFO: Step 7, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: 20 time increments
+INFO: Step 2, time 1.02e-01, U, 3 components, 310 values
+INFO: Step 2, time 1.02e-01, S, 6 components, 310 values
+INFO: Step 2, time 1.02e-01, S_Mises, 1 components, 310 values
+INFO: Step 2, time 1.02e-01, S_Principal, 3 components, 310 values
+INFO: Step 2, time 1.02e-01, ERROR, 1 components, 310 values
 INFO: Writing pc-ns.01.vtk
 INFO: Writing pc-ns.01.vtu
 INFO: Step 3, time 7.01e-02, U, 3 components, 310 values
@@ -2263,402 +2307,426 @@ INFO: Step 3, time 7.01e-02, S_Principal, 3 components, 310 values
 INFO: Step 3, time 7.01e-02, ERROR, 1 components, 310 values
 INFO: Writing pc-ns.02.vtk
 INFO: Writing pc-ns.02.vtu
-INFO: Step 2, time 1.02e-01, U, 3 components, 310 values
-INFO: Step 2, time 1.02e-01, S, 6 components, 310 values
-INFO: Step 2, time 1.02e-01, S_Mises, 1 components, 310 values
-INFO: Step 2, time 1.02e-01, S_Principal, 3 components, 310 values
-INFO: Step 2, time 1.02e-01, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.03.vtk
-INFO: Writing pc-ns.03.vtu
 INFO: Step 4, time 1.47e-01, U, 3 components, 310 values
 INFO: Step 4, time 1.47e-01, S, 6 components, 310 values
 INFO: Step 4, time 1.47e-01, S_Mises, 1 components, 310 values
 INFO: Step 4, time 1.47e-01, S_Principal, 3 components, 310 values
 INFO: Step 4, time 1.47e-01, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.03.vtk
+INFO: Writing pc-ns.03.vtu
+INFO: Step 5, time 0.00e+00, U, 3 components, 310 values
+INFO: Step 5, time 0.00e+00, S, 6 components, 310 values
+INFO: Step 5, time 0.00e+00, S_Mises, 1 components, 310 values
+INFO: Step 5, time 0.00e+00, S_Principal, 3 components, 310 values
+INFO: Step 5, time 0.00e+00, ERROR, 1 components, 310 values
 INFO: Writing pc-ns.04.vtk
 INFO: Writing pc-ns.04.vtu
+INFO: Step 6, time 0.00e+00, U, 3 components, 310 values
+INFO: Step 6, time 0.00e+00, S, 6 components, 310 values
+INFO: Step 6, time 0.00e+00, S_Mises, 1 components, 310 values
+INFO: Step 6, time 0.00e+00, S_Principal, 3 components, 310 values
+INFO: Step 6, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.05.vtk
+INFO: Writing pc-ns.05.vtu
+INFO: Step 7, time 0.00e+00, U, 3 components, 310 values
+INFO: Step 7, time 0.00e+00, S, 6 components, 310 values
+INFO: Step 7, time 0.00e+00, S_Mises, 1 components, 310 values
+INFO: Step 7, time 0.00e+00, S_Principal, 3 components, 310 values
+INFO: Step 7, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.06.vtk
+INFO: Writing pc-ns.06.vtu
 INFO: Step 8, time 1358.3, U, 3 components, 310 values
 INFO: Step 8, time 1358.3, S, 6 components, 310 values
 INFO: Step 8, time 1358.3, S_Mises, 1 components, 310 values
 INFO: Step 8, time 1358.3, S_Principal, 3 components, 310 values
 INFO: Step 8, time 1358.3, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.05.vtk
-INFO: Writing pc-ns.05.vtu
-INFO: Step 10, time 2579.2, U, 3 components, 310 values
-INFO: Step 10, time 2579.2, S, 6 components, 310 values
-INFO: Step 10, time 2579.2, S_Mises, 1 components, 310 values
-INFO: Step 10, time 2579.2, S_Principal, 3 components, 310 values
-INFO: Step 10, time 2579.2, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.06.vtk
-INFO: Writing pc-ns.06.vtu
+INFO: Writing pc-ns.07.vtk
+INFO: Writing pc-ns.07.vtu
 INFO: Step 9, time 3122.6, U, 3 components, 310 values
 INFO: Step 9, time 3122.6, S, 6 components, 310 values
 INFO: Step 9, time 3122.6, S_Mises, 1 components, 310 values
 INFO: Step 9, time 3122.6, S_Principal, 3 components, 310 values
 INFO: Step 9, time 3122.6, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.07.vtk
-INFO: Writing pc-ns.07.vtu
+INFO: Writing pc-ns.08.vtk
+INFO: Writing pc-ns.08.vtu
+INFO: Step 10, time 2579.2, U, 3 components, 310 values
+INFO: Step 10, time 2579.2, S, 6 components, 310 values
+INFO: Step 10, time 2579.2, S_Mises, 1 components, 310 values
+INFO: Step 10, time 2579.2, S_Principal, 3 components, 310 values
+INFO: Step 10, time 2579.2, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.09.vtk
+INFO: Writing pc-ns.09.vtu
 INFO: Step 11, time 4529.7, U, 3 components, 310 values
 INFO: Step 11, time 4529.7, S, 6 components, 310 values
 INFO: Step 11, time 4529.7, S_Mises, 1 components, 310 values
 INFO: Step 11, time 4529.7, S_Principal, 3 components, 310 values
 INFO: Step 11, time 4529.7, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.08.vtk
-INFO: Writing pc-ns.08.vtu
+INFO: Writing pc-ns.10.vtk
+INFO: Writing pc-ns.10.vtu
 INFO: Step 12, time 6685.4, U, 3 components, 310 values
 INFO: Step 12, time 6685.4, S, 6 components, 310 values
 INFO: Step 12, time 6685.4, S_Mises, 1 components, 310 values
 INFO: Step 12, time 6685.4, S_Principal, 3 components, 310 values
 INFO: Step 12, time 6685.4, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.09.vtk
-INFO: Writing pc-ns.09.vtu
-INFO: Step 14, time 7471.2, U, 3 components, 310 values
-INFO: Step 14, time 7471.2, S, 6 components, 310 values
-INFO: Step 14, time 7471.2, S_Mises, 1 components, 310 values
-INFO: Step 14, time 7471.2, S_Principal, 3 components, 310 values
-INFO: Step 14, time 7471.2, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.10.vtk
-INFO: Writing pc-ns.10.vtu
+INFO: Writing pc-ns.11.vtk
+INFO: Writing pc-ns.11.vtu
 INFO: Step 13, time 8245.1, U, 3 components, 310 values
 INFO: Step 13, time 8245.1, S, 6 components, 310 values
 INFO: Step 13, time 8245.1, S_Mises, 1 components, 310 values
 INFO: Step 13, time 8245.1, S_Principal, 3 components, 310 values
 INFO: Step 13, time 8245.1, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.11.vtk
-INFO: Writing pc-ns.11.vtu
+INFO: Writing pc-ns.12.vtk
+INFO: Writing pc-ns.12.vtu
+INFO: Step 14, time 7471.2, U, 3 components, 310 values
+INFO: Step 14, time 7471.2, S, 6 components, 310 values
+INFO: Step 14, time 7471.2, S_Mises, 1 components, 310 values
+INFO: Step 14, time 7471.2, S_Principal, 3 components, 310 values
+INFO: Step 14, time 7471.2, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.13.vtk
+INFO: Writing pc-ns.13.vtu
 INFO: Step 15, time 9574.3, U, 3 components, 310 values
 INFO: Step 15, time 9574.3, S, 6 components, 310 values
 INFO: Step 15, time 9574.3, S_Mises, 1 components, 310 values
 INFO: Step 15, time 9574.3, S_Principal, 3 components, 310 values
 INFO: Step 15, time 9574.3, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.12.vtk
-INFO: Writing pc-ns.12.vtu
+INFO: Writing pc-ns.14.vtk
+INFO: Writing pc-ns.14.vtu
 INFO: Step 16, time 11578.3, U, 3 components, 310 values
 INFO: Step 16, time 11578.3, S, 6 components, 310 values
 INFO: Step 16, time 11578.3, S_Mises, 1 components, 310 values
 INFO: Step 16, time 11578.3, S_Principal, 3 components, 310 values
 INFO: Step 16, time 11578.3, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.13.vtk
-INFO: Writing pc-ns.13.vtu
-INFO: Step 18, time 12274.1, U, 3 components, 310 values
-INFO: Step 18, time 12274.1, S, 6 components, 310 values
-INFO: Step 18, time 12274.1, S_Mises, 1 components, 310 values
-INFO: Step 18, time 12274.1, S_Principal, 3 components, 310 values
-INFO: Step 18, time 12274.1, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.14.vtk
-INFO: Writing pc-ns.14.vtu
+INFO: Writing pc-ns.15.vtk
+INFO: Writing pc-ns.15.vtu
 INFO: Step 17, time 12877.0, U, 3 components, 310 values
 INFO: Step 17, time 12877.0, S, 6 components, 310 values
 INFO: Step 17, time 12877.0, S_Mises, 1 components, 310 values
 INFO: Step 17, time 12877.0, S_Principal, 3 components, 310 values
 INFO: Step 17, time 12877.0, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.15.vtk
-INFO: Writing pc-ns.15.vtu
-INFO: Step 20, time 14813.9, U, 3 components, 310 values
-INFO: Step 20, time 14813.9, S, 6 components, 310 values
-INFO: Step 20, time 14813.9, S_Mises, 1 components, 310 values
-INFO: Step 20, time 14813.9, S_Principal, 3 components, 310 values
-INFO: Step 20, time 14813.9, ERROR, 1 components, 310 values
 INFO: Writing pc-ns.16.vtk
 INFO: Writing pc-ns.16.vtu
+INFO: Step 18, time 12274.1, U, 3 components, 310 values
+INFO: Step 18, time 12274.1, S, 6 components, 310 values
+INFO: Step 18, time 12274.1, S_Mises, 1 components, 310 values
+INFO: Step 18, time 12274.1, S_Principal, 3 components, 310 values
+INFO: Step 18, time 12274.1, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.17.vtk
+INFO: Writing pc-ns.17.vtu
 INFO: Step 19, time 16161.8, U, 3 components, 310 values
 INFO: Step 19, time 16161.8, S, 6 components, 310 values
 INFO: Step 19, time 16161.8, S_Mises, 1 components, 310 values
 INFO: Step 19, time 16161.8, S_Principal, 3 components, 310 values
 INFO: Step 19, time 16161.8, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.17.vtk
-INFO: Writing pc-ns.17.vtu
+INFO: Writing pc-ns.18.vtk
+INFO: Writing pc-ns.18.vtu
+INFO: Step 20, time 14813.9, U, 3 components, 310 values
+INFO: Step 20, time 14813.9, S, 6 components, 310 values
+INFO: Step 20, time 14813.9, S_Mises, 1 components, 310 values
+INFO: Step 20, time 14813.9, S_Principal, 3 components, 310 values
+INFO: Step 20, time 14813.9, ERROR, 1 components, 310 values
+INFO: Writing pc-ns.19.vtk
+INFO: Writing pc-ns.19.vtu
 INFO: Step 21, time 17817.6, U, 3 components, 310 values
 INFO: Step 21, time 17817.6, S, 6 components, 310 values
 INFO: Step 21, time 17817.6, S_Mises, 1 components, 310 values
 INFO: Step 21, time 17817.6, S_Principal, 3 components, 310 values
 INFO: Step 21, time 17817.6, ERROR, 1 components, 310 values
-INFO: Writing pc-ns.18.vtk
-INFO: Writing pc-ns.18.vtu
+INFO: Writing pc-ns.20.vtk
+INFO: Writing pc-ns.20.vtu
 
 ==================================================
 36: mkraska/Contact/Shell0/Refs/qu8r_pc-ss/pc-ss.frd
 INFO: Reading pc-ss.frd
 INFO: 310 nodes
 INFO: 32 cells
-INFO: 18 time increments
+INFO: 20 time increments
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing pc-ss.01.vtk
+INFO: Writing pc-ss.01.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing pc-ss.02.vtk
+INFO: Writing pc-ss.02.vtu
 INFO: Step 4, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.01.vtk
-INFO: Writing pc-ss.01.vtu
+INFO: Writing pc-ss.03.vtk
+INFO: Writing pc-ss.03.vtu
 INFO: Step 5, time 8.54e-02, U, 3 components, 310 values
 INFO: Step 5, time 8.54e-02, S, 6 components, 310 values
 INFO: Step 5, time 8.54e-02, S_Mises, 1 components, 310 values
 INFO: Step 5, time 8.54e-02, S_Principal, 3 components, 310 values
 INFO: Step 5, time 8.54e-02, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.02.vtk
-INFO: Writing pc-ss.02.vtu
+INFO: Writing pc-ss.04.vtk
+INFO: Writing pc-ss.04.vtu
 INFO: Step 6, time 1.16e-01, U, 3 components, 310 values
 INFO: Step 6, time 1.16e-01, S, 6 components, 310 values
 INFO: Step 6, time 1.16e-01, S_Mises, 1 components, 310 values
 INFO: Step 6, time 1.16e-01, S_Principal, 3 components, 310 values
 INFO: Step 6, time 1.16e-01, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.03.vtk
-INFO: Writing pc-ss.03.vtu
+INFO: Writing pc-ss.05.vtk
+INFO: Writing pc-ss.05.vtu
 INFO: Step 7, time 1087.3, U, 3 components, 310 values
 INFO: Step 7, time 1087.3, S, 6 components, 310 values
 INFO: Step 7, time 1087.3, S_Mises, 1 components, 310 values
 INFO: Step 7, time 1087.3, S_Principal, 3 components, 310 values
 INFO: Step 7, time 1087.3, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.04.vtk
-INFO: Writing pc-ss.04.vtu
+INFO: Writing pc-ss.06.vtk
+INFO: Writing pc-ss.06.vtu
 INFO: Step 8, time 1932.7, U, 3 components, 310 values
 INFO: Step 8, time 1932.7, S, 6 components, 310 values
 INFO: Step 8, time 1932.7, S_Mises, 1 components, 310 values
 INFO: Step 8, time 1932.7, S_Principal, 3 components, 310 values
 INFO: Step 8, time 1932.7, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.05.vtk
-INFO: Writing pc-ss.05.vtu
+INFO: Writing pc-ss.07.vtk
+INFO: Writing pc-ss.07.vtu
 INFO: Step 9, time 3433.9, U, 3 components, 310 values
 INFO: Step 9, time 3433.9, S, 6 components, 310 values
 INFO: Step 9, time 3433.9, S_Mises, 1 components, 310 values
 INFO: Step 9, time 3433.9, S_Principal, 3 components, 310 values
 INFO: Step 9, time 3433.9, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.06.vtk
-INFO: Writing pc-ss.06.vtu
+INFO: Writing pc-ss.08.vtk
+INFO: Writing pc-ss.08.vtu
 INFO: Step 10, time 3767.7, U, 3 components, 310 values
 INFO: Step 10, time 3767.7, S, 6 components, 310 values
 INFO: Step 10, time 3767.7, S_Mises, 1 components, 310 values
 INFO: Step 10, time 3767.7, S_Principal, 3 components, 310 values
 INFO: Step 10, time 3767.7, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.07.vtk
-INFO: Writing pc-ss.07.vtu
+INFO: Writing pc-ss.09.vtk
+INFO: Writing pc-ss.09.vtu
 INFO: Step 11, time 4788.0, U, 3 components, 310 values
 INFO: Step 11, time 4788.0, S, 6 components, 310 values
 INFO: Step 11, time 4788.0, S_Mises, 1 components, 310 values
 INFO: Step 11, time 4788.0, S_Principal, 3 components, 310 values
 INFO: Step 11, time 4788.0, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.08.vtk
-INFO: Writing pc-ss.08.vtu
+INFO: Writing pc-ss.10.vtk
+INFO: Writing pc-ss.10.vtu
 INFO: Step 12, time 5523.2, U, 3 components, 310 values
 INFO: Step 12, time 5523.2, S, 6 components, 310 values
 INFO: Step 12, time 5523.2, S_Mises, 1 components, 310 values
 INFO: Step 12, time 5523.2, S_Principal, 3 components, 310 values
 INFO: Step 12, time 5523.2, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.09.vtk
-INFO: Writing pc-ss.09.vtu
+INFO: Writing pc-ss.11.vtk
+INFO: Writing pc-ss.11.vtu
 INFO: Step 13, time 7994.9, U, 3 components, 310 values
 INFO: Step 13, time 7994.9, S, 6 components, 310 values
 INFO: Step 13, time 7994.9, S_Mises, 1 components, 310 values
 INFO: Step 13, time 7994.9, S_Principal, 3 components, 310 values
 INFO: Step 13, time 7994.9, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.10.vtk
-INFO: Writing pc-ss.10.vtu
+INFO: Writing pc-ss.12.vtk
+INFO: Writing pc-ss.12.vtu
 INFO: Step 14, time 9167.6, U, 3 components, 310 values
 INFO: Step 14, time 9167.6, S, 6 components, 310 values
 INFO: Step 14, time 9167.6, S_Mises, 1 components, 310 values
 INFO: Step 14, time 9167.6, S_Principal, 3 components, 310 values
 INFO: Step 14, time 9167.6, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.11.vtk
-INFO: Writing pc-ss.11.vtu
+INFO: Writing pc-ss.13.vtk
+INFO: Writing pc-ss.13.vtu
 INFO: Step 15, time 10387.9, U, 3 components, 310 values
 INFO: Step 15, time 10387.9, S, 6 components, 310 values
 INFO: Step 15, time 10387.9, S_Mises, 1 components, 310 values
 INFO: Step 15, time 10387.9, S_Principal, 3 components, 310 values
 INFO: Step 15, time 10387.9, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.12.vtk
-INFO: Writing pc-ss.12.vtu
+INFO: Writing pc-ss.14.vtk
+INFO: Writing pc-ss.14.vtu
 INFO: Step 16, time 11211.0, U, 3 components, 310 values
 INFO: Step 16, time 11211.0, S, 6 components, 310 values
 INFO: Step 16, time 11211.0, S_Mises, 1 components, 310 values
 INFO: Step 16, time 11211.0, S_Principal, 3 components, 310 values
 INFO: Step 16, time 11211.0, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.13.vtk
-INFO: Writing pc-ss.13.vtu
+INFO: Writing pc-ss.15.vtk
+INFO: Writing pc-ss.15.vtu
 INFO: Step 17, time 12499.2, U, 3 components, 310 values
 INFO: Step 17, time 12499.2, S, 6 components, 310 values
 INFO: Step 17, time 12499.2, S_Mises, 1 components, 310 values
 INFO: Step 17, time 12499.2, S_Principal, 3 components, 310 values
 INFO: Step 17, time 12499.2, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.14.vtk
-INFO: Writing pc-ss.14.vtu
+INFO: Writing pc-ss.16.vtk
+INFO: Writing pc-ss.16.vtu
 INFO: Step 18, time 13480.4, U, 3 components, 310 values
 INFO: Step 18, time 13480.4, S, 6 components, 310 values
 INFO: Step 18, time 13480.4, S_Mises, 1 components, 310 values
 INFO: Step 18, time 13480.4, S_Principal, 3 components, 310 values
 INFO: Step 18, time 13480.4, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.15.vtk
-INFO: Writing pc-ss.15.vtu
+INFO: Writing pc-ss.17.vtk
+INFO: Writing pc-ss.17.vtu
 INFO: Step 19, time 14681.7, U, 3 components, 310 values
 INFO: Step 19, time 14681.7, S, 6 components, 310 values
 INFO: Step 19, time 14681.7, S_Mises, 1 components, 310 values
 INFO: Step 19, time 14681.7, S_Principal, 3 components, 310 values
 INFO: Step 19, time 14681.7, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.16.vtk
-INFO: Writing pc-ss.16.vtu
+INFO: Writing pc-ss.18.vtk
+INFO: Writing pc-ss.18.vtu
 INFO: Step 20, time 16660.5, U, 3 components, 310 values
 INFO: Step 20, time 16660.5, S, 6 components, 310 values
 INFO: Step 20, time 16660.5, S_Mises, 1 components, 310 values
 INFO: Step 20, time 16660.5, S_Principal, 3 components, 310 values
 INFO: Step 20, time 16660.5, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.17.vtk
-INFO: Writing pc-ss.17.vtu
+INFO: Writing pc-ss.19.vtk
+INFO: Writing pc-ss.19.vtu
 INFO: Step 21, time 18755.0, U, 3 components, 310 values
 INFO: Step 21, time 18755.0, S, 6 components, 310 values
 INFO: Step 21, time 18755.0, S_Mises, 1 components, 310 values
 INFO: Step 21, time 18755.0, S_Principal, 3 components, 310 values
 INFO: Step 21, time 18755.0, ERROR, 1 components, 310 values
-INFO: Writing pc-ss.18.vtk
-INFO: Writing pc-ss.18.vtu
+INFO: Writing pc-ss.20.vtk
+INFO: Writing pc-ss.20.vtu
 
 ==================================================
 37: mkraska/Contact/Shell0/Refs/qu8r_tie/tie.frd
 INFO: Reading tie.frd
 INFO: 310 nodes
 INFO: 32 cells
-INFO: 17 time increments
+INFO: 20 time increments
 INFO: Step 2, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 2, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 2, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing tie.01.vtk
+INFO: Writing tie.01.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 3, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 3, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing tie.02.vtk
+INFO: Writing tie.02.vtu
 INFO: Step 4, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 4, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 4, time 0.00e+00, ERROR, 1 components, 310 values
+INFO: Writing tie.03.vtk
+INFO: Writing tie.03.vtu
 INFO: Step 5, time 0.00e+00, U, 3 components, 310 values
 INFO: Step 5, time 0.00e+00, S, 6 components, 310 values
 INFO: Step 5, time 0.00e+00, S_Mises, 1 components, 310 values
 INFO: Step 5, time 0.00e+00, S_Principal, 3 components, 310 values
 INFO: Step 5, time 0.00e+00, ERROR, 1 components, 310 values
-INFO: Writing tie.01.vtk
-INFO: Writing tie.01.vtu
+INFO: Writing tie.04.vtk
+INFO: Writing tie.04.vtu
 INFO: Step 6, time 5.26e-02, U, 3 components, 310 values
 INFO: Step 6, time 5.26e-02, S, 6 components, 310 values
 INFO: Step 6, time 5.26e-02, S_Mises, 1 components, 310 values
 INFO: Step 6, time 5.26e-02, S_Principal, 3 components, 310 values
 INFO: Step 6, time 5.26e-02, ERROR, 1 components, 310 values
-INFO: Writing tie.02.vtk
-INFO: Writing tie.02.vtu
+INFO: Writing tie.05.vtk
+INFO: Writing tie.05.vtu
 INFO: Step 7, time 1.12e-01, U, 3 components, 310 values
 INFO: Step 7, time 1.12e-01, S, 6 components, 310 values
 INFO: Step 7, time 1.12e-01, S_Mises, 1 components, 310 values
 INFO: Step 7, time 1.12e-01, S_Principal, 3 components, 310 values
 INFO: Step 7, time 1.12e-01, ERROR, 1 components, 310 values
-INFO: Writing tie.03.vtk
-INFO: Writing tie.03.vtu
+INFO: Writing tie.06.vtk
+INFO: Writing tie.06.vtu
 INFO: Step 8, time 1401.9, U, 3 components, 310 values
 INFO: Step 8, time 1401.9, S, 6 components, 310 values
 INFO: Step 8, time 1401.9, S_Mises, 1 components, 310 values
 INFO: Step 8, time 1401.9, S_Principal, 3 components, 310 values
 INFO: Step 8, time 1401.9, ERROR, 1 components, 310 values
-INFO: Writing tie.04.vtk
-INFO: Writing tie.04.vtu
+INFO: Writing tie.07.vtk
+INFO: Writing tie.07.vtu
 INFO: Step 9, time 2587.8, U, 3 components, 310 values
 INFO: Step 9, time 2587.8, S, 6 components, 310 values
 INFO: Step 9, time 2587.8, S_Mises, 1 components, 310 values
 INFO: Step 9, time 2587.8, S_Principal, 3 components, 310 values
 INFO: Step 9, time 2587.8, ERROR, 1 components, 310 values
-INFO: Writing tie.05.vtk
-INFO: Writing tie.05.vtu
+INFO: Writing tie.08.vtk
+INFO: Writing tie.08.vtu
 INFO: Step 10, time 3177.8, U, 3 components, 310 values
 INFO: Step 10, time 3177.8, S, 6 components, 310 values
 INFO: Step 10, time 3177.8, S_Mises, 1 components, 310 values
 INFO: Step 10, time 3177.8, S_Principal, 3 components, 310 values
 INFO: Step 10, time 3177.8, ERROR, 1 components, 310 values
-INFO: Writing tie.06.vtk
-INFO: Writing tie.06.vtu
+INFO: Writing tie.09.vtk
+INFO: Writing tie.09.vtu
 INFO: Step 11, time 4598.0, U, 3 components, 310 values
 INFO: Step 11, time 4598.0, S, 6 components, 310 values
 INFO: Step 11, time 4598.0, S_Mises, 1 components, 310 values
 INFO: Step 11, time 4598.0, S_Principal, 3 components, 310 values
 INFO: Step 11, time 4598.0, ERROR, 1 components, 310 values
-INFO: Writing tie.07.vtk
-INFO: Writing tie.07.vtu
+INFO: Writing tie.10.vtk
+INFO: Writing tie.10.vtu
 INFO: Step 12, time 6850.2, U, 3 components, 310 values
 INFO: Step 12, time 6850.2, S, 6 components, 310 values
 INFO: Step 12, time 6850.2, S_Mises, 1 components, 310 values
 INFO: Step 12, time 6850.2, S_Principal, 3 components, 310 values
 INFO: Step 12, time 6850.2, ERROR, 1 components, 310 values
-INFO: Writing tie.08.vtk
-INFO: Writing tie.08.vtu
+INFO: Writing tie.11.vtk
+INFO: Writing tie.11.vtu
 INFO: Step 13, time 7503.5, U, 3 components, 310 values
 INFO: Step 13, time 7503.5, S, 6 components, 310 values
 INFO: Step 13, time 7503.5, S_Mises, 1 components, 310 values
 INFO: Step 13, time 7503.5, S_Principal, 3 components, 310 values
 INFO: Step 13, time 7503.5, ERROR, 1 components, 310 values
-INFO: Writing tie.09.vtk
-INFO: Writing tie.09.vtu
+INFO: Writing tie.12.vtk
+INFO: Writing tie.12.vtu
 INFO: Step 14, time 8387.2, U, 3 components, 310 values
 INFO: Step 14, time 8387.2, S, 6 components, 310 values
 INFO: Step 14, time 8387.2, S_Mises, 1 components, 310 values
 INFO: Step 14, time 8387.2, S_Principal, 3 components, 310 values
 INFO: Step 14, time 8387.2, ERROR, 1 components, 310 values
-INFO: Writing tie.10.vtk
-INFO: Writing tie.10.vtu
+INFO: Writing tie.13.vtk
+INFO: Writing tie.13.vtu
 INFO: Step 15, time 9794.8, U, 3 components, 310 values
 INFO: Step 15, time 9794.8, S, 6 components, 310 values
 INFO: Step 15, time 9794.8, S_Mises, 1 components, 310 values
 INFO: Step 15, time 9794.8, S_Principal, 3 components, 310 values
 INFO: Step 15, time 9794.8, ERROR, 1 components, 310 values
-INFO: Writing tie.11.vtk
-INFO: Writing tie.11.vtu
+INFO: Writing tie.14.vtk
+INFO: Writing tie.14.vtu
 INFO: Step 16, time 11660.4, U, 3 components, 310 values
 INFO: Step 16, time 11660.4, S, 6 components, 310 values
 INFO: Step 16, time 11660.4, S_Mises, 1 components, 310 values
 INFO: Step 16, time 11660.4, S_Principal, 3 components, 310 values
 INFO: Step 16, time 11660.4, ERROR, 1 components, 310 values
-INFO: Writing tie.12.vtk
-INFO: Writing tie.12.vtu
+INFO: Writing tie.15.vtk
+INFO: Writing tie.15.vtu
 INFO: Step 17, time 12339.6, U, 3 components, 310 values
 INFO: Step 17, time 12339.6, S, 6 components, 310 values
 INFO: Step 17, time 12339.6, S_Mises, 1 components, 310 values
 INFO: Step 17, time 12339.6, S_Principal, 3 components, 310 values
 INFO: Step 17, time 12339.6, ERROR, 1 components, 310 values
-INFO: Writing tie.13.vtk
-INFO: Writing tie.13.vtu
+INFO: Writing tie.16.vtk
+INFO: Writing tie.16.vtu
 INFO: Step 18, time 13005.5, U, 3 components, 310 values
 INFO: Step 18, time 13005.5, S, 6 components, 310 values
 INFO: Step 18, time 13005.5, S_Mises, 1 components, 310 values
 INFO: Step 18, time 13005.5, S_Principal, 3 components, 310 values
 INFO: Step 18, time 13005.5, ERROR, 1 components, 310 values
-INFO: Writing tie.14.vtk
-INFO: Writing tie.14.vtu
+INFO: Writing tie.17.vtk
+INFO: Writing tie.17.vtu
 INFO: Step 19, time 14947.3, U, 3 components, 310 values
 INFO: Step 19, time 14947.3, S, 6 components, 310 values
 INFO: Step 19, time 14947.3, S_Mises, 1 components, 310 values
 INFO: Step 19, time 14947.3, S_Principal, 3 components, 310 values
 INFO: Step 19, time 14947.3, ERROR, 1 components, 310 values
-INFO: Writing tie.15.vtk
-INFO: Writing tie.15.vtu
+INFO: Writing tie.18.vtk
+INFO: Writing tie.18.vtu
 INFO: Step 20, time 16842.0, U, 3 components, 310 values
 INFO: Step 20, time 16842.0, S, 6 components, 310 values
 INFO: Step 20, time 16842.0, S_Mises, 1 components, 310 values
 INFO: Step 20, time 16842.0, S_Principal, 3 components, 310 values
 INFO: Step 20, time 16842.0, ERROR, 1 components, 310 values
-INFO: Writing tie.16.vtk
-INFO: Writing tie.16.vtu
+INFO: Writing tie.19.vtk
+INFO: Writing tie.19.vtu
 INFO: Step 21, time 17862.8, U, 3 components, 310 values
 INFO: Step 21, time 17862.8, S, 6 components, 310 values
 INFO: Step 21, time 17862.8, S_Mises, 1 components, 310 values
 INFO: Step 21, time 17862.8, S_Principal, 3 components, 310 values
 INFO: Step 21, time 17862.8, ERROR, 1 components, 310 values
-INFO: Writing tie.17.vtk
-INFO: Writing tie.17.vtu
+INFO: Writing tie.20.vtk
+INFO: Writing tie.20.vtu
 
 ==================================================
 38: mkraska/Contact/Shell1/Refs/tie.frd
@@ -3925,312 +3993,316 @@ INFO: Writing Biegung.129.vtu
 INFO: Reading MS.frd
 INFO: 21 nodes
 INFO: 7 cells
-INFO: 59 time increments
+INFO: 60 time increments
+INFO: Step 1, time 3521.9, U, 3 components, 21 values
+INFO: Writing MS.01.vtk
+INFO: Writing MS.01.vtu
+INFO: Step 2, time 9220.2, U, 3 components, 21 values
+INFO: Writing MS.02.vtk
+INFO: Writing MS.02.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 21 values
 INFO: Step 3, time 0.00e+00, DISPI, 3 components, 21 values
 INFO: Step 3, time 0.00e+00, PDISP, 6 components, 21 values
-INFO: Writing MS.01.vtk
-INFO: Writing MS.01.vtu
+INFO: Writing MS.03.vtk
+INFO: Writing MS.03.vtu
 INFO: Step 4, time 64.1, U, 3 components, 21 values
 INFO: Step 4, time 64.1, DISPI, 3 components, 21 values
 INFO: Step 4, time 64.1, PDISP, 6 components, 21 values
-INFO: Writing MS.02.vtk
-INFO: Writing MS.02.vtu
+INFO: Writing MS.04.vtk
+INFO: Writing MS.04.vtu
 INFO: Step 5, time 133.4, U, 3 components, 21 values
 INFO: Step 5, time 133.4, DISPI, 3 components, 21 values
 INFO: Step 5, time 133.4, PDISP, 6 components, 21 values
-INFO: Writing MS.03.vtk
-INFO: Writing MS.03.vtu
+INFO: Writing MS.05.vtk
+INFO: Writing MS.05.vtu
 INFO: Step 6, time 209.2, U, 3 components, 21 values
 INFO: Step 6, time 209.2, DISPI, 3 components, 21 values
 INFO: Step 6, time 209.2, PDISP, 6 components, 21 values
-INFO: Writing MS.04.vtk
-INFO: Writing MS.04.vtu
+INFO: Writing MS.06.vtk
+INFO: Writing MS.06.vtu
 INFO: Step 7, time 293.3, U, 3 components, 21 values
 INFO: Step 7, time 293.3, DISPI, 3 components, 21 values
 INFO: Step 7, time 293.3, PDISP, 6 components, 21 values
-INFO: Writing MS.05.vtk
-INFO: Writing MS.05.vtu
+INFO: Writing MS.07.vtk
+INFO: Writing MS.07.vtu
 INFO: Step 8, time 388.3, U, 3 components, 21 values
 INFO: Step 8, time 388.3, DISPI, 3 components, 21 values
 INFO: Step 8, time 388.3, PDISP, 6 components, 21 values
-INFO: Writing MS.06.vtk
-INFO: Writing MS.06.vtu
+INFO: Writing MS.08.vtk
+INFO: Writing MS.08.vtu
 INFO: Step 9, time 498.6, U, 3 components, 21 values
 INFO: Step 9, time 498.6, DISPI, 3 components, 21 values
 INFO: Step 9, time 498.6, PDISP, 6 components, 21 values
-INFO: Writing MS.07.vtk
-INFO: Writing MS.07.vtu
+INFO: Writing MS.09.vtk
+INFO: Writing MS.09.vtu
 INFO: Step 10, time 632.5, U, 3 components, 21 values
 INFO: Step 10, time 632.5, DISPI, 3 components, 21 values
 INFO: Step 10, time 632.5, PDISP, 6 components, 21 values
-INFO: Writing MS.08.vtk
-INFO: Writing MS.08.vtu
+INFO: Writing MS.10.vtk
+INFO: Writing MS.10.vtu
 INFO: Step 11, time 809.2, U, 3 components, 21 values
 INFO: Step 11, time 809.2, DISPI, 3 components, 21 values
 INFO: Step 11, time 809.2, PDISP, 6 components, 21 values
-INFO: Writing MS.09.vtk
-INFO: Writing MS.09.vtu
+INFO: Writing MS.11.vtk
+INFO: Writing MS.11.vtu
 INFO: Step 12, time 1101.0, U, 3 components, 21 values
 INFO: Step 12, time 1101.0, DISPI, 3 components, 21 values
 INFO: Step 12, time 1101.0, PDISP, 6 components, 21 values
-INFO: Writing MS.10.vtk
-INFO: Writing MS.10.vtu
+INFO: Writing MS.12.vtk
+INFO: Writing MS.12.vtu
 INFO: Step 13, time 2420.9, U, 3 components, 21 values
 INFO: Step 13, time 2420.9, DISPI, 3 components, 21 values
 INFO: Step 13, time 2420.9, PDISP, 6 components, 21 values
-INFO: Writing MS.11.vtk
-INFO: Writing MS.11.vtu
+INFO: Writing MS.13.vtk
+INFO: Writing MS.13.vtu
 INFO: Step 14, time 2712.8, U, 3 components, 21 values
 INFO: Step 14, time 2712.8, DISPI, 3 components, 21 values
 INFO: Step 14, time 2712.8, PDISP, 6 components, 21 values
-INFO: Writing MS.12.vtk
-INFO: Writing MS.12.vtu
+INFO: Writing MS.14.vtk
+INFO: Writing MS.14.vtu
 INFO: Step 15, time 2889.4, U, 3 components, 21 values
 INFO: Step 15, time 2889.4, DISPI, 3 components, 21 values
 INFO: Step 15, time 2889.4, PDISP, 6 components, 21 values
-INFO: Writing MS.13.vtk
-INFO: Writing MS.13.vtu
+INFO: Writing MS.15.vtk
+INFO: Writing MS.15.vtu
 INFO: Step 16, time 3023.4, U, 3 components, 21 values
 INFO: Step 16, time 3023.4, DISPI, 3 components, 21 values
 INFO: Step 16, time 3023.4, PDISP, 6 components, 21 values
-INFO: Writing MS.14.vtk
-INFO: Writing MS.14.vtu
+INFO: Writing MS.16.vtk
+INFO: Writing MS.16.vtu
 INFO: Step 17, time 3133.7, U, 3 components, 21 values
 INFO: Step 17, time 3133.7, DISPI, 3 components, 21 values
 INFO: Step 17, time 3133.7, PDISP, 6 components, 21 values
-INFO: Writing MS.15.vtk
-INFO: Writing MS.15.vtu
+INFO: Writing MS.17.vtk
+INFO: Writing MS.17.vtu
 INFO: Step 18, time 3228.7, U, 3 components, 21 values
 INFO: Step 18, time 3228.7, DISPI, 3 components, 21 values
 INFO: Step 18, time 3228.7, PDISP, 6 components, 21 values
-INFO: Writing MS.16.vtk
-INFO: Writing MS.16.vtu
+INFO: Writing MS.18.vtk
+INFO: Writing MS.18.vtu
 INFO: Step 19, time 3312.7, U, 3 components, 21 values
 INFO: Step 19, time 3312.7, DISPI, 3 components, 21 values
 INFO: Step 19, time 3312.7, PDISP, 6 components, 21 values
-INFO: Writing MS.17.vtk
-INFO: Writing MS.17.vtu
+INFO: Writing MS.19.vtk
+INFO: Writing MS.19.vtu
 INFO: Step 20, time 3388.5, U, 3 components, 21 values
 INFO: Step 20, time 3388.5, DISPI, 3 components, 21 values
 INFO: Step 20, time 3388.5, PDISP, 6 components, 21 values
-INFO: Writing MS.18.vtk
-INFO: Writing MS.18.vtu
+INFO: Writing MS.20.vtk
+INFO: Writing MS.20.vtu
 INFO: Step 21, time 3457.8, U, 3 components, 21 values
 INFO: Step 21, time 3457.8, DISPI, 3 components, 21 values
 INFO: Step 21, time 3457.8, PDISP, 6 components, 21 values
-INFO: Writing MS.19.vtk
-INFO: Writing MS.19.vtu
-INFO: Step 1, time 3521.9, U, 3 components, 21 values
+INFO: Writing MS.21.vtk
+INFO: Writing MS.21.vtu
 INFO: Step 22, time 3521.9, U, 3 components, 21 values
 INFO: Step 22, time 3521.9, DISPI, 3 components, 21 values
 INFO: Step 22, time 3521.9, PDISP, 6 components, 21 values
-INFO: Writing MS.20.vtk
-INFO: Writing MS.20.vtu
+INFO: Writing MS.22.vtk
+INFO: Writing MS.22.vtu
 INFO: Step 23, time 3625.6, U, 3 components, 21 values
 INFO: Step 23, time 3625.6, DISPI, 3 components, 21 values
 INFO: Step 23, time 3625.6, PDISP, 6 components, 21 values
-INFO: Writing MS.21.vtk
-INFO: Writing MS.21.vtu
+INFO: Writing MS.23.vtk
+INFO: Writing MS.23.vtu
 INFO: Step 24, time 3737.8, U, 3 components, 21 values
 INFO: Step 24, time 3737.8, DISPI, 3 components, 21 values
 INFO: Step 24, time 3737.8, PDISP, 6 components, 21 values
-INFO: Writing MS.22.vtk
-INFO: Writing MS.22.vtu
+INFO: Writing MS.24.vtk
+INFO: Writing MS.24.vtu
 INFO: Step 25, time 3860.5, U, 3 components, 21 values
 INFO: Step 25, time 3860.5, DISPI, 3 components, 21 values
 INFO: Step 25, time 3860.5, PDISP, 6 components, 21 values
-INFO: Writing MS.23.vtk
-INFO: Writing MS.23.vtu
+INFO: Writing MS.25.vtk
+INFO: Writing MS.25.vtu
 INFO: Step 26, time 3996.5, U, 3 components, 21 values
 INFO: Step 26, time 3996.5, DISPI, 3 components, 21 values
 INFO: Step 26, time 3996.5, PDISP, 6 components, 21 values
-INFO: Writing MS.24.vtk
-INFO: Writing MS.24.vtu
+INFO: Writing MS.26.vtk
+INFO: Writing MS.26.vtu
 INFO: Step 27, time 4150.1, U, 3 components, 21 values
 INFO: Step 27, time 4150.1, DISPI, 3 components, 21 values
 INFO: Step 27, time 4150.1, PDISP, 6 components, 21 values
-INFO: Writing MS.25.vtk
-INFO: Writing MS.25.vtu
+INFO: Writing MS.27.vtk
+INFO: Writing MS.27.vtu
 INFO: Step 28, time 4328.6, U, 3 components, 21 values
 INFO: Step 28, time 4328.6, DISPI, 3 components, 21 values
 INFO: Step 28, time 4328.6, PDISP, 6 components, 21 values
-INFO: Writing MS.26.vtk
-INFO: Writing MS.26.vtu
+INFO: Writing MS.28.vtk
+INFO: Writing MS.28.vtu
 INFO: Step 29, time 4545.3, U, 3 components, 21 values
 INFO: Step 29, time 4545.3, DISPI, 3 components, 21 values
 INFO: Step 29, time 4545.3, PDISP, 6 components, 21 values
-INFO: Writing MS.27.vtk
-INFO: Writing MS.27.vtu
+INFO: Writing MS.29.vtk
+INFO: Writing MS.29.vtu
 INFO: Step 30, time 4831.1, U, 3 components, 21 values
 INFO: Step 30, time 4831.1, DISPI, 3 components, 21 values
 INFO: Step 30, time 4831.1, PDISP, 6 components, 21 values
-INFO: Writing MS.28.vtk
-INFO: Writing MS.28.vtu
+INFO: Writing MS.30.vtk
+INFO: Writing MS.30.vtu
 INFO: Step 31, time 5303.3, U, 3 components, 21 values
 INFO: Step 31, time 5303.3, DISPI, 3 components, 21 values
 INFO: Step 31, time 5303.3, PDISP, 6 components, 21 values
-INFO: Writing MS.29.vtk
-INFO: Writing MS.29.vtu
+INFO: Writing MS.31.vtk
+INFO: Writing MS.31.vtu
 INFO: Step 32, time 7438.8, U, 3 components, 21 values
 INFO: Step 32, time 7438.8, DISPI, 3 components, 21 values
 INFO: Step 32, time 7438.8, PDISP, 6 components, 21 values
-INFO: Writing MS.30.vtk
-INFO: Writing MS.30.vtu
+INFO: Writing MS.32.vtk
+INFO: Writing MS.32.vtu
 INFO: Step 33, time 7911.0, U, 3 components, 21 values
 INFO: Step 33, time 7911.0, DISPI, 3 components, 21 values
 INFO: Step 33, time 7911.0, PDISP, 6 components, 21 values
-INFO: Writing MS.31.vtk
-INFO: Writing MS.31.vtu
+INFO: Writing MS.33.vtk
+INFO: Writing MS.33.vtu
 INFO: Step 34, time 8196.9, U, 3 components, 21 values
 INFO: Step 34, time 8196.9, DISPI, 3 components, 21 values
 INFO: Step 34, time 8196.9, PDISP, 6 components, 21 values
-INFO: Writing MS.32.vtk
-INFO: Writing MS.32.vtu
+INFO: Writing MS.34.vtk
+INFO: Writing MS.34.vtu
 INFO: Step 35, time 8413.6, U, 3 components, 21 values
 INFO: Step 35, time 8413.6, DISPI, 3 components, 21 values
 INFO: Step 35, time 8413.6, PDISP, 6 components, 21 values
-INFO: Writing MS.33.vtk
-INFO: Writing MS.33.vtu
+INFO: Writing MS.35.vtk
+INFO: Writing MS.35.vtu
 INFO: Step 36, time 8592.0, U, 3 components, 21 values
 INFO: Step 36, time 8592.0, DISPI, 3 components, 21 values
 INFO: Step 36, time 8592.0, PDISP, 6 components, 21 values
-INFO: Writing MS.34.vtk
-INFO: Writing MS.34.vtu
+INFO: Writing MS.36.vtk
+INFO: Writing MS.36.vtu
 INFO: Step 37, time 8745.7, U, 3 components, 21 values
 INFO: Step 37, time 8745.7, DISPI, 3 components, 21 values
 INFO: Step 37, time 8745.7, PDISP, 6 components, 21 values
-INFO: Writing MS.35.vtk
-INFO: Writing MS.35.vtu
+INFO: Writing MS.37.vtk
+INFO: Writing MS.37.vtu
 INFO: Step 38, time 8881.7, U, 3 components, 21 values
 INFO: Step 38, time 8881.7, DISPI, 3 components, 21 values
 INFO: Step 38, time 8881.7, PDISP, 6 components, 21 values
-INFO: Writing MS.36.vtk
-INFO: Writing MS.36.vtu
+INFO: Writing MS.38.vtk
+INFO: Writing MS.38.vtu
 INFO: Step 39, time 9004.3, U, 3 components, 21 values
 INFO: Step 39, time 9004.3, DISPI, 3 components, 21 values
 INFO: Step 39, time 9004.3, PDISP, 6 components, 21 values
-INFO: Writing MS.37.vtk
-INFO: Writing MS.37.vtu
+INFO: Writing MS.39.vtk
+INFO: Writing MS.39.vtu
 INFO: Step 40, time 9116.5, U, 3 components, 21 values
 INFO: Step 40, time 9116.5, DISPI, 3 components, 21 values
 INFO: Step 40, time 9116.5, PDISP, 6 components, 21 values
-INFO: Writing MS.38.vtk
-INFO: Writing MS.38.vtu
-INFO: Step 2, time 9220.2, U, 3 components, 21 values
-INFO: Writing MS.39.vtk
-INFO: Writing MS.39.vtu
+INFO: Writing MS.40.vtk
+INFO: Writing MS.40.vtu
 INFO: Step 41, time 9220.2, U, 3 components, 21 values
 INFO: Step 41, time 9220.2, DISPI, 3 components, 21 values
 INFO: Step 41, time 9220.2, PDISP, 6 components, 21 values
-INFO: Writing MS.40.vtk
-INFO: Writing MS.40.vtu
+INFO: Writing MS.41.vtk
+INFO: Writing MS.41.vtu
 INFO: Step 42, time 9270.8, U, 3 components, 21 values
 INFO: Step 42, time 9270.8, DISPI, 3 components, 21 values
 INFO: Step 42, time 9270.8, PDISP, 6 components, 21 values
-INFO: Writing MS.41.vtk
-INFO: Writing MS.41.vtu
+INFO: Writing MS.42.vtk
+INFO: Writing MS.42.vtu
 INFO: Step 43, time 9325.5, U, 3 components, 21 values
 INFO: Step 43, time 9325.5, DISPI, 3 components, 21 values
 INFO: Step 43, time 9325.5, PDISP, 6 components, 21 values
-INFO: Writing MS.42.vtk
-INFO: Writing MS.42.vtu
+INFO: Writing MS.43.vtk
+INFO: Writing MS.43.vtu
 INFO: Step 44, time 9385.4, U, 3 components, 21 values
 INFO: Step 44, time 9385.4, DISPI, 3 components, 21 values
 INFO: Step 44, time 9385.4, PDISP, 6 components, 21 values
-INFO: Writing MS.43.vtk
-INFO: Writing MS.43.vtu
+INFO: Writing MS.44.vtk
+INFO: Writing MS.44.vtu
 INFO: Step 45, time 9451.7, U, 3 components, 21 values
 INFO: Step 45, time 9451.7, DISPI, 3 components, 21 values
 INFO: Step 45, time 9451.7, PDISP, 6 components, 21 values
-INFO: Writing MS.44.vtk
-INFO: Writing MS.44.vtu
+INFO: Writing MS.45.vtk
+INFO: Writing MS.45.vtu
 INFO: Step 46, time 9526.6, U, 3 components, 21 values
 INFO: Step 46, time 9526.6, DISPI, 3 components, 21 values
 INFO: Step 46, time 9526.6, PDISP, 6 components, 21 values
-INFO: Writing MS.45.vtk
-INFO: Writing MS.45.vtu
+INFO: Writing MS.46.vtk
+INFO: Writing MS.46.vtu
 INFO: Step 47, time 9613.7, U, 3 components, 21 values
 INFO: Step 47, time 9613.7, DISPI, 3 components, 21 values
 INFO: Step 47, time 9613.7, PDISP, 6 components, 21 values
-INFO: Writing MS.46.vtk
-INFO: Writing MS.46.vtu
+INFO: Writing MS.47.vtk
+INFO: Writing MS.47.vtu
 INFO: Step 48, time 9719.4, U, 3 components, 21 values
 INFO: Step 48, time 9719.4, DISPI, 3 components, 21 values
 INFO: Step 48, time 9719.4, PDISP, 6 components, 21 values
-INFO: Writing MS.47.vtk
-INFO: Writing MS.47.vtu
+INFO: Writing MS.48.vtk
+INFO: Writing MS.48.vtu
 INFO: Step 49, time 9858.9, U, 3 components, 21 values
 INFO: Step 49, time 9858.9, DISPI, 3 components, 21 values
 INFO: Step 49, time 9858.9, PDISP, 6 components, 21 values
-INFO: Writing MS.48.vtk
-INFO: Writing MS.48.vtu
+INFO: Writing MS.49.vtk
+INFO: Writing MS.49.vtu
 INFO: Step 50, time 10089.2, U, 3 components, 21 values
 INFO: Step 50, time 10089.2, DISPI, 3 components, 21 values
 INFO: Step 50, time 10089.2, PDISP, 6 components, 21 values
-INFO: Writing MS.49.vtk
-INFO: Writing MS.49.vtu
+INFO: Writing MS.50.vtk
+INFO: Writing MS.50.vtu
 INFO: Step 51, time 11131.0, U, 3 components, 21 values
 INFO: Step 51, time 11131.0, DISPI, 3 components, 21 values
 INFO: Step 51, time 11131.0, PDISP, 6 components, 21 values
-INFO: Writing MS.50.vtk
-INFO: Writing MS.50.vtu
+INFO: Writing MS.51.vtk
+INFO: Writing MS.51.vtu
 INFO: Step 52, time 11361.3, U, 3 components, 21 values
 INFO: Step 52, time 11361.3, DISPI, 3 components, 21 values
 INFO: Step 52, time 11361.3, PDISP, 6 components, 21 values
-INFO: Writing MS.51.vtk
-INFO: Writing MS.51.vtu
+INFO: Writing MS.52.vtk
+INFO: Writing MS.52.vtu
 INFO: Step 53, time 11500.8, U, 3 components, 21 values
 INFO: Step 53, time 11500.8, DISPI, 3 components, 21 values
 INFO: Step 53, time 11500.8, PDISP, 6 components, 21 values
-INFO: Writing MS.52.vtk
-INFO: Writing MS.52.vtu
+INFO: Writing MS.53.vtk
+INFO: Writing MS.53.vtu
 INFO: Step 54, time 11606.5, U, 3 components, 21 values
 INFO: Step 54, time 11606.5, DISPI, 3 components, 21 values
 INFO: Step 54, time 11606.5, PDISP, 6 components, 21 values
-INFO: Writing MS.53.vtk
-INFO: Writing MS.53.vtu
+INFO: Writing MS.54.vtk
+INFO: Writing MS.54.vtu
 INFO: Step 55, time 11693.6, U, 3 components, 21 values
 INFO: Step 55, time 11693.6, DISPI, 3 components, 21 values
 INFO: Step 55, time 11693.6, PDISP, 6 components, 21 values
-INFO: Writing MS.54.vtk
-INFO: Writing MS.54.vtu
+INFO: Writing MS.55.vtk
+INFO: Writing MS.55.vtu
 INFO: Step 56, time 11768.5, U, 3 components, 21 values
 INFO: Step 56, time 11768.5, DISPI, 3 components, 21 values
 INFO: Step 56, time 11768.5, PDISP, 6 components, 21 values
-INFO: Writing MS.55.vtk
-INFO: Writing MS.55.vtu
+INFO: Writing MS.56.vtk
+INFO: Writing MS.56.vtu
 INFO: Step 57, time 11834.8, U, 3 components, 21 values
 INFO: Step 57, time 11834.8, DISPI, 3 components, 21 values
 INFO: Step 57, time 11834.8, PDISP, 6 components, 21 values
-INFO: Writing MS.56.vtk
-INFO: Writing MS.56.vtu
+INFO: Writing MS.57.vtk
+INFO: Writing MS.57.vtu
 INFO: Step 58, time 11894.7, U, 3 components, 21 values
 INFO: Step 58, time 11894.7, DISPI, 3 components, 21 values
 INFO: Step 58, time 11894.7, PDISP, 6 components, 21 values
-INFO: Writing MS.57.vtk
-INFO: Writing MS.57.vtu
+INFO: Writing MS.58.vtk
+INFO: Writing MS.58.vtu
 INFO: Step 59, time 11949.4, U, 3 components, 21 values
 INFO: Step 59, time 11949.4, DISPI, 3 components, 21 values
 INFO: Step 59, time 11949.4, PDISP, 6 components, 21 values
-INFO: Writing MS.58.vtk
-INFO: Writing MS.58.vtu
+INFO: Writing MS.59.vtk
+INFO: Writing MS.59.vtu
 INFO: Step 60, time 12000.0, U, 3 components, 21 values
 INFO: Step 60, time 12000.0, DISPI, 3 components, 21 values
 INFO: Step 60, time 12000.0, PDISP, 6 components, 21 values
-INFO: Writing MS.59.vtk
-INFO: Writing MS.59.vtu
+INFO: Writing MS.60.vtk
+INFO: Writing MS.60.vtu
 
 ==================================================
 43: mkraska/Dynamics/Discrete/Refs/MSM.frd
 INFO: Reading MSM.frd
 INFO: 3 nodes
 INFO: 4 cells
-INFO: 1 time increment
+INFO: 2 time increments
 INFO: Step 1, time 0.00e+00, U, 3 components, 3 values
+INFO: Writing MSM.1.vtk
+INFO: Writing MSM.1.vtu
 INFO: Step 2, time 0.00e+00, U, 3 components, 3 values
-INFO: Writing MSM.vtk
-INFO: Writing MSM.vtu
+INFO: Writing MSM.2.vtk
+INFO: Writing MSM.2.vtu
 
 ==================================================
 44: mkraska/Elements/Solid/Refs/solid.frd
@@ -5094,42 +5166,42 @@ INFO: Reading solve.frd
 INFO: 1203 nodes
 INFO: 150 cells
 INFO: 11 time increments
-INFO: Step 8, time 0.00e+00, U, 3 components, 1203 values
-INFO: Writing solve.01.vtk
-INFO: Writing solve.01.vtu
-INFO: Step 9, time 7.19e-01, U, 3 components, 1203 values
-INFO: Writing solve.02.vtk
-INFO: Writing solve.02.vtu
 INFO: Step 1, time 1.0, U, 3 components, 1203 values
 INFO: Step 1, time 1.0, S, 6 components, 1203 values
 INFO: Step 1, time 1.0, S_Mises, 1 components, 1203 values
 INFO: Step 1, time 1.0, S_Principal, 3 components, 1203 values
 INFO: Step 1, time 1.0, RF, 3 components, 1203 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 1203 values
+INFO: Writing solve.01.vtk
+INFO: Writing solve.01.vtu
+INFO: Step 2, time 45.3, U, 3 components, 1203 values
+INFO: Writing solve.02.vtk
+INFO: Writing solve.02.vtu
+INFO: Step 3, time 99.9, U, 3 components, 1203 values
 INFO: Writing solve.03.vtk
 INFO: Writing solve.03.vtu
-INFO: Step 10, time 1.3, U, 3 components, 1203 values
+INFO: Step 4, time 173.1, U, 3 components, 1203 values
 INFO: Writing solve.04.vtk
 INFO: Writing solve.04.vtu
-INFO: Step 11, time 1.9, U, 3 components, 1203 values
+INFO: Step 5, time 243.5, U, 3 components, 1203 values
 INFO: Writing solve.05.vtk
 INFO: Writing solve.05.vtu
-INFO: Step 2, time 45.3, U, 3 components, 1203 values
+INFO: Step 6, time 291.5, U, 3 components, 1203 values
 INFO: Writing solve.06.vtk
 INFO: Writing solve.06.vtu
-INFO: Step 3, time 99.9, U, 3 components, 1203 values
+INFO: Step 7, time 365.7, U, 3 components, 1203 values
 INFO: Writing solve.07.vtk
 INFO: Writing solve.07.vtu
-INFO: Step 4, time 173.1, U, 3 components, 1203 values
+INFO: Step 8, time 0.00e+00, U, 3 components, 1203 values
 INFO: Writing solve.08.vtk
 INFO: Writing solve.08.vtu
-INFO: Step 5, time 243.5, U, 3 components, 1203 values
+INFO: Step 9, time 7.19e-01, U, 3 components, 1203 values
 INFO: Writing solve.09.vtk
 INFO: Writing solve.09.vtu
-INFO: Step 6, time 291.5, U, 3 components, 1203 values
+INFO: Step 10, time 1.3, U, 3 components, 1203 values
 INFO: Writing solve.10.vtk
 INFO: Writing solve.10.vtu
-INFO: Step 7, time 365.7, U, 3 components, 1203 values
+INFO: Step 11, time 1.9, U, 3 components, 1203 values
 INFO: Writing solve.11.vtk
 INFO: Writing solve.11.vtu
 
@@ -5138,39 +5210,43 @@ INFO: Writing solve.11.vtu
 INFO: Reading modal.frd
 INFO: 1010 nodes
 INFO: 476 cells
-INFO: 10 time increments
+INFO: 12 time increments
 INFO: Step 1, time 0.00e+00, U, 3 components, 1010 values
-INFO: Step 2, time 0.00e+00, U, 3 components, 1010 values
-INFO: Step 3, time 0.00e+00, U, 3 components, 1010 values
 INFO: Writing modal.01.vtk
 INFO: Writing modal.01.vtu
-INFO: Step 4, time 2.98e-04, U, 3 components, 1010 values
+INFO: Step 2, time 0.00e+00, U, 3 components, 1010 values
 INFO: Writing modal.02.vtk
 INFO: Writing modal.02.vtu
-INFO: Step 5, time 1.21e-03, U, 3 components, 1010 values
+INFO: Step 3, time 0.00e+00, U, 3 components, 1010 values
 INFO: Writing modal.03.vtk
 INFO: Writing modal.03.vtu
-INFO: Step 6, time 1.61e-03, U, 3 components, 1010 values
+INFO: Step 4, time 2.98e-04, U, 3 components, 1010 values
 INFO: Writing modal.04.vtk
 INFO: Writing modal.04.vtu
-INFO: Step 7, time 1811.6, U, 3 components, 1010 values
+INFO: Step 5, time 1.21e-03, U, 3 components, 1010 values
 INFO: Writing modal.05.vtk
 INFO: Writing modal.05.vtu
-INFO: Step 8, time 1812.5, U, 3 components, 1010 values
+INFO: Step 6, time 1.61e-03, U, 3 components, 1010 values
 INFO: Writing modal.06.vtk
 INFO: Writing modal.06.vtu
-INFO: Step 9, time 2820.0, U, 3 components, 1010 values
+INFO: Step 7, time 1811.6, U, 3 components, 1010 values
 INFO: Writing modal.07.vtk
 INFO: Writing modal.07.vtu
-INFO: Step 10, time 4844.7, U, 3 components, 1010 values
+INFO: Step 8, time 1812.5, U, 3 components, 1010 values
 INFO: Writing modal.08.vtk
 INFO: Writing modal.08.vtu
-INFO: Step 11, time 4844.8, U, 3 components, 1010 values
+INFO: Step 9, time 2820.0, U, 3 components, 1010 values
 INFO: Writing modal.09.vtk
 INFO: Writing modal.09.vtu
-INFO: Step 12, time 5646.5, U, 3 components, 1010 values
+INFO: Step 10, time 4844.7, U, 3 components, 1010 values
 INFO: Writing modal.10.vtk
 INFO: Writing modal.10.vtu
+INFO: Step 11, time 4844.8, U, 3 components, 1010 values
+INFO: Writing modal.11.vtk
+INFO: Writing modal.11.vtu
+INFO: Step 12, time 5646.5, U, 3 components, 1010 values
+INFO: Writing modal.12.vtk
+INFO: Writing modal.12.vtu
 
 ==================================================
 50: mkraska/Linear/PSE/Refs/solve.frd
@@ -5716,163 +5792,469 @@ INFO: Writing Biegung.52.vtu
 INFO: Reading ResultsForLastIterations.frd
 INFO: 31372 nodes
 INFO: 32253 cells
-INFO: 1 time increment
+INFO: 154 time increments
 INFO: Step 1, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.001.vtk
+INFO: Writing ResultsForLastIterations.001.vtu
 INFO: Step 2, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.002.vtk
+INFO: Writing ResultsForLastIterations.002.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.003.vtk
+INFO: Writing ResultsForLastIterations.003.vtu
 INFO: Step 4, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.004.vtk
+INFO: Writing ResultsForLastIterations.004.vtu
 INFO: Step 5, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.005.vtk
+INFO: Writing ResultsForLastIterations.005.vtu
 INFO: Step 6, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.006.vtk
+INFO: Writing ResultsForLastIterations.006.vtu
 INFO: Step 7, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.007.vtk
+INFO: Writing ResultsForLastIterations.007.vtu
 INFO: Step 8, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.008.vtk
+INFO: Writing ResultsForLastIterations.008.vtu
 INFO: Step 9, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.009.vtk
+INFO: Writing ResultsForLastIterations.009.vtu
 INFO: Step 10, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.010.vtk
+INFO: Writing ResultsForLastIterations.010.vtu
 INFO: Step 11, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.011.vtk
+INFO: Writing ResultsForLastIterations.011.vtu
 INFO: Step 12, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.012.vtk
+INFO: Writing ResultsForLastIterations.012.vtu
 INFO: Step 13, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.013.vtk
+INFO: Writing ResultsForLastIterations.013.vtu
 INFO: Step 14, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.014.vtk
+INFO: Writing ResultsForLastIterations.014.vtu
 INFO: Step 15, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.015.vtk
+INFO: Writing ResultsForLastIterations.015.vtu
 INFO: Step 16, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.016.vtk
+INFO: Writing ResultsForLastIterations.016.vtu
 INFO: Step 17, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.017.vtk
+INFO: Writing ResultsForLastIterations.017.vtu
 INFO: Step 18, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.018.vtk
+INFO: Writing ResultsForLastIterations.018.vtu
 INFO: Step 19, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.019.vtk
+INFO: Writing ResultsForLastIterations.019.vtu
 INFO: Step 20, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.020.vtk
+INFO: Writing ResultsForLastIterations.020.vtu
 INFO: Step 21, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.021.vtk
+INFO: Writing ResultsForLastIterations.021.vtu
 INFO: Step 22, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.022.vtk
+INFO: Writing ResultsForLastIterations.022.vtu
 INFO: Step 23, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.023.vtk
+INFO: Writing ResultsForLastIterations.023.vtu
 INFO: Step 24, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.024.vtk
+INFO: Writing ResultsForLastIterations.024.vtu
 INFO: Step 25, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.025.vtk
+INFO: Writing ResultsForLastIterations.025.vtu
 INFO: Step 26, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.026.vtk
+INFO: Writing ResultsForLastIterations.026.vtu
 INFO: Step 27, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.027.vtk
+INFO: Writing ResultsForLastIterations.027.vtu
 INFO: Step 28, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.028.vtk
+INFO: Writing ResultsForLastIterations.028.vtu
 INFO: Step 29, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.029.vtk
+INFO: Writing ResultsForLastIterations.029.vtu
 INFO: Step 30, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.030.vtk
+INFO: Writing ResultsForLastIterations.030.vtu
 INFO: Step 31, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.031.vtk
+INFO: Writing ResultsForLastIterations.031.vtu
 INFO: Step 32, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.032.vtk
+INFO: Writing ResultsForLastIterations.032.vtu
 INFO: Step 33, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.033.vtk
+INFO: Writing ResultsForLastIterations.033.vtu
 INFO: Step 34, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.034.vtk
+INFO: Writing ResultsForLastIterations.034.vtu
 INFO: Step 35, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.035.vtk
+INFO: Writing ResultsForLastIterations.035.vtu
 INFO: Step 36, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.036.vtk
+INFO: Writing ResultsForLastIterations.036.vtu
 INFO: Step 37, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.037.vtk
+INFO: Writing ResultsForLastIterations.037.vtu
 INFO: Step 38, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.038.vtk
+INFO: Writing ResultsForLastIterations.038.vtu
 INFO: Step 39, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.039.vtk
+INFO: Writing ResultsForLastIterations.039.vtu
 INFO: Step 40, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.040.vtk
+INFO: Writing ResultsForLastIterations.040.vtu
 INFO: Step 41, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.041.vtk
+INFO: Writing ResultsForLastIterations.041.vtu
 INFO: Step 42, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.042.vtk
+INFO: Writing ResultsForLastIterations.042.vtu
 INFO: Step 43, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.043.vtk
+INFO: Writing ResultsForLastIterations.043.vtu
 INFO: Step 44, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.044.vtk
+INFO: Writing ResultsForLastIterations.044.vtu
 INFO: Step 45, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.045.vtk
+INFO: Writing ResultsForLastIterations.045.vtu
 INFO: Step 46, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.046.vtk
+INFO: Writing ResultsForLastIterations.046.vtu
 INFO: Step 47, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.047.vtk
+INFO: Writing ResultsForLastIterations.047.vtu
 INFO: Step 48, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.048.vtk
+INFO: Writing ResultsForLastIterations.048.vtu
 INFO: Step 49, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.049.vtk
+INFO: Writing ResultsForLastIterations.049.vtu
 INFO: Step 50, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.050.vtk
+INFO: Writing ResultsForLastIterations.050.vtu
 INFO: Step 51, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.051.vtk
+INFO: Writing ResultsForLastIterations.051.vtu
 INFO: Step 52, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.052.vtk
+INFO: Writing ResultsForLastIterations.052.vtu
 INFO: Step 53, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.053.vtk
+INFO: Writing ResultsForLastIterations.053.vtu
 INFO: Step 54, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.054.vtk
+INFO: Writing ResultsForLastIterations.054.vtu
 INFO: Step 55, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.055.vtk
+INFO: Writing ResultsForLastIterations.055.vtu
 INFO: Step 56, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.056.vtk
+INFO: Writing ResultsForLastIterations.056.vtu
 INFO: Step 57, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.057.vtk
+INFO: Writing ResultsForLastIterations.057.vtu
 INFO: Step 58, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.058.vtk
+INFO: Writing ResultsForLastIterations.058.vtu
 INFO: Step 59, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.059.vtk
+INFO: Writing ResultsForLastIterations.059.vtu
 INFO: Step 60, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.060.vtk
+INFO: Writing ResultsForLastIterations.060.vtu
 INFO: Step 61, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.061.vtk
+INFO: Writing ResultsForLastIterations.061.vtu
 INFO: Step 62, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.062.vtk
+INFO: Writing ResultsForLastIterations.062.vtu
 INFO: Step 63, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.063.vtk
+INFO: Writing ResultsForLastIterations.063.vtu
 INFO: Step 64, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.064.vtk
+INFO: Writing ResultsForLastIterations.064.vtu
 INFO: Step 65, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.065.vtk
+INFO: Writing ResultsForLastIterations.065.vtu
 INFO: Step 66, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.066.vtk
+INFO: Writing ResultsForLastIterations.066.vtu
 INFO: Step 67, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.067.vtk
+INFO: Writing ResultsForLastIterations.067.vtu
 INFO: Step 68, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.068.vtk
+INFO: Writing ResultsForLastIterations.068.vtu
 INFO: Step 69, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.069.vtk
+INFO: Writing ResultsForLastIterations.069.vtu
 INFO: Step 70, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.070.vtk
+INFO: Writing ResultsForLastIterations.070.vtu
 INFO: Step 71, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.071.vtk
+INFO: Writing ResultsForLastIterations.071.vtu
 INFO: Step 72, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.072.vtk
+INFO: Writing ResultsForLastIterations.072.vtu
 INFO: Step 73, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.073.vtk
+INFO: Writing ResultsForLastIterations.073.vtu
 INFO: Step 74, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.074.vtk
+INFO: Writing ResultsForLastIterations.074.vtu
 INFO: Step 75, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.075.vtk
+INFO: Writing ResultsForLastIterations.075.vtu
 INFO: Step 76, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.076.vtk
+INFO: Writing ResultsForLastIterations.076.vtu
 INFO: Step 77, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.077.vtk
+INFO: Writing ResultsForLastIterations.077.vtu
 INFO: Step 78, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.078.vtk
+INFO: Writing ResultsForLastIterations.078.vtu
 INFO: Step 79, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.079.vtk
+INFO: Writing ResultsForLastIterations.079.vtu
 INFO: Step 80, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.080.vtk
+INFO: Writing ResultsForLastIterations.080.vtu
 INFO: Step 81, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.081.vtk
+INFO: Writing ResultsForLastIterations.081.vtu
 INFO: Step 82, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.082.vtk
+INFO: Writing ResultsForLastIterations.082.vtu
 INFO: Step 83, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.083.vtk
+INFO: Writing ResultsForLastIterations.083.vtu
 INFO: Step 84, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.084.vtk
+INFO: Writing ResultsForLastIterations.084.vtu
 INFO: Step 85, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.085.vtk
+INFO: Writing ResultsForLastIterations.085.vtu
 INFO: Step 86, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.086.vtk
+INFO: Writing ResultsForLastIterations.086.vtu
 INFO: Step 87, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.087.vtk
+INFO: Writing ResultsForLastIterations.087.vtu
 INFO: Step 88, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.088.vtk
+INFO: Writing ResultsForLastIterations.088.vtu
 INFO: Step 89, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.089.vtk
+INFO: Writing ResultsForLastIterations.089.vtu
 INFO: Step 90, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.090.vtk
+INFO: Writing ResultsForLastIterations.090.vtu
 INFO: Step 91, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.091.vtk
+INFO: Writing ResultsForLastIterations.091.vtu
 INFO: Step 92, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.092.vtk
+INFO: Writing ResultsForLastIterations.092.vtu
 INFO: Step 93, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.093.vtk
+INFO: Writing ResultsForLastIterations.093.vtu
 INFO: Step 94, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.094.vtk
+INFO: Writing ResultsForLastIterations.094.vtu
 INFO: Step 95, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.095.vtk
+INFO: Writing ResultsForLastIterations.095.vtu
 INFO: Step 96, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.096.vtk
+INFO: Writing ResultsForLastIterations.096.vtu
 INFO: Step 97, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.097.vtk
+INFO: Writing ResultsForLastIterations.097.vtu
 INFO: Step 98, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.098.vtk
+INFO: Writing ResultsForLastIterations.098.vtu
 INFO: Step 99, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.099.vtk
+INFO: Writing ResultsForLastIterations.099.vtu
 INFO: Step 100, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.100.vtk
+INFO: Writing ResultsForLastIterations.100.vtu
 INFO: Step 101, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.101.vtk
+INFO: Writing ResultsForLastIterations.101.vtu
 INFO: Step 102, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.102.vtk
+INFO: Writing ResultsForLastIterations.102.vtu
 INFO: Step 103, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.103.vtk
+INFO: Writing ResultsForLastIterations.103.vtu
 INFO: Step 104, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.104.vtk
+INFO: Writing ResultsForLastIterations.104.vtu
 INFO: Step 105, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.105.vtk
+INFO: Writing ResultsForLastIterations.105.vtu
 INFO: Step 106, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.106.vtk
+INFO: Writing ResultsForLastIterations.106.vtu
 INFO: Step 107, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.107.vtk
+INFO: Writing ResultsForLastIterations.107.vtu
 INFO: Step 108, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.108.vtk
+INFO: Writing ResultsForLastIterations.108.vtu
 INFO: Step 109, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.109.vtk
+INFO: Writing ResultsForLastIterations.109.vtu
 INFO: Step 110, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.110.vtk
+INFO: Writing ResultsForLastIterations.110.vtu
 INFO: Step 111, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.111.vtk
+INFO: Writing ResultsForLastIterations.111.vtu
 INFO: Step 112, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.112.vtk
+INFO: Writing ResultsForLastIterations.112.vtu
 INFO: Step 113, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.113.vtk
+INFO: Writing ResultsForLastIterations.113.vtu
 INFO: Step 114, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.114.vtk
+INFO: Writing ResultsForLastIterations.114.vtu
 INFO: Step 115, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.115.vtk
+INFO: Writing ResultsForLastIterations.115.vtu
 INFO: Step 116, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.116.vtk
+INFO: Writing ResultsForLastIterations.116.vtu
 INFO: Step 117, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.117.vtk
+INFO: Writing ResultsForLastIterations.117.vtu
 INFO: Step 118, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.118.vtk
+INFO: Writing ResultsForLastIterations.118.vtu
 INFO: Step 119, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.119.vtk
+INFO: Writing ResultsForLastIterations.119.vtu
 INFO: Step 120, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.120.vtk
+INFO: Writing ResultsForLastIterations.120.vtu
 INFO: Step 121, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.121.vtk
+INFO: Writing ResultsForLastIterations.121.vtu
 INFO: Step 122, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.122.vtk
+INFO: Writing ResultsForLastIterations.122.vtu
 INFO: Step 123, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.123.vtk
+INFO: Writing ResultsForLastIterations.123.vtu
 INFO: Step 124, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.124.vtk
+INFO: Writing ResultsForLastIterations.124.vtu
 INFO: Step 125, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.125.vtk
+INFO: Writing ResultsForLastIterations.125.vtu
 INFO: Step 126, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.126.vtk
+INFO: Writing ResultsForLastIterations.126.vtu
 INFO: Step 127, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.127.vtk
+INFO: Writing ResultsForLastIterations.127.vtu
 INFO: Step 128, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.128.vtk
+INFO: Writing ResultsForLastIterations.128.vtu
 INFO: Step 129, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.129.vtk
+INFO: Writing ResultsForLastIterations.129.vtu
 INFO: Step 130, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.130.vtk
+INFO: Writing ResultsForLastIterations.130.vtu
 INFO: Step 131, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.131.vtk
+INFO: Writing ResultsForLastIterations.131.vtu
 INFO: Step 132, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.132.vtk
+INFO: Writing ResultsForLastIterations.132.vtu
 INFO: Step 133, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.133.vtk
+INFO: Writing ResultsForLastIterations.133.vtu
 INFO: Step 134, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.134.vtk
+INFO: Writing ResultsForLastIterations.134.vtu
 INFO: Step 135, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.135.vtk
+INFO: Writing ResultsForLastIterations.135.vtu
 INFO: Step 136, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.136.vtk
+INFO: Writing ResultsForLastIterations.136.vtu
 INFO: Step 137, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.137.vtk
+INFO: Writing ResultsForLastIterations.137.vtu
 INFO: Step 138, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.138.vtk
+INFO: Writing ResultsForLastIterations.138.vtu
 INFO: Step 139, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.139.vtk
+INFO: Writing ResultsForLastIterations.139.vtu
 INFO: Step 140, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.140.vtk
+INFO: Writing ResultsForLastIterations.140.vtu
 INFO: Step 141, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.141.vtk
+INFO: Writing ResultsForLastIterations.141.vtu
 INFO: Step 142, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.142.vtk
+INFO: Writing ResultsForLastIterations.142.vtu
 INFO: Step 143, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.143.vtk
+INFO: Writing ResultsForLastIterations.143.vtu
 INFO: Step 144, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.144.vtk
+INFO: Writing ResultsForLastIterations.144.vtu
 INFO: Step 145, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.145.vtk
+INFO: Writing ResultsForLastIterations.145.vtu
 INFO: Step 146, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.146.vtk
+INFO: Writing ResultsForLastIterations.146.vtu
 INFO: Step 147, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.147.vtk
+INFO: Writing ResultsForLastIterations.147.vtu
 INFO: Step 148, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.148.vtk
+INFO: Writing ResultsForLastIterations.148.vtu
 INFO: Step 149, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.149.vtk
+INFO: Writing ResultsForLastIterations.149.vtu
 INFO: Step 150, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.150.vtk
+INFO: Writing ResultsForLastIterations.150.vtu
 INFO: Step 151, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.151.vtk
+INFO: Writing ResultsForLastIterations.151.vtu
 INFO: Step 152, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.152.vtk
+INFO: Writing ResultsForLastIterations.152.vtu
 INFO: Step 153, time 0.00e+00, U, 3 components, 31372 values
+INFO: Writing ResultsForLastIterations.153.vtk
+INFO: Writing ResultsForLastIterations.153.vtu
 INFO: Step 154, time 0.00e+00, U, 3 components, 31372 values
-INFO: Writing ResultsForLastIterations.vtk
-INFO: Writing ResultsForLastIterations.vtu
+INFO: Writing ResultsForLastIterations.154.vtk
+INFO: Writing ResultsForLastIterations.154.vtu
 
 ==================================================
 60: mkraska/NonLinear/Honeycomb/Refs/Biegung.frd
@@ -6686,20 +7068,40 @@ INFO: Writing Biegung.100.vtu
 INFO: Reading ResultsForLastIterations.frd
 INFO: 43749 nodes
 INFO: 4994 cells
-INFO: 1 time increment
+INFO: 11 time increments
 INFO: Step 1, time 0.00e+00, U, 3 components, 43749 values
+INFO: Writing ResultsForLastIterations.01.vtk
+INFO: Writing ResultsForLastIterations.01.vtu
 INFO: Step 2, time 0.00e+00, U, 3 components, 43749 values
+INFO: Writing ResultsForLastIterations.02.vtk
+INFO: Writing ResultsForLastIterations.02.vtu
 INFO: Step 3, time 0.00e+00, U, 3 components, 43749 values
+INFO: Writing ResultsForLastIterations.03.vtk
+INFO: Writing ResultsForLastIterations.03.vtu
 INFO: Step 4, time 0.00e+00, U, 3 components, 43749 values
+INFO: Writing ResultsForLastIterations.04.vtk
+INFO: Writing ResultsForLastIterations.04.vtu
 INFO: Step 5, time 0.00e+00, U, 3 components, 43749 values
+INFO: Writing ResultsForLastIterations.05.vtk
+INFO: Writing ResultsForLastIterations.05.vtu
 INFO: Step 6, time 0.00e+00, U, 3 components, 43749 values
+INFO: Writing ResultsForLastIterations.06.vtk
+INFO: Writing ResultsForLastIterations.06.vtu
 INFO: Step 7, time 0.00e+00, U, 3 components, 43749 values
+INFO: Writing ResultsForLastIterations.07.vtk
+INFO: Writing ResultsForLastIterations.07.vtu
 INFO: Step 8, time 0.00e+00, U, 3 components, 43749 values
+INFO: Writing ResultsForLastIterations.08.vtk
+INFO: Writing ResultsForLastIterations.08.vtu
 INFO: Step 9, time 0.00e+00, U, 3 components, 43749 values
+INFO: Writing ResultsForLastIterations.09.vtk
+INFO: Writing ResultsForLastIterations.09.vtu
 INFO: Step 10, time 0.00e+00, U, 3 components, 43749 values
+INFO: Writing ResultsForLastIterations.10.vtk
+INFO: Writing ResultsForLastIterations.10.vtu
 INFO: Step 11, time 0.00e+00, U, 3 components, 43749 values
-INFO: Writing ResultsForLastIterations.vtk
-INFO: Writing ResultsForLastIterations.vtu
+INFO: Writing ResultsForLastIterations.11.vtk
+INFO: Writing ResultsForLastIterations.11.vtu
 
 ==================================================
 62: mkraska/NonLinear/Rohrknie/Refs/shell-modal.frd
@@ -7921,65 +8323,67 @@ INFO: Writing Zug.15.vtu
 INFO: Reading modal.frd
 INFO: 202 nodes
 INFO: 18 cells
-INFO: 19 time increments
+INFO: 20 time increments
 INFO: Step 1, time 0.00e+00, U, 3 components, 202 values
-INFO: Step 2, time 0.00e+00, U, 3 components, 202 values
 INFO: Writing modal.01.vtk
 INFO: Writing modal.01.vtu
-INFO: Step 3, time 6.41e-03, U, 3 components, 202 values
+INFO: Step 2, time 0.00e+00, U, 3 components, 202 values
 INFO: Writing modal.02.vtk
 INFO: Writing modal.02.vtu
-INFO: Step 4, time 359.0, U, 3 components, 202 values
+INFO: Step 3, time 6.41e-03, U, 3 components, 202 values
 INFO: Writing modal.03.vtk
 INFO: Writing modal.03.vtu
-INFO: Step 5, time 704.2, U, 3 components, 202 values
+INFO: Step 4, time 359.0, U, 3 components, 202 values
 INFO: Writing modal.04.vtk
 INFO: Writing modal.04.vtu
-INFO: Step 6, time 1822.7, U, 3 components, 202 values
+INFO: Step 5, time 704.2, U, 3 components, 202 values
 INFO: Writing modal.05.vtk
 INFO: Writing modal.05.vtu
-INFO: Step 7, time 3446.7, U, 3 components, 202 values
+INFO: Step 6, time 1822.7, U, 3 components, 202 values
 INFO: Writing modal.06.vtk
 INFO: Writing modal.06.vtu
-INFO: Step 8, time 6480.5, U, 3 components, 202 values
+INFO: Step 7, time 3446.7, U, 3 components, 202 values
 INFO: Writing modal.07.vtk
 INFO: Writing modal.07.vtu
-INFO: Step 9, time 7578.7, U, 3 components, 202 values
+INFO: Step 8, time 6480.5, U, 3 components, 202 values
 INFO: Writing modal.08.vtk
 INFO: Writing modal.08.vtu
-INFO: Step 10, time 9022.3, U, 3 components, 202 values
+INFO: Step 9, time 7578.7, U, 3 components, 202 values
 INFO: Writing modal.09.vtk
 INFO: Writing modal.09.vtu
-INFO: Step 11, time 12516.8, U, 3 components, 202 values
+INFO: Step 10, time 9022.3, U, 3 components, 202 values
 INFO: Writing modal.10.vtk
 INFO: Writing modal.10.vtu
-INFO: Step 12, time 12719.0, U, 3 components, 202 values
+INFO: Step 11, time 12516.8, U, 3 components, 202 values
 INFO: Writing modal.11.vtk
 INFO: Writing modal.11.vtu
-INFO: Step 13, time 12719.0, U, 3 components, 202 values
+INFO: Step 12, time 12719.0, U, 3 components, 202 values
 INFO: Writing modal.12.vtk
 INFO: Writing modal.12.vtu
-INFO: Step 14, time 13583.9, U, 3 components, 202 values
+INFO: Step 13, time 12719.0, U, 3 components, 202 values
 INFO: Writing modal.13.vtk
 INFO: Writing modal.13.vtu
-INFO: Step 15, time 19485.3, U, 3 components, 202 values
+INFO: Step 14, time 13583.9, U, 3 components, 202 values
 INFO: Writing modal.14.vtk
 INFO: Writing modal.14.vtu
-INFO: Step 16, time 20315.3, U, 3 components, 202 values
+INFO: Step 15, time 19485.3, U, 3 components, 202 values
 INFO: Writing modal.15.vtk
 INFO: Writing modal.15.vtu
-INFO: Step 17, time 25698.0, U, 3 components, 202 values
+INFO: Step 16, time 20315.3, U, 3 components, 202 values
 INFO: Writing modal.16.vtk
 INFO: Writing modal.16.vtu
-INFO: Step 18, time 25840.5, U, 3 components, 202 values
+INFO: Step 17, time 25698.0, U, 3 components, 202 values
 INFO: Writing modal.17.vtk
 INFO: Writing modal.17.vtu
-INFO: Step 19, time 25840.5, U, 3 components, 202 values
+INFO: Step 18, time 25840.5, U, 3 components, 202 values
 INFO: Writing modal.18.vtk
 INFO: Writing modal.18.vtu
-INFO: Step 20, time 26008.8, U, 3 components, 202 values
+INFO: Step 19, time 25840.5, U, 3 components, 202 values
 INFO: Writing modal.19.vtk
 INFO: Writing modal.19.vtu
+INFO: Step 20, time 26008.8, U, 3 components, 202 values
+INFO: Writing modal.20.vtk
+INFO: Writing modal.20.vtu
 
 ==================================================
 76: mkraska/Test/BeamSections/Refs/b32.frd
@@ -8050,16 +8454,11 @@ INFO: Writing solve.3.vtu
 INFO: Reading solve.frd
 INFO: 2968 nodes
 INFO: 1269 cells
-INFO: 10 time increments
+INFO: 11 time increments
 INFO: Step 1, time 0.00e+00, U, 3 components, 2968 values
-INFO: Step 2, time 0.00e+00, U, 3 components, 2968 values
 INFO: Writing solve.01.vtk
 INFO: Writing solve.01.vtu
-INFO: Step 11, time 1.0, U, 3 components, 2968 values
-INFO: Step 11, time 1.0, S, 6 components, 2968 values
-INFO: Step 11, time 1.0, S_Mises, 1 components, 2968 values
-INFO: Step 11, time 1.0, S_Principal, 3 components, 2968 values
-INFO: Step 11, time 1.0, ERROR, 1 components, 2968 values
+INFO: Step 2, time 0.00e+00, U, 3 components, 2968 values
 INFO: Writing solve.02.vtk
 INFO: Writing solve.02.vtu
 INFO: Step 3, time 119.2, U, 3 components, 2968 values
@@ -8086,6 +8485,13 @@ INFO: Writing solve.09.vtu
 INFO: Step 10, time 5913.2, U, 3 components, 2968 values
 INFO: Writing solve.10.vtk
 INFO: Writing solve.10.vtu
+INFO: Step 11, time 1.0, U, 3 components, 2968 values
+INFO: Step 11, time 1.0, S, 6 components, 2968 values
+INFO: Step 11, time 1.0, S_Mises, 1 components, 2968 values
+INFO: Step 11, time 1.0, S_Principal, 3 components, 2968 values
+INFO: Step 11, time 1.0, ERROR, 1 components, 2968 values
+INFO: Writing solve.11.vtk
+INFO: Writing solve.11.vtu
 
 ==================================================
 80: mkraska/Test/Joints/Refs/solve2.frd
@@ -8096,49 +8502,49 @@ INFO: 13 time increments
 INFO: Step 1, time 0.00e+00, U, 3 components, 2908 values
 INFO: Writing solve2.01.vtk
 INFO: Writing solve2.01.vtu
+INFO: Step 2, time 121.9, U, 3 components, 2908 values
+INFO: Writing solve2.02.vtk
+INFO: Writing solve2.02.vtu
+INFO: Step 3, time 455.5, U, 3 components, 2908 values
+INFO: Writing solve2.03.vtk
+INFO: Writing solve2.03.vtu
+INFO: Step 4, time 734.6, U, 3 components, 2908 values
+INFO: Writing solve2.04.vtk
+INFO: Writing solve2.04.vtu
+INFO: Step 5, time 1638.1, U, 3 components, 2908 values
+INFO: Writing solve2.05.vtk
+INFO: Writing solve2.05.vtu
+INFO: Step 6, time 2037.5, U, 3 components, 2908 values
+INFO: Writing solve2.06.vtk
+INFO: Writing solve2.06.vtu
+INFO: Step 7, time 3677.7, U, 3 components, 2908 values
+INFO: Writing solve2.07.vtk
+INFO: Writing solve2.07.vtu
+INFO: Step 8, time 4728.8, U, 3 components, 2908 values
+INFO: Writing solve2.08.vtk
+INFO: Writing solve2.08.vtu
+INFO: Step 9, time 4972.2, U, 3 components, 2908 values
+INFO: Writing solve2.09.vtk
+INFO: Writing solve2.09.vtu
+INFO: Step 10, time 6870.1, U, 3 components, 2908 values
+INFO: Writing solve2.10.vtk
+INFO: Writing solve2.10.vtu
 INFO: Step 11, time 1.0, U, 3 components, 2908 values
 INFO: Step 11, time 1.0, S, 6 components, 2908 values
 INFO: Step 11, time 1.0, S_Mises, 1 components, 2908 values
 INFO: Step 11, time 1.0, S_Principal, 3 components, 2908 values
 INFO: Step 11, time 1.0, ERROR, 1 components, 2908 values
-INFO: Writing solve2.02.vtk
-INFO: Writing solve2.02.vtu
+INFO: Writing solve2.11.vtk
+INFO: Writing solve2.11.vtu
 INFO: Step 12, time 2.0, U, 3 components, 2908 values
 INFO: Step 12, time 2.0, S, 6 components, 2908 values
 INFO: Step 12, time 2.0, S_Mises, 1 components, 2908 values
 INFO: Step 12, time 2.0, S_Principal, 3 components, 2908 values
 INFO: Step 12, time 2.0, ERROR, 1 components, 2908 values
-INFO: Writing solve2.03.vtk
-INFO: Writing solve2.03.vtu
-INFO: Step 13, time 2.0, U, 3 components, 2908 values
-INFO: Step 13, time 2.0, RF, 3 components, 2908 values
-INFO: Writing solve2.04.vtk
-INFO: Writing solve2.04.vtu
-INFO: Step 2, time 121.9, U, 3 components, 2908 values
-INFO: Writing solve2.05.vtk
-INFO: Writing solve2.05.vtu
-INFO: Step 3, time 455.5, U, 3 components, 2908 values
-INFO: Writing solve2.06.vtk
-INFO: Writing solve2.06.vtu
-INFO: Step 4, time 734.6, U, 3 components, 2908 values
-INFO: Writing solve2.07.vtk
-INFO: Writing solve2.07.vtu
-INFO: Step 5, time 1638.1, U, 3 components, 2908 values
-INFO: Writing solve2.08.vtk
-INFO: Writing solve2.08.vtu
-INFO: Step 6, time 2037.5, U, 3 components, 2908 values
-INFO: Writing solve2.09.vtk
-INFO: Writing solve2.09.vtu
-INFO: Step 7, time 3677.7, U, 3 components, 2908 values
-INFO: Writing solve2.10.vtk
-INFO: Writing solve2.10.vtu
-INFO: Step 8, time 4728.8, U, 3 components, 2908 values
-INFO: Writing solve2.11.vtk
-INFO: Writing solve2.11.vtu
-INFO: Step 9, time 4972.2, U, 3 components, 2908 values
 INFO: Writing solve2.12.vtk
 INFO: Writing solve2.12.vtu
-INFO: Step 10, time 6870.1, U, 3 components, 2908 values
+INFO: Step 13, time 2.0, U, 3 components, 2908 values
+INFO: Step 13, time 2.0, RF, 3 components, 2908 values
 INFO: Writing solve2.13.vtk
 INFO: Writing solve2.13.vtu
 
@@ -8175,65 +8581,67 @@ INFO: Writing solve.3.vtu
 INFO: Reading solve.frd
 INFO: 525 nodes
 INFO: 320 cells
-INFO: 19 time increments
+INFO: 20 time increments
 INFO: Step 1, time 0.00e+00, U, 3 components, 525 values
-INFO: Step 2, time 0.00e+00, U, 3 components, 525 values
 INFO: Writing solve.01.vtk
 INFO: Writing solve.01.vtu
-INFO: Step 3, time 1.30e-03, U, 3 components, 525 values
+INFO: Step 2, time 0.00e+00, U, 3 components, 525 values
 INFO: Writing solve.02.vtk
 INFO: Writing solve.02.vtu
-INFO: Step 4, time 4.74e-03, U, 3 components, 525 values
+INFO: Step 3, time 1.30e-03, U, 3 components, 525 values
 INFO: Writing solve.03.vtk
 INFO: Writing solve.03.vtu
-INFO: Step 5, time 5.36e-03, U, 3 components, 525 values
+INFO: Step 4, time 4.74e-03, U, 3 components, 525 values
 INFO: Writing solve.04.vtk
 INFO: Writing solve.04.vtu
-INFO: Step 6, time 5.63e-02, U, 3 components, 525 values
+INFO: Step 5, time 5.36e-03, U, 3 components, 525 values
 INFO: Writing solve.05.vtk
 INFO: Writing solve.05.vtu
-INFO: Step 11, time 412.4, U, 3 components, 525 values
+INFO: Step 6, time 5.63e-02, U, 3 components, 525 values
 INFO: Writing solve.06.vtk
 INFO: Writing solve.06.vtu
-INFO: Step 12, time 808.9, U, 3 components, 525 values
+INFO: Step 7, time 2640.4, U, 3 components, 525 values
 INFO: Writing solve.07.vtk
 INFO: Writing solve.07.vtu
-INFO: Step 13, time 2566.3, U, 3 components, 525 values
+INFO: Step 8, time 5147.6, U, 3 components, 525 values
 INFO: Writing solve.08.vtk
 INFO: Writing solve.08.vtu
-INFO: Step 7, time 2640.4, U, 3 components, 525 values
+INFO: Step 9, time 7202.4, U, 3 components, 525 values
 INFO: Writing solve.09.vtk
 INFO: Writing solve.09.vtu
-INFO: Step 14, time 4877.7, U, 3 components, 525 values
+INFO: Step 10, time 12193.5, U, 3 components, 525 values
 INFO: Writing solve.10.vtk
 INFO: Writing solve.10.vtu
-INFO: Step 8, time 5147.6, U, 3 components, 525 values
+INFO: Step 11, time 412.4, U, 3 components, 525 values
 INFO: Writing solve.11.vtk
 INFO: Writing solve.11.vtu
-INFO: Step 15, time 6059.3, U, 3 components, 525 values
+INFO: Step 12, time 808.9, U, 3 components, 525 values
 INFO: Writing solve.12.vtk
 INFO: Writing solve.12.vtu
-INFO: Step 16, time 7106.5, U, 3 components, 525 values
+INFO: Step 13, time 2566.3, U, 3 components, 525 values
 INFO: Writing solve.13.vtk
 INFO: Writing solve.13.vtu
-INFO: Step 9, time 7202.4, U, 3 components, 525 values
+INFO: Step 14, time 4877.7, U, 3 components, 525 values
 INFO: Writing solve.14.vtk
 INFO: Writing solve.14.vtu
-INFO: Step 10, time 12193.5, U, 3 components, 525 values
+INFO: Step 15, time 6059.3, U, 3 components, 525 values
 INFO: Writing solve.15.vtk
 INFO: Writing solve.15.vtu
-INFO: Step 17, time 12925.9, U, 3 components, 525 values
+INFO: Step 16, time 7106.5, U, 3 components, 525 values
 INFO: Writing solve.16.vtk
 INFO: Writing solve.16.vtu
-INFO: Step 18, time 12933.2, U, 3 components, 525 values
+INFO: Step 17, time 12925.9, U, 3 components, 525 values
 INFO: Writing solve.17.vtk
 INFO: Writing solve.17.vtu
-INFO: Step 19, time 13714.7, U, 3 components, 525 values
+INFO: Step 18, time 12933.2, U, 3 components, 525 values
 INFO: Writing solve.18.vtk
 INFO: Writing solve.18.vtu
-INFO: Step 20, time 18187.3, U, 3 components, 525 values
+INFO: Step 19, time 13714.7, U, 3 components, 525 values
 INFO: Writing solve.19.vtk
 INFO: Writing solve.19.vtu
+INFO: Step 20, time 18187.3, U, 3 components, 525 values
+INFO: Writing solve.20.vtk
+INFO: Writing solve.20.vtu
 
 ==================================================
 83: mkraska/Test/Supports/Refs/trans.frd
@@ -9383,7 +9791,7 @@ INFO: Writing Ihor_Mirzov_baffle_2D.vtu
 INFO: Reading Jan_Lukas_modal_dynamic_beammodal.frd
 INFO: 1221 nodes
 INFO: 160 cells
-INFO: 10 time increments
+INFO: 16 time increments
 INFO: Step 1, time 209.2, U, 3 components, 1221 values
 INFO: Step 1, time 209.2, S, 6 components, 1221 values
 INFO: Step 1, time 209.2, S_Mises, 1 components, 1221 values
@@ -9392,6 +9800,8 @@ INFO: Step 1, time 209.2, E, 6 components, 1221 values
 INFO: Step 1, time 209.2, E_Mises, 1 components, 1221 values
 INFO: Step 1, time 209.2, E_Principal, 3 components, 1221 values
 INFO: Step 1, time 209.2, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.01.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.01.vtu
 INFO: Step 2, time 209.2, U, 3 components, 1221 values
 INFO: Step 2, time 209.2, S, 6 components, 1221 values
 INFO: Step 2, time 209.2, S_Mises, 1 components, 1221 values
@@ -9400,8 +9810,8 @@ INFO: Step 2, time 209.2, E, 6 components, 1221 values
 INFO: Step 2, time 209.2, E_Mises, 1 components, 1221 values
 INFO: Step 2, time 209.2, E_Principal, 3 components, 1221 values
 INFO: Step 2, time 209.2, ERROR, 1 components, 1221 values
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.01.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.01.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.02.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.02.vtu
 INFO: Step 3, time 1296.2, U, 3 components, 1221 values
 INFO: Step 3, time 1296.2, S, 6 components, 1221 values
 INFO: Step 3, time 1296.2, S_Mises, 1 components, 1221 values
@@ -9410,6 +9820,8 @@ INFO: Step 3, time 1296.2, E, 6 components, 1221 values
 INFO: Step 3, time 1296.2, E_Mises, 1 components, 1221 values
 INFO: Step 3, time 1296.2, E_Principal, 3 components, 1221 values
 INFO: Step 3, time 1296.2, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.03.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.03.vtu
 INFO: Step 4, time 1296.2, U, 3 components, 1221 values
 INFO: Step 4, time 1296.2, S, 6 components, 1221 values
 INFO: Step 4, time 1296.2, S_Mises, 1 components, 1221 values
@@ -9418,8 +9830,8 @@ INFO: Step 4, time 1296.2, E, 6 components, 1221 values
 INFO: Step 4, time 1296.2, E_Mises, 1 components, 1221 values
 INFO: Step 4, time 1296.2, E_Principal, 3 components, 1221 values
 INFO: Step 4, time 1296.2, ERROR, 1 components, 1221 values
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.02.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.02.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.04.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.04.vtu
 INFO: Step 5, time 3565.9, U, 3 components, 1221 values
 INFO: Step 5, time 3565.9, S, 6 components, 1221 values
 INFO: Step 5, time 3565.9, S_Mises, 1 components, 1221 values
@@ -9428,6 +9840,8 @@ INFO: Step 5, time 3565.9, E, 6 components, 1221 values
 INFO: Step 5, time 3565.9, E_Mises, 1 components, 1221 values
 INFO: Step 5, time 3565.9, E_Principal, 3 components, 1221 values
 INFO: Step 5, time 3565.9, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.05.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.05.vtu
 INFO: Step 6, time 3565.9, U, 3 components, 1221 values
 INFO: Step 6, time 3565.9, S, 6 components, 1221 values
 INFO: Step 6, time 3565.9, S_Mises, 1 components, 1221 values
@@ -9436,8 +9850,8 @@ INFO: Step 6, time 3565.9, E, 6 components, 1221 values
 INFO: Step 6, time 3565.9, E_Mises, 1 components, 1221 values
 INFO: Step 6, time 3565.9, E_Principal, 3 components, 1221 values
 INFO: Step 6, time 3565.9, ERROR, 1 components, 1221 values
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.03.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.03.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.06.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.06.vtu
 INFO: Step 7, time 3714.6, U, 3 components, 1221 values
 INFO: Step 7, time 3714.6, S, 6 components, 1221 values
 INFO: Step 7, time 3714.6, S_Mises, 1 components, 1221 values
@@ -9446,8 +9860,8 @@ INFO: Step 7, time 3714.6, E, 6 components, 1221 values
 INFO: Step 7, time 3714.6, E_Mises, 1 components, 1221 values
 INFO: Step 7, time 3714.6, E_Principal, 3 components, 1221 values
 INFO: Step 7, time 3714.6, ERROR, 1 components, 1221 values
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.04.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.04.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.07.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.07.vtu
 INFO: Step 8, time 6477.3, U, 3 components, 1221 values
 INFO: Step 8, time 6477.3, S, 6 components, 1221 values
 INFO: Step 8, time 6477.3, S_Mises, 1 components, 1221 values
@@ -9456,8 +9870,8 @@ INFO: Step 8, time 6477.3, E, 6 components, 1221 values
 INFO: Step 8, time 6477.3, E_Mises, 1 components, 1221 values
 INFO: Step 8, time 6477.3, E_Principal, 3 components, 1221 values
 INFO: Step 8, time 6477.3, ERROR, 1 components, 1221 values
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.05.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.05.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.08.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.08.vtu
 INFO: Step 9, time 6819.4, U, 3 components, 1221 values
 INFO: Step 9, time 6819.4, S, 6 components, 1221 values
 INFO: Step 9, time 6819.4, S_Mises, 1 components, 1221 values
@@ -9466,6 +9880,8 @@ INFO: Step 9, time 6819.4, E, 6 components, 1221 values
 INFO: Step 9, time 6819.4, E_Mises, 1 components, 1221 values
 INFO: Step 9, time 6819.4, E_Principal, 3 components, 1221 values
 INFO: Step 9, time 6819.4, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.09.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.09.vtu
 INFO: Step 10, time 6819.4, U, 3 components, 1221 values
 INFO: Step 10, time 6819.4, S, 6 components, 1221 values
 INFO: Step 10, time 6819.4, S_Mises, 1 components, 1221 values
@@ -9474,8 +9890,8 @@ INFO: Step 10, time 6819.4, E, 6 components, 1221 values
 INFO: Step 10, time 6819.4, E_Mises, 1 components, 1221 values
 INFO: Step 10, time 6819.4, E_Principal, 3 components, 1221 values
 INFO: Step 10, time 6819.4, ERROR, 1 components, 1221 values
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.06.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.06.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.10.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.10.vtu
 INFO: Step 11, time 10945.6, U, 3 components, 1221 values
 INFO: Step 11, time 10945.6, S, 6 components, 1221 values
 INFO: Step 11, time 10945.6, S_Mises, 1 components, 1221 values
@@ -9484,6 +9900,8 @@ INFO: Step 11, time 10945.6, E, 6 components, 1221 values
 INFO: Step 11, time 10945.6, E_Mises, 1 components, 1221 values
 INFO: Step 11, time 10945.6, E_Principal, 3 components, 1221 values
 INFO: Step 11, time 10945.6, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.11.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.11.vtu
 INFO: Step 12, time 10945.6, U, 3 components, 1221 values
 INFO: Step 12, time 10945.6, S, 6 components, 1221 values
 INFO: Step 12, time 10945.6, S_Mises, 1 components, 1221 values
@@ -9492,8 +9910,8 @@ INFO: Step 12, time 10945.6, E, 6 components, 1221 values
 INFO: Step 12, time 10945.6, E_Mises, 1 components, 1221 values
 INFO: Step 12, time 10945.6, E_Principal, 3 components, 1221 values
 INFO: Step 12, time 10945.6, ERROR, 1 components, 1221 values
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.07.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.07.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.12.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.12.vtu
 INFO: Step 13, time 11144.0, U, 3 components, 1221 values
 INFO: Step 13, time 11144.0, S, 6 components, 1221 values
 INFO: Step 13, time 11144.0, S_Mises, 1 components, 1221 values
@@ -9502,8 +9920,8 @@ INFO: Step 13, time 11144.0, E, 6 components, 1221 values
 INFO: Step 13, time 11144.0, E_Mises, 1 components, 1221 values
 INFO: Step 13, time 11144.0, E_Principal, 3 components, 1221 values
 INFO: Step 13, time 11144.0, ERROR, 1 components, 1221 values
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.08.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.08.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.13.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.13.vtu
 INFO: Step 14, time 15813.3, U, 3 components, 1221 values
 INFO: Step 14, time 15813.3, S, 6 components, 1221 values
 INFO: Step 14, time 15813.3, S_Mises, 1 components, 1221 values
@@ -9512,6 +9930,8 @@ INFO: Step 14, time 15813.3, E, 6 components, 1221 values
 INFO: Step 14, time 15813.3, E_Mises, 1 components, 1221 values
 INFO: Step 14, time 15813.3, E_Principal, 3 components, 1221 values
 INFO: Step 14, time 15813.3, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.14.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.14.vtu
 INFO: Step 15, time 15813.3, U, 3 components, 1221 values
 INFO: Step 15, time 15813.3, S, 6 components, 1221 values
 INFO: Step 15, time 15813.3, S_Mises, 1 components, 1221 values
@@ -9520,8 +9940,8 @@ INFO: Step 15, time 15813.3, E, 6 components, 1221 values
 INFO: Step 15, time 15813.3, E_Mises, 1 components, 1221 values
 INFO: Step 15, time 15813.3, E_Principal, 3 components, 1221 values
 INFO: Step 15, time 15813.3, ERROR, 1 components, 1221 values
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.09.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.09.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.15.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.15.vtu
 INFO: Step 16, time 18574.3, U, 3 components, 1221 values
 INFO: Step 16, time 18574.3, S, 6 components, 1221 values
 INFO: Step 16, time 18574.3, S_Mises, 1 components, 1221 values
@@ -9530,15 +9950,15 @@ INFO: Step 16, time 18574.3, E, 6 components, 1221 values
 INFO: Step 16, time 18574.3, E_Mises, 1 components, 1221 values
 INFO: Step 16, time 18574.3, E_Principal, 3 components, 1221 values
 INFO: Step 16, time 18574.3, ERROR, 1 components, 1221 values
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.10.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_beammodal.10.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.16.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.16.vtu
 
 ==================================================
 94: other/Jan_Lukas_modal_dynamic_staticbeam2.frd
 INFO: Reading Jan_Lukas_modal_dynamic_staticbeam2.frd
 INFO: 321 nodes
 INFO: 40 cells
-INFO: 11 time increments
+INFO: 16 time increments
 INFO: Step 1, time 837.4, U, 3 components, 321 values
 INFO: Step 1, time 837.4, S, 6 components, 321 values
 INFO: Step 1, time 837.4, S_Mises, 1 components, 321 values
@@ -9547,6 +9967,8 @@ INFO: Step 1, time 837.4, E, 6 components, 321 values
 INFO: Step 1, time 837.4, E_Mises, 1 components, 321 values
 INFO: Step 1, time 837.4, E_Principal, 3 components, 321 values
 INFO: Step 1, time 837.4, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.01.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.01.vtu
 INFO: Step 2, time 837.4, U, 3 components, 321 values
 INFO: Step 2, time 837.4, S, 6 components, 321 values
 INFO: Step 2, time 837.4, S_Mises, 1 components, 321 values
@@ -9555,8 +9977,8 @@ INFO: Step 2, time 837.4, E, 6 components, 321 values
 INFO: Step 2, time 837.4, E_Mises, 1 components, 321 values
 INFO: Step 2, time 837.4, E_Principal, 3 components, 321 values
 INFO: Step 2, time 837.4, ERROR, 1 components, 321 values
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.01.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.01.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.02.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.02.vtu
 INFO: Step 3, time 5026.9, U, 3 components, 321 values
 INFO: Step 3, time 5026.9, S, 6 components, 321 values
 INFO: Step 3, time 5026.9, S_Mises, 1 components, 321 values
@@ -9565,6 +9987,8 @@ INFO: Step 3, time 5026.9, E, 6 components, 321 values
 INFO: Step 3, time 5026.9, E_Mises, 1 components, 321 values
 INFO: Step 3, time 5026.9, E_Principal, 3 components, 321 values
 INFO: Step 3, time 5026.9, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.03.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.03.vtu
 INFO: Step 4, time 5026.9, U, 3 components, 321 values
 INFO: Step 4, time 5026.9, S, 6 components, 321 values
 INFO: Step 4, time 5026.9, S_Mises, 1 components, 321 values
@@ -9573,8 +9997,8 @@ INFO: Step 4, time 5026.9, E, 6 components, 321 values
 INFO: Step 4, time 5026.9, E_Mises, 1 components, 321 values
 INFO: Step 4, time 5026.9, E_Principal, 3 components, 321 values
 INFO: Step 4, time 5026.9, ERROR, 1 components, 321 values
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.02.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.02.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.04.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.04.vtu
 INFO: Step 5, time 7452.8, U, 3 components, 321 values
 INFO: Step 5, time 7452.8, S, 6 components, 321 values
 INFO: Step 5, time 7452.8, S_Mises, 1 components, 321 values
@@ -9583,8 +10007,8 @@ INFO: Step 5, time 7452.8, E, 6 components, 321 values
 INFO: Step 5, time 7452.8, E_Mises, 1 components, 321 values
 INFO: Step 5, time 7452.8, E_Principal, 3 components, 321 values
 INFO: Step 5, time 7452.8, ERROR, 1 components, 321 values
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.03.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.03.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.05.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.05.vtu
 INFO: Step 6, time 12989.9, U, 3 components, 321 values
 INFO: Step 6, time 12989.9, S, 6 components, 321 values
 INFO: Step 6, time 12989.9, S_Mises, 1 components, 321 values
@@ -9593,8 +10017,8 @@ INFO: Step 6, time 12989.9, E, 6 components, 321 values
 INFO: Step 6, time 12989.9, E_Mises, 1 components, 321 values
 INFO: Step 6, time 12989.9, E_Principal, 3 components, 321 values
 INFO: Step 6, time 12989.9, ERROR, 1 components, 321 values
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.04.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.04.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.06.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.06.vtu
 INFO: Step 7, time 13260.2, U, 3 components, 321 values
 INFO: Step 7, time 13260.2, S, 6 components, 321 values
 INFO: Step 7, time 13260.2, S_Mises, 1 components, 321 values
@@ -9603,6 +10027,8 @@ INFO: Step 7, time 13260.2, E, 6 components, 321 values
 INFO: Step 7, time 13260.2, E_Mises, 1 components, 321 values
 INFO: Step 7, time 13260.2, E_Principal, 3 components, 321 values
 INFO: Step 7, time 13260.2, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.07.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.07.vtu
 INFO: Step 8, time 13260.2, U, 3 components, 321 values
 INFO: Step 8, time 13260.2, S, 6 components, 321 values
 INFO: Step 8, time 13260.2, S_Mises, 1 components, 321 values
@@ -9611,8 +10037,8 @@ INFO: Step 8, time 13260.2, E, 6 components, 321 values
 INFO: Step 8, time 13260.2, E_Mises, 1 components, 321 values
 INFO: Step 8, time 13260.2, E_Principal, 3 components, 321 values
 INFO: Step 8, time 13260.2, ERROR, 1 components, 321 values
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.05.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.05.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.08.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.08.vtu
 INFO: Step 9, time 22364.5, U, 3 components, 321 values
 INFO: Step 9, time 22364.5, S, 6 components, 321 values
 INFO: Step 9, time 22364.5, S_Mises, 1 components, 321 values
@@ -9621,8 +10047,8 @@ INFO: Step 9, time 22364.5, E, 6 components, 321 values
 INFO: Step 9, time 22364.5, E_Mises, 1 components, 321 values
 INFO: Step 9, time 22364.5, E_Principal, 3 components, 321 values
 INFO: Step 9, time 22364.5, ERROR, 1 components, 321 values
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.06.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.06.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.09.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.09.vtu
 INFO: Step 10, time 24163.3, U, 3 components, 321 values
 INFO: Step 10, time 24163.3, S, 6 components, 321 values
 INFO: Step 10, time 24163.3, S_Mises, 1 components, 321 values
@@ -9631,6 +10057,8 @@ INFO: Step 10, time 24163.3, E, 6 components, 321 values
 INFO: Step 10, time 24163.3, E_Mises, 1 components, 321 values
 INFO: Step 10, time 24163.3, E_Principal, 3 components, 321 values
 INFO: Step 10, time 24163.3, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.10.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.10.vtu
 INFO: Step 11, time 24163.3, U, 3 components, 321 values
 INFO: Step 11, time 24163.3, S, 6 components, 321 values
 INFO: Step 11, time 24163.3, S_Mises, 1 components, 321 values
@@ -9639,8 +10067,8 @@ INFO: Step 11, time 24163.3, E, 6 components, 321 values
 INFO: Step 11, time 24163.3, E_Mises, 1 components, 321 values
 INFO: Step 11, time 24163.3, E_Principal, 3 components, 321 values
 INFO: Step 11, time 24163.3, ERROR, 1 components, 321 values
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.07.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.07.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.11.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.11.vtu
 INFO: Step 12, time 37022.9, U, 3 components, 321 values
 INFO: Step 12, time 37022.9, S, 6 components, 321 values
 INFO: Step 12, time 37022.9, S_Mises, 1 components, 321 values
@@ -9649,6 +10077,8 @@ INFO: Step 12, time 37022.9, E, 6 components, 321 values
 INFO: Step 12, time 37022.9, E_Mises, 1 components, 321 values
 INFO: Step 12, time 37022.9, E_Principal, 3 components, 321 values
 INFO: Step 12, time 37022.9, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.12.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.12.vtu
 INFO: Step 13, time 37022.9, U, 3 components, 321 values
 INFO: Step 13, time 37022.9, S, 6 components, 321 values
 INFO: Step 13, time 37022.9, S_Mises, 1 components, 321 values
@@ -9657,8 +10087,8 @@ INFO: Step 13, time 37022.9, E, 6 components, 321 values
 INFO: Step 13, time 37022.9, E_Mises, 1 components, 321 values
 INFO: Step 13, time 37022.9, E_Principal, 3 components, 321 values
 INFO: Step 13, time 37022.9, ERROR, 1 components, 321 values
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.08.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.08.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.13.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.13.vtu
 INFO: Step 14, time 37302.0, U, 3 components, 321 values
 INFO: Step 14, time 37302.0, S, 6 components, 321 values
 INFO: Step 14, time 37302.0, S_Mises, 1 components, 321 values
@@ -9667,8 +10097,8 @@ INFO: Step 14, time 37302.0, E, 6 components, 321 values
 INFO: Step 14, time 37302.0, E_Mises, 1 components, 321 values
 INFO: Step 14, time 37302.0, E_Principal, 3 components, 321 values
 INFO: Step 14, time 37302.0, ERROR, 1 components, 321 values
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.09.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.09.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.14.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.14.vtu
 INFO: Step 15, time 38917.4, U, 3 components, 321 values
 INFO: Step 15, time 38917.4, S, 6 components, 321 values
 INFO: Step 15, time 38917.4, S_Mises, 1 components, 321 values
@@ -9677,8 +10107,8 @@ INFO: Step 15, time 38917.4, E, 6 components, 321 values
 INFO: Step 15, time 38917.4, E_Mises, 1 components, 321 values
 INFO: Step 15, time 38917.4, E_Principal, 3 components, 321 values
 INFO: Step 15, time 38917.4, ERROR, 1 components, 321 values
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.10.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.10.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.15.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.15.vtu
 INFO: Step 16, time 51346.8, U, 3 components, 321 values
 INFO: Step 16, time 51346.8, S, 6 components, 321 values
 INFO: Step 16, time 51346.8, S_Mises, 1 components, 321 values
@@ -9687,8 +10117,8 @@ INFO: Step 16, time 51346.8, E, 6 components, 321 values
 INFO: Step 16, time 51346.8, E_Mises, 1 components, 321 values
 INFO: Step 16, time 51346.8, E_Principal, 3 components, 321 values
 INFO: Step 16, time 51346.8, ERROR, 1 components, 321 values
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.11.vtk
-INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.11.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.16.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.16.vtu
 
 ==================================================
 95: other/Jan_Lukas_static_structural.frd
@@ -9717,56 +10147,56 @@ INFO: Step 1, time 87.1, U, 3 components, 1720 values
 INFO: Step 1, time 87.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.01.vtk
 INFO: Writing John_Mannisto_blade_sector.01.vtu
-INFO: Step 21, time 88.2, U, 3 components, 1720 values
-INFO: Step 21, time 88.2, DISPI, 3 components, 1720 values
+INFO: Step 3, time 204.1, U, 3 components, 1720 values
+INFO: Step 3, time 204.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.02.vtk
 INFO: Writing John_Mannisto_blade_sector.02.vtu
-INFO: Step 16, time 88.5, U, 3 components, 1720 values
-INFO: Step 16, time 88.5, DISPI, 3 components, 1720 values
+INFO: Step 5, time 316.1, U, 3 components, 1720 values
+INFO: Step 5, time 316.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.03.vtk
 INFO: Writing John_Mannisto_blade_sector.03.vtu
 INFO: Step 6, time 89.2, U, 3 components, 1720 values
 INFO: Step 6, time 89.2, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.04.vtk
 INFO: Writing John_Mannisto_blade_sector.04.vtu
-INFO: Step 11, time 89.3, U, 3 components, 1720 values
-INFO: Step 11, time 89.3, DISPI, 3 components, 1720 values
-INFO: Writing John_Mannisto_blade_sector.05.vtk
-INFO: Writing John_Mannisto_blade_sector.05.vtu
 INFO: Step 8, time 200.5, U, 3 components, 1720 values
 INFO: Step 8, time 200.5, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.05.vtk
+INFO: Writing John_Mannisto_blade_sector.05.vtu
+INFO: Step 10, time 316.1, U, 3 components, 1720 values
+INFO: Step 10, time 316.1, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.06.vtk
 INFO: Writing John_Mannisto_blade_sector.06.vtu
-INFO: Step 3, time 204.1, U, 3 components, 1720 values
-INFO: Step 3, time 204.1, DISPI, 3 components, 1720 values
+INFO: Step 11, time 89.3, U, 3 components, 1720 values
+INFO: Step 11, time 89.3, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.07.vtk
 INFO: Writing John_Mannisto_blade_sector.07.vtu
 INFO: Step 13, time 206.2, U, 3 components, 1720 values
 INFO: Step 13, time 206.2, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.08.vtk
 INFO: Writing John_Mannisto_blade_sector.08.vtu
-INFO: Step 18, time 215.5, U, 3 components, 1720 values
-INFO: Step 18, time 215.5, DISPI, 3 components, 1720 values
-INFO: Writing John_Mannisto_blade_sector.09.vtk
-INFO: Writing John_Mannisto_blade_sector.09.vtu
-INFO: Step 23, time 218.8, U, 3 components, 1720 values
-INFO: Step 23, time 218.8, DISPI, 3 components, 1720 values
-INFO: Writing John_Mannisto_blade_sector.10.vtk
-INFO: Writing John_Mannisto_blade_sector.10.vtu
-INFO: Step 10, time 316.1, U, 3 components, 1720 values
-INFO: Step 10, time 316.1, DISPI, 3 components, 1720 values
-INFO: Writing John_Mannisto_blade_sector.11.vtk
-INFO: Writing John_Mannisto_blade_sector.11.vtu
-INFO: Step 5, time 316.1, U, 3 components, 1720 values
-INFO: Step 5, time 316.1, DISPI, 3 components, 1720 values
-INFO: Writing John_Mannisto_blade_sector.12.vtk
-INFO: Writing John_Mannisto_blade_sector.12.vtu
 INFO: Step 15, time 317.5, U, 3 components, 1720 values
 INFO: Step 15, time 317.5, DISPI, 3 components, 1720 values
-INFO: Writing John_Mannisto_blade_sector.13.vtk
-INFO: Writing John_Mannisto_blade_sector.13.vtu
+INFO: Writing John_Mannisto_blade_sector.09.vtk
+INFO: Writing John_Mannisto_blade_sector.09.vtu
+INFO: Step 16, time 88.5, U, 3 components, 1720 values
+INFO: Step 16, time 88.5, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.10.vtk
+INFO: Writing John_Mannisto_blade_sector.10.vtu
+INFO: Step 18, time 215.5, U, 3 components, 1720 values
+INFO: Step 18, time 215.5, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.11.vtk
+INFO: Writing John_Mannisto_blade_sector.11.vtu
 INFO: Step 20, time 318.4, U, 3 components, 1720 values
 INFO: Step 20, time 318.4, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.12.vtk
+INFO: Writing John_Mannisto_blade_sector.12.vtu
+INFO: Step 21, time 88.2, U, 3 components, 1720 values
+INFO: Step 21, time 88.2, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.13.vtk
+INFO: Writing John_Mannisto_blade_sector.13.vtu
+INFO: Step 23, time 218.8, U, 3 components, 1720 values
+INFO: Step 23, time 218.8, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.14.vtk
 INFO: Writing John_Mannisto_blade_sector.14.vtu
 INFO: Step 25, time 318.6, U, 3 components, 1720 values
@@ -10303,4 +10733,4 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 36 values
 INFO: Writing 3d_DEFORMATION_PLASTICITY.vtk
 INFO: Writing 3d_DEFORMATION_PLASTICITY.vtu
 
-Total 609.3 seconds
+Total 7m 0.4s

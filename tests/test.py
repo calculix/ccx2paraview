@@ -22,7 +22,7 @@ sys_path = os.path.normpath(sys_path)
 if sys_path not in sys.path:
     sys.path.insert(0, sys_path)
 
-from ccx2paraview import screen, cache, FRD, Converter
+from ccx2paraview import clean_screen, clean_cache, Converter
 from log import myHandler, print, read_and_log
 
 
@@ -45,28 +45,11 @@ def scan_all_files_in(start_folder, ext, limit=10000):
     return sorted(all_files)[:limit]
 
 
-def test_frd_reader_on_models_in(folder):
-    """Test FRD reader only."""
-    print('FRD READER TEST\n\n')
-    counter = 0
-    for file_name in scan_all_files_in(folder, '.frd'):
-        counter += 1
-        relpath = os.path.relpath(file_name, start=folder)
-        print('\n{}\n{}: {}'.format('='*50, counter, relpath))
-        try:
-            FRD(file_name)
-        except:
-            logging.error(traceback.format_exc())
-
-
 def convert_calculation_results_in(folder):
     """Convert calculation results."""
-    print('CONVERTER TEST\n\n')
-    counter = 0
-    for file_name in scan_all_files_in(folder, '.frd'):
-        counter += 1
+    for counter, file_name in enumerate(scan_all_files_in(folder, '.frd')):
         relpath = os.path.relpath(file_name, start=folder)
-        print('\n{}\n{}: {}'.format('='*50, counter, relpath))
+        print('\n{}\n{}: {}'.format('='*50, counter+1, relpath))
         try:
             Converter(file_name, ['vtk', 'vtu']).run()
         except:
@@ -75,10 +58,7 @@ def convert_calculation_results_in(folder):
 
 def test_binary_in(folder):
     """Convert calculation results with binaries."""
-    print('CONVERTER TEST\n\n')
-    counter = 0
-    for file_name in scan_all_files_in(folder, '.frd'):
-        counter += 1
+    for counter, file_name in enumerate(scan_all_files_in(folder, '.frd')):
         if os.name == 'nt':
             command = 'bin\\ccx2paraview.exe'
         else:
@@ -98,7 +78,6 @@ def test_binary_in(folder):
 
 
 def test_single_file(file_path):
-    print('CONVERTER TEST\n\n')
     print('\n{}\n{}'.format('='*50, file_path))
     try:
         Converter(file_path, ['vtk', 'vtu']).run()
@@ -106,32 +85,34 @@ def test_single_file(file_path):
         logging.error(traceback.format_exc())
 
 
-def test_pypi_package(file_path):
-    import ccx2paraview
-    c = ccx2paraview.Converter(file_path, ['vtu'])
-    c.run()
-
-
 # Run
 if __name__ == '__main__':
     start = time.perf_counter()
-    screen()
+    clean_screen()
 
     # Prepare logging
     logging.getLogger().addHandler(myHandler())
     logging.getLogger().setLevel(logging.INFO)
+    print('CONVERTER TEST\n\n')
 
-    # Choose what we test
-    # folder = '../examples'
-    # test_frd_reader_on_models_in(folder)
-    # convert_calculation_results_in(folder)
+    folder = '../examples'
+
+    # for file_path in [
+    #     # 'other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd',
+    #     'mkraska/Contact/Shell0/Refs/qu4_pc-ns/pc-ns.frd',
+    #     'mkraska/Contact/Shell0/Refs/qu8_pc-ns/pc-ns.frd',
+    #     'mkraska/Contact/Shell0/Refs/qu8r_pc-ns/pc-ns.frd',
+    #     'mkraska/Dynamics/Discrete/Refs/MS.frd',
+    #     'mkraska/Linear/L-Plate/Refs/solve.frd',
+    #     'mkraska/Test/Supports/Refs/solve.frd',
+    #     'other/John_Mannisto_blade_sector.frd',
+    #     ]:
+    #     file_path = os.path.join(folder, file_path)
+    #     test_single_file(file_path)
+
+    convert_calculation_results_in(folder)
     # test_binary_in(folder)
-
-    file_path = '../examples/other/Nidish_Narayanaa_Balaji.frd'
-    # file_path = '../examples/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd'
-    test_single_file(file_path)
-    # test_pypi_package(file_path)
 
     delta = time.perf_counter() - start
     print('\nTotal', get_time_delta(delta))
-    cache()
+    clean_cache()

@@ -343,11 +343,11 @@ class Writer:
         self.elem_block = elem_block
         self.result_blocks = result_blocks
 
-    def fill_point_data(self, inc):
+    def fill_point_data(self, step, inc):
         # POINT DATA - from here start all the results
         pd = self.ugrid.GetPointData()
         for b in self.result_blocks: # iterate over NodalResultsBlock (increments)
-            if b.inc == inc: # write results for one time increment only
+            if b.inc == inc and b.step == step: # write results for one time increment only
                 if len(b.results) and len(b.components):
                     da = convert_frd_data_to_vtk(b, self.node_block.numnod)
                     pd.AddArray(da)
@@ -512,9 +512,9 @@ class NodalResultsBlock:
             'PE':'PEEQ',
             }
         self.name = match.group(1) # dataset name
-        # txt = 'Vars info: name {}, ncomps {}' \
-        #     .format(self.name, self.ncomps)
-        # logging.debug(txt)
+        txt = 'Vars info: name {}, ncomps {}' \
+            .format(self.name, self.ncomps)
+        logging.debug(txt)
         if self.name in inpname:
             self.name = inpname[self.name]
 
@@ -643,33 +643,37 @@ class FRD:
     To implement large file parsing we need a step-by-step reader and writer.
     """
 
-    def __init__(self, file_name):
+    def __init__(self, in_file):
         """Read contents of the .frd file."""
-        self.file_name = file_name   # path to the .frd-file to be read
+        self.in_file = in_file   # path to the .frd-file to be read
         self.node_block = None  # node block
         self.elem_block = None  # elements block
         self.result_blocks = [] # all result blocks in order of appearance
-        self.increments = set()
+        self.steps_increments = [] # [(step, inc), ]
 
     def parse_mesh(self):
-        with open(self.file_name, 'r') as in_file:
-            while True:
-                line = in_file.readline()
-                if not line:
-                    break
-                key = line[:5].strip()
+        while True:
+            line = self.in_file.readline()
+            if not line:
+                break
+            key = line[:5].strip()
 
-                # Nodes
-                if key == '2':
-                    self.node_block = NodalPointCoordinateBlock(in_file)
+            # Nodes
+            if key == '2':
+                self.node_block = NodalPointCoordinateBlock(self.in_file)
 
-                # Elements
-                elif key == '3':
-                    self.elem_block = ElementDefinitionBlock(in_file)
+            # Elements
+            elif key == '3':
+                self.elem_block = ElementDefinitionBlock(self.in_file)
 
-                # End
-                elif key == '9999':
-                    break
+            # Results
+            if key == '100':
+                self.in_file.seek(self.in_file.tell() - len(line)) # go up one line
+                break
+
+            # End
+            elif key == '9999':
+                break
 
         return self.node_block, self.elem_block
 
@@ -678,63 +682,72 @@ class FRD:
         It is assumed, that there is constant set of variables calculated at 
         each time increment.
         """
-        with open(self.file_name, 'r') as in_file:
-            while True:
-                line = in_file.readline()
-                if not line:
-                    break
-                key = line[:5].strip()
-                # Results
-                if key == '100':
-                    inc = get_inc_step(line)[0]
-                    self.increments.add(inc)
-                # End
-                elif key == '9999':
-                    break
+        init_pos = self.in_file.tell()
+        while True:
+            line = self.in_file.readline()
+            if not line:
+                break
+            key = line[:5].strip()
+            # Results
+            if key == '100':
+                inc, step = get_inc_step(line)
+                if (step, inc) not in self.steps_increments:
+                    self.steps_increments.append((step, inc))
+            # End
+            elif key == '9999':
+                break
+        self.in_file.seek(init_pos)
 
-        i = len(self.increments)
+        i = len(self.steps_increments)
         if i:
             msg = '{} time increment{}'.format(i, 's'*min(1, i-1))
             logging.info(msg)
+            logging.debug('Steps-increments: {}'.format(self.steps_increments))
         else:
             logging.warning('No time increments!')
         return i
 
-    def parse_results(self, inc):
+    def parse_results(self, step, inc):
         """Header: key == '1' or key == '1P'."""
         self.result_blocks.clear()
-        with open(self.file_name, 'r') as in_file:
-            while True:
-                line = in_file.readline()
-                if not line:
+        while True:
+            line = self.in_file.readline()
+            if not line:
+                break
+            key = line[:5].strip()
+
+            # Read results for certain time increment
+            if key == '100':
+                logging.debug('line: ' + line)
+                got_inc, got_step = get_inc_step(line)
+                if inc != got_inc:
+                    logging.debug('{} != {}'.format(inc, got_inc))
+                if step != got_step:
+                    logging.debug('{} != {}'.format(step, got_step))
+                if inc != got_inc or step != got_step:
+                    self.in_file.seek(self.in_file.tell() - len(line)) # go up one line
                     break
-                key = line[:5].strip()
 
-                # Read results for certain time increment
-                if key == '100':
-                    if inc != get_inc_step(line)[0]:
-                        continue
+                b = NodalResultsBlock(line)
+                b.run(self.in_file, self.node_block)
+                self.result_blocks.append(b)
+                b.print_some_log()
+                if b.name == 'S':
+                    b1 = self.calculate_mises_stress(b)
+                    b2 = self.calculate_principal(b)
+                    self.result_blocks.extend([b1, b2])
+                    b1.print_some_log()
+                    b2.print_some_log()
+                if b.name == 'E':
+                    b1 = self.calculate_mises_strain(b)
+                    b2 = self.calculate_principal(b)
+                    self.result_blocks.extend([b1, b2])
+                    b1.print_some_log()
+                    b2.print_some_log()
 
-                    b = NodalResultsBlock(line)
-                    b.run(in_file, self.node_block)
-                    self.result_blocks.append(b)
-                    b.print_some_log()
-                    if b.name == 'S':
-                        b1 = self.calculate_mises_stress(b)
-                        b2 = self.calculate_principal(b)
-                        self.result_blocks.extend([b1, b2])
-                        b1.print_some_log()
-                        b2.print_some_log()
-                    if b.name == 'E':
-                        b1 = self.calculate_mises_strain(b)
-                        b2 = self.calculate_principal(b)
-                        self.result_blocks.extend([b1, b2])
-                        b1.print_some_log()
-                        b2.print_some_log()
-
-                # End
-                elif key == '9999':
-                    break
+            # End
+            elif key == '9999':
+                break
 
         return self.result_blocks
 
@@ -835,9 +848,8 @@ def get_inc_step(line):
     match = match_line(regex, line)
     inc = float(match.group(1)) # could be frequency, time or any numerical value
     step = int(match.group(2)) # step number
-    # txt = 'Step info: value {}, step {}' \
-    #     .format(inc, step)
-    # logging.debug(txt)
+    txt = 'Step info: value {}, step {}'.format(inc, step)
+    logging.debug(txt)
     return inc, step
 
 
@@ -859,12 +871,12 @@ def match_line(regex, line):
 """Utility functions."""
 
 
-def screen():
+def clean_screen():
     """Clean screen."""
     os.system('cls' if os.name=='nt' else 'clear')
 
 
-def cache(folder=None):
+def clean_cache(folder=None):
     """Recursively delete cached files in all subfolders."""
     if folder is None:
         folder = os.getcwd()
@@ -876,12 +888,12 @@ def cache(folder=None):
     try:
         for f in os.scandir(folder):
             if f.is_dir():
-                cache(f.path)
+                clean_cache(f.path)
     except PermissionError:
         logging.error('Insufficient permissions for ' + folder)
 
 
-def results(folder=None):
+def clean_results(folder=None):
     """Cleaup old result files."""
     if folder is None:
         folder = os.getcwd()
@@ -909,10 +921,11 @@ class Converter:
     def __init__(self, frd_file_name, fmt_list):
         self.frd_file_name = frd_file_name
         self.fmt_list = [fmt.lower() for fmt in fmt_list]
-        self.frd = FRD(self.frd_file_name)
 
     def run(self):
         logging.info('Reading ' + os.path.basename(self.frd_file_name))
+        in_file = open(self.frd_file_name, 'r')
+        self.frd = FRD(in_file)
 
         # Check if file contains mesh data
         node_block, elem_block = self.frd.parse_mesh()
@@ -931,10 +944,11 @@ class Converter:
             """For each time increment generate separate .vt* file
             Output file name will be the same as input but with increment time.
             """
-            for inc, file_name in self.inc_filenames():
-                result_blocks = self.frd.parse_results(inc)
+            for step, inc, file_name in self.steps_inc_filenames():
+                logging.debug('step {}, inc {}'.format(step, inc))
+                result_blocks = self.frd.parse_results(step, inc)
                 w = Writer(node_block, elem_block, result_blocks)
-                w.fill_point_data(inc)
+                w.fill_point_data(step, inc)
                 for fmt in self.fmt_list: # ['vtk', 'vtu']
                     w.write_file(file_name + fmt)
 
@@ -942,22 +956,24 @@ class Converter:
             if i > 1 and 'vtu' in self.fmt_list:
                 self.write_pvd()
 
-    def inc_filenames(self):
+        in_file.close()
+
+    def steps_inc_filenames(self):
         """If model has many time increments - many output files
         will be created. Each output file's name should contain
         increment number padded with zero. In this method file_name
         has no extension.
         """
-        i = len(self.frd.increments)
-        d = {} # {increment time: file name}
-        for counter,t in enumerate(sorted(self.frd.increments)):
+        i = len(self.frd.steps_increments)
+        d = [] # [(step, inc, file name), ]
+        for counter, (step, inc) in enumerate(self.frd.steps_increments):
             if i > 1:
                 num = '.{:0{width}}.'.format(counter+1, width=len(str(i)))
             else:
                 num = '.'
             file_name = self.frd_file_name[:-4] + num
-            d[t] = file_name # without extension
-        return sorted(d.items())
+            d.append((step, inc, file_name)) # without extension
+        return d
 
     def write_pvd(self):
         """Writes ParaView Data (PVD) file for series of VTU files."""
@@ -966,7 +982,7 @@ class Converter:
             f.write('<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">\n')
             f.write('\t<Collection>\n')
 
-            for inc, file_name in self.inc_filenames():
+            for step, inc, file_name in self.steps_inc_filenames():
                 f.write('\t\t<DataSet file="{}vtu" timestep="{}"/>\n'\
                     .format(os.path.basename(file_name), inc))
 
@@ -996,6 +1012,6 @@ def main():
 
 
 if __name__ == '__main__':
-    screen()
+    clean_screen()
     main()
-    cache()
+    clean_cache()
