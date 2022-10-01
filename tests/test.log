@@ -8408,16 +8408,11 @@ INFO: Reading u1General.frd
 INFO: 0 nodes
 INFO: 0 cells
 INFO: 1 time increment
-INFO: Step 1, time 1.0, U, 6 components, 0 values
-INFO: Step 1, time 1.0, S, 6 components, 0 values
-INFO: Step 1, time 1.0, S_Mises, 1 components, 0 values
-INFO: Step 1, time 1.0, S_Principal, 3 components, 0 values
-INFO: Step 1, time 1.0, ERROR, 1 components, 0 values
-WARNING: U - no data for this increment
-WARNING: S - no data for this increment
-WARNING: S_Mises - no data for this increment
-WARNING: S_Principal - no data for this increment
-WARNING: ERROR - no data for this increment
+WARNING: Step 1, time 1.0, U, 6 components, 0 values
+WARNING: Step 1, time 1.0, S, 6 components, 0 values
+WARNING: Step 1, time 1.0, S_Mises, 1 components, 0 values
+WARNING: Step 1, time 1.0, S_Principal, 3 components, 0 values
+WARNING: Step 1, time 1.0, ERROR, 1 components, 0 values
 INFO: Writing u1General.vtk
 INFO: Writing u1General.vtu
 
@@ -9758,9 +9753,9 @@ INFO: Step 5, time 2.01e-02, U, 3 components, 44556 values
 INFO: Writing CubeTie.5.vtk
 INFO: Writing CubeTie.5.vtu
 INFO: Step 6, time 3.01e-02, U, 3 components, 44556 values
-WARNING: 17520 Inf values are converted to 0.0
 INFO: Writing CubeTie.6.vtk
 INFO: Writing CubeTie.6.vtu
+WARNING: 17520 Inf values are converted to 0.0
 
 ==================================================
 91: other/Dichtstoff_beam_coupling_compl.frd
@@ -10733,4 +10728,4 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 36 values
 INFO: Writing 3d_DEFORMATION_PLASTICITY.vtk
 INFO: Writing 3d_DEFORMATION_PLASTICITY.vtu
 
-Total 7m 0.4s
+Total 7m 30.8s

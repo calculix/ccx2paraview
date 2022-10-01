@@ -95,23 +95,16 @@ if __name__ == '__main__':
     logging.getLogger().setLevel(logging.INFO)
     print('CONVERTER TEST\n\n')
 
-    folder = '../examples'
+    convert_calculation_results_in('../examples')
 
-    # for file_path in [
-    #     # 'other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd',
-    #     'mkraska/Contact/Shell0/Refs/qu4_pc-ns/pc-ns.frd',
-    #     'mkraska/Contact/Shell0/Refs/qu8_pc-ns/pc-ns.frd',
-    #     'mkraska/Contact/Shell0/Refs/qu8r_pc-ns/pc-ns.frd',
-    #     'mkraska/Dynamics/Discrete/Refs/MS.frd',
-    #     'mkraska/Linear/L-Plate/Refs/solve.frd',
-    #     'mkraska/Test/Supports/Refs/solve.frd',
-    #     'other/John_Mannisto_blade_sector.frd',
-    #     ]:
-    #     file_path = os.path.join(folder, file_path)
-    #     test_single_file(file_path)
+    # test_single_file('../examples/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd')
+    # test_single_file('../examples/other/Jan_Lukas_modal_dynamic_beammodal.frd')
+    # test_single_file('../examples/other/John_Mannisto_blade_sector.frd')
+    # test_single_file('../examples/ccx/test/achtel2.frd')
+    # test_single_file('../examples/mkraska/RVE/PlanarSlide/Refs/Zug.frd')
+    # test_single_file('../examples/other/Jan_Lukas_static_structural.frd')
 
-    convert_calculation_results_in(folder)
-    # test_binary_in(folder)
+    # test_binary_in('../examples')
 
     delta = time.perf_counter() - start
     print('\nTotal', get_time_delta(delta))

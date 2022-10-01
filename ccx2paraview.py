@@ -15,6 +15,7 @@ import os
 import sys
 import logging
 import argparse
+import threading
 import shutil
 import math
 import re
@@ -267,8 +268,9 @@ def generate_ugrid(node_block, elem_block):
     """Generate VTK mesh."""
     ugrid = vtk.vtkUnstructuredGrid() # create empty grid in VTK
 
-    # POINTS section
-    # Nodes should be renumbered starting from 0
+    """POINTS section.
+    Nodes should be renumbered starting from 0.
+    """
     points = vtk.vtkPoints()
     renumbered_nodes = {} # old_number : new_number
     new_node_number = 0
@@ -281,8 +283,9 @@ def generate_ugrid(node_block, elem_block):
             break
     ugrid.SetPoints(points) # insert all points to the grid
 
-    # CELLS section - elements connectyvity
-    # Sometimes element nodes should be repositioned
+    """CELLS section - elements connectyvity.
+    Sometimes element nodes should be repositioned.
+    """
     ugrid.Allocate(elem_block.numelem)
     for e in sorted(elem_block.elements, key=lambda x: x.num):
         vtk_elem_type = convert_elem_type(e.type)
@@ -336,28 +339,23 @@ class Writer:
     Writes results for one time increment only.
     """
 
-    def __init__(self, node_block, elem_block, result_blocks=[]):
+    def __init__(self, node_block, elem_block):
         """Main function: frd is a FRD object."""
         self.ugrid = generate_ugrid(node_block, elem_block)
         self.node_block = node_block
         self.elem_block = elem_block
-        self.result_blocks = result_blocks
 
-    def fill_point_data(self, step, inc):
+    def fill_point_data(self, result_blocks):
         # POINT DATA - from here start all the results
         pd = self.ugrid.GetPointData()
-        for b in self.result_blocks: # iterate over NodalResultsBlock (increments)
-            if b.inc == inc and b.step == step: # write results for one time increment only
-                if len(b.results) and len(b.components):
-                    da = convert_frd_data_to_vtk(b, self.node_block.numnod)
-                    pd.AddArray(da)
-                    pd.Modified()
-                else:
-                    logging.warning(b.name + ' - no data for this increment')
+        for b in result_blocks: # iterate over NodalResultsBlock (increments)
+            if len(b.results) and len(b.components):
+                da = convert_frd_data_to_vtk(b, self.node_block.numnod)
+                pd.AddArray(da)
+                pd.Modified()
 
     def write_file(self, file_name):
         """Write file."""
-        logging.info('Writing ' + os.path.basename(file_name))
         if file_name.endswith('vtk'):
             writer = vtk.vtkUnstructuredGridWriter()
             writer.SetInputData(self.ugrid)
@@ -387,8 +385,7 @@ class Element:
     """A single finite element object."""
 
     def __init__(self, num, etype, nodes):
-        # txt = 'Element {}, type {}: {}'.format(num, etype, nodes)
-        # logging.debug(txt)
+        # logging.debug('Element {}, type {}: {}'.format(num, etype, nodes))
         self.num = num
         self.type = etype
         self.nodes = nodes
@@ -549,7 +546,6 @@ class NodalResultsBlock:
             component_name = match.group(0)
             if component_name.startswith(self.name):
                 component_name = component_name[len(self.name):]
-            # logging.debug('Component name ' + component_name)
 
             if 'ALL' in component_name:
                 self.ncomps -= 1
@@ -616,8 +612,6 @@ class NodalResultsBlock:
                 data = [float(match.group(c+1)) for c in range(row_comps)]
                 self.results[node].extend(data)
 
-            # logging.debug('Node {}: {}'.format(node, self.results[node]))
-
         if emitted_warning_types['NaNInf']:
             logging.warning('NaN and Inf are not supported in Paraview ({} warnings).'\
                 .format(emitted_warning_types['NaNInf']))
@@ -631,11 +625,15 @@ class NodalResultsBlock:
             time_str = 'time {:.2e}, '.format(self.inc)
         else:
             time_str = 'time {:.1f}, '.format(self.inc)
+        v = len(self.results)
         txt = 'Step {}, '.format(self.step) + time_str \
             + '{}, '.format(self.name) \
             + '{} components, '.format(len(self.components)) \
-            + '{} values'.format(len(self.results))
-        logging.info(txt)
+            + '{} values'.format(v)
+        if v:
+            logging.info(txt)
+        else:
+            logging.warning(txt)
 
 
 class FRD:
@@ -648,7 +646,6 @@ class FRD:
         self.in_file = in_file   # path to the .frd-file to be read
         self.node_block = None  # node block
         self.elem_block = None  # elements block
-        self.result_blocks = [] # all result blocks in order of appearance
         self.steps_increments = [] # [(step, inc), ]
 
     def parse_mesh(self):
@@ -705,51 +702,41 @@ class FRD:
             logging.debug('Steps-increments: {}'.format(self.steps_increments))
         else:
             logging.warning('No time increments!')
-        return i
 
     def parse_results(self, step, inc):
         """Header: key == '1' or key == '1P'."""
-        self.result_blocks.clear()
-        while True:
-            line = self.in_file.readline()
-            if not line:
-                break
-            key = line[:5].strip()
+        result_blocks = []
+        if step:
+            while True:
+                line = self.in_file.readline()
+                if not line:
+                    break
+                key = line[:5].strip()
 
-            # Read results for certain time increment
-            if key == '100':
-                logging.debug('line: ' + line)
-                got_inc, got_step = get_inc_step(line)
-                if inc != got_inc:
-                    logging.debug('{} != {}'.format(inc, got_inc))
-                if step != got_step:
-                    logging.debug('{} != {}'.format(step, got_step))
-                if inc != got_inc or step != got_step:
-                    self.in_file.seek(self.in_file.tell() - len(line)) # go up one line
+                # Read results for certain time increment
+                if key == '100':
+                    logging.debug('line: ' + line)
+                    got_inc, got_step = get_inc_step(line)
+                    if inc != got_inc or step != got_step:
+                        self.in_file.seek(self.in_file.tell() - len(line)) # go up one line
+                        break
+
+                    b = NodalResultsBlock(line)
+                    b.run(self.in_file, self.node_block)
+                    result_blocks.append(b)
+                    b.print_some_log()
+                    if b.name == 'S':
+                        result_blocks.append(self.calculate_mises_stress(b))
+                        result_blocks.append(self.calculate_principal(b))
+                    if b.name == 'E':
+                        result_blocks.append(self.calculate_mises_strain(b))
+                        result_blocks.append(self.calculate_principal(b))
+
+                # End
+                elif key == '9999':
                     break
 
-                b = NodalResultsBlock(line)
-                b.run(self.in_file, self.node_block)
-                self.result_blocks.append(b)
-                b.print_some_log()
-                if b.name == 'S':
-                    b1 = self.calculate_mises_stress(b)
-                    b2 = self.calculate_principal(b)
-                    self.result_blocks.extend([b1, b2])
-                    b1.print_some_log()
-                    b2.print_some_log()
-                if b.name == 'E':
-                    b1 = self.calculate_mises_strain(b)
-                    b2 = self.calculate_principal(b)
-                    self.result_blocks.extend([b1, b2])
-                    b1.print_some_log()
-                    b2.print_some_log()
-
-            # End
-            elif key == '9999':
-                break
-
-        return self.result_blocks
+        return result_blocks
 
     def calculate_mises_stress(self, b):
         """Append von Mises stress."""
@@ -776,6 +763,7 @@ class FRD:
                 + 6 * Sxy**2)
             b1.results[node_num] = [mises]
 
+        b1.print_some_log()
         return b1
 
     def calculate_mises_strain(self, b):
@@ -803,6 +791,7 @@ class FRD:
                 + 6 * Sxy**2)
             b1.results[node_num] = [mises]
 
+        b1.print_some_log()
         return b1
 
     def calculate_principal(self, b):
@@ -826,6 +815,7 @@ class FRD:
             for ps in sorted(np.linalg.eigvals(tensor).tolist()):
                 b1.results[node_num].append(ps)
 
+        b1.print_some_log()
         return b1
 
     def has_mesh(self):
@@ -897,7 +887,7 @@ def clean_results(folder=None):
     """Cleaup old result files."""
     if folder is None:
         folder = os.getcwd()
-    extensions = ('.vtk', '.vtu')
+    extensions = ('.vtk', '.vtu', '.pvd')
     for f in os.scandir(folder):
         if f.name.endswith(extensions):
             try:
@@ -920,9 +910,10 @@ class Converter:
 
     def __init__(self, frd_file_name, fmt_list):
         self.frd_file_name = frd_file_name
-        self.fmt_list = [fmt.lower() for fmt in fmt_list]
+        self.fmt_list = ['.' + fmt.lower() for fmt in fmt_list] # ['.vtk', '.vtu']
 
     def run(self):
+        t = None
         logging.info('Reading ' + os.path.basename(self.frd_file_name))
         in_file = open(self.frd_file_name, 'r')
         self.frd = FRD(in_file)
@@ -932,48 +923,58 @@ class Converter:
         if not self.frd.has_mesh():
             return
 
-        # Check if FRD has no step data - only mesh
-        i = self.frd.count_increments()
-        if i == 0:
-            w = Writer(node_block, elem_block)
-            for fmt in self.fmt_list: # ['vtk', 'vtu']
-                file_name = self.frd_file_name[:-3] + fmt
-                w.write_file(file_name)
+        """For each time increment generate separate .vt* file.
+        Output file name will be the same as input but with serial number.
 
-        else:
-            """For each time increment generate separate .vt* file
-            Output file name will be the same as input but with increment time.
-            """
-            for step, inc, file_name in self.steps_inc_filenames():
-                logging.debug('step {}, inc {}'.format(step, inc))
-                result_blocks = self.frd.parse_results(step, inc)
-                w = Writer(node_block, elem_block, result_blocks)
-                w.fill_point_data(step, inc)
-                for fmt in self.fmt_list: # ['vtk', 'vtu']
-                    w.write_file(file_name + fmt)
+        Threads are used to save .vt* files:
+        ccx2paraview_0 - no threading at all         7m 37.5s    25m 33.7s
+        ccx2paraview_1 - save files with threading   7m 44.0s    25m 32.8s
+        ccx2paraview_2 - slight refactoring of 0     7m 18.0s    26m 10.2s
+        ccx2paraview_3 - slight refactoring of 1     7m 25.4s    25m 1.1s
+        """
+        self.frd.count_increments()
+        for step, inc, num in self.step_inc_num(): # NOTE Could be (0, 0, '')
+            result_blocks = self.frd.parse_results(step, inc) # NOTE Could be empty list []
+            for fmt in self.fmt_list: # ['.vtk', '.vtu']
+                logging.info('Writing ' + os.path.basename(self.frd_file_name[:-4]) + num + fmt)
+            if t is not None:
+                t.join() # do not start a new thread while and old one is running 
+            t = threading.Thread(target=self.save_results,
+                    args=(node_block, elem_block, result_blocks, num))
+            t.start()
 
-            # Write ParaView Data (PVD) for series of VTU files
-            if i > 1 and 'vtu' in self.fmt_list:
-                self.write_pvd()
+        # Write ParaView Data (PVD) for series of VTU files
+        if len(self.frd.steps_increments) > 1 and '.vtu' in self.fmt_list:
+            self.write_pvd()
 
         in_file.close()
+        if t is not None:
+            t.join() # do not start a new thread whilw and old one is running 
 
-    def steps_inc_filenames(self):
+    def step_inc_num(self):
         """If model has many time increments - many output files
         will be created. Each output file's name should contain
         increment number padded with zero. In this method file_name
         has no extension.
         """
         i = len(self.frd.steps_increments)
-        d = [] # [(step, inc, file name), ]
+        if not i:
+            return [(0, 0, '')]
+        d = [] # [(step, inc, num), ]
         for counter, (step, inc) in enumerate(self.frd.steps_increments):
             if i > 1:
-                num = '.{:0{width}}.'.format(counter+1, width=len(str(i)))
+                num = '.{:0{width}}'.format(counter+1, width=len(str(i)))
             else:
-                num = '.'
-            file_name = self.frd_file_name[:-4] + num
-            d.append((step, inc, file_name)) # without extension
+                num = ''
+            d.append((step, inc, num)) # without extension
         return d
+
+    def save_results(self, node_block, elem_block, result_blocks, num):
+        w = Writer(node_block, elem_block)
+        w.fill_point_data(result_blocks)
+        for fmt in self.fmt_list: # ['.vtk', '.vtu']
+            file_name = self.frd_file_name[:-4] + num + fmt
+            w.write_file(file_name)
 
     def write_pvd(self):
         """Writes ParaView Data (PVD) file for series of VTU files."""
@@ -982,7 +983,8 @@ class Converter:
             f.write('<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">\n')
             f.write('\t<Collection>\n')
 
-            for step, inc, file_name in self.steps_inc_filenames():
+            for step, inc, num in self.step_inc_num():
+                file_name = os.path.basename(self.frd_file_name[:-4]) + num
                 f.write('\t\t<DataSet file="{}vtu" timestep="{}"/>\n'\
                     .format(os.path.basename(file_name), inc))
 

@@ -74,7 +74,7 @@ tensor.shape = (len(pd), 3, 3)
 output.PointData.append(tensor, 'S_tensor')
 ```
 
-A snippet for Paraview programmable filter to calculate eigenvalues and eigenvectors:
+A snippet for Paraview **programmable filter** to calculate eigenvalues and eigenvectors:
 
 ```Python
 import numpy as np
@@ -187,15 +187,9 @@ Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-fo
 
 Log memory consumption.
 
-Which file is written faster: VTK or VTU? VTK is twice faster?
-
-Use threads for convertion and writing. Read FRD in the main thread.
+Read binary .frd files.
 
 Read DAT files: it would be a killer feature if Paraview could visualize results in Gauss points. Use [CCXStressReader](https://github.com/Mote3D/CCXStressReader).
-
-Multiprocessing for tests.
-
-Read binary .frd files.
 
 Contribute to meshio. FRD writer. Use meshio XDMF writer: https://github.com/calculix/ccx2paraview/issues/6
 
