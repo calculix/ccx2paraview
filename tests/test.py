@@ -161,10 +161,13 @@ if __name__ == '__main__':
     # test_single_file(d + '/other/John_Mannisto_blade_sector.frd')
     # test_single_file(d + '/other/Jan_Lukas_static_structural.frd')
     # test_single_file(d + '/other/Ihor_Mirzov_baffle_2D.frd')
+    # test_single_file(d + '/other/CubeTie/CubeTie.frd')
+    # test_single_file('../../cae/examples/default.frd')
     # test_single_file(d + '/ccx/test/achtel2.frd')
     # test_single_file(d + '/mkraska/RVE/PlanarSlide/Refs/Zug.frd')
     # test_single_file(d + '/mkraska/Contact/CNC/Refs/solve.frd')
     # test_single_file(d + '/mkraska/Contact/Eyebar/Refs/eyebar.frd')
+    # test_single_file(d + '/mkraska/Test/BeamSections/Refs/u1General.frd')
 
     delta = time.perf_counter() - start
     print('\nTotal', get_time_delta(delta))

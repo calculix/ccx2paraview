@@ -332,10 +332,10 @@ INFO: Step 1, time 1.00e-02, E_Mises, 1 components, 1806 values
 INFO: Step 1, time 1.00e-02, E_Principal, 3 components, 1806 values
 INFO: Step 1, time 1.00e-02, PEEQ, 1 components, 1806 values
 INFO: Step 1, time 1.00e-02, CONTACT, 6 components, 1814 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 1, time 1.00e-02, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.01.vtk
 INFO: Writing eyebar.01.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 2, time 2.00e-02, U, 3 components, 1806 values
 INFO: Step 2, time 2.00e-02, S, 6 components, 1806 values
 INFO: Step 2, time 2.00e-02, S_Mises, 1 components, 1806 values
@@ -345,10 +345,10 @@ INFO: Step 2, time 2.00e-02, E_Mises, 1 components, 1806 values
 INFO: Step 2, time 2.00e-02, E_Principal, 3 components, 1806 values
 INFO: Step 2, time 2.00e-02, PEEQ, 1 components, 1806 values
 INFO: Step 2, time 2.00e-02, CONTACT, 6 components, 1814 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 2, time 2.00e-02, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.02.vtk
 INFO: Writing eyebar.02.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 3, time 3.50e-02, U, 3 components, 1806 values
 INFO: Step 3, time 3.50e-02, S, 6 components, 1806 values
 INFO: Step 3, time 3.50e-02, S_Mises, 1 components, 1806 values
@@ -358,10 +358,10 @@ INFO: Step 3, time 3.50e-02, E_Mises, 1 components, 1806 values
 INFO: Step 3, time 3.50e-02, E_Principal, 3 components, 1806 values
 INFO: Step 3, time 3.50e-02, PEEQ, 1 components, 1806 values
 INFO: Step 3, time 3.50e-02, CONTACT, 6 components, 1820 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 3, time 3.50e-02, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.03.vtk
 INFO: Writing eyebar.03.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 4, time 5.00e-02, U, 3 components, 1806 values
 INFO: Step 4, time 5.00e-02, S, 6 components, 1806 values
 INFO: Step 4, time 5.00e-02, S_Mises, 1 components, 1806 values
@@ -371,10 +371,10 @@ INFO: Step 4, time 5.00e-02, E_Mises, 1 components, 1806 values
 INFO: Step 4, time 5.00e-02, E_Principal, 3 components, 1806 values
 INFO: Step 4, time 5.00e-02, PEEQ, 1 components, 1806 values
 INFO: Step 4, time 5.00e-02, CONTACT, 6 components, 1824 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 4, time 5.00e-02, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.04.vtk
 INFO: Writing eyebar.04.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 5, time 6.50e-02, U, 3 components, 1806 values
 INFO: Step 5, time 6.50e-02, S, 6 components, 1806 values
 INFO: Step 5, time 6.50e-02, S_Mises, 1 components, 1806 values
@@ -384,10 +384,10 @@ INFO: Step 5, time 6.50e-02, E_Mises, 1 components, 1806 values
 INFO: Step 5, time 6.50e-02, E_Principal, 3 components, 1806 values
 INFO: Step 5, time 6.50e-02, PEEQ, 1 components, 1806 values
 INFO: Step 5, time 6.50e-02, CONTACT, 6 components, 1826 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 5, time 6.50e-02, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.05.vtk
 INFO: Writing eyebar.05.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 6, time 8.00e-02, U, 3 components, 1806 values
 INFO: Step 6, time 8.00e-02, S, 6 components, 1806 values
 INFO: Step 6, time 8.00e-02, S_Mises, 1 components, 1806 values
@@ -397,10 +397,10 @@ INFO: Step 6, time 8.00e-02, E_Mises, 1 components, 1806 values
 INFO: Step 6, time 8.00e-02, E_Principal, 3 components, 1806 values
 INFO: Step 6, time 8.00e-02, PEEQ, 1 components, 1806 values
 INFO: Step 6, time 8.00e-02, CONTACT, 6 components, 1830 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 6, time 8.00e-02, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.06.vtk
 INFO: Writing eyebar.06.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 7, time 9.50e-02, U, 3 components, 1806 values
 INFO: Step 7, time 9.50e-02, S, 6 components, 1806 values
 INFO: Step 7, time 9.50e-02, S_Mises, 1 components, 1806 values
@@ -410,10 +410,10 @@ INFO: Step 7, time 9.50e-02, E_Mises, 1 components, 1806 values
 INFO: Step 7, time 9.50e-02, E_Principal, 3 components, 1806 values
 INFO: Step 7, time 9.50e-02, PEEQ, 1 components, 1806 values
 INFO: Step 7, time 9.50e-02, CONTACT, 6 components, 1832 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 7, time 9.50e-02, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.07.vtk
 INFO: Writing eyebar.07.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 8, time 1.17e-01, U, 3 components, 1806 values
 INFO: Step 8, time 1.17e-01, S, 6 components, 1806 values
 INFO: Step 8, time 1.17e-01, S_Mises, 1 components, 1806 values
@@ -423,10 +423,10 @@ INFO: Step 8, time 1.17e-01, E_Mises, 1 components, 1806 values
 INFO: Step 8, time 1.17e-01, E_Principal, 3 components, 1806 values
 INFO: Step 8, time 1.17e-01, PEEQ, 1 components, 1806 values
 INFO: Step 8, time 1.17e-01, CONTACT, 6 components, 1834 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 8, time 1.17e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.08.vtk
 INFO: Writing eyebar.08.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 9, time 1.51e-01, U, 3 components, 1806 values
 INFO: Step 9, time 1.51e-01, S, 6 components, 1806 values
 INFO: Step 9, time 1.51e-01, S_Mises, 1 components, 1806 values
@@ -436,10 +436,10 @@ INFO: Step 9, time 1.51e-01, E_Mises, 1 components, 1806 values
 INFO: Step 9, time 1.51e-01, E_Principal, 3 components, 1806 values
 INFO: Step 9, time 1.51e-01, PEEQ, 1 components, 1806 values
 INFO: Step 9, time 1.51e-01, CONTACT, 6 components, 1838 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 9, time 1.51e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.09.vtk
 INFO: Writing eyebar.09.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 10, time 2.02e-01, U, 3 components, 1806 values
 INFO: Step 10, time 2.02e-01, S, 6 components, 1806 values
 INFO: Step 10, time 2.02e-01, S_Mises, 1 components, 1806 values
@@ -449,10 +449,10 @@ INFO: Step 10, time 2.02e-01, E_Mises, 1 components, 1806 values
 INFO: Step 10, time 2.02e-01, E_Principal, 3 components, 1806 values
 INFO: Step 10, time 2.02e-01, PEEQ, 1 components, 1806 values
 INFO: Step 10, time 2.02e-01, CONTACT, 6 components, 1842 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 10, time 2.02e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.10.vtk
 INFO: Writing eyebar.10.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 11, time 2.53e-01, U, 3 components, 1806 values
 INFO: Step 11, time 2.53e-01, S, 6 components, 1806 values
 INFO: Step 11, time 2.53e-01, S_Mises, 1 components, 1806 values
@@ -462,10 +462,10 @@ INFO: Step 11, time 2.53e-01, E_Mises, 1 components, 1806 values
 INFO: Step 11, time 2.53e-01, E_Principal, 3 components, 1806 values
 INFO: Step 11, time 2.53e-01, PEEQ, 1 components, 1806 values
 INFO: Step 11, time 2.53e-01, CONTACT, 6 components, 1844 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 11, time 2.53e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.11.vtk
 INFO: Writing eyebar.11.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 12, time 3.03e-01, U, 3 components, 1806 values
 INFO: Step 12, time 3.03e-01, S, 6 components, 1806 values
 INFO: Step 12, time 3.03e-01, S_Mises, 1 components, 1806 values
@@ -475,10 +475,10 @@ INFO: Step 12, time 3.03e-01, E_Mises, 1 components, 1806 values
 INFO: Step 12, time 3.03e-01, E_Principal, 3 components, 1806 values
 INFO: Step 12, time 3.03e-01, PEEQ, 1 components, 1806 values
 INFO: Step 12, time 3.03e-01, CONTACT, 6 components, 1846 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 12, time 3.03e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.12.vtk
 INFO: Writing eyebar.12.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 13, time 3.54e-01, U, 3 components, 1806 values
 INFO: Step 13, time 3.54e-01, S, 6 components, 1806 values
 INFO: Step 13, time 3.54e-01, S_Mises, 1 components, 1806 values
@@ -488,10 +488,10 @@ INFO: Step 13, time 3.54e-01, E_Mises, 1 components, 1806 values
 INFO: Step 13, time 3.54e-01, E_Principal, 3 components, 1806 values
 INFO: Step 13, time 3.54e-01, PEEQ, 1 components, 1806 values
 INFO: Step 13, time 3.54e-01, CONTACT, 6 components, 1846 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 13, time 3.54e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.13.vtk
 INFO: Writing eyebar.13.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 14, time 4.04e-01, U, 3 components, 1806 values
 INFO: Step 14, time 4.04e-01, S, 6 components, 1806 values
 INFO: Step 14, time 4.04e-01, S_Mises, 1 components, 1806 values
@@ -501,10 +501,10 @@ INFO: Step 14, time 4.04e-01, E_Mises, 1 components, 1806 values
 INFO: Step 14, time 4.04e-01, E_Principal, 3 components, 1806 values
 INFO: Step 14, time 4.04e-01, PEEQ, 1 components, 1806 values
 INFO: Step 14, time 4.04e-01, CONTACT, 6 components, 1848 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 14, time 4.04e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.14.vtk
 INFO: Writing eyebar.14.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 15, time 4.55e-01, U, 3 components, 1806 values
 INFO: Step 15, time 4.55e-01, S, 6 components, 1806 values
 INFO: Step 15, time 4.55e-01, S_Mises, 1 components, 1806 values
@@ -514,10 +514,10 @@ INFO: Step 15, time 4.55e-01, E_Mises, 1 components, 1806 values
 INFO: Step 15, time 4.55e-01, E_Principal, 3 components, 1806 values
 INFO: Step 15, time 4.55e-01, PEEQ, 1 components, 1806 values
 INFO: Step 15, time 4.55e-01, CONTACT, 6 components, 1848 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 15, time 4.55e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.15.vtk
 INFO: Writing eyebar.15.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 16, time 5.06e-01, U, 3 components, 1806 values
 INFO: Step 16, time 5.06e-01, S, 6 components, 1806 values
 INFO: Step 16, time 5.06e-01, S_Mises, 1 components, 1806 values
@@ -527,10 +527,10 @@ INFO: Step 16, time 5.06e-01, E_Mises, 1 components, 1806 values
 INFO: Step 16, time 5.06e-01, E_Principal, 3 components, 1806 values
 INFO: Step 16, time 5.06e-01, PEEQ, 1 components, 1806 values
 INFO: Step 16, time 5.06e-01, CONTACT, 6 components, 1850 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 16, time 5.06e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.16.vtk
 INFO: Writing eyebar.16.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 17, time 5.56e-01, U, 3 components, 1806 values
 INFO: Step 17, time 5.56e-01, S, 6 components, 1806 values
 INFO: Step 17, time 5.56e-01, S_Mises, 1 components, 1806 values
@@ -540,10 +540,10 @@ INFO: Step 17, time 5.56e-01, E_Mises, 1 components, 1806 values
 INFO: Step 17, time 5.56e-01, E_Principal, 3 components, 1806 values
 INFO: Step 17, time 5.56e-01, PEEQ, 1 components, 1806 values
 INFO: Step 17, time 5.56e-01, CONTACT, 6 components, 1850 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 17, time 5.56e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.17.vtk
 INFO: Writing eyebar.17.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 18, time 6.07e-01, U, 3 components, 1806 values
 INFO: Step 18, time 6.07e-01, S, 6 components, 1806 values
 INFO: Step 18, time 6.07e-01, S_Mises, 1 components, 1806 values
@@ -553,10 +553,10 @@ INFO: Step 18, time 6.07e-01, E_Mises, 1 components, 1806 values
 INFO: Step 18, time 6.07e-01, E_Principal, 3 components, 1806 values
 INFO: Step 18, time 6.07e-01, PEEQ, 1 components, 1806 values
 INFO: Step 18, time 6.07e-01, CONTACT, 6 components, 1850 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 18, time 6.07e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.18.vtk
 INFO: Writing eyebar.18.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 19, time 6.57e-01, U, 3 components, 1806 values
 INFO: Step 19, time 6.57e-01, S, 6 components, 1806 values
 INFO: Step 19, time 6.57e-01, S_Mises, 1 components, 1806 values
@@ -566,10 +566,10 @@ INFO: Step 19, time 6.57e-01, E_Mises, 1 components, 1806 values
 INFO: Step 19, time 6.57e-01, E_Principal, 3 components, 1806 values
 INFO: Step 19, time 6.57e-01, PEEQ, 1 components, 1806 values
 INFO: Step 19, time 6.57e-01, CONTACT, 6 components, 1850 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 19, time 6.57e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.19.vtk
 INFO: Writing eyebar.19.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 20, time 7.08e-01, U, 3 components, 1806 values
 INFO: Step 20, time 7.08e-01, S, 6 components, 1806 values
 INFO: Step 20, time 7.08e-01, S_Mises, 1 components, 1806 values
@@ -579,10 +579,10 @@ INFO: Step 20, time 7.08e-01, E_Mises, 1 components, 1806 values
 INFO: Step 20, time 7.08e-01, E_Principal, 3 components, 1806 values
 INFO: Step 20, time 7.08e-01, PEEQ, 1 components, 1806 values
 INFO: Step 20, time 7.08e-01, CONTACT, 6 components, 1850 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 20, time 7.08e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.20.vtk
 INFO: Writing eyebar.20.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 21, time 7.59e-01, U, 3 components, 1806 values
 INFO: Step 21, time 7.59e-01, S, 6 components, 1806 values
 INFO: Step 21, time 7.59e-01, S_Mises, 1 components, 1806 values
@@ -592,10 +592,10 @@ INFO: Step 21, time 7.59e-01, E_Mises, 1 components, 1806 values
 INFO: Step 21, time 7.59e-01, E_Principal, 3 components, 1806 values
 INFO: Step 21, time 7.59e-01, PEEQ, 1 components, 1806 values
 INFO: Step 21, time 7.59e-01, CONTACT, 6 components, 1850 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 21, time 7.59e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.21.vtk
 INFO: Writing eyebar.21.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 22, time 8.09e-01, U, 3 components, 1806 values
 INFO: Step 22, time 8.09e-01, S, 6 components, 1806 values
 INFO: Step 22, time 8.09e-01, S_Mises, 1 components, 1806 values
@@ -605,10 +605,10 @@ INFO: Step 22, time 8.09e-01, E_Mises, 1 components, 1806 values
 INFO: Step 22, time 8.09e-01, E_Principal, 3 components, 1806 values
 INFO: Step 22, time 8.09e-01, PEEQ, 1 components, 1806 values
 INFO: Step 22, time 8.09e-01, CONTACT, 6 components, 1852 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 22, time 8.09e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.22.vtk
 INFO: Writing eyebar.22.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 23, time 8.60e-01, U, 3 components, 1806 values
 INFO: Step 23, time 8.60e-01, S, 6 components, 1806 values
 INFO: Step 23, time 8.60e-01, S_Mises, 1 components, 1806 values
@@ -618,10 +618,10 @@ INFO: Step 23, time 8.60e-01, E_Mises, 1 components, 1806 values
 INFO: Step 23, time 8.60e-01, E_Principal, 3 components, 1806 values
 INFO: Step 23, time 8.60e-01, PEEQ, 1 components, 1806 values
 INFO: Step 23, time 8.60e-01, CONTACT, 6 components, 1852 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 23, time 8.60e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.23.vtk
 INFO: Writing eyebar.23.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 24, time 9.36e-01, U, 3 components, 1806 values
 INFO: Step 24, time 9.36e-01, S, 6 components, 1806 values
 INFO: Step 24, time 9.36e-01, S_Mises, 1 components, 1806 values
@@ -631,10 +631,10 @@ INFO: Step 24, time 9.36e-01, E_Mises, 1 components, 1806 values
 INFO: Step 24, time 9.36e-01, E_Principal, 3 components, 1806 values
 INFO: Step 24, time 9.36e-01, PEEQ, 1 components, 1806 values
 INFO: Step 24, time 9.36e-01, CONTACT, 6 components, 1852 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 24, time 9.36e-01, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.24.vtk
 INFO: Writing eyebar.24.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 25, time 1.0, U, 3 components, 1806 values
 INFO: Step 25, time 1.0, S, 6 components, 1806 values
 INFO: Step 25, time 1.0, S_Mises, 1 components, 1806 values
@@ -644,10 +644,10 @@ INFO: Step 25, time 1.0, E_Mises, 1 components, 1806 values
 INFO: Step 25, time 1.0, E_Principal, 3 components, 1806 values
 INFO: Step 25, time 1.0, PEEQ, 1 components, 1806 values
 INFO: Step 25, time 1.0, CONTACT, 6 components, 1852 values
+WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 25, time 1.0, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.25.vtk
 INFO: Writing eyebar.25.vtu
-WARNING: Truncating CONTACT data. More values than nodes.
 
 ==================================================
 22: mkraska/Contact/Hertz_2D/Refs/Hertz.frd
@@ -9778,9 +9778,9 @@ INFO: Step 5, time 2.01e-02, U, 3 components, 44556 values
 INFO: Writing CubeTie.5.vtk
 INFO: Writing CubeTie.5.vtu
 INFO: Step 6, time 3.01e-02, U, 3 components, 44556 values
+WARNING: 17520 Inf values are converted to 0.0
 INFO: Writing CubeTie.6.vtk
 INFO: Writing CubeTie.6.vtu
-WARNING: 17520 Inf values are converted to 0.0
 
 ==================================================
 91: other/Dichtstoff_beam_coupling_compl.frd
@@ -10753,4 +10753,4 @@ INFO: Step 1, time 1.0, ERROR, 1 components, 36 values
 INFO: Writing 3d_DEFORMATION_PLASTICITY.vtk
 INFO: Writing 3d_DEFORMATION_PLASTICITY.vtu
 
-Total 7m 11.0s
+Total 6m 26.3s

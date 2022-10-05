@@ -22,10 +22,98 @@ import re
 import numpy as np
 import vtk
 
+renumbered_nodes = {} # old_number : new_number
+
+
+def clean_screen():
+    """Clean screen."""
+    os.system('cls' if os.name=='nt' else 'clear')
+
+
+def write_converted_file(file_name, ugrid):
+    """Writes .vtk and .vtu files based on data from FRD object.
+    Uses native VTK Python package.
+    Writes results for one time increment only.
+    """
+    if file_name.endswith('vtk'):
+        writer = vtk.vtkUnstructuredGridWriter()
+        writer.SetInputData(ugrid)
+    elif file_name.endswith('vtu'):
+        writer = vtk.vtkXMLUnstructuredGridWriter()
+        writer.SetInputDataObject(ugrid)
+        writer.SetDataModeToBinary() # compressed file
+    writer.SetFileName(file_name)
+    writer.Write()
 
 
 
-"""Writer class and functions."""
+
+"""Classes and functions for reading CalculiX .frd files."""
+
+
+class NodalPointCoordinateBlock:
+    """Nodal Point Coordinate Block: cgx_2.20.pdf Manual, § 11.3.
+    Generate vtkPoints. Points should be renumbered starting from 0.
+    """
+
+    def __init__(self, in_file):
+        """Read nodal coordinates."""
+        global renumbered_nodes
+        renumbered_nodes.clear()
+        self.points = vtk.vtkPoints()
+
+        new_node_number = 0
+        while True:
+            line = in_file.readline().strip()
+
+            # End of block
+            if not line or line == '-3':
+                break
+
+            regex = '^-1(.{10})' + '(.{12})'*3
+            match = match_line(regex, line)
+            node_number = int(match.group(1))
+            node_coords = [ float(match.group(2)),
+                            float(match.group(3)),
+                            float(match.group(4)), ]
+
+            renumbered_nodes[node_number] = new_node_number
+            self.points.InsertPoint(new_node_number, node_coords)
+            new_node_number += 1
+
+        self.numnod = self.points.GetNumberOfPoints() # number of nodes in this block
+        logging.info('{} nodes'.format(self.numnod)) # total number of nodes
+
+    def get_node_numbers(self):
+        global renumbered_nodes
+        return sorted(renumbered_nodes.keys())
+
+
+"""NOTE Not used
+class NodalPointCoordinateBlock2:
+    # Nodal Point Coordinate Block: cgx_2.20.pdf Manual, § 11.3.
+    # self.nodes is a Pandas DataFrame.
+
+    def __init__(self, in_file):
+        import pandas
+        lines = ''
+        while True:
+            line = in_file.readline()
+            if not line or line.strip() == '-3': break
+            lines += line
+
+        from io import StringIO
+        self.nodes = pandas.read_fwf(StringIO(lines), usecols=[1,2,3,4], index_col=0,
+            names=['skip', 'node', 'X', 'Y', 'Z'], widths=[5, 8, 12, 12, 12])
+
+        self.numnod = self.nodes.shape[0] # number of nodes in this block
+        logging.info('{} nodes'.format(self.numnod)) # total number of nodes
+
+    def get_node_numbers(self):
+        # Dataframe index column.
+        # return [int(n) for n in list(self.nodes.index.values)]
+        return list(self.nodes.index.values)
+"""
 
 
 def convert_elem_type(frd_elem_type):
@@ -208,237 +296,49 @@ def convert_elem_type(frd_elem_type):
             return 0
 
 
-def get_element_connectivity(renumbered_nodes, e):
-    """Element connectivity with renumbered nodes."""
+def get_element_connectivity(e_type, e_nodes):
+    """Element connectivity with renumbered nodes.
+    Here passed element nodes are repositioned according to VTK rules.
+    """
     connectivity = []
 
     # frd: 20 node brick element
-    if e.type == 4:
+    if e_type == 4:
         # Last eight nodes have to be repositioned
         r1 = tuple(range(12)) # 8,9,10,11
         r2 = tuple(range(12, 16)) # 12,13,14,15
         r3 = tuple(range(16, 20)) # 16,17,18,19
         node_num_list = r1 + r3 + r2
         for i in node_num_list:
-            node = renumbered_nodes[e.nodes[i]] # node after renumbering
-            connectivity.append(node)
+            connectivity.append(e_nodes[i]) # nodes after renumbering
 
     # frd: 15 node penta element
-    elif e.type==5 or e.type==2:
+    elif e_type==5 or e_type==2:
         """CalculiX elements type 5 are not supported in VTK and
         has to be processed as CalculiX type 2 (6 node wedge,
         VTK type 13). Additional nodes are omitted.
         """
         for i in [0,2,1,3,5,4]: # repositioning nodes
-            node = renumbered_nodes[e.nodes[i]] # node after renumbering
-            connectivity.append(node)
+            connectivity.append(e_nodes[i]) # nodes after renumbering
 
     # All other elements
     else:
-        n = len(e.nodes)
+        n = len(e_nodes)
         for i in range(n):
-            node = renumbered_nodes[e.nodes[i]] # node after renumbering
-            connectivity.append(node)
+            connectivity.append(e_nodes[i]) # nodes after renumbering
 
     return connectivity
 
 
-def amount_of_nodes_in_vtk_element(e):
-    """Amount of nodes in element: needed to calculate offset
-    Node offset is an index in the connectivity DataArray
-    """
-    # frd: 20 node brick element
-    if e.type == 4:
-        n = 20
-
-    # frd: 15 node penta element
-    elif e.type==5 or e.type==2:
-        n = 6
-
-    # All other elements
-    else:
-        n = len(e.nodes)
-
-    return n
-
-
-def generate_ugrid(node_block, elem_block):
-    """Generate VTK mesh."""
-    ugrid = vtk.vtkUnstructuredGrid() # create empty grid in VTK
-    ugrid.SetPoints(node_block.points) # insert all points to the grid
-
-    """CELLS section - elements connectyvity.
-    Sometimes element nodes should be repositioned.
-    """
-    ugrid.Allocate(elem_block.numelem)
-    for e in sorted(elem_block.elements, key=lambda x: x.num):
-        vtk_elem_type = convert_elem_type(e.type)
-        offset = amount_of_nodes_in_vtk_element(e)
-        connectivity = get_element_connectivity(node_block.renumbered_nodes, e)
-        ugrid.InsertNextCell(vtk_elem_type, offset, connectivity)
-
-    return ugrid
-
-
-def convert_frd_data_to_vtk(b, node_block):
-    """Convert parsed FRD data to vtkDoubleArray."""
-    data_array = vtk.vtkDoubleArray()
-    data_array.SetName(b.name)
-    data_array.SetNumberOfComponents(len(b.components))
-    data_array.SetNumberOfTuples(node_block.numnod)
-
-    # Set component names
-    for i,c in enumerate(b.components):
-        if 'SDV' in c:
-            data_array.SetComponentName(i, i)
-        else:
-            data_array.SetComponentName(i, c)
-
-    # Some warnings repeat too much time - mark them
-    emitted_warning_types = {'Inf':0, 'NaN':0}
-
-    # Assign data
-    if len(b.results) > node_block.numnod:
-        txt = 'Truncating {} data. More values than nodes.'.format(b.name)
-        logging.warning(txt)
-
-    nodes = node_block.get_node_numbers()
-    for i,n in enumerate(nodes):
-        node_values = b.results[n]
-        for j,r in enumerate(node_values):
-            if math.isinf(r):
-                node_values[j] = 0.0
-                emitted_warning_types['Inf'] += 1
-            if math.isnan(r):
-                node_values[j] = 0.0
-                emitted_warning_types['NaN'] += 1
-        data_array.InsertTuple(i, node_values)
-
-    for k,v in emitted_warning_types.items():
-        if v > 0:
-            logging.warning('{} {} values are converted to 0.0'.format(v, k))
-
-    return data_array
-
-
-class Writer:
-    """Writes .vtk and .vtu files based on data from FRD object.
-    Uses native VTK Python package.
-    Writes results for one time increment only.
-    """
-
-    def __init__(self, node_block, elem_block):
-        """Main function: frd is a FRD object."""
-        self.node_block = node_block
-        self.ugrid = generate_ugrid(node_block, elem_block)
-
-    def fill_point_data(self, result_blocks):
-        """POINT DATA - from here start all the results."""
-        pd = self.ugrid.GetPointData()
-        for b in result_blocks: # iterate over NodalResultsBlock (increments)
-            if len(b.results) and len(b.components):
-                da = convert_frd_data_to_vtk(b, self.node_block)
-                pd.AddArray(da)
-                pd.Modified()
-
-    def write_file(self, file_name):
-        """Write file."""
-        if file_name.endswith('vtk'):
-            writer = vtk.vtkUnstructuredGridWriter()
-            writer.SetInputData(self.ugrid)
-        elif file_name.endswith('vtu'):
-            writer = vtk.vtkXMLUnstructuredGridWriter()
-            writer.SetInputDataObject(self.ugrid)
-            writer.SetDataModeToBinary() # compressed file
-        writer.SetFileName(file_name)
-        writer.Write()
-
-
-
-
-"""Classes for reading CalculiX .frd files."""
-
-
-class Element:
-    """A single finite element object."""
-
-    def __init__(self, num, etype, nodes):
-        # logging.debug('Element {}, type {}: {}'.format(num, etype, nodes))
-        self.num = num
-        self.type = etype
-        self.nodes = nodes
-
-
-class NodalPointCoordinateBlock:
-    """Nodal Point Coordinate Block: cgx_2.20.pdf Manual, § 11.3.
-    Generate vtkPoints. Points should be renumbered starting from 0.
-    """
-
-    def __init__(self, in_file):
-        """Read nodal coordinates."""
-        self.points = vtk.vtkPoints()
-        self.renumbered_nodes = {} # old_number : new_number
-
-        new_node_number = 0
-        while True:
-            line = in_file.readline().strip()
-
-            # End of block
-            if not line or line == '-3':
-                break
-
-            regex = '^-1(.{10})' + '(.{12})'*3
-            match = match_line(regex, line)
-            node_number = int(match.group(1))
-            node_coords = [ float(match.group(2)),
-                            float(match.group(3)),
-                            float(match.group(4)), ]
-
-            self.renumbered_nodes[node_number] = new_node_number
-            self.points.InsertPoint(new_node_number, node_coords)
-            new_node_number += 1
-
-        self.numnod = self.points.GetNumberOfPoints() # number of nodes in this block
-        logging.info('{} nodes'.format(self.numnod)) # total number of nodes
-
-    def get_node_numbers(self):
-        return sorted(self.renumbered_nodes.keys())
-
-
-class NodalPointCoordinateBlock2:
-    """Nodal Point Coordinate Block: cgx_2.20.pdf Manual, § 11.3.
-    self.nodes is a Pandas DataFrame.
-    NOTE Not used
-    """
-
-    def __init__(self, in_file):
-        import pandas
-        lines = ''
-        while True:
-            line = in_file.readline()
-            if not line or line.strip() == '-3': break
-            lines += line
-
-        from io import StringIO
-        self.nodes = pandas.read_fwf(StringIO(lines), usecols=[1,2,3,4], index_col=0,
-            names=['skip', 'node', 'X', 'Y', 'Z'], widths=[5, 8, 12, 12, 12])
-
-        self.numnod = self.nodes.shape[0] # number of nodes in this block
-        logging.info('{} nodes'.format(self.numnod)) # total number of nodes
-
-    def get_node_numbers(self):
-        """Dataframe index column."""
-        # return [int(n) for n in list(self.nodes.index.values)]
-        return list(self.nodes.index.values)
-
-
 class ElementDefinitionBlock:
-    """Element Definition Block: cgx_2.20.pdf Manual, § 11.4."""
+    """Element Definition Block: cgx_2.20.pdf Manual, § 11.4.
+    Generates vtkCellArray.
+    """
 
     def __init__(self, in_file):
-        """Read elements."""
         self.in_file = in_file
-        self.elements = [] # list of Element objects
+        self.cells = vtk.vtkCellArray()
+        self.types = []
 
         while True:
             line = in_file.readline().strip()
@@ -449,7 +349,7 @@ class ElementDefinitionBlock:
 
             self.read_element(line)
 
-        self.numelem = len(self.elements) # number of elements in this block
+        self.numelem = self.cells.GetNumberOfCells() # number of elements in this block
         logging.info('{} cells'.format(self.numelem)) # total number of elements
 
     def read_element(self, line):
@@ -463,16 +363,24 @@ class ElementDefinitionBlock:
         -1         3   12    0    2
         -2        10        12        11
         """
+        global renumbered_nodes
         element_num = int(line.split()[1])
         element_type = int(line.split()[2])
         element_nodes = []
         for j in range(self.num_lines(element_type)):
             line = self.in_file.readline().strip()
-            nodes = [int(n) for n in line.split()[1:]]
+            nodes = [renumbered_nodes[int(n)] for n in line.split()[1:]]
             element_nodes.extend(nodes)
 
-        elem = Element(element_num, element_type, element_nodes)
-        self.elements.append(elem)
+        # elem = Element(element_num, element_type, element_nodes)
+        # self.elements.append(elem)
+
+        vtk_elem_type = convert_elem_type(element_type)
+        self.types.append(vtk_elem_type)
+        # offset = amount_of_nodes_in_vtk_element(element_type, element_nodes)
+        connectivity = get_element_connectivity(element_type, element_nodes)
+        # c = vtk.vtkCell()
+        self.cells.InsertNextCell(len(connectivity), connectivity)
 
     def num_lines(self, etype):
         """Amount of lines in element connectivity definition.
@@ -480,31 +388,26 @@ class ElementDefinitionBlock:
         """
         return (0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1)[etype]
 
-    def get_sorted_elements(self):
-        return sorted(self.elements, key=lambda x: x.num)
 
-
+"""NOTE Not used
 class ElementDefinitionBlock2:
-    """Element Definition Block: cgx_2.20.pdf Manual, § 11.4.
-    self.elements is a Pandas DataFrame.
-    NOTE Not used
-    """
+    # Element Definition Block: cgx_2.20.pdf Manual, § 11.4.
+    # self.elements is a Pandas DataFrame.
 
     def __init__(self, in_file):
-        """Read element composition
-        -1      2355    1    0    1
-        -2     20814     26109     21063     25605     20816     26111     21065     25607
-        -1      2356    1    0    1
-        -2     20781     25602     21066     26106     20783     25604     21068     26108
-        -1         1    1    0AIR
-        -2         1         2         3         4         5         6         7         8
-        -1         1   10    0    1
-        -2         1         2         3         4         5         6         7         8
-        -1         2   11    0    2
-        -2         9        10
-        -1         3   12    0    2
-        -2        10        12        11
-        """
+        # Read element composition
+        # -1      2355    1    0    1
+        # -2     20814     26109     21063     25605     20816     26111     21065     25607
+        # -1      2356    1    0    1
+        # -2     20781     25602     21066     26106     20783     25604     21068     26108
+        # -1         1    1    0AIR
+        # -2         1         2         3         4         5         6         7         8
+        # -1         1   10    0    1
+        # -2         1         2         3         4         5         6         7         8
+        # -1         2   11    0    2
+        # -2         9        10
+        # -1         3   12    0    2
+        # -2        10        12        11
         import pandas
         lines = ''
         while True:
@@ -523,9 +426,7 @@ class ElementDefinitionBlock2:
 
         self.numelem = self.elements.shape[0] # number of elements in this block
         logging.info('{} cells'.format(self.numelem)) # total number of elements
-
-    def get_sorted_elements(self):
-        return [Element(i, list(row.values)[0], list(row.values)[1:]) for i,row in self.elements.iterrows()]
+    """
 
 
 class NodalResultsBlock:
@@ -706,8 +607,10 @@ class FRD:
         self.node_block = None  # node block
         self.elem_block = None  # elements block
         self.steps_increments = [] # [(step, inc), ]
+        self.ugrid = vtk.vtkUnstructuredGrid() # create empty grid in VTK
 
     def parse_mesh(self):
+        """Fill in self.ugrid."""
         while True:
             line = self.in_file.readline()
             if not line:
@@ -731,7 +634,11 @@ class FRD:
             elif key == '9999':
                 break
 
-        return self.node_block, self.elem_block
+        if self.node_block.numnod:
+            self.ugrid.SetPoints(self.node_block.points) # insert all points to the grid
+        if self.elem_block.numelem:
+            self.ugrid.Allocate(self.elem_block.numelem)
+            self.ugrid.SetCells(self.elem_block.types, self.elem_block.cells)
 
     def count_increments(self):
         """Count amount of time increments and amount of calculated variables.
@@ -916,37 +823,70 @@ def match_line(regex, line):
 
 
 
-"""Utility functions."""
+"""Main class and functions."""
 
 
-def clean_screen():
-    """Clean screen."""
-    os.system('cls' if os.name=='nt' else 'clear')
+def convert_frd_data_to_vtk(b, node_block):
+    """Convert parsed FRD data to vtkDoubleArray."""
+    data_array = vtk.vtkDoubleArray()
+    data_array.SetName(b.name)
+    data_array.SetNumberOfComponents(len(b.components))
+    data_array.SetNumberOfTuples(node_block.numnod)
 
+    # Set component names
+    for i,c in enumerate(b.components):
+        if 'SDV' in c:
+            data_array.SetComponentName(i, i)
+        else:
+            data_array.SetComponentName(i, c)
 
+    # Some warnings repeat too much time - mark them
+    emitted_warning_types = {'Inf':0, 'NaN':0}
 
+    # Assign data
+    if len(b.results) > node_block.numnod:
+        txt = 'Truncating {} data. More values than nodes.'.format(b.name)
+        logging.warning(txt)
 
-"""Main class."""
+    nodes = node_block.get_node_numbers()
+    for i,n in enumerate(nodes):
+        node_values = b.results[n]
+        for j,r in enumerate(node_values):
+            if math.isinf(r):
+                node_values[j] = 0.0
+                emitted_warning_types['Inf'] += 1
+            if math.isnan(r):
+                node_values[j] = 0.0
+                emitted_warning_types['NaN'] += 1
+        data_array.InsertTuple(i, node_values)
+
+    for k,v in emitted_warning_types.items():
+        if v > 0:
+            logging.warning('{} {} values are converted to 0.0'.format(v, k))
+
+    return data_array
 
 
 class Converter:
-    """Converts CalculiX .frd-file to .vtk (ASCII) or .vtu (XML) format:
+    """Converts CalculiX .frd file to .vtk (ASCII) or .vtu (XML) format:
     python3 ccx2paraview.py ../examples/other/Ihor_Mirzov_baffle_2D.frd vtk
     python3 ccx2paraview.py ../examples/other/Ihor_Mirzov_baffle_2D.frd vtu
     """
+
+    # TODO Merge with FRD class
 
     def __init__(self, frd_file_name, fmt_list):
         self.frd_file_name = frd_file_name
         self.fmt_list = ['.' + fmt.lower() for fmt in fmt_list] # ['.vtk', '.vtu']
 
     def run(self):
-        t = None
+        threads = [] # list of Threads
         logging.info('Reading ' + os.path.basename(self.frd_file_name))
         in_file = open(self.frd_file_name, 'r')
         self.frd = FRD(in_file)
 
         # Check if file contains mesh data
-        node_block, elem_block = self.frd.parse_mesh()
+        self.frd.parse_mesh()
         if not self.frd.has_mesh():
             return
 
@@ -967,21 +907,30 @@ class Converter:
                     logging.info(b.txt)
                 else:
                     logging.warning(b.txt)
-            for fmt in self.fmt_list: # ['.vtk', '.vtu']
-                logging.info('Writing ' + os.path.basename(self.frd_file_name[:-4]) + num + fmt)
-            if t is not None:
+                if len(b.results) and len(b.components):
+                    pd = self.frd.ugrid.GetPointData()
+                    da = convert_frd_data_to_vtk(b, self.frd.node_block)
+                    pd.AddArray(da)
+                    pd.Modified()
+
+            for t in threads:
                 t.join() # do not start a new thread while and old one is running 
-            t = threading.Thread(target=self.save_results,
-                    args=(node_block, elem_block, result_blocks, num))
-            t.start()
+            threads.clear()
+            for fmt in self.fmt_list: # ['.vtk', '.vtu']
+                file_name = self.frd_file_name[:-4] + num + fmt
+                logging.info('Writing ' + os.path.basename(file_name))
+                t = threading.Thread(target=write_converted_file,
+                    args=(file_name, self.frd.ugrid))
+                t.start()
+                threads.append(t)
 
         # Write ParaView Data (PVD) for series of VTU files
         if len(self.frd.steps_increments) > 1 and '.vtu' in self.fmt_list:
             self.write_pvd()
 
         in_file.close()
-        if t is not None:
-            t.join() # do not start a new thread whilw and old one is running 
+        for t in threads:
+            t.join() # do not start a new thread while and old one is running 
 
     def step_inc_num(self):
         """If model has many time increments - many output files
@@ -1000,13 +949,6 @@ class Converter:
                 num = ''
             d.append((step, inc, num)) # without extension
         return d
-
-    def save_results(self, node_block, elem_block, result_blocks, num):
-        w = Writer(node_block, elem_block)
-        w.fill_point_data(result_blocks)
-        for fmt in self.fmt_list: # ['.vtk', '.vtu']
-            file_name = self.frd_file_name[:-4] + num + fmt
-            w.write_file(file_name)
 
     def write_pvd(self):
         """Writes ParaView Data (PVD) file for series of VTU files."""
