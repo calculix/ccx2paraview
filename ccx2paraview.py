@@ -16,7 +16,6 @@ import sys
 import logging
 import argparse
 import threading
-import shutil
 import math
 import re
 
@@ -949,37 +948,6 @@ def clean_screen():
     os.system('cls' if os.name=='nt' else 'clear')
 
 
-def clean_cache(folder=None):
-    """Recursively delete cached files in all subfolders."""
-    if folder is None:
-        folder = os.getcwd()
-    pycache = os.path.join(folder, '__pycache__')
-    if os.path.isdir(pycache):
-        shutil.rmtree(pycache) # works in Linux as in Windows
-
-    # Recursively clear cache in child folders
-    try:
-        for f in os.scandir(folder):
-            if f.is_dir():
-                clean_cache(f.path)
-    except PermissionError:
-        logging.error('Insufficient permissions for ' + folder)
-
-
-def clean_results(folder=None):
-    """Cleaup old result files."""
-    if folder is None:
-        folder = os.getcwd()
-    extensions = ('.vtk', '.vtu', '.pvd')
-    for f in os.scandir(folder):
-        if f.name.endswith(extensions):
-            try:
-                os.remove(f.path)
-                sys.__stdout__.write('Delelted: ' + f.path + '\n')
-            except:
-                sys.__stdout__.write(f.path + ': ' + sys.exc_info()[1][1] + '\n')
-
-
 
 
 """Main class."""
@@ -1099,4 +1067,3 @@ def main():
 if __name__ == '__main__':
     clean_screen()
     main()
-    clean_cache()

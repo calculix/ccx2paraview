@@ -11,6 +11,7 @@ Ctrl+F5 to run in VSCode.
 import os
 import sys
 import time
+import shutil
 import logging
 import subprocess
 import traceback
@@ -22,8 +23,41 @@ sys_path = os.path.normpath(sys_path)
 if sys_path not in sys.path:
     sys.path.insert(0, sys_path)
 
-from ccx2paraview import clean_screen, clean_cache, Converter, NodalPointCoordinateBlock2
-from log import myHandler, print, read_and_log
+from ccx2paraview import clean_screen, Converter
+from log import myHandler, print
+
+
+def clean_cache(folder=None):
+    """Recursively delete cached files in all subfolders."""
+    if folder is None:
+        folder = os.getcwd()
+    pycache = os.path.join(folder, '__pycache__')
+    if os.path.isdir(pycache):
+        shutil.rmtree(pycache) # works in Linux as in Windows
+
+    # Recursively clear cache in child folders
+    try:
+        for f in os.scandir(folder):
+            if f.is_dir():
+                clean_cache(f.path)
+    except PermissionError:
+        logging.error('Insufficient permissions for ' + folder)
+
+
+def clean_results(folder=None):
+    """Cleaup old result files."""
+    if folder is None:
+        folder = os.getcwd()
+    extensions = ('.vtk', '.vtu', '.pvd')
+    for f in os.scandir(folder):
+        if f.is_dir():
+            clean_results(f.path)
+        if f.name.endswith(extensions):
+            try:
+                os.remove(f.path)
+                sys.__stdout__.write('Delelted: ' + f.path + '\n')
+            except:
+                sys.__stdout__.write(f.path + ': ' + sys.exc_info()[1][1] + '\n')
 
 
 def get_time_delta(delta):
@@ -58,6 +92,7 @@ def convert_calculation_results_in(folder):
 
 def test_binary_in(folder):
     """Convert calculation results with binaries."""
+    from log import read_and_log
     for counter, file_name in enumerate(scan_all_files_in(folder, '.frd')):
         if os.name == 'nt':
             command = 'bin\\ccx2paraview.exe'
@@ -92,6 +127,7 @@ def test_numpy():
 
 
 def test_NodalPointCoordinateBlock2():
+    from ccx2paraview import NodalPointCoordinateBlock2
     file_path = os.path.join(os.path.dirname(__file__), 'pd.txt')
     with open(file_path, 'r') as in_file:
         node_block = NodalPointCoordinateBlock2(in_file)
@@ -104,6 +140,7 @@ def test_NodalPointCoordinateBlock2():
 if __name__ == '__main__':
     clean_screen()
     clean_cache()
+    os.chdir(os.path.dirname(__file__))
     start = time.perf_counter()
 
     # test_numpy()
@@ -115,16 +152,19 @@ if __name__ == '__main__':
     logging.getLogger().setLevel(logging.INFO)
     print('CONVERTER TEST\n\n')
 
-    convert_calculation_results_in('../examples')
+    clean_results('../../examples')
+
+    # convert_calculation_results_in('../examples')
 
     # test_single_file('../examples/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd')
     # test_single_file('../examples/other/Jan_Lukas_modal_dynamic_beammodal.frd')
     # test_single_file('../examples/other/John_Mannisto_blade_sector.frd')
+    # test_single_file('../examples/other/Jan_Lukas_static_structural.frd')
+    # test_single_file('../examples/other/Ihor_Mirzov_baffle_2D.frd')
     # test_single_file('../examples/ccx/test/achtel2.frd')
     # test_single_file('../examples/mkraska/RVE/PlanarSlide/Refs/Zug.frd')
     # test_single_file('../examples/mkraska/Contact/CNC/Refs/solve.frd')
-    # test_single_file('../examples/other/Jan_Lukas_static_structural.frd')
-    # test_single_file('../examples/other/Ihor_Mirzov_baffle_2D.frd')
+    # test_single_file('../examples/mkraska/Contact/Eyebar/Refs/eyebar.frd')
 
     # test_binary_in('../examples')
 
