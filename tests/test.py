@@ -22,7 +22,7 @@ sys_path = os.path.normpath(sys_path)
 if sys_path not in sys.path:
     sys.path.insert(0, sys_path)
 
-from ccx2paraview import clean_screen, clean_cache, Converter
+from ccx2paraview import clean_screen, clean_cache, Converter, NodalPointCoordinateBlock2
 from log import myHandler, print, read_and_log
 
 
@@ -85,10 +85,30 @@ def test_single_file(file_path):
         logging.error(traceback.format_exc())
 
 
+def test_numpy():
+    import numpy as np
+    a = np.zeros([10, 2])
+    print(a[:, 0])
+
+
+def test_NodalPointCoordinateBlock2():
+    file_path = os.path.join(os.path.dirname(__file__), 'pd.txt')
+    with open(file_path, 'r') as in_file:
+        node_block = NodalPointCoordinateBlock2(in_file)
+        print(node_block.nodes.head())
+        coords = node_block.get_node_coordinates(5)
+        print(coords)
+
+
 # Run
 if __name__ == '__main__':
-    start = time.perf_counter()
     clean_screen()
+    clean_cache()
+    start = time.perf_counter()
+
+    # test_numpy()
+    # test_NodalPointCoordinateBlock2()
+    # raise SystemExit()
 
     # Prepare logging
     logging.getLogger().addHandler(myHandler())
@@ -102,7 +122,9 @@ if __name__ == '__main__':
     # test_single_file('../examples/other/John_Mannisto_blade_sector.frd')
     # test_single_file('../examples/ccx/test/achtel2.frd')
     # test_single_file('../examples/mkraska/RVE/PlanarSlide/Refs/Zug.frd')
+    # test_single_file('../examples/mkraska/Contact/CNC/Refs/solve.frd')
     # test_single_file('../examples/other/Jan_Lukas_static_structural.frd')
+    # test_single_file('../examples/other/Ihor_Mirzov_baffle_2D.frd')
 
     # test_binary_in('../examples')
 

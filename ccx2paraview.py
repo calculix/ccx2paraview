@@ -274,9 +274,9 @@ def generate_ugrid(node_block, elem_block):
     points = vtk.vtkPoints()
     renumbered_nodes = {} # old_number : new_number
     new_node_number = 0
-    for n in sorted(node_block.nodes.keys()):
+    for n in node_block.get_node_numbers():
         renumbered_nodes[n] = new_node_number
-        coordinates = node_block.nodes[n].coords
+        coordinates = node_block.get_node_coordinates(n)
         points.InsertPoint(new_node_number, coordinates)
         new_node_number += 1
         if new_node_number == node_block.numnod:
@@ -341,16 +341,15 @@ class Writer:
 
     def __init__(self, node_block, elem_block):
         """Main function: frd is a FRD object."""
+        self.numnod = node_block.numnod
         self.ugrid = generate_ugrid(node_block, elem_block)
-        self.node_block = node_block
-        self.elem_block = elem_block
 
     def fill_point_data(self, result_blocks):
-        # POINT DATA - from here start all the results
+        """POINT DATA - from here start all the results."""
         pd = self.ugrid.GetPointData()
         for b in result_blocks: # iterate over NodalResultsBlock (increments)
             if len(b.results) and len(b.components):
-                da = convert_frd_data_to_vtk(b, self.node_block.numnod)
+                da = convert_frd_data_to_vtk(b, self.numnod)
                 pd.AddArray(da)
                 pd.Modified()
 
@@ -415,6 +414,44 @@ class NodalPointCoordinateBlock:
         self.numnod = len(self.nodes) # number of nodes in this block
         logging.info('{} nodes'.format(self.numnod)) # total number of nodes
 
+    def get_node_numbers(self):
+        return sorted(self.nodes.keys())
+
+    def get_node_coordinates(self, n):
+        return self.nodes[n].coords
+
+
+class NodalPointCoordinateBlock2:
+    """Nodal Point Coordinate Block: cgx_2.20.pdf Manual, § 11.3.
+    self.nodes is a Pandas DataFrame.
+    NOTE Not used
+    """
+
+    def __init__(self, in_file):
+        import pandas
+        lines = ''
+        while True:
+            line = in_file.readline()
+            if not line or line.strip() == '-3': break
+            lines += line
+
+        from io import StringIO
+        self.nodes = pandas.read_fwf(StringIO(lines), usecols=[1,2,3,4], index_col=0,
+            names=['skip', 'node', 'X', 'Y', 'Z'], widths=[5, 8, 12, 12, 12])
+
+        self.numnod = self.nodes.shape[0] # number of nodes in this block
+        logging.info('{} nodes'.format(self.numnod)) # total number of nodes
+
+    def get_node_numbers(self):
+        """Dataframe index column."""
+        # return [int(n) for n in list(self.nodes.index.values)]
+        return list(self.nodes.index.values)
+
+    def get_node_coordinates(self, n):
+        """Dataframe row, n is named index."""
+        # return [float(c) for c in list(self.nodes.loc[[n]].values.flatten())]
+        return list(self.nodes.loc[[n]].values.flatten())
+
 
 class ElementDefinitionBlock:
     """Element Definition Block: cgx_2.20.pdf Manual, § 11.4."""
@@ -464,6 +501,53 @@ class ElementDefinitionBlock:
         """
         return (0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1)[etype]
 
+    def get_sorted_elements(self):
+        return sorted(self.elements, key=lambda x: x.num)
+
+
+class ElementDefinitionBlock2:
+    """Element Definition Block: cgx_2.20.pdf Manual, § 11.4.
+    self.elements is a Pandas DataFrame.
+    NOTE Not used
+    """
+
+    def __init__(self, in_file):
+        """Read element composition
+        -1      2355    1    0    1
+        -2     20814     26109     21063     25605     20816     26111     21065     25607
+        -1      2356    1    0    1
+        -2     20781     25602     21066     26106     20783     25604     21068     26108
+        -1         1    1    0AIR
+        -2         1         2         3         4         5         6         7         8
+        -1         1   10    0    1
+        -2         1         2         3         4         5         6         7         8
+        -1         2   11    0    2
+        -2         9        10
+        -1         3   12    0    2
+        -2        10        12        11
+        """
+        import pandas
+        lines = ''
+        while True:
+            line = in_file.readline().lstrip()
+            if not line or line.rstrip() == '-3': break
+            if line.startswith('-1'):
+                line = line[:19]
+            lines += line[3:]
+
+        # for line in lines.split('\n')[:5]:
+        #     logging.debug(line)
+
+        from io import StringIO
+        self.elements = pandas.read_fwf(StringIO(lines), index_col=0, header=None)
+        # logging.debug(self.elements.head())
+
+        self.numelem = self.elements.shape[0] # number of elements in this block
+        logging.info('{} cells'.format(self.numelem)) # total number of elements
+
+    def get_sorted_elements(self):
+        return [Element(i, list(row.values)[0], list(row.values)[1:]) for i,row in self.elements.iterrows()]
+
 
 class NodalResultsBlock:
     """Nodal Results Block: cgx_2.20.pdf Manual, § 11.6."""
@@ -509,9 +593,9 @@ class NodalResultsBlock:
             'PE':'PEEQ',
             }
         self.name = match.group(1) # dataset name
-        txt = 'Vars info: name {}, ncomps {}' \
-            .format(self.name, self.ncomps)
-        logging.debug(txt)
+        # txt = 'Vars info: name {}, ncomps {}' \
+        #     .format(self.name, self.ncomps)
+        # logging.debug(txt)
         if self.name in inpname:
             self.name = inpname[self.name]
 
@@ -564,7 +648,7 @@ class NodalResultsBlock:
         -2           5.31719E+01 6.69780E+01 2.76244E+01 2.47686E+01 1.99930E+02 2.14517E+02
         """
         # Fill data with zeroes - sometimes FRD result block has only non zero values
-        for node_num in self.node_block.nodes.keys():
+        for node_num in self.node_block.get_node_numbers():
             self.results[node_num] = [0]*self.ncomps
 
         # Some warnings repeat too much time - mark them
@@ -699,7 +783,7 @@ class FRD:
         if i:
             msg = '{} time increment{}'.format(i, 's'*min(1, i-1))
             logging.info(msg)
-            logging.debug('Steps-increments: {}'.format(self.steps_increments))
+            # logging.debug('Steps-increments: {}'.format(self.steps_increments))
         else:
             logging.warning('No time increments!')
 
@@ -715,7 +799,7 @@ class FRD:
 
                 # Read results for certain time increment
                 if key == '100':
-                    logging.debug('line: ' + line)
+                    # logging.debug('line: ' + line)
                     got_inc, got_step = get_inc_step(line)
                     if inc != got_inc or step != got_step:
                         self.in_file.seek(self.in_file.tell() - len(line)) # go up one line
@@ -748,7 +832,7 @@ class FRD:
         b1.step = b.step
 
         # Iterate over nodes
-        for node_num in b.node_block.nodes.keys():
+        for node_num in b.node_block.get_node_numbers():
             data = b.results[node_num] # list with results for current node
             Sxx = data[0]; Syy = data[1]; Szz = data[2]
             Sxy = data[3]; Syz = data[4]; Sxz = data[5]
@@ -776,7 +860,7 @@ class FRD:
         b1.step = b.step
 
         # Iterate over nodes
-        for node_num in b.node_block.nodes.keys():
+        for node_num in b.node_block.get_node_numbers():
             data = b.results[node_num] # list with results for current node
             Sxx = data[0]; Syy = data[1]; Szz = data[2]
             Sxy = data[3]; Syz = data[4]; Sxz = data[5]
@@ -804,16 +888,15 @@ class FRD:
         b1.step = b.step
 
         # Iterate over nodes
-        for node_num in b.node_block.nodes.keys():
+        for node_num in b.node_block.get_node_numbers():
             data = b.results[node_num] # list with results for current node
             Txx = data[0]; Tyy = data[1]; Tzz = data[2]
             Txy = data[3]; Tyz = data[4]; Txz = data[5]
             tensor = np.array([[Txx, Txy, Txz], [Txy, Tyy, Tyz], [Txz, Tyz, Tzz]])
 
             # Calculate principal values for current node
-            b1.results[node_num] = []
-            for ps in sorted(np.linalg.eigvals(tensor).tolist()):
-                b1.results[node_num].append(ps)
+            eigenvalues = np.linalg.eigvals(tensor).tolist()
+            b1.results[node_num] = sorted(eigenvalues)
 
         b1.print_some_log()
         return b1
@@ -838,8 +921,8 @@ def get_inc_step(line):
     match = match_line(regex, line)
     inc = float(match.group(1)) # could be frequency, time or any numerical value
     step = int(match.group(2)) # step number
-    txt = 'Step info: value {}, step {}'.format(inc, step)
-    logging.debug(txt)
+    # txt = 'Step info: value {}, step {}'.format(inc, step)
+    # logging.debug(txt)
     return inc, step
 
 
