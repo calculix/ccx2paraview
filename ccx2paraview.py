@@ -12,7 +12,6 @@ Principal components for stress and strain tensors.
 
 # Standard imports
 import os
-import sys
 import logging
 import argparse
 import threading
@@ -266,21 +265,7 @@ def amount_of_nodes_in_vtk_element(e):
 def generate_ugrid(node_block, elem_block):
     """Generate VTK mesh."""
     ugrid = vtk.vtkUnstructuredGrid() # create empty grid in VTK
-
-    """POINTS section.
-    Nodes should be renumbered starting from 0.
-    """
-    points = vtk.vtkPoints()
-    renumbered_nodes = {} # old_number : new_number
-    new_node_number = 0
-    for n in node_block.get_node_numbers():
-        renumbered_nodes[n] = new_node_number
-        coordinates = node_block.get_node_coordinates(n)
-        points.InsertPoint(new_node_number, coordinates)
-        new_node_number += 1
-        if new_node_number == node_block.numnod:
-            break
-    ugrid.SetPoints(points) # insert all points to the grid
+    ugrid.SetPoints(node_block.points) # insert all points to the grid
 
     """CELLS section - elements connectyvity.
     Sometimes element nodes should be repositioned.
@@ -289,7 +274,7 @@ def generate_ugrid(node_block, elem_block):
     for e in sorted(elem_block.elements, key=lambda x: x.num):
         vtk_elem_type = convert_elem_type(e.type)
         offset = amount_of_nodes_in_vtk_element(e)
-        connectivity = get_element_connectivity(renumbered_nodes, e)
+        connectivity = get_element_connectivity(node_block.renumbered_nodes, e)
         ugrid.InsertNextCell(vtk_elem_type, offset, connectivity)
 
     return ugrid
@@ -374,15 +359,6 @@ class Writer:
 """Classes for reading CalculiX .frd files."""
 
 
-class Node:
-    """A single node object."""
-
-    def __init__(self, num, coords):
-        # logging.debug('Node {}: {}'.format(num, coords))
-        self.num = num
-        self.coords = coords
-
-
 class Element:
     """A single finite element object."""
 
@@ -394,11 +370,16 @@ class Element:
 
 
 class NodalPointCoordinateBlock:
-    """Nodal Point Coordinate Block: cgx_2.20.pdf Manual, § 11.3."""
+    """Nodal Point Coordinate Block: cgx_2.20.pdf Manual, § 11.3.
+    Generate vtkPoints. Points should be renumbered starting from 0.
+    """
 
     def __init__(self, in_file):
         """Read nodal coordinates."""
-        self.nodes = {} # dictionary with nodes {num:Node}
+        self.points = vtk.vtkPoints()
+        self.renumbered_nodes = {} # old_number : new_number
+
+        new_node_number = 0
         while True:
             line = in_file.readline().strip()
 
@@ -412,16 +393,16 @@ class NodalPointCoordinateBlock:
             node_coords = [ float(match.group(2)),
                             float(match.group(3)),
                             float(match.group(4)), ]
-            self.nodes[node_number] = Node(node_number, node_coords)
 
-        self.numnod = len(self.nodes) # number of nodes in this block
+            self.renumbered_nodes[node_number] = new_node_number
+            self.points.InsertPoint(new_node_number, node_coords)
+            new_node_number += 1
+
+        self.numnod = self.points.GetNumberOfPoints() # number of nodes in this block
         logging.info('{} nodes'.format(self.numnod)) # total number of nodes
 
     def get_node_numbers(self):
-        return sorted(self.nodes.keys())
-
-    def get_node_coordinates(self, n):
-        return self.nodes[n].coords
+        return sorted(self.renumbered_nodes.keys())
 
 
 class NodalPointCoordinateBlock2:
@@ -449,11 +430,6 @@ class NodalPointCoordinateBlock2:
         """Dataframe index column."""
         # return [int(n) for n in list(self.nodes.index.values)]
         return list(self.nodes.index.values)
-
-    def get_node_coordinates(self, n):
-        """Dataframe row, n is named index."""
-        # return [float(c) for c in list(self.nodes.loc[[n]].values.flatten())]
-        return list(self.nodes.loc[[n]].values.flatten())
 
 
 class ElementDefinitionBlock:
