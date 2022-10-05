@@ -138,9 +138,11 @@ def test_NodalPointCoordinateBlock2():
 
 # Run
 if __name__ == '__main__':
-    clean_screen()
-    clean_cache()
     os.chdir(os.path.dirname(__file__))
+    d = '../../examples'
+    clean_cache('..')
+    clean_results(d)
+    clean_screen()
     start = time.perf_counter()
 
     # test_numpy()
@@ -152,21 +154,17 @@ if __name__ == '__main__':
     logging.getLogger().setLevel(logging.INFO)
     print('CONVERTER TEST\n\n')
 
-    clean_results('../../examples')
+    convert_calculation_results_in(d)
 
-    # convert_calculation_results_in('../examples')
-
-    # test_single_file('../examples/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd')
-    # test_single_file('../examples/other/Jan_Lukas_modal_dynamic_beammodal.frd')
-    # test_single_file('../examples/other/John_Mannisto_blade_sector.frd')
-    # test_single_file('../examples/other/Jan_Lukas_static_structural.frd')
-    # test_single_file('../examples/other/Ihor_Mirzov_baffle_2D.frd')
-    # test_single_file('../examples/ccx/test/achtel2.frd')
-    # test_single_file('../examples/mkraska/RVE/PlanarSlide/Refs/Zug.frd')
-    # test_single_file('../examples/mkraska/Contact/CNC/Refs/solve.frd')
-    # test_single_file('../examples/mkraska/Contact/Eyebar/Refs/eyebar.frd')
-
-    # test_binary_in('../examples')
+    # test_single_file(d + '/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd')
+    # test_single_file(d + '/other/Jan_Lukas_modal_dynamic_beammodal.frd')
+    # test_single_file(d + '/other/John_Mannisto_blade_sector.frd')
+    # test_single_file(d + '/other/Jan_Lukas_static_structural.frd')
+    # test_single_file(d + '/other/Ihor_Mirzov_baffle_2D.frd')
+    # test_single_file(d + '/ccx/test/achtel2.frd')
+    # test_single_file(d + '/mkraska/RVE/PlanarSlide/Refs/Zug.frd')
+    # test_single_file(d + '/mkraska/Contact/CNC/Refs/solve.frd')
+    # test_single_file(d + '/mkraska/Contact/Eyebar/Refs/eyebar.frd')
 
     delta = time.perf_counter() - start
     print('\nTotal', get_time_delta(delta))

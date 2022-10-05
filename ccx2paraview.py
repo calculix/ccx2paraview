@@ -295,12 +295,12 @@ def generate_ugrid(node_block, elem_block):
     return ugrid
 
 
-def convert_frd_data_to_vtk(b, numnod):
+def convert_frd_data_to_vtk(b, node_block):
     """Convert parsed FRD data to vtkDoubleArray."""
     data_array = vtk.vtkDoubleArray()
     data_array.SetName(b.name)
     data_array.SetNumberOfComponents(len(b.components))
-    data_array.SetNumberOfTuples(numnod)
+    data_array.SetNumberOfTuples(node_block.numnod)
 
     # Set component names
     for i,c in enumerate(b.components):
@@ -313,7 +313,11 @@ def convert_frd_data_to_vtk(b, numnod):
     emitted_warning_types = {'Inf':0, 'NaN':0}
 
     # Assign data
-    nodes = sorted(b.results.keys())[:numnod]
+    if len(b.results) > node_block.numnod:
+        txt = 'Truncating {} data. More values than nodes.'.format(b.name)
+        logging.warning(txt)
+
+    nodes = node_block.get_node_numbers()
     for i,n in enumerate(nodes):
         node_values = b.results[n]
         for j,r in enumerate(node_values):
@@ -340,7 +344,7 @@ class Writer:
 
     def __init__(self, node_block, elem_block):
         """Main function: frd is a FRD object."""
-        self.numnod = node_block.numnod
+        self.node_block = node_block
         self.ugrid = generate_ugrid(node_block, elem_block)
 
     def fill_point_data(self, result_blocks):
@@ -348,7 +352,7 @@ class Writer:
         pd = self.ugrid.GetPointData()
         for b in result_blocks: # iterate over NodalResultsBlock (increments)
             if len(b.results) and len(b.components):
-                da = convert_frd_data_to_vtk(b, self.numnod)
+                da = convert_frd_data_to_vtk(b, self.node_block)
                 pd.AddArray(da)
                 pd.Modified()
 
@@ -560,6 +564,7 @@ class NodalResultsBlock:
         self.ncomps = 0
         self.step = 0
         self.line = line
+        self.txt = ''
 
     def run(self, in_file, node_block):
         self.in_file = in_file
@@ -703,20 +708,15 @@ class NodalResultsBlock:
                 .format(before.strip(), after, emitted_warning_types['WrongFormat']))
         return results_counter
 
-    def print_some_log(self):
+    def get_some_log(self):
         if self.inc < 1:
             time_str = 'time {:.2e}, '.format(self.inc)
         else:
             time_str = 'time {:.1f}, '.format(self.inc)
-        v = len(self.results)
-        txt = 'Step {}, '.format(self.step) + time_str \
+        self.txt = 'Step {}, '.format(self.step) + time_str \
             + '{}, '.format(self.name) \
             + '{} components, '.format(len(self.components)) \
-            + '{} values'.format(v)
-        if v:
-            logging.info(txt)
-        else:
-            logging.warning(txt)
+            + '{} values'.format(len(self.results))
 
 
 class FRD:
@@ -807,7 +807,7 @@ class FRD:
                     b = NodalResultsBlock(line)
                     b.run(self.in_file, self.node_block)
                     result_blocks.append(b)
-                    b.print_some_log()
+                    b.get_some_log()
                     if b.name == 'S':
                         result_blocks.append(self.calculate_mises_stress(b))
                         result_blocks.append(self.calculate_principal(b))
@@ -846,7 +846,7 @@ class FRD:
                 + 6 * Sxy**2)
             b1.results[node_num] = [mises]
 
-        b1.print_some_log()
+        b1.get_some_log()
         return b1
 
     def calculate_mises_strain(self, b):
@@ -874,7 +874,7 @@ class FRD:
                 + 6 * Sxy**2)
             b1.results[node_num] = [mises]
 
-        b1.print_some_log()
+        b1.get_some_log()
         return b1
 
     def calculate_principal(self, b):
@@ -897,7 +897,7 @@ class FRD:
             eigenvalues = np.linalg.eigvals(tensor).tolist()
             b1.results[node_num] = sorted(eigenvalues)
 
-        b1.print_some_log()
+        b1.get_some_log()
         return b1
 
     def has_mesh(self):
@@ -986,6 +986,11 @@ class Converter:
         self.frd.count_increments()
         for step, inc, num in self.step_inc_num(): # NOTE Could be (0, 0, '')
             result_blocks = self.frd.parse_results(step, inc) # NOTE Could be empty list []
+            for b in result_blocks:
+                if len(b.results):
+                    logging.info(b.txt)
+                else:
+                    logging.warning(b.txt)
             for fmt in self.fmt_list: # ['.vtk', '.vtu']
                 logging.info('Writing ' + os.path.basename(self.frd_file_name[:-4]) + num + fmt)
             if t is not None:
