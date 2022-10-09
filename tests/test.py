@@ -79,29 +79,54 @@ def scan_all_files_in(start_folder, ext, limit=10000):
     return sorted(all_files)[:limit]
 
 
-def convert_calculation_results_in(folder):
+def test_my_parser_in(folder):
     """Convert calculation results."""
-    for counter, file_name in enumerate(scan_all_files_in(folder, '.frd')):
-        relpath = os.path.relpath(file_name, start=folder)
+    for counter, file_path in enumerate(scan_all_files_in(folder, '.frd')):
+        relpath = os.path.relpath(file_path, start=folder)
         print('\n{}\n{}: {}'.format('='*50, counter+1, relpath))
-        try:
-            Converter(file_name, ['vtk', 'vtu']).run()
-        except:
-            logging.error(traceback.format_exc())
+        test_my_single_file(file_path)
+
+
+def test_my_single_file(file_path):
+    try:
+        start = time.perf_counter()
+        Converter(file_path, ['vtk', 'vtu']).run()
+        delta = time.perf_counter() - start
+        print(get_time_delta(delta))
+    except:
+        logging.error(traceback.format_exc())
+
+
+def test_freecad_parser_in(folder):
+    for counter, file_path in enumerate(scan_all_files_in(folder, '.frd')):
+        relpath = os.path.relpath(file_path, start=folder)
+        print('\n{}\n{}: {}'.format('='*50, counter+1, relpath))
+        test_freecad_single_file(file_path)
+
+
+def test_freecad_single_file(file_path):
+    from freecad import read_frd_result
+    try:
+        start = time.perf_counter()
+        read_frd_result(file_path)
+        delta = time.perf_counter() - start
+        print(get_time_delta(delta))
+    except:
+        logging.error(traceback.format_exc())
 
 
 def test_binary_in(folder):
     """Convert calculation results with binaries."""
     from log import read_and_log
-    for counter, file_name in enumerate(scan_all_files_in(folder, '.frd')):
+    for counter, file_path in enumerate(scan_all_files_in(folder, '.frd')):
         if os.name == 'nt':
             command = 'bin\\ccx2paraview.exe'
         else:
             command = './bin/ccx2paraview'
-        relpath = os.path.relpath(file_name, start=folder)
+        relpath = os.path.relpath(file_path, start=folder)
         for fmt in ['vtk', 'vtu']:
             print('\n{}\n{}: {}'.format('='*50, counter, relpath))
-            cmd = [command, file_name, fmt]
+            cmd = [command, file_path, fmt]
             try:
                 process = subprocess.Popen(cmd,
                     stdin=subprocess.PIPE,
@@ -110,14 +135,6 @@ def test_binary_in(folder):
                 read_and_log(process.stdout)
             except:
                 logging.error(traceback.format_exc())
-
-
-def test_single_file(file_path):
-    print('\n{}\n{}'.format('='*50, file_path))
-    try:
-        Converter(file_path, ['vtk', 'vtu']).run()
-    except:
-        logging.error(traceback.format_exc())
 
 
 def test_numpy():
@@ -154,9 +171,11 @@ if __name__ == '__main__':
     logging.getLogger().setLevel(logging.INFO)
     print('CONVERTER TEST\n\n')
 
-    convert_calculation_results_in(d)
+    # test_freecad_parser_in(d)
+    # test_freecad_single_file(d + '/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd_')
 
-    # test_single_file(d + '/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd')
+    test_my_parser_in(d)
+    # test_my_single_file(d + '/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd_')
     # test_single_file(d + '/other/Jan_Lukas_modal_dynamic_beammodal.frd')
     # test_single_file(d + '/other/John_Mannisto_blade_sector.frd')
     # test_single_file(d + '/other/Jan_Lukas_static_structural.frd')

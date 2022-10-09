@@ -185,7 +185,9 @@ Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-fo
 
 # TODO
 
-Check CALMED binary.
+Add app erguments: nomises, noeig, parseonly.
+
+Test CALMED binary.
 
 Use pandas or numpy for data parsing. No regexp.
 

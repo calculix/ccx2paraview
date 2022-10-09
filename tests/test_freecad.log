@@ -1,0 +1,4205 @@
+CONVERTER TEST
+
+==================================================
+1: ccx/test/achtel2.frd
+0m 0.0s
+
+==================================================
+2: ccx/test/ball.frd
+0m 0.0s
+
+==================================================
+3: ccx/test/beamfrdwrite.frd
+INFO: Step time 1.0, T
+INFO: Step time 2.0, T
+0m 0.0s
+
+==================================================
+4: ccx/test/metalforming.frd
+0m 0.0s
+
+==================================================
+5: ccx/test/twobeam.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, T
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+6: cgx/result.frd
+INFO: Step time 10459.8, U
+INFO: Step time 10459.8, S
+INFO: Step time 22385.2, U
+INFO: Step time 22385.2, S
+INFO: Step time 23740.5, U
+INFO: Step time 23740.5, S
+INFO: Step time 29651.7, U
+INFO: Step time 29651.7, S
+INFO: Step time 32537.2, U
+INFO: Step time 32537.2, S
+INFO: Step time 37847.4, U
+INFO: Step time 37847.4, S
+INFO: Step time 39839.8, U
+INFO: Step time 39839.8, S
+INFO: Step time 50396.9, U
+INFO: Step time 50396.9, S
+INFO: Step time 60223.2, U
+INFO: Step time 60223.2, S
+INFO: Step time 68812.0, U
+INFO: Step time 68812.0, S
+0m 0.4s
+
+==================================================
+7: elements/C3D15.frd
+0m 0.0s
+
+==================================================
+8: elements/C3D20.frd
+0m 0.0s
+
+==================================================
+9: elements/C3D4.frd
+0m 0.0s
+
+==================================================
+10: elements/CPE3.frd
+0m 0.0s
+
+==================================================
+11: elements/CPE4.frd
+0m 0.0s
+
+==================================================
+12: elements/CPS3.frd
+0m 0.0s
+
+==================================================
+13: elements/CPS4.frd
+0m 0.0s
+
+==================================================
+14: elements/S3.frd
+0m 0.0s
+
+==================================================
+15: elements/S4.frd
+0m 0.0s
+
+==================================================
+16: elements/S6.frd
+0m 0.0s
+
+==================================================
+17: elements/S8.frd
+0m 0.0s
+
+==================================================
+18: mkraska/CAD/OnshapeTutorial/Refs/solve.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.2s
+
+==================================================
+19: mkraska/CAD/Opt/Refs/Solve.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+20: mkraska/Contact/CNC/Refs/solve.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.00398662, U
+INFO: Step time 0.30641, U
+INFO: Step time 3.84488535, U
+INFO: Step time 5.762868763, U
+INFO: Step time 19.2440885, U
+INFO: Step time 164.7719709, U
+INFO: Step time 224.8511778, U
+INFO: Step time 371.9804973, U
+INFO: Step time 519.3528537, U
+INFO: Step time 639.0736213, U
+INFO: Step time 906.1869919, U
+INFO: Step time 1012.766285, U
+INFO: Step time 1136.584458, U
+INFO: Step time 1174.295722, U
+INFO: Step time 1177.722188, U
+INFO: Step time 1197.909919, U
+INFO: Step time 1199.78766, U
+INFO: Step time 1255.506807, U
+0m 8.3s
+
+==================================================
+21: mkraska/Contact/Eyebar/Refs/eyebar.frd
+INFO: Step time 0.01, U
+INFO: Step time 0.01, S
+INFO: Step time 0.01, E
+INFO: Step time 0.01, PE
+INFO: Step time 0.01, PE
+INFO: Step time 0.02, U
+INFO: Step time 0.02, S
+INFO: Step time 0.02, E
+INFO: Step time 0.02, PE
+INFO: Step time 0.02, PE
+INFO: Step time 0.035, U
+INFO: Step time 0.035, S
+INFO: Step time 0.035, E
+INFO: Step time 0.035, PE
+INFO: Step time 0.035, PE
+INFO: Step time 0.05, U
+INFO: Step time 0.05, S
+INFO: Step time 0.05, E
+INFO: Step time 0.05, PE
+INFO: Step time 0.05, PE
+INFO: Step time 0.065, U
+INFO: Step time 0.065, S
+INFO: Step time 0.065, E
+INFO: Step time 0.065, PE
+INFO: Step time 0.065, PE
+INFO: Step time 0.08, U
+INFO: Step time 0.08, S
+INFO: Step time 0.08, E
+INFO: Step time 0.08, PE
+INFO: Step time 0.08, PE
+INFO: Step time 0.095, U
+INFO: Step time 0.095, S
+INFO: Step time 0.095, E
+INFO: Step time 0.095, PE
+INFO: Step time 0.095, PE
+INFO: Step time 0.1175, U
+INFO: Step time 0.1175, S
+INFO: Step time 0.1175, E
+INFO: Step time 0.1175, PE
+INFO: Step time 0.1175, PE
+INFO: Step time 0.15125, U
+INFO: Step time 0.15125, S
+INFO: Step time 0.15125, E
+INFO: Step time 0.15125, PE
+INFO: Step time 0.15125, PE
+INFO: Step time 0.201875, U
+INFO: Step time 0.201875, S
+INFO: Step time 0.201875, E
+INFO: Step time 0.201875, PE
+INFO: Step time 0.201875, PE
+INFO: Step time 0.2525, U
+INFO: Step time 0.2525, S
+INFO: Step time 0.2525, E
+INFO: Step time 0.2525, PE
+INFO: Step time 0.2525, PE
+INFO: Step time 0.303125, U
+INFO: Step time 0.303125, S
+INFO: Step time 0.303125, E
+INFO: Step time 0.303125, PE
+INFO: Step time 0.303125, PE
+INFO: Step time 0.35375, U
+INFO: Step time 0.35375, S
+INFO: Step time 0.35375, E
+INFO: Step time 0.35375, PE
+INFO: Step time 0.35375, PE
+INFO: Step time 0.404375, U
+INFO: Step time 0.404375, S
+INFO: Step time 0.404375, E
+INFO: Step time 0.404375, PE
+INFO: Step time 0.404375, PE
+INFO: Step time 0.455, U
+INFO: Step time 0.455, S
+INFO: Step time 0.455, E
+INFO: Step time 0.455, PE
+INFO: Step time 0.455, PE
+INFO: Step time 0.505625, U
+INFO: Step time 0.505625, S
+INFO: Step time 0.505625, E
+INFO: Step time 0.505625, PE
+INFO: Step time 0.505625, PE
+INFO: Step time 0.55625, U
+INFO: Step time 0.55625, S
+INFO: Step time 0.55625, E
+INFO: Step time 0.55625, PE
+INFO: Step time 0.55625, PE
+INFO: Step time 0.606875, U
+INFO: Step time 0.606875, S
+INFO: Step time 0.606875, E
+INFO: Step time 0.606875, PE
+INFO: Step time 0.606875, PE
+INFO: Step time 0.6575, U
+INFO: Step time 0.6575, S
+INFO: Step time 0.6575, E
+INFO: Step time 0.6575, PE
+INFO: Step time 0.6575, PE
+INFO: Step time 0.708125, U
+INFO: Step time 0.708125, S
+INFO: Step time 0.708125, E
+INFO: Step time 0.708125, PE
+INFO: Step time 0.708125, PE
+INFO: Step time 0.75875, U
+INFO: Step time 0.75875, S
+INFO: Step time 0.75875, E
+INFO: Step time 0.75875, PE
+INFO: Step time 0.75875, PE
+INFO: Step time 0.809375, U
+INFO: Step time 0.809375, S
+INFO: Step time 0.809375, E
+INFO: Step time 0.809375, PE
+INFO: Step time 0.809375, PE
+INFO: Step time 0.86, U
+INFO: Step time 0.86, S
+INFO: Step time 0.86, E
+INFO: Step time 0.86, PE
+INFO: Step time 0.86, PE
+INFO: Step time 0.935938, U
+INFO: Step time 0.935938, S
+INFO: Step time 0.935938, E
+INFO: Step time 0.935938, PE
+INFO: Step time 0.935938, PE
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, E
+INFO: Step time 1.0, PE
+INFO: Step time 1.0, PE
+0m 1.2s
+
+==================================================
+22: mkraska/Contact/Hertz_2D/Refs/Hertz.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, E
+INFO: Step time 2.0, U
+INFO: Step time 2.0, S
+INFO: Step time 2.0, E
+0m 0.5s
+
+==================================================
+23: mkraska/Contact/Hertz_axi/Refs/Hertz.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, E
+0m 0.3s
+
+==================================================
+24: mkraska/Contact/Leafspring/Refs/solve.frd
+INFO: Step time 0.0109615, U
+INFO: Step time 0.0109615, S
+INFO: Step time 0.156808, U
+INFO: Step time 0.156808, S
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+25: mkraska/Contact/Penalty/Refs/solve.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.02, U
+INFO: Step time 1.04, U
+INFO: Step time 1.06, U
+INFO: Step time 1.08, U
+INFO: Step time 1.1, U
+INFO: Step time 1.12, U
+INFO: Step time 1.14, U
+INFO: Step time 1.16, U
+INFO: Step time 1.18, U
+INFO: Step time 1.2, U
+INFO: Step time 1.22, U
+INFO: Step time 1.24, U
+INFO: Step time 1.26, U
+INFO: Step time 1.28, U
+INFO: Step time 1.3, U
+INFO: Step time 1.32, U
+INFO: Step time 1.34, U
+INFO: Step time 1.36, U
+INFO: Step time 1.38, U
+INFO: Step time 1.4, U
+INFO: Step time 1.42, U
+INFO: Step time 1.44, U
+INFO: Step time 1.46, U
+INFO: Step time 1.48, U
+INFO: Step time 1.5, U
+INFO: Step time 1.52, U
+INFO: Step time 1.54, U
+INFO: Step time 1.56, U
+INFO: Step time 1.58, U
+INFO: Step time 1.6, U
+INFO: Step time 1.62, U
+INFO: Step time 1.64, U
+INFO: Step time 1.66, U
+INFO: Step time 1.68, U
+INFO: Step time 1.7, U
+INFO: Step time 1.72, U
+INFO: Step time 1.74, U
+INFO: Step time 1.76, U
+INFO: Step time 1.78, U
+INFO: Step time 1.8, U
+INFO: Step time 1.82, U
+INFO: Step time 1.84, U
+INFO: Step time 1.86, U
+INFO: Step time 1.88, U
+INFO: Step time 1.9, U
+INFO: Step time 1.92, U
+INFO: Step time 1.94, U
+INFO: Step time 1.96, U
+INFO: Step time 1.98, U
+INFO: Step time 2.0, U
+0m 0.0s
+
+==================================================
+26: mkraska/Contact/Shell0/Refs/qu4_equ/equ.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0423786, U
+INFO: Step time 0.0423786, S
+INFO: Step time 0.061142, U
+INFO: Step time 0.061142, S
+INFO: Step time 0.0724153, U
+INFO: Step time 0.0724153, S
+INFO: Step time 0.0797562, U
+INFO: Step time 0.0797562, S
+INFO: Step time 0.0997076, U
+INFO: Step time 0.0997076, S
+INFO: Step time 2538.305674, U
+INFO: Step time 2538.305674, S
+INFO: Step time 3085.228277, U
+INFO: Step time 3085.228277, S
+INFO: Step time 4083.527296, U
+INFO: Step time 4083.527296, S
+INFO: Step time 5512.58054, U
+INFO: Step time 5512.58054, S
+INFO: Step time 13439.79377, U
+INFO: Step time 13439.79377, S
+INFO: Step time 14124.44702, U
+INFO: Step time 14124.44702, S
+INFO: Step time 15967.36513, U
+INFO: Step time 15967.36513, S
+INFO: Step time 16435.22893, U
+INFO: Step time 16435.22893, S
+INFO: Step time 18563.68954, U
+INFO: Step time 18563.68954, S
+INFO: Step time 19958.52163, U
+INFO: Step time 19958.52163, S
+INFO: Step time 22490.26829, U
+INFO: Step time 22490.26829, S
+INFO: Step time 35272.84404, U
+INFO: Step time 35272.84404, S
+INFO: Step time 44650.86756, U
+INFO: Step time 44650.86756, S
+0m 0.1s
+
+==================================================
+27: mkraska/Contact/Shell0/Refs/qu4_pc-ns/pc-ns.frd
+INFO: Step time 0.00411681, U
+INFO: Step time 0.00411681, S
+INFO: Step time 0.0189453, U
+INFO: Step time 0.0189453, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0736294, U
+INFO: Step time 0.0736294, S
+INFO: Step time 1522.82899, U
+INFO: Step time 1522.82899, S
+INFO: Step time 2812.926635, U
+INFO: Step time 2812.926635, S
+INFO: Step time 5216.309053, U
+INFO: Step time 5216.309053, S
+INFO: Step time 5543.394612, U
+INFO: Step time 5543.394612, S
+INFO: Step time 7284.881102, U
+INFO: Step time 7284.881102, S
+INFO: Step time 14155.10341, U
+INFO: Step time 14155.10341, S
+INFO: Step time 16167.66398, U
+INFO: Step time 16167.66398, S
+INFO: Step time 19263.80153, U
+INFO: Step time 19263.80153, S
+INFO: Step time 20882.73315, U
+INFO: Step time 20882.73315, S
+INFO: Step time 20319.64062, U
+INFO: Step time 20319.64062, S
+INFO: Step time 21870.94018, U
+INFO: Step time 21870.94018, S
+INFO: Step time 26012.11108, U
+INFO: Step time 26012.11108, S
+INFO: Step time 45709.7156, U
+INFO: Step time 45709.7156, S
+INFO: Step time 44746.80825, U
+INFO: Step time 44746.80825, S
+0m 0.1s
+
+==================================================
+28: mkraska/Contact/Shell0/Refs/qu4_pc-ss/pc-ss.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0180912, U
+INFO: Step time 0.0180912, S
+INFO: Step time 0.0772601, U
+INFO: Step time 0.0772601, S
+INFO: Step time 1318.765265, U
+INFO: Step time 1318.765265, S
+INFO: Step time 4000.829596, U
+INFO: Step time 4000.829596, S
+INFO: Step time 6417.793959, U
+INFO: Step time 6417.793959, S
+INFO: Step time 7391.343333, U
+INFO: Step time 7391.343333, S
+INFO: Step time 13034.35995, U
+INFO: Step time 13034.35995, S
+INFO: Step time 14079.18636, U
+INFO: Step time 14079.18636, S
+INFO: Step time 19257.8695, U
+INFO: Step time 19257.8695, S
+INFO: Step time 21288.29081, U
+INFO: Step time 21288.29081, S
+INFO: Step time 22772.96095, U
+INFO: Step time 22772.96095, S
+INFO: Step time 30890.52287, U
+INFO: Step time 30890.52287, S
+INFO: Step time 34286.336, U
+INFO: Step time 34286.336, S
+INFO: Step time 36613.01287, U
+INFO: Step time 36613.01287, S
+INFO: Step time 55158.94597, U
+INFO: Step time 55158.94597, S
+INFO: Step time 57134.62837, U
+INFO: Step time 57134.62837, S
+0m 0.1s
+
+==================================================
+29: mkraska/Contact/Shell0/Refs/qu4_tie/tie.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0463154, U
+INFO: Step time 0.0463154, S
+INFO: Step time 0.0658907, U
+INFO: Step time 0.0658907, S
+INFO: Step time 1530.905926, U
+INFO: Step time 1530.905926, S
+INFO: Step time 2841.987129, U
+INFO: Step time 2841.987129, S
+INFO: Step time 5344.788195, U
+INFO: Step time 5344.788195, S
+INFO: Step time 5620.309052, U
+INFO: Step time 5620.309052, S
+INFO: Step time 7414.155663, U
+INFO: Step time 7414.155663, S
+INFO: Step time 14262.71256, U
+INFO: Step time 14262.71256, S
+INFO: Step time 16641.31435, U
+INFO: Step time 16641.31435, S
+INFO: Step time 19418.34048, U
+INFO: Step time 19418.34048, S
+INFO: Step time 20373.80939, U
+INFO: Step time 20373.80939, S
+INFO: Step time 20911.74058, U
+INFO: Step time 20911.74058, S
+INFO: Step time 22160.44574, U
+INFO: Step time 22160.44574, S
+INFO: Step time 26223.33418, U
+INFO: Step time 26223.33418, S
+INFO: Step time 45006.72037, U
+INFO: Step time 45006.72037, S
+INFO: Step time 45813.71263, U
+INFO: Step time 45813.71263, S
+0m 0.1s
+
+==================================================
+30: mkraska/Contact/Shell0/Refs/qu8_equ/equ.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0967335, U
+INFO: Step time 0.0967335, S
+INFO: Step time 0.463192, U
+INFO: Step time 0.463192, S
+INFO: Step time 2407.54231, U
+INFO: Step time 2407.54231, S
+INFO: Step time 2797.818996, U
+INFO: Step time 2797.818996, S
+INFO: Step time 3995.800953, U
+INFO: Step time 3995.800953, S
+INFO: Step time 5372.59684, U
+INFO: Step time 5372.59684, S
+INFO: Step time 7759.702944, U
+INFO: Step time 7759.702944, S
+INFO: Step time 8158.325364, U
+INFO: Step time 8158.325364, S
+INFO: Step time 8204.401143, U
+INFO: Step time 8204.401143, S
+INFO: Step time 12295.33925, U
+INFO: Step time 12295.33925, S
+INFO: Step time 14105.97146, U
+INFO: Step time 14105.97146, S
+INFO: Step time 14604.90958, U
+INFO: Step time 14604.90958, S
+INFO: Step time 14633.05857, U
+INFO: Step time 14633.05857, S
+INFO: Step time 16096.30747, U
+INFO: Step time 16096.30747, S
+INFO: Step time 18518.8594, U
+INFO: Step time 18518.8594, S
+0m 0.1s
+
+==================================================
+31: mkraska/Contact/Shell0/Refs/qu8_pc-ns/pc-ns.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.306763, U
+INFO: Step time 0.306763, S
+INFO: Step time 1404.978173, U
+INFO: Step time 1404.978173, S
+INFO: Step time 2629.216, U
+INFO: Step time 2629.216, S
+INFO: Step time 3223.408917, U
+INFO: Step time 3223.408917, S
+INFO: Step time 4826.579645, U
+INFO: Step time 4826.579645, S
+INFO: Step time 7154.889486, U
+INFO: Step time 7154.889486, S
+INFO: Step time 8741.367603, U
+INFO: Step time 8741.367603, S
+INFO: Step time 7989.754213, U
+INFO: Step time 7989.754213, S
+INFO: Step time 10522.99285, U
+INFO: Step time 10522.99285, S
+INFO: Step time 12920.4667, U
+INFO: Step time 12920.4667, S
+INFO: Step time 14307.72181, U
+INFO: Step time 14307.72181, S
+INFO: Step time 14810.45204, U
+INFO: Step time 14810.45204, S
+INFO: Step time 16683.41687, U
+INFO: Step time 16683.41687, S
+INFO: Step time 20098.97181, U
+INFO: Step time 20098.97181, S
+INFO: Step time 20490.53587, U
+INFO: Step time 20490.53587, S
+0m 0.2s
+
+==================================================
+32: mkraska/Contact/Shell0/Refs/qu8_pc-ss/pc-ss.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0485733, U
+INFO: Step time 0.0485733, S
+INFO: Step time 0.177803, U
+INFO: Step time 0.177803, S
+INFO: Step time 0.183677, U
+INFO: Step time 0.183677, S
+INFO: Step time 748.2584823, U
+INFO: Step time 748.2584823, S
+INFO: Step time 1394.637603, U
+INFO: Step time 1394.637603, S
+INFO: Step time 2963.301417, U
+INFO: Step time 2963.301417, S
+INFO: Step time 3286.649925, U
+INFO: Step time 3286.649925, S
+INFO: Step time 5466.898385, U
+INFO: Step time 5466.898385, S
+INFO: Step time 6904.620849, U
+INFO: Step time 6904.620849, S
+INFO: Step time 7974.532259, U
+INFO: Step time 7974.532259, S
+INFO: Step time 10710.25472, U
+INFO: Step time 10710.25472, S
+INFO: Step time 11437.81922, U
+INFO: Step time 11437.81922, S
+INFO: Step time 13256.03263, U
+INFO: Step time 13256.03263, S
+INFO: Step time 14456.66247, U
+INFO: Step time 14456.66247, S
+INFO: Step time 14731.72813, U
+INFO: Step time 14731.72813, S
+INFO: Step time 18495.88336, U
+INFO: Step time 18495.88336, S
+INFO: Step time 20331.11671, U
+INFO: Step time 20331.11671, S
+INFO: Step time 20612.14698, U
+INFO: Step time 20612.14698, S
+0m 0.2s
+
+==================================================
+33: mkraska/Contact/Shell0/Refs/qu8_tie/tie.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.31898, U
+INFO: Step time 0.31898, S
+INFO: Step time 1467.866751, U
+INFO: Step time 1467.866751, S
+INFO: Step time 2654.236232, U
+INFO: Step time 2654.236232, S
+INFO: Step time 3282.912965, U
+INFO: Step time 3282.912965, S
+INFO: Step time 4977.258145, U
+INFO: Step time 4977.258145, S
+INFO: Step time 7327.455111, U
+INFO: Step time 7327.455111, S
+INFO: Step time 8062.23846, U
+INFO: Step time 8062.23846, S
+INFO: Step time 8974.53158, U
+INFO: Step time 8974.53158, S
+INFO: Step time 10734.85089, U
+INFO: Step time 10734.85089, S
+INFO: Step time 12973.51148, U
+INFO: Step time 12973.51148, S
+INFO: Step time 14369.2808, U
+INFO: Step time 14369.2808, S
+INFO: Step time 15080.25243, U
+INFO: Step time 15080.25243, S
+INFO: Step time 16999.20614, U
+INFO: Step time 16999.20614, S
+INFO: Step time 20188.91412, U
+INFO: Step time 20188.91412, S
+INFO: Step time 20849.61381, U
+INFO: Step time 20849.61381, S
+0m 0.1s
+
+==================================================
+34: mkraska/Contact/Shell0/Refs/qu8r_equ/equ.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0215912, U
+INFO: Step time 0.0215912, S
+INFO: Step time 0.0917418, U
+INFO: Step time 0.0917418, S
+INFO: Step time 0.129497, U
+INFO: Step time 0.129497, S
+INFO: Step time 722.8567027, U
+INFO: Step time 722.8567027, S
+INFO: Step time 2635.029673, U
+INFO: Step time 2635.029673, S
+INFO: Step time 3007.171866, U
+INFO: Step time 3007.171866, S
+INFO: Step time 4820.237324, U
+INFO: Step time 4820.237324, S
+INFO: Step time 6939.940293, U
+INFO: Step time 6939.940293, S
+INFO: Step time 7344.02687, U
+INFO: Step time 7344.02687, S
+INFO: Step time 7792.155965, U
+INFO: Step time 7792.155965, S
+INFO: Step time 10770.58749, U
+INFO: Step time 10770.58749, S
+INFO: Step time 11366.81559, U
+INFO: Step time 11366.81559, S
+INFO: Step time 12890.34374, U
+INFO: Step time 12890.34374, S
+INFO: Step time 14159.8298, U
+INFO: Step time 14159.8298, S
+INFO: Step time 14425.53616, U
+INFO: Step time 14425.53616, S
+0m 0.1s
+
+==================================================
+35: mkraska/Contact/Shell0/Refs/qu8r_pc-ns/pc-ns.frd
+INFO: Step time 0.101885, U
+INFO: Step time 0.101885, S
+INFO: Step time 0.0701171, U
+INFO: Step time 0.0701171, S
+INFO: Step time 0.147473, U
+INFO: Step time 0.147473, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 1358.252628, U
+INFO: Step time 1358.252628, S
+INFO: Step time 3122.605361, U
+INFO: Step time 3122.605361, S
+INFO: Step time 2579.154443, U
+INFO: Step time 2579.154443, S
+INFO: Step time 4529.69159, U
+INFO: Step time 4529.69159, S
+INFO: Step time 6685.414977, U
+INFO: Step time 6685.414977, S
+INFO: Step time 8245.063422, U
+INFO: Step time 8245.063422, S
+INFO: Step time 7471.169059, U
+INFO: Step time 7471.169059, S
+INFO: Step time 9574.329675, U
+INFO: Step time 9574.329675, S
+INFO: Step time 11578.29273, U
+INFO: Step time 11578.29273, S
+INFO: Step time 12877.02763, U
+INFO: Step time 12877.02763, S
+INFO: Step time 12274.10552, U
+INFO: Step time 12274.10552, S
+INFO: Step time 16161.84262, U
+INFO: Step time 16161.84262, S
+INFO: Step time 14813.9179, U
+INFO: Step time 14813.9179, S
+INFO: Step time 17817.55123, U
+INFO: Step time 17817.55123, S
+0m 0.1s
+
+==================================================
+36: mkraska/Contact/Shell0/Refs/qu8r_pc-ss/pc-ss.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0853997, U
+INFO: Step time 0.0853997, S
+INFO: Step time 0.116417, U
+INFO: Step time 0.116417, S
+INFO: Step time 1087.311213, U
+INFO: Step time 1087.311213, S
+INFO: Step time 1932.707707, U
+INFO: Step time 1932.707707, S
+INFO: Step time 3433.889724, U
+INFO: Step time 3433.889724, S
+INFO: Step time 3767.748546, U
+INFO: Step time 3767.748546, S
+INFO: Step time 4788.033875, U
+INFO: Step time 4788.033875, S
+INFO: Step time 5523.164947, U
+INFO: Step time 5523.164947, S
+INFO: Step time 7994.875389, U
+INFO: Step time 7994.875389, S
+INFO: Step time 9167.597518, U
+INFO: Step time 9167.597518, S
+INFO: Step time 10387.87241, U
+INFO: Step time 10387.87241, S
+INFO: Step time 11211.02314, U
+INFO: Step time 11211.02314, S
+INFO: Step time 12499.18027, U
+INFO: Step time 12499.18027, S
+INFO: Step time 13480.38317, U
+INFO: Step time 13480.38317, S
+INFO: Step time 14681.71312, U
+INFO: Step time 14681.71312, S
+INFO: Step time 16660.47637, U
+INFO: Step time 16660.47637, S
+INFO: Step time 18754.96715, U
+INFO: Step time 18754.96715, S
+0m 0.1s
+
+==================================================
+37: mkraska/Contact/Shell0/Refs/qu8r_tie/tie.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0, U
+INFO: Step time 0.0, S
+INFO: Step time 0.0525889, U
+INFO: Step time 0.0525889, S
+INFO: Step time 0.112243, U
+INFO: Step time 0.112243, S
+INFO: Step time 1401.949297, U
+INFO: Step time 1401.949297, S
+INFO: Step time 2587.820779, U
+INFO: Step time 2587.820779, S
+INFO: Step time 3177.800266, U
+INFO: Step time 3177.800266, S
+INFO: Step time 4597.955399, U
+INFO: Step time 4597.955399, S
+INFO: Step time 6850.21011, U
+INFO: Step time 6850.21011, S
+INFO: Step time 7503.536111, U
+INFO: Step time 7503.536111, S
+INFO: Step time 8387.215547, U
+INFO: Step time 8387.215547, S
+INFO: Step time 9794.827383, U
+INFO: Step time 9794.827383, S
+INFO: Step time 11660.43381, U
+INFO: Step time 11660.43381, S
+INFO: Step time 12339.61798, U
+INFO: Step time 12339.61798, S
+INFO: Step time 13005.52368, U
+INFO: Step time 13005.52368, S
+INFO: Step time 14947.25179, U
+INFO: Step time 14947.25179, S
+INFO: Step time 16842.04527, U
+INFO: Step time 16842.04527, S
+INFO: Step time 17862.82919, U
+INFO: Step time 17862.82919, S
+0m 0.1s
+
+==================================================
+38: mkraska/Contact/Shell1/Refs/tie.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+39: mkraska/Contact/Tubes/Refs/solve.frd
+INFO: Step time 0.1, U
+INFO: Step time 0.1, S
+INFO: Step time 0.2, U
+INFO: Step time 0.2, S
+INFO: Step time 0.3, U
+INFO: Step time 0.3, S
+INFO: Step time 0.45, U
+INFO: Step time 0.45, S
+INFO: Step time 0.675, U
+INFO: Step time 0.675, S
+INFO: Step time 0.9, U
+INFO: Step time 0.9, S
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.6s
+
+==================================================
+40: mkraska/Contact/Valve/Refs/valve.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+41: mkraska/Drahtbiegen/Biegung/Refs/Biegung.frd
+INFO: Step time 0.01, U
+INFO: Step time 0.01, S
+INFO: Step time 0.01, PE
+INFO: Step time 0.01, PE
+INFO: Step time 0.02, U
+INFO: Step time 0.02, S
+INFO: Step time 0.02, PE
+INFO: Step time 0.02, PE
+INFO: Step time 0.035, U
+INFO: Step time 0.035, S
+INFO: Step time 0.035, PE
+INFO: Step time 0.035, PE
+INFO: Step time 0.0575, U
+INFO: Step time 0.0575, S
+INFO: Step time 0.0575, PE
+INFO: Step time 0.0575, PE
+INFO: Step time 0.08, U
+INFO: Step time 0.08, S
+INFO: Step time 0.08, PE
+INFO: Step time 0.08, PE
+INFO: Step time 0.085625, U
+INFO: Step time 0.085625, S
+INFO: Step time 0.085625, PE
+INFO: Step time 0.085625, PE
+INFO: Step time 0.09125, U
+INFO: Step time 0.09125, S
+INFO: Step time 0.09125, PE
+INFO: Step time 0.09125, PE
+INFO: Step time 0.0996875, U
+INFO: Step time 0.0996875, S
+INFO: Step time 0.0996875, PE
+INFO: Step time 0.0996875, PE
+INFO: Step time 0.108125, U
+INFO: Step time 0.108125, S
+INFO: Step time 0.108125, PE
+INFO: Step time 0.108125, PE
+INFO: Step time 0.116563, U
+INFO: Step time 0.116563, S
+INFO: Step time 0.116563, PE
+INFO: Step time 0.116563, PE
+INFO: Step time 0.125, U
+INFO: Step time 0.125, S
+INFO: Step time 0.125, PE
+INFO: Step time 0.125, PE
+INFO: Step time 0.137656, U
+INFO: Step time 0.137656, S
+INFO: Step time 0.137656, PE
+INFO: Step time 0.137656, PE
+INFO: Step time 0.150313, U
+INFO: Step time 0.150313, S
+INFO: Step time 0.150313, PE
+INFO: Step time 0.150313, PE
+INFO: Step time 0.162969, U
+INFO: Step time 0.162969, S
+INFO: Step time 0.162969, PE
+INFO: Step time 0.162969, PE
+INFO: Step time 0.166133, U
+INFO: Step time 0.166133, S
+INFO: Step time 0.166133, PE
+INFO: Step time 0.166133, PE
+INFO: Step time 0.169297, U
+INFO: Step time 0.169297, S
+INFO: Step time 0.169297, PE
+INFO: Step time 0.169297, PE
+INFO: Step time 0.172461, U
+INFO: Step time 0.172461, S
+INFO: Step time 0.172461, PE
+INFO: Step time 0.172461, PE
+INFO: Step time 0.175625, U
+INFO: Step time 0.175625, S
+INFO: Step time 0.175625, PE
+INFO: Step time 0.175625, PE
+INFO: Step time 0.178789, U
+INFO: Step time 0.178789, S
+INFO: Step time 0.178789, PE
+INFO: Step time 0.178789, PE
+INFO: Step time 0.181953, U
+INFO: Step time 0.181953, S
+INFO: Step time 0.181953, PE
+INFO: Step time 0.181953, PE
+INFO: Step time 0.186699, U
+INFO: Step time 0.186699, S
+INFO: Step time 0.186699, PE
+INFO: Step time 0.186699, PE
+INFO: Step time 0.193818, U
+INFO: Step time 0.193818, S
+INFO: Step time 0.193818, PE
+INFO: Step time 0.193818, PE
+INFO: Step time 0.204497, U
+INFO: Step time 0.204497, S
+INFO: Step time 0.204497, PE
+INFO: Step time 0.204497, PE
+INFO: Step time 0.207167, U
+INFO: Step time 0.207167, S
+INFO: Step time 0.207167, PE
+INFO: Step time 0.207167, PE
+INFO: Step time 0.209836, U
+INFO: Step time 0.209836, S
+INFO: Step time 0.209836, PE
+INFO: Step time 0.209836, PE
+INFO: Step time 0.212506, U
+INFO: Step time 0.212506, S
+INFO: Step time 0.212506, PE
+INFO: Step time 0.212506, PE
+INFO: Step time 0.216511, U
+INFO: Step time 0.216511, S
+INFO: Step time 0.216511, PE
+INFO: Step time 0.216511, PE
+INFO: Step time 0.222517, U
+INFO: Step time 0.222517, S
+INFO: Step time 0.222517, PE
+INFO: Step time 0.222517, PE
+INFO: Step time 0.228524, U
+INFO: Step time 0.228524, S
+INFO: Step time 0.228524, PE
+INFO: Step time 0.228524, PE
+INFO: Step time 0.234531, U
+INFO: Step time 0.234531, S
+INFO: Step time 0.234531, PE
+INFO: Step time 0.234531, PE
+INFO: Step time 0.243541, U
+INFO: Step time 0.243541, S
+INFO: Step time 0.243541, PE
+INFO: Step time 0.243541, PE
+INFO: Step time 0.252551, U
+INFO: Step time 0.252551, S
+INFO: Step time 0.252551, PE
+INFO: Step time 0.252551, PE
+INFO: Step time 0.261561, U
+INFO: Step time 0.261561, S
+INFO: Step time 0.261561, PE
+INFO: Step time 0.261561, PE
+INFO: Step time 0.270572, U
+INFO: Step time 0.270572, S
+INFO: Step time 0.270572, PE
+INFO: Step time 0.270572, PE
+INFO: Step time 0.279582, U
+INFO: Step time 0.279582, S
+INFO: Step time 0.279582, PE
+INFO: Step time 0.279582, PE
+INFO: Step time 0.288592, U
+INFO: Step time 0.288592, S
+INFO: Step time 0.288592, PE
+INFO: Step time 0.288592, PE
+INFO: Step time 0.297602, U
+INFO: Step time 0.297602, S
+INFO: Step time 0.297602, PE
+INFO: Step time 0.297602, PE
+INFO: Step time 0.306612, U
+INFO: Step time 0.306612, S
+INFO: Step time 0.306612, PE
+INFO: Step time 0.306612, PE
+INFO: Step time 0.315622, U
+INFO: Step time 0.315622, S
+INFO: Step time 0.315622, PE
+INFO: Step time 0.315622, PE
+INFO: Step time 0.324633, U
+INFO: Step time 0.324633, S
+INFO: Step time 0.324633, PE
+INFO: Step time 0.324633, PE
+INFO: Step time 0.326885, U
+INFO: Step time 0.326885, S
+INFO: Step time 0.326885, PE
+INFO: Step time 0.326885, PE
+INFO: Step time 0.329138, U
+INFO: Step time 0.329138, S
+INFO: Step time 0.329138, PE
+INFO: Step time 0.329138, PE
+INFO: Step time 0.33139, U
+INFO: Step time 0.33139, S
+INFO: Step time 0.33139, PE
+INFO: Step time 0.33139, PE
+INFO: Step time 0.334769, U
+INFO: Step time 0.334769, S
+INFO: Step time 0.334769, PE
+INFO: Step time 0.334769, PE
+INFO: Step time 0.339837, U
+INFO: Step time 0.339837, S
+INFO: Step time 0.339837, PE
+INFO: Step time 0.339837, PE
+INFO: Step time 0.34744, U
+INFO: Step time 0.34744, S
+INFO: Step time 0.34744, PE
+INFO: Step time 0.34744, PE
+INFO: Step time 0.355042, U
+INFO: Step time 0.355042, S
+INFO: Step time 0.355042, PE
+INFO: Step time 0.355042, PE
+INFO: Step time 0.362644, U
+INFO: Step time 0.362644, S
+INFO: Step time 0.362644, PE
+INFO: Step time 0.362644, PE
+INFO: Step time 0.370247, U
+INFO: Step time 0.370247, S
+INFO: Step time 0.370247, PE
+INFO: Step time 0.370247, PE
+INFO: Step time 0.377849, U
+INFO: Step time 0.377849, S
+INFO: Step time 0.377849, PE
+INFO: Step time 0.377849, PE
+INFO: Step time 0.385451, U
+INFO: Step time 0.385451, S
+INFO: Step time 0.385451, PE
+INFO: Step time 0.385451, PE
+INFO: Step time 0.393053, U
+INFO: Step time 0.393053, S
+INFO: Step time 0.393053, PE
+INFO: Step time 0.393053, PE
+INFO: Step time 0.400656, U
+INFO: Step time 0.400656, S
+INFO: Step time 0.400656, PE
+INFO: Step time 0.400656, PE
+INFO: Step time 0.408258, U
+INFO: Step time 0.408258, S
+INFO: Step time 0.408258, PE
+INFO: Step time 0.408258, PE
+INFO: Step time 0.41586, U
+INFO: Step time 0.41586, S
+INFO: Step time 0.41586, PE
+INFO: Step time 0.41586, PE
+INFO: Step time 0.423463, U
+INFO: Step time 0.423463, S
+INFO: Step time 0.423463, PE
+INFO: Step time 0.423463, PE
+INFO: Step time 0.431065, U
+INFO: Step time 0.431065, S
+INFO: Step time 0.431065, PE
+INFO: Step time 0.431065, PE
+INFO: Step time 0.438667, U
+INFO: Step time 0.438667, S
+INFO: Step time 0.438667, PE
+INFO: Step time 0.438667, PE
+INFO: Step time 0.44627, U
+INFO: Step time 0.44627, S
+INFO: Step time 0.44627, PE
+INFO: Step time 0.44627, PE
+INFO: Step time 0.453872, U
+INFO: Step time 0.453872, S
+INFO: Step time 0.453872, PE
+INFO: Step time 0.453872, PE
+INFO: Step time 0.461474, U
+INFO: Step time 0.461474, S
+INFO: Step time 0.461474, PE
+INFO: Step time 0.461474, PE
+INFO: Step time 0.469077, U
+INFO: Step time 0.469077, S
+INFO: Step time 0.469077, PE
+INFO: Step time 0.469077, PE
+INFO: Step time 0.476679, U
+INFO: Step time 0.476679, S
+INFO: Step time 0.476679, PE
+INFO: Step time 0.476679, PE
+INFO: Step time 0.484281, U
+INFO: Step time 0.484281, S
+INFO: Step time 0.484281, PE
+INFO: Step time 0.484281, PE
+INFO: Step time 0.491884, U
+INFO: Step time 0.491884, S
+INFO: Step time 0.491884, PE
+INFO: Step time 0.491884, PE
+INFO: Step time 0.499486, U
+INFO: Step time 0.499486, S
+INFO: Step time 0.499486, PE
+INFO: Step time 0.499486, PE
+INFO: Step time 0.507088, U
+INFO: Step time 0.507088, S
+INFO: Step time 0.507088, PE
+INFO: Step time 0.507088, PE
+INFO: Step time 0.514691, U
+INFO: Step time 0.514691, S
+INFO: Step time 0.514691, PE
+INFO: Step time 0.514691, PE
+INFO: Step time 0.522293, U
+INFO: Step time 0.522293, S
+INFO: Step time 0.522293, PE
+INFO: Step time 0.522293, PE
+INFO: Step time 0.529895, U
+INFO: Step time 0.529895, S
+INFO: Step time 0.529895, PE
+INFO: Step time 0.529895, PE
+INFO: Step time 0.537498, U
+INFO: Step time 0.537498, S
+INFO: Step time 0.537498, PE
+INFO: Step time 0.537498, PE
+INFO: Step time 0.5451, U
+INFO: Step time 0.5451, S
+INFO: Step time 0.5451, PE
+INFO: Step time 0.5451, PE
+INFO: Step time 0.552702, U
+INFO: Step time 0.552702, S
+INFO: Step time 0.552702, PE
+INFO: Step time 0.552702, PE
+INFO: Step time 0.560305, U
+INFO: Step time 0.560305, S
+INFO: Step time 0.560305, PE
+INFO: Step time 0.560305, PE
+INFO: Step time 0.571708, U
+INFO: Step time 0.571708, S
+INFO: Step time 0.571708, PE
+INFO: Step time 0.571708, PE
+INFO: Step time 0.583112, U
+INFO: Step time 0.583112, S
+INFO: Step time 0.583112, PE
+INFO: Step time 0.583112, PE
+INFO: Step time 0.585962, U
+INFO: Step time 0.585962, S
+INFO: Step time 0.585962, PE
+INFO: Step time 0.585962, PE
+INFO: Step time 0.588813, U
+INFO: Step time 0.588813, S
+INFO: Step time 0.588813, PE
+INFO: Step time 0.588813, PE
+INFO: Step time 0.591664, U
+INFO: Step time 0.591664, S
+INFO: Step time 0.591664, PE
+INFO: Step time 0.591664, PE
+INFO: Step time 0.595941, U
+INFO: Step time 0.595941, S
+INFO: Step time 0.595941, PE
+INFO: Step time 0.595941, PE
+INFO: Step time 0.602355, U
+INFO: Step time 0.602355, S
+INFO: Step time 0.602355, PE
+INFO: Step time 0.602355, PE
+INFO: Step time 0.611977, U
+INFO: Step time 0.611977, S
+INFO: Step time 0.611977, PE
+INFO: Step time 0.611977, PE
+INFO: Step time 0.621598, U
+INFO: Step time 0.621598, S
+INFO: Step time 0.621598, PE
+INFO: Step time 0.621598, PE
+INFO: Step time 0.63122, U
+INFO: Step time 0.63122, S
+INFO: Step time 0.63122, PE
+INFO: Step time 0.63122, PE
+INFO: Step time 0.640842, U
+INFO: Step time 0.640842, S
+INFO: Step time 0.640842, PE
+INFO: Step time 0.640842, PE
+INFO: Step time 0.650463, U
+INFO: Step time 0.650463, S
+INFO: Step time 0.650463, PE
+INFO: Step time 0.650463, PE
+INFO: Step time 0.660085, U
+INFO: Step time 0.660085, S
+INFO: Step time 0.660085, PE
+INFO: Step time 0.660085, PE
+INFO: Step time 0.669707, U
+INFO: Step time 0.669707, S
+INFO: Step time 0.669707, PE
+INFO: Step time 0.669707, PE
+INFO: Step time 0.679329, U
+INFO: Step time 0.679329, S
+INFO: Step time 0.679329, PE
+INFO: Step time 0.679329, PE
+INFO: Step time 0.68895, U
+INFO: Step time 0.68895, S
+INFO: Step time 0.68895, PE
+INFO: Step time 0.68895, PE
+INFO: Step time 0.698572, U
+INFO: Step time 0.698572, S
+INFO: Step time 0.698572, PE
+INFO: Step time 0.698572, PE
+INFO: Step time 0.708194, U
+INFO: Step time 0.708194, S
+INFO: Step time 0.708194, PE
+INFO: Step time 0.708194, PE
+INFO: Step time 0.717815, U
+INFO: Step time 0.717815, S
+INFO: Step time 0.717815, PE
+INFO: Step time 0.717815, PE
+INFO: Step time 0.727437, U
+INFO: Step time 0.727437, S
+INFO: Step time 0.727437, PE
+INFO: Step time 0.727437, PE
+INFO: Step time 0.737059, U
+INFO: Step time 0.737059, S
+INFO: Step time 0.737059, PE
+INFO: Step time 0.737059, PE
+INFO: Step time 0.74668, U
+INFO: Step time 0.74668, S
+INFO: Step time 0.74668, PE
+INFO: Step time 0.74668, PE
+INFO: Step time 0.756302, U
+INFO: Step time 0.756302, S
+INFO: Step time 0.756302, PE
+INFO: Step time 0.756302, PE
+INFO: Step time 0.765924, U
+INFO: Step time 0.765924, S
+INFO: Step time 0.765924, PE
+INFO: Step time 0.765924, PE
+INFO: Step time 0.775545, U
+INFO: Step time 0.775545, S
+INFO: Step time 0.775545, PE
+INFO: Step time 0.775545, PE
+INFO: Step time 0.785167, U
+INFO: Step time 0.785167, S
+INFO: Step time 0.785167, PE
+INFO: Step time 0.785167, PE
+INFO: Step time 0.794789, U
+INFO: Step time 0.794789, S
+INFO: Step time 0.794789, PE
+INFO: Step time 0.794789, PE
+INFO: Step time 0.804411, U
+INFO: Step time 0.804411, S
+INFO: Step time 0.804411, PE
+INFO: Step time 0.804411, PE
+INFO: Step time 0.814032, U
+INFO: Step time 0.814032, S
+INFO: Step time 0.814032, PE
+INFO: Step time 0.814032, PE
+INFO: Step time 0.823654, U
+INFO: Step time 0.823654, S
+INFO: Step time 0.823654, PE
+INFO: Step time 0.823654, PE
+INFO: Step time 0.833276, U
+INFO: Step time 0.833276, S
+INFO: Step time 0.833276, PE
+INFO: Step time 0.833276, PE
+INFO: Step time 0.842897, U
+INFO: Step time 0.842897, S
+INFO: Step time 0.842897, PE
+INFO: Step time 0.842897, PE
+INFO: Step time 0.852519, U
+INFO: Step time 0.852519, S
+INFO: Step time 0.852519, PE
+INFO: Step time 0.852519, PE
+INFO: Step time 0.862141, U
+INFO: Step time 0.862141, S
+INFO: Step time 0.862141, PE
+INFO: Step time 0.862141, PE
+INFO: Step time 0.871762, U
+INFO: Step time 0.871762, S
+INFO: Step time 0.871762, PE
+INFO: Step time 0.871762, PE
+INFO: Step time 0.881384, U
+INFO: Step time 0.881384, S
+INFO: Step time 0.881384, PE
+INFO: Step time 0.881384, PE
+INFO: Step time 0.884992, U
+INFO: Step time 0.884992, S
+INFO: Step time 0.884992, PE
+INFO: Step time 0.884992, PE
+INFO: Step time 0.8886, U
+INFO: Step time 0.8886, S
+INFO: Step time 0.8886, PE
+INFO: Step time 0.8886, PE
+INFO: Step time 0.892208, U
+INFO: Step time 0.892208, S
+INFO: Step time 0.892208, PE
+INFO: Step time 0.892208, PE
+INFO: Step time 0.897621, U
+INFO: Step time 0.897621, S
+INFO: Step time 0.897621, PE
+INFO: Step time 0.897621, PE
+INFO: Step time 0.905739, U
+INFO: Step time 0.905739, S
+INFO: Step time 0.905739, PE
+INFO: Step time 0.905739, PE
+INFO: Step time 0.913857, U
+INFO: Step time 0.913857, S
+INFO: Step time 0.913857, PE
+INFO: Step time 0.913857, PE
+INFO: Step time 0.921976, U
+INFO: Step time 0.921976, S
+INFO: Step time 0.921976, PE
+INFO: Step time 0.921976, PE
+INFO: Step time 0.92502, U
+INFO: Step time 0.92502, S
+INFO: Step time 0.92502, PE
+INFO: Step time 0.92502, PE
+INFO: Step time 0.928064, U
+INFO: Step time 0.928064, S
+INFO: Step time 0.928064, PE
+INFO: Step time 0.928064, PE
+INFO: Step time 0.931109, U
+INFO: Step time 0.931109, S
+INFO: Step time 0.931109, PE
+INFO: Step time 0.931109, PE
+INFO: Step time 0.934153, U
+INFO: Step time 0.934153, S
+INFO: Step time 0.934153, PE
+INFO: Step time 0.934153, PE
+INFO: Step time 0.93872, U
+INFO: Step time 0.93872, S
+INFO: Step time 0.93872, PE
+INFO: Step time 0.93872, PE
+INFO: Step time 0.945569, U
+INFO: Step time 0.945569, S
+INFO: Step time 0.945569, PE
+INFO: Step time 0.945569, PE
+INFO: Step time 0.955844, U
+INFO: Step time 0.955844, S
+INFO: Step time 0.955844, PE
+INFO: Step time 0.955844, PE
+INFO: Step time 0.966119, U
+INFO: Step time 0.966119, S
+INFO: Step time 0.966119, PE
+INFO: Step time 0.966119, PE
+INFO: Step time 0.976394, U
+INFO: Step time 0.976394, S
+INFO: Step time 0.976394, PE
+INFO: Step time 0.976394, PE
+INFO: Step time 0.986668, U
+INFO: Step time 0.986668, S
+INFO: Step time 0.986668, PE
+INFO: Step time 0.986668, PE
+INFO: Step time 0.996943, U
+INFO: Step time 0.996943, S
+INFO: Step time 0.996943, PE
+INFO: Step time 0.996943, PE
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, PE
+INFO: Step time 1.0, PE
+0m 3.0s
+
+==================================================
+42: mkraska/Dynamics/Discrete/Refs/MS.frd
+INFO: Step time 3521.942762, U
+INFO: Step time 9220.205888, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 64.09291602, U
+INFO: Step time 64.09291602, U
+INFO: Step time 133.431957, U
+INFO: Step time 133.431957, U
+INFO: Step time 209.2435539, U
+INFO: Step time 209.2435539, U
+INFO: Step time 293.2892975, U
+INFO: Step time 293.2892975, U
+INFO: Step time 388.2514668, U
+INFO: Step time 388.2514668, U
+INFO: Step time 498.5613281, U
+INFO: Step time 498.5613281, U
+INFO: Step time 632.498572, U
+INFO: Step time 632.498572, U
+INFO: Step time 809.180552, U
+INFO: Step time 809.180552, U
+INFO: Step time 1101.036479, U
+INFO: Step time 1101.036479, U
+INFO: Step time 2420.906283, U
+INFO: Step time 2420.906283, U
+INFO: Step time 2712.76221, U
+INFO: Step time 2712.76221, U
+INFO: Step time 2889.44419, U
+INFO: Step time 2889.44419, U
+INFO: Step time 3023.381434, U
+INFO: Step time 3023.381434, U
+INFO: Step time 3133.691296, U
+INFO: Step time 3133.691296, U
+INFO: Step time 3228.653465, U
+INFO: Step time 3228.653465, U
+INFO: Step time 3312.699208, U
+INFO: Step time 3312.699208, U
+INFO: Step time 3388.510805, U
+INFO: Step time 3388.510805, U
+INFO: Step time 3457.849846, U
+INFO: Step time 3457.849846, U
+INFO: Step time 3521.942762, U
+INFO: Step time 3521.942762, U
+INFO: Step time 3625.640728, U
+INFO: Step time 3625.640728, U
+INFO: Step time 3737.826566, U
+INFO: Step time 3737.826566, U
+INFO: Step time 3860.484558, U
+INFO: Step time 3860.484558, U
+INFO: Step time 3996.464838, U
+INFO: Step time 3996.464838, U
+INFO: Step time 4150.10715, U
+INFO: Step time 4150.10715, U
+INFO: Step time 4328.58098, U
+INFO: Step time 4328.58098, U
+INFO: Step time 4545.282304, U
+INFO: Step time 4545.282304, U
+INFO: Step time 4831.141694, U
+INFO: Step time 4831.141694, U
+INFO: Step time 5303.344674, U
+INFO: Step time 5303.344674, U
+INFO: Step time 7438.803978, U
+INFO: Step time 7438.803978, U
+INFO: Step time 7911.006958, U
+INFO: Step time 7911.006958, U
+INFO: Step time 8196.866348, U
+INFO: Step time 8196.866348, U
+INFO: Step time 8413.567672, U
+INFO: Step time 8413.567672, U
+INFO: Step time 8592.041502, U
+INFO: Step time 8592.041502, U
+INFO: Step time 8745.683814, U
+INFO: Step time 8745.683814, U
+INFO: Step time 8881.664094, U
+INFO: Step time 8881.664094, U
+INFO: Step time 9004.322086, U
+INFO: Step time 9004.322086, U
+INFO: Step time 9116.507924, U
+INFO: Step time 9116.507924, U
+INFO: Step time 9220.205889, U
+INFO: Step time 9220.205889, U
+INFO: Step time 9270.793058, U
+INFO: Step time 9270.793058, U
+INFO: Step time 9325.52088, U
+INFO: Step time 9325.52088, U
+INFO: Step time 9385.357352, U
+INFO: Step time 9385.357352, U
+INFO: Step time 9451.69286, U
+INFO: Step time 9451.69286, U
+INFO: Step time 9526.64447, U
+INFO: Step time 9526.64447, U
+INFO: Step time 9613.709685, U
+INFO: Step time 9613.709685, U
+INFO: Step time 9719.423487, U
+INFO: Step time 9719.423487, U
+INFO: Step time 9858.874796, U
+INFO: Step time 9858.874796, U
+INFO: Step time 10089.23044, U
+INFO: Step time 10089.23044, U
+INFO: Step time 11130.97545, U
+INFO: Step time 11130.97545, U
+INFO: Step time 11361.33109, U
+INFO: Step time 11361.33109, U
+INFO: Step time 11500.7824, U
+INFO: Step time 11500.7824, U
+INFO: Step time 11606.4962, U
+INFO: Step time 11606.4962, U
+INFO: Step time 11693.56142, U
+INFO: Step time 11693.56142, U
+INFO: Step time 11768.51303, U
+INFO: Step time 11768.51303, U
+INFO: Step time 11834.84854, U
+INFO: Step time 11834.84854, U
+INFO: Step time 11894.68501, U
+INFO: Step time 11894.68501, U
+INFO: Step time 11949.41283, U
+INFO: Step time 11949.41283, U
+INFO: Step time 12000.0, U
+INFO: Step time 12000.0, U
+0m 0.1s
+
+==================================================
+43: mkraska/Dynamics/Discrete/Refs/MSM.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+0m 0.0s
+
+==================================================
+44: mkraska/Elements/Solid/Refs/solid.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+45: mkraska/Kasten/Refs/Kasten.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.001, U
+INFO: Step time 1.001, S
+INFO: Step time 1.001, PE
+INFO: Step time 1.001, PE
+INFO: Step time 1.002, U
+INFO: Step time 1.002, S
+INFO: Step time 1.002, PE
+INFO: Step time 1.002, PE
+INFO: Step time 1.0035, U
+INFO: Step time 1.0035, S
+INFO: Step time 1.0035, PE
+INFO: Step time 1.0035, PE
+INFO: Step time 1.003535156, U
+INFO: Step time 1.003535156, S
+INFO: Step time 1.003535156, PE
+INFO: Step time 1.003535156, PE
+INFO: Step time 1.003570312, U
+INFO: Step time 1.003570312, S
+INFO: Step time 1.003570312, PE
+INFO: Step time 1.003570312, PE
+INFO: Step time 1.003623047, U
+INFO: Step time 1.003623047, S
+INFO: Step time 1.003623047, PE
+INFO: Step time 1.003623047, PE
+INFO: Step time 1.003702148, U
+INFO: Step time 1.003702148, S
+INFO: Step time 1.003702148, PE
+INFO: Step time 1.003702148, PE
+INFO: Step time 1.003820801, U
+INFO: Step time 1.003820801, S
+INFO: Step time 1.003820801, PE
+INFO: Step time 1.003820801, PE
+INFO: Step time 1.003998779, U
+INFO: Step time 1.003998779, S
+INFO: Step time 1.003998779, PE
+INFO: Step time 1.003998779, PE
+INFO: Step time 1.004265747, U
+INFO: Step time 1.004265747, S
+INFO: Step time 1.004265747, PE
+INFO: Step time 1.004265747, PE
+INFO: Step time 1.004666199, U
+INFO: Step time 1.004666199, S
+INFO: Step time 1.004666199, PE
+INFO: Step time 1.004666199, PE
+INFO: Step time 1.005266876, U
+INFO: Step time 1.005266876, S
+INFO: Step time 1.005266876, PE
+INFO: Step time 1.005266876, PE
+INFO: Step time 1.00549213, U
+INFO: Step time 1.00549213, S
+INFO: Step time 1.00549213, PE
+INFO: Step time 1.00549213, PE
+INFO: Step time 1.005717384, U
+INFO: Step time 1.005717384, S
+INFO: Step time 1.005717384, PE
+INFO: Step time 1.005717384, PE
+INFO: Step time 1.006055265, U
+INFO: Step time 1.006055265, S
+INFO: Step time 1.006055265, PE
+INFO: Step time 1.006055265, PE
+INFO: Step time 1.006562087, U
+INFO: Step time 1.006562087, S
+INFO: Step time 1.006562087, PE
+INFO: Step time 1.006562087, PE
+INFO: Step time 1.00732232, U
+INFO: Step time 1.00732232, S
+INFO: Step time 1.00732232, PE
+INFO: Step time 1.00732232, PE
+INFO: Step time 1.008082552, U
+INFO: Step time 1.008082552, S
+INFO: Step time 1.008082552, PE
+INFO: Step time 1.008082552, PE
+INFO: Step time 1.008842784, U
+INFO: Step time 1.008842784, S
+INFO: Step time 1.008842784, PE
+INFO: Step time 1.008842784, PE
+INFO: Step time 1.009983133, U
+INFO: Step time 1.009983133, S
+INFO: Step time 1.009983133, PE
+INFO: Step time 1.009983133, PE
+INFO: Step time 1.011693656, U
+INFO: Step time 1.011693656, S
+INFO: Step time 1.011693656, PE
+INFO: Step time 1.011693656, PE
+INFO: Step time 1.014259441, U
+INFO: Step time 1.014259441, S
+INFO: Step time 1.014259441, PE
+INFO: Step time 1.014259441, PE
+INFO: Step time 1.018108117, U
+INFO: Step time 1.018108117, S
+INFO: Step time 1.018108117, PE
+INFO: Step time 1.018108117, PE
+INFO: Step time 1.021956794, U
+INFO: Step time 1.021956794, S
+INFO: Step time 1.021956794, PE
+INFO: Step time 1.021956794, PE
+INFO: Step time 1.025805471, U
+INFO: Step time 1.025805471, S
+INFO: Step time 1.025805471, PE
+INFO: Step time 1.025805471, PE
+INFO: Step time 1.029654148, U
+INFO: Step time 1.029654148, S
+INFO: Step time 1.029654148, PE
+INFO: Step time 1.029654148, PE
+INFO: Step time 1.033502824, U
+INFO: Step time 1.033502824, S
+INFO: Step time 1.033502824, PE
+INFO: Step time 1.033502824, PE
+INFO: Step time 1.037351501, U
+INFO: Step time 1.037351501, S
+INFO: Step time 1.037351501, PE
+INFO: Step time 1.037351501, PE
+INFO: Step time 1.041200178, U
+INFO: Step time 1.041200178, S
+INFO: Step time 1.041200178, PE
+INFO: Step time 1.041200178, PE
+INFO: Step time 1.046973193, U
+INFO: Step time 1.046973193, S
+INFO: Step time 1.046973193, PE
+INFO: Step time 1.046973193, PE
+INFO: Step time 1.049138074, U
+INFO: Step time 1.049138074, S
+INFO: Step time 1.049138074, PE
+INFO: Step time 1.049138074, PE
+INFO: Step time 1.051302955, U
+INFO: Step time 1.051302955, S
+INFO: Step time 1.051302955, PE
+INFO: Step time 1.051302955, PE
+INFO: Step time 1.054550276, U
+INFO: Step time 1.054550276, S
+INFO: Step time 1.054550276, PE
+INFO: Step time 1.054550276, PE
+INFO: Step time 1.059421257, U
+INFO: Step time 1.059421257, S
+INFO: Step time 1.059421257, PE
+INFO: Step time 1.059421257, PE
+INFO: Step time 1.066727729, U
+INFO: Step time 1.066727729, S
+INFO: Step time 1.066727729, PE
+INFO: Step time 1.066727729, PE
+INFO: Step time 1.077687438, U
+INFO: Step time 1.077687438, S
+INFO: Step time 1.077687438, PE
+INFO: Step time 1.077687438, PE
+INFO: Step time 1.080427365, U
+INFO: Step time 1.080427365, S
+INFO: Step time 1.080427365, PE
+INFO: Step time 1.080427365, PE
+INFO: Step time 1.083167292, U
+INFO: Step time 1.083167292, S
+INFO: Step time 1.083167292, PE
+INFO: Step time 1.083167292, PE
+INFO: Step time 1.087277183, U
+INFO: Step time 1.087277183, S
+INFO: Step time 1.087277183, PE
+INFO: Step time 1.087277183, PE
+INFO: Step time 1.093442019, U
+INFO: Step time 1.093442019, S
+INFO: Step time 1.093442019, PE
+INFO: Step time 1.093442019, PE
+INFO: Step time 1.102689273, U
+INFO: Step time 1.102689273, S
+INFO: Step time 1.102689273, PE
+INFO: Step time 1.102689273, PE
+INFO: Step time 1.106156993, U
+INFO: Step time 1.106156993, S
+INFO: Step time 1.106156993, PE
+INFO: Step time 1.106156993, PE
+INFO: Step time 1.109624713, U
+INFO: Step time 1.109624713, S
+INFO: Step time 1.109624713, PE
+INFO: Step time 1.109624713, PE
+INFO: Step time 1.114826294, U
+INFO: Step time 1.114826294, S
+INFO: Step time 1.114826294, PE
+INFO: Step time 1.114826294, PE
+INFO: Step time 1.122628664, U
+INFO: Step time 1.122628664, S
+INFO: Step time 1.122628664, PE
+INFO: Step time 1.122628664, PE
+INFO: Step time 1.13433222, U
+INFO: Step time 1.13433222, S
+INFO: Step time 1.13433222, PE
+INFO: Step time 1.13433222, PE
+INFO: Step time 1.146035776, U
+INFO: Step time 1.146035776, S
+INFO: Step time 1.146035776, PE
+INFO: Step time 1.146035776, PE
+INFO: Step time 1.157739332, U
+INFO: Step time 1.157739332, S
+INFO: Step time 1.157739332, PE
+INFO: Step time 1.157739332, PE
+INFO: Step time 1.175294666, U
+INFO: Step time 1.175294666, S
+INFO: Step time 1.175294666, PE
+INFO: Step time 1.175294666, PE
+INFO: Step time 1.192849999, U
+INFO: Step time 1.192849999, S
+INFO: Step time 1.192849999, PE
+INFO: Step time 1.192849999, PE
+INFO: Step time 1.210405333, U
+INFO: Step time 1.210405333, S
+INFO: Step time 1.210405333, PE
+INFO: Step time 1.210405333, PE
+INFO: Step time 1.227960667, U
+INFO: Step time 1.227960667, S
+INFO: Step time 1.227960667, PE
+INFO: Step time 1.227960667, PE
+INFO: Step time 1.254293668, U
+INFO: Step time 1.254293668, S
+INFO: Step time 1.254293668, PE
+INFO: Step time 1.254293668, PE
+INFO: Step time 1.260876918, U
+INFO: Step time 1.260876918, S
+INFO: Step time 1.260876918, PE
+INFO: Step time 1.260876918, PE
+INFO: Step time 1.267460168, U
+INFO: Step time 1.267460168, S
+INFO: Step time 1.267460168, PE
+INFO: Step time 1.267460168, PE
+INFO: Step time 1.277335043, U
+INFO: Step time 1.277335043, S
+INFO: Step time 1.277335043, PE
+INFO: Step time 1.277335043, PE
+INFO: Step time 1.292147356, U
+INFO: Step time 1.292147356, S
+INFO: Step time 1.292147356, PE
+INFO: Step time 1.292147356, PE
+INFO: Step time 1.314365826, U
+INFO: Step time 1.314365826, S
+INFO: Step time 1.314365826, PE
+INFO: Step time 1.314365826, PE
+INFO: Step time 1.319920443, U
+INFO: Step time 1.319920443, S
+INFO: Step time 1.319920443, PE
+INFO: Step time 1.319920443, PE
+INFO: Step time 1.32547506, U
+INFO: Step time 1.32547506, S
+INFO: Step time 1.32547506, PE
+INFO: Step time 1.32547506, PE
+INFO: Step time 1.333806986, U
+INFO: Step time 1.333806986, S
+INFO: Step time 1.333806986, PE
+INFO: Step time 1.333806986, PE
+INFO: Step time 1.346304875, U
+INFO: Step time 1.346304875, S
+INFO: Step time 1.346304875, PE
+INFO: Step time 1.346304875, PE
+INFO: Step time 1.365051709, U
+INFO: Step time 1.365051709, S
+INFO: Step time 1.365051709, PE
+INFO: Step time 1.365051709, PE
+INFO: Step time 1.372081771, U
+INFO: Step time 1.372081771, S
+INFO: Step time 1.372081771, PE
+INFO: Step time 1.372081771, PE
+INFO: Step time 1.379111834, U
+INFO: Step time 1.379111834, S
+INFO: Step time 1.379111834, PE
+INFO: Step time 1.379111834, PE
+INFO: Step time 1.389656928, U
+INFO: Step time 1.389656928, S
+INFO: Step time 1.389656928, PE
+INFO: Step time 1.389656928, PE
+INFO: Step time 1.405474568, U
+INFO: Step time 1.405474568, S
+INFO: Step time 1.405474568, PE
+INFO: Step time 1.405474568, PE
+INFO: Step time 1.42920103, U
+INFO: Step time 1.42920103, S
+INFO: Step time 1.42920103, PE
+INFO: Step time 1.42920103, PE
+INFO: Step time 1.438098452, U
+INFO: Step time 1.438098452, S
+INFO: Step time 1.438098452, PE
+INFO: Step time 1.438098452, PE
+INFO: Step time 1.446995875, U
+INFO: Step time 1.446995875, S
+INFO: Step time 1.446995875, PE
+INFO: Step time 1.446995875, PE
+INFO: Step time 1.46034201, U
+INFO: Step time 1.46034201, S
+INFO: Step time 1.46034201, PE
+INFO: Step time 1.46034201, PE
+INFO: Step time 1.480361211, U
+INFO: Step time 1.480361211, S
+INFO: Step time 1.480361211, PE
+INFO: Step time 1.480361211, PE
+INFO: Step time 1.510390014, U
+INFO: Step time 1.510390014, S
+INFO: Step time 1.510390014, PE
+INFO: Step time 1.510390014, PE
+INFO: Step time 1.521650815, U
+INFO: Step time 1.521650815, S
+INFO: Step time 1.521650815, PE
+INFO: Step time 1.521650815, PE
+INFO: Step time 1.532911616, U
+INFO: Step time 1.532911616, S
+INFO: Step time 1.532911616, PE
+INFO: Step time 1.532911616, PE
+INFO: Step time 1.549802817, U
+INFO: Step time 1.549802817, S
+INFO: Step time 1.549802817, PE
+INFO: Step time 1.549802817, PE
+INFO: Step time 1.575139619, U
+INFO: Step time 1.575139619, S
+INFO: Step time 1.575139619, PE
+INFO: Step time 1.575139619, PE
+INFO: Step time 1.58464092, U
+INFO: Step time 1.58464092, S
+INFO: Step time 1.58464092, PE
+INFO: Step time 1.58464092, PE
+INFO: Step time 1.59414222, U
+INFO: Step time 1.59414222, S
+INFO: Step time 1.59414222, PE
+INFO: Step time 1.59414222, PE
+INFO: Step time 1.608394172, U
+INFO: Step time 1.608394172, S
+INFO: Step time 1.608394172, PE
+INFO: Step time 1.608394172, PE
+INFO: Step time 1.629772098, U
+INFO: Step time 1.629772098, S
+INFO: Step time 1.629772098, PE
+INFO: Step time 1.629772098, PE
+INFO: Step time 1.661838988, U
+INFO: Step time 1.661838988, S
+INFO: Step time 1.661838988, PE
+INFO: Step time 1.661838988, PE
+INFO: Step time 1.673864072, U
+INFO: Step time 1.673864072, S
+INFO: Step time 1.673864072, PE
+INFO: Step time 1.673864072, PE
+INFO: Step time 1.685889156, U
+INFO: Step time 1.685889156, S
+INFO: Step time 1.685889156, PE
+INFO: Step time 1.685889156, PE
+INFO: Step time 1.703926782, U
+INFO: Step time 1.703926782, S
+INFO: Step time 1.703926782, PE
+INFO: Step time 1.703926782, PE
+INFO: Step time 1.73098322, U
+INFO: Step time 1.73098322, S
+INFO: Step time 1.73098322, PE
+INFO: Step time 1.73098322, PE
+INFO: Step time 1.741129384, U
+INFO: Step time 1.741129384, S
+INFO: Step time 1.741129384, PE
+INFO: Step time 1.741129384, PE
+INFO: Step time 1.751275549, U
+INFO: Step time 1.751275549, S
+INFO: Step time 1.751275549, PE
+INFO: Step time 1.751275549, PE
+INFO: Step time 1.766494795, U
+INFO: Step time 1.766494795, S
+INFO: Step time 1.766494795, PE
+INFO: Step time 1.766494795, PE
+INFO: Step time 1.772202013, U
+INFO: Step time 1.772202013, S
+INFO: Step time 1.772202013, PE
+INFO: Step time 1.772202013, PE
+INFO: Step time 1.77790923, U
+INFO: Step time 1.77790923, S
+INFO: Step time 1.77790923, PE
+INFO: Step time 1.77790923, PE
+INFO: Step time 1.786470057, U
+INFO: Step time 1.786470057, S
+INFO: Step time 1.786470057, PE
+INFO: Step time 1.786470057, PE
+INFO: Step time 1.799311296, U
+INFO: Step time 1.799311296, S
+INFO: Step time 1.799311296, PE
+INFO: Step time 1.799311296, PE
+INFO: Step time 1.818573155, U
+INFO: Step time 1.818573155, S
+INFO: Step time 1.818573155, PE
+INFO: Step time 1.818573155, PE
+INFO: Step time 1.847465944, U
+INFO: Step time 1.847465944, S
+INFO: Step time 1.847465944, PE
+INFO: Step time 1.847465944, PE
+INFO: Step time 1.890805126, U
+INFO: Step time 1.890805126, S
+INFO: Step time 1.890805126, PE
+INFO: Step time 1.890805126, PE
+INFO: Step time 1.901639922, U
+INFO: Step time 1.901639922, S
+INFO: Step time 1.901639922, PE
+INFO: Step time 1.901639922, PE
+INFO: Step time 1.912474718, U
+INFO: Step time 1.912474718, S
+INFO: Step time 1.912474718, PE
+INFO: Step time 1.912474718, PE
+INFO: Step time 1.928726911, U
+INFO: Step time 1.928726911, S
+INFO: Step time 1.928726911, PE
+INFO: Step time 1.928726911, PE
+INFO: Step time 1.953105202, U
+INFO: Step time 1.953105202, S
+INFO: Step time 1.953105202, PE
+INFO: Step time 1.953105202, PE
+0m 4.8s
+
+==================================================
+46: mkraska/Linear/BiaxBending/Refs/Biegung.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+47: mkraska/Linear/Crack1/Refs/solve.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.4s
+
+==================================================
+48: mkraska/Linear/L-Plate/Refs/solve.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 45.29813192, U
+INFO: Step time 99.9314106, U
+INFO: Step time 173.1357314, U
+INFO: Step time 243.4797733, U
+INFO: Step time 291.4597695, U
+INFO: Step time 365.7084687, U
+INFO: Step time 0.0, U
+INFO: Step time 0.719195, U
+INFO: Step time 1.275781189, U
+INFO: Step time 1.854791515, U
+0m 0.1s
+
+==================================================
+49: mkraska/Linear/Mesh1/Refs/modal.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.000298467, U
+INFO: Step time 0.00120608, U
+INFO: Step time 0.00161089, U
+INFO: Step time 1811.562537, U
+INFO: Step time 1812.458612, U
+INFO: Step time 2820.00253, U
+INFO: Step time 4844.692792, U
+INFO: Step time 4844.841344, U
+INFO: Step time 5646.509412, U
+0m 0.1s
+
+==================================================
+50: mkraska/Linear/PSE/Refs/solve.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, E
+0m 0.1s
+
+==================================================
+51: mkraska/Linear/Plates/Refs/plates.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+52: mkraska/Linear/Separate/Refs/element.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+53: mkraska/Linear/Separate/Refs/nodal.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+54: mkraska/Linear/ShearCenter/Refs/II.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.3s
+
+==================================================
+55: mkraska/Linear/StressConc/Refs/Stress.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+56: mkraska/Linear/StressConc1/Refs/Stress.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+57: mkraska/Linear/StressConc1/Refs/Stress1.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.1s
+
+==================================================
+58: mkraska/NonLinear/3PB/Refs/Biegung.frd
+INFO: Step time 0.01, U
+INFO: Step time 0.01, S
+INFO: Step time 0.01, PE
+INFO: Step time 0.01, PE
+INFO: Step time 0.02, U
+INFO: Step time 0.02, S
+INFO: Step time 0.02, PE
+INFO: Step time 0.02, PE
+INFO: Step time 0.035, U
+INFO: Step time 0.035, S
+INFO: Step time 0.035, PE
+INFO: Step time 0.035, PE
+INFO: Step time 0.055, U
+INFO: Step time 0.055, S
+INFO: Step time 0.055, PE
+INFO: Step time 0.055, PE
+INFO: Step time 0.075, U
+INFO: Step time 0.075, S
+INFO: Step time 0.075, PE
+INFO: Step time 0.075, PE
+INFO: Step time 0.095, U
+INFO: Step time 0.095, S
+INFO: Step time 0.095, PE
+INFO: Step time 0.095, PE
+INFO: Step time 0.115, U
+INFO: Step time 0.115, S
+INFO: Step time 0.115, PE
+INFO: Step time 0.115, PE
+INFO: Step time 0.135, U
+INFO: Step time 0.135, S
+INFO: Step time 0.135, PE
+INFO: Step time 0.135, PE
+INFO: Step time 0.155, U
+INFO: Step time 0.155, S
+INFO: Step time 0.155, PE
+INFO: Step time 0.155, PE
+INFO: Step time 0.175, U
+INFO: Step time 0.175, S
+INFO: Step time 0.175, PE
+INFO: Step time 0.175, PE
+INFO: Step time 0.195, U
+INFO: Step time 0.195, S
+INFO: Step time 0.195, PE
+INFO: Step time 0.195, PE
+INFO: Step time 0.215, U
+INFO: Step time 0.215, S
+INFO: Step time 0.215, PE
+INFO: Step time 0.215, PE
+INFO: Step time 0.235, U
+INFO: Step time 0.235, S
+INFO: Step time 0.235, PE
+INFO: Step time 0.235, PE
+INFO: Step time 0.255, U
+INFO: Step time 0.255, S
+INFO: Step time 0.255, PE
+INFO: Step time 0.255, PE
+INFO: Step time 0.275, U
+INFO: Step time 0.275, S
+INFO: Step time 0.275, PE
+INFO: Step time 0.275, PE
+INFO: Step time 0.295, U
+INFO: Step time 0.295, S
+INFO: Step time 0.295, PE
+INFO: Step time 0.295, PE
+INFO: Step time 0.315, U
+INFO: Step time 0.315, S
+INFO: Step time 0.315, PE
+INFO: Step time 0.315, PE
+INFO: Step time 0.335, U
+INFO: Step time 0.335, S
+INFO: Step time 0.335, PE
+INFO: Step time 0.335, PE
+INFO: Step time 0.355, U
+INFO: Step time 0.355, S
+INFO: Step time 0.355, PE
+INFO: Step time 0.355, PE
+INFO: Step time 0.375, U
+INFO: Step time 0.375, S
+INFO: Step time 0.375, PE
+INFO: Step time 0.375, PE
+INFO: Step time 0.395, U
+INFO: Step time 0.395, S
+INFO: Step time 0.395, PE
+INFO: Step time 0.395, PE
+INFO: Step time 0.415, U
+INFO: Step time 0.415, S
+INFO: Step time 0.415, PE
+INFO: Step time 0.415, PE
+INFO: Step time 0.435, U
+INFO: Step time 0.435, S
+INFO: Step time 0.435, PE
+INFO: Step time 0.435, PE
+INFO: Step time 0.455, U
+INFO: Step time 0.455, S
+INFO: Step time 0.455, PE
+INFO: Step time 0.455, PE
+INFO: Step time 0.475, U
+INFO: Step time 0.475, S
+INFO: Step time 0.475, PE
+INFO: Step time 0.475, PE
+INFO: Step time 0.495, U
+INFO: Step time 0.495, S
+INFO: Step time 0.495, PE
+INFO: Step time 0.495, PE
+INFO: Step time 0.515, U
+INFO: Step time 0.515, S
+INFO: Step time 0.515, PE
+INFO: Step time 0.515, PE
+INFO: Step time 0.535, U
+INFO: Step time 0.535, S
+INFO: Step time 0.535, PE
+INFO: Step time 0.535, PE
+INFO: Step time 0.555, U
+INFO: Step time 0.555, S
+INFO: Step time 0.555, PE
+INFO: Step time 0.555, PE
+INFO: Step time 0.575, U
+INFO: Step time 0.575, S
+INFO: Step time 0.575, PE
+INFO: Step time 0.575, PE
+INFO: Step time 0.595, U
+INFO: Step time 0.595, S
+INFO: Step time 0.595, PE
+INFO: Step time 0.595, PE
+INFO: Step time 0.615, U
+INFO: Step time 0.615, S
+INFO: Step time 0.615, PE
+INFO: Step time 0.615, PE
+INFO: Step time 0.635, U
+INFO: Step time 0.635, S
+INFO: Step time 0.635, PE
+INFO: Step time 0.635, PE
+INFO: Step time 0.655, U
+INFO: Step time 0.655, S
+INFO: Step time 0.655, PE
+INFO: Step time 0.655, PE
+INFO: Step time 0.675, U
+INFO: Step time 0.675, S
+INFO: Step time 0.675, PE
+INFO: Step time 0.675, PE
+INFO: Step time 0.695, U
+INFO: Step time 0.695, S
+INFO: Step time 0.695, PE
+INFO: Step time 0.695, PE
+INFO: Step time 0.715, U
+INFO: Step time 0.715, S
+INFO: Step time 0.715, PE
+INFO: Step time 0.715, PE
+INFO: Step time 0.735, U
+INFO: Step time 0.735, S
+INFO: Step time 0.735, PE
+INFO: Step time 0.735, PE
+INFO: Step time 0.755, U
+INFO: Step time 0.755, S
+INFO: Step time 0.755, PE
+INFO: Step time 0.755, PE
+INFO: Step time 0.775, U
+INFO: Step time 0.775, S
+INFO: Step time 0.775, PE
+INFO: Step time 0.775, PE
+INFO: Step time 0.795, U
+INFO: Step time 0.795, S
+INFO: Step time 0.795, PE
+INFO: Step time 0.795, PE
+INFO: Step time 0.815, U
+INFO: Step time 0.815, S
+INFO: Step time 0.815, PE
+INFO: Step time 0.815, PE
+INFO: Step time 0.835, U
+INFO: Step time 0.835, S
+INFO: Step time 0.835, PE
+INFO: Step time 0.835, PE
+INFO: Step time 0.855, U
+INFO: Step time 0.855, S
+INFO: Step time 0.855, PE
+INFO: Step time 0.855, PE
+INFO: Step time 0.875, U
+INFO: Step time 0.875, S
+INFO: Step time 0.875, PE
+INFO: Step time 0.875, PE
+INFO: Step time 0.895, U
+INFO: Step time 0.895, S
+INFO: Step time 0.895, PE
+INFO: Step time 0.895, PE
+INFO: Step time 0.915, U
+INFO: Step time 0.915, S
+INFO: Step time 0.915, PE
+INFO: Step time 0.915, PE
+INFO: Step time 0.935, U
+INFO: Step time 0.935, S
+INFO: Step time 0.935, PE
+INFO: Step time 0.935, PE
+INFO: Step time 0.955, U
+INFO: Step time 0.955, S
+INFO: Step time 0.955, PE
+INFO: Step time 0.955, PE
+INFO: Step time 0.975, U
+INFO: Step time 0.975, S
+INFO: Step time 0.975, PE
+INFO: Step time 0.975, PE
+INFO: Step time 0.995, U
+INFO: Step time 0.995, S
+INFO: Step time 0.995, PE
+INFO: Step time 0.995, PE
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, PE
+INFO: Step time 1.0, PE
+0m 4.8s
+
+==================================================
+59: mkraska/NonLinear/Cut/Refs/ResultsForLastIterations.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+0m 15.0s
+
+==================================================
+60: mkraska/NonLinear/Honeycomb/Refs/Biegung.frd
+INFO: Step time 0.01, U
+INFO: Step time 0.01, S
+INFO: Step time 0.01, PE
+INFO: Step time 0.01, PE
+INFO: Step time 0.02, U
+INFO: Step time 0.02, S
+INFO: Step time 0.02, PE
+INFO: Step time 0.02, PE
+INFO: Step time 0.03, U
+INFO: Step time 0.03, S
+INFO: Step time 0.03, PE
+INFO: Step time 0.03, PE
+INFO: Step time 0.04, U
+INFO: Step time 0.04, S
+INFO: Step time 0.04, PE
+INFO: Step time 0.04, PE
+INFO: Step time 0.05, U
+INFO: Step time 0.05, S
+INFO: Step time 0.05, PE
+INFO: Step time 0.05, PE
+INFO: Step time 0.06, U
+INFO: Step time 0.06, S
+INFO: Step time 0.06, PE
+INFO: Step time 0.06, PE
+INFO: Step time 0.07, U
+INFO: Step time 0.07, S
+INFO: Step time 0.07, PE
+INFO: Step time 0.07, PE
+INFO: Step time 0.08, U
+INFO: Step time 0.08, S
+INFO: Step time 0.08, PE
+INFO: Step time 0.08, PE
+INFO: Step time 0.09, U
+INFO: Step time 0.09, S
+INFO: Step time 0.09, PE
+INFO: Step time 0.09, PE
+INFO: Step time 0.1, U
+INFO: Step time 0.1, S
+INFO: Step time 0.1, PE
+INFO: Step time 0.1, PE
+INFO: Step time 0.11, U
+INFO: Step time 0.11, S
+INFO: Step time 0.11, PE
+INFO: Step time 0.11, PE
+INFO: Step time 0.12, U
+INFO: Step time 0.12, S
+INFO: Step time 0.12, PE
+INFO: Step time 0.12, PE
+INFO: Step time 0.13, U
+INFO: Step time 0.13, S
+INFO: Step time 0.13, PE
+INFO: Step time 0.13, PE
+INFO: Step time 0.14, U
+INFO: Step time 0.14, S
+INFO: Step time 0.14, PE
+INFO: Step time 0.14, PE
+INFO: Step time 0.15, U
+INFO: Step time 0.15, S
+INFO: Step time 0.15, PE
+INFO: Step time 0.15, PE
+INFO: Step time 0.16, U
+INFO: Step time 0.16, S
+INFO: Step time 0.16, PE
+INFO: Step time 0.16, PE
+INFO: Step time 0.17, U
+INFO: Step time 0.17, S
+INFO: Step time 0.17, PE
+INFO: Step time 0.17, PE
+INFO: Step time 0.18, U
+INFO: Step time 0.18, S
+INFO: Step time 0.18, PE
+INFO: Step time 0.18, PE
+INFO: Step time 0.19, U
+INFO: Step time 0.19, S
+INFO: Step time 0.19, PE
+INFO: Step time 0.19, PE
+INFO: Step time 0.2, U
+INFO: Step time 0.2, S
+INFO: Step time 0.2, PE
+INFO: Step time 0.2, PE
+INFO: Step time 0.21, U
+INFO: Step time 0.21, S
+INFO: Step time 0.21, PE
+INFO: Step time 0.21, PE
+INFO: Step time 0.22, U
+INFO: Step time 0.22, S
+INFO: Step time 0.22, PE
+INFO: Step time 0.22, PE
+INFO: Step time 0.23, U
+INFO: Step time 0.23, S
+INFO: Step time 0.23, PE
+INFO: Step time 0.23, PE
+INFO: Step time 0.24, U
+INFO: Step time 0.24, S
+INFO: Step time 0.24, PE
+INFO: Step time 0.24, PE
+INFO: Step time 0.25, U
+INFO: Step time 0.25, S
+INFO: Step time 0.25, PE
+INFO: Step time 0.25, PE
+INFO: Step time 0.26, U
+INFO: Step time 0.26, S
+INFO: Step time 0.26, PE
+INFO: Step time 0.26, PE
+INFO: Step time 0.27, U
+INFO: Step time 0.27, S
+INFO: Step time 0.27, PE
+INFO: Step time 0.27, PE
+INFO: Step time 0.28, U
+INFO: Step time 0.28, S
+INFO: Step time 0.28, PE
+INFO: Step time 0.28, PE
+INFO: Step time 0.29, U
+INFO: Step time 0.29, S
+INFO: Step time 0.29, PE
+INFO: Step time 0.29, PE
+INFO: Step time 0.3, U
+INFO: Step time 0.3, S
+INFO: Step time 0.3, PE
+INFO: Step time 0.3, PE
+INFO: Step time 0.31, U
+INFO: Step time 0.31, S
+INFO: Step time 0.31, PE
+INFO: Step time 0.31, PE
+INFO: Step time 0.32, U
+INFO: Step time 0.32, S
+INFO: Step time 0.32, PE
+INFO: Step time 0.32, PE
+INFO: Step time 0.33, U
+INFO: Step time 0.33, S
+INFO: Step time 0.33, PE
+INFO: Step time 0.33, PE
+INFO: Step time 0.34, U
+INFO: Step time 0.34, S
+INFO: Step time 0.34, PE
+INFO: Step time 0.34, PE
+INFO: Step time 0.35, U
+INFO: Step time 0.35, S
+INFO: Step time 0.35, PE
+INFO: Step time 0.35, PE
+INFO: Step time 0.36, U
+INFO: Step time 0.36, S
+INFO: Step time 0.36, PE
+INFO: Step time 0.36, PE
+INFO: Step time 0.37, U
+INFO: Step time 0.37, S
+INFO: Step time 0.37, PE
+INFO: Step time 0.37, PE
+INFO: Step time 0.38, U
+INFO: Step time 0.38, S
+INFO: Step time 0.38, PE
+INFO: Step time 0.38, PE
+INFO: Step time 0.39, U
+INFO: Step time 0.39, S
+INFO: Step time 0.39, PE
+INFO: Step time 0.39, PE
+INFO: Step time 0.4, U
+INFO: Step time 0.4, S
+INFO: Step time 0.4, PE
+INFO: Step time 0.4, PE
+INFO: Step time 0.41, U
+INFO: Step time 0.41, S
+INFO: Step time 0.41, PE
+INFO: Step time 0.41, PE
+INFO: Step time 0.42, U
+INFO: Step time 0.42, S
+INFO: Step time 0.42, PE
+INFO: Step time 0.42, PE
+INFO: Step time 0.43, U
+INFO: Step time 0.43, S
+INFO: Step time 0.43, PE
+INFO: Step time 0.43, PE
+INFO: Step time 0.44, U
+INFO: Step time 0.44, S
+INFO: Step time 0.44, PE
+INFO: Step time 0.44, PE
+INFO: Step time 0.45, U
+INFO: Step time 0.45, S
+INFO: Step time 0.45, PE
+INFO: Step time 0.45, PE
+INFO: Step time 0.46, U
+INFO: Step time 0.46, S
+INFO: Step time 0.46, PE
+INFO: Step time 0.46, PE
+INFO: Step time 0.47, U
+INFO: Step time 0.47, S
+INFO: Step time 0.47, PE
+INFO: Step time 0.47, PE
+INFO: Step time 0.48, U
+INFO: Step time 0.48, S
+INFO: Step time 0.48, PE
+INFO: Step time 0.48, PE
+INFO: Step time 0.49, U
+INFO: Step time 0.49, S
+INFO: Step time 0.49, PE
+INFO: Step time 0.49, PE
+INFO: Step time 0.5, U
+INFO: Step time 0.5, S
+INFO: Step time 0.5, PE
+INFO: Step time 0.5, PE
+INFO: Step time 0.51, U
+INFO: Step time 0.51, S
+INFO: Step time 0.51, PE
+INFO: Step time 0.51, PE
+INFO: Step time 0.52, U
+INFO: Step time 0.52, S
+INFO: Step time 0.52, PE
+INFO: Step time 0.52, PE
+INFO: Step time 0.53, U
+INFO: Step time 0.53, S
+INFO: Step time 0.53, PE
+INFO: Step time 0.53, PE
+INFO: Step time 0.54, U
+INFO: Step time 0.54, S
+INFO: Step time 0.54, PE
+INFO: Step time 0.54, PE
+INFO: Step time 0.55, U
+INFO: Step time 0.55, S
+INFO: Step time 0.55, PE
+INFO: Step time 0.55, PE
+INFO: Step time 0.56, U
+INFO: Step time 0.56, S
+INFO: Step time 0.56, PE
+INFO: Step time 0.56, PE
+INFO: Step time 0.57, U
+INFO: Step time 0.57, S
+INFO: Step time 0.57, PE
+INFO: Step time 0.57, PE
+INFO: Step time 0.58, U
+INFO: Step time 0.58, S
+INFO: Step time 0.58, PE
+INFO: Step time 0.58, PE
+INFO: Step time 0.59, U
+INFO: Step time 0.59, S
+INFO: Step time 0.59, PE
+INFO: Step time 0.59, PE
+INFO: Step time 0.6, U
+INFO: Step time 0.6, S
+INFO: Step time 0.6, PE
+INFO: Step time 0.6, PE
+INFO: Step time 0.61, U
+INFO: Step time 0.61, S
+INFO: Step time 0.61, PE
+INFO: Step time 0.61, PE
+INFO: Step time 0.62, U
+INFO: Step time 0.62, S
+INFO: Step time 0.62, PE
+INFO: Step time 0.62, PE
+INFO: Step time 0.63, U
+INFO: Step time 0.63, S
+INFO: Step time 0.63, PE
+INFO: Step time 0.63, PE
+INFO: Step time 0.64, U
+INFO: Step time 0.64, S
+INFO: Step time 0.64, PE
+INFO: Step time 0.64, PE
+INFO: Step time 0.65, U
+INFO: Step time 0.65, S
+INFO: Step time 0.65, PE
+INFO: Step time 0.65, PE
+INFO: Step time 0.66, U
+INFO: Step time 0.66, S
+INFO: Step time 0.66, PE
+INFO: Step time 0.66, PE
+INFO: Step time 0.67, U
+INFO: Step time 0.67, S
+INFO: Step time 0.67, PE
+INFO: Step time 0.67, PE
+INFO: Step time 0.68, U
+INFO: Step time 0.68, S
+INFO: Step time 0.68, PE
+INFO: Step time 0.68, PE
+INFO: Step time 0.69, U
+INFO: Step time 0.69, S
+INFO: Step time 0.69, PE
+INFO: Step time 0.69, PE
+INFO: Step time 0.7, U
+INFO: Step time 0.7, S
+INFO: Step time 0.7, PE
+INFO: Step time 0.7, PE
+INFO: Step time 0.71, U
+INFO: Step time 0.71, S
+INFO: Step time 0.71, PE
+INFO: Step time 0.71, PE
+INFO: Step time 0.72, U
+INFO: Step time 0.72, S
+INFO: Step time 0.72, PE
+INFO: Step time 0.72, PE
+INFO: Step time 0.73, U
+INFO: Step time 0.73, S
+INFO: Step time 0.73, PE
+INFO: Step time 0.73, PE
+INFO: Step time 0.74, U
+INFO: Step time 0.74, S
+INFO: Step time 0.74, PE
+INFO: Step time 0.74, PE
+INFO: Step time 0.75, U
+INFO: Step time 0.75, S
+INFO: Step time 0.75, PE
+INFO: Step time 0.75, PE
+INFO: Step time 0.76, U
+INFO: Step time 0.76, S
+INFO: Step time 0.76, PE
+INFO: Step time 0.76, PE
+INFO: Step time 0.77, U
+INFO: Step time 0.77, S
+INFO: Step time 0.77, PE
+INFO: Step time 0.77, PE
+INFO: Step time 0.78, U
+INFO: Step time 0.78, S
+INFO: Step time 0.78, PE
+INFO: Step time 0.78, PE
+INFO: Step time 0.79, U
+INFO: Step time 0.79, S
+INFO: Step time 0.79, PE
+INFO: Step time 0.79, PE
+INFO: Step time 0.8, U
+INFO: Step time 0.8, S
+INFO: Step time 0.8, PE
+INFO: Step time 0.8, PE
+INFO: Step time 0.81, U
+INFO: Step time 0.81, S
+INFO: Step time 0.81, PE
+INFO: Step time 0.81, PE
+INFO: Step time 0.82, U
+INFO: Step time 0.82, S
+INFO: Step time 0.82, PE
+INFO: Step time 0.82, PE
+INFO: Step time 0.83, U
+INFO: Step time 0.83, S
+INFO: Step time 0.83, PE
+INFO: Step time 0.83, PE
+INFO: Step time 0.84, U
+INFO: Step time 0.84, S
+INFO: Step time 0.84, PE
+INFO: Step time 0.84, PE
+INFO: Step time 0.85, U
+INFO: Step time 0.85, S
+INFO: Step time 0.85, PE
+INFO: Step time 0.85, PE
+INFO: Step time 0.86, U
+INFO: Step time 0.86, S
+INFO: Step time 0.86, PE
+INFO: Step time 0.86, PE
+INFO: Step time 0.87, U
+INFO: Step time 0.87, S
+INFO: Step time 0.87, PE
+INFO: Step time 0.87, PE
+INFO: Step time 0.88, U
+INFO: Step time 0.88, S
+INFO: Step time 0.88, PE
+INFO: Step time 0.88, PE
+INFO: Step time 0.89, U
+INFO: Step time 0.89, S
+INFO: Step time 0.89, PE
+INFO: Step time 0.89, PE
+INFO: Step time 0.9, U
+INFO: Step time 0.9, S
+INFO: Step time 0.9, PE
+INFO: Step time 0.9, PE
+INFO: Step time 0.91, U
+INFO: Step time 0.91, S
+INFO: Step time 0.91, PE
+INFO: Step time 0.91, PE
+INFO: Step time 0.92, U
+INFO: Step time 0.92, S
+INFO: Step time 0.92, PE
+INFO: Step time 0.92, PE
+INFO: Step time 0.93, U
+INFO: Step time 0.93, S
+INFO: Step time 0.93, PE
+INFO: Step time 0.93, PE
+INFO: Step time 0.94, U
+INFO: Step time 0.94, S
+INFO: Step time 0.94, PE
+INFO: Step time 0.94, PE
+INFO: Step time 0.95, U
+INFO: Step time 0.95, S
+INFO: Step time 0.95, PE
+INFO: Step time 0.95, PE
+INFO: Step time 0.96, U
+INFO: Step time 0.96, S
+INFO: Step time 0.96, PE
+INFO: Step time 0.96, PE
+INFO: Step time 0.97, U
+INFO: Step time 0.97, S
+INFO: Step time 0.97, PE
+INFO: Step time 0.97, PE
+INFO: Step time 0.98, U
+INFO: Step time 0.98, S
+INFO: Step time 0.98, PE
+INFO: Step time 0.98, PE
+INFO: Step time 0.99, U
+INFO: Step time 0.99, S
+INFO: Step time 0.99, PE
+INFO: Step time 0.99, PE
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, PE
+INFO: Step time 1.0, PE
+0m 15.9s
+
+==================================================
+61: mkraska/NonLinear/Honeycomb/Refs/ResultsForLastIterations.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+0m 1.6s
+
+==================================================
+62: mkraska/NonLinear/Rohrknie/Refs/shell-modal.frd
+INFO: Step time 339.8939117, U
+INFO: Step time 402.1232138, U
+INFO: Step time 898.2844935, U
+INFO: Step time 912.5929312, U
+INFO: Step time 1311.069745, U
+INFO: Step time 1559.362813, U
+INFO: Step time 2290.182145, U
+INFO: Step time 2420.409806, U
+INFO: Step time 2512.664363, U
+INFO: Step time 2533.170298, U
+0m 0.1s
+
+==================================================
+63: mkraska/NonLinear/Rohrknie/Refs/shell-sym-modal.frd
+INFO: Step time 479.7444166, U
+INFO: Step time 934.7023998, U
+INFO: Step time 1347.239197, U
+INFO: Step time 2524.014154, U
+INFO: Step time 2895.69882, U
+INFO: Step time 4390.073295, U
+INFO: Step time 4522.130374, U
+INFO: Step time 4805.144096, U
+INFO: Step time 5452.941353, U
+INFO: Step time 5492.102052, U
+0m 0.0s
+
+==================================================
+64: mkraska/NonLinear/Rohrknie/Refs/solid-modal.frd
+INFO: Step time 337.1845617, U
+INFO: Step time 398.5308816, U
+INFO: Step time 894.7298122, U
+INFO: Step time 909.013428, U
+INFO: Step time 1312.170787, U
+INFO: Step time 1564.26714, U
+INFO: Step time 2292.387107, U
+INFO: Step time 2411.914398, U
+INFO: Step time 2504.627412, U
+INFO: Step time 2528.593526, U
+0m 0.1s
+
+==================================================
+65: mkraska/NonLinear/Rohrknie/Refs/solid-static.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.05, U
+INFO: Step time 1.05, S
+INFO: Step time 1.1, U
+INFO: Step time 1.1, S
+INFO: Step time 1.15, U
+INFO: Step time 1.15, S
+INFO: Step time 1.2, U
+INFO: Step time 1.2, S
+INFO: Step time 1.25, U
+INFO: Step time 1.25, S
+INFO: Step time 1.3, U
+INFO: Step time 1.3, S
+INFO: Step time 1.35, U
+INFO: Step time 1.35, S
+INFO: Step time 1.4, U
+INFO: Step time 1.4, S
+INFO: Step time 1.45, U
+INFO: Step time 1.45, S
+INFO: Step time 1.5, U
+INFO: Step time 1.5, S
+INFO: Step time 1.55, U
+INFO: Step time 1.55, S
+INFO: Step time 1.6, U
+INFO: Step time 1.6, S
+INFO: Step time 1.65, U
+INFO: Step time 1.65, S
+INFO: Step time 1.7, U
+INFO: Step time 1.7, S
+INFO: Step time 1.75, U
+INFO: Step time 1.75, S
+INFO: Step time 1.8, U
+INFO: Step time 1.8, S
+INFO: Step time 1.85, U
+INFO: Step time 1.85, S
+INFO: Step time 1.9, U
+INFO: Step time 1.9, S
+INFO: Step time 1.95, U
+INFO: Step time 1.95, S
+INFO: Step time 2.0, U
+INFO: Step time 2.0, S
+0m 0.3s
+
+==================================================
+66: mkraska/NonLinear/Rohrknie/Refs/solid-sym-modal.frd
+INFO: Step time 337.2097005, U
+INFO: Step time 895.0123415, U
+INFO: Step time 1312.347008, U
+INFO: Step time 2412.801963, U
+INFO: Step time 2528.839974, U
+INFO: Step time 4160.645567, U
+INFO: Step time 4377.475015, U
+INFO: Step time 4576.789174, U
+INFO: Step time 5382.850613, U
+INFO: Step time 5465.93849, U
+0m 0.0s
+
+==================================================
+67: mkraska/NonLinear/Sandwichtest/Refs/Biegung.frd
+INFO: Step time 0.001, U
+INFO: Step time 0.001, S
+INFO: Step time 0.001, PE
+INFO: Step time 0.001, PE
+INFO: Step time 0.002, U
+INFO: Step time 0.002, S
+INFO: Step time 0.002, PE
+INFO: Step time 0.002, PE
+INFO: Step time 0.0035, U
+INFO: Step time 0.0035, S
+INFO: Step time 0.0035, PE
+INFO: Step time 0.0035, PE
+INFO: Step time 0.00575, U
+INFO: Step time 0.00575, S
+INFO: Step time 0.00575, PE
+INFO: Step time 0.00575, PE
+INFO: Step time 0.009125, U
+INFO: Step time 0.009125, S
+INFO: Step time 0.009125, PE
+INFO: Step time 0.009125, PE
+INFO: Step time 0.0141875, U
+INFO: Step time 0.0141875, S
+INFO: Step time 0.0141875, PE
+INFO: Step time 0.0141875, PE
+INFO: Step time 0.0217813, U
+INFO: Step time 0.0217813, S
+INFO: Step time 0.0217813, PE
+INFO: Step time 0.0217813, PE
+INFO: Step time 0.0331719, U
+INFO: Step time 0.0331719, S
+INFO: Step time 0.0331719, PE
+INFO: Step time 0.0331719, PE
+INFO: Step time 0.0502578, U
+INFO: Step time 0.0502578, S
+INFO: Step time 0.0502578, PE
+INFO: Step time 0.0502578, PE
+INFO: Step time 0.0758867, U
+INFO: Step time 0.0758867, S
+INFO: Step time 0.0758867, PE
+INFO: Step time 0.0758867, PE
+INFO: Step time 0.11433, U
+INFO: Step time 0.11433, S
+INFO: Step time 0.11433, PE
+INFO: Step time 0.11433, PE
+INFO: Step time 0.171995, U
+INFO: Step time 0.171995, S
+INFO: Step time 0.171995, PE
+INFO: Step time 0.171995, PE
+INFO: Step time 0.258493, U
+INFO: Step time 0.258493, S
+INFO: Step time 0.258493, PE
+INFO: Step time 0.258493, PE
+INFO: Step time 0.290929, U
+INFO: Step time 0.290929, S
+INFO: Step time 0.290929, PE
+INFO: Step time 0.290929, PE
+INFO: Step time 0.323366, U
+INFO: Step time 0.323366, S
+INFO: Step time 0.323366, PE
+INFO: Step time 0.323366, PE
+INFO: Step time 0.372021, U
+INFO: Step time 0.372021, S
+INFO: Step time 0.372021, PE
+INFO: Step time 0.372021, PE
+INFO: Step time 0.390266, U
+INFO: Step time 0.390266, S
+INFO: Step time 0.390266, PE
+INFO: Step time 0.390266, PE
+INFO: Step time 0.408512, U
+INFO: Step time 0.408512, S
+INFO: Step time 0.408512, PE
+INFO: Step time 0.408512, PE
+INFO: Step time 0.43588, U
+INFO: Step time 0.43588, S
+INFO: Step time 0.43588, PE
+INFO: Step time 0.43588, PE
+INFO: Step time 0.476933, U
+INFO: Step time 0.476933, S
+INFO: Step time 0.476933, PE
+INFO: Step time 0.476933, PE
+INFO: Step time 0.492328, U
+INFO: Step time 0.492328, S
+INFO: Step time 0.492328, PE
+INFO: Step time 0.492328, PE
+INFO: Step time 0.507722, U
+INFO: Step time 0.507722, S
+INFO: Step time 0.507722, PE
+INFO: Step time 0.507722, PE
+INFO: Step time 0.530814, U
+INFO: Step time 0.530814, S
+INFO: Step time 0.530814, PE
+INFO: Step time 0.530814, PE
+INFO: Step time 0.565452, U
+INFO: Step time 0.565452, S
+INFO: Step time 0.565452, PE
+INFO: Step time 0.565452, PE
+INFO: Step time 0.578442, U
+INFO: Step time 0.578442, S
+INFO: Step time 0.578442, PE
+INFO: Step time 0.578442, PE
+INFO: Step time 0.591431, U
+INFO: Step time 0.591431, S
+INFO: Step time 0.591431, PE
+INFO: Step time 0.591431, PE
+INFO: Step time 0.610915, U
+INFO: Step time 0.610915, S
+INFO: Step time 0.610915, PE
+INFO: Step time 0.610915, PE
+INFO: Step time 0.640141, U
+INFO: Step time 0.640141, S
+INFO: Step time 0.640141, PE
+INFO: Step time 0.640141, PE
+INFO: Step time 0.6511, U
+INFO: Step time 0.6511, S
+INFO: Step time 0.6511, PE
+INFO: Step time 0.6511, PE
+INFO: Step time 0.66206, U
+INFO: Step time 0.66206, S
+INFO: Step time 0.66206, PE
+INFO: Step time 0.66206, PE
+INFO: Step time 0.6785, U
+INFO: Step time 0.6785, S
+INFO: Step time 0.6785, PE
+INFO: Step time 0.6785, PE
+INFO: Step time 0.703159, U
+INFO: Step time 0.703159, S
+INFO: Step time 0.703159, PE
+INFO: Step time 0.703159, PE
+INFO: Step time 0.740148, U
+INFO: Step time 0.740148, S
+INFO: Step time 0.740148, PE
+INFO: Step time 0.740148, PE
+INFO: Step time 0.754019, U
+INFO: Step time 0.754019, S
+INFO: Step time 0.754019, PE
+INFO: Step time 0.754019, PE
+INFO: Step time 0.76789, U
+INFO: Step time 0.76789, S
+INFO: Step time 0.76789, PE
+INFO: Step time 0.76789, PE
+INFO: Step time 0.788696, U
+INFO: Step time 0.788696, S
+INFO: Step time 0.788696, PE
+INFO: Step time 0.788696, PE
+INFO: Step time 0.819906, U
+INFO: Step time 0.819906, S
+INFO: Step time 0.819906, PE
+INFO: Step time 0.819906, PE
+INFO: Step time 0.831609, U
+INFO: Step time 0.831609, S
+INFO: Step time 0.831609, PE
+INFO: Step time 0.831609, PE
+INFO: Step time 0.843313, U
+INFO: Step time 0.843313, S
+INFO: Step time 0.843313, PE
+INFO: Step time 0.843313, PE
+INFO: Step time 0.860868, U
+INFO: Step time 0.860868, S
+INFO: Step time 0.860868, PE
+INFO: Step time 0.860868, PE
+INFO: Step time 0.887201, U
+INFO: Step time 0.887201, S
+INFO: Step time 0.887201, PE
+INFO: Step time 0.887201, PE
+INFO: Step time 0.926701, U
+INFO: Step time 0.926701, S
+INFO: Step time 0.926701, PE
+INFO: Step time 0.926701, PE
+INFO: Step time 0.9662, U
+INFO: Step time 0.9662, S
+INFO: Step time 0.9662, PE
+INFO: Step time 0.9662, PE
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, PE
+INFO: Step time 1.0, PE
+0m 3.3s
+
+==================================================
+68: mkraska/NonLinear/Sections/Plastic/Refs/Biegung.frd
+INFO: Step time 0.05, U
+INFO: Step time 0.05, S
+INFO: Step time 0.05, PE
+INFO: Step time 0.05, PE
+INFO: Step time 0.1, U
+INFO: Step time 0.1, S
+INFO: Step time 0.1, PE
+INFO: Step time 0.1, PE
+INFO: Step time 0.15, U
+INFO: Step time 0.15, S
+INFO: Step time 0.15, PE
+INFO: Step time 0.15, PE
+INFO: Step time 0.2, U
+INFO: Step time 0.2, S
+INFO: Step time 0.2, PE
+INFO: Step time 0.2, PE
+INFO: Step time 0.25, U
+INFO: Step time 0.25, S
+INFO: Step time 0.25, PE
+INFO: Step time 0.25, PE
+INFO: Step time 0.3, U
+INFO: Step time 0.3, S
+INFO: Step time 0.3, PE
+INFO: Step time 0.3, PE
+INFO: Step time 0.35, U
+INFO: Step time 0.35, S
+INFO: Step time 0.35, PE
+INFO: Step time 0.35, PE
+INFO: Step time 0.4, U
+INFO: Step time 0.4, S
+INFO: Step time 0.4, PE
+INFO: Step time 0.4, PE
+INFO: Step time 0.45, U
+INFO: Step time 0.45, S
+INFO: Step time 0.45, PE
+INFO: Step time 0.45, PE
+INFO: Step time 0.5, U
+INFO: Step time 0.5, S
+INFO: Step time 0.5, PE
+INFO: Step time 0.5, PE
+INFO: Step time 0.55, U
+INFO: Step time 0.55, S
+INFO: Step time 0.55, PE
+INFO: Step time 0.55, PE
+INFO: Step time 0.6, U
+INFO: Step time 0.6, S
+INFO: Step time 0.6, PE
+INFO: Step time 0.6, PE
+INFO: Step time 0.65, U
+INFO: Step time 0.65, S
+INFO: Step time 0.65, PE
+INFO: Step time 0.65, PE
+INFO: Step time 0.7, U
+INFO: Step time 0.7, S
+INFO: Step time 0.7, PE
+INFO: Step time 0.7, PE
+INFO: Step time 0.75, U
+INFO: Step time 0.75, S
+INFO: Step time 0.75, PE
+INFO: Step time 0.75, PE
+INFO: Step time 0.8, U
+INFO: Step time 0.8, S
+INFO: Step time 0.8, PE
+INFO: Step time 0.8, PE
+INFO: Step time 0.85, U
+INFO: Step time 0.85, S
+INFO: Step time 0.85, PE
+INFO: Step time 0.85, PE
+INFO: Step time 0.9, U
+INFO: Step time 0.9, S
+INFO: Step time 0.9, PE
+INFO: Step time 0.9, PE
+INFO: Step time 0.95, U
+INFO: Step time 0.95, S
+INFO: Step time 0.95, PE
+INFO: Step time 0.95, PE
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, PE
+INFO: Step time 1.0, PE
+0m 3.2s
+
+==================================================
+69: mkraska/NonLinear/Sections/Refs/Biegung.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.1s
+
+==================================================
+70: mkraska/NonLinear/TensileTest/Refs/Zug.frd
+INFO: Step time 2.0, U
+INFO: Step time 2.0, S
+INFO: Step time 2.0, PE
+INFO: Step time 2.0, PE
+0m 0.0s
+
+==================================================
+71: mkraska/Pillow/Refs/static.frd
+INFO: Step time 0.1, U
+INFO: Step time 0.1, S
+INFO: Step time 0.2, U
+INFO: Step time 0.2, S
+INFO: Step time 0.3, U
+INFO: Step time 0.3, S
+INFO: Step time 0.4, U
+INFO: Step time 0.4, S
+INFO: Step time 0.5, U
+INFO: Step time 0.5, S
+INFO: Step time 0.599868, U
+0m 0.1s
+
+==================================================
+72: mkraska/RVE/Periodic/Refs/Solve.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+73: mkraska/RVE/PlanarSlide/Refs/Zug.frd
+INFO: Step time 0.01, U
+INFO: Step time 0.01, S
+INFO: Step time 0.01, PE
+INFO: Step time 0.01, PE
+INFO: Step time 0.02, U
+INFO: Step time 0.02, S
+INFO: Step time 0.02, PE
+INFO: Step time 0.02, PE
+INFO: Step time 0.035, U
+INFO: Step time 0.035, S
+INFO: Step time 0.035, PE
+INFO: Step time 0.035, PE
+INFO: Step time 0.0575, U
+INFO: Step time 0.0575, S
+INFO: Step time 0.0575, PE
+INFO: Step time 0.0575, PE
+INFO: Step time 0.09125, U
+INFO: Step time 0.09125, S
+INFO: Step time 0.09125, PE
+INFO: Step time 0.09125, PE
+INFO: Step time 0.141875, U
+INFO: Step time 0.141875, S
+INFO: Step time 0.141875, PE
+INFO: Step time 0.141875, PE
+INFO: Step time 0.217813, U
+INFO: Step time 0.217813, S
+INFO: Step time 0.217813, PE
+INFO: Step time 0.217813, PE
+INFO: Step time 0.317813, U
+INFO: Step time 0.317813, S
+INFO: Step time 0.317813, PE
+INFO: Step time 0.317813, PE
+INFO: Step time 0.417813, U
+INFO: Step time 0.417813, S
+INFO: Step time 0.417813, PE
+INFO: Step time 0.417813, PE
+INFO: Step time 0.517813, U
+INFO: Step time 0.517813, S
+INFO: Step time 0.517813, PE
+INFO: Step time 0.517813, PE
+INFO: Step time 0.617812, U
+INFO: Step time 0.617812, S
+INFO: Step time 0.617812, PE
+INFO: Step time 0.617812, PE
+INFO: Step time 0.717812, U
+INFO: Step time 0.717812, S
+INFO: Step time 0.717812, PE
+INFO: Step time 0.717812, PE
+INFO: Step time 0.817812, U
+INFO: Step time 0.817812, S
+INFO: Step time 0.817812, PE
+INFO: Step time 0.817812, PE
+INFO: Step time 0.917812, U
+INFO: Step time 0.917812, S
+INFO: Step time 0.917812, PE
+INFO: Step time 0.917812, PE
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, PE
+INFO: Step time 1.0, PE
+0m 3.8s
+
+==================================================
+74: mkraska/RVE/PlaneOrtho1/Refs/Zug.frd
+INFO: Step time 0.01, U
+INFO: Step time 0.01, S
+INFO: Step time 0.01, PE
+INFO: Step time 0.01, PE
+INFO: Step time 0.02, U
+INFO: Step time 0.02, S
+INFO: Step time 0.02, PE
+INFO: Step time 0.02, PE
+INFO: Step time 0.035, U
+INFO: Step time 0.035, S
+INFO: Step time 0.035, PE
+INFO: Step time 0.035, PE
+INFO: Step time 0.0575, U
+INFO: Step time 0.0575, S
+INFO: Step time 0.0575, PE
+INFO: Step time 0.0575, PE
+INFO: Step time 0.09125, U
+INFO: Step time 0.09125, S
+INFO: Step time 0.09125, PE
+INFO: Step time 0.09125, PE
+INFO: Step time 0.141875, U
+INFO: Step time 0.141875, S
+INFO: Step time 0.141875, PE
+INFO: Step time 0.141875, PE
+INFO: Step time 0.217813, U
+INFO: Step time 0.217813, S
+INFO: Step time 0.217813, PE
+INFO: Step time 0.217813, PE
+INFO: Step time 0.317813, U
+INFO: Step time 0.317813, S
+INFO: Step time 0.317813, PE
+INFO: Step time 0.317813, PE
+INFO: Step time 0.417813, U
+INFO: Step time 0.417813, S
+INFO: Step time 0.417813, PE
+INFO: Step time 0.417813, PE
+INFO: Step time 0.517813, U
+INFO: Step time 0.517813, S
+INFO: Step time 0.517813, PE
+INFO: Step time 0.517813, PE
+INFO: Step time 0.617812, U
+INFO: Step time 0.617812, S
+INFO: Step time 0.617812, PE
+INFO: Step time 0.617812, PE
+INFO: Step time 0.717812, U
+INFO: Step time 0.717812, S
+INFO: Step time 0.717812, PE
+INFO: Step time 0.717812, PE
+INFO: Step time 0.817812, U
+INFO: Step time 0.817812, S
+INFO: Step time 0.817812, PE
+INFO: Step time 0.817812, PE
+INFO: Step time 0.917812, U
+INFO: Step time 0.917812, S
+INFO: Step time 0.917812, PE
+INFO: Step time 0.917812, PE
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, PE
+INFO: Step time 1.0, PE
+0m 0.4s
+
+==================================================
+75: mkraska/Test/Beam/Refs/modal.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.00640601, U
+INFO: Step time 359.0362814, U
+INFO: Step time 704.1914154, U
+INFO: Step time 1822.702407, U
+INFO: Step time 3446.72109, U
+INFO: Step time 6480.486761, U
+INFO: Step time 7578.714332, U
+INFO: Step time 9022.296086, U
+INFO: Step time 12516.75815, U
+INFO: Step time 12719.0092, U
+INFO: Step time 12719.00951, U
+INFO: Step time 13583.86356, U
+INFO: Step time 19485.2766, U
+INFO: Step time 20315.33388, U
+INFO: Step time 25698.03376, U
+INFO: Step time 25840.51453, U
+INFO: Step time 25840.51509, U
+INFO: Step time 26008.77787, U
+0m 0.0s
+
+==================================================
+76: mkraska/Test/BeamSections/Refs/b32.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, E
+0m 0.0s
+
+==================================================
+77: mkraska/Test/BeamSections/Refs/u1General.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+ERROR: FEM: No nodes found in Frd file.
+0m 0.0s
+
+==================================================
+78: mkraska/Test/Distributing/Refs/solve.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 2.0, U
+INFO: Step time 2.0, S
+INFO: Step time 3.0, U
+INFO: Step time 3.0, S
+0m 0.0s
+
+==================================================
+79: mkraska/Test/Joints/Refs/solve.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 119.1995337, U
+INFO: Step time 419.3095713, U
+INFO: Step time 1338.857345, U
+INFO: Step time 1554.627238, U
+INFO: Step time 1776.178079, U
+INFO: Step time 3359.946902, U
+INFO: Step time 3885.560307, U
+INFO: Step time 5913.159016, U
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.3s
+
+==================================================
+80: mkraska/Test/Joints/Refs/solve2.frd
+INFO: Step time 0.0, U
+INFO: Step time 121.8670653, U
+INFO: Step time 455.4719941, U
+INFO: Step time 734.6071045, U
+INFO: Step time 1638.144764, U
+INFO: Step time 2037.502996, U
+INFO: Step time 3677.688106, U
+INFO: Step time 4728.845148, U
+INFO: Step time 4972.191177, U
+INFO: Step time 6870.063514, U
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 2.0, U
+INFO: Step time 2.0, S
+INFO: Step time 2.000039062, U
+0m 0.2s
+
+==================================================
+81: mkraska/Test/Meanrot/Refs/solve.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 2.0, U
+INFO: Step time 2.0, S
+INFO: Step time 3.0, U
+INFO: Step time 3.0, S
+0m 0.0s
+
+==================================================
+82: mkraska/Test/Supports/Refs/solve.frd
+INFO: Step time 0.0, U
+INFO: Step time 0.0, U
+INFO: Step time 0.00130222, U
+INFO: Step time 0.0047394, U
+INFO: Step time 0.00535777, U
+INFO: Step time 0.0563008, U
+INFO: Step time 2640.377127, U
+INFO: Step time 5147.563619, U
+INFO: Step time 7202.41912, U
+INFO: Step time 12193.50246, U
+INFO: Step time 412.4099176, U
+INFO: Step time 808.9008275, U
+INFO: Step time 2566.298389, U
+INFO: Step time 4877.674212, U
+INFO: Step time 6059.317072, U
+INFO: Step time 7106.495205, U
+INFO: Step time 12925.87908, U
+INFO: Step time 12933.19019, U
+INFO: Step time 13714.71693, U
+INFO: Step time 18187.29266, U
+0m 0.1s
+
+==================================================
+83: mkraska/Test/Supports/Refs/trans.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.1, U
+INFO: Step time 1.1, S
+INFO: Step time 1.2, U
+INFO: Step time 1.2, S
+INFO: Step time 1.3, U
+INFO: Step time 1.3, S
+INFO: Step time 1.4, U
+INFO: Step time 1.4, S
+INFO: Step time 1.5, U
+INFO: Step time 1.5, S
+INFO: Step time 1.6, U
+INFO: Step time 1.6, S
+INFO: Step time 1.7, U
+INFO: Step time 1.7, S
+INFO: Step time 1.8, U
+INFO: Step time 1.8, S
+INFO: Step time 1.9, U
+INFO: Step time 1.9, S
+INFO: Step time 2.0, U
+INFO: Step time 2.0, S
+INFO: Step time 2.1, U
+INFO: Step time 2.1, S
+INFO: Step time 2.2, U
+INFO: Step time 2.2, S
+INFO: Step time 2.3, U
+INFO: Step time 2.3, S
+INFO: Step time 2.4, U
+INFO: Step time 2.4, S
+INFO: Step time 2.5, U
+INFO: Step time 2.5, S
+INFO: Step time 2.6, U
+INFO: Step time 2.6, S
+INFO: Step time 2.7, U
+INFO: Step time 2.7, S
+INFO: Step time 2.8, U
+INFO: Step time 2.8, S
+INFO: Step time 2.9, U
+INFO: Step time 2.9, S
+INFO: Step time 3.0, U
+INFO: Step time 3.0, S
+INFO: Step time 3.1, U
+INFO: Step time 3.1, S
+INFO: Step time 3.2, U
+INFO: Step time 3.2, S
+INFO: Step time 3.3, U
+INFO: Step time 3.3, S
+INFO: Step time 3.4, U
+INFO: Step time 3.4, S
+INFO: Step time 3.5, U
+INFO: Step time 3.5, S
+INFO: Step time 3.6, U
+INFO: Step time 3.6, S
+INFO: Step time 3.7, U
+INFO: Step time 3.7, S
+INFO: Step time 3.8, U
+INFO: Step time 3.8, S
+INFO: Step time 3.9, U
+INFO: Step time 3.9, S
+INFO: Step time 4.0, U
+INFO: Step time 4.0, S
+0m 0.3s
+
+==================================================
+84: mkraska/Test/Supports/Refs/trfix.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 2.0, U
+INFO: Step time 2.0, S
+INFO: Step time 3.0, U
+INFO: Step time 3.0, S
+0m 0.0s
+
+==================================================
+85: mkraska/Test/Supports1/Refs/solve.frd
+INFO: Step time 0.0, U
+INFO: Step time 6672.502063, U
+INFO: Step time 6686.753679, U
+INFO: Step time 8081.521672, U
+INFO: Step time 8166.644499, U
+INFO: Step time 8185.90842, U
+INFO: Step time 9897.792172, U
+INFO: Step time 9917.33596, U
+INFO: Step time 15718.13297, U
+INFO: Step time 17728.37729, U
+INFO: Step time 17760.24243, U
+INFO: Step time 17767.34717, U
+INFO: Step time 20359.1735, U
+INFO: Step time 20397.17813, U
+INFO: Step time 28592.71011, U
+INFO: Step time 28633.43284, U
+INFO: Step time 32216.35412, U
+INFO: Step time 32220.96996, U
+INFO: Step time 33528.60235, U
+INFO: Step time 33566.3467, U
+0m 0.3s
+
+==================================================
+86: mkraska/Thermal/Thermal distortion/Refs/Tjoint.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+87: mkraska/Thermal/Thermal shock/Refs/solve.frd
+INFO: Step time 0.01, U
+INFO: Step time 0.01, T
+INFO: Step time 0.01, S
+INFO: Step time 0.02, U
+INFO: Step time 0.02, T
+INFO: Step time 0.02, S
+INFO: Step time 0.03, U
+INFO: Step time 0.03, T
+INFO: Step time 0.03, S
+INFO: Step time 0.04, U
+INFO: Step time 0.04, T
+INFO: Step time 0.04, S
+INFO: Step time 0.05, U
+INFO: Step time 0.05, T
+INFO: Step time 0.05, S
+INFO: Step time 0.06, U
+INFO: Step time 0.06, T
+INFO: Step time 0.06, S
+INFO: Step time 0.07, U
+INFO: Step time 0.07, T
+INFO: Step time 0.07, S
+INFO: Step time 0.08, U
+INFO: Step time 0.08, T
+INFO: Step time 0.08, S
+INFO: Step time 0.09, U
+INFO: Step time 0.09, T
+INFO: Step time 0.09, S
+INFO: Step time 0.1, U
+INFO: Step time 0.1, T
+INFO: Step time 0.1, S
+INFO: Step time 0.11, U
+INFO: Step time 0.11, T
+INFO: Step time 0.11, S
+INFO: Step time 0.12, U
+INFO: Step time 0.12, T
+INFO: Step time 0.12, S
+INFO: Step time 0.13, U
+INFO: Step time 0.13, T
+INFO: Step time 0.13, S
+INFO: Step time 0.14, U
+INFO: Step time 0.14, T
+INFO: Step time 0.14, S
+INFO: Step time 0.15, U
+INFO: Step time 0.15, T
+INFO: Step time 0.15, S
+INFO: Step time 0.16, U
+INFO: Step time 0.16, T
+INFO: Step time 0.16, S
+INFO: Step time 0.17, U
+INFO: Step time 0.17, T
+INFO: Step time 0.17, S
+INFO: Step time 0.18, U
+INFO: Step time 0.18, T
+INFO: Step time 0.18, S
+INFO: Step time 0.19, U
+INFO: Step time 0.19, T
+INFO: Step time 0.19, S
+INFO: Step time 0.2, U
+INFO: Step time 0.2, T
+INFO: Step time 0.2, S
+INFO: Step time 0.21, U
+INFO: Step time 0.21, T
+INFO: Step time 0.21, S
+INFO: Step time 0.22, U
+INFO: Step time 0.22, T
+INFO: Step time 0.22, S
+INFO: Step time 0.23, U
+INFO: Step time 0.23, T
+INFO: Step time 0.23, S
+INFO: Step time 0.24, U
+INFO: Step time 0.24, T
+INFO: Step time 0.24, S
+INFO: Step time 0.25, U
+INFO: Step time 0.25, T
+INFO: Step time 0.25, S
+INFO: Step time 0.26, U
+INFO: Step time 0.26, T
+INFO: Step time 0.26, S
+INFO: Step time 0.27, U
+INFO: Step time 0.27, T
+INFO: Step time 0.27, S
+INFO: Step time 0.28, U
+INFO: Step time 0.28, T
+INFO: Step time 0.28, S
+INFO: Step time 0.29, U
+INFO: Step time 0.29, T
+INFO: Step time 0.29, S
+INFO: Step time 0.3, U
+INFO: Step time 0.3, T
+INFO: Step time 0.3, S
+INFO: Step time 0.31, U
+INFO: Step time 0.31, T
+INFO: Step time 0.31, S
+INFO: Step time 0.32, U
+INFO: Step time 0.32, T
+INFO: Step time 0.32, S
+INFO: Step time 0.33, U
+INFO: Step time 0.33, T
+INFO: Step time 0.33, S
+INFO: Step time 0.34, U
+INFO: Step time 0.34, T
+INFO: Step time 0.34, S
+INFO: Step time 0.35, U
+INFO: Step time 0.35, T
+INFO: Step time 0.35, S
+INFO: Step time 0.36, U
+INFO: Step time 0.36, T
+INFO: Step time 0.36, S
+INFO: Step time 0.37, U
+INFO: Step time 0.37, T
+INFO: Step time 0.37, S
+INFO: Step time 0.38, U
+INFO: Step time 0.38, T
+INFO: Step time 0.38, S
+INFO: Step time 0.39, U
+INFO: Step time 0.39, T
+INFO: Step time 0.39, S
+INFO: Step time 0.4, U
+INFO: Step time 0.4, T
+INFO: Step time 0.4, S
+INFO: Step time 0.41, U
+INFO: Step time 0.41, T
+INFO: Step time 0.41, S
+INFO: Step time 0.42, U
+INFO: Step time 0.42, T
+INFO: Step time 0.42, S
+INFO: Step time 0.43, U
+INFO: Step time 0.43, T
+INFO: Step time 0.43, S
+INFO: Step time 0.44, U
+INFO: Step time 0.44, T
+INFO: Step time 0.44, S
+INFO: Step time 0.45, U
+INFO: Step time 0.45, T
+INFO: Step time 0.45, S
+INFO: Step time 0.46, U
+INFO: Step time 0.46, T
+INFO: Step time 0.46, S
+INFO: Step time 0.47, U
+INFO: Step time 0.47, T
+INFO: Step time 0.47, S
+INFO: Step time 0.48, U
+INFO: Step time 0.48, T
+INFO: Step time 0.48, S
+INFO: Step time 0.49, U
+INFO: Step time 0.49, T
+INFO: Step time 0.49, S
+INFO: Step time 0.5, U
+INFO: Step time 0.5, T
+INFO: Step time 0.5, S
+0m 1.2s
+
+==================================================
+88: mkraska/Thermal/Thermografie/Refs/Naht.frd
+INFO: Step time 0.02, T
+INFO: Step time 0.04, T
+INFO: Step time 0.06, T
+INFO: Step time 0.08, T
+INFO: Step time 0.1, T
+INFO: Step time 0.12, T
+INFO: Step time 0.14, T
+INFO: Step time 0.16, T
+INFO: Step time 0.18, T
+INFO: Step time 0.2, T
+INFO: Step time 0.22, T
+INFO: Step time 0.24, T
+INFO: Step time 0.26, T
+INFO: Step time 0.28, T
+INFO: Step time 0.3, T
+INFO: Step time 0.32, T
+INFO: Step time 0.34, T
+INFO: Step time 0.36, T
+INFO: Step time 0.38, T
+INFO: Step time 0.4, T
+INFO: Step time 0.42, T
+INFO: Step time 0.44, T
+INFO: Step time 0.46, T
+INFO: Step time 0.48, T
+INFO: Step time 0.5, T
+INFO: Step time 0.52, T
+INFO: Step time 0.54, T
+INFO: Step time 0.56, T
+INFO: Step time 0.58, T
+INFO: Step time 0.6, T
+INFO: Step time 0.62, T
+INFO: Step time 0.64, T
+INFO: Step time 0.66, T
+INFO: Step time 0.68, T
+INFO: Step time 0.7, T
+INFO: Step time 0.72, T
+INFO: Step time 0.74, T
+INFO: Step time 0.76, T
+INFO: Step time 0.78, T
+INFO: Step time 0.8, T
+INFO: Step time 0.82, T
+INFO: Step time 0.84, T
+INFO: Step time 0.86, T
+INFO: Step time 0.88, T
+INFO: Step time 0.9, T
+INFO: Step time 0.92, T
+INFO: Step time 0.94, T
+INFO: Step time 0.96, T
+INFO: Step time 0.98, T
+INFO: Step time 1.0, T
+INFO: Step time 1.02, T
+INFO: Step time 1.04, T
+INFO: Step time 1.06, T
+INFO: Step time 1.08, T
+INFO: Step time 1.1, T
+INFO: Step time 1.12, T
+INFO: Step time 1.14, T
+INFO: Step time 1.16, T
+INFO: Step time 1.18, T
+INFO: Step time 1.2, T
+INFO: Step time 1.22, T
+INFO: Step time 1.24, T
+INFO: Step time 1.26, T
+INFO: Step time 1.28, T
+INFO: Step time 1.3, T
+INFO: Step time 1.32, T
+INFO: Step time 1.34, T
+INFO: Step time 1.36, T
+INFO: Step time 1.38, T
+INFO: Step time 1.4, T
+INFO: Step time 1.42, T
+INFO: Step time 1.44, T
+INFO: Step time 1.46, T
+INFO: Step time 1.48, T
+INFO: Step time 1.5, T
+INFO: Step time 1.52, T
+INFO: Step time 1.54, T
+INFO: Step time 1.56, T
+INFO: Step time 1.58, T
+INFO: Step time 1.6, T
+INFO: Step time 1.62, T
+INFO: Step time 1.64, T
+INFO: Step time 1.66, T
+INFO: Step time 1.68, T
+INFO: Step time 1.7, T
+INFO: Step time 1.72, T
+INFO: Step time 1.74, T
+INFO: Step time 1.76, T
+INFO: Step time 1.78, T
+INFO: Step time 1.8, T
+INFO: Step time 1.82, T
+INFO: Step time 1.84, T
+INFO: Step time 1.86, T
+INFO: Step time 1.88, T
+INFO: Step time 1.9, T
+INFO: Step time 1.92, T
+INFO: Step time 1.94, T
+INFO: Step time 1.96, T
+INFO: Step time 1.98, T
+INFO: Step time 2.0, T
+0m 2.4s
+
+==================================================
+89: mkraska_final_ccx/Pillow/static.frd
+INFO: Step time 0.1, U
+INFO: Step time 0.1, S
+INFO: Step time 0.2, U
+INFO: Step time 0.2, S
+INFO: Step time 0.3, U
+INFO: Step time 0.3, S
+INFO: Step time 0.4, U
+INFO: Step time 0.4, S
+INFO: Step time 0.5, U
+INFO: Step time 0.5, S
+INFO: Step time 0.599868, U
+0m 0.1s
+
+==================================================
+90: other/CubeTie/CubeTie.frd
+INFO: Step time 3.21621e-05, U
+INFO: Step time 6.43243e-05, U
+INFO: Step time 9.64864e-05, U
+INFO: Step time 0.000128649, U
+INFO: Step time 0.0200965, U
+INFO: Step time 0.0300965, U
+0m 0.9s
+
+==================================================
+91: other/Dichtstoff_beam_coupling_compl.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+92: other/Ihor_Mirzov_baffle_2D.frd
+INFO: Step time 1.0, T
+0m 0.1s
+
+==================================================
+93: other/Jan_Lukas_modal_dynamic_beammodal.frd
+INFO: Step time 209.1941117, U
+INFO: Step time 209.1941117, S
+INFO: Step time 209.1941117, E
+INFO: Step time 209.1941117, U
+INFO: Step time 209.1941117, S
+INFO: Step time 209.1941117, E
+INFO: Step time 1296.155242, U
+INFO: Step time 1296.155242, S
+INFO: Step time 1296.155242, E
+INFO: Step time 1296.155242, U
+INFO: Step time 1296.155242, S
+INFO: Step time 1296.155242, E
+INFO: Step time 3565.870817, U
+INFO: Step time 3565.870817, S
+INFO: Step time 3565.870817, E
+INFO: Step time 3565.870817, U
+INFO: Step time 3565.870817, S
+INFO: Step time 3565.870817, E
+INFO: Step time 3714.562594, U
+INFO: Step time 3714.562594, S
+INFO: Step time 3714.562594, E
+INFO: Step time 6477.274754, U
+INFO: Step time 6477.274754, S
+INFO: Step time 6477.274754, E
+INFO: Step time 6819.430056, U
+INFO: Step time 6819.430056, S
+INFO: Step time 6819.430056, E
+INFO: Step time 6819.430056, U
+INFO: Step time 6819.430056, S
+INFO: Step time 6819.430056, E
+INFO: Step time 10945.5978, U
+INFO: Step time 10945.5978, S
+INFO: Step time 10945.5978, E
+INFO: Step time 10945.5978, U
+INFO: Step time 10945.5978, S
+INFO: Step time 10945.5978, E
+INFO: Step time 11143.98177, U
+INFO: Step time 11143.98177, S
+INFO: Step time 11143.98177, E
+INFO: Step time 15813.27324, U
+INFO: Step time 15813.27324, S
+INFO: Step time 15813.27324, E
+INFO: Step time 15813.27324, U
+INFO: Step time 15813.27324, S
+INFO: Step time 15813.27324, E
+INFO: Step time 18574.30526, U
+INFO: Step time 18574.30526, S
+INFO: Step time 18574.30526, E
+0m 0.4s
+
+==================================================
+94: other/Jan_Lukas_modal_dynamic_staticbeam2.frd
+INFO: Step time 837.3825237, U
+INFO: Step time 837.3825237, S
+INFO: Step time 837.3825237, E
+INFO: Step time 837.3825237, U
+INFO: Step time 837.3825237, S
+INFO: Step time 837.3825237, E
+INFO: Step time 5026.947094, U
+INFO: Step time 5026.947094, S
+INFO: Step time 5026.947094, E
+INFO: Step time 5026.947094, U
+INFO: Step time 5026.947094, S
+INFO: Step time 5026.947094, E
+INFO: Step time 7452.8205, U
+INFO: Step time 7452.8205, S
+INFO: Step time 7452.8205, E
+INFO: Step time 12989.89356, U
+INFO: Step time 12989.89356, S
+INFO: Step time 12989.89356, E
+INFO: Step time 13260.23419, U
+INFO: Step time 13260.23419, S
+INFO: Step time 13260.23419, E
+INFO: Step time 13260.23419, U
+INFO: Step time 13260.23419, S
+INFO: Step time 13260.23419, E
+INFO: Step time 22364.52687, U
+INFO: Step time 22364.52687, S
+INFO: Step time 22364.52687, E
+INFO: Step time 24163.27076, U
+INFO: Step time 24163.27076, S
+INFO: Step time 24163.27076, E
+INFO: Step time 24163.27076, U
+INFO: Step time 24163.27076, S
+INFO: Step time 24163.27076, E
+INFO: Step time 37022.88488, U
+INFO: Step time 37022.88488, S
+INFO: Step time 37022.88488, E
+INFO: Step time 37022.88488, U
+INFO: Step time 37022.88488, S
+INFO: Step time 37022.88488, E
+INFO: Step time 37302.02027, U
+INFO: Step time 37302.02027, S
+INFO: Step time 37302.02027, E
+INFO: Step time 38917.39631, U
+INFO: Step time 38917.39631, S
+INFO: Step time 38917.39631, E
+INFO: Step time 51346.77972, U
+INFO: Step time 51346.77972, S
+INFO: Step time 51346.77972, E
+0m 0.2s
+
+==================================================
+95: other/Jan_Lukas_static_structural.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, E
+0m 0.0s
+
+==================================================
+96: other/John_Mannisto_blade_sector.frd
+INFO: Step time 87.05573163, U
+INFO: Step time 87.05573163, U
+INFO: Step time 204.0640951, U
+INFO: Step time 204.0640951, U
+INFO: Step time 316.0917682, U
+INFO: Step time 316.0917682, U
+INFO: Step time 89.20800848, U
+INFO: Step time 89.20800848, U
+INFO: Step time 200.4586575, U
+INFO: Step time 200.4586575, U
+INFO: Step time 316.0753525, U
+INFO: Step time 316.0753525, U
+INFO: Step time 89.29256256, U
+INFO: Step time 89.29256256, U
+INFO: Step time 206.1684436, U
+INFO: Step time 206.1684436, U
+INFO: Step time 317.4874354, U
+INFO: Step time 317.4874354, U
+INFO: Step time 88.51744858, U
+INFO: Step time 88.51744858, U
+INFO: Step time 215.5322338, U
+INFO: Step time 215.5322338, U
+INFO: Step time 318.3888948, U
+INFO: Step time 318.3888948, U
+INFO: Step time 88.19097565, U
+INFO: Step time 88.19097565, U
+INFO: Step time 218.8341432, U
+INFO: Step time 218.8341432, U
+INFO: Step time 318.5974418, U
+INFO: Step time 318.5974418, U
+0m 0.4s
+
+==================================================
+97: other/Kaffeeheblerei_hinge.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+98: other/Nidish_Narayanaa_Balaji.frd
+INFO: Step time 721.9441443, U
+INFO: Step time 721.9441443, S
+INFO: Step time 1405.01691, U
+INFO: Step time 1405.01691, S
+INFO: Step time 4255.625577, U
+INFO: Step time 4255.625577, S
+INFO: Step time 4908.575807, U
+INFO: Step time 4908.575807, S
+INFO: Step time 7617.819678, U
+INFO: Step time 7617.819678, S
+INFO: Step time 10355.90631, U
+INFO: Step time 10355.90631, S
+INFO: Step time 11354.5995, U
+INFO: Step time 11354.5995, S
+INFO: Step time 14874.59264, U
+INFO: Step time 14874.59264, S
+INFO: Step time 17166.4909, U
+INFO: Step time 17166.4909, S
+INFO: Step time 20441.58586, U
+INFO: Step time 20441.58586, S
+0m 0.5s
+
+==================================================
+99: other/ball.frd
+INFO: Step time 0.1, U
+INFO: Step time 0.1, S
+INFO: Step time 0.2, U
+INFO: Step time 0.2, S
+INFO: Step time 0.3, U
+INFO: Step time 0.3, S
+INFO: Step time 0.4, U
+INFO: Step time 0.4, S
+INFO: Step time 0.5, U
+INFO: Step time 0.5, S
+INFO: Step time 0.6, U
+INFO: Step time 0.6, S
+INFO: Step time 0.7, U
+INFO: Step time 0.7, S
+INFO: Step time 0.8, U
+INFO: Step time 0.8, S
+0m 0.5s
+
+==================================================
+100: other/ddjokic-CalculiX-tests-master/Spanner/Spanner-out.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, E
+0m 0.2s
+
+==================================================
+101: other/dichtstoff_2_HE8.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+0m 0.0s
+
+==================================================
+102: yahoo/1.frd
+INFO: Step time 0.1, U
+INFO: Step time 0.1, S
+INFO: Step time 0.1, E
+INFO: Step time 0.2, U
+INFO: Step time 0.2, S
+INFO: Step time 0.2, E
+INFO: Step time 0.3, U
+INFO: Step time 0.3, S
+INFO: Step time 0.3, E
+INFO: Step time 0.4, U
+INFO: Step time 0.4, S
+INFO: Step time 0.4, E
+INFO: Step time 0.5, U
+INFO: Step time 0.5, S
+INFO: Step time 0.5, E
+INFO: Step time 0.6, U
+INFO: Step time 0.6, S
+INFO: Step time 0.6, E
+INFO: Step time 0.7, U
+INFO: Step time 0.7, S
+INFO: Step time 0.7, E
+INFO: Step time 0.8, U
+INFO: Step time 0.8, S
+INFO: Step time 0.8, E
+INFO: Step time 0.9, U
+INFO: Step time 0.9, S
+INFO: Step time 0.9, E
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, E
+INFO: Step time 1.1, U
+INFO: Step time 1.1, S
+INFO: Step time 1.1, E
+INFO: Step time 1.2, U
+INFO: Step time 1.2, S
+INFO: Step time 1.2, E
+INFO: Step time 1.3, U
+INFO: Step time 1.3, S
+INFO: Step time 1.3, E
+INFO: Step time 1.4, U
+INFO: Step time 1.4, S
+INFO: Step time 1.4, E
+INFO: Step time 1.5, U
+INFO: Step time 1.5, S
+INFO: Step time 1.5, E
+INFO: Step time 1.6, U
+INFO: Step time 1.6, S
+INFO: Step time 1.6, E
+INFO: Step time 1.7, U
+INFO: Step time 1.7, S
+INFO: Step time 1.7, E
+INFO: Step time 1.8, U
+INFO: Step time 1.8, S
+INFO: Step time 1.8, E
+INFO: Step time 1.9, U
+INFO: Step time 1.9, S
+INFO: Step time 1.9, E
+INFO: Step time 2.0, U
+INFO: Step time 2.0, S
+INFO: Step time 2.0, E
+INFO: Step time 2.1, U
+INFO: Step time 2.1, S
+INFO: Step time 2.1, E
+INFO: Step time 2.2, U
+INFO: Step time 2.2, S
+INFO: Step time 2.2, E
+INFO: Step time 2.3, U
+INFO: Step time 2.3, S
+INFO: Step time 2.3, E
+INFO: Step time 2.4, U
+INFO: Step time 2.4, S
+INFO: Step time 2.4, E
+INFO: Step time 2.5, U
+INFO: Step time 2.5, S
+INFO: Step time 2.5, E
+INFO: Step time 2.6, U
+INFO: Step time 2.6, S
+INFO: Step time 2.6, E
+INFO: Step time 2.7, U
+INFO: Step time 2.7, S
+INFO: Step time 2.7, E
+INFO: Step time 2.8, U
+INFO: Step time 2.8, S
+INFO: Step time 2.8, E
+INFO: Step time 2.9, U
+INFO: Step time 2.9, S
+INFO: Step time 2.9, E
+INFO: Step time 3.0, U
+INFO: Step time 3.0, S
+INFO: Step time 3.0, E
+0m 0.1s
+
+==================================================
+103: yahoo/2d_ramberg_osgood.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, E
+0m 0.0s
+
+==================================================
+104: yahoo/3d_DEFORMATION_PLASTICITY.frd
+INFO: Step time 1.0, U
+INFO: Step time 1.0, S
+INFO: Step time 1.0, E
+0m 0.0s
+
+Total 1m 19.3s
