@@ -91,7 +91,8 @@ def test_my_single_file(file_path):
     try:
         start = time.perf_counter()
         ccx2paraview = Converter(file_path, ['vtk', 'vtu'],
-                        parseonly=True, nomises=True, noeigen=True)
+                        # parseonly=True, nomises=True, noeigen=True)
+                        parseonly=False, nomises=False, noeigen=False)
         ccx2paraview.run()
         delta = time.perf_counter() - start
         print(get_time_delta(delta))
@@ -155,6 +156,18 @@ def test_NodalPointCoordinateBlock2():
         print(coords)
 
 
+def test_lin_indexes():
+    line = ' -1         1-6.64251E-02-6.64250E-02-1.54991E-01-1.06122E-08-1.43067E-02 3.02626E-02'
+    print(line[:5])
+    print(line[5:13])
+    print(line[13:25])
+    print(line[25:37])
+    print(line[37:49])
+    print(line[49:61])
+    print(line[61:73])
+    print(line[73:85])
+
+
 # Run
 if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
@@ -166,6 +179,7 @@ if __name__ == '__main__':
 
     # test_numpy()
     # test_NodalPointCoordinateBlock2()
+    # test_lin_indexes()
     # raise SystemExit()
 
     # Prepare logging
@@ -178,18 +192,18 @@ if __name__ == '__main__':
 
     test_my_parser_in(d)
     # test_my_single_file(d + '/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd_')
-    # test_single_file(d + '/other/Jan_Lukas_modal_dynamic_beammodal.frd')
-    # test_single_file(d + '/other/John_Mannisto_blade_sector.frd')
-    # test_single_file(d + '/other/Jan_Lukas_static_structural.frd')
-    # test_single_file(d + '/other/Ihor_Mirzov_baffle_2D.frd')
-    # test_single_file(d + '/other/CubeTie/CubeTie.frd')
-    # test_single_file(d + '/other/ball.frd')
-    # test_single_file('../../cae/examples/default.frd')
-    # test_single_file(d + '/ccx/test/achtel2.frd')
-    # test_single_file(d + '/mkraska/RVE/PlanarSlide/Refs/Zug.frd')
-    # test_single_file(d + '/mkraska/Contact/CNC/Refs/solve.frd')
-    # test_single_file(d + '/mkraska/Contact/Eyebar/Refs/eyebar.frd')
-    # test_single_file(d + '/mkraska/Test/BeamSections/Refs/u1General.frd')
+    # test_my_single_file(d + '/other/Jan_Lukas_modal_dynamic_beammodal.frd')
+    # test_my_single_file(d + '/other/John_Mannisto_blade_sector.frd')
+    # test_my_single_file(d + '/other/Jan_Lukas_static_structural.frd')
+    # test_my_single_file(d + '/other/Ihor_Mirzov_baffle_2D.frd')
+    # test_my_single_file(d + '/other/CubeTie/CubeTie.frd')
+    # test_my_single_file(d + '/other/ball.frd')
+    # test_my_single_file('../../cae/examples/default.frd')
+    # test_my_single_file(d + '/ccx/test/achtel2.frd')
+    # test_my_single_file(d + '/mkraska/RVE/PlanarSlide/Refs/Zug.frd')
+    # test_my_single_file(d + '/mkraska/Contact/CNC/Refs/solve.frd')
+    # test_my_single_file(d + '/mkraska/Contact/Eyebar/Refs/eyebar.frd')
+    # test_my_single_file(d + '/mkraska/Test/BeamSections/Refs/u1General.frd')
 
     delta = time.perf_counter() - start
     print('\nTotal', get_time_delta(delta))

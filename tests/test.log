@@ -8,6 +8,7 @@ INFO: 8 cells
 WARNING: No time increments!
 INFO: Writing achtel2.vtk
 INFO: Writing achtel2.vtu
+0m 0.0s
 
 ==================================================
 2: ccx/test/ball.frd
@@ -17,6 +18,7 @@ INFO: 769 cells
 WARNING: No time increments!
 INFO: Writing ball.vtk
 INFO: Writing ball.vtu
+0m 0.0s
 
 ==================================================
 3: ccx/test/beamfrdwrite.frd
@@ -30,6 +32,7 @@ INFO: Writing beamfrdwrite.1.vtu
 INFO: Step 2, time 2.0, NT, 1 components, 261 values
 INFO: Writing beamfrdwrite.2.vtk
 INFO: Writing beamfrdwrite.2.vtu
+0m 0.0s
 
 ==================================================
 4: ccx/test/metalforming.frd
@@ -40,6 +43,7 @@ INFO: 1 time increment
 INFO: Step 1, time 1.00e-03, CONTACT, 6 components, 2032 values
 INFO: Writing metalforming.vtk
 INFO: Writing metalforming.vtu
+0m 0.1s
 
 ==================================================
 5: ccx/test/twobeam.frd
@@ -54,6 +58,7 @@ INFO: Step 1, time 1.0, S_Mises, 1 components, 282 values
 INFO: Step 1, time 1.0, S_Principal, 3 components, 282 values
 INFO: Writing twobeam.vtk
 INFO: Writing twobeam.vtu
+0m 0.0s
 
 ==================================================
 6: cgx/result.frd
@@ -121,6 +126,7 @@ INFO: Step 10, time 68812.0, S_Mises, 1 components, 3150 values
 INFO: Step 10, time 68812.0, S_Principal, 3 components, 3150 values
 INFO: Writing result.10.vtk
 INFO: Writing result.10.vtu
+0m 2.3s
 
 ==================================================
 7: elements/C3D15.frd
@@ -130,6 +136,7 @@ INFO: 1 cells
 WARNING: No time increments!
 INFO: Writing C3D15.vtk
 INFO: Writing C3D15.vtu
+0m 0.0s
 
 ==================================================
 8: elements/C3D20.frd
@@ -139,6 +146,7 @@ INFO: 1 cells
 WARNING: No time increments!
 INFO: Writing C3D20.vtk
 INFO: Writing C3D20.vtu
+0m 0.0s
 
 ==================================================
 9: elements/C3D4.frd
@@ -148,6 +156,7 @@ INFO: 1 cells
 WARNING: No time increments!
 INFO: Writing C3D4.vtk
 INFO: Writing C3D4.vtu
+0m 0.0s
 
 ==================================================
 10: elements/CPE3.frd
@@ -157,6 +166,7 @@ INFO: 1 cells
 WARNING: No time increments!
 INFO: Writing CPE3.vtk
 INFO: Writing CPE3.vtu
+0m 0.0s
 
 ==================================================
 11: elements/CPE4.frd
@@ -166,6 +176,7 @@ INFO: 1 cells
 WARNING: No time increments!
 INFO: Writing CPE4.vtk
 INFO: Writing CPE4.vtu
+0m 0.0s
 
 ==================================================
 12: elements/CPS3.frd
@@ -175,6 +186,7 @@ INFO: 1 cells
 WARNING: No time increments!
 INFO: Writing CPS3.vtk
 INFO: Writing CPS3.vtu
+0m 0.0s
 
 ==================================================
 13: elements/CPS4.frd
@@ -184,6 +196,7 @@ INFO: 1 cells
 WARNING: No time increments!
 INFO: Writing CPS4.vtk
 INFO: Writing CPS4.vtu
+0m 0.0s
 
 ==================================================
 14: elements/S3.frd
@@ -193,6 +206,7 @@ INFO: 1 cells
 WARNING: No time increments!
 INFO: Writing S3.vtk
 INFO: Writing S3.vtu
+0m 0.0s
 
 ==================================================
 15: elements/S4.frd
@@ -202,6 +216,7 @@ INFO: 1 cells
 WARNING: No time increments!
 INFO: Writing S4.vtk
 INFO: Writing S4.vtu
+0m 0.0s
 
 ==================================================
 16: elements/S6.frd
@@ -211,6 +226,7 @@ INFO: 1 cells
 WARNING: No time increments!
 INFO: Writing S6.vtk
 INFO: Writing S6.vtu
+0m 0.0s
 
 ==================================================
 17: elements/S8.frd
@@ -220,6 +236,7 @@ INFO: 1 cells
 WARNING: No time increments!
 INFO: Writing S8.vtk
 INFO: Writing S8.vtu
+0m 0.0s
 
 ==================================================
 18: mkraska/CAD/OnshapeTutorial/Refs/solve.frd
@@ -234,6 +251,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 5625 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 5625 values
 INFO: Writing solve.vtk
 INFO: Writing solve.vtu
+0m 0.5s
 
 ==================================================
 19: mkraska/CAD/Opt/Refs/Solve.frd
@@ -249,6 +267,7 @@ INFO: Step 1, time 1.0, RF, 3 components, 612 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 612 values
 INFO: Writing Solve.vtk
 INFO: Writing Solve.vtu
+0m 0.1s
 
 ==================================================
 20: mkraska/Contact/CNC/Refs/solve.frd
@@ -316,6 +335,7 @@ INFO: Writing solve.19.vtu
 INFO: Step 20, time 1255.5, U, 3 components, 141406 values
 INFO: Writing solve.20.vtk
 INFO: Writing solve.20.vtu
+0m 47.0s
 
 ==================================================
 21: mkraska/Contact/Eyebar/Refs/eyebar.frd
@@ -648,6 +668,7 @@ WARNING: Truncating CONTACT data. More values than nodes.
 INFO: Step 25, time 1.0, ERROR, 1 components, 1806 values
 INFO: Writing eyebar.25.vtk
 INFO: Writing eyebar.25.vtu
+0m 7.0s
 
 ==================================================
 22: mkraska/Contact/Hertz_2D/Refs/Hertz.frd
@@ -677,6 +698,7 @@ INFO: Step 2, time 2.0, CONTACT, 6 components, 9602 values
 INFO: Step 2, time 2.0, ERROR, 1 components, 9602 values
 INFO: Writing Hertz.2.vtk
 INFO: Writing Hertz.2.vtu
+0m 2.7s
 
 ==================================================
 23: mkraska/Contact/Hertz_axi/Refs/Hertz.frd
@@ -695,6 +717,7 @@ INFO: Step 1, time 1.0, CONTACT, 6 components, 9602 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 9602 values
 INFO: Writing Hertz.vtk
 INFO: Writing Hertz.vtu
+0m 1.4s
 
 ==================================================
 24: mkraska/Contact/Leafspring/Refs/solve.frd
@@ -726,6 +749,7 @@ INFO: Step 3, time 1.0, CONTACT, 6 components, 360 values
 INFO: Step 3, time 1.0, ERROR, 1 components, 360 values
 INFO: Writing solve.3.vtk
 INFO: Writing solve.3.vtu
+0m 0.1s
 
 ==================================================
 25: mkraska/Contact/Penalty/Refs/solve.frd
@@ -988,6 +1012,7 @@ INFO: Step 51, time 2.0, CONTACT, 6 components, 16 values
 INFO: Step 51, time 2.0, CELS, 1 components, 16 values
 INFO: Writing solve.51.vtk
 INFO: Writing solve.51.vtu
+0m 0.4s
 
 ==================================================
 26: mkraska/Contact/Shell0/Refs/qu4_equ/equ.frd
@@ -1135,6 +1160,7 @@ INFO: Step 21, time 44650.9, S_Principal, 3 components, 100 values
 INFO: Step 21, time 44650.9, ERROR, 1 components, 100 values
 INFO: Writing equ.20.vtk
 INFO: Writing equ.20.vtu
+0m 0.4s
 
 ==================================================
 27: mkraska/Contact/Shell0/Refs/qu4_pc-ns/pc-ns.frd
@@ -1282,6 +1308,7 @@ INFO: Step 21, time 44746.8, S_Principal, 3 components, 100 values
 INFO: Step 21, time 44746.8, ERROR, 1 components, 100 values
 INFO: Writing pc-ns.20.vtk
 INFO: Writing pc-ns.20.vtu
+0m 0.4s
 
 ==================================================
 28: mkraska/Contact/Shell0/Refs/qu4_pc-ss/pc-ss.frd
@@ -1429,6 +1456,7 @@ INFO: Step 21, time 57134.6, S_Principal, 3 components, 100 values
 INFO: Step 21, time 57134.6, ERROR, 1 components, 100 values
 INFO: Writing pc-ss.20.vtk
 INFO: Writing pc-ss.20.vtu
+0m 0.4s
 
 ==================================================
 29: mkraska/Contact/Shell0/Refs/qu4_tie/tie.frd
@@ -1576,6 +1604,7 @@ INFO: Step 21, time 45813.7, S_Principal, 3 components, 100 values
 INFO: Step 21, time 45813.7, ERROR, 1 components, 100 values
 INFO: Writing tie.20.vtk
 INFO: Writing tie.20.vtu
+0m 0.4s
 
 ==================================================
 30: mkraska/Contact/Shell0/Refs/qu8_equ/equ.frd
@@ -1723,6 +1752,7 @@ INFO: Step 21, time 18518.9, S_Principal, 3 components, 310 values
 INFO: Step 21, time 18518.9, ERROR, 1 components, 310 values
 INFO: Writing equ.20.vtk
 INFO: Writing equ.20.vtu
+0m 0.7s
 
 ==================================================
 31: mkraska/Contact/Shell0/Refs/qu8_pc-ns/pc-ns.frd
@@ -1870,6 +1900,7 @@ INFO: Step 21, time 20490.5, S_Principal, 3 components, 310 values
 INFO: Step 21, time 20490.5, ERROR, 1 components, 310 values
 INFO: Writing pc-ns.20.vtk
 INFO: Writing pc-ns.20.vtu
+0m 0.7s
 
 ==================================================
 32: mkraska/Contact/Shell0/Refs/qu8_pc-ss/pc-ss.frd
@@ -2017,6 +2048,7 @@ INFO: Step 21, time 20612.1, S_Principal, 3 components, 310 values
 INFO: Step 21, time 20612.1, ERROR, 1 components, 310 values
 INFO: Writing pc-ss.20.vtk
 INFO: Writing pc-ss.20.vtu
+0m 0.7s
 
 ==================================================
 33: mkraska/Contact/Shell0/Refs/qu8_tie/tie.frd
@@ -2164,6 +2196,7 @@ INFO: Step 21, time 20849.6, S_Principal, 3 components, 310 values
 INFO: Step 21, time 20849.6, ERROR, 1 components, 310 values
 INFO: Writing tie.20.vtk
 INFO: Writing tie.20.vtu
+0m 0.7s
 
 ==================================================
 34: mkraska/Contact/Shell0/Refs/qu8r_equ/equ.frd
@@ -2311,6 +2344,7 @@ INFO: Step 21, time 14425.5, S_Principal, 3 components, 310 values
 INFO: Step 21, time 14425.5, ERROR, 1 components, 310 values
 INFO: Writing equ.20.vtk
 INFO: Writing equ.20.vtu
+0m 0.7s
 
 ==================================================
 35: mkraska/Contact/Shell0/Refs/qu8r_pc-ns/pc-ns.frd
@@ -2458,6 +2492,7 @@ INFO: Step 21, time 17817.6, S_Principal, 3 components, 310 values
 INFO: Step 21, time 17817.6, ERROR, 1 components, 310 values
 INFO: Writing pc-ns.20.vtk
 INFO: Writing pc-ns.20.vtu
+0m 0.7s
 
 ==================================================
 36: mkraska/Contact/Shell0/Refs/qu8r_pc-ss/pc-ss.frd
@@ -2605,6 +2640,7 @@ INFO: Step 21, time 18755.0, S_Principal, 3 components, 310 values
 INFO: Step 21, time 18755.0, ERROR, 1 components, 310 values
 INFO: Writing pc-ss.20.vtk
 INFO: Writing pc-ss.20.vtu
+0m 0.7s
 
 ==================================================
 37: mkraska/Contact/Shell0/Refs/qu8r_tie/tie.frd
@@ -2752,6 +2788,7 @@ INFO: Step 21, time 17862.8, S_Principal, 3 components, 310 values
 INFO: Step 21, time 17862.8, ERROR, 1 components, 310 values
 INFO: Writing tie.20.vtk
 INFO: Writing tie.20.vtu
+0m 0.7s
 
 ==================================================
 38: mkraska/Contact/Shell1/Refs/tie.frd
@@ -2766,6 +2803,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 1193 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 1193 values
 INFO: Writing tie.vtk
 INFO: Writing tie.vtu
+0m 0.1s
 
 ==================================================
 39: mkraska/Contact/Tubes/Refs/solve.frd
@@ -2829,6 +2867,7 @@ INFO: Step 7, time 1.0, CONTACT, 6 components, 3876 values
 INFO: Step 7, time 1.0, ERROR, 1 components, 3876 values
 INFO: Writing solve.7.vtk
 INFO: Writing solve.7.vtu
+0m 1.9s
 
 ==================================================
 40: mkraska/Contact/Valve/Refs/valve.frd
@@ -2844,6 +2883,7 @@ INFO: Step 1, time 1.0, CONTACT, 6 components, 1283 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 1283 values
 INFO: Writing valve.vtk
 INFO: Writing valve.vtu
+0m 0.1s
 
 ==================================================
 41: mkraska/Drahtbiegen/Biegung/Refs/Biegung.frd
@@ -4012,6 +4052,7 @@ INFO: Step 129, time 1.0, CONTACT, 6 components, 859 values
 INFO: Step 129, time 1.0, ERROR, 1 components, 859 values
 INFO: Writing Biegung.129.vtk
 INFO: Writing Biegung.129.vtu
+0m 14.2s
 
 ==================================================
 42: mkraska/Dynamics/Discrete/Refs/MS.frd
@@ -4315,6 +4356,7 @@ INFO: Step 60, time 12000.0, DISPI, 3 components, 21 values
 INFO: Step 60, time 12000.0, PDISP, 6 components, 21 values
 INFO: Writing MS.60.vtk
 INFO: Writing MS.60.vtu
+0m 0.5s
 
 ==================================================
 43: mkraska/Dynamics/Discrete/Refs/MSM.frd
@@ -4328,6 +4370,7 @@ INFO: Writing MSM.1.vtu
 INFO: Step 2, time 0.00e+00, U, 3 components, 3 values
 INFO: Writing MSM.2.vtk
 INFO: Writing MSM.2.vtu
+0m 0.0s
 
 ==================================================
 44: mkraska/Elements/Solid/Refs/solid.frd
@@ -4342,6 +4385,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 1386 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 1386 values
 INFO: Writing solid.vtk
 INFO: Writing solid.vtu
+0m 0.1s
 
 ==================================================
 45: mkraska/Kasten/Refs/Kasten.frd
@@ -5156,6 +5200,7 @@ INFO: Step 101, time 2.0, PEEQ, 1 components, 2012 values
 INFO: Step 101, time 2.0, ERROR, 1 components, 2012 values
 INFO: Writing Kasten.101.vtk
 INFO: Writing Kasten.101.vtu
+0m 17.0s
 
 ==================================================
 46: mkraska/Linear/BiaxBending/Refs/Biegung.frd
@@ -5170,6 +5215,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 1353 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 1353 values
 INFO: Writing Biegung.vtk
 INFO: Writing Biegung.vtu
+0m 0.1s
 
 ==================================================
 47: mkraska/Linear/Crack1/Refs/solve.frd
@@ -5184,6 +5230,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 12906 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 12906 values
 INFO: Writing solve.vtk
 INFO: Writing solve.vtu
+0m 0.9s
 
 ==================================================
 48: mkraska/Linear/L-Plate/Refs/solve.frd
@@ -5229,6 +5276,7 @@ INFO: Writing solve.10.vtu
 INFO: Step 11, time 1.9, U, 3 components, 1203 values
 INFO: Writing solve.11.vtk
 INFO: Writing solve.11.vtu
+0m 0.3s
 
 ==================================================
 49: mkraska/Linear/Mesh1/Refs/modal.frd
@@ -5272,6 +5320,7 @@ INFO: Writing modal.11.vtu
 INFO: Step 12, time 5646.5, U, 3 components, 1010 values
 INFO: Writing modal.12.vtk
 INFO: Writing modal.12.vtu
+0m 0.2s
 
 ==================================================
 50: mkraska/Linear/PSE/Refs/solve.frd
@@ -5289,6 +5338,7 @@ INFO: Step 1, time 1.0, E_Principal, 3 components, 1764 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 1764 values
 INFO: Writing solve.vtk
 INFO: Writing solve.vtu
+0m 0.3s
 
 ==================================================
 51: mkraska/Linear/Plates/Refs/plates.frd
@@ -5303,6 +5353,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 104 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 104 values
 INFO: Writing plates.vtk
 INFO: Writing plates.vtu
+0m 0.0s
 
 ==================================================
 52: mkraska/Linear/Separate/Refs/element.frd
@@ -5317,6 +5368,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 240 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 240 values
 INFO: Writing element.vtk
 INFO: Writing element.vtu
+0m 0.0s
 
 ==================================================
 53: mkraska/Linear/Separate/Refs/nodal.frd
@@ -5331,6 +5383,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 104 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 104 values
 INFO: Writing nodal.vtk
 INFO: Writing nodal.vtu
+0m 0.0s
 
 ==================================================
 54: mkraska/Linear/ShearCenter/Refs/II.frd
@@ -5345,6 +5398,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 12191 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 12191 values
 INFO: Writing II.vtk
 INFO: Writing II.vtu
+0m 0.7s
 
 ==================================================
 55: mkraska/Linear/StressConc/Refs/Stress.frd
@@ -5359,6 +5413,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 500 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 500 values
 INFO: Writing Stress.vtk
 INFO: Writing Stress.vtu
+0m 0.0s
 
 ==================================================
 56: mkraska/Linear/StressConc1/Refs/Stress.frd
@@ -5373,6 +5428,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 793 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 793 values
 INFO: Writing Stress.vtk
 INFO: Writing Stress.vtu
+0m 0.1s
 
 ==================================================
 57: mkraska/Linear/StressConc1/Refs/Stress1.frd
@@ -5388,6 +5444,7 @@ INFO: Step 1, time 1.0, RF, 3 components, 1807 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 1807 values
 INFO: Writing Stress1.vtk
 INFO: Writing Stress1.vtu
+0m 0.1s
 
 ==================================================
 58: mkraska/NonLinear/3PB/Refs/Biegung.frd
@@ -5811,6 +5868,7 @@ INFO: Step 52, time 1.0, PEEQ, 1 components, 5175 values
 INFO: Step 52, time 1.0, ERROR, 1 components, 5175 values
 INFO: Writing Biegung.52.vtk
 INFO: Writing Biegung.52.vtu
+0m 18.3s
 
 ==================================================
 59: mkraska/NonLinear/Cut/Refs/ResultsForLastIterations.frd
@@ -6280,6 +6338,7 @@ INFO: Writing ResultsForLastIterations.153.vtu
 INFO: Step 154, time 0.00e+00, U, 3 components, 31372 values
 INFO: Writing ResultsForLastIterations.154.vtk
 INFO: Writing ResultsForLastIterations.154.vtu
+1m 12.8s
 
 ==================================================
 60: mkraska/NonLinear/Honeycomb/Refs/Biegung.frd
@@ -7087,6 +7146,7 @@ INFO: Step 100, time 1.0, PEEQ, 1 components, 11086 values
 INFO: Step 100, time 1.0, ERROR, 1 components, 11086 values
 INFO: Writing Biegung.100.vtk
 INFO: Writing Biegung.100.vtu
+1m 12.4s
 
 ==================================================
 61: mkraska/NonLinear/Honeycomb/Refs/ResultsForLastIterations.frd
@@ -7127,6 +7187,7 @@ INFO: Writing ResultsForLastIterations.10.vtu
 INFO: Step 11, time 0.00e+00, U, 3 components, 43749 values
 INFO: Writing ResultsForLastIterations.11.vtk
 INFO: Writing ResultsForLastIterations.11.vtu
+0m 5.7s
 
 ==================================================
 62: mkraska/NonLinear/Rohrknie/Refs/shell-modal.frd
@@ -7164,6 +7225,7 @@ INFO: Writing shell-modal.09.vtu
 INFO: Step 10, time 2533.2, U, 3 components, 672 values
 INFO: Writing shell-modal.10.vtk
 INFO: Writing shell-modal.10.vtu
+0m 0.2s
 
 ==================================================
 63: mkraska/NonLinear/Rohrknie/Refs/shell-sym-modal.frd
@@ -7201,6 +7263,7 @@ INFO: Writing shell-sym-modal.09.vtu
 INFO: Step 10, time 5492.1, U, 3 components, 386 values
 INFO: Writing shell-sym-modal.10.vtk
 INFO: Writing shell-sym-modal.10.vtu
+0m 0.1s
 
 ==================================================
 64: mkraska/NonLinear/Rohrknie/Refs/solid-modal.frd
@@ -7238,6 +7301,7 @@ INFO: Writing solid-modal.09.vtu
 INFO: Step 10, time 2528.6, U, 3 components, 664 values
 INFO: Writing solid-modal.10.vtk
 INFO: Writing solid-modal.10.vtu
+0m 0.2s
 
 ==================================================
 65: mkraska/NonLinear/Rohrknie/Refs/solid-static.frd
@@ -7392,6 +7456,7 @@ INFO: Step 21, time 2.0, S_Principal, 3 components, 664 values
 INFO: Step 21, time 2.0, ERROR, 1 components, 664 values
 INFO: Writing solid-static.21.vtk
 INFO: Writing solid-static.21.vtu
+0m 1.2s
 
 ==================================================
 66: mkraska/NonLinear/Rohrknie/Refs/solid-sym-modal.frd
@@ -7429,6 +7494,7 @@ INFO: Writing solid-sym-modal.09.vtu
 INFO: Step 10, time 5465.9, U, 3 components, 386 values
 INFO: Writing solid-sym-modal.10.vtk
 INFO: Writing solid-sym-modal.10.vtu
+0m 0.1s
 
 ==================================================
 67: mkraska/NonLinear/Sandwichtest/Refs/Biegung.frd
@@ -7832,6 +7898,7 @@ INFO: Step 44, time 1.0, CONTACT, 6 components, 4659 values
 INFO: Step 44, time 1.0, ERROR, 1 components, 4659 values
 INFO: Writing Biegung.44.vtk
 INFO: Writing Biegung.44.vtu
+0m 14.1s
 
 ==================================================
 68: mkraska/NonLinear/Sections/Plastic/Refs/Biegung.frd
@@ -7999,6 +8066,7 @@ INFO: Step 20, time 1.0, PEEQ, 1 components, 11571 values
 INFO: Step 20, time 1.0, ERROR, 1 components, 11571 values
 INFO: Writing Biegung.20.vtk
 INFO: Writing Biegung.20.vtu
+0m 15.0s
 
 ==================================================
 69: mkraska/NonLinear/Sections/Refs/Biegung.frd
@@ -8013,6 +8081,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 6542 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 6542 values
 INFO: Writing Biegung.vtk
 INFO: Writing Biegung.vtu
+0m 0.4s
 
 ==================================================
 70: mkraska/NonLinear/TensileTest/Refs/Zug.frd
@@ -8028,6 +8097,7 @@ INFO: Step 101, time 2.0, PEEQ, 1 components, 2093 values
 INFO: Step 101, time 2.0, ERROR, 1 components, 2093 values
 INFO: Writing Zug.vtk
 INFO: Writing Zug.vtu
+0m 0.2s
 
 ==================================================
 71: mkraska/Pillow/Refs/static.frd
@@ -8074,6 +8144,7 @@ INFO: Step 6, time 6.00e-01, U, 3 components, 882 values
 INFO: Step 6, time 6.00e-01, RF, 3 components, 882 values
 INFO: Writing static.6.vtk
 INFO: Writing static.6.vtu
+0m 0.4s
 
 ==================================================
 72: mkraska/RVE/Periodic/Refs/Solve.frd
@@ -8088,6 +8159,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 1331 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 1331 values
 INFO: Writing Solve.vtk
 INFO: Writing Solve.vtu
+0m 0.1s
 
 ==================================================
 73: mkraska/RVE/PlanarSlide/Refs/Zug.frd
@@ -8215,6 +8287,7 @@ INFO: Step 15, time 1.0, PEEQ, 1 components, 21711 values
 INFO: Step 15, time 1.0, ERROR, 1 components, 21711 values
 INFO: Writing Zug.15.vtk
 INFO: Writing Zug.15.vtu
+0m 21.4s
 
 ==================================================
 74: mkraska/RVE/PlaneOrtho1/Refs/Zug.frd
@@ -8342,6 +8415,7 @@ INFO: Step 15, time 1.0, PEEQ, 1 components, 1154 values
 INFO: Step 15, time 1.0, ERROR, 1 components, 1154 values
 INFO: Writing Zug.15.vtk
 INFO: Writing Zug.15.vtu
+0m 1.4s
 
 ==================================================
 75: mkraska/Test/Beam/Refs/modal.frd
@@ -8409,6 +8483,7 @@ INFO: Writing modal.19.vtu
 INFO: Step 20, time 26008.8, U, 3 components, 202 values
 INFO: Writing modal.20.vtk
 INFO: Writing modal.20.vtu
+0m 0.2s
 
 ==================================================
 76: mkraska/Test/BeamSections/Refs/b32.frd
@@ -8426,6 +8501,7 @@ INFO: Step 1, time 1.0, E_Principal, 3 components, 68 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 68 values
 INFO: Writing b32.vtk
 INFO: Writing b32.vtu
+0m 0.0s
 
 ==================================================
 77: mkraska/Test/BeamSections/Refs/u1General.frd
@@ -8440,6 +8516,7 @@ WARNING: Step 1, time 1.0, S_Principal, 3 components, 0 values
 WARNING: Step 1, time 1.0, ERROR, 1 components, 0 values
 INFO: Writing u1General.vtk
 INFO: Writing u1General.vtu
+0m 0.0s
 
 ==================================================
 78: mkraska/Test/Distributing/Refs/solve.frd
@@ -8468,6 +8545,7 @@ INFO: Step 3, time 3.0, S_Principal, 3 components, 702 values
 INFO: Step 3, time 3.0, ERROR, 1 components, 702 values
 INFO: Writing solve.3.vtk
 INFO: Writing solve.3.vtu
+0m 0.2s
 
 ==================================================
 79: mkraska/Test/Joints/Refs/solve.frd
@@ -8512,6 +8590,7 @@ INFO: Step 11, time 1.0, S_Principal, 3 components, 2968 values
 INFO: Step 11, time 1.0, ERROR, 1 components, 2968 values
 INFO: Writing solve.11.vtk
 INFO: Writing solve.11.vtu
+0m 0.7s
 
 ==================================================
 80: mkraska/Test/Joints/Refs/solve2.frd
@@ -8567,6 +8646,7 @@ INFO: Step 13, time 2.0, U, 3 components, 2908 values
 INFO: Step 13, time 2.0, RF, 3 components, 2908 values
 INFO: Writing solve2.13.vtk
 INFO: Writing solve2.13.vtu
+0m 1.0s
 
 ==================================================
 81: mkraska/Test/Meanrot/Refs/solve.frd
@@ -8595,6 +8675,7 @@ INFO: Step 3, time 3.0, S_Principal, 3 components, 702 values
 INFO: Step 3, time 3.0, ERROR, 1 components, 702 values
 INFO: Writing solve.3.vtk
 INFO: Writing solve.3.vtu
+0m 0.2s
 
 ==================================================
 82: mkraska/Test/Supports/Refs/solve.frd
@@ -8662,6 +8743,7 @@ INFO: Writing solve.19.vtu
 INFO: Step 20, time 18187.3, U, 3 components, 525 values
 INFO: Writing solve.20.vtk
 INFO: Writing solve.20.vtu
+0m 0.3s
 
 ==================================================
 83: mkraska/Test/Supports/Refs/trans.frd
@@ -8886,6 +8968,7 @@ INFO: Step 31, time 4.0, S_Principal, 3 components, 525 values
 INFO: Step 31, time 4.0, ERROR, 1 components, 525 values
 INFO: Writing trans.31.vtk
 INFO: Writing trans.31.vtu
+0m 1.6s
 
 ==================================================
 84: mkraska/Test/Supports/Refs/trfix.frd
@@ -8914,6 +8997,7 @@ INFO: Step 3, time 3.0, S_Principal, 3 components, 525 values
 INFO: Step 3, time 3.0, ERROR, 1 components, 525 values
 INFO: Writing trfix.3.vtk
 INFO: Writing trfix.3.vtu
+0m 0.1s
 
 ==================================================
 85: mkraska/Test/Supports1/Refs/solve.frd
@@ -8981,6 +9065,7 @@ INFO: Writing solve.19.vtu
 INFO: Step 20, time 33566.3, U, 3 components, 2746 values
 INFO: Writing solve.20.vtk
 INFO: Writing solve.20.vtu
+0m 1.0s
 
 ==================================================
 86: mkraska/Thermal/Thermal distortion/Refs/Tjoint.frd
@@ -8995,6 +9080,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 1201 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 1201 values
 INFO: Writing Tjoint.vtk
 INFO: Writing Tjoint.vtu
+0m 0.1s
 
 ==================================================
 87: mkraska/Thermal/Thermal shock/Refs/solve.frd
@@ -9402,6 +9488,7 @@ INFO: Step 50, time 5.00e-01, S_Principal, 3 components, 1373 values
 INFO: Step 50, time 5.00e-01, ERROR, 1 components, 1373 values
 INFO: Writing solve.50.vtk
 INFO: Writing solve.50.vtu
+0m 5.5s
 
 ==================================================
 88: mkraska/Thermal/Thermografie/Refs/Naht.frd
@@ -9709,6 +9796,7 @@ INFO: Writing Naht.099.vtu
 INFO: Step 100, time 2.0, NT, 1 components, 7602 values
 INFO: Writing Naht.100.vtk
 INFO: Writing Naht.100.vtu
+0m 8.6s
 
 ==================================================
 89: mkraska_final_ccx/Pillow/static.frd
@@ -9755,6 +9843,7 @@ INFO: Step 6, time 6.00e-01, U, 3 components, 882 values
 INFO: Step 6, time 6.00e-01, RF, 3 components, 882 values
 INFO: Writing static.6.vtk
 INFO: Writing static.6.vtu
+0m 0.3s
 
 ==================================================
 90: other/CubeTie/CubeTie.frd
@@ -9781,6 +9870,7 @@ INFO: Step 6, time 3.01e-02, U, 3 components, 44556 values
 WARNING: 17520 Inf values are converted to 0.0
 INFO: Writing CubeTie.6.vtk
 INFO: Writing CubeTie.6.vtu
+0m 3.1s
 
 ==================================================
 91: other/Dichtstoff_beam_coupling_compl.frd
@@ -9795,6 +9885,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 378 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 378 values
 INFO: Writing Dichtstoff_beam_coupling_compl.vtk
 INFO: Writing Dichtstoff_beam_coupling_compl.vtu
+0m 0.0s
 
 ==================================================
 92: other/Ihor_Mirzov_baffle_2D.frd
@@ -9805,6 +9896,7 @@ INFO: 1 time increment
 INFO: Step 1, time 1.0, NT, 1 components, 14836 values
 INFO: Writing Ihor_Mirzov_baffle_2D.vtk
 INFO: Writing Ihor_Mirzov_baffle_2D.vtu
+0m 0.3s
 
 ==================================================
 93: other/Jan_Lukas_modal_dynamic_beammodal.frd
@@ -9972,6 +10064,7 @@ INFO: Step 16, time 18574.3, E_Principal, 3 components, 1221 values
 INFO: Step 16, time 18574.3, ERROR, 1 components, 1221 values
 INFO: Writing Jan_Lukas_modal_dynamic_beammodal.16.vtk
 INFO: Writing Jan_Lukas_modal_dynamic_beammodal.16.vtu
+0m 2.9s
 
 ==================================================
 94: other/Jan_Lukas_modal_dynamic_staticbeam2.frd
@@ -10139,6 +10232,7 @@ INFO: Step 16, time 51346.8, E_Principal, 3 components, 321 values
 INFO: Step 16, time 51346.8, ERROR, 1 components, 321 values
 INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.16.vtk
 INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.16.vtu
+0m 1.0s
 
 ==================================================
 95: other/Jan_Lukas_static_structural.frd
@@ -10156,6 +10250,7 @@ INFO: Step 1, time 1.0, E_Principal, 3 components, 321 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 321 values
 INFO: Writing Jan_Lukas_static_structural.vtk
 INFO: Writing Jan_Lukas_static_structural.vtu
+0m 0.1s
 
 ==================================================
 96: other/John_Mannisto_blade_sector.frd
@@ -10223,6 +10318,7 @@ INFO: Step 25, time 318.6, U, 3 components, 1720 values
 INFO: Step 25, time 318.6, DISPI, 3 components, 1720 values
 INFO: Writing John_Mannisto_blade_sector.15.vtk
 INFO: Writing John_Mannisto_blade_sector.15.vtu
+0m 0.6s
 
 ==================================================
 97: other/Kaffeeheblerei_hinge.frd
@@ -10237,6 +10333,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 378 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 378 values
 INFO: Writing Kaffeeheblerei_hinge.vtk
 INFO: Writing Kaffeeheblerei_hinge.vtu
+0m 0.0s
 
 ==================================================
 98: other/Nidish_Narayanaa_Balaji.frd
@@ -10314,6 +10411,7 @@ INFO: Step 10, time 20441.6, S_Principal, 3 components, 3432 values
 INFO: Step 10, time 20441.6, ERROR, 1 components, 3432 values
 INFO: Writing Nidish_Narayanaa_Balaji.10.vtk
 INFO: Writing Nidish_Narayanaa_Balaji.10.vtu
+0m 2.2s
 
 ==================================================
 99: other/ball.frd
@@ -10377,6 +10475,7 @@ INFO: Step 8, time 8.00e-01, S_Principal, 3 components, 4812 values
 INFO: Step 8, time 8.00e-01, ERROR, 1 components, 4812 values
 INFO: Writing ball.8.vtk
 INFO: Writing ball.8.vtu
+0m 2.5s
 
 ==================================================
 100: other/ddjokic-CalculiX-tests-master/Spanner/Spanner-out.frd
@@ -10393,6 +10492,7 @@ INFO: Step 1, time 1.0, E_Mises, 1 components, 10386 values
 INFO: Step 1, time 1.0, E_Principal, 3 components, 10386 values
 INFO: Writing Spanner-out.vtk
 INFO: Writing Spanner-out.vtu
+0m 1.4s
 
 ==================================================
 101: other/dichtstoff_2_HE8.frd
@@ -10407,6 +10507,7 @@ INFO: Step 1, time 1.0, S_Principal, 3 components, 12 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 12 values
 INFO: Writing dichtstoff_2_HE8.vtk
 INFO: Writing dichtstoff_2_HE8.vtu
+0m 0.0s
 
 ==================================================
 102: yahoo/1.frd
@@ -10714,6 +10815,7 @@ INFO: Step 30, time 3.0, E_Principal, 3 components, 4 values
 INFO: Step 30, time 3.0, ERROR, 1 components, 4 values
 INFO: Writing 1.30.vtk
 INFO: Writing 1.30.vtu
+0m 0.9s
 
 ==================================================
 103: yahoo/2d_ramberg_osgood.frd
@@ -10733,6 +10835,7 @@ INFO: Step 1, time 1.0, ENER, 1 components, 25 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 25 values
 INFO: Writing 2d_ramberg_osgood.vtk
 INFO: Writing 2d_ramberg_osgood.vtu
+0m 0.0s
 
 ==================================================
 104: yahoo/3d_DEFORMATION_PLASTICITY.frd
@@ -10752,5 +10855,6 @@ INFO: Step 1, time 1.0, ENER, 1 components, 36 values
 INFO: Step 1, time 1.0, ERROR, 1 components, 36 values
 INFO: Writing 3d_DEFORMATION_PLASTICITY.vtk
 INFO: Writing 3d_DEFORMATION_PLASTICITY.vtu
+0m 0.0s
 
-Total 6m 26.3s
+Total 6m 4.8s

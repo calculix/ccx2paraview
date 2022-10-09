@@ -561,19 +561,22 @@ class NodalResultsBlock:
 
         i = 0 # independent results counter
         while True:
-            line = self.in_file.readline().strip()
+            # line = self.in_file.readline().strip()
+            line = self.in_file.readline()
 
             # End of block
-            if not line or line == '-3':
+            if not line.strip() or line.strip() == '-3':
                 break
 
             row_comps = min(6, self.ncomps) # amount of values written in row
-            regex = '^-1\s+(\d+)' + '(.{12})' * row_comps
-            match = match_line(regex, line)
-            node_num = int(match.group(1))
+            # regex = '^-1\s+(\d+)' + '(.{12})' * row_comps
+            # match = match_line(regex, line)
+            # node_num = int(match.group(1))
+            node_num = int(line[5:13])
             values = []
             for c in range(row_comps):
-                m = match.group(c + 2)
+                # m = match.group(c + 2)
+                m = line[13+12*c:25+12*c]
                 try:
                     # NaN/Inf values will be parsed
                     num = float(m)
@@ -585,17 +588,23 @@ class NodalResultsBlock:
                         self.emitted_warning_types['NaN'] += 1
                 except:
                     # Too big number is written without 'E'
-                    num = float(re.sub(r'(.+).([+-])(\d{3})', r'\1e\2\3', m))
+                    # num = float(re.sub(r'(.+).([+-])(\d{3})', r'\1e\2\3', m))
+                    num = 0.0
                     self.emitted_warning_types['WrongFormat'] += 1
                 values.append(num)
 
             # Result could be multiline
             for j in range((self.ncomps-1)//6):
+                # TODO Inf NaN WrongFormat in those data lines are not catched?
                 row_comps = min(6, self.ncomps-6*(j+1)) # amount of values written in row
-                line = self.in_file.readline().strip()
-                regex = '^-2\s+' + '(.{12})' * row_comps
-                match = match_line(regex, line)
-                values.extend([float(match.group(c+1)) for c in range(row_comps)])
+                # line = self.in_file.readline().strip()
+                line = self.in_file.readline()
+                # regex = '^-2\s+' + '(.{12})' * row_comps
+                # match = match_line(regex, line)
+                for c in range(row_comps):
+                    m = line[13+12*c:25+12*c]
+                    values.append(float(m))
+                # values.extend([float(match.group(c+1)) for c in range(row_comps)])
 
             i += 1
             if node_num in renumbered_nodes:
