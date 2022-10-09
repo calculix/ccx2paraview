@@ -162,6 +162,7 @@ if __name__ == '__main__':
     # test_single_file(d + '/other/Jan_Lukas_static_structural.frd')
     # test_single_file(d + '/other/Ihor_Mirzov_baffle_2D.frd')
     # test_single_file(d + '/other/CubeTie/CubeTie.frd')
+    # test_single_file(d + '/other/ball.frd')
     # test_single_file('../../cae/examples/default.frd')
     # test_single_file(d + '/ccx/test/achtel2.frd')
     # test_single_file(d + '/mkraska/RVE/PlanarSlide/Refs/Zug.frd')
