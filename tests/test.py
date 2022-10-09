@@ -90,7 +90,9 @@ def test_my_parser_in(folder):
 def test_my_single_file(file_path):
     try:
         start = time.perf_counter()
-        Converter(file_path, ['vtk', 'vtu']).run()
+        ccx2paraview = Converter(file_path, ['vtk', 'vtu'],
+                        parseonly=True, nomises=True, noeigen=True)
+        ccx2paraview.run()
         delta = time.perf_counter() - start
         print(get_time_delta(delta))
     except:

@@ -650,9 +650,13 @@ class Converter:
     To implement large file parsing we need a step-by-step reader and writer.
     """
 
-    def __init__(self, frd_file_name, fmt_list):
+    def __init__(self, frd_file_name, fmt_list,
+                parseonly=False, nomises=False, noeigen=False):
         self.frd_file_name = frd_file_name
         self.fmt_list = ['.' + fmt.lower() for fmt in fmt_list] # ['.vtk', '.vtu']
+        self.parseonly = parseonly
+        self.nomises = nomises
+        self.noeigen = noeigen
         self.in_file = None     # path to the .frd-file to be read
         self.node_block = None  # node block
         self.elem_block = None  # elements block
@@ -691,16 +695,17 @@ class Converter:
                     pd.AddArray(b.data_array)
                     pd.Modified()
 
-            for t in threads:
-                t.join() # do not start a new thread while and old one is running 
-            threads.clear()
-            for fmt in self.fmt_list: # ['.vtk', '.vtu']
-                file_name = self.frd_file_name[:-4] + num + fmt
-                logging.info('Writing ' + os.path.basename(file_name))
-                t = threading.Thread(target=self.write_converted_file,
-                    args=(file_name, ))
-                t.start()
-                threads.append(t)
+            if not self.parseonly:
+                for t in threads:
+                    t.join() # do not start a new thread while and old one is running 
+                threads.clear()
+                for fmt in self.fmt_list: # ['.vtk', '.vtu']
+                    file_name = self.frd_file_name[:-4] + num + fmt
+                    logging.info('Writing ' + os.path.basename(file_name))
+                    t = threading.Thread(target=self.write_converted_file,
+                        args=(file_name, ))
+                    t.start()
+                    threads.append(t)
 
         # Write ParaView Data (PVD) for series of VTU files
         if len(self.steps_increments) > 1 and '.vtu' in self.fmt_list:
@@ -792,12 +797,12 @@ class Converter:
                     step_result_blocks.append(b)
 
                     b.get_some_log()
-                    if b.name == 'S':
-                        step_result_blocks.append(self.calculate_mises_stress(b))
-                        step_result_blocks.append(self.calculate_principal(b))
-                    if b.name == 'E':
-                        step_result_blocks.append(self.calculate_mises_strain(b))
-                        step_result_blocks.append(self.calculate_principal(b))
+
+                    if b.name in ['S', 'E']:
+                        if not self.nomises:
+                            step_result_blocks.append(self.calculate_mises(b))
+                        if not self.noeigen:
+                            step_result_blocks.append(self.calculate_principal(b))
 
                 # End
                 elif key == '9999':
@@ -805,8 +810,8 @@ class Converter:
 
         return step_result_blocks
 
-    def calculate_mises_stress(self, b):
-        """Append von Mises stress."""
+    def calculate_mises(self, b):
+        """Append equivalent (von Mises) stress/strain."""
         b1 = NodalResultsBlock(b.node_block)
         b1.name = b.name + '_Mises'
         b1.components = (b1.name, )
@@ -814,50 +819,36 @@ class Converter:
         b1.inc = b.inc
         b1.step = b.step
 
-        # Iterate over nodes
+        # Iterate over points
         global renumbered_nodes
         for point_num in renumbered_nodes.values():
             data = b.data_array.GetTuple(point_num)
-            Sxx = data[0]; Syy = data[1]; Szz = data[2]
-            Sxy = data[3]; Syz = data[4]; Sxz = data[5]
+            Txx = data[0]; Tyy = data[1]; Tzz = data[2]
+            Txy = data[3]; Tyz = data[4]; Txz = data[5]
 
-            # Calculate Mises stress for current node
-            mises = 1 / math.sqrt(2) \
-                * math.sqrt((Sxx - Syy)**2 \
-                + (Syy - Szz)**2 \
-                + (Szz - Sxx)**2 \
-                + 6 * Syz**2 \
-                + 6 * Sxz**2 \
-                + 6 * Sxy**2)
-            b1.set_point_values(point_num, [mises])
+            if b.name == 'S':
+                # Calculate Mises stress for current node
+                mises = 1 / math.sqrt(2) \
+                    * math.sqrt((Txx - Tyy)**2 \
+                    + (Tyy - Tzz)**2 \
+                    + (Tzz - Txx)**2 \
+                    + 6 * Tyz**2 \
+                    + 6 * Txz**2 \
+                    + 6 * Txy**2)
 
-        b1.get_some_log()
-        return b1
+            if b.name == 'E':
+                # Calculate Mises strain for current node
+                tensor = np.array([[Txx, Txy, Txz], [Txy, Tyy, Tyz], [Txz, Tyz, Tzz]])
 
-    def calculate_mises_strain(self, b):
-        """Append von Mises equivalent strain."""
-        b1 = NodalResultsBlock(b.node_block)
-        b1.name = b.name + '_Mises'
-        b1.components = (b1.name,)
-        b1.ncomps = len(b1.components)
-        b1.inc = b.inc
-        b1.step = b.step
+                # Calculate principal values for current node
+                [e1, e2, e3] = np.linalg.eigvals(tensor).tolist()
 
-        # Iterate over nodes
-        global renumbered_nodes
-        for point_num in renumbered_nodes.values():
-            data = b.data_array.GetTuple(point_num)
-            Sxx = data[0]; Syy = data[1]; Szz = data[2]
-            Sxy = data[3]; Syz = data[4]; Sxz = data[5]
+                # Calculate Mises strain for current node
+                mises = 2 / 3 / math.sqrt(2) \
+                    * math.sqrt((e1 - e2)**2 \
+                                + (e2 - e3)**2 \
+                                + (e3 - e1)**2)
 
-            # Calculate Mises stress for current node
-            mises = 1 / math.sqrt(2) \
-                * math.sqrt((Sxx - Syy)**2 \
-                + (Syy - Szz)**2 \
-                + (Szz - Sxx)**2 \
-                + 6 * Syz**2 \
-                + 6 * Sxz**2 \
-                + 6 * Sxy**2)
             b1.set_point_values(point_num, [mises])
 
         b1.get_some_log()
@@ -916,11 +907,12 @@ class Converter:
         """Writes .vtk and .vtu files based on data from FRD object.
         Uses VTK Python package.
         Writes results for one time increment only.
-        NOTE Ugrid always has a mesh - it isn't effective.
+
+        NOTE Ugrid always has a mesh - it isn't effective
+        writer = vtk.vtkEnSightWriter()
+        writer.SetInputData(self.ugrid)
+        writer.SetTransientGeometry()
         """
-        # writer = vtk.vtkEnSightWriter()
-        # writer.SetInputData(self.ugrid)
-        # writer.SetTransientGeometry()
         if file_name.endswith('.vtk'):
             writer = vtk.vtkUnstructuredGridWriter()
             writer.SetInputData(self.ugrid)
@@ -955,6 +947,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('filename', type=str, help='FRD file name with extension')
     ap.add_argument('format', type=str, nargs='+', help='output format: vtk, vtu')
+    ap.add_argument('-parseonly', type=bool, default=False, help='do not write output, only parse')
+    ap.add_argument('-nomises', type=bool, default=False, help='do not append Mises stress/strain')
+    ap.add_argument('-noeigen', type=bool, default=False, help='do not append principal stress/strain')
     args = ap.parse_args()
 
     # Check arguments
@@ -964,7 +959,8 @@ def main():
         assert a in ('vtk', 'vtu'), msg
 
     # Create converter and run it
-    ccx2paraview = Converter(args.filename, args.format)
+    ccx2paraview = Converter(args.filename, args.format, args.parseonly,
+                            args.nomises, args.noeigen)
     ccx2paraview.run()
 
 
