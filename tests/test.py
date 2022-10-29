@@ -90,9 +90,10 @@ def test_my_parser_in(folder):
 def test_my_single_file(file_path):
     try:
         start = time.perf_counter()
-        ccx2paraview = Converter(file_path, ['vtk', 'vtu'],
-                        # parseonly=True, nomises=True, noeigen=True)
-                        parseonly=False, nomises=False, noeigen=False)
+        # ccx2paraview = Converter(file_path, ['vtk', 'vtu'],
+        #                 # parseonly=True, nomises=True, noeigen=True)
+        #                 parseonly=False, nomises=False, noeigen=False)
+        ccx2paraview = Converter(file_path, ['vtk', 'vtu'])
         ccx2paraview.run()
         delta = time.perf_counter() - start
         print(get_time_delta(delta))
@@ -184,16 +185,16 @@ if __name__ == '__main__':
 
     # Prepare logging
     logging.getLogger().addHandler(myHandler())
-    logging.getLogger().setLevel(logging.INFO)
+    logging.getLogger().setLevel(logging.DEBUG)
     print('CONVERTER TEST\n\n')
 
     # test_freecad_parser_in(d)
     # test_freecad_single_file(d + '/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd_')
 
-    test_my_parser_in(d)
+    # test_my_parser_in(d)
     # test_my_single_file(d + '/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd_')
     # test_my_single_file(d + '/other/Jan_Lukas_modal_dynamic_beammodal.frd')
-    # test_my_single_file(d + '/other/John_Mannisto_blade_sector.frd')
+    test_my_single_file(d + '/other/John_Mannisto_blade_sector.frd')
     # test_my_single_file(d + '/other/Jan_Lukas_static_structural.frd')
     # test_my_single_file(d + '/other/Ihor_Mirzov_baffle_2D.frd')
     # test_my_single_file(d + '/other/CubeTie/CubeTie.frd')
