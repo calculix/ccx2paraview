@@ -122,6 +122,8 @@ Please, you may:
 - Simply use this software and ask questions.
 - Share your models and screenshots.
 - Report problems by [posting issues](https://github.com/calculix/ccx2paraview/issues).
+- Do something from the [TODO-list](#TODO) as a developer.
+- Or even [become a sponsor to me](https://github.com/sponsors/imirzov).
 
 <br/><br/>
 
@@ -186,8 +188,6 @@ Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-fo
 # TODO
 
 Test CALMED binary.
-
-Use pandas or numpy for data parsing. No regexp.
 
 Log memory consumption.
 
