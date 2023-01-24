@@ -134,7 +134,7 @@ Please, you may:
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/ccx2paraview.svg)](https://www.python.org/downloads/)
 [![Visual Studio Code](https://img.shields.io/badge/--007ACC?logo=visual%20studio%20code&logoColor=ffffff)](https://code.visualstudio.com/)
 
-[![CalculiX-to-Paraview Converter](https://img.youtube.com/vi/KofE0x0csZE/maxresdefault.jpg)](https://www.youtube.com/watch?v=KofE0x0csZE)
+[![CalculiX-to-Paraview Converter](https://markdown-videos.deta.dev/youtube/KofE0x0csZE)](https://youtu.be/KofE0x0csZE "CalculiX-to-Paraview Converter")
 
 Install package with dependacies:
 
