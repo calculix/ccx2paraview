@@ -764,7 +764,7 @@ class FRD:
         """Append tensor's eigenvalues."""
         b1 = NodalResultsBlock()
         b1.name = b.name + '_Principal'
-        b1.components = ('Min', 'Mid', 'Max')
+        b1.components = ('Min', 'Mid', 'Max', 'Worst')
         b1.ncomps = len(b1.components)
         b1.inc = b.inc
         b1.step = b.step
@@ -777,8 +777,12 @@ class FRD:
             tensor = np.array([[Txx, Txy, Txz], [Txy, Tyy, Tyz], [Txz, Tyz, Tzz]])
 
             # Calculate principal values for current node
-            eigenvalues = np.linalg.eigvals(tensor).tolist()
-            b1.results[node_num] = sorted(eigenvalues)
+            eigenvalues = sorted(np.linalg.eigvals(tensor).tolist())
+            if math.fabs(eigenvalues[0]) > math.fabs(eigenvalues[-1]):
+                eigenvalues.append(eigenvalues[0])
+            else:
+                eigenvalues.append(eigenvalues[-1])
+            b1.results[node_num] = eigenvalues
 
         b1.get_some_log()
         return b1
