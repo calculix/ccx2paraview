@@ -691,10 +691,10 @@ class FRD:
                     b.run(self.in_file, self.node_block)
                     result_blocks.append(b)
                     b.get_some_log()
-                    if b.name == 'S':
+                    if b.name in ('S', 'ZZSTR'):
                         result_blocks.append(self.calculate_mises_stress(b))
                         result_blocks.append(self.calculate_principal(b))
-                    if b.name == 'E':
+                    if b.name in ('E', 'MESTRAIN'):
                         result_blocks.append(self.calculate_mises_strain(b))
                         result_blocks.append(self.calculate_principal(b))
 
@@ -707,7 +707,7 @@ class FRD:
     def calculate_mises_stress(self, b):
         """Append von Mises stress."""
         b1 = NodalResultsBlock()
-        b1.name = 'S_Mises'
+        b1.name = b.name + '_Mises'
         b1.components = (b1.name, )
         b1.ncomps = len(b1.components)
         b1.inc = b.inc
@@ -735,7 +735,7 @@ class FRD:
     def calculate_mises_strain(self, b):
         """Append von Mises equivalent strain."""
         b1 = NodalResultsBlock()
-        b1.name = 'E_Mises'
+        b1.name = b.name + '_Mises'
         b1.components = (b1.name,)
         b1.ncomps = len(b1.components)
         b1.inc = b.inc
@@ -764,7 +764,7 @@ class FRD:
         """Append tensor's eigenvalues."""
         b1 = NodalResultsBlock()
         b1.name = b.name + '_Principal'
-        b1.components = ('Min', 'Mid', 'Max')
+        b1.components = ('Min', 'Mid', 'Max', 'Worst')
         b1.ncomps = len(b1.components)
         b1.inc = b.inc
         b1.step = b.step
@@ -777,8 +777,12 @@ class FRD:
             tensor = np.array([[Txx, Txy, Txz], [Txy, Tyy, Tyz], [Txz, Tyz, Tzz]])
 
             # Calculate principal values for current node
-            eigenvalues = np.linalg.eigvals(tensor).tolist()
-            b1.results[node_num] = sorted(eigenvalues)
+            eigenvalues = sorted(np.linalg.eigvals(tensor).tolist())
+            if math.fabs(eigenvalues[0]) > math.fabs(eigenvalues[-1]):
+                eigenvalues.append(eigenvalues[0])
+            else:
+                eigenvalues.append(eigenvalues[-1])
+            b1.results[node_num] = eigenvalues
 
         b1.get_some_log()
         return b1
