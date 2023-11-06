@@ -691,10 +691,10 @@ class FRD:
                     b.run(self.in_file, self.node_block)
                     result_blocks.append(b)
                     b.get_some_log()
-                    if b.name == 'S':
+                    if b.name in ('S', 'ZZSTR'):
                         result_blocks.append(self.calculate_mises_stress(b))
                         result_blocks.append(self.calculate_principal(b))
-                    if b.name == 'E':
+                    if b.name in ('E', 'MESTRAIN'):
                         result_blocks.append(self.calculate_mises_strain(b))
                         result_blocks.append(self.calculate_principal(b))
 
