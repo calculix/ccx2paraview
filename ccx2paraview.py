@@ -707,7 +707,7 @@ class FRD:
     def calculate_mises_stress(self, b):
         """Append von Mises stress."""
         b1 = NodalResultsBlock()
-        b1.name = 'S_Mises'
+        b1.name = b.name + '_Mises'
         b1.components = (b1.name, )
         b1.ncomps = len(b1.components)
         b1.inc = b.inc
@@ -735,7 +735,7 @@ class FRD:
     def calculate_mises_strain(self, b):
         """Append von Mises equivalent strain."""
         b1 = NodalResultsBlock()
-        b1.name = 'E_Mises'
+        b1.name = b.name + '_Mises'
         b1.components = (b1.name,)
         b1.ncomps = len(b1.components)
         b1.inc = b.inc
