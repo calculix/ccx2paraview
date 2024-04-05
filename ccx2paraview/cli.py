@@ -10,7 +10,7 @@ analysis results in Paraview. Generates Mises and
 Principal components for stress and strain tensors.
 """
 
-from . import common
+from .common import Converter
 
 # Standard imports
 import argparse

@@ -23,6 +23,22 @@ import vtk
 renumbered_nodes = {} # old_number : new_number
 
 
+def write_converted_file(file_name, ugrid):
+    """Writes .vtk and .vtu files based on data from FRD object.
+    Uses native VTK Python package.
+    Writes results for one time increment only.
+    """
+    if file_name.endswith('vtk'):
+        writer = vtk.vtkUnstructuredGridWriter()
+        writer.SetInputData(ugrid)
+    elif file_name.endswith('vtu'):
+        writer = vtk.vtkXMLUnstructuredGridWriter()
+        writer.SetInputDataObject(ugrid)
+        writer.SetDataModeToBinary() # compressed file
+    writer.SetFileName(file_name)
+    writer.Write()
+
+
 """Classes and functions for reading CalculiX .frd files."""
 
 
