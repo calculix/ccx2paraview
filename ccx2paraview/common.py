@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """ © Ihor Mirzov, 2019-2022
@@ -13,7 +12,6 @@ Principal components for stress and strain tensors.
 # Standard imports
 import os
 import logging
-import argparse
 import threading
 import math
 import re
@@ -23,11 +21,6 @@ import numpy as np
 import vtk
 
 renumbered_nodes = {} # old_number : new_number
-
-
-def clean_screen():
-    """Clean screen."""
-    os.system('cls' if os.name=='nt' else 'clear')
 
 
 def write_converted_file(file_name, ugrid):
@@ -44,8 +37,6 @@ def write_converted_file(file_name, ugrid):
         writer.SetDataModeToBinary() # compressed file
     writer.SetFileName(file_name)
     writer.Write()
-
-
 
 
 """Classes and functions for reading CalculiX .frd files."""
@@ -968,29 +959,3 @@ class Converter:
 
             f.write('\t</Collection>\n')
             f.write('</VTKFile>')
-
-
-def main():
-    # Configure logging
-    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-
-    # Command line arguments
-    ap = argparse.ArgumentParser()
-    ap.add_argument('filename', type=str, help='FRD file name with extension')
-    ap.add_argument('format', type=str, nargs='+', help='output format: vtk, vtu')
-    args = ap.parse_args()
-
-    # Check arguments
-    assert os.path.isfile(args.filename), 'FRD file does not exist.'
-    for a in args.format:
-        msg = 'Wrong format "{}". '.format(a) + 'Choose between: vtk, vtu.'
-        assert a in ('vtk', 'vtu'), msg
-
-    # Create converter and run it
-    ccx2paraview = Converter(args.filename, args.format)
-    ccx2paraview.run()
-
-
-if __name__ == '__main__':
-    clean_screen()
-    main()

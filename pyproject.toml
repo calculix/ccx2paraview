@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=41", "wheel", "setuptools-git-versioning"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name="ccx2paraview"
+dynamic = [ "version" ]
+dependencies = [
+    "vtk", "numpy"
+]
+requires-python = ">=3.8"
+authors = [
+    { name = "Ihor Mirzov",  email="imirzov@gmail.com"}
+]
+maintainers = [
+    { name = "Ihor Mirzov",  email="imirzov@gmail.com"}
+]
+description="A tool to convert CalculiX ASCII .frd files to Paraview vtk or vtu files."
+readme = "README.md"
+license={ text = "GPL-3.0" }
+keywords = [ "CacluliX", "ccx", "frd", "vtk", "vtu", "Paraview", "post-processing", "visualization"]
+classifiers=[
+"Development Status :: 4 - Beta",
+"License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+"Programming Language :: Python :: 3 :: Only",
+"Programming Language :: Python :: 3.8",
+"Topic :: Scientific/Engineering",
+]
+
+[project.urls]
+Homepage = "https://github.com/calculix/ccx2paraview"
+Documentation = "https://github.com/calculix/ccx2paraview"
+Repository = "https://github.com/calculix/ccx2paraview"
+"Bug Tracker" = "https://github.com/calculix/ccx2paraview/issues"
+
+[project.scripts]
+ccx2paraview = "ccx2paraview.cli:main"
+
+[tool.setuptools-git-versioning]
+enabled = true
