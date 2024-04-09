@@ -15,10 +15,10 @@ authors = [
 maintainers = [
     { name = "Ihor Mirzov",  email="imirzov@gmail.com"}
 ]
-description="A tool to convert CalculiX ASCII .frd files to Paraview vtk or vtu files."
+description="CalculiX to Paraview converter (frd to vtk/vtu). Makes it possible to view and postprocess CalculiX analysis results in Paraview. Generates Mises and Principal components for stress and strain tensors."
 readme = "README.md"
 license={ text = "GPL-3.0" }
-keywords = [ "CacluliX", "ccx", "frd", "vtk", "vtu", "Paraview", "post-processing", "visualization"]
+keywords = ["converter", "vtk", "vtu", "paraview", "calculix", "frd"]
 classifiers=[
 "Development Status :: 4 - Beta",
 "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
