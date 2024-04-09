@@ -44,6 +44,6 @@ def main():
     ccx2paraview.run()
 
 
-if __name__ == '__main__':
-    clean_screen()
-    main()
+#if __name__ == '__main__':
+#    clean_screen()
+#    main()
