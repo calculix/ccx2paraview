@@ -41,18 +41,18 @@ FRD reader is tested to reduce processing time as much as possible. Now it's qui
 
 # How to use
 
-To run this converter you'll need [Python 3](https://www.python.org/downloads/) with *numpy* and *vtk*:
+To run this converter you'll need [Python 3](https://www.python.org/downloads/) and optionally [pipx](https://pipx.pypa.io/stable/installation/):
 
-    pip3 install numpy vtk
+    pip3 install ccx2paraview
+    # or
+    pipx install ccx2paraview
 
 Please, pay attention that .frd-file type should be ASCII, not binary! Use keywords *NODE FILE, *EL FILE and *CONTACT FILE in your INP model to get results in ASCII format.
 
-[Download released sources](https://github.com/calculix/ccx2paraview/releases), unpack them and allow to be executed (give permissions).
-
 Run converter with command (both in Linux and in Windows):
 
-    python3 ccx2paraview.py yourjobname.frd vtk
-    python3 ccx2paraview.py yourjobname.frd vtu
+    ccx2paraview yourjobname.frd vtk
+    ccx2paraview yourjobname.frd vtu
 
 Also you can pass both formats to convert .frd to .vtk and .vtu at once.
 
@@ -136,17 +136,17 @@ Please, you may:
 
 [![CalculiX-to-Paraview Converter](https://markdown-videos.deta.dev/youtube/KofE0x0csZE)](https://youtu.be/KofE0x0csZE "CalculiX-to-Paraview Converter")
 
-Install package with dependacies:
+Install package:
 
-    pip3 install numpy vtk ccx2paraview
+    pip3 install ccx2paraview
 
 In your code use ccx2paraview package in this way:
 
 ```Python
     import logging
-    import ccx2paraview
+    import ccx2paraview.common
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-    c = ccx2paraview.Converter(frd_file_name, ['vtu'])
+    c = ccx2paraview.common.Converter(frd_file_name, ['vtu'])
     c.run()
 ```
 
@@ -156,22 +156,15 @@ If you have Python version >= 3.8 create binary with [nuitka](https://nuitka.net
     
     In Windows:
     set CC=C:\\MinGW64\\mingw64\\bin\\gcc.exe
-    python3 -m nuitka --follow-imports --mingw64 __init__.py
+    python3 -m nuitka --follow-imports --python-flags=-m ccx2paraview
 
     In Linux:
-    python3 -m nuitka --follow-imports __init__.py
+    python3 -m nuitka --follow-imports --python-flags=-m ccx2paraview
 
 If you have Python version < 3.8 create binary with [pyinstaller](https://www.pyinstaller.org/):
 
     pip3 install pyinstaller
     pyinstaller __init__.py --onefile
-
-Also there is a good way to create a binary with Cython (works fine for a signle module):
-
-    sudo apt install cython3
-    cython3 -3 --embed -o ccx2paraview.c ccx2paraview.py
-    PYTHONLIBVER=python$(python3 -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')$(python3-config --abiflags)
-    gcc -Os $(python3-config --includes) ccx2paraview.c -o ccx2paraview $(python3-config --ldflags) -l$PYTHONLIBVER
 
 Read [how to create packages](https://packaging.python.org/tutorials/packaging-projects/) for [pypi.org](https://pypi.org/):
 
