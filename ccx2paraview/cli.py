@@ -23,21 +23,23 @@ def clean_screen():
     os.system('cls' if os.name=='nt' else 'clear')
 
 
+def filename_type(filename):
+    if not os.path.isfile(filename):
+        raise argparse.ArgumentTypeError("The given file doesn't exist.")
+    if not os.path.splitext(filename)[1].lower() == ".frd":
+        raise argparse.ArgumentTypeError("The given file isn't a .frd file.")
+    return filename
+
+
 def main():
     # Configure logging
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
     # Command line arguments
     ap = argparse.ArgumentParser()
-    ap.add_argument('filename', type=str, help='FRD file name with extension')
-    ap.add_argument('format', type=str, nargs='+', help='output format: vtk, vtu')
+    ap.add_argument('filename', type=filename_type, help='FRD file name with extension')
+    ap.add_argument('format', type=str, nargs='+', help='Output format', choices=['vtk', 'vtu'])
     args = ap.parse_args()
-
-    # Check arguments
-    assert os.path.isfile(args.filename), 'FRD file does not exist.'
-    for a in args.format:
-        msg = 'Wrong format "{}". '.format(a) + 'Choose between: vtk, vtu.'
-        assert a in ('vtk', 'vtu'), msg
 
     # Create converter and run it
     ccx2paraview = Converter(args.filename, args.format)
