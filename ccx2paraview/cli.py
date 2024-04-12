@@ -46,6 +46,28 @@ def main():
     ccx2paraview.run()
 
 
+def main_with_format(format):
+    # Configure logging
+    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+
+    # Command line arguments
+    ap = argparse.ArgumentParser()
+    ap.add_argument('filename', type=filename_type, help='FRD file name with extension')
+    args = ap.parse_args()
+
+    # Create converter and run it
+    ccx2paraview = Converter(args.filename, [format])
+    ccx2paraview.run()
+
+
+def ccx_to_vtk():
+    main_with_format("vtk")
+
+
+def ccx_to_vtu():
+    main_with_format("vtu")
+
+
 #if __name__ == '__main__':
 #    clean_screen()
 #    main()
