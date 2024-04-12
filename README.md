@@ -56,6 +56,11 @@ Run converter with command (both in Linux and in Windows):
 
 Also you can pass both formats to convert .frd to .vtk and .vtu at once.
 
+There are also the following aliases for converting files to a fixed format
+
+    ccxToVTK yourjobname.frd
+    ccxToVTU yourjobname.frd
+
 It is recommended to convert .frd to modern XML .vtu format - its contents are compressed. If you have more than one time step there will be additional XML file created - [the PVD file](https://www.paraview.org/Wiki/ParaView/Data_formats#PVD_File_Format). Open it in Paraview to read data from all time steps (all VTU files) at ones.
 
 Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - previously there were problems with component names.

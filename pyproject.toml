@@ -35,6 +35,8 @@ Repository = "https://github.com/calculix/ccx2paraview"
 
 [project.scripts]
 ccx2paraview = "ccx2paraview.cli:main"
+ccxToVTK = "ccx2paraview.cli:ccx_to_vtk"
+ccxToVTU = "ccx2paraview.cli:ccx_to_vtu"
 
 [tool.setuptools-git-versioning]
 enabled = true
