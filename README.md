@@ -184,7 +184,7 @@ Test CALMED binary.
 
 Log memory consumption.
 
-Read binary .frd files.
+Read binary .frd files: https://github.com/wr1/frd2vtu
 
 Read DAT files: it would be a killer feature if Paraview could visualize results in Gauss points. Use [CCXStressReader](https://github.com/Mote3D/CCXStressReader).
 
