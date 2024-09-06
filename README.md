@@ -1,4 +1,4 @@
-© Ihor Mirzov, 2019-2022  
+© Ihor Mirzov, 2019-2024  
 Distributed under GNU General Public License v3.0
 
 [![PyPi](https://badgen.net/badge/icon/pypi?icon=pypi&label)](https://pypi.org/project/ccx2paraview)
