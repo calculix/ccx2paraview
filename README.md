@@ -94,7 +94,7 @@ Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - p
 
 **Attention!** While developing this converter I'm using latest Python3, latest VTK and latest ParaView. If you have problems with opening conversion results in ParaView - update it.
 
-**Hint!** When using the [conda environment](Installation), a working version of ParaView should be available in the environment already.  
+**Hint!** When using the [conda environment](#installation), a working version of ParaView should be available in the environment already.  
 
 #### Python Compatibility
 
