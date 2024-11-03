@@ -230,7 +230,7 @@ Please, you may:
 
 [![CalculiX-to-Paraview Converter](https://markdown-videos.deta.dev/youtube/KofE0x0csZE)](https://youtu.be/KofE0x0csZE "CalculiX-to-Paraview Converter")
 
-To install and use ccx2paraview-package see [above](#installation-from-github)
+To install and use ccx2paraview-package: see [above](#installation-from-github).
 
 The binaries are created automatically when installing with pip from github via the project scripts in [pyproject.toml](https://github.com/calculix/ccx2paraview/blob/master/pyproject.toml): 
 
