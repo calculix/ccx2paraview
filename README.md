@@ -163,9 +163,11 @@ output.PointData.append(eigenvalues, 'S_max_eigenvalues')
 
 To install this converter from github you'll need [Python 3](https://www.python.org/downloads/) and optionally [conda](https://docs.anaconda.com/miniconda/miniconda-install/):
 
+    # install vtk first
     pip install vtk
     pip install git+https://github.com/calculix/ccx2paraview.git
-    # or, with conda:
+
+    # or, with conda (paraview has vtk, so no need to install it seprately):
     conda create -n ccx2paraview_devel python=3.12 numpy conda-forge::paraview
     conda activate ccx2paraview_devel
     pip install git+https://github.com/calculix/ccx2paraview.git
