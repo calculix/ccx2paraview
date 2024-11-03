@@ -159,7 +159,7 @@ output.PointData.append(eigenvalues, 'S_max_eigenvalues')
 
 ## Development Version
 
-### Installation
+### Installation from github
 
 To install this converter from github you'll need [Python 3](https://www.python.org/downloads/) and optionally [conda](https://docs.anaconda.com/miniconda/miniconda-install/):
 
@@ -230,19 +230,14 @@ Please, you may:
 
 [![CalculiX-to-Paraview Converter](https://markdown-videos.deta.dev/youtube/KofE0x0csZE)](https://youtu.be/KofE0x0csZE "CalculiX-to-Paraview Converter")
 
-Install package:
+To install and use ccx2paraview-package see [above](#installation-from-github)
 
-    pip3 install ccx2paraview
+The binaries are created automatically when installing with pip from github via the project scripts in [pyproject.toml](https://github.com/calculix/ccx2paraview/blob/master/pyproject.toml): 
 
-In your code use ccx2paraview package in this way:
-
-```Python
-    import logging
-    import ccx2paraview.common
-    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-    c = ccx2paraview.common.Converter(frd_file_name, ['vtu'])
-    c.run()
-```
+    [project.scripts]
+    ccx2paraview = "ccx2paraview.cli:main"
+    ccxToVTK = "ccx2paraview.cli:ccx_to_vtk"
+    ccxToVTU = "ccx2paraview.cli:ccx_to_vtu"
 
 If you have Python version >= 3.8 create binary with [nuitka](https://nuitka.net/):
 
