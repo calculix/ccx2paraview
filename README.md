@@ -51,7 +51,7 @@ To install and run the latest release (version 3.1.0) of of this converter you'l
     # or
     pipx install ccx2paraview
     # or 
-    conda create -n ccx2paraview_release numpy conda-forge::ccx2paraview conda-forge::ccx2paraview
+    conda create -n ccx2paraview_rel numpy conda-forge::ccx2paraview conda-forge::ccx2paraview
 
 ### Usage 
 
@@ -65,7 +65,7 @@ Also you can pass both formats to convert .frd to .vtk and .vtu at once.
 Using the conda environment as described above, an additional binary is provided (thanks to conda-forge's package).
 Activate the conda-environment:
 
-    conda activate ccx2paraview_release
+    conda activate ccx2paraview_rel
 
 Run converter from the python source as described above or use the provided binary:
 
@@ -113,13 +113,13 @@ Using a conda-environment:
 * Python 3.12: works!
 
 ```
-conda create -n ccx2paraview_conda_paraview python=3.12 numpy conda-forge::paraview conda-forge::ccx2paraview
+conda create -n ccx2paraview_rel python=3.12 numpy conda-forge::paraview conda-forge::ccx2paraview
 ```
 
 * Python 3.13: works - but will provoke SyntaxWarning: invalid escape sequence
 
 ```
-conda create -n ccx2paraview_conda_paraview numpy conda-forge::paraview conda-forge::ccx2paraview
+conda create -n ccx2paraview_rel numpy conda-forge::paraview conda-forge::ccx2paraview
 ```
 
 
