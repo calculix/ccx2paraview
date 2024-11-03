@@ -57,11 +57,11 @@ Having installed ccx2paraview via pip or pipx, you'll need to either cd into the
 Also you can pass both formats to convert .frd to .vtk and .vtu at once.
 
 Using the conda environment as described above, an additional binary is provided (thanks to conda-forge's package).
-Activate the conda-environment:
+Activate the conda-environment first:
 
     conda activate ccx2paraview_rel
 
-Run converter from the python source as described above or use the provided binary:
+Then, run converter from the python source as described above or use the provided binary:
 
     ccx2paraview yourjobname.frd vtk
     ccx2paraview yourjobname.frd vtu
