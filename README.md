@@ -55,7 +55,7 @@ To install and run the latest release (version 3.1.0) of of this converter you'l
 
 ### Usage 
 
-Having installed ccx2paraview via pip or pipx, yoou'll need to either cd into the ccx2paraview-directory, or add it to your PATH. Then, run converter with command (both in Linux and in Windows):
+Having installed ccx2paraview via pip or pipx, you'll need to either cd into the ccx2paraview-directory, or add it to your PATH. Then, run converter with command (both in Linux and in Windows):
 
     python ccx2paraview.py yourjobname.frd vtk
     python ccx2paraview.py yourjobname.frd vtu
@@ -111,8 +111,11 @@ Installation of the latest release via pip was tested with a fresh install of:
 Using a conda-environment:
 
 * Python 3.12: works!
+
     conda create -n ccx2paraview_conda_paraview python=3.12 numpy conda-forge::paraview conda-forge::ccx2paraview
+
 * Python 3.13: works - but will provoke SyntaxWarning: invalid escape sequence
+
     conda create -n ccx2paraview_conda_paraview numpy conda-forge::paraview conda-forge::ccx2paraview
 
 
@@ -160,9 +163,9 @@ output.PointData.append(eigenvalues, 'S_max_eigenvalues')
 
 ### Installation
 
-To run this converter you'll need [Python 3](https://www.python.org/downloads/) and optionally [conda](https://docs.anaconda.com/miniconda/miniconda-install/): :
+To install this converter from github you'll need [Python 3](https://www.python.org/downloads/) and optionally [conda](https://docs.anaconda.com/miniconda/miniconda-install/): :
 
-    pip install ccx2paraview
+    pip install git+https://github.com/calculix/ccx2paraview.git
     # or, with conda:
     conda create -n ccx2paraview_devel python=3.12 numpy conda-forge::paraview
     conda activate ccx2paraview_devel
