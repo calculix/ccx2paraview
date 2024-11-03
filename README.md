@@ -112,11 +112,15 @@ Using a conda-environment:
 
 * Python 3.12: works!
 
-    `conda create -n ccx2paraview_conda_paraview python=3.12 numpy conda-forge::paraview conda-forge::ccx2paraview`
+```
+conda create -n ccx2paraview_conda_paraview python=3.12 numpy conda-forge::paraview conda-forge::ccx2paraview
+```
 
 * Python 3.13: works - but will provoke SyntaxWarning: invalid escape sequence
 
-    `conda create -n ccx2paraview_conda_paraview numpy conda-forge::paraview conda-forge::ccx2paraview`
+```
+conda create -n ccx2paraview_conda_paraview numpy conda-forge::paraview conda-forge::ccx2paraview
+```
 
 
 ### Paraview **programmable filter**
