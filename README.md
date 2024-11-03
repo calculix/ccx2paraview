@@ -8,8 +8,6 @@ Distributed under GNU General Public License v3.0
 
 <br/><br/>
 
-
-
 ---
 
 [Downloads](https://github.com/calculix/ccx2paraview/releases) |
@@ -23,8 +21,6 @@ Distributed under GNU General Public License v3.0
 
 <br/><br/>
 
-
-
 # CalculiX to Paraview converter (frd to vtk/vtu)
 
 Converts [CalculiX](http://www.dhondt.de/) ASCII .frd-file to view and postprocess analysis results in [Paraview](https://www.paraview.org/). Generates von Mises and principal components for stress and strain tensors.
@@ -36,8 +32,6 @@ Converter is tested on [CalculiX examples](https://github.com/calculix/examples)
 FRD reader is tested to reduce processing time as much as possible. Now it's quite optimized and fast, but Python itself is slower than C/C++. Here we can do nothing, so, for example, [Calmed converter](https://calculix.discourse.group/t/exporting-mode-shapes/182/7) must be faster - another question is if it's able to read and convert any CalculiX results.
 
 <br/><br/>
-
-
 
 # How to use
 
@@ -77,11 +71,11 @@ Run converter from the python source as described above or use the provided bina
 To use the current release of ccx2paraview in your python code:
 
 ```Python
-    import logging
-    import ccx2paraview.ccx2paraview
-    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-    c = ccx2paraview.ccx2paraview.Converter(frd_file_name, ['vtu'])
-    c.run()
+import logging
+import ccx2paraview.ccx2paraview
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+c = ccx2paraview.ccx2paraview.Converter(frd_file_name, ['vtu'])
+c.run()
 ```
 
 ### General Remarks
@@ -167,14 +161,16 @@ output.PointData.append(eigenvalues, 'S_max_eigenvalues')
 
 ### Installation
 
-To install this converter from github you'll need [Python 3](https://www.python.org/downloads/) and optionally [conda](https://docs.anaconda.com/miniconda/miniconda-install/): :
+To install this converter from github you'll need [Python 3](https://www.python.org/downloads/) and optionally [conda](https://docs.anaconda.com/miniconda/miniconda-install/):
 
+    pip install vtk
     pip install git+https://github.com/calculix/ccx2paraview.git
     # or, with conda:
     conda create -n ccx2paraview_devel python=3.12 numpy conda-forge::paraview
     conda activate ccx2paraview_devel
     pip install git+https://github.com/calculix/ccx2paraview.git
 
+**Attention!** Currently, installing vtk via pip seems to break ParaView's pvpython. When using the conda environment, ParaView's included vtk will be used (alongside having a working ParaView in the environment).
 
 ### Usage
 
@@ -195,11 +191,11 @@ There are also the following aliases for converting files to a fixed format
 To use the development version of ccx2paraview in your python code:
 
 ```Python
-    import logging
-    import ccx2paraview.common
-    logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-    c = ccx2paraview.common.Converter(frd_file_name, ['vtu'])
-    c.run()
+import logging
+import ccx2paraview.common
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+c = ccx2paraview.common.Converter(frd_file_name, ['vtu'])
+c.run()
 ```
 
 <br/><br/>
@@ -214,8 +210,6 @@ Converted translations field with Viridis colormap:
 
 <br/><br/>
 
-
-
 # Your help
 
 Please, you may:
@@ -228,8 +222,6 @@ Please, you may:
 - Or even [become a sponsor to me](https://github.com/sponsors/imirzov).
 
 <br/><br/>
-
-
 
 # For developers
 
@@ -277,8 +269,6 @@ Read [how to create packages](https://packaging.python.org/tutorials/packaging-p
 Read about VTK [file formats](https://vtk.org/wp-content/uploads/2015/04/file-formats.pdf) and VTK [unstructured grid](https://kitware.github.io/vtk-examples/site/VTKFileFormats/#unstructuredgrid). Remember that FRD file is node based, so element results are also stored at nodes after extrapolation from the integration points.
 
 <br/><br/>
-
-
 
 # TODO
 
