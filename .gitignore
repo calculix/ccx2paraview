@@ -5,4 +5,7 @@ __pycache__/
 /pypi/
 /build/
 /dist/
+/test/sim-frds
+/test/test-logs
+/test/test-vtus
 *.egg-info/
