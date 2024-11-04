@@ -10,13 +10,13 @@ analysis results in Paraview. Generates Mises and
 Principal components for stress and strain tensors.
 """
 
-from .common import Converter
-
 # Standard imports
 import argparse
 import logging
 import os
 
+# local import
+from .common import Converter
 
 def clean_screen():
     """Clean screen."""
@@ -24,6 +24,7 @@ def clean_screen():
 
 
 def filename_type(filename):
+    """Check for frd-extension."""
     if not os.path.isfile(filename):
         raise argparse.ArgumentTypeError("The given file doesn't exist.")
     if not os.path.splitext(filename)[1].lower() == ".frd":
@@ -32,6 +33,7 @@ def filename_type(filename):
 
 
 def main():
+    """Create and run a converter."""
     # Configure logging
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -46,7 +48,8 @@ def main():
     ccx2paraview.run()
 
 
-def main_with_format(format):
+def main_with_format(output_format):
+    """Create and run a converter with fixed format."""
     # Configure logging
     logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
@@ -56,15 +59,17 @@ def main_with_format(format):
     args = ap.parse_args()
 
     # Create converter and run it
-    ccx2paraview = Converter(args.filename, [format])
+    ccx2paraview = Converter(args.filename, [output_format])
     ccx2paraview.run()
 
 
 def ccx_to_vtk():
+    """Create and run a converter with vtk format."""
     main_with_format("vtk")
 
 
 def ccx_to_vtu():
+    """Create and run a converter with vtu format."""
     main_with_format("vtu")
 
 
