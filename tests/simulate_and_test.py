@@ -6,7 +6,12 @@ Solve Calculix examples using pygccx first...
 then test ccx2paraview converter on the CalculiX examples' frd-output
 
 Setup of the conda environment is handled by conda wingman extension: 
+(You need to open the ccx2paraview_simulate_and_test.yaml in ./tests)
 Show and Run Commands > Conda Wingman: Build Conda Environment from YAML file
+Show and Run Commands > Conda Wingman: Activate Conda Environment from YAML file
+
+Set the Python Interpreter for VS Code to the environment's one:
+Show and Run Commands > Python: Select Interpreter
 
 Ctrl+F5 to run in VSCode. 
 """
