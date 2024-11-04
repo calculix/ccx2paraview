@@ -980,7 +980,7 @@ class Converter:
             f.write('<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">\n')
             f.write('\t<Collection>\n')
 
-            for step, inc, num in self.step_inc_num():
+            for _, inc, num in self.step_inc_num():
                 file_name = os.path.basename(self.frd_file_name[:-4]) + num
                 file_name = os.path.basename(file_name)
                 f.write(f'\t\t<DataSet file="{file_name}.vtu" timestep="{inc}"/>\n')
