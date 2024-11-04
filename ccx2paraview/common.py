@@ -39,7 +39,7 @@ def write_converted_file(file_name, ugrid):
     writer.Write()
 
 
-"""Classes and functions for reading CalculiX .frd files."""
+# Classes and functions for reading CalculiX .frd files.
 
 
 class NodalPointCoordinateBlock:
@@ -73,38 +73,37 @@ class NodalPointCoordinateBlock:
             new_node_number += 1
 
         self.numnod = self.points.GetNumberOfPoints() # number of nodes in this block
-        logging.info('{} nodes'.format(self.numnod)) # total number of nodes
+        logging.info('%d nodes', self.numnod) # total number of nodes
 
     def get_node_numbers(self):
         global renumbered_nodes
         return sorted(renumbered_nodes.keys())
 
 
-"""NOTE Not used
-class NodalPointCoordinateBlock2:
-    # Nodal Point Coordinate Block: cgx_2.20.pdf Manual, § 11.3.
-    # self.nodes is a Pandas DataFrame.
+# NOTE Not used
+# class NodalPointCoordinateBlock2:
+#     # Nodal Point Coordinate Block: cgx_2.20.pdf Manual, § 11.3.
+#     # self.nodes is a Pandas DataFrame.
 
-    def __init__(self, in_file):
-        import pandas
-        lines = ''
-        while True:
-            line = in_file.readline()
-            if not line or line.strip() == '-3': break
-            lines += line
+#     def __init__(self, in_file):
+#         import pandas
+#         lines = ''
+#         while True:
+#             line = in_file.readline()
+#             if not line or line.strip() == '-3': break
+#             lines += line
 
-        from io import StringIO
-        self.nodes = pandas.read_fwf(StringIO(lines), usecols=[1,2,3,4], index_col=0,
-            names=['skip', 'node', 'X', 'Y', 'Z'], widths=[5, 8, 12, 12, 12])
+#         from io import StringIO
+#         self.nodes = pandas.read_fwf(StringIO(lines), usecols=[1,2,3,4], index_col=0,
+#             names=['skip', 'node', 'X', 'Y', 'Z'], widths=[5, 8, 12, 12, 12])
 
-        self.numnod = self.nodes.shape[0] # number of nodes in this block
-        logging.info('{} nodes'.format(self.numnod)) # total number of nodes
+#         self.numnod = self.nodes.shape[0] # number of nodes in this block
+#         logging.info('{} nodes'.format(self.numnod)) # total number of nodes
 
-    def get_node_numbers(self):
-        # Dataframe index column.
-        # return [int(n) for n in list(self.nodes.index.values)]
-        return list(self.nodes.index.values)
-"""
+#     def get_node_numbers(self):
+#         # Dataframe index column.
+#         # return [int(n) for n in list(self.nodes.index.values)]
+#         return list(self.nodes.index.values)
 
 
 def convert_elem_type(frd_elem_type):
@@ -305,10 +304,9 @@ def get_element_connectivity(e_type, e_nodes):
 
     # frd: 15 node penta element
     elif e_type==5 or e_type==2:
-        """CalculiX elements type 5 are not supported in VTK and
-        has to be processed as CalculiX type 2 (6 node wedge,
-        VTK type 13). Additional nodes are omitted.
-        """
+        # CalculiX elements type 5 are not supported in VTK and
+        # has to be processed as CalculiX type 2 (6 node wedge,
+        # VTK type 13). Additional nodes are omitted.
         for i in [0,2,1,3,5,4]: # repositioning nodes
             connectivity.append(e_nodes[i]) # nodes after renumbering
 
@@ -341,7 +339,7 @@ class ElementDefinitionBlock:
             self.read_element(line)
 
         self.numelem = self.cells.GetNumberOfCells() # number of elements in this block
-        logging.info('{} cells'.format(self.numelem)) # total number of elements
+        logging.info('%d cells', self.numelem) # total number of elements
 
     def read_element(self, line):
         """Read element composition
@@ -355,7 +353,7 @@ class ElementDefinitionBlock:
         -2        10        12        11
         """
         global renumbered_nodes
-        element_num = int(line.split()[1])
+        # element_num = int(line.split()[1])
         element_type = int(line.split()[2])
         element_nodes = []
         for j in range(self.num_lines(element_type)):
@@ -380,44 +378,43 @@ class ElementDefinitionBlock:
         return (0, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 1)[etype]
 
 
-"""NOTE Not used
-class ElementDefinitionBlock2:
-    # Element Definition Block: cgx_2.20.pdf Manual, § 11.4.
-    # self.elements is a Pandas DataFrame.
+# NOTE Not used
+# class ElementDefinitionBlock2:
+#     # Element Definition Block: cgx_2.20.pdf Manual, § 11.4.
+#     # self.elements is a Pandas DataFrame.
 
-    def __init__(self, in_file):
-        # Read element composition
-        # -1      2355    1    0    1
-        # -2     20814     26109     21063     25605     20816     26111     21065     25607
-        # -1      2356    1    0    1
-        # -2     20781     25602     21066     26106     20783     25604     21068     26108
-        # -1         1    1    0AIR
-        # -2         1         2         3         4         5         6         7         8
-        # -1         1   10    0    1
-        # -2         1         2         3         4         5         6         7         8
-        # -1         2   11    0    2
-        # -2         9        10
-        # -1         3   12    0    2
-        # -2        10        12        11
-        import pandas
-        lines = ''
-        while True:
-            line = in_file.readline().lstrip()
-            if not line or line.rstrip() == '-3': break
-            if line.startswith('-1'):
-                line = line[:19]
-            lines += line[3:]
+#     def __init__(self, in_file):
+#         # Read element composition
+#         # -1      2355    1    0    1
+#         # -2     20814     26109     21063     25605     20816     26111     21065     25607
+#         # -1      2356    1    0    1
+#         # -2     20781     25602     21066     26106     20783     25604     21068     26108
+#         # -1         1    1    0AIR
+#         # -2         1         2         3         4         5         6         7         8
+#         # -1         1   10    0    1
+#         # -2         1         2         3         4         5         6         7         8
+#         # -1         2   11    0    2
+#         # -2         9        10
+#         # -1         3   12    0    2
+#         # -2        10        12        11
+#         import pandas
+#         lines = ''
+#         while True:
+#             line = in_file.readline().lstrip()
+#             if not line or line.rstrip() == '-3': break
+#             if line.startswith('-1'):
+#                 line = line[:19]
+#             lines += line[3:]
 
-        # for line in lines.split('\n')[:5]:
-        #     logging.debug(line)
+#         # for line in lines.split('\n')[:5]:
+#         #     logging.debug(line)
 
-        from io import StringIO
-        self.elements = pandas.read_fwf(StringIO(lines), index_col=0, header=None)
-        # logging.debug(self.elements.head())
+#         from io import StringIO
+#         self.elements = pandas.read_fwf(StringIO(lines), index_col=0, header=None)
+#         # logging.debug(self.elements.head())
 
-        self.numelem = self.elements.shape[0] # number of elements in this block
-        logging.info('{} cells'.format(self.numelem)) # total number of elements
-    """
+#         self.numelem = self.elements.shape[0] # number of elements in this block
+#         logging.info('{} cells'.format(self.numelem)) # total number of elements
 
 
 class NodalResultsBlock:
@@ -435,6 +432,7 @@ class NodalResultsBlock:
         self.txt = ''
 
     def run(self, in_file, node_block):
+        """Run the converter."""
         self.in_file = in_file
         self.node_block = node_block
 
@@ -451,7 +449,7 @@ class NodalResultsBlock:
         -4  DOR1  Rx    4    1
         """
         line = self.in_file.readline().strip()
-        regex = '^-4\s+(\w+)' + '\D+(\d+)'*2
+        regex = r'^-4\s+(\w+)' + r'\D+(\d+)'*2
         match = match_line(regex, line)
         self.ncomps = int(match.group(2)) # amount of components
 
@@ -495,7 +493,7 @@ class NodalResultsBlock:
         """
         for i in range(self.ncomps):
             line = self.in_file.readline()[5:]
-            regex = '^\w+'
+            regex = r'^\w+'
             match = match_line(regex, line)
 
             # Exclude variable name from the component name: SXX->XX, EYZ->YZ
@@ -537,7 +535,7 @@ class NodalResultsBlock:
                 break
 
             row_comps = min(6, self.ncomps) # amount of values written in row
-            regex = '^-1\s+(\d+)' + '(.{12})' * row_comps
+            regex = r'^-1\s+(\d+)' + '(.{12})' * row_comps
             match = match_line(regex, line)
             node = int(match.group(1))
             data = []
@@ -548,7 +546,7 @@ class NodalResultsBlock:
                     num = float(m)
                     if ('NaN' in m or 'Inf' in m):
                         emitted_warning_types['NaNInf'] += 1
-                except:
+                except ValueError:
                     # Too big number is written without 'E'
                     num = float(re.sub(r'(.+).([+-])(\d{3})', r'\1e\2\3', m))
                     emitted_warning_types['WrongFormat'] += 1
@@ -563,7 +561,7 @@ class NodalResultsBlock:
             for j in range((self.ncomps-1)//6):
                 row_comps = min(6, self.ncomps-6*(j+1)) # amount of values written in row
                 line = self.in_file.readline().strip()
-                regex = '^-2\s+' + '(.{12})' * row_comps
+                regex = r'^-2\s+' + '(.{12})' * row_comps
                 match = match_line(regex, line)
                 data = [float(match.group(c+1)) for c in range(row_comps)]
                 self.results[node].extend(data)
@@ -707,17 +705,21 @@ class FRD:
         # Iterate over nodes
         for node_num in b.node_block.get_node_numbers():
             data = b.results[node_num] # list with results for current node
-            Sxx = data[0]; Syy = data[1]; Szz = data[2]
-            Sxy = data[3]; Syz = data[4]; Sxz = data[5]
+            s_xx = data[0]
+            s_yy = data[1]
+            s_zz = data[2]
+            s_xy = data[3]
+            s_yz = data[4]
+            s_xz = data[5]
 
             # Calculate Mises stress for current node
             mises = 1 / math.sqrt(2) \
-                * math.sqrt((Sxx - Syy)**2 \
-                + (Syy - Szz)**2 \
-                + (Szz - Sxx)**2 \
-                + 6 * Syz**2 \
-                + 6 * Sxz**2 \
-                + 6 * Sxy**2)
+                * math.sqrt((s_xx - s_yy)**2 \
+                + (s_yy - s_zz)**2 \
+                + (s_zz - s_xx)**2 \
+                + 6 * s_yz**2 \
+                + 6 * s_xz**2 \
+                + 6 * s_xy**2)
             b1.results[node_num] = [mises]
 
         b1.get_some_log()
@@ -735,17 +737,21 @@ class FRD:
         # Iterate over nodes
         for node_num in b.node_block.get_node_numbers():
             data = b.results[node_num] # list with results for current node
-            Sxx = data[0]; Syy = data[1]; Szz = data[2]
-            Sxy = data[3]; Syz = data[4]; Sxz = data[5]
+            s_xx = data[0]
+            s_yy = data[1]
+            s_zz = data[2]
+            s_xy = data[3]
+            s_yz = data[4]
+            s_xz = data[5]
 
             # Calculate Mises stress for current node
             mises = 1 / math.sqrt(2) \
-                * math.sqrt((Sxx - Syy)**2 \
-                + (Syy - Szz)**2 \
-                + (Szz - Sxx)**2 \
-                + 6 * Syz**2 \
-                + 6 * Sxz**2 \
-                + 6 * Sxy**2)
+                * math.sqrt((s_xx - s_yy)**2 \
+                + (s_yy - s_zz)**2 \
+                + (s_zz - s_xx)**2 \
+                + 6 * s_yz**2 \
+                + 6 * s_xz**2 \
+                + 6 * s_xy**2)
             b1.results[node_num] = [mises]
 
         b1.get_some_log()
@@ -763,9 +769,13 @@ class FRD:
         # Iterate over nodes
         for node_num in b.node_block.get_node_numbers():
             data = b.results[node_num] # list with results for current node
-            Txx = data[0]; Tyy = data[1]; Tzz = data[2]
-            Txy = data[3]; Tyz = data[4]; Txz = data[5]
-            tensor = np.array([[Txx, Txy, Txz], [Txy, Tyy, Tyz], [Txz, Tyz, Tzz]])
+            t_xx = data[0]
+            t_yy = data[1]
+            t_zz = data[2]
+            t_xy = data[3]
+            t_yz = data[4]
+            t_xz = data[5]
+            tensor = np.array([[t_xx, t_xy, t_xz], [t_xy, t_yy, t_yz], [t_xz, t_yz, t_zz]])
 
             # Calculate principal values for current node
             eigenvalues = sorted(np.linalg.eigvals(tensor).tolist())
@@ -794,7 +804,7 @@ def get_inc_step(line):
     CL  102 117547.9305          90                     2    2MODAL      1
     """
     line = line[12:]
-    regex = '^(.{12})\s+\d+\s+\d+\s+(\d+)'
+    regex = r'^(.{12})\s+\d+\s+\d+\s+(\d+)'
     match = match_line(regex, line)
     inc = float(match.group(1)) # could be frequency, time or any numerical value
     step = int(match.group(2)) # step number
@@ -818,7 +828,7 @@ def match_line(regex, line):
 
 
 
-"""Main class and functions."""
+# Main class and functions.
 
 
 def convert_frd_data_to_vtk(b, node_block):
@@ -885,15 +895,15 @@ class Converter:
         if not self.frd.has_mesh():
             return
 
-        """For each time increment generate separate .vt* file.
-        Output file name will be the same as input but with serial number.
+        # For each time increment generate separate .vt* file.
+        # Output file name will be the same as input but with serial number.
 
-        Threads are used to save .vt* files:
-        ccx2paraview_0 - no threading at all         7m 37.5s    25m 33.7s
-        ccx2paraview_1 - save files with threading   7m 44.0s    25m 32.8s
-        ccx2paraview_2 - slight refactoring of 0     7m 18.0s    26m 10.2s
-        ccx2paraview_3 - slight refactoring of 1     7m 25.4s    25m 1.1s
-        """
+        # Threads are used to save .vt* files:
+        # ccx2paraview_0 - no threading at all         7m 37.5s    25m 33.7s
+        # ccx2paraview_1 - save files with threading   7m 44.0s    25m 32.8s
+        # ccx2paraview_2 - slight refactoring of 0     7m 18.0s    26m 10.2s
+        # ccx2paraview_3 - slight refactoring of 1     7m 25.4s    25m 1.1s
+
         self.frd.count_increments()
         for step, inc, num in self.step_inc_num(): # NOTE Could be (0, 0, '')
             result_blocks = self.frd.parse_results(step, inc) # NOTE Could be empty list []
@@ -909,7 +919,7 @@ class Converter:
                     pd.Modified()
 
             for t in threads:
-                t.join() # do not start a new thread while and old one is running 
+                t.join() # do not start a new thread while and old one is running
             threads.clear()
             for fmt in self.fmt_list: # ['.vtk', '.vtu']
                 file_name = self.frd_file_name[:-4] + num + fmt
@@ -925,7 +935,7 @@ class Converter:
 
         in_file.close()
         for t in threads:
-            t.join() # do not start a new thread while and old one is running 
+            t.join() # do not start a new thread while and old one is running
 
     def step_inc_num(self):
         """If model has many time increments - many output files
