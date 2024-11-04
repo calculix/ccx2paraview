@@ -45,7 +45,7 @@ To install and run the latest release (version 3.1.0) of of this converter you'l
     # or
     pipx install ccx2paraview
     # or 
-    conda create -n ccx2paraview_rel numpy conda-forge::ccx2paraview conda-forge::ccx2paraview
+    conda create -n ccx2paraview_rel numpy conda-forge::paraview conda-forge::ccx2paraview
 
 ### Usage 
 
