@@ -1,0 +1,10 @@
+name: ccx2paraview_simulate_and_test
+channels: 
+  - conda-forge
+dependencies:
+  - python 
+  - pip
+  - calculix
+  - numpy
+  - paraview
+  - scipy

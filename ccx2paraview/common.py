@@ -895,7 +895,7 @@ class Converter:
 
     # TODO Merge with FRD class
 
-    def __init__(self, frd_file_name, fmt_list, encoding: str | None = None):
+    def __init__(self, frd_file_name, fmt_list, encoding:str=None):
         self.frd_file_name = frd_file_name
         self.fmt_list = ['.' + fmt.lower() for fmt in fmt_list] # ['.vtk', '.vtu']
         self.encoding = encoding
@@ -980,12 +980,10 @@ class Converter:
             f.write('<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">\n')
             f.write('\t<Collection>\n')
 
-            # TODO: check if "step" is required here:
-            # was: for step, inc, num in self.step_inc_num():
-            for inc, num in self.step_inc_num():
+            for step, inc, num in self.step_inc_num():
                 file_name = os.path.basename(self.frd_file_name[:-4]) + num
                 file_name = os.path.basename(file_name)
-                f.write(f'\t\t<DataSet file="{file_name}vtu" timestep="{inc}"/>\n')
+                f.write(f'\t\t<DataSet file="{file_name}.vtu" timestep="{inc}"/>\n')
 
             f.write('\t</Collection>\n')
             f.write('</VTKFile>')
