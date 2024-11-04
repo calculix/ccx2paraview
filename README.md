@@ -47,7 +47,7 @@ To install and run the latest release (version 3.1.0) of of this converter you'l
     # or, within a new conda environment: 
     conda create -n ccx2paraview_rel numpy paraview ccx2paraview
 
-Installing paraview and ccx2paraview from the conda-forge channel can be achieved by adding conda-forge to your channels with:
+**Hint!** Installing paraview and ccx2paraview from the conda-forge channel can be achieved by adding conda-forge to your channels with:
 
     conda config --add channels conda-forge
     conda config --set channel_priority strict
