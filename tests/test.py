@@ -23,9 +23,12 @@ sys_path = os.path.normpath(sys_path)
 if sys_path not in sys.path:
     sys.path.insert(0, sys_path)
 
+# local imports
+# pylint: disable=wrong-import-position
 from log import LoggingHandler, print_logfile_line
 from ccx2paraview.cli import clean_screen
 from ccx2paraview.common import Converter
+# pylint: enable=wrong-import-position
 
 def clean_cache(folder=None):
     """Recursively delete cached files in all subfolders."""
