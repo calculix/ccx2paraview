@@ -903,7 +903,7 @@ class Converter:
     def run(self):
         """Run the Converter."""
         threads = [] # list of Threads
-        logging.info('Reading: %s', os.path.basename(self.frd_file_name))
+        logging.info('Reading %s', os.path.basename(self.frd_file_name))
         in_file = open(self.frd_file_name, 'r', encoding = self.encoding)
         # pylint: disable-next=attribute-defined-outside-init
         self.frd = FRD(in_file)
@@ -941,7 +941,7 @@ class Converter:
             threads.clear()
             for fmt in self.fmt_list: # ['.vtk', '.vtu']
                 file_name = self.frd_file_name[:-4] + num + fmt
-                logging.info('Writing: %s', os.path.basename(file_name))
+                logging.info('Writing %s', os.path.basename(file_name))
                 t = threading.Thread(target=write_converted_file,
                     args=(file_name, self.frd.ugrid))
                 t.start()
