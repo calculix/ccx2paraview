@@ -29,9 +29,11 @@ def write_converted_file(file_name, ugrid):
     Writes results for one time increment only.
     """
     if file_name.endswith('vtk'):
+        # pylint: disable-next=no-member
         writer = vtk.vtkUnstructuredGridWriter()
         writer.SetInputData(ugrid)
     elif file_name.endswith('vtu'):
+        # pylint: disable-next=no-member
         writer = vtk.vtkXMLUnstructuredGridWriter()
         writer.SetInputDataObject(ugrid)
         writer.SetDataModeToBinary() # compressed file
@@ -49,8 +51,10 @@ class NodalPointCoordinateBlock:
 
     def __init__(self, in_file):
         """Read nodal coordinates."""
+        # pylint: disable-next=global-variable-not-assigned
         global renumbered_nodes
         renumbered_nodes.clear()
+        # pylint: disable-next=no-member
         self.points = vtk.vtkPoints()
 
         new_node_number = 0
@@ -76,6 +80,8 @@ class NodalPointCoordinateBlock:
         logging.info('%d nodes', self.numnod) # total number of nodes
 
     def get_node_numbers(self):
+        """get node numbers."""
+        # pylint: disable-next=global-variable-not-assigned
         global renumbered_nodes
         return sorted(renumbered_nodes.keys())
 
@@ -326,6 +332,7 @@ class ElementDefinitionBlock:
 
     def __init__(self, in_file):
         self.in_file = in_file
+        # pylint: disable-next=no-member
         self.cells = vtk.vtkCellArray()
         self.types = []
 
@@ -352,10 +359,14 @@ class ElementDefinitionBlock:
         -1         3   12    0    2
         -2        10        12        11
         """
+        # pylint: disable-next=global-variable-not-assigned
         global renumbered_nodes
         # element_num = int(line.split()[1])
         element_type = int(line.split()[2])
         element_nodes = []
+
+        # TODO: consider rewrite without "j"
+        # pylint: disable-next=unused-variable
         for j in range(self.num_lines(element_type)):
             line = self.in_file.readline().strip()
             nodes = [renumbered_nodes[int(n)] for n in line.split()[1:]]
@@ -433,8 +444,10 @@ class NodalResultsBlock:
 
     def run(self, in_file, node_block):
         """Run the converter."""
+        # pylint: disable=attribute-defined-outside-init
         self.in_file = in_file
         self.node_block = node_block
+        # pylint: enable=attribute-defined-outside-init
 
         self.inc, self.step = get_inc_step(self.line)
         self.read_vars_info()
@@ -491,6 +504,9 @@ class NodalResultsBlock:
         -5  SYZ         1    4    2    3
         -5  SZX         1    4    3    1
         """
+
+        # TODO: consider rewrite without "i"
+        # pylint: disable-next=unused-variable
         for i in range(self.ncomps):
             line = self.in_file.readline()[5:]
             regex = r'^\w+'
@@ -567,22 +583,21 @@ class NodalResultsBlock:
                 self.results[node].extend(data)
 
         if emitted_warning_types['NaNInf']:
-            logging.warning('NaN and Inf are not supported in Paraview ({} warnings).'\
-                .format(emitted_warning_types['NaNInf']))
+            logging.warning('NaN and Inf are not supported in Paraview (%d warnings).', \
+                            emitted_warning_types['NaNInf'])
         if emitted_warning_types['WrongFormat']:
-            logging.warning('Wrong format, {} -> {} ({} warnings).'\
-                .format(before.strip(), after, emitted_warning_types['WrongFormat']))
+            logging.warning('Wrong format, %s -> %d (%d warnings).', \
+                            before.strip(), after, emitted_warning_types['WrongFormat'])
         return results_counter
 
     def get_some_log(self):
+        """get line to log."""
         if self.inc < 1:
-            time_str = 'time {:.2e}, '.format(self.inc)
+            time_str = f'time {self.inc:.2e}, '
         else:
-            time_str = 'time {:.1f}, '.format(self.inc)
-        self.txt = 'Step {}, '.format(self.step) + time_str \
-            + '{}, '.format(self.name) \
-            + '{} components, '.format(len(self.components)) \
-            + '{} values'.format(len(self.results))
+            time_str = f'time {self.inc:.1f}, '
+        self.txt = f'Step {self.step}, ' + time_str  + f'{self.name}, ' \
+            + f'{len(self.components)} components, ' + f'{len(self.results)} values'
 
 
 class FRD:
@@ -596,6 +611,7 @@ class FRD:
         self.node_block = None  # node block
         self.elem_block = None  # elements block
         self.steps_increments = [] # [(step, inc), ]
+        # pylint: disable-next=no-member
         self.ugrid = vtk.vtkUnstructuredGrid() # create empty grid in VTK
 
     def parse_mesh(self):
@@ -652,7 +668,7 @@ class FRD:
 
         i = len(self.steps_increments)
         if i:
-            msg = '{} time increment{}'.format(i, 's'*min(1, i-1))
+            msg = f'{i} time increment {'s'*min(1, i-1)}'
             logging.info(msg)
             # logging.debug('Steps-increments: {}'.format(self.steps_increments))
         else:
@@ -789,6 +805,7 @@ class FRD:
         return b1
 
     def has_mesh(self):
+        """Check if the file might be empty."""
         blocks = [self.node_block, self.elem_block]
         if all([b is not None for b in blocks]):
             return True
@@ -821,9 +838,8 @@ def match_line(regex, line):
     if match:
         return match
     else:
-        logging.error('Can\'t parse line:\n{}\nwith regex:\n{}'\
-            .format(line, regex))
-        raise Exception
+        logging.error("Can\'t parse line:\n%s\nwith regex:\n%s", line, regex)
+        raise SyntaxError(f"Can\'t parse line:\n{line}\nwith regex:\n{regex}")
 
 
 
@@ -833,6 +849,7 @@ def match_line(regex, line):
 
 def convert_frd_data_to_vtk(b, node_block):
     """Convert parsed FRD data to vtkDoubleArray."""
+    # pylint: disable-next=no-member
     data_array = vtk.vtkDoubleArray()
     data_array.SetName(b.name)
     data_array.SetNumberOfComponents(len(b.components))
@@ -850,7 +867,7 @@ def convert_frd_data_to_vtk(b, node_block):
 
     # Assign data
     if len(b.results) > node_block.numnod:
-        txt = 'Truncating {} data. More values than nodes.'.format(b.name)
+        txt = f'Truncating {b.name} data. More values than nodes.'
         logging.warning(txt)
 
     nodes = node_block.get_node_numbers()
@@ -867,7 +884,7 @@ def convert_frd_data_to_vtk(b, node_block):
 
     for k,v in emitted_warning_types.items():
         if v > 0:
-            logging.warning('{} {} values are converted to 0.0'.format(v, k))
+            logging.warning('%d %d values are converted to 0.0', v, k)
 
     return data_array
 
@@ -880,14 +897,17 @@ class Converter:
 
     # TODO Merge with FRD class
 
-    def __init__(self, frd_file_name, fmt_list):
+    def __init__(self, frd_file_name, fmt_list, encoding: str | None = None):
         self.frd_file_name = frd_file_name
         self.fmt_list = ['.' + fmt.lower() for fmt in fmt_list] # ['.vtk', '.vtu']
+        self.encoding = encoding
 
     def run(self):
+        """Run the Converter."""
         threads = [] # list of Threads
-        logging.info('Reading ' + os.path.basename(self.frd_file_name))
-        in_file = open(self.frd_file_name, 'r')
+        logging.info('Reading: %s', os.path.basename(self.frd_file_name))
+        in_file = open(self.frd_file_name, 'r', encoding = self.encoding)
+        # pylint: disable-next=attribute-defined-outside-init
         self.frd = FRD(in_file)
 
         # Check if file contains mesh data
@@ -923,7 +943,7 @@ class Converter:
             threads.clear()
             for fmt in self.fmt_list: # ['.vtk', '.vtu']
                 file_name = self.frd_file_name[:-4] + num + fmt
-                logging.info('Writing ' + os.path.basename(file_name))
+                logging.info('Writing: %s', os.path.basename(file_name))
                 t = threading.Thread(target=write_converted_file,
                     args=(file_name, self.frd.ugrid))
                 t.start()
@@ -949,7 +969,7 @@ class Converter:
         d = [] # [(step, inc, num), ]
         for counter, (step, inc) in enumerate(self.frd.steps_increments):
             if i > 1:
-                num = '.{:0{width}}'.format(counter+1, width=len(str(i)))
+                num = f'.{counter+1:0{len(str(i))}}'
             else:
                 num = ''
             d.append((step, inc, num)) # without extension
@@ -957,15 +977,17 @@ class Converter:
 
     def write_pvd(self):
         """Writes ParaView Data (PVD) file for series of VTU files."""
-        with open(self.frd_file_name[:-4] + '.pvd', 'w') as f:
+        with open(self.frd_file_name[:-4] + '.pvd', 'w', encoding = self.encoding) as f:
             f.write('<?xml version="1.0"?>\n')
             f.write('<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">\n')
             f.write('\t<Collection>\n')
 
-            for step, inc, num in self.step_inc_num():
+            # TODO: check if "step" is required here:
+            # was: for step, inc, num in self.step_inc_num():
+            for inc, num in self.step_inc_num():
                 file_name = os.path.basename(self.frd_file_name[:-4]) + num
-                f.write('\t\t<DataSet file="{}vtu" timestep="{}"/>\n'\
-                    .format(os.path.basename(file_name), inc))
+                file_name = os.path.basename(file_name)
+                f.write(f'\t\t<DataSet file="{file_name}vtu" timestep="{inc}"/>\n')
 
             f.write('\t</Collection>\n')
             f.write('</VTKFile>')
