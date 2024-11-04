@@ -9,38 +9,56 @@ import os
 import sys
 import logging
 
-
-log_file = os.path.abspath(__file__)
-log_file = os.path.dirname(log_file)
-log_file = os.path.join(log_file, 'test.log')
-
+# pylint: disable=invalid-name
+log_file_global = None
+encoding_global = None
+# pylint: enable=invalid-name
 
 # Configure logging to emit messages via 'print' method
-class myHandler(logging.Handler):
+class LoggingHandler(logging.Handler):
+    """Logging to local file."""
 
-    def __init__(self):
+    def __init__(self, log_file:str=None, encoding:str=None):
         super().__init__()
+
+        if log_file is None:
+            raise NameError(name = 'None')
+
+        # pylint: disable=global-statement
+        global log_file_global
+        log_file_global = log_file
+        global encoding_global
+        encoding_global = encoding
+        # pylint: enable=global-statement
+
         self.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
 
         # Remove old log file
-        if os.path.isfile(log_file):
-            os.remove(log_file)
+        if os.path.isfile(log_file_global):
+            os.remove(log_file_global)
 
-    def emit(self, LogRecord):
-        print(self.format(LogRecord))
+    def emit(self, record):
+        print_logfile_line(self.format(record))
 
 
 # Redefine print method to write logs to file
-def print(*args):
+def print_logfile_line(*args):
+    """Print a line into the local log file."""
     line = ' '.join([str(arg) for arg in args])
     line = line.rstrip() + '\n'
-    with open(log_file, 'a') as f:
+    # pylint: disable=global-variable-not-assigned
+    global log_file_global
+    global encoding_global
+    # pylint: enable=global-variable-not-assigned
+
+    with open(log_file_global, 'a', encoding = encoding_global) as f:
         f.write(line)
     sys.stdout.write(line)
 
 
-# Infininte cycle to read process'es stdout
 def read_and_log(stdout):
+    """Infinite cycle to read process'es stdout."""
+
     while True:
         line = stdout.readline()
         if os.name == 'nt':
@@ -50,6 +68,6 @@ def read_and_log(stdout):
             line = line.replace(b'\x1b[H\x1b[2J\x1b[3J', b'') # clear screen Linux
         if line != b'':
             line = line.decode().rstrip()
-            print(line)
+            print_logfile_line(line)
         else:
             break

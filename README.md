@@ -42,10 +42,15 @@ FRD reader is tested to reduce processing time as much as possible. Now it's qui
 To install and run the latest release (version 3.1.0) of of this converter you'll need [Python 3](https://www.python.org/downloads/) and optionally [pipx](https://pipx.pypa.io/stable/installation/) or [conda](https://docs.anaconda.com/miniconda/miniconda-install/): 
 
     pip install ccx2paraview
-    # or
+    # or, with pipx:
     pipx install ccx2paraview
-    # or 
-    conda create -n ccx2paraview_rel numpy conda-forge::ccx2paraview conda-forge::ccx2paraview
+    # or, within a new conda environment: 
+    conda create -n ccx2paraview_rel numpy paraview ccx2paraview
+
+**Hint!** Installing paraview and ccx2paraview from the conda-forge channel can be achieved by adding conda-forge to your channels with:
+
+    conda config --add channels conda-forge
+    conda config --set channel_priority strict
 
 ### Usage 
 
@@ -107,13 +112,13 @@ Using a conda-environment:
 * Python 3.12: works!
 
 ```
-conda create -n ccx2paraview_rel python=3.12 numpy conda-forge::paraview conda-forge::ccx2paraview
+conda create -n ccx2paraview_rel python=3.12 numpy paraview ccx2paraview
 ```
 
 * Python 3.13: works - but will provoke SyntaxWarning: invalid escape sequence
 
 ```
-conda create -n ccx2paraview_rel numpy conda-forge::paraview conda-forge::ccx2paraview
+conda create -n ccx2paraview_rel numpy paraview ccx2paraview
 ```
 
 
@@ -168,7 +173,7 @@ To install this converter from github you'll need [Python 3](https://www.python.
     pip install git+https://github.com/calculix/ccx2paraview.git
 
     # or, with conda (paraview has vtk, so no need to install it seprately):
-    conda create -n ccx2paraview_devel python=3.12 numpy conda-forge::paraview
+    conda create -n ccx2paraview_devel python=3.12 numpy paraview
     conda activate ccx2paraview_devel
     pip install git+https://github.com/calculix/ccx2paraview.git
 
@@ -194,9 +199,9 @@ To use the development version of ccx2paraview in your python code:
 
 ```Python
 import logging
-import ccx2paraview.common
+from ccx2paraview.common import Converter
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-c = ccx2paraview.common.Converter(frd_file_name, ['vtu'])
+c = Converter(frd_file_name, ['vtu'])
 c.run()
 ```
 
