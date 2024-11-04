@@ -43,7 +43,7 @@ def write_converted_file(file_name, ugrid):
 
 # Classes and functions for reading CalculiX .frd files.
 
-
+# pylint: disable-next=too-few-public-methods
 class NodalPointCoordinateBlock:
     """Nodal Point Coordinate Block: cgx_2.20.pdf Manual, § 11.3.
     Generate vtkPoints. Points should be renumbered starting from 0.
@@ -285,11 +285,9 @@ def convert_elem_type(frd_elem_type):
         'MASS':1}
     if frd_elem_type in frd2vtk_num:
         return frd2vtk_num[frd_elem_type]
-    else:
-        if frd_elem_type in frd2vtk_txt:
-            return frd2vtk_txt[frd_elem_type]
-        else:
-            return 0
+    if frd_elem_type in frd2vtk_txt:
+        return frd2vtk_txt[frd_elem_type]
+    return 0
 
 
 def get_element_connectivity(e_type, e_nodes):
@@ -309,7 +307,7 @@ def get_element_connectivity(e_type, e_nodes):
             connectivity.append(e_nodes[i]) # nodes after renumbering
 
     # frd: 15 node penta element
-    elif e_type==5 or e_type==2:
+    elif e_type in (5,2):
         # CalculiX elements type 5 are not supported in VTK and
         # has to be processed as CalculiX type 2 (6 node wedge,
         # VTK type 13). Additional nodes are omitted.
@@ -427,7 +425,7 @@ class ElementDefinitionBlock:
 #         self.numelem = self.elements.shape[0] # number of elements in this block
 #         logging.info('{} cells'.format(self.numelem)) # total number of elements
 
-
+# pylint: disable-next=too-many-instance-attributes
 class NodalResultsBlock:
     """Nodal Results Block: cgx_2.20.pdf Manual, § 11.6."""
 
@@ -522,6 +520,7 @@ class NodalResultsBlock:
             else:
                 self.components.append(component_name)
 
+    # pylint: disable-next=too-many-locals
     def read_nodal_results(self):
         """Iterate over nodal results
         -1         1-7.97316E+10-3.75220E-01
@@ -636,7 +635,7 @@ class FRD:
                 break
 
             # End
-            elif key == '9999':
+            if key == '9999':
                 break
 
         if self.node_block.numnod:
@@ -807,7 +806,7 @@ class FRD:
     def has_mesh(self):
         """Check if the file might be empty."""
         blocks = [self.node_block, self.elem_block]
-        if all([b is not None for b in blocks]):
+        if all(b is not None for b in blocks):
             return True
         logging.warning('File is empty!')
         return False
@@ -837,9 +836,8 @@ def match_line(regex, line):
     match = re.search(regex, line)
     if match:
         return match
-    else:
-        logging.error("Can\'t parse line:\n%s\nwith regex:\n%s", line, regex)
-        raise SyntaxError(f"Can\'t parse line:\n{line}\nwith regex:\n{regex}")
+    logging.error("Can\'t parse line:\n%s\nwith regex:\n%s", line, regex)
+    raise SyntaxError(f"Can\'t parse line:\n{line}\nwith regex:\n{regex}")
 
 
 
