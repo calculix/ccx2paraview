@@ -40,7 +40,8 @@ def main():
     # Command line arguments
     ap = argparse.ArgumentParser()
     ap.add_argument('filename', type=filename_type, help='FRD file name with extension')
-    ap.add_argument('format', type=str, nargs='+', help='Output format', choices=['vtk', 'vtu'])
+    ap.add_argument('format', type=str, nargs='+', help='Output format',\
+                    choices=['vtk', 'vtu', 'hdf'])
     args = ap.parse_args()
 
     # Create converter and run it
@@ -67,11 +68,13 @@ def ccx_to_vtk():
     """Create and run a converter with vtk format."""
     main_with_format("vtk")
 
-
 def ccx_to_vtu():
     """Create and run a converter with vtu format."""
     main_with_format("vtu")
 
+def ccx_to_hdf():
+    """Create and run a converter with hdf format."""
+    main_with_format("hdf")
 
 #if __name__ == '__main__':
 #    clean_screen()

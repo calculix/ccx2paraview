@@ -24,6 +24,7 @@ import shutil
 import logging
 import subprocess
 
+# add common.py available for import
 sys_path = os.path.abspath(__file__)
 sys_path = os.path.dirname(sys_path)
 sys_path = os.path.join(sys_path, '..')
@@ -42,6 +43,8 @@ file_path = os.path.abspath(__file__)
 dir_path = os.path.dirname(file_path)
 dir_path_logs = os.path.normpath(os.path.join(dir_path, 'test_logs'))
 dir_path_frds = os.path.normpath(os.path.join(dir_path, 'sim_frds'))
+
+# Number of cores to use for simulation
 N_CORE = int(8)
 
 def clean_cache(folder:str=None):
@@ -79,7 +82,7 @@ def clean_results(folder:str=None):
     """Cleaup old result files."""
     if folder is None:
         folder = os.getcwd()
-    extensions = ('.vtk', '.vtu', '.pvd', '.dat', '.cvg', '.sta', '.out', '.12d')
+    extensions = ('.vtk', '.vtu', '.vtkhdf', '.pvd', '.dat', '.cvg', '.sta', '.out', '.12d')
     for f in os.scandir(folder):
         if f.is_dir():
             clean_results(f.path)
@@ -142,7 +145,7 @@ def ccx_single_file(modelname, inp_path:str=None):
         logging.error(e)
 
 def convert_single_file(modelname):
-    """test conversion of a single file"""
+    """test conversion of a single file into all possible formats"""
     frd_file = os.path.normpath(os.path.join(dir_path_frds, f'{modelname}.frd'))
     log_file = os.path.normpath(os.path.join(dir_path_logs, f'{modelname}.convert.log'))
     try:
@@ -153,7 +156,7 @@ def convert_single_file(modelname):
         print_logfile_line('CONVERTER TEST')
         print_logfile_line('')
         start = time.perf_counter()
-        ccx2paraview = Converter(frd_file, ['vtk', 'vtu'])
+        ccx2paraview = Converter(frd_file, ['vtk', 'vtu', 'hdf'])
         ccx2paraview.run()
         delta = time.perf_counter() - start
         print_logfile_line(get_time_delta(delta))
@@ -184,7 +187,7 @@ def convert_single_file_vtu(modelname):
     # pylint: disable-next=broad-exception-caught
     except Exception as e:
         logging.error(e)
-    
+
 def convert_single_file_vtk(modelname):
     """test conversion of a single file to vtk"""
     frd_file = os.path.normpath(os.path.join(dir_path_frds, f'{modelname}.frd'))
@@ -207,44 +210,66 @@ def convert_single_file_vtk(modelname):
     except Exception as e:
         logging.error(e)
 
+def convert_single_file_hdf(modelname):
+    """test conversion of a single file to hdf"""
+    frd_file = os.path.normpath(os.path.join(dir_path_frds, f'{modelname}.frd'))
+    log_file = os.path.normpath(os.path.join(dir_path_logs, f'{modelname}.convert.log'))
+    try:
+        # Prepare logging
+        logging_handler = LoggingHandler(log_file)
+        logging.getLogger().addHandler(logging_handler)
+        logging.getLogger().setLevel(logging.DEBUG)
+        print_logfile_line('CONVERTER TEST')
+        print_logfile_line('')
+        start = time.perf_counter()
+        ccx2paraview = Converter(frd_file, ['hdf'])
+        ccx2paraview.run()
+        delta = time.perf_counter() - start
+        print_logfile_line(get_time_delta(delta))
+        # end logging
+        logging.getLogger().removeHandler(logging_handler)
+    # pylint: disable-next=broad-exception-caught
+    except Exception as e:
+        logging.error(e)
+
+def prepare_folders(folders:list=None):
+    """Create frd and log folder"""
+    for folder in folders:
+        try:
+            os.mkdir(folder)
+        except FileExistsError:
+            pass
+
 # Run
 if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
 
-    # create folders if not present
+    # create folders for logs and frds if not present
     try:
-        os.mkdir(dir_path_logs)
-        print(f"Directory '{dir_path_logs}' created successfully.")
-    except FileExistsError:
-        print(f"Directory '{dir_path_logs}' already exists.")
+        prepare_folders([dir_path_logs, dir_path_frds])
     except PermissionError:
-        print(f"Permission denied: Unable to create '{dir_path_logs}'.")
-    # pylint: disable-next=broad-exception-caught
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-    try:
-        os.mkdir(dir_path_frds)
-        print(f"Directory '{dir_path_frds}' created successfully.")
-    except FileExistsError:
-        print(f"Directory '{dir_path_frds}' already exists.")
-    except PermissionError:
-        print(f"Permission denied: Unable to create '{dir_path_frds}'.")
-    # pylint: disable-next=broad-exception-caught
-    except Exception as e:
-        print(f"An error occurred: {e}")
+        print("Cannot create directories.")
+        sys.exit(0)
 
     clean_cache()
     clean_results(dir_path_logs)
     clean_results(dir_path_frds)
     clean_screen()
 
-    # ccx_and_convert_single_file('Ihor_Mirzov_baffle_2D', '../../examples/other')
-    # ccx_and_convert_single_file('ball', '../../examples/other')
-    # ccx_and_convert_single_file('dichtstoff_2_HE8', '../../examples/other')
-    # ccx_and_convert_single_file('Jan_Lukas_modal_dynamic_staticbeam2', '../../examples/other')
-    # ccx_and_convert_single_file('Kaffeeheblerei_hinge', '../../examples/other')
+    #ccx_and_convert_single_file('ball', '../../examples/other')
+    ccx_and_convert_single_file('Ihor_Mirzov_baffle_2D', '../../examples/other')
+    ccx_and_convert_single_file('dichtstoff_2_HE8', '../../examples/other')
+    ccx_and_convert_single_file('Jan_Lukas_modal_dynamic_staticbeam2', '../../examples/other')
+    ccx_and_convert_single_file('Kaffeeheblerei_hinge', '../../examples/other')
     ccx_and_convert_single_file('Jan_Lukas_modal_dynamic_beammodal', '../../examples/other')
+
+    #convert_single_file('dichtstoff_2_HE8')
+    #convert_single_file_vtu_hdf('dichtstoff_2_HE8')
+    #convert_single_file('ball')
+    #convert_single_file_vtu('ball')
+    #convert_single_file_vtu_hdf('ball')
+    #convert_single_file_vtk_vtu('ball')
+    #convert_single_file('ball')
 
     clean_cache()
     clean_results_keep_vtx(dir_path_frds)

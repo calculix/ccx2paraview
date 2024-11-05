@@ -21,11 +21,11 @@ Distributed under GNU General Public License v3.0
 
 <br/><br/>
 
-# CalculiX to Paraview converter (frd to vtk/vtu)
+# CalculiX to Paraview converter (frd to vtk/vtu/vtkhdf)
 
 Converts [CalculiX](http://www.dhondt.de/) ASCII .frd-file to view and postprocess analysis results in [Paraview](https://www.paraview.org/). Generates von Mises and principal components for stress and strain tensors.
 
-Creates separate file for each output interval - it makes possible to animate time history. **Caution!** If you have 300 time steps in the FRD, there will be 300 Paraview files. If you need one file - write output only for one step in your CalculiX model.
+Creates separate file for each output interval - it makes possible to animate time history. **Caution!** If you have 300 time steps in the FRD, there will be 300 Paraview files. If you need one file - write output only for one step in your CalculiX model or write a .hdfvtk-file combining all time steps into one file.
 
 Converter is tested on [CalculiX examples](https://github.com/calculix/examples). Here is how some [test log](https://github.com/calculix/ccx2paraview/blob/master/tests/test.log) looks like.
 
@@ -185,13 +185,15 @@ Run converter with command:
 
     ccx2paraview yourjobname.frd vtk
     ccx2paraview yourjobname.frd vtu
+    ccx2paraview yourjobname.frd hdf
 
-Also you can pass both formats to convert .frd to .vtk and .vtu at once.
+Also you can pass more than one format to convert .frd to .vtk, .vtu or .vtkhdf at once.
 
 There are also the following aliases for converting files to a fixed format
 
     ccxToVTK yourjobname.frd
     ccxToVTU yourjobname.frd
+    ccxToHDF yourjobname.frd
 
 ### Using ccx2paraview in your python code
 

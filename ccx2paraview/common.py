@@ -3,7 +3,7 @@
 """ © Ihor Mirzov, 2019-2022
 Distributed under GNU General Public License v3.0
 
-CalculiX to Paraview converter (frd to vtk/vtu).
+CalculiX to Paraview converter (frd to vtk/vtu/hdf).
 Makes possible to view and postprocess CalculiX
 analysis results in Paraview. Generates Mises and
 Principal components for stress and strain tensors.
@@ -18,10 +18,13 @@ import re
 
 # External imports
 import numpy as np
-import vtk
+# pylint: disable=no-name-in-module
+from paraview.simple import (SaveData, XMLUnstructuredGridReader)
+from vtk import (vtkUnstructuredGridWriter, vtkXMLUnstructuredGridWriter, \
+                 vtkPoints, vtkCellArray, vtkUnstructuredGrid, vtkDoubleArray)
+# pylint: enable=no-name-in-module
 
 renumbered_nodes = {} # old_number : new_number
-
 
 def write_converted_file(file_name, ugrid):
     """Writes .vtk and .vtu files based on data from FRD object.
@@ -29,12 +32,10 @@ def write_converted_file(file_name, ugrid):
     Writes results for one time increment only.
     """
     if file_name.endswith('vtk'):
-        # pylint: disable-next=no-member
-        writer = vtk.vtkUnstructuredGridWriter()
+        writer = vtkUnstructuredGridWriter()
         writer.SetInputData(ugrid)
     elif file_name.endswith('vtu'):
-        # pylint: disable-next=no-member
-        writer = vtk.vtkXMLUnstructuredGridWriter()
+        writer = vtkXMLUnstructuredGridWriter()
         writer.SetInputDataObject(ugrid)
         writer.SetDataModeToBinary() # compressed file
     writer.SetFileName(file_name)
@@ -54,8 +55,7 @@ class NodalPointCoordinateBlock:
         # pylint: disable-next=global-variable-not-assigned
         global renumbered_nodes
         renumbered_nodes.clear()
-        # pylint: disable-next=no-member
-        self.points = vtk.vtkPoints()
+        self.points = vtkPoints()
 
         new_node_number = 0
         while True:
@@ -330,8 +330,7 @@ class ElementDefinitionBlock:
 
     def __init__(self, in_file):
         self.in_file = in_file
-        # pylint: disable-next=no-member
-        self.cells = vtk.vtkCellArray()
+        self.cells = vtkCellArray()
         self.types = []
 
         while True:
@@ -363,9 +362,7 @@ class ElementDefinitionBlock:
         element_type = int(line.split()[2])
         element_nodes = []
 
-        # TODO: consider rewrite without "j"
-        # pylint: disable-next=unused-variable
-        for j in range(self.num_lines(element_type)):
+        for _ in range(self.num_lines(element_type)):
             line = self.in_file.readline().strip()
             nodes = [renumbered_nodes[int(n)] for n in line.split()[1:]]
             element_nodes.extend(nodes)
@@ -377,7 +374,7 @@ class ElementDefinitionBlock:
         self.types.append(vtk_elem_type)
         # offset = amount_of_nodes_in_vtk_element(element_type, element_nodes)
         connectivity = get_element_connectivity(element_type, element_nodes)
-        # c = vtk.vtkCell()
+        # c = vtkCell()
         self.cells.InsertNextCell(len(connectivity), connectivity)
 
     def num_lines(self, etype):
@@ -503,9 +500,7 @@ class NodalResultsBlock:
         -5  SZX         1    4    3    1
         """
 
-        # TODO: consider rewrite without "i"
-        # pylint: disable-next=unused-variable
-        for i in range(self.ncomps):
+        for _ in range(self.ncomps):
             line = self.in_file.readline()[5:]
             regex = r'^\w+'
             match = match_line(regex, line)
@@ -610,8 +605,7 @@ class FRD:
         self.node_block = None  # node block
         self.elem_block = None  # elements block
         self.steps_increments = [] # [(step, inc), ]
-        # pylint: disable-next=no-member
-        self.ugrid = vtk.vtkUnstructuredGrid() # create empty grid in VTK
+        self.ugrid = vtkUnstructuredGrid() # create empty grid in VTK
 
     def parse_mesh(self):
         """Fill in self.ugrid."""
@@ -839,16 +833,11 @@ def match_line(regex, line):
     logging.error("Can\'t parse line:\n%s\nwith regex:\n%s", line, regex)
     raise SyntaxError(f"Can\'t parse line:\n{line}\nwith regex:\n{regex}")
 
-
-
-
 # Main class and functions.
-
 
 def convert_frd_data_to_vtk(b, node_block):
     """Convert parsed FRD data to vtkDoubleArray."""
-    # pylint: disable-next=no-member
-    data_array = vtk.vtkDoubleArray()
+    data_array = vtkDoubleArray()
     data_array.SetName(b.name)
     data_array.SetNumberOfComponents(len(b.components))
     data_array.SetNumberOfTuples(node_block.numnod)
@@ -888,7 +877,7 @@ def convert_frd_data_to_vtk(b, node_block):
 
 
 class Converter:
-    """Converts CalculiX .frd file to .vtk (ASCII) or .vtu (XML) format:
+    """Converts CalculiX .frd file to .vtk (ASCII), .vtu (XML) format or .hdf format:
     python3 ccx2paraview.py ../examples/other/Ihor_Mirzov_baffle_2D.frd vtk
     python3 ccx2paraview.py ../examples/other/Ihor_Mirzov_baffle_2D.frd vtu
     """
@@ -897,7 +886,7 @@ class Converter:
 
     def __init__(self, frd_file_name, fmt_list, encoding:str=None):
         self.frd_file_name = frd_file_name
-        self.fmt_list = ['.' + fmt.lower() for fmt in fmt_list] # ['.vtk', '.vtu']
+        self.fmt_list = ['.' + fmt.lower() for fmt in fmt_list] # ['.vtk', '.vtu', '.hdf']
         self.encoding = encoding
 
     def run(self):
@@ -924,6 +913,7 @@ class Converter:
 
         self.frd.count_increments()
         for step, inc, num in self.step_inc_num(): # NOTE Could be (0, 0, '')
+            logging.info('step: %d - inc %d', step, inc)
             result_blocks = self.frd.parse_results(step, inc) # NOTE Could be empty list []
             for b in result_blocks:
                 if len(b.results):
@@ -939,7 +929,18 @@ class Converter:
             for t in threads:
                 t.join() # do not start a new thread while and old one is running
             threads.clear()
-            for fmt in self.fmt_list: # ['.vtk', '.vtu']
+
+            # vtus are required for merging, add if not present
+            fmt_list = self.fmt_list.copy()
+            if '.vtu' not in self.fmt_list and '.hdf' in self.fmt_list:
+                fmt_list.append('.vtu')
+
+            # write hdf later
+            if '.hdf' in fmt_list:
+                fmt_list.remove('.hdf')
+
+            # write only vtk and vtu files and merge vtus for hdf later when required
+            for fmt in fmt_list: # ['.vtk', '.vtu']
                 file_name = self.frd_file_name[:-4] + num + fmt
                 logging.info('Writing %s', os.path.basename(file_name))
                 t = threading.Thread(target=write_converted_file,
@@ -950,6 +951,10 @@ class Converter:
         # Write ParaView Data (PVD) for series of VTU files
         if len(self.frd.steps_increments) > 1 and '.vtu' in self.fmt_list:
             self.write_pvd()
+
+        # Write hdf-file from the created VTU files
+        if '.hdf' in self.fmt_list:
+            self.write_hdf()
 
         in_file.close()
         for t in threads:
@@ -987,3 +992,41 @@ class Converter:
 
             f.write('\t</Collection>\n')
             f.write('</VTKFile>')
+
+    def write_hdf(self):
+        """Writes ParaView hdf file for series of VTU files merged into one hdf-file."""
+        # solution was sketched in:
+        # https://discourse.vtk.org/t/converting-from-vtu-files-to-transient-vtkhdf-file/13246/2
+        logging.info('Writing: %s',\
+                     os.path.basename(os.path.realpath(self.frd_file_name[:-4] + '.vtkhdf')))
+
+        # get list of vtus
+        vtus_to_include = []
+        if len(self.frd.steps_increments) > 1:
+            for _, _, num in self.step_inc_num():
+                vtus_to_include.append(self.frd_file_name[:-4] + num + '.vtu')
+        else:
+            vtus_to_include.append(self.frd_file_name[:-4] + '.vtu')
+
+        data_proxy = XMLUnstructuredGridReader(\
+            registrationName=os.path.basename(os.path.realpath(self.frd_file_name[:-4]))+'.vtu*',\
+                FileName=vtus_to_include)
+        try:
+            SaveData(self.frd_file_name[:-4] + '.vtkhdf', proxy=data_proxy, WriteAllTimeSteps=1)
+        # pylint: disable-next=broad-exception-caught
+        except Exception as e:
+            logging.error('cannot Save %s', self.frd_file_name[:-4] + '.vtkhdf')
+            logging.error(e)
+
+        # delete vtus when not required
+        if '.vtu' not in self.fmt_list:
+            try:
+                for vtu in vtus_to_include:
+                    logging.info('Deleting %s',\
+                                  os.path.basename(os.path.realpath(vtu)))
+                    try:
+                        os.remove(vtu)
+                    except OSError:
+                        logging.error('Cannot delete %s', vtu)
+            except TypeError:
+                logging.debug('Nothing to delete after writing hdf-file')
