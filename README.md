@@ -29,7 +29,7 @@ Creates separate file for each output interval - it makes possible to animate ti
 
 **Caution!** If you have 300 time steps in the FRD, there will be 300 Paraview files. If you need one file - write output only for one step in your CalculiX model.
 
-**Hint!** If you want/need to only have one file including all of the timesteps, you can easily save everything into one .vtkhdf-file in ParaView - either manually in ParaView after loading the .pvd-file or in python by usings the ParaView's paraview Package (See section [Create vtkhdf-file](#create-vtkhdf-file-using-paraviews-simple-module)).
+**Hint!** If you want/need to only have one file including all of the timesteps, you can easily save everything into one vtkhdf-file in ParaView - either manually in ParaView after loading the .pvd-file or in Python by using ParaView's paraview Package (See section: [Create vtkhdf-file](#create-vtkhdf-file-using-paraviews-simple-module)).
 
 Converter is tested on [CalculiX examples](https://github.com/calculix/examples). Here is how some [test log](https://github.com/calculix/ccx2paraview/blob/master/tests/test.log) looks like.
 
