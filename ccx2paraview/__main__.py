@@ -1,4 +1,4 @@
-"""For nuitka build..."""
+"""Command Line Interface for ccx2paraview package."""
 
 from . import cli
 

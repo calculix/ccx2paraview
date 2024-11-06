@@ -16,6 +16,7 @@ import logging
 import subprocess
 import traceback
 
+# make files in ../ccx2paraview available for import
 sys_path = os.path.abspath(__file__)
 sys_path = os.path.dirname(sys_path)
 sys_path = os.path.join(sys_path, '..')
@@ -25,10 +26,13 @@ if sys_path not in sys.path:
 
 # local imports
 # pylint: disable=wrong-import-position
-from log import LoggingHandler, print_logfile_line
+from log import LoggingHandler
 from ccx2paraview.cli import clean_screen
 from ccx2paraview.common import Converter
 # pylint: enable=wrong-import-position
+
+# Logging Handler
+LH = None
 
 def clean_cache(folder=None):
     """Recursively delete cached files in all subfolders."""
@@ -86,7 +90,7 @@ def test_my_parser_in(folder):
     """Convert calculation results."""
     for counter, file_path in enumerate(scan_all_files_in(folder, '.frd')):
         relpath = os.path.relpath(file_path, start=folder)
-        print_logfile_line('\n{}\n{}: {}'.format('='*50, counter+1, relpath))
+        LH.println('\n{}\n{}: {}'.format('='*50, counter+1, relpath))
         test_my_single_file(file_path)
 
 
@@ -99,7 +103,7 @@ def test_my_single_file(file_path):
         ccx2paraview = Converter(file_path, ['vtk', 'vtu'])
         ccx2paraview.run()
         delta = time.perf_counter() - start
-        print_logfile_line(get_time_delta(delta))
+        LH.println(get_time_delta(delta))
     except:
         logging.error(traceback.format_exc())
 
@@ -107,7 +111,7 @@ def test_my_single_file(file_path):
 def test_freecad_parser_in(folder):
     for counter, file_path in enumerate(scan_all_files_in(folder, '.frd')):
         relpath = os.path.relpath(file_path, start=folder)
-        print_logfile_line('\n{}\n{}: {}'.format('='*50, counter+1, relpath))
+        LH.println('\n{}\n{}: {}'.format('='*50, counter+1, relpath))
         test_freecad_single_file(file_path)
 
 
@@ -117,14 +121,13 @@ def test_freecad_single_file(file_path):
         start = time.perf_counter()
         read_frd_result(file_path)
         delta = time.perf_counter() - start
-        print_logfile_line(get_time_delta(delta))
+        LH.println(get_time_delta(delta))
     except:
         logging.error(traceback.format_exc())
 
 
 def test_binary_in(folder):
     """Convert calculation results with binaries."""
-    from log import read_and_log
     for counter, file_path in enumerate(scan_all_files_in(folder, '.frd')):
         if os.name == 'nt':
             command = 'bin\\ccx2paraview.exe'
@@ -132,22 +135,22 @@ def test_binary_in(folder):
             command = './bin/ccx2paraview'
         relpath = os.path.relpath(file_path, start=folder)
         for fmt in ['vtk', 'vtu']:
-            print_logfile_line('\n{}\n{}: {}'.format('='*50, counter, relpath))
+            LH.println('\n{}\n{}: {}'.format('='*50, counter, relpath))
             cmd = [command, file_path, fmt]
             try:
                 process = subprocess.Popen(cmd,
                     stdin=subprocess.PIPE,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.STDOUT)
-                read_and_log(process.stdout)
+                LH.read_and_log(process.stdout)
             except:
                 logging.error(traceback.format_exc())
-
+        LH.stop_read_and_log()
 
 def test_numpy():
     import numpy as np
     a = np.zeros([10, 2])
-    print_logfile_line(a[:, 0])
+    LH.println(a[:, 0])
 
 
 # def test_NodalPointCoordinateBlock2():
@@ -162,14 +165,14 @@ def test_numpy():
 
 def test_lin_indexes():
     line = ' -1         1-6.64251E-02-6.64250E-02-1.54991E-01-1.06122E-08-1.43067E-02 3.02626E-02'
-    print_logfile_line(line[:5])
-    print_logfile_line(line[5:13])
-    print_logfile_line(line[13:25])
-    print_logfile_line(line[25:37])
-    print_logfile_line(line[37:49])
-    print_logfile_line(line[49:61])
-    print_logfile_line(line[61:73])
-    print_logfile_line(line[73:85])
+    LH.println(line[:5])
+    LH.println(line[5:13])
+    LH.println(line[13:25])
+    LH.println(line[25:37])
+    LH.println(line[37:49])
+    LH.println(line[49:61])
+    LH.println(line[61:73])
+    LH.println(line[73:85])
 
 
 # Run
@@ -191,9 +194,11 @@ if __name__ == '__main__':
     # raise SystemExit()
 
     # Prepare logging
-    logging.getLogger().addHandler(LoggingHandler(log_file))
+    LH = LoggingHandler(log_file)
+    logging.getLogger().addHandler(LH)
     logging.getLogger().setLevel(logging.DEBUG)
-    print_logfile_line('CONVERTER TEST\n\n')
+    LH.println('CONVERTER TEST')
+    LH.println(' ')
 
     # test_freecad_parser_in(d)
     # test_freecad_single_file(d + '/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd_')
@@ -214,5 +219,8 @@ if __name__ == '__main__':
     # test_my_single_file(d + '/mkraska/Test/BeamSections/Refs/u1General.frd')
 
     delta = time.perf_counter() - start
-    print_logfile_line('\nTotal', get_time_delta(delta))
+    LH.println(' ')
+    LH.println('Total', get_time_delta(delta))
+    logging.getLogger().removeHandler(LH)
+    LH.stop_read_and_log()
     clean_cache()

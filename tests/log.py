@@ -1,20 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-""" © Ihor Mirzov, 2019-2022
+""" 
+© Ihor Mirzov, 2019-2022
 Distributed under GNU General Public License v3.0
-Logging handler for my projects """
+Logging handler for my projects 
+
+soylentOrange: Updated for testing simulation and converter using different filenames for the log
+"""
 
 import os
 import sys
 import logging
 
-# pylint: disable=invalid-name
-log_file_global = None
-encoding_global = None
-# pylint: enable=invalid-name
-
-# Configure logging to emit messages via 'print' method
+# Configure logging
 class LoggingHandler(logging.Handler):
     """Logging to local file."""
 
@@ -22,52 +21,45 @@ class LoggingHandler(logging.Handler):
         super().__init__()
 
         if log_file is None:
-            raise NameError(name = 'None')
+            raise ValueError('No log-file name given!')
 
-        # pylint: disable=global-statement
-        global log_file_global
-        log_file_global = log_file
-        global encoding_global
-        encoding_global = encoding
-        # pylint: enable=global-statement
+        self.log_file = log_file
+        self.encoding = encoding
+        self.monitor_stdout = True
 
         self.setFormatter(logging.Formatter('%(levelname)s: %(message)s'))
 
         # Remove old log file
-        if os.path.isfile(log_file_global):
-            os.remove(log_file_global)
+        if os.path.isfile(self.log_file):
+            os.remove(self.log_file)
 
     def emit(self, record):
-        print_logfile_line(self.format(record))
+        self.println(self.format(record))
 
+    def println(self, *args):
+        """Print a line into the local log file."""
+        line = ' '.join([str(arg) for arg in args])
+        line = line.rstrip() + '\n'
+        with open(self.log_file, 'a', encoding = self.encoding) as f:
+            f.write(line)
+        sys.stdout.write(line)
 
-# Redefine print method to write logs to file
-def print_logfile_line(*args):
-    """Print a line into the local log file."""
-    line = ' '.join([str(arg) for arg in args])
-    line = line.rstrip() + '\n'
-    # pylint: disable=global-variable-not-assigned
-    global log_file_global
-    global encoding_global
-    # pylint: enable=global-variable-not-assigned
+    def stop_read_and_log(self):
+        """Stop cycle to read process'es stdout."""
+        self.monitor_stdout = False
 
-    with open(log_file_global, 'a', encoding = encoding_global) as f:
-        f.write(line)
-    sys.stdout.write(line)
+    def read_and_log(self, stdout):
+        """Semi-Infinite cycle to read process'es stdout."""
 
-
-def read_and_log(stdout):
-    """Infinite cycle to read process'es stdout."""
-
-    while True:
-        line = stdout.readline()
-        if os.name == 'nt':
-            line = line.replace(b'\x0c', b'') # clear screen Windows
-            line = line.replace(b'\r', b'') # \n Windows
-        else:
-            line = line.replace(b'\x1b[H\x1b[2J\x1b[3J', b'') # clear screen Linux
-        if line != b'':
-            line = line.decode().rstrip()
-            print_logfile_line(line)
-        else:
-            break
+        while self.monitor_stdout:
+            line = stdout.readline()
+            if os.name == 'nt':
+                line = line.replace(b'\x0c', b'') # clear screen Windows
+                line = line.replace(b'\r', b'') # \n Windows
+            else:
+                line = line.replace(b'\x1b[H\x1b[2J\x1b[3J', b'') # clear screen Linux
+            if line != b'':
+                line = line.decode().rstrip()
+                self.println(line)
+            else:
+                break

@@ -1,4 +1,4 @@
-"""Make ccx2paraview a regular package."""
+"""ccx2paraview package"""
 
 from . import common
 from .common import Converter

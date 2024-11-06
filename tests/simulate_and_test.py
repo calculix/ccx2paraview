@@ -1,8 +1,7 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
-Solve Calculix examples using pygccx first...
+Solve Calculix examples using ccx first...
 then test ccx2paraview converter on the CalculiX examples' frd-output
 
 Setup of the conda environment is handled by conda wingman extension: 
@@ -24,24 +23,27 @@ import shutil
 import logging
 import subprocess
 
+# make files in ../ccx2paraview available for import
 sys_path = os.path.abspath(__file__)
 sys_path = os.path.dirname(sys_path)
 sys_path = os.path.join(sys_path, '..')
-sys_path = os.path.normpath(sys_path)
+sys_path = os.path.realpath(sys_path)
 if sys_path not in sys.path:
     sys.path.insert(0, sys_path)
 
 # local imports
 # pylint: disable=wrong-import-position
-from log import LoggingHandler, print_logfile_line, read_and_log
+from log import LoggingHandler
 from ccx2paraview.common import Converter
 from ccx2paraview.cli import clean_screen
 # pylint: enable=wrong-import-position
 
 file_path = os.path.abspath(__file__)
 dir_path = os.path.dirname(file_path)
-dir_path_logs = os.path.normpath(os.path.join(dir_path, 'test_logs'))
-dir_path_frds = os.path.normpath(os.path.join(dir_path, 'sim_frds'))
+dir_path_logs = os.path.realpath(os.path.join(dir_path, 'test_logs'))
+dir_path_frds = os.path.realpath(os.path.join(dir_path, 'sim_frds'))
+
+# Number of cores to use for simulation
 N_CORE = int(8)
 
 def clean_cache(folder:str=None):
@@ -79,7 +81,7 @@ def clean_results(folder:str=None):
     """Cleaup old result files."""
     if folder is None:
         folder = os.getcwd()
-    extensions = ('.vtk', '.vtu', '.pvd', '.dat', '.cvg', '.sta', '.out', '.12d')
+    extensions = ('.vtk', '.vtu', '.vtkhdf', '.pvd', '.dat', '.cvg', '.sta', '.out', '.12d')
     for f in os.scandir(folder):
         if f.is_dir():
             clean_results(f.path)
@@ -105,22 +107,22 @@ def ccx_single_file(modelname, inp_path:str=None):
     if inp_path is not None:
         try:
             shutil.copy(\
-                os.path.normpath(os.path.join(os.getcwd(), f'{inp_path}', f'{modelname}.inp')), \
-                    os.path.normpath(os.path.join(f'{dir_path_frds}', f'{modelname}.inp')))
+                os.path.realpath(os.path.join(os.getcwd(), f'{inp_path}', f'{modelname}.inp')), \
+                    os.path.realpath(os.path.join(f'{dir_path_frds}', f'{modelname}.inp')))
         # pylint: disable-next=broad-exception-caught
         except Exception as e:
             logging.error(e)
 
-    log_file = os.path.normpath(os.path.join(dir_path_logs, f'{modelname}.ccx.log'))
+    log_file = os.path.realpath(os.path.join(dir_path_logs, f'{modelname}.ccx.log'))
     try:
         # Prepare logging
-        logging_handler_sim = LoggingHandler(log_file)
-        logging.getLogger().addHandler(logging_handler_sim)
+        lhs = LoggingHandler(log_file)
+        logging.getLogger().addHandler(lhs)
         logging.getLogger().setLevel(logging.DEBUG)
-        print_logfile_line('SIMULATE')
-        print_logfile_line('')
-        print_logfile_line(f'INFO: Reading {modelname}.inp')
-        print_logfile_line(f'INFO: run ccx with {N_CORE} core(s)')
+        lhs.println('SIMULATE')
+        lhs.println('')
+        lhs.println(f'INFO: Reading {modelname}.inp')
+        lhs.println(f'INFO: run ccx with {N_CORE} core(s)')
         start = time.perf_counter()
 
         # run ccx
@@ -132,119 +134,152 @@ def ccx_single_file(modelname, inp_path:str=None):
                               stderr=subprocess.STDOUT,\
                               cwd=dir_path_frds,\
                               env=env) as sim_process:
-            read_and_log(sim_process.stdout)
+            lhs.read_and_log(sim_process.stdout)
         delta = time.perf_counter() - start
-        print_logfile_line(get_time_delta(delta))
+        lhs.println(get_time_delta(delta))
         # end logging
-        logging.getLogger().removeHandler(logging_handler_sim)
+        logging.getLogger().removeHandler(lhs)
+        lhs.stop_read_and_log()
+        del lhs
     # pylint: disable-next=broad-exception-caught
     except Exception as e:
         logging.error(e)
 
 def convert_single_file(modelname):
-    """test conversion of a single file"""
-    frd_file = os.path.normpath(os.path.join(dir_path_frds, f'{modelname}.frd'))
-    log_file = os.path.normpath(os.path.join(dir_path_logs, f'{modelname}.convert.log'))
+    """test conversion of a single file into all possible formats"""
+    frd_file = os.path.realpath(os.path.join(dir_path_frds, f'{modelname}.frd'))
+    log_file = os.path.realpath(os.path.join(dir_path_logs, f'{modelname}.convert.log'))
     try:
         # Prepare logging
-        logging_handler = LoggingHandler(log_file)
-        logging.getLogger().addHandler(logging_handler)
+        lhf = LoggingHandler(log_file)
+        logging.getLogger().addHandler(lhf)
         logging.getLogger().setLevel(logging.DEBUG)
-        print_logfile_line('CONVERTER TEST')
-        print_logfile_line('')
+        lhf.println('CONVERTER TEST')
+        lhf.println('')
         start = time.perf_counter()
         ccx2paraview = Converter(frd_file, ['vtk', 'vtu'])
         ccx2paraview.run()
         delta = time.perf_counter() - start
-        print_logfile_line(get_time_delta(delta))
+        lhf.println(get_time_delta(delta))
         # end logging
-        logging.getLogger().removeHandler(logging_handler)
+        logging.getLogger().removeHandler(lhf)
+        lhf.stop_read_and_log()
+        del lhf
     # pylint: disable-next=broad-exception-caught
     except Exception as e:
         logging.error(e)
 
 def convert_single_file_vtu(modelname):
     """test conversion of a single file to vtu"""
-    frd_file = os.path.normpath(os.path.join(dir_path_frds, f'{modelname}.frd'))
-    log_file = os.path.normpath(os.path.join(dir_path_logs, f'{modelname}.convert.log'))
+    frd_file = os.path.realpath(os.path.join(dir_path_frds, f'{modelname}.frd'))
+    log_file = os.path.realpath(os.path.join(dir_path_logs, f'{modelname}.convert.log'))
     try:
         # Prepare logging
-        logging_handler = LoggingHandler(log_file)
-        logging.getLogger().addHandler(logging_handler)
+        lhf = LoggingHandler(log_file)
+        logging.getLogger().addHandler(lhf)
         logging.getLogger().setLevel(logging.DEBUG)
-        print_logfile_line('CONVERTER TEST')
-        print_logfile_line('')
+        lhf.println('CONVERTER TEST')
+        lhf.println('')
         start = time.perf_counter()
         ccx2paraview = Converter(frd_file, ['vtu'])
         ccx2paraview.run()
         delta = time.perf_counter() - start
-        print_logfile_line(get_time_delta(delta))
+        lhf.println(get_time_delta(delta))
         # end logging
-        logging.getLogger().removeHandler(logging_handler)
+        logging.getLogger().removeHandler(lhf)
+        lhf.stop_read_and_log()
+        del lhf
     # pylint: disable-next=broad-exception-caught
     except Exception as e:
         logging.error(e)
-    
+
 def convert_single_file_vtk(modelname):
     """test conversion of a single file to vtk"""
-    frd_file = os.path.normpath(os.path.join(dir_path_frds, f'{modelname}.frd'))
-    log_file = os.path.normpath(os.path.join(dir_path_logs, f'{modelname}.convert.log'))
+    frd_file = os.path.realpath(os.path.join(dir_path_frds, f'{modelname}.frd'))
+    log_file = os.path.realpath(os.path.join(dir_path_logs, f'{modelname}.convert.log'))
     try:
         # Prepare logging
-        logging_handler = LoggingHandler(log_file)
-        logging.getLogger().addHandler(logging_handler)
+        lhf = LoggingHandler(log_file)
+        logging.getLogger().addHandler(lhf)
         logging.getLogger().setLevel(logging.DEBUG)
-        print_logfile_line('CONVERTER TEST')
-        print_logfile_line('')
+        lhf.println('CONVERTER TEST')
+        lhf.println('')
         start = time.perf_counter()
         ccx2paraview = Converter(frd_file, ['vtk'])
         ccx2paraview.run()
         delta = time.perf_counter() - start
-        print_logfile_line(get_time_delta(delta))
+        lhf.println(get_time_delta(delta))
         # end logging
-        logging.getLogger().removeHandler(logging_handler)
+        logging.getLogger().removeHandler(lhf)
+        lhf.stop_read_and_log()
+        del lhf
     # pylint: disable-next=broad-exception-caught
     except Exception as e:
         logging.error(e)
+
+def prepare_folders(folders:list=None):
+    """Create frd and log folder"""
+    for folder in folders:
+        try:
+            os.mkdir(folder)
+        except FileExistsError:
+            pass
 
 # Run
 if __name__ == '__main__':
     os.chdir(os.path.dirname(__file__))
 
-    # create folders if not present
+    # create folders for logs and frds if not present
     try:
-        os.mkdir(dir_path_logs)
-        print(f"Directory '{dir_path_logs}' created successfully.")
-    except FileExistsError:
-        print(f"Directory '{dir_path_logs}' already exists.")
-    except PermissionError:
-        print(f"Permission denied: Unable to create '{dir_path_logs}'.")
-    # pylint: disable-next=broad-exception-caught
-    except Exception as e:
-        print(f"An error occurred: {e}")
-
-    try:
-        os.mkdir(dir_path_frds)
-        print(f"Directory '{dir_path_frds}' created successfully.")
-    except FileExistsError:
-        print(f"Directory '{dir_path_frds}' already exists.")
-    except PermissionError:
-        print(f"Permission denied: Unable to create '{dir_path_frds}'.")
-    # pylint: disable-next=broad-exception-caught
-    except Exception as e:
-        print(f"An error occurred: {e}")
+        prepare_folders([dir_path_logs, dir_path_frds])
+    except PermissionError as e:
+        raise RuntimeError("Cannot create directories.") from e
 
     clean_cache()
     clean_results(dir_path_logs)
     clean_results(dir_path_frds)
     clean_screen()
 
-    # ccx_and_convert_single_file('Ihor_Mirzov_baffle_2D', '../../examples/other')
-    # ccx_and_convert_single_file('ball', '../../examples/other')
-    # ccx_and_convert_single_file('dichtstoff_2_HE8', '../../examples/other')
-    # ccx_and_convert_single_file('Jan_Lukas_modal_dynamic_staticbeam2', '../../examples/other')
-    # ccx_and_convert_single_file('Kaffeeheblerei_hinge', '../../examples/other')
-    ccx_and_convert_single_file('Jan_Lukas_modal_dynamic_beammodal', '../../examples/other')
+    # These examples won't run in ccx for me
+    #ccx_and_convert_single_file('Csati_Zoltan_many_sets', '../../examples/other')
+    #ccx_and_convert_single_file('Kandala_Stepan_Floor', '../../examples/other')
+    #ccx_and_convert_single_file('Sergio_Pluchinsky_piston', '../../examples/other')
+
+    # These examples won't convert for me
+    #ccx_and_convert_single_file('gears', '../../examples/other')
+    # ERROR: 'utf-8' codec can't decode byte 0x9a in position 966: invalid start byte
+
+    # These work...
+    #ccx_and_convert_single_file('ball', '../../examples/other')
+    #ccx_and_convert_single_file('dichtstoff_2_HE8', '../../examples/other')
+    #ccx_and_convert_single_file('Dichtstoff_beam_coupling_compl', '../../examples/other')
+    #ccx_and_convert_single_file('Ihor_Mirzov_baffle_2D', '../../examples/other')
+    #ccx_and_convert_single_file('Jan_Lukas_modal_dynamic_beammodal', '../../examples/other')
+    #ccx_and_convert_single_file('Jan_Lukas_modal_dynamic_staticbeam2', '../../examples/other')
+    #ccx_and_convert_single_file('Jan_Lukas_static_structural', '../../examples/other')
+    #ccx_and_convert_single_file('John_Mannisto_blade_sector', '../../examples/other')
+    #ccx_and_convert_single_file('John_Mannisto_buckling_trick', '../../examples/other')
+    #ccx_and_convert_single_file('Kaffeeheblerei_hinge', '../../examples/other')
+    #ccx_and_convert_single_file('Nidish_Narayanaa_Balaji', '../../examples/other')
+    #ccx_and_convert_single_file('Spanner-in', '../../examples/other/ddjokic-CalculiX-tests-master/Spanner')
+    #ccx_and_convert_single_file('contact2e', '../../examples/ccx/structest')
+    #ccx_and_convert_single_file('contact2i', '../../examples/ccx/structest')
+
+    # Test conversion
+    convert_single_file_vtu('ball')
+    # convert_single_file('dichtstoff_2_HE8')
+    # convert_single_file('Dichtstoff_beam_coupling_compl')
+    # convert_single_file('Ihor_Mirzov_baffle_2D')
+    # convert_single_file('Jan_Lukas_modal_dynamic_beammodal')
+    # convert_single_file('Jan_Lukas_modal_dynamic_staticbeam2')
+    # convert_single_file('Jan_Lukas_static_structural')
+    # convert_single_file('John_Mannisto_blade_sector')
+    # convert_single_file('John_Mannisto_buckling_trick')
+    # convert_single_file('Kaffeeheblerei_hinge')
+    # convert_single_file('Nidish_Narayanaa_Balaji')
+    # convert_single_file('Spanner-in')
+    # convert_single_file('contact2e')
+    # convert_single_file('contact2i')
 
     clean_cache()
     clean_results_keep_vtx(dir_path_frds)
