@@ -26,8 +26,10 @@ Distributed under GNU General Public License v3.0
 Converts [CalculiX](http://www.dhondt.de/) ASCII .frd-file to view and postprocess analysis results in [Paraview](https://www.paraview.org/). Generates von Mises and principal components for stress and strain tensors.
 
 Creates separate file for each output interval - it makes possible to animate time history. 
+
 **Caution!** If you have 300 time steps in the FRD, there will be 300 Paraview files. If you need one file - write output only for one step in your CalculiX model.
-**Hint!** If you want/need to only have one file including all of the timesteps, you can easily save everything into one .vtkhdf-file in ParaView - either manually in ParaView after loading the .pvd-file or in python by usings the ParaView's paraview Package (See section [](#create-vtkhdf-file-using-paraviews-simple-module)).
+
+**Hint!** If you want/need to only have one file including all of the timesteps, you can easily save everything into one .vtkhdf-file in ParaView - either manually in ParaView after loading the .pvd-file or in python by usings the ParaView's paraview Package (See section [Create vtkhdf-file](#create-vtkhdf-file-using-paraviews-simple-module)).
 
 Converter is tested on [CalculiX examples](https://github.com/calculix/examples). Here is how some [test log](https://github.com/calculix/ccx2paraview/blob/master/tests/test.log) looks like.
 
@@ -175,8 +177,8 @@ To install this converter from github you'll need [Python 3](https://www.python.
     pip install vtk
     pip install git+https://github.com/calculix/ccx2paraview.git
 
-    # or, with conda (paraview has vtk, so no need to install it seprately):
-    conda create -n ccx2paraview_devel python=3.12 numpy paraview
+    # or, with conda (paraview has vtk, so no need to install it seperately):
+    conda create -n ccx2paraview_devel python numpy paraview
     conda activate ccx2paraview_devel
     pip install git+https://github.com/calculix/ccx2paraview.git
 
@@ -214,10 +216,10 @@ While ccx2paraview cannot convert to vtkhdf directly (yet), you can create such 
 When you are using a [conda environment](#installation) with ParaView, a working version of ParaView's simple Module should be available in the environment.  
 
 ```Python
-# use ccx2paraview to convert the file '/Users/pvuser/ball.frd' 
-# into vtu-files ('/Users/pvuser/ball.x.vtu') and write a pvd-file
+# use ccx2paraview to convert the file '/Users/ccx/ball.frd' 
+# into vtu-files ('/Users/ccx/ball.x.vtu') and write a pvd-file
 from ccx2paraview.common import Converter
-c = Converter('/Users/pvuser/ball.frd', ['vtu'])
+c = Converter('/Users/ccx/ball.frd', ['vtu'])
 c.run()
 
 # Convert all vtu-files into one vtkhdf file 
@@ -225,8 +227,8 @@ c.run()
 # - The Compression level (0-9) is set to 4 here, making the vtkhdf-file 
 #   roughly the same size as the input vtus toghether
 from paraview.simple import (SaveData, PVDReader)
-pvd_proxy = PVDReader(registrationName='ball', FileName='/Users/pvuser/ball.pvd')
-SaveData('/Users/pvuser/ball.vtkhdf', proxy=pvd_proxy, WriteAllTimeSteps=1, CompressionLevel=4)
+pvd_proxy = PVDReader(registrationName='ball', FileName='/Users/ccx/ball.pvd')
+SaveData('/Users/ccx/ball.vtkhdf', proxy=pvd_proxy, WriteAllTimeSteps=1, CompressionLevel=4)
 ```
 
 <br/><br/>
