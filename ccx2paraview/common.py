@@ -656,9 +656,8 @@ class FRD:
 
         i = len(self.steps_increments)
         if i:
-            msg = f'{i} time increment {'s'*min(1, i-1)}'
+            msg = f'{i} time increment(s)'
             logging.info(msg)
-            # logging.debug('Steps-increments: {}'.format(self.steps_increments))
         else:
             logging.warning('No time increments!')
 

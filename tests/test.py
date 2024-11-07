@@ -32,7 +32,7 @@ from ccx2paraview.common import Converter
 # pylint: enable=wrong-import-position
 
 # Logging Handler
-LH = None
+logging_handler = None # pylint: disable=invalid-name
 
 def clean_cache(folder=None):
     """Recursively delete cached files in all subfolders."""
@@ -90,7 +90,7 @@ def test_my_parser_in(folder):
     """Convert calculation results."""
     for counter, file_path in enumerate(scan_all_files_in(folder, '.frd')):
         relpath = os.path.relpath(file_path, start=folder)
-        LH.println('\n{}\n{}: {}'.format('='*50, counter+1, relpath))
+        logging_handler.println('\n{}\n{}: {}'.format('='*50, counter+1, relpath))
         test_my_single_file(file_path)
 
 
@@ -103,7 +103,7 @@ def test_my_single_file(file_path):
         ccx2paraview = Converter(file_path, ['vtk', 'vtu'])
         ccx2paraview.run()
         delta = time.perf_counter() - start
-        LH.println(get_time_delta(delta))
+        logging_handler.println(get_time_delta(delta))
     except:
         logging.error(traceback.format_exc())
 
@@ -111,7 +111,7 @@ def test_my_single_file(file_path):
 def test_freecad_parser_in(folder):
     for counter, file_path in enumerate(scan_all_files_in(folder, '.frd')):
         relpath = os.path.relpath(file_path, start=folder)
-        LH.println('\n{}\n{}: {}'.format('='*50, counter+1, relpath))
+        logging_handler.println('\n{}\n{}: {}'.format('='*50, counter+1, relpath))
         test_freecad_single_file(file_path)
 
 
@@ -121,7 +121,7 @@ def test_freecad_single_file(file_path):
         start = time.perf_counter()
         read_frd_result(file_path)
         delta = time.perf_counter() - start
-        LH.println(get_time_delta(delta))
+        logging_handler.println(get_time_delta(delta))
     except:
         logging.error(traceback.format_exc())
 
@@ -135,22 +135,22 @@ def test_binary_in(folder):
             command = './bin/ccx2paraview'
         relpath = os.path.relpath(file_path, start=folder)
         for fmt in ['vtk', 'vtu']:
-            LH.println('\n{}\n{}: {}'.format('='*50, counter, relpath))
+            logging_handler.println('\n{}\n{}: {}'.format('='*50, counter, relpath))
             cmd = [command, file_path, fmt]
             try:
                 process = subprocess.Popen(cmd,
                     stdin=subprocess.PIPE,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.STDOUT)
-                LH.read_and_log(process.stdout)
+                logging_handler.read_and_log(process.stdout)
             except:
                 logging.error(traceback.format_exc())
-        LH.stop_read_and_log()
+        logging_handler.stop_read_and_log()
 
 def test_numpy():
     import numpy as np
     a = np.zeros([10, 2])
-    LH.println(a[:, 0])
+    logging_handler.println(a[:, 0])
 
 
 # def test_NodalPointCoordinateBlock2():
@@ -165,14 +165,14 @@ def test_numpy():
 
 def test_lin_indexes():
     line = ' -1         1-6.64251E-02-6.64250E-02-1.54991E-01-1.06122E-08-1.43067E-02 3.02626E-02'
-    LH.println(line[:5])
-    LH.println(line[5:13])
-    LH.println(line[13:25])
-    LH.println(line[25:37])
-    LH.println(line[37:49])
-    LH.println(line[49:61])
-    LH.println(line[61:73])
-    LH.println(line[73:85])
+    logging_handler.println(line[:5])
+    logging_handler.println(line[5:13])
+    logging_handler.println(line[13:25])
+    logging_handler.println(line[25:37])
+    logging_handler.println(line[37:49])
+    logging_handler.println(line[49:61])
+    logging_handler.println(line[61:73])
+    logging_handler.println(line[73:85])
 
 
 # Run
@@ -188,25 +188,25 @@ if __name__ == '__main__':
     log_file = os.path.dirname(log_file)
     log_file = os.path.join(log_file, 'test.log')
 
+    # Prepare logging
+    logging_handler = LoggingHandler(log_file)
+    logging.getLogger().addHandler(logging_handler)
+    logging.getLogger().setLevel(logging.DEBUG)
+    logging_handler.println('CONVERTER TEST')
+    logging_handler.println(' ')
+
     # test_numpy()
     # test_NodalPointCoordinateBlock2()
     # test_lin_indexes()
     # raise SystemExit()
 
-    # Prepare logging
-    LH = LoggingHandler(log_file)
-    logging.getLogger().addHandler(LH)
-    logging.getLogger().setLevel(logging.DEBUG)
-    LH.println('CONVERTER TEST')
-    LH.println(' ')
-
     # test_freecad_parser_in(d)
     # test_freecad_single_file(d + '/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd_')
 
-    # test_my_parser_in(d)
+    test_my_parser_in(d)
     # test_my_single_file(d + '/other/Sergio_Pluchinsky_PLASTIC_2ND_ORDER.frd_')
     # test_my_single_file(d + '/other/Jan_Lukas_modal_dynamic_beammodal.frd')
-    test_my_single_file(d + '/other/John_Mannisto_blade_sector.frd')
+    # test_my_single_file(d + '/other/John_Mannisto_blade_sector.frd')
     # test_my_single_file(d + '/other/Jan_Lukas_static_structural.frd')
     # test_my_single_file(d + '/other/Ihor_Mirzov_baffle_2D.frd')
     # test_my_single_file(d + '/other/CubeTie/CubeTie.frd')
@@ -219,8 +219,8 @@ if __name__ == '__main__':
     # test_my_single_file(d + '/mkraska/Test/BeamSections/Refs/u1General.frd')
 
     delta = time.perf_counter() - start
-    LH.println(' ')
-    LH.println('Total', get_time_delta(delta))
-    logging.getLogger().removeHandler(LH)
-    LH.stop_read_and_log()
+    logging_handler.println(' ')
+    logging_handler.println('Total', get_time_delta(delta))
+    logging.getLogger().removeHandler(logging_handler)
+    logging_handler.stop_read_and_log()
     clean_cache()
