@@ -25,7 +25,11 @@ Distributed under GNU General Public License v3.0
 
 Converts [CalculiX](http://www.dhondt.de/) ASCII .frd-file to view and postprocess analysis results in [Paraview](https://www.paraview.org/). Generates von Mises and principal components for stress and strain tensors.
 
-Creates separate file for each output interval - it makes possible to animate time history. **Caution!** If you have 300 time steps in the FRD, there will be 300 Paraview files. If you need one file - write output only for one step in your CalculiX model.
+Creates separate file for each output interval - it makes possible to animate time history. 
+
+**Caution!** If you have 300 time steps in the FRD, there will be 300 Paraview files. If you need one file - write output only for one step in your CalculiX model.
+
+**Hint!** If you want/need to only have one file including all of the timesteps, you can easily save everything into one vtkhdf-file in ParaView - either manually in ParaView after loading the .pvd-file or in Python by using ParaView's paraview Package (See section: [Create vtkhdf-file](#create-vtkhdf-file-using-paraviews-simple-module)).
 
 Converter is tested on [CalculiX examples](https://github.com/calculix/examples). Here is how some [test log](https://github.com/calculix/ccx2paraview/blob/master/tests/test.log) looks like.
 
@@ -71,7 +75,20 @@ Then, run converter from the python source as described above or use the provide
     ccx2paraview yourjobname.frd vtk
     ccx2paraview yourjobname.frd vtu
 
-### Using ccx2paraview in your python code
+
+### General Remarks
+
+Please, pay attention that .frd-file type should be ASCII, not binary! Use keywords *NODE FILE, *EL FILE and *CONTACT FILE in your INP model to get results in ASCII format.
+
+It is recommended to convert .frd to modern XML .vtu format - it's contents are compressed. If you have more than one time step there will be additional XML file created - [the PVD file](https://www.paraview.org/Wiki/ParaView/Data_formats#PVD_File_Format). Open it in Paraview to read data from all time steps (all VTU files) at once.
+
+Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - previously there were problems with component names.
+
+**Attention!** While developing this converter I'm using latest Python3, latest VTK and latest ParaView. If you have problems with opening conversion results in ParaView - update it.
+
+**Hint!** When using the [conda environment](#installation), a working version of ParaView should be available in the environment already.  
+
+#### Using ccx2paraview in your python code
 
 To use the current release of ccx2paraview in your python code:
 
@@ -82,18 +99,6 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 c = ccx2paraview.ccx2paraview.Converter(frd_file_name, ['vtu'])
 c.run()
 ```
-
-### General Remarks
-
-Please, pay attention that .frd-file type should be ASCII, not binary! Use keywords *NODE FILE, *EL FILE and *CONTACT FILE in your INP model to get results in ASCII format.
-
-It is recommended to convert .frd to modern XML .vtu format - its contents are compressed. If you have more than one time step there will be additional XML file created - [the PVD file](https://www.paraview.org/Wiki/ParaView/Data_formats#PVD_File_Format). Open it in Paraview to read data from all time steps (all VTU files) at ones.
-
-Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - previously there were problems with component names.
-
-**Attention!** While developing this converter I'm using latest Python3, latest VTK and latest ParaView. If you have problems with opening conversion results in ParaView - update it.
-
-**Hint!** When using the [conda environment](#installation), a working version of ParaView should be available in the environment already.  
 
 #### Python Compatibility
 
@@ -172,8 +177,8 @@ To install this converter from github you'll need [Python 3](https://www.python.
     pip install vtk
     pip install git+https://github.com/calculix/ccx2paraview.git
 
-    # or, with conda (paraview has vtk, so no need to install it seprately):
-    conda create -n ccx2paraview_devel python=3.12 numpy paraview
+    # or, with conda (paraview has vtk, so no need to install it seperately):
+    conda create -n ccx2paraview_devel python numpy paraview
     conda activate ccx2paraview_devel
     pip install git+https://github.com/calculix/ccx2paraview.git
 
@@ -193,7 +198,7 @@ There are also the following aliases for converting files to a fixed format
     ccxToVTK yourjobname.frd
     ccxToVTU yourjobname.frd
 
-### Using ccx2paraview in your python code
+#### Using ccx2paraview in your python code
 
 To use the development version of ccx2paraview in your python code:
 
@@ -203,6 +208,27 @@ from ccx2paraview.common import Converter
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 c = Converter(frd_file_name, ['vtu'])
 c.run()
+```
+
+#### Create vtkhdf-file using ParaView's simple Module
+
+While ccx2paraview cannot convert to vtkhdf directly (yet), you can create such a single file bundling all of the timesteps into one by using ParaView's [simple Module](https://www.paraview.org/paraview-docs/latest/python/paraview.simple.html).
+When you are using a [conda environment](#installation) with ParaView, a working version of ParaView's simple Module should be available in the environment.  
+
+```Python
+# use ccx2paraview to convert the file '/Users/ccx/ball.frd' 
+# into vtu-files ('/Users/ccx/ball.x.vtu') and write a pvd-file
+from ccx2paraview.common import Converter
+c = Converter('/Users/ccx/ball.frd', ['vtu'])
+c.run()
+
+# Convert all vtu-files into one vtkhdf file 
+# - the .vtkhdf-extension is mandatory for ParaView to write the correct output
+# - The Compression level (0-9) is set to 4 here, making the vtkhdf-file 
+#   roughly the same size as the input vtus toghether
+from paraview.simple import (SaveData, PVDReader)
+pvd_proxy = PVDReader(registrationName='ball', FileName='/Users/ccx/ball.pvd')
+SaveData('/Users/ccx/ball.vtkhdf', proxy=pvd_proxy, WriteAllTimeSteps=1, CompressionLevel=4)
 ```
 
 <br/><br/>
@@ -238,6 +264,8 @@ Please, you may:
 [![CalculiX-to-Paraview Converter](https://markdown-videos.deta.dev/youtube/KofE0x0csZE)](https://youtu.be/KofE0x0csZE "CalculiX-to-Paraview Converter")
 
 To install and use ccx2paraview-package: see [above](#installation-from-github).
+
+To test ccx2paraview from local sources after cloning from github, you'll find yaml-files in the ./tests-folder. Using the VSCode extension [Conda Wingman](https://marketplace.visualstudio.com/items?itemName=DJSaunders1997.conda-wingman) they can easily be built and activated from within VSCode.
 
 The binaries are created automatically when installing with pip from github via the project scripts in [pyproject.toml](https://github.com/calculix/ccx2paraview/blob/master/pyproject.toml): 
 

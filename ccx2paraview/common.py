@@ -18,10 +18,15 @@ import re
 
 # External imports
 import numpy as np
-import vtk
+try:
+    # pylint: disable-next=no-name-in-module
+    from vtk import (vtkUnstructuredGridWriter, vtkXMLUnstructuredGridWriter, \
+                    vtkPoints, vtkCellArray, vtkUnstructuredGrid, vtkDoubleArray)
+except ImportError as e:
+    e.add_note("Install either vtk ar paraview.")
+    raise ImportError("Module vtk is not available!") from e
 
 renumbered_nodes = {} # old_number : new_number
-
 
 def write_converted_file(file_name, ugrid):
     """Writes .vtk and .vtu files based on data from FRD object.
@@ -29,18 +34,16 @@ def write_converted_file(file_name, ugrid):
     Writes results for one time increment only.
     """
     if file_name.endswith('vtk'):
-        # pylint: disable-next=no-member
-        writer = vtk.vtkUnstructuredGridWriter()
+        writer = vtkUnstructuredGridWriter()
         writer.SetInputData(ugrid)
     elif file_name.endswith('vtu'):
-        # pylint: disable-next=no-member
-        writer = vtk.vtkXMLUnstructuredGridWriter()
+        writer = vtkXMLUnstructuredGridWriter()
         writer.SetInputDataObject(ugrid)
         writer.SetDataModeToBinary() # compressed file
     writer.SetFileName(file_name)
     writer.Write()
 
-
+#
 # Classes and functions for reading CalculiX .frd files.
 
 # pylint: disable-next=too-few-public-methods
@@ -51,11 +54,8 @@ class NodalPointCoordinateBlock:
 
     def __init__(self, in_file):
         """Read nodal coordinates."""
-        # pylint: disable-next=global-variable-not-assigned
-        global renumbered_nodes
         renumbered_nodes.clear()
-        # pylint: disable-next=no-member
-        self.points = vtk.vtkPoints()
+        self.points = vtkPoints()
 
         new_node_number = 0
         while True:
@@ -81,8 +81,6 @@ class NodalPointCoordinateBlock:
 
     def get_node_numbers(self):
         """get node numbers."""
-        # pylint: disable-next=global-variable-not-assigned
-        global renumbered_nodes
         return sorted(renumbered_nodes.keys())
 
 
@@ -330,8 +328,7 @@ class ElementDefinitionBlock:
 
     def __init__(self, in_file):
         self.in_file = in_file
-        # pylint: disable-next=no-member
-        self.cells = vtk.vtkCellArray()
+        self.cells = vtkCellArray()
         self.types = []
 
         while True:
@@ -357,15 +354,11 @@ class ElementDefinitionBlock:
         -1         3   12    0    2
         -2        10        12        11
         """
-        # pylint: disable-next=global-variable-not-assigned
-        global renumbered_nodes
         # element_num = int(line.split()[1])
         element_type = int(line.split()[2])
         element_nodes = []
 
-        # TODO: consider rewrite without "j"
-        # pylint: disable-next=unused-variable
-        for j in range(self.num_lines(element_type)):
+        for _ in range(self.num_lines(element_type)):
             line = self.in_file.readline().strip()
             nodes = [renumbered_nodes[int(n)] for n in line.split()[1:]]
             element_nodes.extend(nodes)
@@ -377,7 +370,7 @@ class ElementDefinitionBlock:
         self.types.append(vtk_elem_type)
         # offset = amount_of_nodes_in_vtk_element(element_type, element_nodes)
         connectivity = get_element_connectivity(element_type, element_nodes)
-        # c = vtk.vtkCell()
+        # c = vtkCell()
         self.cells.InsertNextCell(len(connectivity), connectivity)
 
     def num_lines(self, etype):
@@ -439,14 +432,13 @@ class NodalResultsBlock:
         self.step = 0
         self.line = line
         self.txt = ''
+        self.in_file = None
+        self.node_block = None
 
     def run(self, in_file, node_block):
         """Run the converter."""
-        # pylint: disable=attribute-defined-outside-init
         self.in_file = in_file
         self.node_block = node_block
-        # pylint: enable=attribute-defined-outside-init
-
         self.inc, self.step = get_inc_step(self.line)
         self.read_vars_info()
         self.read_components_info()
@@ -503,9 +495,7 @@ class NodalResultsBlock:
         -5  SZX         1    4    3    1
         """
 
-        # TODO: consider rewrite without "i"
-        # pylint: disable-next=unused-variable
-        for i in range(self.ncomps):
+        for _ in range(self.ncomps):
             line = self.in_file.readline()[5:]
             regex = r'^\w+'
             match = match_line(regex, line)
@@ -610,8 +600,7 @@ class FRD:
         self.node_block = None  # node block
         self.elem_block = None  # elements block
         self.steps_increments = [] # [(step, inc), ]
-        # pylint: disable-next=no-member
-        self.ugrid = vtk.vtkUnstructuredGrid() # create empty grid in VTK
+        self.ugrid = vtkUnstructuredGrid() # create empty grid in VTK
 
     def parse_mesh(self):
         """Fill in self.ugrid."""
@@ -847,8 +836,7 @@ def match_line(regex, line):
 
 def convert_frd_data_to_vtk(b, node_block):
     """Convert parsed FRD data to vtkDoubleArray."""
-    # pylint: disable-next=no-member
-    data_array = vtk.vtkDoubleArray()
+    data_array = vtkDoubleArray()
     data_array.SetName(b.name)
     data_array.SetNumberOfComponents(len(b.components))
     data_array.SetNumberOfTuples(node_block.numnod)
@@ -888,10 +876,7 @@ def convert_frd_data_to_vtk(b, node_block):
 
 
 class Converter:
-    """Converts CalculiX .frd file to .vtk (ASCII) or .vtu (XML) format:
-    python3 ccx2paraview.py ../examples/other/Ihor_Mirzov_baffle_2D.frd vtk
-    python3 ccx2paraview.py ../examples/other/Ihor_Mirzov_baffle_2D.frd vtu
-    """
+    """Converts CalculiX .frd file to .vtk (ASCII) or .vtu (XML) format."""
 
     # TODO Merge with FRD class
 
@@ -899,19 +884,19 @@ class Converter:
         self.frd_file_name = frd_file_name
         self.fmt_list = ['.' + fmt.lower() for fmt in fmt_list] # ['.vtk', '.vtu']
         self.encoding = encoding
+        self.frd = None
 
     def run(self):
         """Run the Converter."""
         threads = [] # list of Threads
         logging.info('Reading %s', os.path.basename(self.frd_file_name))
         in_file = open(self.frd_file_name, 'r', encoding = self.encoding)
-        # pylint: disable-next=attribute-defined-outside-init
         self.frd = FRD(in_file)
 
         # Check if file contains mesh data
         self.frd.parse_mesh()
         if not self.frd.has_mesh():
-            return
+            raise TypeError("No mesh found in .inp-file!")
 
         # For each time increment generate separate .vt* file.
         # Output file name will be the same as input but with serial number.
@@ -975,6 +960,7 @@ class Converter:
 
     def write_pvd(self):
         """Writes ParaView Data (PVD) file for series of VTU files."""
+        logging.info('Writing %s', os.path.basename(self.frd_file_name[:-4] + '.pvd'))
         with open(self.frd_file_name[:-4] + '.pvd', 'w', encoding = self.encoding) as f:
             f.write('<?xml version="1.0"?>\n')
             f.write('<VTKFile type="Collection" version="0.1" byte_order="LittleEndian">\n')

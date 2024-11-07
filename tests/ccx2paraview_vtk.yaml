@@ -1,5 +1,5 @@
-# Environment description for simulating with ccx
-# - using ParaView's vtk -
+# Environment description for ccx2paraview (local python sources)
+# - with pure vtk-dependency -
 #
 # Build the conda environment yourself with conda, 
 #   activate it in the TERMINAL 
@@ -8,13 +8,11 @@
 # Or, when having the Conda Wingman extsion installed in VS Code
 # just build (or activate) this environment using Wingman commands 
 # Still, you might need to advise VS Code to use the correct python interpreter
-name: ccx2paraview_simulate_and_test
+name: ccx2paraview_vtk
 channels: 
   - conda-forge
 dependencies:
   - python 
   - pip
-  - calculix
+  - vtk
   - numpy
-  - paraview
-  - scipy
