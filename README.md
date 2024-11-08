@@ -55,10 +55,13 @@ To install and run the latest release (version 3.2.0) of of this converter you'l
 VTK needs to be available on your system for ccx2paraview to run, either directly or from ParaView's python package. When you have neither, install VTK as an optional dependency alongside: 
 
     # install via pip:
-    pip install ccx2paraview[VTK]
+    pip install 'ccx2paraview[VTK]'
     # or, with pipx:
-    pipx install ccx2paraview[VTK]
+    pipx install 'ccx2paraview[VTK]' 
 
+**Attention!** Using vtk and numpy in python 3.13 concurrently seems broken. When using pipx, set a python version <3.13, e.g.:
+
+    pipx install 'ccx2paraview[VTK]' --python 3.12
 
 #### Installation with a conda environment
 

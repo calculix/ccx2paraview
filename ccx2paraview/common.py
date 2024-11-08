@@ -23,8 +23,8 @@ try:
     from vtk import (vtkUnstructuredGridWriter, vtkXMLUnstructuredGridWriter, \
                     vtkPoints, vtkCellArray, vtkUnstructuredGrid, vtkDoubleArray)
 except ImportError as e:
-    raise ImportError("Module vtk is not available: \
-                      Install either vtk or paraview before using ccx2paraview!") from e
+    raise ImportError("Module vtk is not available! "\
+                      "Install either vtk or paraview before using ccx2paraview.") from e
 
 renumbered_nodes = {} # old_number : new_number
 
