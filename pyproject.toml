@@ -27,6 +27,11 @@ classifiers=[
 "Topic :: Scientific/Engineering",
 ]
 
+[project.optional-dependencies]
+VTK = [
+    "VTK"
+]
+
 [project.urls]
 Homepage = "https://github.com/calculix/ccx2paraview"
 Documentation = "https://github.com/calculix/ccx2paraview"

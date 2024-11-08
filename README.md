@@ -43,22 +43,43 @@ FRD reader is tested to reduce processing time as much as possible. Now it's qui
 
 ### Installation
 
-To install and run the latest release (version 3.2.0) of of this converter you'll need [Python 3](https://www.python.org/downloads/) and optionally [pipx](https://pipx.pypa.io/stable/installation/) or [conda](https://docs.anaconda.com/miniconda/miniconda-install/): 
+#### Installation with pip or pipx
 
-    pip install vtk ccx2paraview
+To install and run the latest release (version 3.2.0) of of this converter you'll need [Python 3](https://www.python.org/downloads/) and optionally [pipx](https://pipx.pypa.io/stable/installation/). 
+
+    # install via pip:
+    pip install ccx2paraview
     # or, with pipx:
-    pipx install vtk ccx2paraview
-    # or, within a new conda environment: 
-    conda create -n ccx2paraview_rel numpy paraview ccx2paraview
+    pipx install ccx2paraview
+
+VTK needs to be available on your system for ccx2paraview to run, either directly or from ParaView's python package. When you have neither, install VTK as an optional dependency alongside: 
+
+    # install via pip:
+    pip install ccx2paraview[VTK]
+    # or, with pipx:
+    pipx install ccx2paraview[VTK]
+
+
+#### Installation with a conda environment
+
+You can also use a [conda](https://docs.anaconda.com/miniconda/miniconda-install/) environment to install ccx2paraview:
+
+    # Install to a new conda environment: 
+    conda create -n ccx2paraview_env numpy paraview ccx2paraview
+
+**Hint!**  Don't forget to activate the conda environment before trying to use ccx2paraview:
+
+    conda activate ccx2paraview_env
 
 **Hint!** Installing paraview and ccx2paraview from the conda-forge channel can be achieved by adding conda-forge to your channels with:
 
     conda config --add channels conda-forge
     conda config --set channel_priority strict
 
+
 ### Usage 
 
-Having installed ccx2paraview via pip, pipx or conda, run converter with command (both in Linux and in Windows):
+Having installed ccx2paraview, run the converter with command (both in Linux and in Windows):
 
     ccx2paraview yourjobname.frd vtk
     ccx2paraview yourjobname.frd vtu
