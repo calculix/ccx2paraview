@@ -1,16 +1,1170 @@
 CONVERTER TEST
-INFO: Reading beam.frd
-INFO: 4403 nodes
-INFO: 2340 cells
-INFO: 1 time increment
-INFO: Step 1, time 1.0, U, 3 components, 4403 values
-INFO: Step 1, time 1.0, S, 6 components, 4403 values
-INFO: Step 1, time 1.0, S_Mises, 1 components, 4403 values
-INFO: Step 1, time 1.0, S_Principal, 4 components, 4403 values
-INFO: Step 1, time 1.0, RF, 3 components, 4403 values
-INFO: Step 1, time 1.0, ERROR, 1 components, 4403 values
-INFO: Writing beam.vtk
-INFO: Writing beam.vtu
-0m 0.2s
 
-Total 0m 0.2s
+
+==================================================
+1: other/Dichtstoff_beam_coupling_compl.frd
+INFO: Reading Dichtstoff_beam_coupling_compl.frd
+INFO: 378 nodes
+INFO: 160 cells
+INFO: 1 time increment
+INFO: Step 1, time 1.0, U, 3 components, 378 values
+INFO: Step 1, time 1.0, S, 6 components, 378 values
+INFO: Step 1, time 1.0, S_Mises, 1 components, 378 values
+INFO: Step 1, time 1.0, S_Principal, 4 components, 378 values
+INFO: Step 1, time 1.0, ERROR, 1 components, 378 values
+INFO: Writing Dichtstoff_beam_coupling_compl.vtk
+INFO: Writing Dichtstoff_beam_coupling_compl.vtu
+0m 0.0s
+
+==================================================
+2: other/Ihor_Mirzov_baffle_2D.frd
+INFO: Reading Ihor_Mirzov_baffle_2D.frd
+INFO: 14836 nodes
+INFO: 6778 cells
+INFO: 1 time increment
+INFO: Step 1, time 1.0, NT, 1 components, 14836 values
+INFO: Writing Ihor_Mirzov_baffle_2D.vtk
+INFO: Writing Ihor_Mirzov_baffle_2D.vtu
+0m 0.1s
+
+==================================================
+3: other/Jan_Lukas_modal_dynamic_beammodal.frd
+INFO: Reading Jan_Lukas_modal_dynamic_beammodal.frd
+INFO: 1221 nodes
+INFO: 160 cells
+INFO: 16 time increment s
+INFO: Step 1, time 209.2, U, 3 components, 1221 values
+INFO: Step 1, time 209.2, S, 6 components, 1221 values
+INFO: Step 1, time 209.2, S_Mises, 1 components, 1221 values
+INFO: Step 1, time 209.2, S_Principal, 4 components, 1221 values
+INFO: Step 1, time 209.2, E, 6 components, 1221 values
+INFO: Step 1, time 209.2, E_Mises, 1 components, 1221 values
+INFO: Step 1, time 209.2, E_Principal, 4 components, 1221 values
+INFO: Step 1, time 209.2, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.01.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.01.vtu
+INFO: Step 2, time 209.2, U, 3 components, 1221 values
+INFO: Step 2, time 209.2, S, 6 components, 1221 values
+INFO: Step 2, time 209.2, S_Mises, 1 components, 1221 values
+INFO: Step 2, time 209.2, S_Principal, 4 components, 1221 values
+INFO: Step 2, time 209.2, E, 6 components, 1221 values
+INFO: Step 2, time 209.2, E_Mises, 1 components, 1221 values
+INFO: Step 2, time 209.2, E_Principal, 4 components, 1221 values
+INFO: Step 2, time 209.2, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.02.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.02.vtu
+INFO: Step 3, time 1296.2, U, 3 components, 1221 values
+INFO: Step 3, time 1296.2, S, 6 components, 1221 values
+INFO: Step 3, time 1296.2, S_Mises, 1 components, 1221 values
+INFO: Step 3, time 1296.2, S_Principal, 4 components, 1221 values
+INFO: Step 3, time 1296.2, E, 6 components, 1221 values
+INFO: Step 3, time 1296.2, E_Mises, 1 components, 1221 values
+INFO: Step 3, time 1296.2, E_Principal, 4 components, 1221 values
+INFO: Step 3, time 1296.2, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.03.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.03.vtu
+INFO: Step 4, time 1296.2, U, 3 components, 1221 values
+INFO: Step 4, time 1296.2, S, 6 components, 1221 values
+INFO: Step 4, time 1296.2, S_Mises, 1 components, 1221 values
+INFO: Step 4, time 1296.2, S_Principal, 4 components, 1221 values
+INFO: Step 4, time 1296.2, E, 6 components, 1221 values
+INFO: Step 4, time 1296.2, E_Mises, 1 components, 1221 values
+INFO: Step 4, time 1296.2, E_Principal, 4 components, 1221 values
+INFO: Step 4, time 1296.2, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.04.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.04.vtu
+INFO: Step 5, time 3565.9, U, 3 components, 1221 values
+INFO: Step 5, time 3565.9, S, 6 components, 1221 values
+INFO: Step 5, time 3565.9, S_Mises, 1 components, 1221 values
+INFO: Step 5, time 3565.9, S_Principal, 4 components, 1221 values
+INFO: Step 5, time 3565.9, E, 6 components, 1221 values
+INFO: Step 5, time 3565.9, E_Mises, 1 components, 1221 values
+INFO: Step 5, time 3565.9, E_Principal, 4 components, 1221 values
+INFO: Step 5, time 3565.9, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.05.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.05.vtu
+INFO: Step 6, time 3565.9, U, 3 components, 1221 values
+INFO: Step 6, time 3565.9, S, 6 components, 1221 values
+INFO: Step 6, time 3565.9, S_Mises, 1 components, 1221 values
+INFO: Step 6, time 3565.9, S_Principal, 4 components, 1221 values
+INFO: Step 6, time 3565.9, E, 6 components, 1221 values
+INFO: Step 6, time 3565.9, E_Mises, 1 components, 1221 values
+INFO: Step 6, time 3565.9, E_Principal, 4 components, 1221 values
+INFO: Step 6, time 3565.9, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.06.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.06.vtu
+INFO: Step 7, time 3714.6, U, 3 components, 1221 values
+INFO: Step 7, time 3714.6, S, 6 components, 1221 values
+INFO: Step 7, time 3714.6, S_Mises, 1 components, 1221 values
+INFO: Step 7, time 3714.6, S_Principal, 4 components, 1221 values
+INFO: Step 7, time 3714.6, E, 6 components, 1221 values
+INFO: Step 7, time 3714.6, E_Mises, 1 components, 1221 values
+INFO: Step 7, time 3714.6, E_Principal, 4 components, 1221 values
+INFO: Step 7, time 3714.6, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.07.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.07.vtu
+INFO: Step 8, time 6477.3, U, 3 components, 1221 values
+INFO: Step 8, time 6477.3, S, 6 components, 1221 values
+INFO: Step 8, time 6477.3, S_Mises, 1 components, 1221 values
+INFO: Step 8, time 6477.3, S_Principal, 4 components, 1221 values
+INFO: Step 8, time 6477.3, E, 6 components, 1221 values
+INFO: Step 8, time 6477.3, E_Mises, 1 components, 1221 values
+INFO: Step 8, time 6477.3, E_Principal, 4 components, 1221 values
+INFO: Step 8, time 6477.3, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.08.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.08.vtu
+INFO: Step 9, time 6819.4, U, 3 components, 1221 values
+INFO: Step 9, time 6819.4, S, 6 components, 1221 values
+INFO: Step 9, time 6819.4, S_Mises, 1 components, 1221 values
+INFO: Step 9, time 6819.4, S_Principal, 4 components, 1221 values
+INFO: Step 9, time 6819.4, E, 6 components, 1221 values
+INFO: Step 9, time 6819.4, E_Mises, 1 components, 1221 values
+INFO: Step 9, time 6819.4, E_Principal, 4 components, 1221 values
+INFO: Step 9, time 6819.4, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.09.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.09.vtu
+INFO: Step 10, time 6819.4, U, 3 components, 1221 values
+INFO: Step 10, time 6819.4, S, 6 components, 1221 values
+INFO: Step 10, time 6819.4, S_Mises, 1 components, 1221 values
+INFO: Step 10, time 6819.4, S_Principal, 4 components, 1221 values
+INFO: Step 10, time 6819.4, E, 6 components, 1221 values
+INFO: Step 10, time 6819.4, E_Mises, 1 components, 1221 values
+INFO: Step 10, time 6819.4, E_Principal, 4 components, 1221 values
+INFO: Step 10, time 6819.4, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.10.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.10.vtu
+INFO: Step 11, time 10945.6, U, 3 components, 1221 values
+INFO: Step 11, time 10945.6, S, 6 components, 1221 values
+INFO: Step 11, time 10945.6, S_Mises, 1 components, 1221 values
+INFO: Step 11, time 10945.6, S_Principal, 4 components, 1221 values
+INFO: Step 11, time 10945.6, E, 6 components, 1221 values
+INFO: Step 11, time 10945.6, E_Mises, 1 components, 1221 values
+INFO: Step 11, time 10945.6, E_Principal, 4 components, 1221 values
+INFO: Step 11, time 10945.6, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.11.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.11.vtu
+INFO: Step 12, time 10945.6, U, 3 components, 1221 values
+INFO: Step 12, time 10945.6, S, 6 components, 1221 values
+INFO: Step 12, time 10945.6, S_Mises, 1 components, 1221 values
+INFO: Step 12, time 10945.6, S_Principal, 4 components, 1221 values
+INFO: Step 12, time 10945.6, E, 6 components, 1221 values
+INFO: Step 12, time 10945.6, E_Mises, 1 components, 1221 values
+INFO: Step 12, time 10945.6, E_Principal, 4 components, 1221 values
+INFO: Step 12, time 10945.6, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.12.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.12.vtu
+INFO: Step 13, time 11144.0, U, 3 components, 1221 values
+INFO: Step 13, time 11144.0, S, 6 components, 1221 values
+INFO: Step 13, time 11144.0, S_Mises, 1 components, 1221 values
+INFO: Step 13, time 11144.0, S_Principal, 4 components, 1221 values
+INFO: Step 13, time 11144.0, E, 6 components, 1221 values
+INFO: Step 13, time 11144.0, E_Mises, 1 components, 1221 values
+INFO: Step 13, time 11144.0, E_Principal, 4 components, 1221 values
+INFO: Step 13, time 11144.0, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.13.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.13.vtu
+INFO: Step 14, time 15813.3, U, 3 components, 1221 values
+INFO: Step 14, time 15813.3, S, 6 components, 1221 values
+INFO: Step 14, time 15813.3, S_Mises, 1 components, 1221 values
+INFO: Step 14, time 15813.3, S_Principal, 4 components, 1221 values
+INFO: Step 14, time 15813.3, E, 6 components, 1221 values
+INFO: Step 14, time 15813.3, E_Mises, 1 components, 1221 values
+INFO: Step 14, time 15813.3, E_Principal, 4 components, 1221 values
+INFO: Step 14, time 15813.3, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.14.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.14.vtu
+INFO: Step 15, time 15813.3, U, 3 components, 1221 values
+INFO: Step 15, time 15813.3, S, 6 components, 1221 values
+INFO: Step 15, time 15813.3, S_Mises, 1 components, 1221 values
+INFO: Step 15, time 15813.3, S_Principal, 4 components, 1221 values
+INFO: Step 15, time 15813.3, E, 6 components, 1221 values
+INFO: Step 15, time 15813.3, E_Mises, 1 components, 1221 values
+INFO: Step 15, time 15813.3, E_Principal, 4 components, 1221 values
+INFO: Step 15, time 15813.3, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.15.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.15.vtu
+INFO: Step 16, time 18574.3, U, 3 components, 1221 values
+INFO: Step 16, time 18574.3, S, 6 components, 1221 values
+INFO: Step 16, time 18574.3, S_Mises, 1 components, 1221 values
+INFO: Step 16, time 18574.3, S_Principal, 4 components, 1221 values
+INFO: Step 16, time 18574.3, E, 6 components, 1221 values
+INFO: Step 16, time 18574.3, E_Mises, 1 components, 1221 values
+INFO: Step 16, time 18574.3, E_Principal, 4 components, 1221 values
+INFO: Step 16, time 18574.3, ERROR, 1 components, 1221 values
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.16.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.16.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_beammodal.pvd
+0m 0.9s
+
+==================================================
+4: other/Jan_Lukas_modal_dynamic_staticbeam2.frd
+INFO: Reading Jan_Lukas_modal_dynamic_staticbeam2.frd
+INFO: 321 nodes
+INFO: 40 cells
+INFO: 16 time increment s
+INFO: Step 1, time 837.4, U, 3 components, 321 values
+INFO: Step 1, time 837.4, S, 6 components, 321 values
+INFO: Step 1, time 837.4, S_Mises, 1 components, 321 values
+INFO: Step 1, time 837.4, S_Principal, 4 components, 321 values
+INFO: Step 1, time 837.4, E, 6 components, 321 values
+INFO: Step 1, time 837.4, E_Mises, 1 components, 321 values
+INFO: Step 1, time 837.4, E_Principal, 4 components, 321 values
+INFO: Step 1, time 837.4, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.01.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.01.vtu
+INFO: Step 2, time 837.4, U, 3 components, 321 values
+INFO: Step 2, time 837.4, S, 6 components, 321 values
+INFO: Step 2, time 837.4, S_Mises, 1 components, 321 values
+INFO: Step 2, time 837.4, S_Principal, 4 components, 321 values
+INFO: Step 2, time 837.4, E, 6 components, 321 values
+INFO: Step 2, time 837.4, E_Mises, 1 components, 321 values
+INFO: Step 2, time 837.4, E_Principal, 4 components, 321 values
+INFO: Step 2, time 837.4, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.02.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.02.vtu
+INFO: Step 3, time 5026.9, U, 3 components, 321 values
+INFO: Step 3, time 5026.9, S, 6 components, 321 values
+INFO: Step 3, time 5026.9, S_Mises, 1 components, 321 values
+INFO: Step 3, time 5026.9, S_Principal, 4 components, 321 values
+INFO: Step 3, time 5026.9, E, 6 components, 321 values
+INFO: Step 3, time 5026.9, E_Mises, 1 components, 321 values
+INFO: Step 3, time 5026.9, E_Principal, 4 components, 321 values
+INFO: Step 3, time 5026.9, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.03.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.03.vtu
+INFO: Step 4, time 5026.9, U, 3 components, 321 values
+INFO: Step 4, time 5026.9, S, 6 components, 321 values
+INFO: Step 4, time 5026.9, S_Mises, 1 components, 321 values
+INFO: Step 4, time 5026.9, S_Principal, 4 components, 321 values
+INFO: Step 4, time 5026.9, E, 6 components, 321 values
+INFO: Step 4, time 5026.9, E_Mises, 1 components, 321 values
+INFO: Step 4, time 5026.9, E_Principal, 4 components, 321 values
+INFO: Step 4, time 5026.9, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.04.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.04.vtu
+INFO: Step 5, time 7452.8, U, 3 components, 321 values
+INFO: Step 5, time 7452.8, S, 6 components, 321 values
+INFO: Step 5, time 7452.8, S_Mises, 1 components, 321 values
+INFO: Step 5, time 7452.8, S_Principal, 4 components, 321 values
+INFO: Step 5, time 7452.8, E, 6 components, 321 values
+INFO: Step 5, time 7452.8, E_Mises, 1 components, 321 values
+INFO: Step 5, time 7452.8, E_Principal, 4 components, 321 values
+INFO: Step 5, time 7452.8, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.05.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.05.vtu
+INFO: Step 6, time 12989.9, U, 3 components, 321 values
+INFO: Step 6, time 12989.9, S, 6 components, 321 values
+INFO: Step 6, time 12989.9, S_Mises, 1 components, 321 values
+INFO: Step 6, time 12989.9, S_Principal, 4 components, 321 values
+INFO: Step 6, time 12989.9, E, 6 components, 321 values
+INFO: Step 6, time 12989.9, E_Mises, 1 components, 321 values
+INFO: Step 6, time 12989.9, E_Principal, 4 components, 321 values
+INFO: Step 6, time 12989.9, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.06.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.06.vtu
+INFO: Step 7, time 13260.2, U, 3 components, 321 values
+INFO: Step 7, time 13260.2, S, 6 components, 321 values
+INFO: Step 7, time 13260.2, S_Mises, 1 components, 321 values
+INFO: Step 7, time 13260.2, S_Principal, 4 components, 321 values
+INFO: Step 7, time 13260.2, E, 6 components, 321 values
+INFO: Step 7, time 13260.2, E_Mises, 1 components, 321 values
+INFO: Step 7, time 13260.2, E_Principal, 4 components, 321 values
+INFO: Step 7, time 13260.2, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.07.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.07.vtu
+INFO: Step 8, time 13260.2, U, 3 components, 321 values
+INFO: Step 8, time 13260.2, S, 6 components, 321 values
+INFO: Step 8, time 13260.2, S_Mises, 1 components, 321 values
+INFO: Step 8, time 13260.2, S_Principal, 4 components, 321 values
+INFO: Step 8, time 13260.2, E, 6 components, 321 values
+INFO: Step 8, time 13260.2, E_Mises, 1 components, 321 values
+INFO: Step 8, time 13260.2, E_Principal, 4 components, 321 values
+INFO: Step 8, time 13260.2, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.08.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.08.vtu
+INFO: Step 9, time 22364.5, U, 3 components, 321 values
+INFO: Step 9, time 22364.5, S, 6 components, 321 values
+INFO: Step 9, time 22364.5, S_Mises, 1 components, 321 values
+INFO: Step 9, time 22364.5, S_Principal, 4 components, 321 values
+INFO: Step 9, time 22364.5, E, 6 components, 321 values
+INFO: Step 9, time 22364.5, E_Mises, 1 components, 321 values
+INFO: Step 9, time 22364.5, E_Principal, 4 components, 321 values
+INFO: Step 9, time 22364.5, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.09.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.09.vtu
+INFO: Step 10, time 24163.3, U, 3 components, 321 values
+INFO: Step 10, time 24163.3, S, 6 components, 321 values
+INFO: Step 10, time 24163.3, S_Mises, 1 components, 321 values
+INFO: Step 10, time 24163.3, S_Principal, 4 components, 321 values
+INFO: Step 10, time 24163.3, E, 6 components, 321 values
+INFO: Step 10, time 24163.3, E_Mises, 1 components, 321 values
+INFO: Step 10, time 24163.3, E_Principal, 4 components, 321 values
+INFO: Step 10, time 24163.3, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.10.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.10.vtu
+INFO: Step 11, time 24163.3, U, 3 components, 321 values
+INFO: Step 11, time 24163.3, S, 6 components, 321 values
+INFO: Step 11, time 24163.3, S_Mises, 1 components, 321 values
+INFO: Step 11, time 24163.3, S_Principal, 4 components, 321 values
+INFO: Step 11, time 24163.3, E, 6 components, 321 values
+INFO: Step 11, time 24163.3, E_Mises, 1 components, 321 values
+INFO: Step 11, time 24163.3, E_Principal, 4 components, 321 values
+INFO: Step 11, time 24163.3, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.11.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.11.vtu
+INFO: Step 12, time 37022.9, U, 3 components, 321 values
+INFO: Step 12, time 37022.9, S, 6 components, 321 values
+INFO: Step 12, time 37022.9, S_Mises, 1 components, 321 values
+INFO: Step 12, time 37022.9, S_Principal, 4 components, 321 values
+INFO: Step 12, time 37022.9, E, 6 components, 321 values
+INFO: Step 12, time 37022.9, E_Mises, 1 components, 321 values
+INFO: Step 12, time 37022.9, E_Principal, 4 components, 321 values
+INFO: Step 12, time 37022.9, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.12.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.12.vtu
+INFO: Step 13, time 37022.9, U, 3 components, 321 values
+INFO: Step 13, time 37022.9, S, 6 components, 321 values
+INFO: Step 13, time 37022.9, S_Mises, 1 components, 321 values
+INFO: Step 13, time 37022.9, S_Principal, 4 components, 321 values
+INFO: Step 13, time 37022.9, E, 6 components, 321 values
+INFO: Step 13, time 37022.9, E_Mises, 1 components, 321 values
+INFO: Step 13, time 37022.9, E_Principal, 4 components, 321 values
+INFO: Step 13, time 37022.9, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.13.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.13.vtu
+INFO: Step 14, time 37302.0, U, 3 components, 321 values
+INFO: Step 14, time 37302.0, S, 6 components, 321 values
+INFO: Step 14, time 37302.0, S_Mises, 1 components, 321 values
+INFO: Step 14, time 37302.0, S_Principal, 4 components, 321 values
+INFO: Step 14, time 37302.0, E, 6 components, 321 values
+INFO: Step 14, time 37302.0, E_Mises, 1 components, 321 values
+INFO: Step 14, time 37302.0, E_Principal, 4 components, 321 values
+INFO: Step 14, time 37302.0, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.14.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.14.vtu
+INFO: Step 15, time 38917.4, U, 3 components, 321 values
+INFO: Step 15, time 38917.4, S, 6 components, 321 values
+INFO: Step 15, time 38917.4, S_Mises, 1 components, 321 values
+INFO: Step 15, time 38917.4, S_Principal, 4 components, 321 values
+INFO: Step 15, time 38917.4, E, 6 components, 321 values
+INFO: Step 15, time 38917.4, E_Mises, 1 components, 321 values
+INFO: Step 15, time 38917.4, E_Principal, 4 components, 321 values
+INFO: Step 15, time 38917.4, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.15.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.15.vtu
+INFO: Step 16, time 51346.8, U, 3 components, 321 values
+INFO: Step 16, time 51346.8, S, 6 components, 321 values
+INFO: Step 16, time 51346.8, S_Mises, 1 components, 321 values
+INFO: Step 16, time 51346.8, S_Principal, 4 components, 321 values
+INFO: Step 16, time 51346.8, E, 6 components, 321 values
+INFO: Step 16, time 51346.8, E_Mises, 1 components, 321 values
+INFO: Step 16, time 51346.8, E_Principal, 4 components, 321 values
+INFO: Step 16, time 51346.8, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.16.vtk
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.16.vtu
+INFO: Writing Jan_Lukas_modal_dynamic_staticbeam2.pvd
+0m 0.3s
+
+==================================================
+5: other/Jan_Lukas_static_structural.frd
+INFO: Reading Jan_Lukas_static_structural.frd
+INFO: 321 nodes
+INFO: 40 cells
+INFO: 1 time increment
+INFO: Step 1, time 1.0, U, 3 components, 321 values
+INFO: Step 1, time 1.0, S, 6 components, 321 values
+INFO: Step 1, time 1.0, S_Mises, 1 components, 321 values
+INFO: Step 1, time 1.0, S_Principal, 4 components, 321 values
+INFO: Step 1, time 1.0, E, 6 components, 321 values
+INFO: Step 1, time 1.0, E_Mises, 1 components, 321 values
+INFO: Step 1, time 1.0, E_Principal, 4 components, 321 values
+INFO: Step 1, time 1.0, ERROR, 1 components, 321 values
+INFO: Writing Jan_Lukas_static_structural.vtk
+INFO: Writing Jan_Lukas_static_structural.vtu
+0m 0.0s
+
+==================================================
+6: other/John_Mannisto_blade_sector.frd
+INFO: Reading John_Mannisto_blade_sector.frd
+INFO: 1720 nodes
+INFO: 832 cells
+INFO: 15 time increment s
+INFO: Step 1, time 87.1, U, 3 components, 1720 values
+INFO: Step 1, time 87.1, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.01.vtk
+INFO: Writing John_Mannisto_blade_sector.01.vtu
+INFO: Step 3, time 204.1, U, 3 components, 1720 values
+INFO: Step 3, time 204.1, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.02.vtk
+INFO: Writing John_Mannisto_blade_sector.02.vtu
+INFO: Step 5, time 316.1, U, 3 components, 1720 values
+INFO: Step 5, time 316.1, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.03.vtk
+INFO: Writing John_Mannisto_blade_sector.03.vtu
+INFO: Step 6, time 89.2, U, 3 components, 1720 values
+INFO: Step 6, time 89.2, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.04.vtk
+INFO: Writing John_Mannisto_blade_sector.04.vtu
+INFO: Step 8, time 200.5, U, 3 components, 1720 values
+INFO: Step 8, time 200.5, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.05.vtk
+INFO: Writing John_Mannisto_blade_sector.05.vtu
+INFO: Step 10, time 316.1, U, 3 components, 1720 values
+INFO: Step 10, time 316.1, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.06.vtk
+INFO: Writing John_Mannisto_blade_sector.06.vtu
+INFO: Step 11, time 89.3, U, 3 components, 1720 values
+INFO: Step 11, time 89.3, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.07.vtk
+INFO: Writing John_Mannisto_blade_sector.07.vtu
+INFO: Step 13, time 206.2, U, 3 components, 1720 values
+INFO: Step 13, time 206.2, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.08.vtk
+INFO: Writing John_Mannisto_blade_sector.08.vtu
+INFO: Step 15, time 317.5, U, 3 components, 1720 values
+INFO: Step 15, time 317.5, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.09.vtk
+INFO: Writing John_Mannisto_blade_sector.09.vtu
+INFO: Step 16, time 88.5, U, 3 components, 1720 values
+INFO: Step 16, time 88.5, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.10.vtk
+INFO: Writing John_Mannisto_blade_sector.10.vtu
+INFO: Step 18, time 215.5, U, 3 components, 1720 values
+INFO: Step 18, time 215.5, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.11.vtk
+INFO: Writing John_Mannisto_blade_sector.11.vtu
+INFO: Step 20, time 318.4, U, 3 components, 1720 values
+INFO: Step 20, time 318.4, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.12.vtk
+INFO: Writing John_Mannisto_blade_sector.12.vtu
+INFO: Step 21, time 88.2, U, 3 components, 1720 values
+INFO: Step 21, time 88.2, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.13.vtk
+INFO: Writing John_Mannisto_blade_sector.13.vtu
+INFO: Step 23, time 218.8, U, 3 components, 1720 values
+INFO: Step 23, time 218.8, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.14.vtk
+INFO: Writing John_Mannisto_blade_sector.14.vtu
+INFO: Step 25, time 318.6, U, 3 components, 1720 values
+INFO: Step 25, time 318.6, DISPI, 3 components, 1720 values
+INFO: Writing John_Mannisto_blade_sector.15.vtk
+INFO: Writing John_Mannisto_blade_sector.15.vtu
+INFO: Writing John_Mannisto_blade_sector.pvd
+0m 0.3s
+
+==================================================
+7: other/John_Mannisto_buckling_trick.frd
+INFO: Reading John_Mannisto_buckling_trick.frd
+INFO: 542 nodes
+INFO: 80 cells
+INFO: 3 time increment s
+INFO: Step 1, time 1.00e-02, U, 3 components, 542 values
+INFO: Step 1, time 1.00e-02, S, 6 components, 542 values
+INFO: Step 1, time 1.00e-02, S_Mises, 1 components, 542 values
+INFO: Step 1, time 1.00e-02, S_Principal, 4 components, 542 values
+INFO: Step 1, time 1.00e-02, RF, 3 components, 542 values
+INFO: Step 1, time 1.00e-02, ERROR, 1 components, 542 values
+INFO: Writing John_Mannisto_buckling_trick.1.vtk
+INFO: Writing John_Mannisto_buckling_trick.1.vtu
+INFO: Step 2, time 2.00e-02, U, 3 components, 542 values
+INFO: Step 2, time 2.00e-02, S, 6 components, 542 values
+INFO: Step 2, time 2.00e-02, S_Mises, 1 components, 542 values
+INFO: Step 2, time 2.00e-02, S_Principal, 4 components, 542 values
+INFO: Step 2, time 2.00e-02, RF, 3 components, 542 values
+INFO: Step 2, time 2.00e-02, ERROR, 1 components, 542 values
+INFO: Writing John_Mannisto_buckling_trick.2.vtk
+INFO: Writing John_Mannisto_buckling_trick.2.vtu
+INFO: Step 3, time 3.00e-02, U, 3 components, 542 values
+INFO: Step 3, time 3.00e-02, RF, 3 components, 542 values
+INFO: Writing John_Mannisto_buckling_trick.3.vtk
+INFO: Writing John_Mannisto_buckling_trick.3.vtu
+INFO: Writing John_Mannisto_buckling_trick.pvd
+0m 0.0s
+
+==================================================
+8: other/Kaffeeheblerei_hinge.frd
+INFO: Reading Kaffeeheblerei_hinge.frd
+INFO: 378 nodes
+INFO: 160 cells
+INFO: 1 time increment
+INFO: Step 1, time 1.0, U, 3 components, 378 values
+INFO: Step 1, time 1.0, S, 6 components, 378 values
+INFO: Step 1, time 1.0, S_Mises, 1 components, 378 values
+INFO: Step 1, time 1.0, S_Principal, 4 components, 378 values
+INFO: Step 1, time 1.0, ERROR, 1 components, 378 values
+INFO: Writing Kaffeeheblerei_hinge.vtk
+INFO: Writing Kaffeeheblerei_hinge.vtu
+0m 0.0s
+
+==================================================
+9: other/Nidish_Narayanaa_Balaji.frd
+INFO: Reading Nidish_Narayanaa_Balaji.frd
+INFO: 3432 nodes
+INFO: 2560 cells
+INFO: 10 time increment s
+INFO: Step 1, time 721.9, U, 3 components, 3432 values
+INFO: Step 1, time 721.9, S, 6 components, 3432 values
+INFO: Step 1, time 721.9, S_Mises, 1 components, 3432 values
+INFO: Step 1, time 721.9, S_Principal, 4 components, 3432 values
+INFO: Step 1, time 721.9, ERROR, 1 components, 3432 values
+INFO: Writing Nidish_Narayanaa_Balaji.01.vtk
+INFO: Writing Nidish_Narayanaa_Balaji.01.vtu
+INFO: Step 2, time 1405.0, U, 3 components, 3432 values
+INFO: Step 2, time 1405.0, S, 6 components, 3432 values
+INFO: Step 2, time 1405.0, S_Mises, 1 components, 3432 values
+INFO: Step 2, time 1405.0, S_Principal, 4 components, 3432 values
+INFO: Step 2, time 1405.0, ERROR, 1 components, 3432 values
+INFO: Writing Nidish_Narayanaa_Balaji.02.vtk
+INFO: Writing Nidish_Narayanaa_Balaji.02.vtu
+INFO: Step 3, time 4255.6, U, 3 components, 3432 values
+INFO: Step 3, time 4255.6, S, 6 components, 3432 values
+INFO: Step 3, time 4255.6, S_Mises, 1 components, 3432 values
+INFO: Step 3, time 4255.6, S_Principal, 4 components, 3432 values
+INFO: Step 3, time 4255.6, ERROR, 1 components, 3432 values
+INFO: Writing Nidish_Narayanaa_Balaji.03.vtk
+INFO: Writing Nidish_Narayanaa_Balaji.03.vtu
+INFO: Step 4, time 4908.6, U, 3 components, 3432 values
+INFO: Step 4, time 4908.6, S, 6 components, 3432 values
+INFO: Step 4, time 4908.6, S_Mises, 1 components, 3432 values
+INFO: Step 4, time 4908.6, S_Principal, 4 components, 3432 values
+INFO: Step 4, time 4908.6, ERROR, 1 components, 3432 values
+INFO: Writing Nidish_Narayanaa_Balaji.04.vtk
+INFO: Writing Nidish_Narayanaa_Balaji.04.vtu
+INFO: Step 5, time 7617.8, U, 3 components, 3432 values
+INFO: Step 5, time 7617.8, S, 6 components, 3432 values
+INFO: Step 5, time 7617.8, S_Mises, 1 components, 3432 values
+INFO: Step 5, time 7617.8, S_Principal, 4 components, 3432 values
+INFO: Step 5, time 7617.8, ERROR, 1 components, 3432 values
+INFO: Writing Nidish_Narayanaa_Balaji.05.vtk
+INFO: Writing Nidish_Narayanaa_Balaji.05.vtu
+INFO: Step 6, time 10355.9, U, 3 components, 3432 values
+INFO: Step 6, time 10355.9, S, 6 components, 3432 values
+INFO: Step 6, time 10355.9, S_Mises, 1 components, 3432 values
+INFO: Step 6, time 10355.9, S_Principal, 4 components, 3432 values
+INFO: Step 6, time 10355.9, ERROR, 1 components, 3432 values
+INFO: Writing Nidish_Narayanaa_Balaji.06.vtk
+INFO: Writing Nidish_Narayanaa_Balaji.06.vtu
+INFO: Step 7, time 11354.6, U, 3 components, 3432 values
+INFO: Step 7, time 11354.6, S, 6 components, 3432 values
+INFO: Step 7, time 11354.6, S_Mises, 1 components, 3432 values
+INFO: Step 7, time 11354.6, S_Principal, 4 components, 3432 values
+INFO: Step 7, time 11354.6, ERROR, 1 components, 3432 values
+INFO: Writing Nidish_Narayanaa_Balaji.07.vtk
+INFO: Writing Nidish_Narayanaa_Balaji.07.vtu
+INFO: Step 8, time 14874.6, U, 3 components, 3432 values
+INFO: Step 8, time 14874.6, S, 6 components, 3432 values
+INFO: Step 8, time 14874.6, S_Mises, 1 components, 3432 values
+INFO: Step 8, time 14874.6, S_Principal, 4 components, 3432 values
+INFO: Step 8, time 14874.6, ERROR, 1 components, 3432 values
+INFO: Writing Nidish_Narayanaa_Balaji.08.vtk
+INFO: Writing Nidish_Narayanaa_Balaji.08.vtu
+INFO: Step 9, time 17166.5, U, 3 components, 3432 values
+INFO: Step 9, time 17166.5, S, 6 components, 3432 values
+INFO: Step 9, time 17166.5, S_Mises, 1 components, 3432 values
+INFO: Step 9, time 17166.5, S_Principal, 4 components, 3432 values
+INFO: Step 9, time 17166.5, ERROR, 1 components, 3432 values
+INFO: Writing Nidish_Narayanaa_Balaji.09.vtk
+INFO: Writing Nidish_Narayanaa_Balaji.09.vtu
+INFO: Step 10, time 20441.6, U, 3 components, 3432 values
+INFO: Step 10, time 20441.6, S, 6 components, 3432 values
+INFO: Step 10, time 20441.6, S_Mises, 1 components, 3432 values
+INFO: Step 10, time 20441.6, S_Principal, 4 components, 3432 values
+INFO: Step 10, time 20441.6, ERROR, 1 components, 3432 values
+INFO: Writing Nidish_Narayanaa_Balaji.10.vtk
+INFO: Writing Nidish_Narayanaa_Balaji.10.vtu
+INFO: Writing Nidish_Narayanaa_Balaji.pvd
+0m 1.0s
+
+==================================================
+10: other/RingBeam.frd
+INFO: Reading RingBeam.frd
+INFO: 39312 nodes
+INFO: 31104 cells
+INFO: 1 time increment
+INFO: Step 1, time 1.0, U, 3 components, 39312 values
+INFO: Step 1, time 1.0, S, 6 components, 39312 values
+INFO: Step 1, time 1.0, S_Mises, 1 components, 39312 values
+INFO: Step 1, time 1.0, S_Principal, 4 components, 39312 values
+INFO: Step 1, time 1.0, ERROR, 1 components, 39312 values
+INFO: Writing RingBeam.vtk
+INFO: Writing RingBeam.vtu
+0m 1.3s
+
+==================================================
+11: other/Spanner-in.frd
+INFO: Reading Spanner-in.frd
+INFO: 10386 nodes
+INFO: 5099 cells
+INFO: 1 time increment
+INFO: Step 1, time 1.0, U, 3 components, 10386 values
+INFO: Step 1, time 1.0, S, 6 components, 10386 values
+INFO: Step 1, time 1.0, S_Mises, 1 components, 10386 values
+INFO: Step 1, time 1.0, S_Principal, 4 components, 10386 values
+INFO: Step 1, time 1.0, E, 6 components, 10386 values
+INFO: Step 1, time 1.0, E_Mises, 1 components, 10386 values
+INFO: Step 1, time 1.0, E_Principal, 4 components, 10386 values
+INFO: Step 1, time 1.0, ERROR, 1 components, 10386 values
+INFO: Writing Spanner-in.vtk
+INFO: Writing Spanner-in.vtu
+0m 0.5s
+
+==================================================
+12: other/ball.frd
+INFO: Reading ball.frd
+INFO: 4812 nodes
+INFO: 2259 cells
+INFO: 8 time increment s
+INFO: Step 1, time 1.00e-01, U, 3 components, 4812 values
+INFO: Step 1, time 1.00e-01, S, 6 components, 4812 values
+INFO: Step 1, time 1.00e-01, S_Mises, 1 components, 4812 values
+INFO: Step 1, time 1.00e-01, S_Principal, 4 components, 4812 values
+INFO: Step 1, time 1.00e-01, ERROR, 1 components, 4812 values
+INFO: Writing ball.1.vtk
+INFO: Writing ball.1.vtu
+INFO: Step 2, time 2.00e-01, U, 3 components, 4812 values
+INFO: Step 2, time 2.00e-01, S, 6 components, 4812 values
+INFO: Step 2, time 2.00e-01, S_Mises, 1 components, 4812 values
+INFO: Step 2, time 2.00e-01, S_Principal, 4 components, 4812 values
+INFO: Step 2, time 2.00e-01, ERROR, 1 components, 4812 values
+INFO: Writing ball.2.vtk
+INFO: Writing ball.2.vtu
+INFO: Step 3, time 3.00e-01, U, 3 components, 4812 values
+INFO: Step 3, time 3.00e-01, S, 6 components, 4812 values
+INFO: Step 3, time 3.00e-01, S_Mises, 1 components, 4812 values
+INFO: Step 3, time 3.00e-01, S_Principal, 4 components, 4812 values
+INFO: Step 3, time 3.00e-01, ERROR, 1 components, 4812 values
+INFO: Writing ball.3.vtk
+INFO: Writing ball.3.vtu
+INFO: Step 4, time 4.00e-01, U, 3 components, 4812 values
+INFO: Step 4, time 4.00e-01, S, 6 components, 4812 values
+INFO: Step 4, time 4.00e-01, S_Mises, 1 components, 4812 values
+INFO: Step 4, time 4.00e-01, S_Principal, 4 components, 4812 values
+INFO: Step 4, time 4.00e-01, ERROR, 1 components, 4812 values
+INFO: Writing ball.4.vtk
+INFO: Writing ball.4.vtu
+INFO: Step 5, time 5.00e-01, U, 3 components, 4812 values
+INFO: Step 5, time 5.00e-01, S, 6 components, 4812 values
+INFO: Step 5, time 5.00e-01, S_Mises, 1 components, 4812 values
+INFO: Step 5, time 5.00e-01, S_Principal, 4 components, 4812 values
+INFO: Step 5, time 5.00e-01, ERROR, 1 components, 4812 values
+INFO: Writing ball.5.vtk
+INFO: Writing ball.5.vtu
+INFO: Step 6, time 6.00e-01, U, 3 components, 4812 values
+INFO: Step 6, time 6.00e-01, S, 6 components, 4812 values
+INFO: Step 6, time 6.00e-01, S_Mises, 1 components, 4812 values
+INFO: Step 6, time 6.00e-01, S_Principal, 4 components, 4812 values
+INFO: Step 6, time 6.00e-01, ERROR, 1 components, 4812 values
+INFO: Writing ball.6.vtk
+INFO: Writing ball.6.vtu
+INFO: Step 7, time 7.00e-01, U, 3 components, 4812 values
+INFO: Step 7, time 7.00e-01, S, 6 components, 4812 values
+INFO: Step 7, time 7.00e-01, S_Mises, 1 components, 4812 values
+INFO: Step 7, time 7.00e-01, S_Principal, 4 components, 4812 values
+INFO: Step 7, time 7.00e-01, ERROR, 1 components, 4812 values
+INFO: Writing ball.7.vtk
+INFO: Writing ball.7.vtu
+INFO: Step 8, time 8.00e-01, U, 3 components, 4812 values
+INFO: Step 8, time 8.00e-01, S, 6 components, 4812 values
+INFO: Step 8, time 8.00e-01, S_Mises, 1 components, 4812 values
+INFO: Step 8, time 8.00e-01, S_Principal, 4 components, 4812 values
+INFO: Step 8, time 8.00e-01, ERROR, 1 components, 4812 values
+INFO: Writing ball.8.vtk
+INFO: Writing ball.8.vtu
+INFO: Writing ball.pvd
+0m 1.1s
+
+==================================================
+13: other/contact2e.frd
+INFO: Reading contact2e.frd
+INFO: 522 nodes
+INFO: 64 cells
+INFO: 87 time increment s
+INFO: Step 1, time 1.47e-06, U, 3 components, 522 values
+INFO: Writing contact2e.01.vtk
+INFO: Writing contact2e.01.vtu
+INFO: Step 2, time 2.94e-06, U, 3 components, 522 values
+INFO: Writing contact2e.02.vtk
+INFO: Writing contact2e.02.vtu
+INFO: Step 3, time 4.41e-06, U, 3 components, 522 values
+INFO: Writing contact2e.03.vtk
+INFO: Writing contact2e.03.vtu
+INFO: Step 4, time 5.88e-06, U, 3 components, 522 values
+INFO: Writing contact2e.04.vtk
+INFO: Writing contact2e.04.vtu
+INFO: Step 5, time 7.35e-06, U, 3 components, 522 values
+INFO: Writing contact2e.05.vtk
+INFO: Writing contact2e.05.vtu
+INFO: Step 6, time 8.82e-06, U, 3 components, 522 values
+INFO: Writing contact2e.06.vtk
+INFO: Writing contact2e.06.vtu
+INFO: Step 7, time 1.03e-05, U, 3 components, 522 values
+INFO: Writing contact2e.07.vtk
+INFO: Writing contact2e.07.vtu
+INFO: Step 8, time 1.18e-05, U, 3 components, 522 values
+INFO: Writing contact2e.08.vtk
+INFO: Writing contact2e.08.vtu
+INFO: Step 9, time 1.32e-05, U, 3 components, 522 values
+INFO: Writing contact2e.09.vtk
+INFO: Writing contact2e.09.vtu
+INFO: Step 10, time 1.47e-05, U, 3 components, 522 values
+INFO: Writing contact2e.10.vtk
+INFO: Writing contact2e.10.vtu
+INFO: Step 11, time 1.62e-05, U, 3 components, 522 values
+INFO: Writing contact2e.11.vtk
+INFO: Writing contact2e.11.vtu
+INFO: Step 12, time 1.76e-05, U, 3 components, 522 values
+INFO: Writing contact2e.12.vtk
+INFO: Writing contact2e.12.vtu
+INFO: Step 13, time 1.91e-05, U, 3 components, 522 values
+INFO: Writing contact2e.13.vtk
+INFO: Writing contact2e.13.vtu
+INFO: Step 14, time 2.06e-05, U, 3 components, 522 values
+INFO: Writing contact2e.14.vtk
+INFO: Writing contact2e.14.vtu
+INFO: Step 15, time 2.20e-05, U, 3 components, 522 values
+INFO: Writing contact2e.15.vtk
+INFO: Writing contact2e.15.vtu
+INFO: Step 16, time 2.35e-05, U, 3 components, 522 values
+INFO: Writing contact2e.16.vtk
+INFO: Writing contact2e.16.vtu
+INFO: Step 17, time 2.50e-05, U, 3 components, 522 values
+INFO: Writing contact2e.17.vtk
+INFO: Writing contact2e.17.vtu
+INFO: Step 18, time 2.65e-05, U, 3 components, 522 values
+INFO: Writing contact2e.18.vtk
+INFO: Writing contact2e.18.vtu
+INFO: Step 19, time 2.69e-05, U, 3 components, 522 values
+INFO: Writing contact2e.19.vtk
+INFO: Writing contact2e.19.vtu
+INFO: Step 20, time 2.73e-05, U, 3 components, 522 values
+INFO: Writing contact2e.20.vtk
+INFO: Writing contact2e.20.vtu
+INFO: Step 21, time 2.77e-05, U, 3 components, 522 values
+INFO: Writing contact2e.21.vtk
+INFO: Writing contact2e.21.vtu
+INFO: Step 22, time 2.81e-05, U, 3 components, 522 values
+INFO: Writing contact2e.22.vtk
+INFO: Writing contact2e.22.vtu
+INFO: Step 23, time 2.85e-05, U, 3 components, 522 values
+INFO: Writing contact2e.23.vtk
+INFO: Writing contact2e.23.vtu
+INFO: Step 24, time 2.89e-05, U, 3 components, 522 values
+INFO: Writing contact2e.24.vtk
+INFO: Writing contact2e.24.vtu
+INFO: Step 25, time 2.92e-05, U, 3 components, 522 values
+INFO: Writing contact2e.25.vtk
+INFO: Writing contact2e.25.vtu
+INFO: Step 26, time 2.99e-05, U, 3 components, 522 values
+INFO: Writing contact2e.26.vtk
+INFO: Writing contact2e.26.vtu
+INFO: Step 27, time 3.14e-05, U, 3 components, 522 values
+INFO: Writing contact2e.27.vtk
+INFO: Writing contact2e.27.vtu
+INFO: Step 28, time 3.29e-05, U, 3 components, 522 values
+INFO: Writing contact2e.28.vtk
+INFO: Writing contact2e.28.vtu
+INFO: Step 29, time 3.39e-05, U, 3 components, 522 values
+INFO: Writing contact2e.29.vtk
+INFO: Writing contact2e.29.vtu
+INFO: Step 30, time 3.43e-05, U, 3 components, 522 values
+INFO: Writing contact2e.30.vtk
+INFO: Writing contact2e.30.vtu
+INFO: Step 31, time 3.47e-05, U, 3 components, 522 values
+INFO: Writing contact2e.31.vtk
+INFO: Writing contact2e.31.vtu
+INFO: Step 32, time 3.51e-05, U, 3 components, 522 values
+INFO: Writing contact2e.32.vtk
+INFO: Writing contact2e.32.vtu
+INFO: Step 33, time 3.55e-05, U, 3 components, 522 values
+INFO: Writing contact2e.33.vtk
+INFO: Writing contact2e.33.vtu
+INFO: Step 34, time 3.59e-05, U, 3 components, 522 values
+INFO: Writing contact2e.34.vtk
+INFO: Writing contact2e.34.vtu
+INFO: Step 35, time 3.63e-05, U, 3 components, 522 values
+INFO: Writing contact2e.35.vtk
+INFO: Writing contact2e.35.vtu
+INFO: Step 36, time 3.67e-05, U, 3 components, 522 values
+INFO: Writing contact2e.36.vtk
+INFO: Writing contact2e.36.vtu
+INFO: Step 37, time 3.75e-05, U, 3 components, 522 values
+INFO: Writing contact2e.37.vtk
+INFO: Writing contact2e.37.vtu
+INFO: Step 38, time 3.90e-05, U, 3 components, 522 values
+INFO: Writing contact2e.38.vtk
+INFO: Writing contact2e.38.vtu
+INFO: Step 39, time 4.04e-05, U, 3 components, 522 values
+INFO: Writing contact2e.39.vtk
+INFO: Writing contact2e.39.vtu
+INFO: Step 40, time 4.19e-05, U, 3 components, 522 values
+INFO: Writing contact2e.40.vtk
+INFO: Writing contact2e.40.vtu
+INFO: Step 41, time 4.34e-05, U, 3 components, 522 values
+INFO: Writing contact2e.41.vtk
+INFO: Writing contact2e.41.vtu
+INFO: Step 42, time 4.49e-05, U, 3 components, 522 values
+INFO: Writing contact2e.42.vtk
+INFO: Writing contact2e.42.vtu
+INFO: Step 43, time 4.63e-05, U, 3 components, 522 values
+INFO: Writing contact2e.43.vtk
+INFO: Writing contact2e.43.vtu
+INFO: Step 44, time 4.78e-05, U, 3 components, 522 values
+INFO: Writing contact2e.44.vtk
+INFO: Writing contact2e.44.vtu
+INFO: Step 45, time 4.93e-05, U, 3 components, 522 values
+INFO: Writing contact2e.45.vtk
+INFO: Writing contact2e.45.vtu
+INFO: Step 46, time 5.07e-05, U, 3 components, 522 values
+INFO: Writing contact2e.46.vtk
+INFO: Writing contact2e.46.vtu
+INFO: Step 47, time 5.22e-05, U, 3 components, 522 values
+INFO: Writing contact2e.47.vtk
+INFO: Writing contact2e.47.vtu
+INFO: Step 48, time 5.37e-05, U, 3 components, 522 values
+INFO: Writing contact2e.48.vtk
+INFO: Writing contact2e.48.vtu
+INFO: Step 49, time 5.51e-05, U, 3 components, 522 values
+INFO: Writing contact2e.49.vtk
+INFO: Writing contact2e.49.vtu
+INFO: Step 50, time 5.66e-05, U, 3 components, 522 values
+INFO: Writing contact2e.50.vtk
+INFO: Writing contact2e.50.vtu
+INFO: Step 51, time 5.81e-05, U, 3 components, 522 values
+INFO: Writing contact2e.51.vtk
+INFO: Writing contact2e.51.vtu
+INFO: Step 52, time 5.95e-05, U, 3 components, 522 values
+INFO: Writing contact2e.52.vtk
+INFO: Writing contact2e.52.vtu
+INFO: Step 53, time 6.10e-05, U, 3 components, 522 values
+INFO: Writing contact2e.53.vtk
+INFO: Writing contact2e.53.vtu
+INFO: Step 54, time 6.25e-05, U, 3 components, 522 values
+INFO: Writing contact2e.54.vtk
+INFO: Writing contact2e.54.vtu
+INFO: Step 55, time 6.40e-05, U, 3 components, 522 values
+INFO: Writing contact2e.55.vtk
+INFO: Writing contact2e.55.vtu
+INFO: Step 56, time 6.54e-05, U, 3 components, 522 values
+INFO: Writing contact2e.56.vtk
+INFO: Writing contact2e.56.vtu
+INFO: Step 57, time 6.69e-05, U, 3 components, 522 values
+INFO: Writing contact2e.57.vtk
+INFO: Writing contact2e.57.vtu
+INFO: Step 58, time 6.84e-05, U, 3 components, 522 values
+INFO: Writing contact2e.58.vtk
+INFO: Writing contact2e.58.vtu
+INFO: Step 59, time 6.98e-05, U, 3 components, 522 values
+INFO: Writing contact2e.59.vtk
+INFO: Writing contact2e.59.vtu
+INFO: Step 60, time 7.13e-05, U, 3 components, 522 values
+INFO: Writing contact2e.60.vtk
+INFO: Writing contact2e.60.vtu
+INFO: Step 61, time 7.28e-05, U, 3 components, 522 values
+INFO: Writing contact2e.61.vtk
+INFO: Writing contact2e.61.vtu
+INFO: Step 62, time 7.42e-05, U, 3 components, 522 values
+INFO: Writing contact2e.62.vtk
+INFO: Writing contact2e.62.vtu
+INFO: Step 63, time 7.57e-05, U, 3 components, 522 values
+INFO: Writing contact2e.63.vtk
+INFO: Writing contact2e.63.vtu
+INFO: Step 64, time 7.72e-05, U, 3 components, 522 values
+INFO: Writing contact2e.64.vtk
+INFO: Writing contact2e.64.vtu
+INFO: Step 65, time 7.87e-05, U, 3 components, 522 values
+INFO: Writing contact2e.65.vtk
+INFO: Writing contact2e.65.vtu
+INFO: Step 66, time 8.01e-05, U, 3 components, 522 values
+INFO: Writing contact2e.66.vtk
+INFO: Writing contact2e.66.vtu
+INFO: Step 67, time 8.16e-05, U, 3 components, 522 values
+INFO: Writing contact2e.67.vtk
+INFO: Writing contact2e.67.vtu
+INFO: Step 68, time 8.31e-05, U, 3 components, 522 values
+INFO: Writing contact2e.68.vtk
+INFO: Writing contact2e.68.vtu
+INFO: Step 69, time 8.45e-05, U, 3 components, 522 values
+INFO: Writing contact2e.69.vtk
+INFO: Writing contact2e.69.vtu
+INFO: Step 70, time 8.60e-05, U, 3 components, 522 values
+INFO: Writing contact2e.70.vtk
+INFO: Writing contact2e.70.vtu
+INFO: Step 71, time 8.75e-05, U, 3 components, 522 values
+INFO: Writing contact2e.71.vtk
+INFO: Writing contact2e.71.vtu
+INFO: Step 72, time 8.89e-05, U, 3 components, 522 values
+INFO: Writing contact2e.72.vtk
+INFO: Writing contact2e.72.vtu
+INFO: Step 73, time 9.04e-05, U, 3 components, 522 values
+INFO: Writing contact2e.73.vtk
+INFO: Writing contact2e.73.vtu
+INFO: Step 74, time 9.19e-05, U, 3 components, 522 values
+INFO: Writing contact2e.74.vtk
+INFO: Writing contact2e.74.vtu
+INFO: Step 75, time 9.23e-05, U, 3 components, 522 values
+INFO: Writing contact2e.75.vtk
+INFO: Writing contact2e.75.vtu
+INFO: Step 76, time 9.26e-05, U, 3 components, 522 values
+INFO: Writing contact2e.76.vtk
+INFO: Writing contact2e.76.vtu
+INFO: Step 77, time 9.30e-05, U, 3 components, 522 values
+INFO: Writing contact2e.77.vtk
+INFO: Writing contact2e.77.vtu
+INFO: Step 78, time 9.33e-05, U, 3 components, 522 values
+INFO: Writing contact2e.78.vtk
+INFO: Writing contact2e.78.vtu
+INFO: Step 79, time 9.37e-05, U, 3 components, 522 values
+INFO: Writing contact2e.79.vtk
+INFO: Writing contact2e.79.vtu
+INFO: Step 80, time 9.40e-05, U, 3 components, 522 values
+INFO: Writing contact2e.80.vtk
+INFO: Writing contact2e.80.vtu
+INFO: Step 81, time 9.44e-05, U, 3 components, 522 values
+INFO: Writing contact2e.81.vtk
+INFO: Writing contact2e.81.vtu
+INFO: Step 82, time 9.47e-05, U, 3 components, 522 values
+INFO: Writing contact2e.82.vtk
+INFO: Writing contact2e.82.vtu
+INFO: Step 83, time 9.51e-05, U, 3 components, 522 values
+INFO: Writing contact2e.83.vtk
+INFO: Writing contact2e.83.vtu
+INFO: Step 84, time 9.58e-05, U, 3 components, 522 values
+INFO: Writing contact2e.84.vtk
+INFO: Writing contact2e.84.vtu
+INFO: Step 85, time 9.73e-05, U, 3 components, 522 values
+INFO: Writing contact2e.85.vtk
+INFO: Writing contact2e.85.vtu
+INFO: Step 86, time 9.87e-05, U, 3 components, 522 values
+INFO: Writing contact2e.86.vtk
+INFO: Writing contact2e.86.vtu
+INFO: Step 87, time 1.00e-04, U, 3 components, 522 values
+INFO: Writing contact2e.87.vtk
+INFO: Writing contact2e.87.vtu
+INFO: Writing contact2e.pvd
+0m 0.4s
+
+==================================================
+14: other/contact2i.frd
+INFO: Reading contact2i.frd
+INFO: 522 nodes
+INFO: 64 cells
+INFO: 58 time increment s
+INFO: Step 1, time 2.50e-05, U, 3 components, 522 values
+INFO: Writing contact2i.01.vtk
+INFO: Writing contact2i.01.vtu
+INFO: Step 2, time 3.13e-05, U, 3 components, 522 values
+INFO: Writing contact2i.02.vtk
+INFO: Writing contact2i.02.vtu
+INFO: Step 3, time 3.75e-05, U, 3 components, 522 values
+INFO: Writing contact2i.03.vtk
+INFO: Writing contact2i.03.vtu
+INFO: Step 4, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.04.vtk
+INFO: Writing contact2i.04.vtu
+INFO: Step 5, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.05.vtk
+INFO: Writing contact2i.05.vtu
+INFO: Step 6, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.06.vtk
+INFO: Writing contact2i.06.vtu
+INFO: Step 7, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.07.vtk
+INFO: Writing contact2i.07.vtu
+INFO: Step 8, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.08.vtk
+INFO: Writing contact2i.08.vtu
+INFO: Step 9, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.09.vtk
+INFO: Writing contact2i.09.vtu
+INFO: Step 10, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.10.vtk
+INFO: Writing contact2i.10.vtu
+INFO: Step 11, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.11.vtk
+INFO: Writing contact2i.11.vtu
+INFO: Step 12, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.12.vtk
+INFO: Writing contact2i.12.vtu
+INFO: Step 13, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.13.vtk
+INFO: Writing contact2i.13.vtu
+INFO: Step 14, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.14.vtk
+INFO: Writing contact2i.14.vtu
+INFO: Step 15, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.15.vtk
+INFO: Writing contact2i.15.vtu
+INFO: Step 16, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.16.vtk
+INFO: Writing contact2i.16.vtu
+INFO: Step 17, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.17.vtk
+INFO: Writing contact2i.17.vtu
+INFO: Step 18, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.18.vtk
+INFO: Writing contact2i.18.vtu
+INFO: Step 19, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.19.vtk
+INFO: Writing contact2i.19.vtu
+INFO: Step 20, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.20.vtk
+INFO: Writing contact2i.20.vtu
+INFO: Step 21, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.21.vtk
+INFO: Writing contact2i.21.vtu
+INFO: Step 22, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.22.vtk
+INFO: Writing contact2i.22.vtu
+INFO: Step 23, time 4.37e-05, U, 3 components, 522 values
+INFO: Writing contact2i.23.vtk
+INFO: Writing contact2i.23.vtu
+INFO: Step 24, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.24.vtk
+INFO: Writing contact2i.24.vtu
+INFO: Step 25, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.25.vtk
+INFO: Writing contact2i.25.vtu
+INFO: Step 26, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.26.vtk
+INFO: Writing contact2i.26.vtu
+INFO: Step 27, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.27.vtk
+INFO: Writing contact2i.27.vtu
+INFO: Step 28, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.28.vtk
+INFO: Writing contact2i.28.vtu
+INFO: Step 29, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.29.vtk
+INFO: Writing contact2i.29.vtu
+INFO: Step 30, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.30.vtk
+INFO: Writing contact2i.30.vtu
+INFO: Step 31, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.31.vtk
+INFO: Writing contact2i.31.vtu
+INFO: Step 32, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.32.vtk
+INFO: Writing contact2i.32.vtu
+INFO: Step 33, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.33.vtk
+INFO: Writing contact2i.33.vtu
+INFO: Step 34, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.34.vtk
+INFO: Writing contact2i.34.vtu
+INFO: Step 35, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.35.vtk
+INFO: Writing contact2i.35.vtu
+INFO: Step 36, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.36.vtk
+INFO: Writing contact2i.36.vtu
+INFO: Step 37, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.37.vtk
+INFO: Writing contact2i.37.vtu
+INFO: Step 38, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.38.vtk
+INFO: Writing contact2i.38.vtu
+INFO: Step 39, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.39.vtk
+INFO: Writing contact2i.39.vtu
+INFO: Step 40, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.40.vtk
+INFO: Writing contact2i.40.vtu
+INFO: Step 41, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.41.vtk
+INFO: Writing contact2i.41.vtu
+INFO: Step 42, time 4.38e-05, U, 3 components, 522 values
+INFO: Writing contact2i.42.vtk
+INFO: Writing contact2i.42.vtu
+INFO: Step 43, time 4.39e-05, U, 3 components, 522 values
+INFO: Writing contact2i.43.vtk
+INFO: Writing contact2i.43.vtu
+INFO: Step 44, time 4.40e-05, U, 3 components, 522 values
+INFO: Writing contact2i.44.vtk
+INFO: Writing contact2i.44.vtu
+INFO: Step 45, time 4.41e-05, U, 3 components, 522 values
+INFO: Writing contact2i.45.vtk
+INFO: Writing contact2i.45.vtu
+INFO: Step 46, time 4.42e-05, U, 3 components, 522 values
+INFO: Writing contact2i.46.vtk
+INFO: Writing contact2i.46.vtu
+INFO: Step 47, time 4.45e-05, U, 3 components, 522 values
+INFO: Writing contact2i.47.vtk
+INFO: Writing contact2i.47.vtu
+INFO: Step 48, time 4.49e-05, U, 3 components, 522 values
+INFO: Writing contact2i.48.vtk
+INFO: Writing contact2i.48.vtu
+INFO: Step 49, time 4.54e-05, U, 3 components, 522 values
+INFO: Writing contact2i.49.vtk
+INFO: Writing contact2i.49.vtu
+INFO: Step 50, time 4.63e-05, U, 3 components, 522 values
+INFO: Writing contact2i.50.vtk
+INFO: Writing contact2i.50.vtu
+INFO: Step 51, time 4.75e-05, U, 3 components, 522 values
+INFO: Writing contact2i.51.vtk
+INFO: Writing contact2i.51.vtu
+INFO: Step 52, time 4.94e-05, U, 3 components, 522 values
+INFO: Writing contact2i.52.vtk
+INFO: Writing contact2i.52.vtu
+INFO: Step 53, time 5.23e-05, U, 3 components, 522 values
+INFO: Writing contact2i.53.vtk
+INFO: Writing contact2i.53.vtu
+INFO: Step 54, time 5.65e-05, U, 3 components, 522 values
+INFO: Writing contact2i.54.vtk
+INFO: Writing contact2i.54.vtu
+INFO: Step 55, time 6.29e-05, U, 3 components, 522 values
+INFO: Writing contact2i.55.vtk
+INFO: Writing contact2i.55.vtu
+INFO: Step 56, time 7.24e-05, U, 3 components, 522 values
+INFO: Writing contact2i.56.vtk
+INFO: Writing contact2i.56.vtu
+INFO: Step 57, time 8.68e-05, U, 3 components, 522 values
+INFO: Writing contact2i.57.vtk
+INFO: Writing contact2i.57.vtu
+INFO: Step 58, time 1.00e-04, U, 3 components, 522 values
+INFO: Writing contact2i.58.vtk
+INFO: Writing contact2i.58.vtu
+INFO: Writing contact2i.pvd
+0m 0.3s
+
+==================================================
+15: other/dichtstoff_2_HE8.frd
+INFO: Reading dichtstoff_2_HE8.frd
+INFO: 12 nodes
+INFO: 2 cells
+INFO: 1 time increment
+INFO: Step 1, time 1.0, U, 3 components, 12 values
+INFO: Step 1, time 1.0, S, 6 components, 12 values
+INFO: Step 1, time 1.0, S_Mises, 1 components, 12 values
+INFO: Step 1, time 1.0, S_Principal, 4 components, 12 values
+INFO: Step 1, time 1.0, ERROR, 1 components, 12 values
+INFO: Writing dichtstoff_2_HE8.vtk
+INFO: Writing dichtstoff_2_HE8.vtu
+0m 0.0s
+
+==================================================
+16: other/hueeber1.frd
+INFO: Reading hueeber1.frd
+INFO: 17524 nodes
+INFO: 8500 cells
+WARNING: No time increments!
+INFO: Writing hueeber1.vtk
+INFO: Writing hueeber1.vtu
+0m 0.1s
+
+==================================================
+17: other/induction.frd
+INFO: Reading induction.frd
+INFO: 3473 nodes
+INFO: 612 cells
+INFO: 2 time increment s
+INFO: Step 1, time 0.00e+00, ELPOT, 1 components, 3473 values
+INFO: Step 1, time 0.00e+00, CURR, 3 components, 3473 values
+INFO: Writing induction.1.vtk
+INFO: Writing induction.1.vtu
+INFO: Step 2, time 1.0, EMFB, 3 components, 3473 values
+INFO: Writing induction.2.vtk
+INFO: Writing induction.2.vtu
+INFO: Writing induction.pvd
+0m 0.1s
+
+Total 0m 6.2s

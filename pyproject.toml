@@ -5,10 +5,8 @@ build-backend = "setuptools.build_meta"
 [project]
 name="ccx2paraview"
 dynamic = [ "version" ]
-dependencies = [
-    "numpy"
-]
-requires-python = ">=3.8"
+dependencies = [ "numpy" ]
+requires-python = ">=3.9"
 authors = [
     { name = "Ihor Mirzov",  email="imirzov@gmail.com"}
 ]
@@ -23,9 +21,12 @@ classifiers=[
 "Development Status :: 4 - Beta",
 "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
 "Programming Language :: Python :: 3 :: Only",
-"Programming Language :: Python :: 3.8",
+"Programming Language :: Python :: 3.9",
 "Topic :: Scientific/Engineering",
 ]
+
+[project.optional-dependencies]
+VTK = [ "vtk" ]
 
 [project.urls]
 Homepage = "https://github.com/calculix/ccx2paraview"

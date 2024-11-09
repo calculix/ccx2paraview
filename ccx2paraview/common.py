@@ -23,8 +23,8 @@ try:
     from vtk import (vtkUnstructuredGridWriter, vtkXMLUnstructuredGridWriter, \
                     vtkPoints, vtkCellArray, vtkUnstructuredGrid, vtkDoubleArray)
 except ImportError as e:
-    e.add_note("Install either vtk ar paraview.")
-    raise ImportError("Module vtk is not available!") from e
+    # pylint: disable-next=line-too-long
+    raise ImportError("Module vtk is not available! Install either vtk or paraview before using ccx2paraview.") from e
 
 renumbered_nodes = {} # old_number : new_number
 
@@ -656,9 +656,8 @@ class FRD:
 
         i = len(self.steps_increments)
         if i:
-            msg = f'{i} time increment {'s'*min(1, i-1)}'
+            msg = f'{i} time increment(s)'
             logging.info(msg)
-            # logging.debug('Steps-increments: {}'.format(self.steps_increments))
         else:
             logging.warning('No time increments!')
 

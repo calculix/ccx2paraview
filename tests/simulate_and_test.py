@@ -34,7 +34,7 @@ if sys_path not in sys.path:
 # local imports
 # pylint: disable=wrong-import-position
 from log import LoggingHandler
-from ccx2paraview.common import Converter
+from ccx2paraview import Converter
 from ccx2paraview.cli import clean_screen
 # pylint: enable=wrong-import-position
 
@@ -241,32 +241,32 @@ if __name__ == '__main__':
     clean_screen()
 
     # These examples won't run in ccx for me
-    #ccx_and_convert_single_file('Csati_Zoltan_many_sets', '../../examples/other')
-    #ccx_and_convert_single_file('Kandala_Stepan_Floor', '../../examples/other')
-    #ccx_and_convert_single_file('Sergio_Pluchinsky_piston', '../../examples/other')
+    # ccx_and_convert_single_file('Csati_Zoltan_many_sets', '../../examples/other')
+    # ccx_and_convert_single_file('Kandala_Stepan_Floor', '../../examples/other')
+    # ccx_and_convert_single_file('Sergio_Pluchinsky_piston', '../../examples/other')
 
     # These examples won't convert for me
-    #ccx_and_convert_single_file('gears', '../../examples/other')
+    # ccx_and_convert_single_file('gears', '../../examples/other')
     # ERROR: 'utf-8' codec can't decode byte 0x9a in position 966: invalid start byte
 
     # These work...
-    #ccx_and_convert_single_file('ball', '../../examples/other')
-    #ccx_and_convert_single_file('dichtstoff_2_HE8', '../../examples/other')
-    #ccx_and_convert_single_file('Dichtstoff_beam_coupling_compl', '../../examples/other')
-    #ccx_and_convert_single_file('Ihor_Mirzov_baffle_2D', '../../examples/other')
-    #ccx_and_convert_single_file('Jan_Lukas_modal_dynamic_beammodal', '../../examples/other')
-    #ccx_and_convert_single_file('Jan_Lukas_modal_dynamic_staticbeam2', '../../examples/other')
-    #ccx_and_convert_single_file('Jan_Lukas_static_structural', '../../examples/other')
-    #ccx_and_convert_single_file('John_Mannisto_blade_sector', '../../examples/other')
-    #ccx_and_convert_single_file('John_Mannisto_buckling_trick', '../../examples/other')
-    #ccx_and_convert_single_file('Kaffeeheblerei_hinge', '../../examples/other')
-    #ccx_and_convert_single_file('Nidish_Narayanaa_Balaji', '../../examples/other')
-    #ccx_and_convert_single_file('Spanner-in', '../../examples/other/ddjokic-CalculiX-tests-master/Spanner')
-    #ccx_and_convert_single_file('contact2e', '../../examples/ccx/structest')
-    #ccx_and_convert_single_file('contact2i', '../../examples/ccx/structest')
+    # ccx_and_convert_single_file('ball', '../../examples/other')
+    # ccx_and_convert_single_file('dichtstoff_2_HE8', '../../examples/other')
+    # ccx_and_convert_single_file('Dichtstoff_beam_coupling_compl', '../../examples/other')
+    # ccx_and_convert_single_file('Ihor_Mirzov_baffle_2D', '../../examples/other')
+    # ccx_and_convert_single_file('Jan_Lukas_modal_dynamic_beammodal', '../../examples/other')
+    # ccx_and_convert_single_file('Jan_Lukas_modal_dynamic_staticbeam2', '../../examples/other')
+    # ccx_and_convert_single_file('Jan_Lukas_static_structural', '../../examples/other')
+    # ccx_and_convert_single_file('John_Mannisto_blade_sector', '../../examples/other')
+    # ccx_and_convert_single_file('John_Mannisto_buckling_trick', '../../examples/other')
+    # ccx_and_convert_single_file('Kaffeeheblerei_hinge', '../../examples/other')
+    # ccx_and_convert_single_file('Nidish_Narayanaa_Balaji', '../../examples/other')
+    # ccx_and_convert_single_file('Spanner-in', '../../examples/other/ddjokic-CalculiX-tests-master/Spanner')
+    # ccx_and_convert_single_file('contact2e', '../../examples/ccx/structest')
+    # ccx_and_convert_single_file('contact2i', '../../examples/ccx/structest')
 
     # Test conversion
-    convert_single_file_vtu('ball')
+    # convert_single_file_vtu('ball')
     # convert_single_file('dichtstoff_2_HE8')
     # convert_single_file('Dichtstoff_beam_coupling_compl')
     # convert_single_file('Ihor_Mirzov_baffle_2D')

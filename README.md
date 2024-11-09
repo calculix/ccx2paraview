@@ -43,38 +43,87 @@ FRD reader is tested to reduce processing time as much as possible. Now it's qui
 
 ### Installation
 
-To install and run the latest release (version 3.1.0) of of this converter you'll need [Python 3](https://www.python.org/downloads/) and optionally [pipx](https://pipx.pypa.io/stable/installation/) or [conda](https://docs.anaconda.com/miniconda/miniconda-install/): 
+#### Installation with pip or pipx
 
+To install and run the latest release (version 3.2.0) of of this converter you'll need [Python 3](https://www.python.org/downloads/) (Python >= 3.9). 
+
+    # install via pip:
     pip install ccx2paraview
+
+VTK needs to be available on your system for ccx2paraview to run, either directly or from ParaView's python package. When you have neither, install VTK as an optional dependency alongside (works also with [pipx](https://pipx.pypa.io/stable/installation/) to install [apps](#usage), which are exposed on your $PATH and will be run in an isolated environment): 
+
+    # install via pip:
+    pip install 'ccx2paraview[VTK]'
     # or, with pipx:
-    pipx install ccx2paraview
-    # or, within a new conda environment: 
-    conda create -n ccx2paraview_rel numpy paraview ccx2paraview
+    pipx install 'ccx2paraview[VTK]' 
+
+**Attention!** Using vtk and numpy concurrently seems broken in python 3.13. When using pipx on a computer with Python 3.13, install ccx2paraview with a python version < 3.13, e.g.:
+
+    pipx install 'ccx2paraview[VTK]' --python 3.12
+
+#### Installation with a conda environment
+
+You can also use a [conda](https://docs.anaconda.com/miniconda/miniconda-install/) environment to install ccx2paraview:
+
+    # Install to a new conda environment: 
+    conda create -n ccx2paraview_env numpy paraview ccx2paraview
+
+**Hint!**  Don't forget to activate the conda environment before trying to use ccx2paraview:
+
+    conda activate ccx2paraview_env
 
 **Hint!** Installing paraview and ccx2paraview from the conda-forge channel can be achieved by adding conda-forge to your channels with:
 
     conda config --add channels conda-forge
     conda config --set channel_priority strict
 
+
 ### Usage 
 
-Having installed ccx2paraview via pip or pipx, you'll need to either cd into the ccx2paraview-directory, or add it to your PATH. Then, run converter with command (both in Linux and in Windows):
-
-    python ccx2paraview.py yourjobname.frd vtk
-    python ccx2paraview.py yourjobname.frd vtu
-
-Also you can pass both formats to convert .frd to .vtk and .vtu at once.
-
-Using the conda environment as described above, an additional binary is provided (thanks to conda-forge's package).
-Activate the conda-environment first:
-
-    conda activate ccx2paraview_rel
-
-Then, run converter from the python source as described above or use the provided binary:
+Having installed ccx2paraview, run the converter with command (both in Linux and in Windows):
 
     ccx2paraview yourjobname.frd vtk
     ccx2paraview yourjobname.frd vtu
 
+Also you can pass both formats to convert .frd to .vtk and .vtu at once.
+
+There are also the following aliases for converting files to a fixed format
+
+    ccxToVTK yourjobname.frd
+    ccxToVTU yourjobname.frd
+
+#### Using ccx2paraview in your python code
+
+To use the current release of ccx2paraview in your python code (having installed with pip or into a conda environment):
+
+```Python
+import logging
+from ccx2paraview import Converter
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+c = Converter(frd_file_name, ['vtu'])
+c.run()
+```
+
+#### Create vtkhdf-file using ParaView's simple Module
+
+While ccx2paraview cannot convert to vtkhdf directly (yet), you can create such a single file bundling all of the timesteps into one by using ParaView's [simple Module](https://www.paraview.org/paraview-docs/latest/python/paraview.simple.html).
+When you are using a [conda environment](#installation) with ParaView, a working version of ParaView's simple Module should be available in the environment.  
+
+```Python
+# use ccx2paraview to convert the file '/Users/ccx/ball.frd' 
+# into vtu-files ('/Users/ccx/ball.x.vtu') and write a pvd-file
+from ccx2paraview import Converter
+c = Converter('/Users/ccx/ball.frd', ['vtu'])
+c.run()
+
+# Convert all vtu-files into one vtkhdf file 
+# - the .vtkhdf-extension is mandatory for ParaView to write the correct output
+# - The Compression level (0-9) is set to 4 here, making the vtkhdf-file 
+#   roughly the same size as the input vtus toghether
+from paraview.simple import (SaveData, PVDReader)
+pvd_proxy = PVDReader(registrationName='ball', FileName='/Users/ccx/ball.pvd')
+SaveData('/Users/ccx/ball.vtkhdf', proxy=pvd_proxy, WriteAllTimeSteps=1, CompressionLevel=4)
+```
 
 ### General Remarks
 
@@ -88,44 +137,23 @@ Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - p
 
 **Hint!** When using the [conda environment](#installation), a working version of ParaView should be available in the environment already.  
 
-#### Using ccx2paraview in your python code
-
-To use the current release of ccx2paraview in your python code:
-
-```Python
-import logging
-import ccx2paraview.ccx2paraview
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-c = ccx2paraview.ccx2paraview.Converter(frd_file_name, ['vtu'])
-c.run()
-```
-
 #### Python Compatibility
 
-Installation of the latest release via pip was tested with a fresh install of:
+Installation of the latest release via pip was tested with a fresh install of vtk and numpy and:
 
-* Python 3.8: will install ccx2paraview v3.0.0
-* Python 3.9: will install ccx2paraview v3.0.0
+* Python 3.9: works!
 * Python 3.10: works!
 * Python 3.11: works!
-* Python 3.11: works!
-* Python 3.12: works - but will provoke SyntaxWarning: invalid escape sequence
-* Python 3.13: won't work - numpy-vtk incompatibility
-
-Using a conda-environment:
-
 * Python 3.12: works!
+* Python 3.13: ERROR: No matching distribution found for vtk
 
-```
-conda create -n ccx2paraview_rel python=3.12 numpy paraview ccx2paraview
-```
+Using a conda-environment (with numpy and paraview):
 
-* Python 3.13: works - but will provoke SyntaxWarning: invalid escape sequence
-
-```
-conda create -n ccx2paraview_rel numpy paraview ccx2paraview
-```
-
+* Python 3.9: works!
+* Python 3.10: works!
+* Python 3.11: works!
+* Python 3.12: works!
+* Python 3.13: works!
 
 ### Paraview **programmable filter**
 
@@ -184,52 +212,6 @@ To install this converter from github you'll need [Python 3](https://www.python.
 
 **Attention!** Currently, installing vtk via pip seems to break ParaView's pvpython. When using the conda environment, ParaView's included vtk will be used (alongside having a working ParaView in the environment).
 
-### Usage
-
-Run converter with command:
-
-    ccx2paraview yourjobname.frd vtk
-    ccx2paraview yourjobname.frd vtu
-
-Also you can pass both formats to convert .frd to .vtk and .vtu at once.
-
-There are also the following aliases for converting files to a fixed format
-
-    ccxToVTK yourjobname.frd
-    ccxToVTU yourjobname.frd
-
-#### Using ccx2paraview in your python code
-
-To use the development version of ccx2paraview in your python code:
-
-```Python
-import logging
-from ccx2paraview.common import Converter
-logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
-c = Converter(frd_file_name, ['vtu'])
-c.run()
-```
-
-#### Create vtkhdf-file using ParaView's simple Module
-
-While ccx2paraview cannot convert to vtkhdf directly (yet), you can create such a single file bundling all of the timesteps into one by using ParaView's [simple Module](https://www.paraview.org/paraview-docs/latest/python/paraview.simple.html).
-When you are using a [conda environment](#installation) with ParaView, a working version of ParaView's simple Module should be available in the environment.  
-
-```Python
-# use ccx2paraview to convert the file '/Users/ccx/ball.frd' 
-# into vtu-files ('/Users/ccx/ball.x.vtu') and write a pvd-file
-from ccx2paraview.common import Converter
-c = Converter('/Users/ccx/ball.frd', ['vtu'])
-c.run()
-
-# Convert all vtu-files into one vtkhdf file 
-# - the .vtkhdf-extension is mandatory for ParaView to write the correct output
-# - The Compression level (0-9) is set to 4 here, making the vtkhdf-file 
-#   roughly the same size as the input vtus toghether
-from paraview.simple import (SaveData, PVDReader)
-pvd_proxy = PVDReader(registrationName='ball', FileName='/Users/ccx/ball.pvd')
-SaveData('/Users/ccx/ball.vtkhdf', proxy=pvd_proxy, WriteAllTimeSteps=1, CompressionLevel=4)
-```
 
 <br/><br/>
 

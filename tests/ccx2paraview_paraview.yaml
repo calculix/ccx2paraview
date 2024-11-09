@@ -12,7 +12,7 @@ name: ccx2paraview_paraview
 channels: 
   - conda-forge
 dependencies:
-  - python 
+  - python
   - pip
-  - paraview
   - numpy
+  - paraview
