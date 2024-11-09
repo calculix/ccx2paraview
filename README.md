@@ -45,21 +45,19 @@ FRD reader is tested to reduce processing time as much as possible. Now it's qui
 
 #### Installation with pip or pipx
 
-To install and run the latest release (version 3.2.0) of of this converter you'll need [Python 3](https://www.python.org/downloads/) and optionally [pipx](https://pipx.pypa.io/stable/installation/). 
+To install and run the latest release (version 3.2.0) of of this converter you'll need [Python 3](https://www.python.org/downloads/) (Python >= 3.9). 
 
     # install via pip:
     pip install ccx2paraview
-    # or, with pipx:
-    pipx install ccx2paraview
 
-VTK needs to be available on your system for ccx2paraview to run, either directly or from ParaView's python package. When you have neither, install VTK as an optional dependency alongside: 
+VTK needs to be available on your system for ccx2paraview to run, either directly or from ParaView's python package. When you have neither, install VTK as an optional dependency alongside (works also with [pipx](https://pipx.pypa.io/stable/installation/) to install [apps](#usage), which are exposed on your $PATH and will be run in an isolated environment): 
 
     # install via pip:
     pip install 'ccx2paraview[VTK]'
     # or, with pipx:
     pipx install 'ccx2paraview[VTK]' 
 
-**Attention!** Using vtk and numpy in python 3.13 concurrently seems broken. When using pipx, set a python version <3.13, e.g.:
+**Attention!** Using vtk and numpy concurrently seems broken in python 3.13. When using pipx on a computer with Python 3.13, install ccx2paraview with a python version < 3.13, e.g.:
 
     pipx install 'ccx2paraview[VTK]' --python 3.12
 
@@ -96,7 +94,7 @@ There are also the following aliases for converting files to a fixed format
 
 #### Using ccx2paraview in your python code
 
-To use the current release of ccx2paraview in your python code:
+To use the current release of ccx2paraview in your python code (having installed with pip or into a conda environment):
 
 ```Python
 import logging
@@ -143,7 +141,6 @@ Starting from ccx2paraview v3.0.0 legacy .vtk format is also fully supported - p
 
 Installation of the latest release via pip was tested with a fresh install of vtk and numpy and:
 
-* Python 3.8: ERROR: No matching distribution found for vtk
 * Python 3.9: works!
 * Python 3.10: works!
 * Python 3.11: works!
@@ -152,7 +149,6 @@ Installation of the latest release via pip was tested with a fresh install of vt
 
 Using a conda-environment (with numpy and paraview):
 
-* Python 3.8: works!
 * Python 3.9: works!
 * Python 3.10: works!
 * Python 3.11: works!
