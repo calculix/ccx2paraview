@@ -1,10 +1,11 @@
 .vscode/
+*.egg-info/
 __pycache__/
+/_issue*
 /bin/
-/releases/
-/pypi/
 /build/
 /dist/
+/pypi/
+/releases/
 /tests/sim_frds
 /tests/test_logs
-*.egg-info/
