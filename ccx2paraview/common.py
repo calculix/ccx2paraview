@@ -781,7 +781,7 @@ class FRD:
             tensor = np.array([[t_xx, t_xy, t_xz], [t_xy, t_yy, t_yz], [t_xz, t_yz, t_zz]])
 
             # Calculate principal values for current node
-            eigenvalues = sorted(np.linalg.eigvals(tensor).tolist())
+            eigenvalues = sorted(np.linalg.eigvalsh(tensor).tolist()) # eigvalsh to avoid getting complex results
             if math.fabs(eigenvalues[0]) > math.fabs(eigenvalues[-1]):
                 eigenvalues.append(eigenvalues[0])
             else:
